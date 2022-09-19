@@ -1,4 +1,4 @@
-# Scenario Explorer Workflow Template
+# EU Climate Advisory Board Scenario Explorer Workflow
 
 Copyright 2022 IIASA
 
@@ -6,7 +6,11 @@ Copyright 2022 IIASA
 
 ## Overview
 
-This is a template for project-specific scenario processing workflows.
+This repository has the definitions for the **EU Climate Advisory Board Scenario Explorer**
+used for submission of emissions scenarios to support the European Scientific Advisory Board on Climate Change
+in its advice relating to the EU Climate Law.
+
+Visit https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission for more information.
 
 ### Model registration
 
