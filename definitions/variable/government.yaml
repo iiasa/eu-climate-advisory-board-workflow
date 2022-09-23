@@ -1,0 +1,13 @@
+- Debt Service:
+    description: Debt service as a percentage of exports of goods and services
+    unit: '%'
+    weight: Population
+    category: Government
+- Revenue|Government:
+    description: government revenue
+    unit: billion US$2010/yr
+    category: Government
+- Revenue|Government|Tax:
+    description: government revenue from taxes
+    unit: billion US$2010/yr
+    category: Government

@@ -1,0 +1,382 @@
+- Ecotoxicity|Freshwater:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Ecotoxicity|Freshwater|Electricity:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Ecotoxicity|Marine:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Ecotoxicity|Marine|Electricity:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Emissions|PM2.5:
+    description:
+    unit: Mt PM2.5
+    core: true
+    category: SDG
+- Employment:
+    description: number of employed inhabitants (based on ILO classification)
+    unit: million
+    category: SDG
+- Employment|Agriculture:
+    description: number of employed inhabitants (payrolls) in agriculture (based on
+      ILO classification)
+    unit: million
+    category: SDG
+- Employment|Industry:
+    description: number of employed inhabitants (payrolls) in industry (based on ILO
+      classification)
+    unit: million
+    category: SDG
+- Employment|Service:
+    description: number of employed inhabitants (payrolls) in the service sector (based
+      on ILO classification)
+    unit: million
+    category: SDG
+- Eutrophication|Marine:
+    description:
+    unit: Tg N-eq/yr
+    category: SDG
+- Eutrophication|Marine|Electricity:
+    description:
+    unit: Tg N-eq/yr
+    category: SDG
+- Food Demand:
+    description: 'all food demand in calories (conversion factor: 1 kcal = 4,1868
+      kJ)'
+    unit: kcal/cap/day
+    weight: Population
+    core: true
+    category: SDG
+- Food Demand|Crops:
+    description: crop related food demand in calories
+    unit: kcal/cap/day
+    weight: Population
+    core: true
+    category: SDG
+- Food Demand|Livestock:
+    description: livestock related food demand in calories
+    unit: kcal/cap/day
+    weight: Population
+    core: true
+    category: SDG
+- Food Energy Supply:
+    description: total calory food demand
+    unit: EJ/yr
+    category: SDG
+- Food Energy Supply|Livestock:
+    description: calory food demand from livestock products
+    unit: EJ/yr
+    category: SDG
+- Human Toxicity:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Human Toxicity|Electricity:
+    description:
+    unit: Mt 1,4-DCB-eq
+    category: SDG
+- Population:
+    description: total population
+    unit: million
+    core: true
+    category: SDG
+- Population|Clean cooking Access:
+    description: population with access to clean cooking (e.g. non-solid fuels)
+    unit: million
+    category: SDG
+- Population|Democratic rights:
+    description: population with democratic rights (e.g. voiting, association, etc.)
+    unit: million
+    category: SDG
+- Population|Electricity Access:
+    description: population with access to electricity
+    unit: million
+    category: SDG
+- Population|Extreme poverty:
+    description: population living in extreme poverty with income <US$2 2010 PPP per
+      day
+    unit: million
+    category: SDG
+- Population|Female:
+    description: total female population
+    unit: million
+    core: true
+    category: SDG
+- Population|Fragility:
+    description: Population living in fragile conditions, exposed to homicide, violent
+      crime, war/state violence
+    unit: million
+    category: SDG
+- Population|Health Services Access:
+    description: population with access to adequate health services
+    unit: million
+    category: SDG
+- Population|Homeless:
+    description: population without shelter
+    unit: million
+    category: SDG
+- Population|Informal settlements:
+    description: population living in informal settlements (e.g. slums)
+    unit: million
+    category: SDG
+- Population|Male:
+    description: total male population
+    unit: million
+    core: true
+    category: SDG
+- Population|Malnourishment:
+    description: population at risk of malnourishment, calculated by multipling total
+      population and prevalence of malnourishment due to insufficient consumption
+      of essential nutrients (e.g. iron, Vitamins, A, B1, C, D, E, iodine)
+    unit: million
+    category: SDG
+- Population|Primary education:
+    description: population with primary education completed
+    unit: million
+    category: SDG
+- Population|Primary relationships:
+    description: population in primary relations
+    unit: million
+    category: SDG
+- Population|Public transport Access:
+    description: population with convenient access to public transport
+    unit: million
+    category: SDG
+- Population|Relative poverty:
+    description: population living in relative poverty with income below theeir respective
+      national poverty lines.
+    unit: million
+    category: SDG
+- Population|Relative poverty|w.r.t. median income|Share:
+    description: Share of population below 50% of median national income
+    unit: '%'
+    weight: Population
+    category: SDG
+- Population|Relying on Solid Fuels:
+    description:
+    unit: million
+    category: SDG
+- Population|Risk of Hunger:
+    description: population at risk of hunger, calculated by multipling total population
+      and prevalence of undernourishment which is computed from a probability distribution
+      of daily dietary energy consumption and minimum dietary energy requirement.
+    unit: million
+    core: true
+    category: SDG
+- Population|Rural:
+    description: total population living in rural areas
+    unit: million
+    core: true
+    category: SDG
+- Population|Secondary education:
+    description: population with secondary education completed
+    unit: million
+    category: SDG
+- Population|substandard accommodation:
+    description: population living in substandard accommodation (e.g. accommodation
+      that does not meet legal requirements and/or enable well being for the occupants
+    unit: million
+    category: SDG
+- Population|Tertiary education:
+    description: population with tertiary education completed
+    unit: million
+    category: SDG
+- Population|Urban:
+    description: total population living in urban areas
+    unit: million
+    core: true
+    category: SDG
+- Population|Urban|Share:
+    description: share of population living in urban areas
+    unit: '%'
+    weight: Population|Urban
+    core: true
+    category: SDG
+- Population|Working Age:
+    description: total working age population (age 15-65 years)
+    unit: million
+    category: SDG
+- Population|Poverty|LMIC poverty line:
+    description: population living in poverty with income <US$3.20 2011 PPP per day
+      (World Bank LMIC definition)
+    unit: million
+    category: SDG
+- Population|Poverty|UMIC poverty line:
+    description: population living in poverty with income <US$5.50 2011 PPP per day
+      (World Bank LMIC definition)
+    unit: million
+    category: SDG
+- Population|Prevalence of underweight:
+    description: Number of adults with BMI<18.5 and children with <-1SD from reference
+      BMI
+    unit: million
+    category: SDG
+- Population|Prevalence of underweight|Children:
+    description: Number of underweight children (-2SD from reference BMI, aged 0--14)
+    unit: million
+    category: SDG
+- Population|Prevalence of overweight:
+    description: Number of adults with BMI>25 and children with >1SD from reference
+      BMI
+    unit: million
+    category: SDG
+- Population|Prevalence of overweight|Children:
+    description: Number of overweight children (+1SD from reference BMI, aged 0--14)
+    unit: million
+    category: SDG
+- Population|Prevalence of obesity:
+    description: Number of adults with BMI>30 and children with >2SD from reference
+      BMI
+    unit: million
+    category: SDG
+- Population|Prevalence of obesity|Children:
+    description: Number of obese children (+2SD from reference BMI, aged 0--14)
+    unit: million
+    category: SDG
+- Population|Life expectancy:
+    description: Life expectancy at birth
+    unit: yr
+    weight: Population
+    category: SDG
+- Population|Gender education gap|Primary:
+    description: difference between genders in primary education completion rate (age
+      15+)
+    unit: percentage points
+    category: SDG
+- Population|Gender education gap|Secondary:
+    description: 'difference between genders in secondary education completion rate
+      (age 20+) '
+    unit: percentage points
+    category: SDG
+- Food|Availability:
+    description: Food available for consumption per capita
+    unit: kcal/cap/day
+    weight: Population
+    category: SDG
+- Subsidies|Energy:
+    description: total energy-related subsidies
+    unit: billion US$2010/yr
+    category: SDG
+- Subsidies|Energy|Fossil:
+    description: fossil fuel subsidies
+    unit: billion US$2010/yr
+    category: SDG
+- Subsidies|Food:
+    description: food subsidies (both to producers and consumers)
+    unit: billion US$2010/yr
+    category: SDG
+- Trust|In others:
+    description: Share of people agreeing with the statement "most people can be trusted"
+    unit: '%'
+    weight: Population
+    category: SDG
+- Trust|In politicians:
+    description: Share of people agreeing with the statement "politicians are trustworthy"
+    unit: '%'
+    weight: Population
+    category: SDG
+- Unemployment:
+    description: number of unemployed inhabitants (based on ILO classification)
+    unit: million
+    category: SDG
+- Unemployment|Rate:
+    description: fraction of unemployed inhabitants (based on ILO classification)
+    unit: '%'
+    weight: Unemployment
+    category: SDG
+- Water Consumption|Electricity w/o Hydro:
+    description:
+    unit: km3/yr
+    category: SDG
+- Inequality|Bottom 40% average income|Ratio:
+    description: Average income of bottom 40% relative to national average
+    unit: '%'
+    weight: Population
+    category: SDG
+- Air pollution concentration|PM2.5|Urban population:
+    description: Urban population weighted annual average PM2.5 concentrations.
+    unit: "\xB5g/m3"
+    weight: Population|Urban
+    category: SDG
+- Material footprint:
+    description: Biomass usage per capita (excluding pasture + forestry)
+    unit: tDM/cap/yr
+    weight: Population
+    category: SDG
+- Food Waste:
+    description: Food waste per capita
+    unit: kcal/cap/day
+    weight: Population
+    category: SDG
+- Ocean|pH value:
+    description: 'Ocean acidification: pH value'
+    unit: '-'
+    category: SDG
+- Ocean|Carbonate Saturation|Calcite:
+    description: Saturation state of calcite (Omega_C)
+    unit: '-'
+    category: SDG
+- Ocean|Carbonate Saturation|Aragonite:
+    description: Saturation state of aragonite (Omega_A)
+    unit: '-'
+    category: SDG
+- Ocean|Net primary production:
+    description: Net primary production of biomass in oceans
+    unit: GtC/yr
+    category: SDG
+- Ocean|New production:
+    description: New production of biomass in oceans
+    unit: GtC/yr
+    category: SDG
+- Ocean|Extension of suboxic zones:
+    description: Extension of suboxic zones in oceans
+    unit: "km\xB3"
+    category: SDG
+- Land Cover|Forest|Share:
+    description: Managed and unmanaged forests as share of total terrestrial land
+      area (excluding surface water)
+    unit: '%'
+    weight: Land Cover
+    category: SDG
+- Terrestrial biodiversity:
+    description: Biodiversity Intactness Index (BII)
+    unit: '-'
+    weight: Land Cover
+    category: SDG
+- Political institutions|Equality before law and individual liberty:
+    description: aggregated '\u2018'Equality Before the Law and Individual Liberty'
+      index (0-1) as defined by V-DEM
+    unit: '-'
+    weight: Population
+    category: SDG
+- Price|Carbon|Ratio to OECD:
+    description: Ratio of carbon price to OECD carbon price
+    unit: '%'
+    weight: Emissions|CO2
+    category: SDG
+- Policy Cost|Transfers:
+    description: Net international climate finance transfers (positive for inflow,
+      negative for payment)
+    unit: billion US$2010/yr
+    category: SDG
+- Useful Energy|Per Capita|Transportation|Passenger:
+    description: Useful energy per capita for passenger transport.
+    unit: GJ/cap/yr
+    weight: Population
+    category: SDG
+- Useful Energy|Per Capita|Industry:
+    description: Useful energy per capita for industry.
+    unit: GJ/cap/yr
+    weight: Population
+    category: SDG
+- Useful Energy|Per Capita|Residential and Commercial:
+    description: Useful energy per capita for buildings
+    unit: GJ/cap/yr
+    weight: Population
+    category: SDG

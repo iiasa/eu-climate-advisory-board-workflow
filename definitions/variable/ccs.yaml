@@ -1,0 +1,240 @@
+- Carbon Sequestration|CCS:
+    description: total carbon dioxide emissions captured and stored in geological
+      deposits (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers)
+      and the deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Biomass:
+    description: total carbon dioxide emissions captured from bioenergy use and stored
+      in geological deposits (e.g. in depleted oil and gas fields, unmined coal seams,
+      saline aquifers) and the deep ocean, stored amounts should be reported as positive
+      numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy:
+    description: total carbon dioxide emissions captured from bioenergy use and stored
+      in geological deposits (e.g. in depleted oil and gas fields, unmined coal seams,
+      saline aquifers) and the deep ocean, stored amounts should be reported as positive
+      numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry:
+    description: total carbon dioxide emissions captured from bioenergy use in industry
+      (IPCC category 1A2) and stored in geological deposits (e.g. in depleted oil
+      and gas fields, unmined coal seams, saline aquifers) and the deep ocean, stored
+      amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply:
+    description: total carbon dioxide emissions captured from bioenergy use and stored
+      in geological deposits (e.g. in depleted oil and gas fields, unmined coal seams,
+      saline aquifers) and the deep ocean, stored amounts should be reported as positive
+      numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply|Electricity:
+    description: total carbon dioxide emissions captured from bioenergy use in electricity
+      production (part of IPCC category 1A1a) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply|Gases:
+    description: total carbon dioxide emissions captured from bioenergy use in gaseous
+      fuel production, excl. hydrogen (part of IPCC category 1A) and stored in geological
+      deposits (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers)
+      and the deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply|Hydrogen:
+    description: total carbon dioxide emissions captured from bioenergy use in hydrogen
+      production (part of IPCC category 1A) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply|Liquids:
+    description: total carbon dioxide emissions captured from bioenergy use in liquid
+      fuel production (part of IPCC category 1A) and stored in geological deposits
+      (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers) and
+      the deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Energy|Supply|Other:
+    description: total carbon dioxide emissions captured from bioenergy use in other
+      energy supply (part of IPCC category 1A) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Biomass|Industrial Processes:
+    description: total carbon dioxide emissions captured from industrial processes
+      from biomass (e.g., cement production, but not from fossil fuel burning) use
+      and stored in geological deposits (e.g. in depleted oil and gas fields, unmined
+      coal seams, saline aquifers) and the deep ocean, stored amounts should be reported
+      as positive numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Fossil:
+    description: total carbon dioxide emissions captured from fossil fuel use and
+      stored in geological deposits (e.g. in depleted oil and gas fields, unmined
+      coal seams, saline aquifers) and the deep ocean, stored amounts should be reported
+      as positive numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy:
+    description: total carbon dioxide emissions captured from fossil fuel use and
+      stored in geological deposits (e.g. in depleted oil and gas fields, unmined
+      coal seams, saline aquifers) and the deep ocean, stored amounts should be reported
+      as positive numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Demand|Industry:
+    description: total carbon dioxide emissions captured from fossil fuel use in industry
+      (IPCC category 1A2) and stored in geological deposits (e.g. in depleted oil
+      and gas fields, unmined coal seams, saline aquifers) and the deep ocean, stored
+      amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply:
+    description: total carbon dioxide emissions captured from fossil fuel use in energy
+      supply (IPCC category 1A) and stored in geological deposits (e.g. in depleted
+      oil and gas fields, unmined coal seams, saline aquifers) and the deep ocean,
+      stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply|Electricity:
+    description: total carbon dioxide emissions captured from fossil fuel use in electricity
+      production (part of IPCC category 1A1a) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply|Gases:
+    description: total carbon dioxide emissions captured from fossil fuel use in gaseous
+      fuel production, excl. hydrogen (part of IPCC category 1A) and stored in geological
+      deposits (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers)
+      and the deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply|Hydrogen:
+    description: total carbon dioxide emissions captured from fossil fuel use in hydrogen
+      production (part of IPCC category 1A) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply|Liquids:
+    description: total carbon dioxide emissions captured from fossil fuel use in liquid
+      fuel production (part of IPCC category 1A) and stored in geological deposits
+      (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers) and
+      the deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Energy|Supply|Other:
+    description: total carbon dioxide emissions captured from fossil fuel use in other
+      energy supply (part of IPCC category 1A) and stored in geological deposits (e.g.
+      in depleted oil and gas fields, unmined coal seams, saline aquifers) and the
+      deep ocean, stored amounts should be reported as positive numbers
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Sequestration|CCS|Fossil|Industrial Processes:
+    description: total carbon dioxide emissions captured from industrial processes
+      from fossil fuels (e.g., cement production, but not from fossil fuel burning)
+      use and stored in geological deposits (e.g. in depleted oil and gas fields,
+      unmined coal seams, saline aquifers) and the deep ocean, stored amounts should
+      be reported as positive numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|CCS|Industrial Processes:
+    description: total carbon dioxide emissions captured from industrial processes
+      (e.g., cement production, but not from fossil fuel burning) use and stored in
+      geological deposits (e.g. in depleted oil and gas fields, unmined coal seams,
+      saline aquifers) and the deep ocean, stored amounts should be reported as positive
+      numbers
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Direct Air Capture:
+    description: total carbon dioxide sequestered through direct air capture
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Enhanced Weathering:
+    description: total carbon dioxide sequestered through enhanced weathering
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Feedstocks:
+    description: total carbon dioxide sequestered in feedstocks (e.g., lubricants,
+      asphalt, plastics)
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Feedstocks|Biomass:
+    description: total carbon dioxide sequestered in feedstocks from biomass (e.g.,
+      lubricants, asphalt, plastics)
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Feedstocks|Fossil:
+    description: total carbon dioxide sequestered in feedstocks from fossil (e.g.,
+      lubricants, asphalt, plastics)
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Land Use:
+    description: total carbon dioxide sequestered through land-based sinks (e.g.,
+      afforestation, soil carbon enhancement, biochar)
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Land Use|Afforestation:
+    description: total carbon dioxide sequestered through afforestation
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Land Use|Biochar:
+    description: total carbon dioxide sequestered through biochar
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Land Use|Other:
+    description: total carbon dioxide sequestered through other land-based mitigation
+      techniques
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Land Use|Soil Carbon Management:
+    description: total carbon dioxide sequestered through soil carbon management techniques
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Sequestration|Other:
+    description: total carbon dioxide sequestered through other techniques (please
+      provide a definition of other sources in this category in the 'comments' tab)
+    unit: Mt CO2/yr
+    core: true
+    category: CCS
+- Carbon Utilization|CCS|Biomass|Industry:
+    description: total of CO2 captured and utilized within industry, from biomass-based
+      sources (e.g. biogas)
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Utilization|CCS|Fossil|Industry:
+    description: total of CO2 captured and utilized within industry, from fossil-based
+      sources (e.g. natural gas, coal-gas)
+    unit: Mt CO2/yr
+    category: CCS
+- Carbon Utilization|CCS|Industry:
+    description: total of CO2 captured and utilized within industry, from both fossil
+      and biomass based sources
+    unit: Mt CO2/yr
+    category: CCS

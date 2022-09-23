@@ -1,0 +1,155 @@
+- Agricultural Demand:
+    description: total demand for food, non-food and feed products (crops and livestock)
+      and bioenergy crops (1st & 2nd generation)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Demand|Crops:
+    description: total demand for food, non-food and feed crops and bioenergy crops
+      (1st & 2nd generation)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Demand|Crops|Energy:
+    description: demand for modern primary energy crops (1st and 2nd generation)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Demand|Crops|Energy|1st generation:
+    description: Demand for modern primary 1st generation energy crops
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Crops|Energy|2nd generation:
+    description: Demand for modern primary 2nd generation energy crops
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Crops|Feed:
+    description: total demand for feed crops
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Crops|Food:
+    description: total demand for food crops
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Crops|Other:
+    description: total demand for other crops
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Livestock:
+    description: total demand for livestock
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Demand|Livestock|Food:
+    description: total demand for food livestock
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Demand|Livestock|Other:
+    description: total demand for other livestock
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Production:
+    description: total production of food, non-food and feed products (crops and livestock)
+      and bioenergy crops (1st & 2nd generation)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Production|Energy:
+    description: total bioenergy-related agricultural production (including waste
+      and residues)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Production|Energy|Crops:
+    description: production for modern primary energy crops (1st and 2nd generation)
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Production|Energy|Residues:
+    description: production of agricultural residues for modern bioenergy production
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Production|Non-Energy:
+    description: total production for food, non-food and feed products (crops and
+      livestock)
+    unit: million t DM/yr
+    core: true
+    category: Agriculture
+- Agricultural Production|Non-Energy|Crops:
+    description: total production for food, non-food and feed products (crops)
+    unit: million t DM/yr
+    category: Agriculture
+- Agricultural Production|Non-Energy|Livestock:
+    description: total production for livestock products
+    unit: million t DM/yr
+    category: Agriculture
+- Fertilizer Use|Nitrogen:
+    description: total nitrogen fertilizer use (organic + inorganic + biological fixation)
+    unit: Tg N/yr
+    category: Agriculture
+- Fertilizer Use|Nitrogen|Inorganic:
+    description: Total nitrogen inputs in inorganic fertilizer use
+    unit: Tg N/yr
+    category: Agriculture
+- Fertilizer Use|Nitrogen|Organic:
+    description: Total nitrogen inputs in organic fertilizer use
+    unit: Tg N/yr
+    category: Agriculture
+- Fertilizer Use|Nitrogen|Biological Fixation|Symbiotic Crops:
+    description: Nitrogen inputs on cropland from symbiotic fixation in plants
+    unit: Tg N/yr
+    category: Agriculture
+- Fertilizer Use|Phosphorous|Inorganic:
+    description: Total phosphorous inputs in inorganic fertilizer use
+    unit: Tg P/yr
+    category: Agriculture
+- Fertilizer Use|Phosphorous|Organic:
+    description: Total phosphorous inputs in organic fertilizer use
+    unit: Tg P/yr
+    category: Agriculture
+- Fertilizer Use|Phosphorus:
+    description: total phosphorus fertilizer use (organic + inorganic)
+    unit: Tg P/yr
+    category: Agriculture
+- Fertilizer Use|Potassium:
+    description: total potassium fertilizer use (organic + inorganic)
+    unit: Tg K2O/yr
+    category: Agriculture
+- Fertilizer Use|Potassium|Inorganic:
+    description: Total potassium inputs in inorganic fertilizer use
+    unit: Tg K2O/yr
+    category: Agriculture
+- Fertilizer Use|Potassium|Organic:
+    description: Total potassium inputs in organic fertilizer use
+    unit: Tg K2O/yr
+    category: Agriculture
+- Yield|Bioenergy|2nd generation:
+    description: aggregated yield of 2nd generation energy crops (e.g., switchgrass,
+      miscanthus, fast-growing wood species)
+    unit: t DM/ha/yr
+    weight: Land Cover|Cropland|Energy Crops|2nd generation
+    category: Agriculture
+- Yield|Cereal:
+    description: yield of cereal production per until of area (used here as repreentative
+      crop to measure yield assumptions)
+    unit: t DM/ha/yr
+    weight: Land Cover|Cropland|Cereals
+    category: Agriculture
+- Yield|Oilcrops:
+    description: aggregated yield of Oilcrops (e.g. soybean, rapeseed, groundnut,
+      sunflower, oilpalm)
+    unit: t DM/ha/yr
+    weight: Land Cover|Cropland|Oilcrops
+    category: Agriculture
+- Yield|Sugarcrops:
+    description: aggregated yield of Sugarcrops (e.g. sugarbeet, sugarcane)
+    unit: t DM/ha/yr
+    weight: Land Cover|Cropland|Sugarcrops
+    category: Agriculture
+- Fertilizer Use|Nitrogen|Biological Fixation:
+    description:
+    unit: Tg N/yr
+    category: Agriculture
+- Fertilizer Use|Nitrogen|Surplus:
+    description:
+    unit: Tg N/yr
+    category: Agriculture

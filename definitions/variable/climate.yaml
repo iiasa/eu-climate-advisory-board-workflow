@@ -1,0 +1,173 @@
+- Concentration|CH4:
+    description: atmospheric concentration of methane
+    unit: ppb
+    category: Climate
+- Concentration|CO2:
+    description: atmospheric concentration of carbon dioxide
+    unit: ppm
+    category: Climate
+- Concentration|N2O:
+    description: atmospheric concentration of nitrous oxide
+    unit: ppb
+    category: Climate
+- Effective Forcing:
+    description: effective radiative forcing from all greenhouse gases and forcing
+      agents,including contributions from albedo change, nitrate, and mineral dust
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol:
+    description: total effective radiative forcing from aerosols via both aerosol-cloud
+      and aerosol-radiative effects
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|BC:
+    description: effective radiative forcing from black carbon via aerosol-radiative
+      effects
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|Black and Organic Carbon:
+    description: effective radiative forcing from black and organic carbon via aerosol-radiative
+      effects
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|Cloud Indirect:
+    description: effective radiative forcing from indirect effects of all anthropogenic
+      aerosols on clouds (i.e. aerosol-cloud effects)
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|OC:
+    description: effective radiative forcing from organic carbon via aerosol-radiative
+      effects
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|Other:
+    description: total effective radiative forcing from aerosols not covered in the
+      other categories (including aerosols from biomass burning) via aerosol-radiative
+      effects
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Aerosol|Sulfate Direct:
+    description: effective radiative forcing from direct sulfate effects (i.e. aerosol-radiative
+      effects)
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Albedo Change and Mineral Dust:
+    description: total effective radiative forcing from albedo change and mineral
+      dust
+    unit: W/m2
+    category: Climate
+- Effective Forcing|CH4:
+    description: total effective radiative forcing from CH4
+    unit: W/m2
+    category: Climate
+- Effective Forcing|CO2:
+    description: total effective radiative forcing from CO2
+    unit: W/m2
+    category: Climate
+- Effective Forcing|F-Gases:
+    description: total effective radiative forcing from F-gases
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Kyoto Gases:
+    description: effective radiative forcing of the six Kyoto gases (CO2, CH4, N2O,
+      SF6, HFCs, PFCs)
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Montreal Gases:
+    description: total effective radiative forcing from Montreal gases
+    unit: W/m2
+    category: Climate
+- Effective Forcing|N2O:
+    description: total effective radiative forcing from N2O
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Other:
+    description: total effective radiative forcing from factors not covered in other
+      categories (including stratospheric ozone and stratospheric water vapor)
+    unit: W/m2
+    category: Climate
+- Effective Forcing|Tropospheric Ozone:
+    description: total effective radiative forcing from tropospheric ozone
+    unit: W/m2
+    category: Climate
+- Forcing:
+    description: radiative forcing from all greenhouse gases and forcing agents,including
+      contributions from albedo change, nitrate, and mineral dust
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol:
+    description: total radiative forcing from aerosols via both aerosol-cloud and
+      aerosol-radiative effects
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|BC:
+    description: radiative forcing from black carbon via aerosol-radiative effects
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|Black and Organic Carbon:
+    description: radiative forcing from black and organic carbon via aerosol-radiative
+      effects
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|Cloud Indirect:
+    description: radiative forcing from indirect effects of all anthropogenic aerosols
+      on clouds (i.e. aerosol-cloud effects)
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|OC:
+    description: radiative forcing from organic carbon via aerosol-radiative effects
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|Other:
+    description: total radiative forcing from aerosols not covered in the other categories
+      (including aerosols from biomass burning) via aerosol-radiative effects
+    unit: W/m2
+    category: Climate
+- Forcing|Aerosol|Sulfate Direct:
+    description: radiative forcing from direct sulfate effects (i.e. aerosol-radiative
+      effects)
+    unit: W/m2
+    category: Climate
+- Forcing|Albedo Change and Mineral Dust:
+    description: total radiative forcing from albedo change and mineral dust
+    unit: W/m2
+    category: Climate
+- Forcing|CH4:
+    description: total radiative forcing from CH4
+    unit: W/m2
+    category: Climate
+- Forcing|CO2:
+    description: total radiative forcing from CO2
+    unit: W/m2
+    category: Climate
+- Forcing|F-Gases:
+    description: total radiative forcing from F-gases
+    unit: W/m2
+    category: Climate
+- Forcing|Kyoto Gases:
+    description: radiative forcing of the six Kyoto gases (CO2, CH4, N2O, SF6, HFCs,
+      PFCs)
+    unit: W/m2
+    category: Climate
+- Forcing|Montreal Gases:
+    description: total radiative forcing from Montreal gases
+    unit: W/m2
+    category: Climate
+- Forcing|N2O:
+    description: total radiative forcing from N2O
+    unit: W/m2
+    category: Climate
+- Forcing|Other:
+    description: total radiative forcing from factors not covered in other categories
+      (including stratospheric ozone and stratospheric water vapor)
+    unit: W/m2
+    category: Climate
+- Forcing|Tropospheric Ozone:
+    description: total radiative forcing from tropospheric ozone
+    unit: W/m2
+    category: Climate
+- Temperature|Global Mean:
+    description: Change in global mean surface temperature relative to pre-industrial,
+      reported by the model.
+    unit: °C
+    category: Climate

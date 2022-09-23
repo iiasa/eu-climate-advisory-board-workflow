@@ -1,0 +1,36 @@
+- Employment|Industry|Energy:
+    description: Number of employed inhabitants (payrolls) in energy related industries
+      (based on ILO classification)
+    unit: million
+    category: Employment
+- Employment|Industry|Energy Intensive:
+    description: Number of employed inhabitants (payrolls) in energy-intensive industry
+      (based on ILO classification)
+    unit: million
+    category: Employment
+- Employment|Industry|Manufacturing:
+    description: Number of employed inhabitants (payrolls) in manufacturing industries
+      (based on ILO classification)
+    unit: million
+    category: Employment
+- Employment|Skilled:
+    description: Number of people employed in skilled labour categories
+    unit: million
+    category: Employment
+- Employment|Unskilled:
+    description: Number of people employed in unskilled labour categories
+    unit: million
+    category: Employment
+- Employment|Unskilled|Rate:
+    description: Percentage of people employed in unskilled labour categories
+    unit: '%'
+    weight: Employment|Unskilled
+    category: Employment
+- Income|LQ25:
+    description: Lower quartile (p25) annual income per capita
+    unit: US$2010/capita
+    category: Employment
+- Income|Median:
+    description: Median annual income per capita
+    unit: US$2010/capita
+    category: Employment

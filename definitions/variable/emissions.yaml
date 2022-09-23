@@ -1,0 +1,1573 @@
+- Emissions|BC:
+    description: total black carbon emissions
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|BC|AFOLU:
+    description: black carbon emissions from agriculture, forestry and other land
+      use (IPCC category 3)
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|BC|AFOLU|Agriculture:
+    description: BC|AFOLU|Agric emissions from agriculture
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|AFOLU|Land:
+    description: BC|AFOL emissions from forestry and other land use
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy:
+    description: black carbon emissions from energy use on supply and demand side,
+      including fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|BC|Energy|Demand|Industry:
+    description: black carbon emissions from fuel combustion in industry (IPCC category
+      1A2)
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Residential and Commercial:
+    description: black carbon emissions from fuel combustion in residential, commercial,
+      institutional sectors and agriculture (IPCC category 1A4a, 1A4b)
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'BC emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Residential and Commercial|Residential:
+    description: 'BC emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Transportation:
+    description: black carbon emissions from fuel combustion in transportation sector
+      (IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Transportation|Freight:
+    description: BC emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Demand|Transportation|Passenger:
+    description: BC emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Energy|Supply:
+    description: 'black carbon emissions from fuel combustion and fugitive emissions
+      from fuels: electricity and heat production and distribution (IPCC category
+      1A1a), other energy conversion (e.g. refineries, synfuel production, solid fuel
+      processing, IPCC category 1Ab, 1Ac), incl. pipeline transportation (IPCC category
+      1A3ei), fugitive emissions from fuels (IPCC category 1B) and emissions from
+      carbon dioxide transport and storage (IPCC category 1C)'
+    unit: Mt BC/yr
+    category: Emissions
+- Emissions|BC|Industrial Processes:
+    description: BC emissions from industrial processes
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|BC|Other:
+    description: black carbon emissions from other sources (please provide a definition
+      of other sources in this category in the 'comments' tab)
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|BC|Waste:
+    description:
+    unit: Mt BC/yr
+    core: true
+    category: Emissions
+- Emissions|C2F6:
+    description: C2F6 emissions
+    unit: kt C2F6/yr
+    category: Emissions
+- Emissions|C2F6|AFOLU:
+    description: C2F6 emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: kt C2F6/yr
+    core: true
+    category: Emissions
+- Emissions|C2F6|AFOLU|Agriculture:
+    description: C2F6|AFOLU|Agric emissions from agriculture
+    unit: kt C2F6/yr
+    category: Emissions
+- Emissions|C2F6|AFOLU|Land:
+    description: C2F6|AFOL emissions from forestry and other land use
+    unit: kt C2F6/yr
+    category: Emissions
+- Emissions|C2F6|Energy:
+    description: C2F6| emissions from energy sector
+    unit: kt C2F6/yr
+    core: true
+    category: Emissions
+- Emissions|C2F6|Industrial Processes:
+    description: C2F6 emissions from industrial processes
+    unit: kt C2F6/yr
+    core: true
+    category: Emissions
+- Emissions|C2F6|Waste:
+    description: C2F6 emissions from waste sector
+    unit: kt C2F6/yr
+    core: true
+    category: Emissions
+- Emissions|CF4:
+    description: CF4 emissions
+    unit: kt CF4/yr
+    category: Emissions
+- Emissions|CF4|AFOLU:
+    description: CF4 emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: kt CF4/yr
+    core: true
+    category: Emissions
+- Emissions|CF4|AFOLU|Agriculture:
+    description: CF4|AFOLU|Agric emissions from agriculture
+    unit: kt CF4/yr
+    category: Emissions
+- Emissions|CF4|AFOLU|Land:
+    description: CF4|AFOL emissions from forestry and other land use
+    unit: kt CF4/yr
+    category: Emissions
+- Emissions|CF4|Energy:
+    description: CF4| emissions from forestry and other land use
+    unit: kt CF4/yr
+    core: true
+    category: Emissions
+- Emissions|CF4|Industrial Processes:
+    description: CF4 emissions from industrial processes
+    unit: kt CF4/yr
+    core: true
+    category: Emissions
+- Emissions|CF4|Waste:
+    description:
+    unit: kt CF4/yr
+    core: true
+    category: Emissions
+- Emissions|CFC:
+    description:
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|CFC|AFOLU:
+    description: CFC emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|CFC|AFOLU|Agriculture:
+    description: CFC|AFOLU|Agric emissions from agriculture
+    unit: Mt CO2-equiv/yr
+    category: Emissions
+- Emissions|CFC|AFOLU|Land:
+    description: CFC|AFOL emissions from forestry and other land use
+    unit: Mt CO2-equiv/yr
+    category: Emissions
+- Emissions|CFC|Energy:
+    description: CFC| emissions from forestry and other land use
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|CFC|Industrial Processes:
+    description: CFC emissions from industrial processes
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|CFC|Waste:
+    description:
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|CH4:
+    description: total CH4 emissions
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CH4|AFOLU:
+    description: CH4 emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CH4|AFOLU|Agriculture:
+    description: CH4 emissions from Livestock in the agriculture sector
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Agriculture|Livestock:
+    description: CH4 emissions from Livestock in the agriculture sector
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Agriculture|Livestock|Enteric Fermentation:
+    description: CH4 emissions from enteric fermentation in  Livestock in the agriculture
+      sector
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Agriculture|Livestock|Manure Management:
+    description: CH4 emissions from processes involving manure (waste) management  in
+      Livestock in the agriculture sector
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Agriculture|Rice:
+    description: CH4 emissions from rice cultivation in the agriculture sector
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Land:
+    description: CH4|AFOL emissions from forestry and other land use
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy:
+    description: CH4 emissions from energy use on supply and demand side, including
+      fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Industry:
+    description: CH4 emissions from fuel combustion in industry (IPCC category 1A2)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Residential and Commercial:
+    description: CH4 emissions from fuel combustion in residential, commercial, institutional
+      sectors (IPCC category 1A4a, 1A4b)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'CH4 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Residential and Commercial|Residential:
+    description: 'CH4 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Transportation:
+    description: CH4 emissions from fuel combustion in transportation sector (IPCC
+      category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Transportation|Freight:
+    description: CH4 emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Demand|Transportation|Passenger:
+    description: CH4 emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Energy|Supply:
+    description: 'CH4 emissions from fuel combustion and fugitive emissions from fuels:
+      electricity and heat production and distribution (IPCC category 1A1a), other
+      energy conversion (e.g. refineries, synfuel production, solid fuel processing,
+      IPCC category 1Ab, 1Ac), incl. pipeline transportation (IPCC category 1A3ei),
+      fugitive emissions from fuels (IPCC category 1B) and emissions from carbon dioxide
+      transport and storage (IPCC category 1C)'
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes:
+    description: CH4 emissions from industrial processes
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Chemicals:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the chemicals sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Chemicals|Ammonia:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the ammonia sector (NH3) (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Chemicals|High value chemicals:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the high value chemicals sector (e.g. ethylene, propylene and BTX (benzene,
+      toluene and xylene)) (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Chemicals|Methanol:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the methanol sector (CH3OH) (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Chemicals|Other:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other chemicals, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Non-ferrous metals:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the non-ferrous metals sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Other:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Plastics:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the plastics sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Pulp and Paper:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the pulp and paper sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Industrial Processes|Steel:
+    description: CH4 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the steel sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|CH4|Other:
+    description: CH4 emissions from other sources (please provide a definition of
+      other sources in this category in the 'comments' tab)
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CH4|Waste:
+    description:
+    unit: Mt CH4/yr
+    core: true
+    category: Emissions
+- Emissions|CO:
+    description: total CO emissions
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO|AFOLU:
+    description: Land Use based carbon monoxide emissions
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO|AFOLU|Agriculture:
+    description: CO|AFOLU|Agric emissions from agriculture
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|AFOLU|Land:
+    description: CO|AFOL emissions from forestry and other land use
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy:
+    description: carbon monoxide emissions from energy use on supply and demand side,
+      including fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO|Energy|Demand|Industry:
+    description: carbon monoxide emissions from Combustion in industry (IPCC 1A2)
+      and industrial processes (IPCC 2C1-2C5)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Residential and Commercial:
+    description: carbon monoxide emissions from Combustion in Residential and Commercial/Institutional
+      Sectors (IPCC 1A4A, 1A4B)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'CO emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Residential and Commercial|Residential:
+    description: 'CO emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Transportation:
+    description: carbon monoxide emissions from Combustion in Transportation Sector
+      (IPCC category 1A3)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Transportation|Freight:
+    description: CO emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Demand|Transportation|Passenger:
+    description: CO emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Energy|Supply:
+    description: carbon monoxide emissions from Extraction and Distribution of Fossil
+      Fuels (including fugitive emissions, IPCC category 1B); Electricity production
+      and distribution, district heating and other energy conversion (e.g. refineries,
+      synfuel production)
+    unit: Mt CO/yr
+    category: Emissions
+- Emissions|CO|Industrial Processes:
+    description: CO emissions from industrial processes
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO|Other:
+    description: carbon monoxide emissions from other energy end-use sectors that
+      do not fit to any other category (please provide a definition of the sectors
+      in this category in the 'comments' tab)
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO|Waste:
+    description:
+    unit: Mt CO/yr
+    core: true
+    category: Emissions
+- Emissions|CO2:
+    description: total net-CO2 emissions from all sources
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|AFOLU:
+    description: CO2 emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|AFOLU|Agriculture:
+    description: CO2|AFOLU|Agric emissions from agriculture
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|AFOLU|Land:
+    description: CO2|AFOL emissions from forestry and other land use
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy:
+    description: CO2 emissions from energy use on supply and demand side (IPCC category
+      1A, 1B)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy and Industrial Processes:
+    description: CO2 emissions from energy use on supply and demand side (IPCC category
+      1A, 1B) and from industrial processes (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand:
+    description: CO2 emissions from fuel combustion in industry (IPCC category 1A2),
+      residential, commercial, institutional sectors and agriculture, forestry, fishing
+      (AFOFI) (IPCC category 1A4a, 1A4b, 1A4c), and transportation sector (IPCC category
+      1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand|AFOFI:
+    description: CO2 emissions from fuel combustion in agriculture, forestry, fishing
+      (AFOFI) (IPCC category 1A4c)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry:
+    description: CO2 emissions from fuel combustion in industry (IPCC category 1A2)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Cement:
+    description: CO2 emissions from fuel combustion in the Cement industry sector
+      (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Chemicals:
+    description: CO2 emissions from fuel combustion in the Chemicals industry sector
+      (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Chemicals|Ammonia:
+    description: CO2 emissions from fuel combustion in the Chemicals|Ammonia industry
+      sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Chemicals|High value chemicals:
+    description: CO2 emissions from fuel combustion in the Chemicals|High value chemicals
+      industry sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Chemicals|Methanol:
+    description: CO2 emissions from fuel combustion in the Chemicals|Methanol industry
+      sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Chemicals|Other:
+    description: CO2 emissions from fuel combustion in the Chemicals|Other industry
+      sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Non-ferrous metals:
+    description: CO2 emissions from fuel combustion in the Non-ferrous metals industry
+      sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Other:
+    description: CO2 emissions from fuel combustion in the Other industry sector (IPCC
+      category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Plastics:
+    description: CO2 emissions from fuel combustion in the Plastics industry sector
+      (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Pulp and Paper:
+    description: CO2 emissions from fuel combustion in the Pulp and Paper industry
+      sector (IPCC category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Industry|Steel:
+    description: CO2 emissions from fuel combustion in the Steel industry sector (IPCC
+      category 1A2)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Other Sector:
+    description: CO2 emissions from fuel combustion in other energy supply sectors
+      (please provide a definition of other sources in this category in the 'comments'
+      tab)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial:
+    description: CO2 emissions from fuel combustion in residential, commercial, institutional
+      sectors (IPCC category 1A4a, 1A4b)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial:
+    description: CO2 emissions from fuel combustion in commercial and institutional
+      sectors (IPCC category 1A4a)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Education:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in education Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Health:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in health Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Heating:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) for heating
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Heating|Cooking:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) for heating|cooking
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Heating|Space:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) for heating|space
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Heating|Water:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) for heating|water
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Hotels:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in hotels Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Industrial & trade:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in industrial & trade Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Offices:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in offices Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial|Restaurant:
+    description: CO2 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) in restaurant Residential and Commercial
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential:
+    description: CO2 emissions from fuel combustion in residential (IPCC category
+      1A4b)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Heating:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) for heating
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Heating|Cooking:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) for heating|cooking
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Heating|Space:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) for heating|space
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Heating|Water:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) for heating|water
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Multi-family:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) in multi-family housing
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Single family:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) in single family housing
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Residential and Commercial|Residential|Slum:
+    description: CO2 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) in slum housing
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation:
+    description: CO2 emissions from fuel combustion in transportation sector (IPCC
+      category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Aviation:
+    description: carbon dioxide emissions from transport by aviation mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Aviation|Freight:
+    description: carbon dioxide emissions from transport by freight aviation mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Aviation|Passenger:
+    description: carbon dioxide emissions from transport by passenger aviation mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Freight:
+    description: CO2 emissions from fuel combustion in freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Maritime:
+    description: carbon dioxide emissions from transport by maritime mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Maritime|Freight:
+    description: carbon dioxide emissions from transport by freight maritime mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Maritime|Passenger:
+    description: carbon dioxide emissions from transport by passenger maritime mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Passenger:
+    description: CO2 emissions from fuel combustion in passenger transportation sector
+      (part of IPCC category 1A3)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Rail:
+    description: carbon dioxide emissions from transport by rail mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Rail|Freight:
+    description: carbon dioxide emissions from transport by freight rail mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Rail|Passenger:
+    description: carbon dioxide emissions from transport by passenger rail mode
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road:
+    description: 'carbon dioxide emissions from road transport vehicles '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road|Freight:
+    description: 'carbon dioxide emissions from road freight transport vehicles '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road|Passenger:
+    description: 'carbon dioxide emissions from road transport passenger vehicles '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road|Passenger|2W&3W:
+    description: 'carbon dioxide emissions from road transport passenger 2W&3W vehicles '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road|Passenger|Bus:
+    description: 'carbon dioxide emissions from road transport passenger Buses '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Demand|Transportation|Road|Passenger|LDV:
+    description: 'carbon dioxide emissions from road transport passenger LDVs '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Supply:
+    description: 'CO2 emissions from fuel combustion and fugitive emissions from fuels:
+      electricity and heat production and distribution (IPCC category 1A1a), other
+      energy conversion (e.g. refineries, synfuel production, solid fuel processing,
+      IPCC category 1Ab, 1Ac), incl. pipeline transportation (IPCC category 1A3ei),
+      fugitive emissions from fuels (IPCC category 1B) and emissions from carbon dioxide
+      transport and storage (IPCC category 1C)'
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Electricity:
+    description: CO2 emissions from electricity and CHP production and distribution
+      (IPCC category 1A1ai and 1A1aii)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Gases:
+    description: 'CO2 emissions from fuel combustion and fugitive emissions from fuels:
+      gaseous fuel extraction and processing (e.g. natural gas extraction production,
+      IPCC category 1B2b, parts of 1A1cii)'
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Heat:
+    description: CO2 emissions from heat production and distribution (IPCC category
+      1A1aiii)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Liquids:
+    description: 'CO2 emissions from fuel combustion and fugitive emissions from fuels:
+      liquid fuel extraction and processing (e.g. oil production, refineries, synfuel
+      production, IPCC category 1A1b, parts of 1A1cii, 1B2a)'
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Other Sector:
+    description: CO2 emissions from fuel combustion in other energy supply sectors
+      (please provide a definition of other sources in this category in the 'comments'
+      tab)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Energy|Supply|Solids:
+    description: 'CO2 emissions from fuel combustion and fugitive emissions from fuels:
+      solid fuel extraction and processing (IPCC category 1A1ci, parts of 1A1cii,
+      1B1)'
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Industrial Processes:
+    description: CO2 emissions from industrial processes (IPCC categories 2A, B, C,
+      E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Cement:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the cement sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Chemicals:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the chemicals sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Chemicals|Ammonia:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the ammonia sector (NH3) (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Chemicals|High value chemicals:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the high value chemicals sector (e.g. ethylene, propylene and BTX (benzene,
+      toluene and xylene)) (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Chemicals|Methanol:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the methanol sector (CH3OH) (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Chemicals|Other:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other chemicals, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Non-ferrous metals:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the non-ferrous metals sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Other:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Plastics:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the plastics sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Pulp and Paper:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the pulp and paper sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Industrial Processes|Steel:
+    description: CO2 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the steel sector  (IPCC categories 2A, B, C, E)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Other:
+    description: CO2 emissions from other sources (please provide a definition of
+      other sources in this category in the 'comments' tab)
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|Waste:
+    description:
+    unit: Mt CO2/yr
+    core: true
+    category: Emissions
+- Emissions|F-Gases:
+    description: total F-gas emissions, including sulfur hexafluoride (SF6), hydrofluorocarbons
+      (HFCs), perfluorocarbons (PFCs) (preferably use 100-year GWPs from AR4 for aggregation
+      of different F-gases; in case other GWPs have been used, please document this
+      on the 'comments' tab)
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|HFC:
+    description: total emissions of hydrofluorocarbons (HFCs), provided as aggregate
+      HFC134a-equivalents
+    unit: kt HFC134a-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|AFOLU:
+    description: HFC emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|AFOLU|Agriculture:
+    description: HFC|AFOLU|Agric emissions from agriculture
+    unit: Mt CO2-equiv/yr
+    category: Emissions
+- Emissions|HFC|AFOLU|Land:
+    description: HFC|AFOL emissions from forestry and other land use
+    unit: Mt CO2-equiv/yr
+    category: Emissions
+- Emissions|HFC|Energy:
+    description: HFC| emissions from forestry and other land use
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC125:
+    description: total emissions of HFC125
+    unit: kt HFC125/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC134a:
+    description: total emissions of HFC134a
+    unit: kt HFC134a/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC143a:
+    description: total emissions of HFC143a
+    unit: kt HFC143a/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC227ea:
+    description: total emissions of HFC227ea
+    unit: kt HFC227ea/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC23:
+    description: total emissions of HFC23
+    unit: kt HFC23/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC245fa:
+    description: total emissions of HFC245fa
+    unit: kt HFC245fa/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC32:
+    description: total emissions of HFC32
+    unit: kt HFC32/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|HFC43-10:
+    description: total emissions of HFC343-10
+    unit: kt HFC43-10/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|Industrial Processes:
+    description: HFC emissions from industrial processes
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|HFC|Industrial Processes|Chemicals:
+    description: HFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the chemicals sector  (IPCC categories 2A, B, C, E)
+    unit: kt HFC134a-equiv/yr
+    category: Emissions
+- Emissions|HFC|Industrial Processes|Other:
+    description: HFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: kt HFC134a-equiv/yr
+    category: Emissions
+- Emissions|HFC|Waste:
+    description:
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|Kyoto Gases:
+    description: total Kyoto GHG emissions, including CO2, CH4, N2O and F-gases (preferably
+      use 100-year GWPs from AR4 for aggregation of different gases; in case other
+      GWPs have been used, please document this on the 'comments' tab)
+    unit: Mt CO2-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|N2O:
+    description: total N2O emissions
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|N2O|AFOLU:
+    description: N2O emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|N2O|AFOLU|Agriculture:
+    description: N2O|AFOLU|Agric emissions from agriculture
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|AFOLU|Agriculture|Livestock|Manure Management:
+    description: N2O  emissions from livestock manure management in the agriculture
+      sector
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|AFOLU|Agriculture|Managed Soils:
+    description: N2O  emissions from soil management practices in the agriculture
+      sector
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|AFOLU|Land:
+    description: N2O|AFOL emissions from forestry and other land use
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Energy:
+    description: N2O emissions from energy use on supply and demand side, including
+      fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|N2O|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'N2O emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Energy|Demand|Residential and Commercial|Residential:
+    description: 'N2O emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Energy|Demand|Transportation:
+    description: N2O emissions from fuel combustion in the transportation sector (part
+      of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Energy|Demand|Transportation|Freight:
+    description: N2O emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Energy|Demand|Transportation|Passenger:
+    description: N2O emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Industrial Processes:
+    description: N2O emissions from industrial processes
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|N2O|Industrial Processes|Chemicals:
+    description: N2O emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the chemicals sector  (IPCC categories 2A, B, C, E)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Industrial Processes|Non-ferrous metals:
+    description: N2O emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the non-ferrous metals sector  (IPCC categories 2A, B, C, E)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Industrial Processes|Other:
+    description: N2O emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Industrial Processes|Plastics:
+    description: N2O emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the plastics sector  (IPCC categories 2A, B, C, E)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Industrial Processes|Steel:
+    description: N2O emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the steel sector  (IPCC categories 2A, B, C, E)
+    unit: kt N2O/yr
+    category: Emissions
+- Emissions|N2O|Other:
+    description: N2O emissions from other sources (please provide a definition of
+      other sources in this category in the 'comments' tab)
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|N2O|Waste:
+    description:
+    unit: kt N2O/yr
+    core: true
+    category: Emissions
+- Emissions|NH3:
+    description: total ammonia (NH3) emissions
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NH3|AFOLU:
+    description: land use based ammonia Emissions
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NH3|AFOLU|Agriculture:
+    description: NH3|AFOLU|Agric emissions from agriculture
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|AFOLU|Land:
+    description: NH3|AFOL emissions from forestry and other land use
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy:
+    description: ammonia emissions from energy use on supply and demand side, including
+      fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Industry:
+    description: ammonia Emissions from Combustion in industry (IPCC 1A2) and industrial
+      processes (IPCC 2C1-2C5)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Residential and Commercial:
+    description: ammonia Emissions from Combustion in Residential and Commercial/Institutional
+      Sectors (IPCC 1A4A, 1A4B)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'NH3 emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Residential and Commercial|Residential:
+    description: 'NH3 emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Transportation:
+    description: ammonia Emissions from Combustion in Transportation Sector (IPCC
+      category 1A3)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Transportation|Freight:
+    description: NH3 emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Demand|Transportation|Passenger:
+    description: NH3 emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Energy|Supply:
+    description: ammonia Emissions from Extraction and Distribution of Fossil Fuels
+      (including fugitive Emissions, IPCC category 1B); Electricity production and
+      distribution, district heating and other energy conversion (e.g. refineries,
+      synfuel production)
+    unit: Mt NH3/yr
+    category: Emissions
+- Emissions|NH3|Industrial Processes:
+    description: NH3 emissions from industrial processes
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NH3|Other:
+    description: ammonia Emissions from other energy end-use sectors that do not fit
+      to any other category (please provide a definition of the sectors in this category
+      in the 'comments' tab)
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NH3|Waste:
+    description:
+    unit: Mt NH3/yr
+    core: true
+    category: Emissions
+- Emissions|NOx:
+    description: total NOx emissions
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|NOx|AFOLU:
+    description: NOx emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|NOx|AFOLU|Agriculture:
+    description: NOx|AFOLU|Agric emissions from agriculture
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|AFOLU|Land:
+    description: NOx|AFOL emissions from forestry and other land use
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy:
+    description: NOx emissions from energy use on supply and demand side, including
+      fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Industry:
+    description: NOx emissions from fuel combustion in industry (IPCC category 1A2)
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Residential and Commercial:
+    description: NOx emissions from fuel combustion in residential, commercial, institutional
+      sectors (IPCC category 1A4a, 1A4b)
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'NOx emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Residential and Commercial|Residential:
+    description: 'NOx emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Transportation:
+    description: NOx emissions from fuel combustion in transportation sector (IPCC
+      category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Transportation|Freight:
+    description: NOx emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Demand|Transportation|Passenger:
+    description: NOx emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Energy|Supply:
+    description: 'NOx emissions from fuel combustion and fugitive emissions from fuels:
+      electricity and heat production and distribution (IPCC category 1A1a), other
+      energy conversion (e.g. refineries, synfuel production, solid fuel processing,
+      IPCC category 1Ab, 1Ac), incl. pipeline transportation (IPCC category 1A3ei),
+      fugitive emissions from fuels (IPCC category 1B) and emissions from carbon dioxide
+      transport and storage (IPCC category 1C)'
+    unit: Mt NO2/yr
+    category: Emissions
+- Emissions|NOx|Industrial Processes:
+    description: NOx emissions from industrial processes
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|NOx|Other:
+    description: NOx emissions from other sources (please provide a definition of
+      other sources in this category in the 'comments' tab)
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|NOx|Waste:
+    description:
+    unit: Mt NO2/yr
+    core: true
+    category: Emissions
+- Emissions|OC:
+    description: total organic carbon emissions
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|OC|AFOLU:
+    description: organic carbon emissions from agriculture, forestry and other land
+      use (IPCC category 3)
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|OC|AFOLU|Agriculture:
+    description: OC|AFOLU|Agric emissions from agriculture
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|AFOLU|Land:
+    description: OC|AFOL emissions from forestry and other land use
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy:
+    description: organic carbon emissions from energy use on supply and demand side,
+      including fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|OC|Energy|Demand|Industry:
+    description: organic carbon emissions from fuel combustion in industry (IPCC category
+      1A2)
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Residential and Commercial:
+    description: organic carbon emissions from fuel combustion in residential, commercial,
+      institutional sectors (IPCC category 1A4a, 1A4b)
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'OC emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Residential and Commercial|Residential:
+    description: 'OC emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Transportation:
+    description: organic carbon emissions from fuel combustion in transportation sector
+      (IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Transportation|Freight:
+    description: OC emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy|Demand|Transportation|Passenger:
+    description: OC emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Energy|Supply:
+    description: 'organic carbon emissions from fuel combustion and fugitive emissions
+      from fuels: electricity and heat production and distribution (IPCC category
+      1A1a), other energy conversion (e.g. refineries, synfuel production, solid fuel
+      prorganic carbonessing, IPCC category 1Ab, 1Ac), incl. pipeline transportation
+      (IPCC category 1A3ei), fugitive emissions from fuels (IPCC category 1B) and
+      emissions from carbon dioxide transport and storage (IPCC category 1C)'
+    unit: Mt OC/yr
+    category: Emissions
+- Emissions|OC|Industrial Processes:
+    description: OC emissions from industrial processes
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|OC|Other:
+    description: organic carbon emissions from other sources (please provide a definition
+      of other sources in this category in the 'comments' tab)
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|OC|Waste:
+    description:
+    unit: Mt OC/yr
+    core: true
+    category: Emissions
+- Emissions|PFC:
+    description: total emissions of perfluorocarbons (PFCs), provided as aggregate
+      CF4-equivalents
+    unit: kt CF4-equiv/yr
+    core: true
+    category: Emissions
+- Emissions|PFC|C2F6:
+    description: total emissions of C2F6
+    unit: kt C2F6/yr
+    core: true
+    category: Emissions
+- Emissions|PFC|C6F14:
+    description: total emissions of CF6F14
+    unit: kt C6F14/yr
+    core: true
+    category: Emissions
+- Emissions|PFC|CF4:
+    description: total emissions of CF4
+    unit: kt CF4/yr
+    core: true
+    category: Emissions
+- Emissions|PFC|Industrial Processes:
+    description: 'PFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) '
+    unit: kt CF4-equiv/yr
+    category: Emissions
+- Emissions|PFC|Industrial Processes|Non-ferrous metals:
+    description: PFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the non-ferrous metals sector  (IPCC categories 2A, B, C, E)
+    unit: kt CF4-equiv/yr
+    category: Emissions
+- Emissions|PFC|Industrial Processes|Other:
+    description: PFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: kt CF4-equiv/yr
+    category: Emissions
+- Emissions|PFC|Industrial Processes|Steel:
+    description: PFC emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the steel sector  (IPCC categories 2A, B, C, E)
+    unit: kt CF4-equiv/yr
+    category: Emissions
+- Emissions|SF6:
+    description: total emissions of sulfur hexafluoride (SF6)
+    unit: kt SF6/yr
+    core: true
+    category: Emissions
+- Emissions|SF6|AFOLU:
+    description: SF6 emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: kt SF6/yr
+    core: true
+    category: Emissions
+- Emissions|SF6|AFOLU|Agriculture:
+    description: SF6|AFOLU|Agric emissions from agriculture
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|AFOLU|Land:
+    description: SF6|AFOL emissions from forestry and other land use
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|Energy:
+    description: SF6| emissions from forestry and other land use
+    unit: kt SF6/yr
+    core: true
+    category: Emissions
+- Emissions|SF6|Industrial Processes:
+    description: SF6 emissions from industrial processes
+    unit: kt SF6/yr
+    core: true
+    category: Emissions
+- Emissions|SF6|Industrial Processes|Chemicals:
+    description: SF6 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the chemicals sector  (IPCC categories 2A, B, C, E)
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|Industrial Processes|Non-ferrous metals:
+    description: SF6 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the non-ferrous metals sector  (IPCC categories 2A, B, C, E)
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|Industrial Processes|Other:
+    description: SF6 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the other sector (All other production, please specify in comments tab)
+      (IPCC categories 2A, B, C, E)
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|Industrial Processes|Steel:
+    description: SF6 emissions from industrial processes (excl. fuel combustion IPCC
+      1A2) in the steel sector  (IPCC categories 2A, B, C, E)
+    unit: kt SF6/yr
+    category: Emissions
+- Emissions|SF6|Waste:
+    description:
+    unit: kt SF6/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur:
+    description: total sulfur (SO2) emissions
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur|AFOLU:
+    description: sulfur emissions from agriculture, forestry and other land use (IPCC
+      category 3)
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur|AFOLU|Agriculture:
+    description: Sulfur|AFOLU|Agric emissions from agriculture
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|AFOLU|Land:
+    description: Sulfur|AFOL emissions from forestry and other land use
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy:
+    description: sulfur emissions from energy use on supply and demand side, including
+      fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Industry:
+    description: sulfur emissions from fuel combustion in industry (IPCC category
+      1A2)
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Residential and Commercial:
+    description: sulfur emissions from fuel combustion in residential, commercial,
+      institutional sectors (IPCC category 1A4a, 1A4b)
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'Sulfur emissions from fuel combustion in commercial sector (IPCC
+      category 1A4a, 1A4b) '
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Residential and Commercial|Residential:
+    description: 'Sulfur emissions from fuel combustion in residential sector (IPCC
+      category 1A4a, 1A4b) '
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Transportation:
+    description: sulfur emissions from fuel combustion in transportation sector (IPCC
+      category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Transportation|Freight:
+    description: Sulfur emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Demand|Transportation|Passenger:
+    description: Sulfur emissions from fuel combustion in Passenger transportation
+      sector (part of IPCC category 1A3), excluding pipeline emissions (IPCC category
+      1A3ei)
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Energy|Supply:
+    description: 'sulfur emissions from fuel combustion and fugitive emissions from
+      fuels: electricity and heat production and distribution (IPCC category 1A1a),
+      other energy conversion (e.g. refineries, synfuel production, solid fuel processing,
+      IPCC category 1Ab, 1Ac), incl. pipeline transportation (IPCC category 1A3ei),
+      fugitive emissions from fuels (IPCC category 1B) and emissions from carbon dioxide
+      transport and storage (IPCC category 1C)'
+    unit: Mt SO2/yr
+    category: Emissions
+- Emissions|Sulfur|Industrial Processes:
+    description: Sulfur emissions from industrial processes
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur|Other:
+    description: sulfur emissions from other sources (please provide a definition
+      of other sources in this category in the 'comments' tab)
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|Sulfur|Waste:
+    description:
+    unit: Mt SO2/yr
+    core: true
+    category: Emissions
+- Emissions|VOC:
+    description: total volatile organic compound (VOC) emissions
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|VOC|AFOLU:
+    description: land use based volatile organic compounds Emissions
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|VOC|AFOLU|Agriculture:
+    description: VOC|AFOLU|Agric emissions from agriculture
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|AFOLU|Land:
+    description: VOC|AFOL emissions from forestry and other land use
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy:
+    description: volatile organic compounds emissions from energy use on supply and
+      demand side, including fugitive emissions from fuels (IPCC category 1A, 1B)
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Industry:
+    description: volatile organic compounds Emissions from Combustion in industry
+      (IPCC 1A2) and industrial processes (IPCC 2C1-2C5)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Residential and Commercial:
+    description: volatile organic compounds Emissions from Combustion in Residential
+      and Commercial/Institutional Sectors (IPCC 1A4A, 1A4B)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Residential and Commercial|Commercial:
+    description: 'VOC emissions from fuel combustion in commercial sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Residential and Commercial|Residential:
+    description: 'VOC emissions from fuel combustion in residential sector (IPCC category
+      1A4a, 1A4b) '
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Transportation:
+    description: volatile organic compounds Emissions from Combustion in Transportation
+      Sector (IPCC category 1A3)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Transportation|Freight:
+    description: VOC emissions from fuel combustion in Freight transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Demand|Transportation|Passenger:
+    description: VOC emissions from fuel combustion in Passenger transportation sector
+      (part of IPCC category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Energy|Supply:
+    description: volatile organic compounds Emissions from Extraction and Distribution
+      of Fossil Fuels (including fugitive Emissions, IPCC category 1B); Electricity
+      production and distribution, district heating and other energy conversion (e.g.
+      refineries, synfuel production)
+    unit: Mt VOC/yr
+    category: Emissions
+- Emissions|VOC|Industrial Processes:
+    description: VOC emissions from industrial processes
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|VOC|Other:
+    description: volatile organic compounds Emissions from other energy end-use sectors
+      that do not fit to any other category (please provide a definition of the sectors
+      in this category in the 'comments' tab)
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|VOC|Waste:
+    description:
+    unit: Mt VOC/yr
+    core: true
+    category: Emissions
+- Emissions|CO2|AFOLU|Wetlands|Peatlands:
+    description: CO2 emissions from managed peatlands (drained and rewetted)
+    unit: Mt CO2/yr
+    category: Emissions
+- Emissions|CH4|AFOLU|Wetlands|Peatlands:
+    description: CH4 emissions from managed peatlands (drained and rewetted)
+    unit: Mt CH4/yr
+    category: Emissions
+- Emissions|N2O|AFOLU|Wetlands|Peatlands:
+    description: N2O emissions from managed peatlands (drained and rewetted)
+    unit: kt N2O/yr
+    category: Emissions

@@ -1,0 +1,961 @@
+- Final Energy|Residential and Commercial|Commercial|Water|Desalination:
+    description: Energy consumption for desalination water
+    unit: EJ/yr
+    category: Water
+- Final Energy|Residential and Commercial|Commercial|Water|Groundwater Extraction:
+    description: Energy consumption for groundwater extraction
+    unit: EJ/yr
+    category: Water
+- Final Energy|Residential and Commercial|Commercial|Water|Surface Water Extraction:
+    description: Energy consumption for surface water extraction
+    unit: EJ/yr
+    category: Water
+- Final Energy|Residential and Commercial|Commercial|Water|Transfer:
+    description: Energy consumption for water transfers
+    unit: EJ/yr
+    category: Water
+- Freshwater|Environmental Flow:
+    description: water allocated to environmental flow in rivers and groundwater systems
+    unit: km3/yr
+    category: Water
+- Improvement|Efficiency|Irrigation:
+    description: improvements in irrigation water use efficiency per year
+    unit: '%/yr'
+    weight: Water Consumption|Irrigation
+    category: Water
+- Population|Drinking Water Access:
+    description: population with access to improved drinking water sources (by income
+      level)
+    unit: million
+    category: Water
+- Population|Sanitation Access:
+    description: population with access to improved sanitation (by income level)
+    unit: million
+    category: Water
+- Water Consumption:
+    description: total water consumption
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity:
+    description: total water consumption for net electricity production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Biomass:
+    description: water consumption for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste, biogas
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Biomass|w/ CCS:
+    description: water consumption for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste with a CO2
+      capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Biomass|w/o CCS:
+    description: water consumption for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Coal:
+    description: water consumption for net electricity production from coal
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Coal|w/ CCS:
+    description: water consumption for net electricity production from coal with a
+      CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Coal|w/o CCS:
+    description: water consumption for net electricity production from coal with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Cooling Pond:
+    description: water consumption for net electricity production using pond cooling
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Dry Cooling:
+    description: water consumption for net electricity production using dry cooling
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Fossil:
+    description: water consumption for net electricity production from coal, gas,
+      conventional and unconventional oil
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Fossil|w/ CCS:
+    description: water consumption for net electricity production from coal, gas,
+      conventional and unconventional oil used in combination with CCS
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Fossil|w/o CCS:
+    description: water consumption for  net electricity production from coal, gas,
+      conventional and unconventional oil without CCS
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Gas:
+    description: water consumption for net electricity production from natural gas
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Gas|w/ CCS:
+    description: water consumption for net electricity production from natural gas
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Gas|w/o CCS:
+    description: water consumption for net electricity production from natural gas
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Geothermal:
+    description: water consumption for net electricity production from all sources
+      of geothermal energy (e.g., hydrothermal, enhanced geothermal systems)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Hydro:
+    description: water consumption for net hydroelectric production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Non-Biomass Renewables:
+    description: water consumption for net electricity production from hydro, wind,
+      solar, geothermal, ocean, and other renewable sources (excluding bioenergy).
+      This is a summary category for all the non-biomass renewables.
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Nuclear:
+    description: water consumption for net electricity production from nuclear energy
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Oil:
+    description: water consumption for net electricity production from refined liquids
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Oil|w/ CCS:
+    description: water consumption for net electricity production from refined liquids
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Oil|w/o CCS:
+    description: water consumption for net electricity production from refined liquids
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Once Through:
+    description: water consumption for net electricity production using once through
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Other:
+    description: water consumption for net electricity production from sources that
+      do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Sea Cooling:
+    description: water consumption for net electricity production using sea water
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Solar:
+    description: water consumption for net electricity production from all sources
+      of solar energy (e.g., PV and concentrating solar power)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Solar|CSP:
+    description: water consumption for net electricity production from concentrating
+      solar power (CSP)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Solar|PV:
+    description: water consumption for net electricity production from solar photovoltaics
+      (PV)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Wet Tower:
+    description: water consumption for net electricity production using wet tower
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Consumption|Electricity|Wind:
+    description: water consumption for net electricity production from wind energy
+      (on- and offshore)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Extraction:
+    description: total water consumption for extraction
+    unit: km3/yr
+    category: Water
+- Water Consumption|Extraction|Coal:
+    description: water consumption for coal extraction
+    unit: km3/yr
+    category: Water
+- Water Consumption|Extraction|Gas:
+    description: water consumption for gas extraction
+    unit: km3/yr
+    category: Water
+- Water Consumption|Extraction|Oil:
+    description: water consumption for oil extraction
+    unit: km3/yr
+    category: Water
+- Water Consumption|Extraction|Uranium:
+    description: water consumption for uranium extraction
+    unit: km3/yr
+    category: Water
+- Water Consumption|Gases:
+    description: total water consumption for gas production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Gases|Biomass:
+    description: water consumption for gas production from biomass
+    unit: km3/yr
+    category: Water
+- Water Consumption|Gases|Coal:
+    description: water consumption for gas production from coal
+    unit: km3/yr
+    category: Water
+- Water Consumption|Gases|Natural Gas:
+    description: water consumption for gas production from natural gas
+    unit: km3/yr
+    category: Water
+- Water Consumption|Gases|Other:
+    description: water consumption for gas production from other
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat:
+    description: total water consumption for heat generation
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Biomass:
+    description: water consumption for heat generation from biomass
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Coal:
+    description: water consumption for heat generation from coal
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Gas:
+    description: water consumption for heat generation from gas
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Geothermal:
+    description: water consumption for heat generation from from all sources of geothermal
+      energy (e.g., hydrothermal, enhanced geothermal systems)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Nuclear:
+    description: water consumption for heat generation from nuclear
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Oil:
+    description: water consumption for heat generation from oil
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Other:
+    description: water consumption for heat generation from other sources
+    unit: km3/yr
+    category: Water
+- Water Consumption|Heat|Solar:
+    description: water consumption for heat generation from solar
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen:
+    description: total water consumption for hydrogen production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Biomass:
+    description: water consumption for hydrogen production from biomass
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Biomass|w/ CCS:
+    description: water consumption from hydrogen production from biomass with a CO2
+      capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Biomass|w/o CCS:
+    description: water consumption for hydrogen production from biomass with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Coal:
+    description: water consumption for hydrogen production from coal
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Coal|w/ CCS:
+    description: water consumption for hydrogen production from coal with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Coal|w/o CCS:
+    description: water consumption for hydrogen production from coal with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Electricity:
+    description: water consumption for hydrogen production from electricity
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Fossil:
+    description: water consumption for hydrogen production from fossil fuels
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Fossil|w/ CCS:
+    description: water consumption for hydrogen production from fossil fuels with
+      a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Fossil|w/o CCS:
+    description: water consumption for hydrogen production from fossil fuels with
+      freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Gas:
+    description: water consumption for hydrogen production from gas
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Gas|w/ CCS:
+    description: water consumption for hydrogen production from gas with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Gas|w/o CCS:
+    description: water consumption for hydrogen production from gas with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Oil:
+    description: water consumption for hydrogen production from oil
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Other:
+    description: water consumption for hydrogen production from other sources
+    unit: km3/yr
+    category: Water
+- Water Consumption|Hydrogen|Solar:
+    description: water consumption for hydrogen production from solar
+    unit: km3/yr
+    category: Water
+- Water Consumption|Industrial Water:
+    description: water consumption for the industrial sector
+    unit: km3/yr
+    category: Water
+- Water Consumption|Irrigation:
+    description: water consumption for the irrigation
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids:
+    description: total water consumption for refined liquids (conventional & unconventional
+      oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Biomass:
+    description: water consumption for biofuel production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Biomass|w/ CCS:
+    description: water consumption for biofuel production with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Biomass|w/o CCS:
+    description: water consumption for biofuel production with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Coal:
+    description: water consumption for coal to liquid production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Coal|w/ CCS:
+    description: water consumption for coal to liquid production with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Coal|w/o CCS:
+    description: water consumption for coal to liquid production with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Fossil:
+    description: water consumption for fossil to liquid production from fossil fuels
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Fossil|w/ CCS:
+    description: water consumption for fossil to liquid production from fossil fuels
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Fossil|w/o CCS:
+    description: water consumption for fossil to liquid production from fossil fuels
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Gas:
+    description: water consumption for gas to liquid production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Gas|w/ CCS:
+    description: water consumption for gas to liquid production with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Gas|w/o CCS:
+    description: water consumption for gas to liquid production with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Consumption|Liquids|Oil:
+    description: water consumption for oil production
+    unit: km3/yr
+    category: Water
+- Water Consumption|Livestock:
+    description: water consumption for livestock
+    unit: km3/yr
+    category: Water
+- Water Consumption|Municipal Water:
+    description: water consumption for the municipal sector (e.g., houses, offices,
+      municipal irrigation)
+    unit: km3/yr
+    category: Water
+- Water Desalination:
+    description: amount of water desalination
+    unit: km3/yr
+    category: Water
+- Water Extraction|Brackish Water:
+    description: water extracted from brackish groundwater resources
+    unit: km3/yr
+    category: Water
+- Water Extraction|Groundwater:
+    description: water extracted from groundwater resources
+    unit: km3/yr
+    category: Water
+- Water Extraction|Seawater:
+    description: water extracted from ocean and seawater resources (including tidal
+      zones)
+    unit: km3/yr
+    category: Water
+- Water Extraction|Surface Water:
+    description: water extracted from surface water resources (rivers, lakes ...)
+    unit: km3/yr
+    category: Water
+- Water Resource|Brackish Water:
+    description: anticipated volume of exploitable brackish groundwater resources
+    unit: km3
+    category: Water
+- Water Resource|Groundwater:
+    description: anticipated volume of exploitable groundwater resources
+    unit: km3
+    category: Water
+- Water Resource|Surface Water:
+    description: anticipated volume of exploitable surface water resources
+    unit: km3
+    category: Water
+- Water Thermal Pollution|Electricity|Biomass:
+    description: thermal water pollution from net electricity production from municipal
+      solid waste, purpose-grown biomass, crop residues, forest industry waste, biogas
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Biomass|w/ CCS:
+    description: thermal water pollution from net electricity production from municipal
+      solid waste, purpose-grown biomass, crop residues, forest industry waste with
+      a CO2 capture component
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Biomass|w/o CCS:
+    description: thermal water pollution from net electricity production from municipal
+      solid waste, purpose-grown biomass, crop residues, forest industry waste with
+      freely vented CO2 emissions
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Coal:
+    description: thermal water pollution from net electricity production from coal
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Coal|w/ CCS:
+    description: thermal water pollution from net electricity production from coal
+      with a CO2 capture component
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Coal|w/o CCS:
+    description: thermal water pollution from net electricity production from coal
+      with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Fossil:
+    description: thermal water pollution from net electricity production from coal,
+      gas, conventional and unconventional oil
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Fossil|w/ CCS:
+    description: thermal water pollution from net electricity production from coal,
+      gas, conventional and unconventional oil used in combination with CCS
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Fossil|w/o CCS:
+    description: thermal water pollution from  net electricity production from coal,
+      gas, conventional and unconventional oil without CCS
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Gas:
+    description: thermal water pollution from net electricity production from natural
+      gas
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Gas|w/ CCS:
+    description: thermal water pollution from net electricity production from natural
+      gas with a CO2 capture component
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Gas|w/o CCS:
+    description: thermal water pollution from net electricity production from natural
+      gas with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Geothermal:
+    description: thermal water pollution from net electricity production from all
+      sources of geothermal energy (e.g., hydrothermal, enhanced geothermal systems)
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Non-Biomass Renewables:
+    description: thermal water pollution from net electricity production from hydro,
+      wind, solar, geothermal, ocean, and other renewable sources (excluding bioenergy).
+      This is a summary category for all the non-biomass renewables.
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Nuclear:
+    description: thermal water pollution from net electricity production from nuclear
+      energy
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Oil:
+    description: thermal water pollution from net electricity production from refined
+      liquids
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Oil|w/ CCS:
+    description: thermal water pollution from net electricity production from refined
+      liquids with a CO2 capture component
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Oil|w/o CCS:
+    description: thermal water pollution from net electricity production from refined
+      liquids with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Once Through:
+    description: thermal water pollution from net electricity production using once
+      through cooling
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Other:
+    description: thermal water pollution from net electricity production from sources
+      that do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Sea Cooling:
+    description: thermal water pollution from net electricity production using sea
+      water cooling
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Solar:
+    description: thermal water pollution from net electricity production from all
+      sources of solar energy (e.g., PV and concentrating solar power)
+    unit: EJ/yr
+    category: Water
+- Water Thermal Pollution|Electricity|Solar|CSP:
+    description: thermal water pollution from net electricity production from concentrating
+      solar power (CSP)
+    unit: EJ/yr
+    category: Water
+- Water Transfer:
+    description: water imported/exported using conveyance infrastructure
+    unit: km3/yr
+    category: Water
+- Water Withdrawal:
+    description: total water withdrawal
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity:
+    description: total water withdrawals for net electricity production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Biomass:
+    description: water withdrawals for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste, biogas
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Biomass|w/ CCS:
+    description: water withdrawals for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste with a CO2
+      capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Biomass|w/o CCS:
+    description: water withdrawals for net electricity production from municipal solid
+      waste, purpose-grown biomass, crop residues, forest industry waste with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Coal:
+    description: water withdrawals for net electricity production from coal
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Coal|w/ CCS:
+    description: water withdrawals for net electricity production from coal with a
+      CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Coal|w/o CCS:
+    description: water withdrawals for net electricity production from coal with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Cooling Pond:
+    description: water withdrawals for net electricity production using pond cooling
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Dry Cooling:
+    description: water withdrawals for net electricity production using dry cooling
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Fossil:
+    description: water withdrawals for net electricity production from coal, gas,
+      conventional and unconventional oil
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Fossil|w/ CCS:
+    description: water withdrawals for net electricity production from coal, gas,
+      conventional and unconventional oil used in combination with CCS
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Fossil|w/o CCS:
+    description: water withdrawals for  net electricity production from coal, gas,
+      conventional and unconventional oil without CCS
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Gas:
+    description: water withdrawals for net electricity production from natural gas
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Gas|w/ CCS:
+    description: water withdrawals for net electricity production from natural gas
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Gas|w/o CCS:
+    description: water withdrawals for net electricity production from natural gas
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Geothermal:
+    description: water withdrawals for net electricity production from all sources
+      of geothermal energy (e.g., hydrothermal, enhanced geothermal systems)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Hydro:
+    description: water withdrawals for net hydroelectric production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Non-Biomass Renewables:
+    description: water withdrawals for net electricity production from hydro, wind,
+      solar, geothermal, ocean, and other renewable sources (excluding bioenergy).
+      This is a summary category for all the non-biomass renewables.
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Nuclear:
+    description: water withdrawals for net electricity production from nuclear energy
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Ocean:
+    description: water withdrawals for net electricity production from all sources
+      of ocean energy (e.g., tidal, wave, ocean thermal electricity production generation)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Oil:
+    description: water withdrawals for net electricity production from refined liquids
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Oil|w/ CCS:
+    description: water withdrawals for net electricity production from refined liquids
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Oil|w/o CCS:
+    description: water withdrawals for net electricity production from refined liquids
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Once Through:
+    description: water withdrawals for net electricity production using once through
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Other:
+    description: water withdrawals for net electricity production from sources that
+      do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Sea Cooling:
+    description: water withdrawals for net electricity production using sea water
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Solar:
+    description: water withdrawals for net electricity production from all sources
+      of solar energy (e.g., PV and concentrating solar power)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Solar|CSP:
+    description: water withdrawals for net electricity production from concentrating
+      solar power (CSP)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Solar|PV:
+    description: water withdrawals for net electricity production from solar photovoltaics
+      (PV)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Wet Tower:
+    description: water withdrawals for net electricity production using wet tower
+      cooling
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Electricity|Wind:
+    description: water withdrawals for net electricity production from wind energy
+      (on- and offshore)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Extraction:
+    description: total water withdrawal for extraction
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Extraction|Coal:
+    description: water withdrawal for coal extraction
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Extraction|Gas:
+    description: water withdrawal for gas extraction
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Extraction|Oil:
+    description: water withdrawal for oil extraction
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Extraction|Uranium:
+    description: water withdrawal for uranium extraction
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Gases:
+    description: total water withdrawal for gas production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Gases|Biomass:
+    description: water withdrawal for gas production from biomass
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Gases|Coal:
+    description: water withdrawal for gas production from coal
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Gases|Natural Gas:
+    description: water withdrawal for gas production from natural gas
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Gases|Other:
+    description: water withdrawal for gas production from other
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat:
+    description: total water withdrawal for heat generation
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Biomass:
+    description: water withdrawal for heat generation from biomass
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Coal:
+    description: water withdrawal for heat generation from coal
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Gas:
+    description: water withdrawal for heat generation from gas
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Geothermal:
+    description: water withdrawal for heat generation from from all sources of geothermal
+      energy (e.g., hydrothermal, enhanced geothermal systems)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Nuclear:
+    description: water withdrawal for heat generation from nuclear
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Oil:
+    description: water withdrawal for heat generation from oil
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Other:
+    description: water withdrawal for heat generation from other sources
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Heat|Solar:
+    description: water withdrawal for heat generation from solar
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen:
+    description: total water withdrawal for hydrogen production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Biomass:
+    description: water withdrawal for hydrogen production from biomass
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Biomass|w/ CCS:
+    description: water withdrawal for hydrogen production from biomass with a CO2
+      capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Biomass|w/o CCS:
+    description: water withdrawal for hydrogen production from biomass with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Coal:
+    description: water withdrawal for hydrogen production from coal
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Coal|w/ CCS:
+    description: water withdrawal for hydrogen production from coal with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Coal|w/o CCS:
+    description: water withdrawal for hydrogen production from coal with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Electricity:
+    description: 'water withdrawal for hydrogen production from electricity '
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Fossil:
+    description: water withdrawal for hydrogen production from fossil fuels
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Fossil|w/ CCS:
+    description: water withdrawal for hydrogen production from fossil fuels with a
+      CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Fossil|w/o CCS:
+    description: water withdrawal for hydrogen production from fossil fuels with freely
+      vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Gas:
+    description: water withdrawal for hydrogen production from gas
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Gas|w/ CCS:
+    description: water withdrawal for hydrogen production from gas with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Gas|w/o CCS:
+    description: water withdrawal for hydrogen production from gas with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Oil:
+    description: water withdrawal for hydrogen production from oil
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Other:
+    description: water withdrawal for hydrogen production from other sources
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Hydrogen|Solar:
+    description: water withdrawal for hydrogen production from solar
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Industrial Water:
+    description: water withdrawals for the industrial sector (manufacturing sector
+      if also reporting energy sector water use)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Irrigation:
+    description: water withdrawal for irrigation
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids:
+    description: total water withdrawal for refined liquids (conventional & unconventional
+      oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Biomass:
+    description: water withdrawal for biofuel production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Biomass|w/ CCS:
+    description: water withdrawal for biofuel production with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Biomass|w/o CCS:
+    description: water withdrawal for biofuel production with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Coal:
+    description: water withdrawal for coal to liquid production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Coal|w/ CCS:
+    description: water withdrawal for coal to liquid production with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Coal|w/o CCS:
+    description: water withdrawal for coal to liquid production with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Fossil:
+    description: water withdrawal for fossil to liquid production from fossil fuels
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Fossil|w/ CCS:
+    description: water withdrawal for fossil to liquid production from fossil fuels
+      with a CO2 capture component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Fossil|w/o CCS:
+    description: water withdrawal for fossil to liquid production from fossil fuels
+      with freely vented CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Gas:
+    description: water withdrawal for gas to liquid production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Gas|w/ CCS:
+    description: water withdrawal for gas to liquid production with a CO2 capture
+      component
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Gas|w/o CCS:
+    description: water withdrawal for gas to liquid production with freely vented
+      CO2 emissions
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Liquids|Oil:
+    description: water withdrawal for oil production
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Livestock:
+    description: water withdrawals for livestock
+    unit: km3/yr
+    category: Water
+- Water Withdrawal|Municipal Water:
+    description: water withdrawals for the municial sector (e.g., houses, offices,
+      municipal irrigation)
+    unit: km3/yr
+    category: Water

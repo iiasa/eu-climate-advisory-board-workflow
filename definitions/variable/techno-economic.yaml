@@ -1,0 +1,676 @@
+- Efficiency|Electricity|Biomass|w/ CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new biomass power plant with CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Biomass|w/ CCS
+    category: Techno-economic
+- Efficiency|Electricity|Biomass|w/o CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new biomass power plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Biomass|w/o CCS
+    category: Techno-economic
+- Efficiency|Electricity|Coal|w/ CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new coal power plant with CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Coal|w/ CCS
+    category: Techno-economic
+- Efficiency|Electricity|Coal|w/o CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new coal power plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Coal|w/o CCS
+    category: Techno-economic
+- Efficiency|Electricity|Gas|w/ CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new gas power plant with CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Gas|w/ CCS
+    category: Techno-economic
+- Efficiency|Electricity|Gas|w/o CCS:
+    description: Conversion efficiency (electricity produced per unit of primary
+      energy input) of a new gas power plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Electricity|Gas|w/o CCS
+    category: Techno-economic
+- Efficiency|Gases|Biomass|w/ CCS:
+    description: Conversion efficiency (energy content of gases produced per unit
+      of primary energy input) of a new biomass to gas plant with CCS.
+    unit: '%'
+    weight: Capacity|Gases|Biomass|w/ CCS
+    category: Techno-economic
+- Efficiency|Gases|Biomass|w/o CCS:
+    description: Conversion efficiency (energy content of gases produced per unit
+      of primary energy input) of a new coal to gas plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Gases|Biomass|w/o CCS
+    category: Techno-economic
+- Efficiency|Gases|Coal|w/ CCS:
+    description: Conversion efficiency (energy content of gases produced per unit
+      of primary energy input) of a new coal to gas plant with CCS.
+    unit: '%'
+    weight: Capacity|Gases|Coal|w/ CCS
+    category: Techno-economic
+- Efficiency|Gases|Coal|w/o CCS:
+    description: Conversion efficiency (energy content of gases produced per unit
+      of primary energy input) of a new coal to gas plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Gases|Coal|w/o CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Biomass|w/ CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new biomass to hydrogen plant with CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Biomass|w/ CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Biomass|w/o CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new biomass to hydrogen plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Biomass|w/o CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Coal|w/ CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new coal to hydrogen plant with CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Coal|w/ CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Coal|w/o CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new coal to hydrogen plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Coal|w/o CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Electricity:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of electricity input) of a new hydrogen-by-electrolysis plant.
+    unit: '%'
+    weight: Capacity|Hydrogen|Electricity
+    category: Techno-economic
+- Efficiency|Hydrogen|Gas|w/ CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new gas to hydrogen plant with CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Gas|w/ CCS
+    category: Techno-economic
+- Efficiency|Hydrogen|Gas|w/o CCS:
+    description: Conversion efficiency (energy content of hydrogen produced per unit
+      of primary energy input) of a new gas to hydrogen plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Hydrogen|Gas|w/o CCS
+    category: Techno-economic
+- Efficiency|Liquids|Biomass|w/ CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new biomass to liquids plant with CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Biomass|w/ CCS
+    category: Techno-economic
+- Efficiency|Liquids|Biomass|w/o CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new biomass to liquids plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Biomass|w/o CCS
+    category: Techno-economic
+- Efficiency|Liquids|Coal|w/ CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new coal to liquids plant with CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Coal|w/ CCS
+    category: Techno-economic
+- Efficiency|Liquids|Coal|w/o CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new coal to liquids plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Coal|w/o CCS
+    category: Techno-economic
+- Efficiency|Liquids|Gas|w/ CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new gas to liquids plant with CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Gas|w/ CCS
+    category: Techno-economic
+- Efficiency|Liquids|Gas|w/o CCS:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new gas to liquids plant w/o CCS.
+    unit: '%'
+    weight: Capacity|Liquids|Gas|w/o CCS
+    category: Techno-economic
+- Efficiency|Liquids|Oil:
+    description: Conversion efficiency (energy content of liquids produced per unit
+      of primary energy input) of a new oil refining plant.
+    unit: '%'
+    weight: Capacity|Liquids|Oil
+    category: Techno-economic
+- Lifetime|Electricity|Biomass|w/ CCS:
+    description: Lifetime of a new biomass power plant with CCS.
+    unit: years
+    weight: Capacity|Electricity|Biomass|w/ CCS
+    category: Techno-economic
+- Lifetime|Electricity|Biomass|w/o CCS:
+    description: Lifetime of a new biomass power plant w/o CCS.
+    unit: years
+    weight: Capacity|Electricity|Biomass|w/o CCS
+    category: Techno-economic
+- Lifetime|Electricity|Coal|w/ CCS:
+    description: Lifetime of a new coal power plant with CCS.
+    unit: years
+    weight: Capacity|Electricity|Coal|w/ CCS
+    category: Techno-economic
+- Lifetime|Electricity|Coal|w/o CCS:
+    description: Lifetime of a new coal power plant w/o CCS.
+    unit: years
+    weight: Capacity|Electricity|Coal|w/o CCS
+    category: Techno-economic
+- Lifetime|Electricity|Gas|w/ CCS:
+    description: Lifetime of a new gas power plant with CCS.
+    unit: years
+    weight: Capacity|Electricity|Gas|w/ CCS
+    category: Techno-economic
+- Lifetime|Electricity|Gas|w/o CCS:
+    description: Lifetime of a new gas power plant w/o CCS.
+    unit: years
+    weight: Capacity|Electricity|Gas|w/o CCS
+    category: Techno-economic
+- Lifetime|Electricity|Geothermal:
+    description: Lifetime of a new geothermal power plant.
+    unit: years
+    weight: Capacity|Electricity|Geothermal
+    category: Techno-economic
+- Lifetime|Electricity|Hydro:
+    description: Lifetime of a new hydropower plant.
+    unit: years
+    weight: Capacity|Electricity|Hydro
+    category: Techno-economic
+- Lifetime|Electricity|Nuclear:
+    description: Lifetime of a new nuclear power plant.
+    unit: years
+    weight: Capacity|Electricity|Nuclear
+    category: Techno-economic
+- Lifetime|Electricity|Solar|CSP:
+    description: Lifetime of a new concentrated solar power plant.
+    unit: years
+    weight: Capacity|Electricity|Solar|CSP
+    category: Techno-economic
+- Lifetime|Electricity|Solar|PV:
+    description: Lifetime of a new PV unit.
+    unit: years
+    weight: Capacity|Electricity|Solar|PV
+    category: Techno-economic
+- Lifetime|Electricity|Wind:
+    description: Lifetime of a new wind power plant (report only if wind power is
+      not separated in onshore and offshore).
+    unit: years
+    weight: Capacity|Electricity|Wind
+    category: Techno-economic
+- Lifetime|Electricity|Wind|Offshore:
+    description: Lifetime of a new offshore wind power plant.
+    unit: years
+    weight: Capacity|Electricity|Wind|Offshore
+    category: Techno-economic
+- Lifetime|Electricity|Wind|Onshore:
+    description: Lifetime of a new onshore wind power plant.
+    unit: years
+    weight: Capacity|Electricity|Wind|Onshore
+    category: Techno-economic
+- Lifetime|Gases|Biomass|w/ CCS:
+    description: Lifetime of a new biomass to gas plant with CCS.
+    unit: years
+    weight: Capacity|Gases|Biomass|w/ CCS
+    category: Techno-economic
+- Lifetime|Gases|Biomass|w/o CCS:
+    description: Lifetime of a new biomass to gas plant w/o CCS.
+    unit: years
+    weight: Capacity|Gases|Biomass|w/o CCS
+    category: Techno-economic
+- Lifetime|Gases|Coal|w/ CCS:
+    description: Lifetime of a new coal to gas plant with CCS.
+    unit: years
+    weight: Capacity|Gases|Coal|w/ CCS
+    category: Techno-economic
+- Lifetime|Gases|Coal|w/o CCS:
+    description: Lifetime of a new coal to gas plant w/o CCS.
+    unit: years
+    weight: Capacity|Gases|Coal|w/o CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Biomass|w/ CCS:
+    description: Lifetime of a new biomass to hydrogen plant with CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Biomass|w/ CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Biomass|w/o CCS:
+    description: Lifetime of a new biomass to hydrogen plant w/o CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Biomass|w/o CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Coal|w/ CCS:
+    description: Lifetime of a new coal to hydrogen plant with CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Coal|w/ CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Coal|w/o CCS:
+    description: Lifetime of a new coal to hydrogen plant w/o CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Coal|w/o CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Electricity:
+    description: Lifetime of a new hydrogen-by-electrolysis plant.
+    unit: years
+    weight: Capacity|Electricity
+    category: Techno-economic
+- Lifetime|Hydrogen|Gas|w/ CCS:
+    description: Lifetime of a new gas to hydrogen plant with CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Gas|w/ CCS
+    category: Techno-economic
+- Lifetime|Hydrogen|Gas|w/o CCS:
+    description: Lifetime of a new gas to hydrogen plant w/o CCS.
+    unit: years
+    weight: Capacity|Hydrogen|Gas|w/o CCS
+    category: Techno-economic
+- Lifetime|Liquids|Biomass|w/ CCS:
+    description: Lifetime of a new biomass to liquids plant with CCS.
+    unit: years
+    weight: Capacity|Liquids|Biomass|w/ CCS
+    category: Techno-economic
+- Lifetime|Liquids|Biomass|w/o CCS:
+    description: Lifetime of a new biomass to liquids plant w/o CCS.
+    unit: years
+    weight: Capacity|Liquids|Biomass|w/o CCS
+    category: Techno-economic
+- Lifetime|Liquids|Coal|w/ CCS:
+    description: Lifetime of a new coal to liquids plant with CCS.
+    unit: years
+    weight: Capacity|Liquids|Coal|w/ CCS
+    category: Techno-economic
+- Lifetime|Liquids|Coal|w/o CCS:
+    description: Lifetime of a new coal to liquids plant w/o CCS.
+    unit: years
+    weight: Capacity|Liquids|Coal|w/o CCS
+    category: Techno-economic
+- Lifetime|Liquids|Gas|w/ CCS:
+    description: Lifetime of a new gas to liquids plant with CCS.
+    unit: years
+    weight: Capacity|Liquids|Gas|w/ CCS
+    category: Techno-economic
+- Lifetime|Liquids|Gas|w/o CCS:
+    description: Lifetime of a new gas to liquids plant w/o CCS.
+    unit: years
+    weight: Capacity|Liquids|Gas|w/o CCS
+    category: Techno-economic
+- Lifetime|Liquids|Oil:
+    description: Lifetime of a new oil refining plant.
+    unit: years
+    weight: Capacity|Liquids|Oil
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Biomass|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass power
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Biomass|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Biomass|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass power
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Biomass|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Coal|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new coal power plant
+      with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Coal|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Coal|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new coal power plant
+      w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Coal|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Gas|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new gas power plant
+      with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Gas|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Gas|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new gas power plant
+      w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Gas|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Geothermal:
+    description: Annual fixed operation & maintainance cost of a new geothermal power
+      plants.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Geothermal
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Hydro:
+    description: Annual fixed operation & maintainance cost of a new hydropower plant.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Hydro
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Nuclear:
+    description: Annual fixed operation & maintainance cost of a new nuclear power
+      plants.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Nuclear
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Solar|CSP:
+    description: Annual fixed operation & maintainance cost of a new concentrated
+      solar power plant.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Solar|CSP
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Solar|PV:
+    description: Annual fixed operation & maintainance cost of a new solar PV units.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Solar|PV
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Wind:
+    description: Annual fixed operation & maintainance cost of a new wind power plants.
+      This variable should only be filled, if wind power is not separated into onshore
+      and offshore.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Wind
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Wind|Offshore:
+    description: Annual fixed operation & maintainance cost of a new offshore wind
+      power plants. This variable should only be filled, if wind power is separated
+      into onshore and offshore.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Wind|Offshore
+    category: Techno-economic
+- OM Cost|Fixed|Electricity|Wind|Onshore:
+    description: Annual fixed operation & maintainance cost of a new onshore wind
+      power plants. This variable should only be filled, if wind power is separated
+      into onshore and offshore.
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Wind|Onshore
+    category: Techno-economic
+- OM Cost|Fixed|Gases|Biomass|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to gas
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Gases|Biomass|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Gases|Biomass|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to gas
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Gases|Biomass|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Gases|Coal|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to gas plant
+      with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Gases|Coal|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Gases|Coal|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to gas plant
+      w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Gases|Coal|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Biomass|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to hydrogen
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Biomass|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Biomass|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to hydrogen
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Biomass|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Coal|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to hydrogen
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Coal|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Coal|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to hydrogen
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Coal|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Electricity:
+    description: Annual fixed operation & maintainance cost of a new hydrogen-by-electrolysis
+      plant.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Electricity
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Gas|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new gas to hydrogen
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Gas|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Hydrogen|Gas|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new gas to hydrogen
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Hydrogen|Gas|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Biomass|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to liquids
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Biomass|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Biomass|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new biomass to liquids
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Biomass|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Coal|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to liquids
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Coal|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Coal|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new coal to liquids
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Coal|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Gas|w/ CCS:
+    description: Annual fixed operation & maintainance cost of a new gas to liquids
+      plant with CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Gas|w/ CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Gas|w/o CCS:
+    description: Annual fixed operation & maintainance cost of a new gas to liquids
+      plant w/o CCS.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Gas|w/o CCS
+    category: Techno-economic
+- OM Cost|Fixed|Liquids|Oil:
+    description: Annual fixed operation & maintainance cost of a new oil refining
+      plant.
+    unit: US$2010/kW/yr
+    weight: Capacity|Liquids|Oil
+    category: Techno-economic
+- OM Cost |Electricity|Solar|PV|Rooftop PV:
+    description: Annual fixed operation & maintainance cost of electricity generation
+      capacity of  rooftop solar PV
+    unit: US$2010/kW/yr
+    weight: Capacity |Electricity|Solar|PV|Rooftop PV
+    category: Techno-economic
+- OM Cost|Electricity|Solar|PV|Utility-scale PV:
+    description: Annual fixed operation & maintainance cost of electricity generation
+      capacity of  ground-mounted solar PV
+    unit: US$2010/kW/yr
+    weight: Capacity|Electricity|Solar|PV|Utility-scale PV
+    category: Techno-economic
+- OM Cost|Electricity|Storage|Battery Capacity:
+    description: Annual fixed operation & maintainance cost of capacity of battery
+      storage
+    unit: US$2010/kWh/yr
+    weight: Capacity|Electricity|Storage|Battery Capacity
+    category: Techno-economic
+- OM Cost|Electricity|Storage|Battery Capacity|Home Battery:
+    description: Annual fixed operation & maintainance cost of capacity of home battery
+      storage
+    unit: US$2010/kWh/yr
+    weight: Capacity|Electricity|Storage|Battery Capacity|Home Battery
+    category: Techno-economic
+- OM Cost|Electricity|Storage|Battery Capacity|Utility-scale Battery:
+    description: Annual fixed operation & maintainance cost of utility-scale battery
+      storage
+    unit: US$2010/kWh/yr
+    weight: Capacity|Electricity|Storage|Battery Capacity|Utility-scale Battery
+    category: Techno-economic
+- OM Cost|Electricity|Storage|Hydrogen Storage Capacity:
+    description: Annual fixed operation & maintainance cost of capacity of hydrogen
+      storage
+    unit: US$2010/kWh/yr
+    weight: Capacity|Electricity|Storage|Hydrogen Storage Capacity
+    category: Techno-economic
+- OM Cost|Electricity|Storage|Pumped Hydro Storage:
+    description: Annual fixed operation & maintainance cost of installed capacity
+      of Pumped Hydro Storage
+    unit: US$2010/kWh/yr
+    weight: Capacity|Electricity|Storage|Pumped Hydro Storage
+    category: Techno-economic
+- OM Cost|Storage|Thermal Energy Storage:
+    description: Annual fixed operation & maintainance cost of thermal energy storage
+      capacity
+    unit: US$2010/kWh/yr
+    weight: Capacity|Storage|Thermal Energy Storage
+    category: Techno-economic
+- OM Cost|Storage|Thermal Energy Storage|Household storage:
+    description: Annual fixed operation & maintainance cost of household thermal energy
+      storage capacity
+    unit: US$2010/kWh/yr
+    weight: Capacity|Storage|Thermal Energy Storage|Household storage
+    category: Techno-economic
+- OM Cost|Storage|Thermal Energy Storage|District heating storage:
+    description: Annual fixed operation & maintainance cost of thermal energy capacity
+    unit: US$2010/kWh/yr
+    weight: Capacity|Storage|Thermal Energy Storage|District heating storage
+    category: Techno-economic
+- OM Cost|Heating|Heat pumps:
+    description: Annual fixed operation & maintainance cost of electrical capacity
+      of heat pumps
+    unit: US$2010/kW/yr
+    weight: Capacity|Heating|Heat pumps
+    category: Techno-economic
+- OM Cost|Heating|Electric boilers:
+    description: Annual fixed operation & maintainance cost of installed electrical
+      capacity of electric boilers
+    unit: US$2010/kW/yr
+    weight: Capacity|Heating|Electric boilers
+    category: Techno-economic
+- OM Cost|Gas|Synthetic:
+    description: Annual fixed operation & maintainance cost of installed electrical
+      capacity of electricity to synthetic gas (consuming Hydrogen and CO2, via e.g
+      Sabatier reaction)
+    unit: US$2010/kW/yr
+    weight: Capacity|Gas|Synthetic
+    category: Techno-economic
+- OM Cost|Oil|Synthetic:
+    description: Annual fixed operation & maintainancecost of installed electrical
+      capacity of electricity to synthetic oil (consuming Hydrogen and CO2, via e.g
+      Fischer-Tropsch process)
+    unit: US$2010/kW/yr
+    weight: Capacity|Oil|Synthetic
+    category: Techno-economic
+- Lifetime |Electricity|Solar|PV|Rooftop PV:
+    description: Lifetimeof electricity generation capacity of  rooftop solar PV
+    unit: years
+    weight: Capacity |Electricity|Solar|PV|Rooftop PV
+    category: Techno-economic
+- Lifetime|Electricity|Solar|PV|Utility-scale PV:
+    description: Lifetime of electricity generation capacity of  ground-mounted solar
+      PV
+    unit: years
+    weight: Capacity|Electricity|Solar|PV|Utility-scale PV
+    category: Techno-economic
+- Lifetime|Electricity|Storage|Battery Capacity:
+    description: Lifetimeof capacity of battery storage
+    unit: years
+    weight: Capacity|Electricity|Storage|Battery Capacity
+    category: Techno-economic
+- Lifetime|Electricity|Storage|Battery Capacity|Home Battery:
+    description: Lifetime of capacity of home battery storage
+    unit: years
+    weight: Capacity|Electricity|Storage|Battery Capacity|Home Battery
+    category: Techno-economic
+- Lifetime|Electricity|Storage|Battery Capacity|Utility-scale Battery:
+    description: Lifetime of utility-scale battery storage
+    unit: years
+    weight: Capacity|Electricity|Storage|Battery Capacity|Utility-scale Battery
+    category: Techno-economic
+- Lifetime|Electricity|Storage|Hydrogen Storage Capacity:
+    description: Lifetimeof capacity of hydrogen storage
+    unit: years
+    weight: Capacity|Electricity|Storage|Hydrogen Storage Capacity
+    category: Techno-economic
+- Lifetime|Electricity|Storage|Pumped Hydro Storage:
+    description: Lifetime of installed capacity of Pumped Hydro Storage
+    unit: years
+    weight: Capacity|Electricity|Storage|Pumped Hydro Storage
+    category: Techno-economic
+- Lifetime|Storage|Thermal Energy Storage:
+    description: Lifetime of thermal energy storage capacity
+    unit: years
+    weight: Capacity|Storage|Thermal Energy Storage
+    category: Techno-economic
+- Lifetime|Storage|Thermal Energy Storage|Household storage:
+    description: Lifetimeof household thermal energy storage capacity
+    unit: years
+    weight: Capacity|Storage|Thermal Energy Storage|Household storage
+    category: Techno-economic
+- Lifetime|Storage|Thermal Energy Storage|District heating storage:
+    description: Lifetime of thermal energy capacity
+    unit: years
+    weight: Capacity|Storage|Thermal Energy Storage|District heating storage
+    category: Techno-economic
+- Lifetime|Heating|Heat pumps:
+    description: Lifetime of electrical capacity of heat pumps
+    unit: years
+    weight: Capacity|Heating|Heat pumps
+    category: Techno-economic
+- Lifetime|Heating|Electric boilers:
+    description: Lifetime of installed electrical capacity of electric boilers
+    unit: years
+    weight: Capacity|Heating|Electric boilers
+    category: Techno-economic
+- Lifetime|Gas|Synthetic:
+    description: Lifetime of installed electrical capacity of electricity to synthetic
+      gas (consuming Hydrogen and CO2, via e.g Sabatier reaction)
+    unit: years
+    weight: Capacity|Gas|Synthetic
+    category: Techno-economic
+- Lifetime|Oil|Synthetic:
+    description: Lifetime of installed electrical capacity of electricity to synthetic
+      oil (consuming Hydrogen and CO2, via e.g Fischer-Tropsch process)
+    unit: years
+    weight: Capacity|Oil|Synthetic
+    category: Techno-economic
+- Effciency|Heating|Heat pumps:
+    description: Conversion efficiency (thermal energy produced per unit of electricity
+      input, in average)
+    unit: '%'
+    category: Techno-economic
+- Efficiency|Heating|Electric boilers:
+    description: Conversion efficiency (thermal energy produced per unit of electricity
+      input, in average)
+    unit: '%'
+    category: Techno-economic
+- Efficiency|Gas|Synthetic:
+    description: Conversion efficiency of electricity to synthetic gas (consuming
+      Hydrogen and CO2, via e.g Sabatier reaction)
+    unit: '%'
+    category: Techno-economic
+- Efficiency|Oil|Synthetic:
+    description: Conversion efficiency of electricity to synthetic oil (consuming
+      Hydrogen and CO2, via e.g Fischer-Tropsch process)
+    unit: '%'
+    category: Techno-economic
