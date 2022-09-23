@@ -1,0 +1,326 @@
+- Carbon Intensity|Production|Cement:
+    description: CO2eq carbon intensity of Cement production for both process and
+      fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Cement
+    category: Industry
+- Carbon Intensity|Production|Cement|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Cement production from fuel combustion
+      emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Cement
+    category: Industry
+- Carbon Intensity|Production|Cement|Industrial Processes:
+    description: CO2-equiv carbon intensity of Cement production from industrial process
+      emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Cement
+    category: Industry
+- Carbon Intensity|Production|Chemicals:
+    description: CO2eq carbon intensity of Chemicals production for both process and
+      fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Ammonia:
+    description: CO2eq carbon intensity of Chemicals|Ammonia production for both process
+      and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Ammonia|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Chemicals|Ammonia production from fuel
+      combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Ammonia|Industrial Processes:
+    description: CO2-equiv carbon intensity of Chemicals|Ammonia production from industrial
+      process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Chemicals production from fuel combustion
+      emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|High value chemicals:
+    description: CO2eq carbon intensity of Chemicals|High value chemicals production
+      for both process and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|High value chemicals|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Chemicals|High value chemicals production
+      from fuel combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|High value chemicals|Industrial Processes:
+    description: CO2-equiv carbon intensity of Chemicals|High value chemicals production
+      from industrial process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Industrial Processes:
+    description: CO2-equiv carbon intensity of Chemicals production from industrial
+      process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Methanol:
+    description: CO2eq carbon intensity of Chemicals|Methanol production for both
+      process and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Methanol|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Chemicals|Methanol production from
+      fuel combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Methanol|Industrial Processes:
+    description: CO2-equiv carbon intensity of Chemicals|Methanol production from
+      industrial process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Other:
+    description: CO2eq carbon intensity of Chemicals|Other production for both process
+      and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals|Other
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Other|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Chemicals|Other production from fuel
+      combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals|Other
+    category: Industry
+- Carbon Intensity|Production|Chemicals|Other|Industrial Processes:
+    description: CO2-equiv carbon intensity of Chemicals|Other production from industrial
+      process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Chemicals|Other
+    category: Industry
+- Carbon Intensity|Production|Non-ferrous metals:
+    description: CO2eq carbon intensity of Non-ferrous metals production for both
+      process and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Non-ferrous metals
+    category: Industry
+- Carbon Intensity|Production|Non-ferrous metals|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Non-ferrous metals production from
+      fuel combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Non-ferrous metals
+    category: Industry
+- Carbon Intensity|Production|Non-ferrous metals|Industrial Processes:
+    description: CO2-equiv carbon intensity of Non-ferrous metals production from
+      industrial process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Non-ferrous metals
+    category: Industry
+- Carbon Intensity|Production|Other:
+    description: CO2eq carbon intensity of Other production for both process and fuel
+      combustion emissions
+    unit: Mt CO2-equiv/Mt
+    skip-region-aggregation: true
+    category: Industry
+- Carbon Intensity|Production|Other|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Other production from fuel combustion
+      emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    skip-region-aggregation: true
+    category: Industry
+- Carbon Intensity|Production|Other|Industrial Processes:
+    description: CO2-equiv carbon intensity of Other production from industrial process
+      emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    skip-region-aggregation: true
+    category: Industry
+- Carbon Intensity|Production|Plastics:
+    description: CO2eq carbon intensity of Plastics production for both process and
+      fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Plastics
+    category: Industry
+- Carbon Intensity|Production|Plastics|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Plastics production from fuel combustion
+      emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Plastics
+    category: Industry
+- Carbon Intensity|Production|Plastics|Industrial Processes:
+    description: CO2-equiv carbon intensity of Plastics production from industrial
+      process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Plastics
+    category: Industry
+- Carbon Intensity|Production|Pulp and Paper:
+    description: CO2eq carbon intensity of Pulp and Paper production for both process
+      and fuel combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Pulp and Paper
+    category: Industry
+- Carbon Intensity|Production|Pulp and Paper|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Pulp and Paper production from fuel
+      combustion emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Pulp and Paper
+    category: Industry
+- Carbon Intensity|Production|Pulp and Paper|Industrial Processes:
+    description: CO2-equiv carbon intensity of Pulp and Paper production from industrial
+      process emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Pulp and Paper
+    category: Industry
+- Carbon Intensity|Production|Steel:
+    description: CO2eq carbon intensity of Steel production for both process and fuel
+      combustion emissions
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Steel
+    category: Industry
+- Carbon Intensity|Production|Steel|Fossil|Energy|Demand|Industry:
+    description: CO2-equiv carbon intensity of Steel production from fuel combustion
+      emissions (excl. industrial process emissions)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Steel
+    category: Industry
+- Carbon Intensity|Production|Steel|Industrial Processes:
+    description: CO2-equiv carbon intensity of Steel production from industrial process
+      emissions (excl. fuel combustion)
+    unit: Mt CO2-equiv/Mt
+    weight: Production|Steel
+    category: Industry
+- Expenditure|Energy|Fossil:
+    description: Fossil fuel expenditure
+    unit: billion US$2010/yr
+    category: Industry
+- Material Consumption|Domestic:
+    description: Domestic material consumption
+    unit: Mt/year
+    category: Industry
+- Material recycling|Cement:
+    description: Mass of Cement recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Chemicals:
+    description: Mass of Chemicals recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Chemicals|Ammonia:
+    description: Mass of Chemicals|Ammonia recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Chemicals|High value chemicals:
+    description: Mass of Chemicals|High value chemicals recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Chemicals|Methanol:
+    description: Mass of Chemicals|Methanol recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Chemicals|Other:
+    description: Mass of Chemicals|Other recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Non-ferrous metals:
+    description: Mass of Non-ferrous metals recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Other:
+    description: Mass of Other recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Plastics:
+    description: Mass of Plastics recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Pulp and Paper:
+    description: Mass of Pulp and Paper recycled per year
+    unit: Mt/year
+    category: Industry
+- Material recycling|Steel:
+    description: Mass of Steel recycled per year
+    unit: Mt/year
+    category: Industry
+- Production|Cement:
+    description: production of cement
+    unit: Mt/year
+    category: Industry
+- Production|Chemicals:
+    description: production of chemicals (e.g. sulfuric acid)
+    unit: Mt/year
+    category: Industry
+- Production|Chemicals|Ammonia:
+    description: production of ammonia
+    unit: Mt/year
+    category: Industry
+- Production|Chemicals|Other:
+    description: production of other chemicals not in the Chemicals categories
+    unit: Mt/year
+    category: Industry
+- Production|Non-ferrous metals:
+    description: production of non-ferrous metals (e.g., aluminum)
+    unit: Mt/year
+    category: Industry
+- Production|Pulp and Paper:
+    description: production of pulp and paper
+    unit: Mt/year
+    category: Industry
+- Production|Steel:
+    description: production of steel
+    unit: Mt/year
+    category: Industry
+- Production|Plastics:
+    description: production of plactics
+    unit: US$2010/Mt
+    category: Industry
+- Specific Energy Consumption|Production|Cement:
+    description: Specific energy consumption of Cement
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Chemicals:
+    description: Specific energy consumption of Chemicals
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Chemicals|Ammonia:
+    description: Specific energy consumption of Chemicals|Ammonia
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Chemicals|High value chemicals:
+    description: Specific energy consumption of Chemicals|High value chemicals
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Chemicals|Methanol:
+    description: Specific energy consumption of Chemicals|Methanol
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Chemicals|Other:
+    description: Specific energy consumption of Chemicals|Other
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Non-ferrous metals:
+    description: Specific energy consumption of Non-ferrous metals
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Other:
+    description: Specific energy consumption of Other
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Plastics:
+    description: Specific energy consumption of Plastics
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Pulp and Paper:
+    description: Specific energy consumption of Pulp and Paper
+    unit: MJ/t
+    category: Industry
+- Specific Energy Consumption|Production|Steel:
+    description: Specific energy consumption of Steel
+    unit: MJ/t
+    category: Industry

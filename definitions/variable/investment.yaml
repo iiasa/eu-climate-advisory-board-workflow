@@ -1,0 +1,436 @@
+- Investment:
+    description: Total economy wide investments (macro-economic capital stock, energy
+      system, R&D, ...)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure:
+    description: investment into infrastrucutre
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Freight|Aviation:
+    description: Investments into new Freightvehicle technologies in the Aviation
+      transport sector
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Freight|Railways:
+    description: Investments into new Freightvehicle technologies in the Railways
+      transport sector
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Freight|Road|HDT|EV:
+    description: 'investments into new vehicle technologies in the transport sector
+      (heavy-duty freight trucks: electric vehicle technologies, including all-electrics
+      and plug-in hybrids)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Freight|Road|HDT|FCV:
+    description: 'investments into new vehicle technologies in the transport sector
+      (heavy-duty freight trucks: fuel cell technologies running on hydrogen or another
+      type of fuel)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Freight|Road|HDT|ICE:
+    description: 'investments into new vehicle technologies in the transport sector
+      (heavy-duty freight trucks: internal combustion engine technologies running
+      on any type of liquid or gaseous fuel)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Passenger|Aviation:
+    description: Investments into new Passengervehicle technologies in the Aviation
+      transport sector
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Passenger|Railways:
+    description: Investments into new Passengervehicle technologies in the Railways
+      transport sector
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Passenger|Road|LDV|EV:
+    description: 'investments into new vehicle technologies in the transport sector
+      (light-duty cars and trucks: electric vehicle technologies, including all-electrics
+      and plug-in hybrids)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Passenger|Road|LDV|FCV:
+    description: 'investments into new vehicle technologies in the transport sector
+      (light-duty cars and trucks: fuel cell technologies running on hydrogen or another
+      type of fuel)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Demand|Transportation|Passenger|Road|LDV|ICE:
+    description: 'investments into new vehicle technologies in the transport sector
+      (light-duty cars and trucks: internal combustion engine technologies running
+      on any type of liquid or gaseous fuel)'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Efficiency:
+    description: investments into the efficiency-increasing components of energy demand
+      technologies
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply:
+    description: investments into the energy supply system
+    unit: billion US$2010/yr
+    core: true
+    category: Investment
+- Investment|Energy Supply|CO2 Transport and Storage:
+    description: investment in CO2 transport and storage (note that investment in
+      the capturing equipment should be included along with the power plant technology)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity:
+    description: investments into electricity generation and supply (including electricity
+      storage and transmission & distribution)
+    unit: billion US$2010/yr
+    core: true
+    category: Investment
+- Investment|Energy Supply|Electricity|Biomass:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Biomass|w/ CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Biomass|w/o CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Coal:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Coal|w/ CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Coal|w/o CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Electricity Storage:
+    description: investments in electricity storage technologies (e.g., batteries,
+      compressed air storage reservoirs, etc.)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Fossil:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    core: true
+    category: Investment
+- Investment|Energy Supply|Electricity|Gas:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Gas|w/ CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Gas|w/o CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Geothermal:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Hydro:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Non-Biomass Renewables:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    core: true
+    category: Investment
+- Investment|Energy Supply|Electricity|Non-fossil:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Nuclear:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Ocean:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Oil:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Oil|w/ CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Oil|w/o CCS:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Other:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Solar:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Transmission and Distribution:
+    description: investments in transmission and distribution of power generation
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Electricity|Wind:
+    description: investments in new power generation for the specified power plant
+      category. If the model features several sub-categories, the total investments
+      should be reported. For plants equipped with CCS, the investment in the capturing
+      equipment should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Bioenergy:
+    description: investments for extraction and production of bioenergy
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Coal:
+    description: investments for extraction and conversion of coal. These should include
+      mining, shipping and ports
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Fossil:
+    description: investments for all types of fossil extraction
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Gas:
+    description: investments for extraction and conversion of natural gas. These should
+      include upstream, LNG chain and transmission and distribution
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Oil:
+    description: investments for extraction and conversion of oil. These should include
+      upstream, transport and refining
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Extraction|Uranium:
+    description: investments for extraction and conversion of uranium. These should
+      include mining, conversion and enrichment
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Heat:
+    description: investments in heat generation facilities
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen:
+    description: investments for the production of hydrogen
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen|Biomass:
+    description: investments for the production of hydrogen from the specified source.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen|Electricity:
+    description: investments for the production of hydrogen by electrolysis
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen|Fossil:
+    description: investments for the production of hydrogen from fossil fuels. For
+      plants equipped with CCS, the investment in the capturing equipment should be
+      included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen|Other:
+    description: investments for the production of hydrogen from biomass. For plants
+      equipped with CCS, the investment in the capturing equipment should be included
+      but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Hydrogen|Renewable:
+    description: investments for the production of hydrogen from the specified source.
+      For plants equipped with CCS, the investment in the capturing equipment should
+      be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Liquids:
+    description: investments for the production of liquid fuels. For plants equipped
+      with CCS, the investment in the capturing equipment should be included but not
+      the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Liquids|Biomass:
+    description: investments for the production of biofuels. These should not include
+      the costs of the feedstock. For plants equipped with CCS, the investment in
+      the capturing equipment should be included but not the one on transport and
+      storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Liquids|Coal and Gas:
+    description: investments for the production of fossil-based synfuels (coal and
+      gas). For plants equipped with CCS, the investment in the capturing equipment
+      should be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Liquids|Oil:
+    description: investments for the production of fossil fuels from oil refineries
+      For plants equipped with CCS, the investment in the capturing equipment should
+      be included but not the one on transport and storage.
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Energy Supply|Other:
+    description: investments in other types of energy conversion facilities
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Industry|Green:
+    description: investment into industrial infrastructure (all types of new factories,
+      plants, manufacturing facilities, etc. that are more efficient and utilize clean
+      energy, as well as retrofits of non-green infrastructure to be more efficient
+      and use clean energy)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Industry|Non-Green:
+    description: investment into industrial infrastructure (all types of new factories,
+      plants, manufacturing facilities, etc. that are not overly efficient and do
+      not utilize clean energy, as well as retrofits of non-green infrastructure that
+      are neither efficient nor use clean energy)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Residential and Commercial|Building Retrofits:
+    description: investment into residential and commercial buildings infrastructure
+      (all types of existing buildings that have been retrofitted to become more energy
+      efficient)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Residential and Commercial|High-Efficiency Buildings:
+    description: investment into residential and commercial buildings infrastructure
+      (all types of new buildings that are relatively high in their energy efficiency)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Residential and Commercial|Low-Efficiency Buildings:
+    description: investment into residential and commercial buildings infrastructure
+      (all types of new buildings that are relatively low in their energy efficiency)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Residential and Commercial|Medium-Efficiency Buildings:
+    description: investment into residential and commercial buildings infrastructure
+      (all types of new buildings that are relatively medium-range in their energy
+      efficiency)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Transportation:
+    description: 'investment into transport infrastructure - both newly constructed
+      and maintenance of existing (all types: roads, bridges, ports, railways, refueling
+      stations and charging infrastructure, etc.). Please specify in the comments
+      section the type of infastructure that is being referred to here.'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Transportation|Aviation:
+    description: 'Investment into Aviation transport infrastructure - both newly constructed
+      and maintenance of existing (all relevant types: roads, bridges, (air)ports,
+      railways, refueling stations and charging infrastructure, etc.). Please specify
+      in the comments section the type of infastructure that is being referred to
+      here.'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Transportation|Maritime:
+    description: 'Investment into Maritime transport infrastructure - both newly constructed
+      and maintenance of existing (all relevant types: roads, bridges, (air)ports,
+      railways, refueling stations and charging infrastructure, etc.). Please specify
+      in the comments section the type of infastructure that is being referred to
+      here.'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Transportation|Rail:
+    description: 'Investment into Rail transport infrastructure - both newly constructed
+      and maintenance of existing (all relevant types: roads, bridges, (air)ports,
+      railways, refueling stations and charging infrastructure, etc.). Please specify
+      in the comments section the type of infastructure that is being referred to
+      here.'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Transportation|Road:
+    description: 'Investment into Road transport infrastructure - both newly constructed
+      and maintenance of existing (all relevant types: roads, bridges, (air)ports,
+      railways, refueling stations and charging infrastructure, etc.). Please specify
+      in the comments section the type of infastructure that is being referred to
+      here.'
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Water|Cooling:
+    description: investment into water-related infrastructure (thermal cooling at
+      energy and industrial facilities)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Water|Irrigation:
+    description: investment into water-related infrastructure (conveyance of water
+      via canals, aqueducts, irrigation ditches, pumps, etc.)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|Infrastructure|Water|Other:
+    description: investment into water-related infrastructure (other than for thermal
+      cooling and irrigation)
+    unit: billion US$2010/yr
+    category: Investment
+- Investment|RnD|Energy Supply:
+    description: Investments into research and development, energy supply sector
+    unit: billion US$2010/yr
+    category: Investment

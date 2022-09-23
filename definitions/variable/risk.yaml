@@ -1,0 +1,32 @@
+- Direct Risk|Asset Loss:
+    description: The risk of asset losses expressed in terms of their probability of
+      occurrence and destruction in monetary terms is modelled as a function of hazard
+      (frequency and intensity), the elements exposed to those hazards and their physical
+      sensitivity.
+    unit: billion US$2010/yr
+    category: Resilience/risk
+- Fiscal Gap:
+    description: The potential fiscal gap, is assessed by simulating the risks to
+      assets and fiscal resilience following stochastic disasters of different magnitudes.
+    unit: billion US$2010/yr
+    category: Resilience/risk
+- Fiscal Resilience:
+    description: Fiscal resilience is defined as the access to domestic and external
+      resources for absorbing asset risks (availability for budget diversion, access
+      to domestic and international credit, availablitiy of insurance and other
+      innovative financing instruments).
+    unit: billion US$2010/yr
+    category: Resilience/risk
+- Indirect Risk|GDP Growth:
+    description: The consequences of a fiscal vulnerability and associated gaps on
+      macroeconomic development of the country are characterized with indicators,
+      such as economic growth or the country's external debt position.
+    unit: '%'
+    weight: GDP|PPP
+    category: Resilience/risk
+- Indirect Risk|Public Debt:
+    description: The consequences of a fiscal vulnerability and associated gaps on
+      macroeconomic development\nof the country are characterized with indicators,
+      such as economic growth or the country's external debt position.
+    unit: billion US$2010/yr
+    category: Resilience/risk

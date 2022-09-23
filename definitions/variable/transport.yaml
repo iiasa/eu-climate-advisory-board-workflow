@@ -1,0 +1,93 @@
+- Capacity|Transportation|Aviation|Freight:
+    description: Maximum amount of tkms that can be transported per year through the
+      air
+    unit: billion tkm/yr
+    category: Transport
+- Capacity|Transportation|Aviation|Passenger:
+    description: Maximum amount of pkms that can be transported per year through the
+      air
+    unit: billion pkm/yr
+    category: Transport
+- Capacity|Transportation|Maritime|Freight:
+    description: Maximum amount of tkms that can be transported per year by maritime
+      mode
+    unit: billion tkm/yr
+    category: Transport
+- Capacity|Transportation|Maritime|Passenger:
+    description: Maximum amount of pkms that can be transported per year by maritime
+      mode
+    unit: billion pkm/yr
+    category: Transport
+- Capacity|Transportation|Rail|Freight:
+    description: Maximum amount of tkms that can be transported per year by rail
+    unit: billion tkm/yr
+    category: Transport
+- Capacity|Transportation|Rail|Passenger:
+    description: Maximum amount of pkms that can be transported per year by rail
+    unit: billion pkm/yr
+    category: Transport
+- Capacity|Transportation|Road|Freight:
+    description: Maximum amount of tkms that can be transported per year on the road
+    unit: billion tkm/yr
+    category: Transport
+- Capacity|Transportation|Road|Passenger:
+    description: Maximum amount of pkms that can be transported per year on the road
+    unit: billion pkm/yr
+    category: Transport
+- Transport|Stock|Aviation:
+    description: The stock of aircrafts
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Aviation|Freight:
+    description: The stock of aircrafts, used to transport freight
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Aviation|Passenger:
+    description: The stock of aircrafts, used to transport passengers
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Maritime:
+    description: The stock of ships at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Maritime|Freight:
+    description: The stock of freight ships at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Rail:
+    description: The stock of railway vehicles
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Rail|Freight:
+    description: The stock of railway vehicles, used to transport freight
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Rail|Passenger:
+    description: The stock of railway vehicles, used to transport passengers
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road:
+    description: The stock of road transport vehicles at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road|Freight:
+    description: The stock of road transport freight vehicles at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road|Passenger:
+    description: The stock of road transport passenger vehicles at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road|Passenger|2W&3W:
+    description: The stock of road transport passenger 2W &3W vehicles at the reported
+      year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road|Passenger|Bus:
+    description: The stock of road transport passenger buses at the reported year
+    unit: million vehicles
+    category: Transport
+- Transport|Stock|Road|Passenger|LDV:
+    description: The stock of road transport passenger LDVs at the reported year
+    unit: million vehicles
+    category: Transport

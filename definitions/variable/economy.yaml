@@ -1,0 +1,374 @@
+- Capital Formation:
+    description: net additions to the physical capital stock
+    unit: billion US$2010/yr
+    category: Economy
+- Capital Stock:
+    description: Macroeconomic capital stock
+    unit: billion US$2010/yr
+    category: Economy
+- Consumption:
+    description: total consumption of all goods, by all consumers in a region
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Discount Rate|Economy:
+    description: Economy-wide real discount rate of capital
+    unit: '%'
+    weight: GDP|PPP
+    core: true
+    category: Economy
+- Discount Rate|Electricity:
+    description: Discount rate for investments in electricity sector
+    unit: '%'
+    weight: Secondary Energy|Electricity
+    category: Economy
+- Discount Rate|Energy Supply:
+    description: Discount rate for investments in energy supply sector
+    unit: '%'
+    weight: Primary Energy
+    category: Economy
+- Discount Rate|Industry:
+    description: Discount rate for investments in the industrial sector
+    unit: '%'
+    skip-region-aggregation: true
+    category: Economy
+- Discount Rate|Mobility:
+    description: Discount rate for investments into mobility (e.g. vehicles; not including
+      transport infrastructure)
+    unit: '%'
+    category: Economy
+- Discount Rate|Residential and Commercial:
+    description: Discount rate for investments into residential and commercial Residential
+      and Commercial
+    unit: '%'
+    category: Economy
+- Discount Rate|Social:
+    description: Social discount rate (should be reported if different from capital
+      interest rate and used in the model to discount future costs and revenues)
+    unit: '%'
+    core: true
+    category: Economy
+- Discount Rate|Transport Infrastructure:
+    description: Discount rate for investments into transport infrastructure (roads,
+      railways, ports, airports, waterways etc.)
+    unit: '%'
+    category: Economy
+- Expenditure|government:
+    description: total government expenditure
+    unit: billion US$2010/yr
+    category: Economy
+- Expenditure|household:
+    description: Total household expenditure
+    unit: billion US$2010/yr
+    category: Economy
+- Expenditure|household|Services|Telecommunications:
+    description: expenditure of households for telecommunications incl. internet
+    unit: billion US$2010/yr
+    category: Economy
+- Expenditure|household|Services|Water & sanitation:
+    description: expenditure of households for Water & Sanitation services
+    unit: billion US$2010/yr
+    category: Economy
+- GDP|MER:
+    description: GDP at market exchange rate
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- GDP|PPP:
+    description: GDP at purchasing power parity
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- GINI:
+    description: GINI income inequality index
+    unit: '-'
+    weight: Population
+    category: Economy
+- Interest Rate|Real:
+    description: Real interest rate or return on capital that is relevant for energy
+      system investments
+    unit: '%'
+    weight: Indirect Risk|Public Debt
+    category: Economy
+- Policy Cost|Additional Total Energy System Cost:
+    description: additional energy system cost associated with the policy
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|Area under MAC Curve:
+    description: total costs of the policy, i.e. the area under the Marginal Abatement
+      Cost (MAC) curve
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|Consumption Loss:
+    description: consumption loss in a policy scenario compared to the corresponding
+      baseline (losses should be reported as negative numbers)
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|Equivalent Variation:
+    description: equivalent variation associated with the given policy
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|GDP Loss:
+    description: GDP loss in a policy scenario, including international transfers,
+      compared to the corresponding baseline (losses should be reported as negative
+      numbers). Transfers included if present; if no transfer, report same value as
+      "w/o transfers"
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|GDP Loss|w/o transfers:
+    description: GDP loss (without international transfers) in a policy scenario
+      compared to the corresponding baseline (losses should be reported as negative
+      numbers).
+    unit: billion US$2010/yr
+    category: Economy
+- Policy Cost|Other:
+    description: any other indicator of policy cost (e.g., compensated variation).
+      (please indicate what type of policy cost is measured on the 'comments' tab)
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Policy Cost|Welfare Change:
+    description: Policy cost for welfare change
+    unit: billion US$2010/yr
+    category: Economy
+- Price|Agriculture|Corn|Index:
+    description: price index of corn
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Crops
+    category: Economy
+- Price|Agriculture|Livestock|Index:
+    description: weighted average price index of livestock
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Livestock
+    category: Economy
+- Price|Agriculture|Non-Energy Crops and Livestock|Index:
+    description: weighted average price index of non-energy crops and livestock products
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy
+    category: Economy
+- Price|Agriculture|Non-Energy Crops|Index:
+    description: weighted average price index of non-energy crops
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Crops
+    category: Economy
+- Price|Agriculture|Rice|Index:
+    description: price index of rice
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Crops
+    category: Economy
+- Price|Agriculture|Soybean|Index:
+    description: price index of soybean
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Crops
+    category: Economy
+- Price|Agriculture|Wheat|Index:
+    description: price index of wheat
+    unit: Index (2010 = 1)
+    weight: Agricultural Production|Non-Energy|Crops
+    category: Economy
+- Price|Carbon:
+    description: price of carbon (for regional aggregrates the weighted price of carbon
+      by subregion should be used)
+    unit: US$2010/t CO2
+    weight: Emissions|CO2
+    core: true
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Electricity:
+    description: electricity price at the final level in the residential sector. Prices
+      should include the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Residential and Commercial|Residential|Electricity
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Gases|Natural Gas:
+    description: natural gas price at the final level in the residential sector. Prices
+      should include the effect of carbon prices.
+    unit: US$2010/GJ
+    skip-region-aggregation: true
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Liquids|Biomass:
+    description: biofuel price at the final level in the residential sector. Prices
+      should include the effect of carbon prices.
+    unit: US$2010/GJ
+    skip-region-aggregation: true
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Liquids|Oil:
+    description: light fuel oil price at the final level in the residential sector.
+      Prices should include the effect of carbon prices.
+    unit: US$2010/GJ
+    skip-region-aggregation: true
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Solids|Biomass:
+    description: biomass price at the final level in the residential sector. Prices
+      should include the effect of carbon prices.
+    unit: US$2010/GJ
+    skip-region-aggregation: true
+    category: Economy
+- Price|Final Energy|Residential and Commercial|Residential|Solids|Coal:
+    description: coal price at the final level in the residential sector. Prices should
+      include the effect of carbon prices.
+    unit: US$2010/GJ
+    skip-region-aggregation: true
+    category: Economy
+- Price|Industry|Cement:
+    description: Cement producer price
+    unit: US$2010/Mt
+    weight: Production|Cement
+    category: Economy
+- Price|Industry|Chemicals:
+    description: Chemicals producer price
+    unit: US$2010/Mt
+    weight: Production|Chemicals
+    category: Economy
+- Price|Industry|Chemicals|Ammonia:
+    description: Chemicals|Ammonia producer price
+    unit: US$2010/Mt
+    weight: Production|Chemicals|Ammonia
+    category: Economy
+- Price|Industry|Chemicals|High value chemicals:
+    description: Chemicals|High value chemicals producer price
+    unit: US$2010/Mt
+    skip-region-aggregation: true
+    category: Economy
+- Price|Industry|Chemicals|Methanol:
+    description: Chemicals|Methanol producer price
+    unit: US$2010/Mt
+    skip-region-aggregation: true
+    category: Economy
+- Price|Industry|Chemicals|Other:
+    description: Chemicals|Other producer price
+    unit: US$2010/Mt
+    skip-region-aggregation: true
+    category: Economy
+- Price|Industry|Non-ferrous metals:
+    description: Non-ferrous metals producer price
+    unit: US$2010/Mt
+    weight: Production|Non-ferrous metals
+    category: Economy
+- Price|Industry|Other:
+    description: Other producer price
+    unit: US$2010/Mt
+    skip-region-aggregation: true
+    category: Economy
+- Price|Industry|Plastics:
+    description: Plastics producer price
+    unit: US$2010/Mt
+    weight: Production|Plastics
+    category: Economy
+- Price|Industry|Pulp and Paper:
+    description: Pulp and Paper producer price
+    unit: US$2010/Mt
+    weight: Production|Pulp and Paper
+    category: Economy
+- Price|Industry|Steel:
+    description: Steel producer price
+    unit: US$2010/Mt
+    weight: Production|Steel
+    category: Economy
+- Price|Primary Energy|Biomass:
+    description: biomass producer price
+    unit: US$2010/GJ
+    weight: Primary Energy|Biomass
+    category: Economy
+- Price|Primary Energy|Coal:
+    description: coal price at the primary level (i.e. the spot price at the global
+      or regional market)
+    unit: US$2010/GJ
+    weight: Primary Energy|Coal
+    category: Economy
+- Price|Primary Energy|Gas:
+    description: natural gas price at the primary level (i.e. the spot price at the
+      global or regional market)
+    unit: US$2010/GJ
+    weight: Primary Energy|Gas
+    category: Economy
+- Price|Primary Energy|Oil:
+    description: crude oil price at the primary level (i.e. the spot price at the
+      global or regional market)
+    unit: US$2010/GJ
+    weight: Primary Energy|Oil
+    category: Economy
+- Price|Secondary Energy|Electricity:
+    description: electricity price at the secondary level, i.e. for large scale consumers
+      (e.g. aluminum production).  Prices should include the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Secondary Energy|Electricity
+    category: Economy
+- Price|Secondary Energy|Gases|Natural Gas:
+    description: natural gas price at the secondary level, i.e. for large scale consumers
+      (e.g. gas power plant). Prices should include the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Secondary Energy|Gases|Natural Gas
+    category: Economy
+- Price|Secondary Energy|Hydrogen:
+    description: hydrogen price at the secondary level. Prices should include the
+      effect of carbon prices
+    unit: US$2010/GJ
+    weight: Secondary Energy|Hydrogen
+    category: Economy
+- Price|Secondary Energy|Liquids:
+    description: liquid fuel price at the secondary level, i.e. petrol, diesel, or
+      weighted average
+    unit: US$2010/GJ
+    weight: Secondary Energy|Liquids
+    category: Economy
+- Price|Secondary Energy|Liquids|Biomass:
+    description: biofuel price at the secondary level, i.e. for biofuel consumers
+    unit: US$2010/GJ
+    weight: Secondary Energy|Liquids|Biomass
+    category: Economy
+- Price|Secondary Energy|Liquids|Oil:
+    description: light fuel oil price at the secondary level, i.e. for large scale
+      consumers (e.g. oil power plant). Prices should include the effect of carbon
+      prices.
+    unit: US$2010/GJ
+    weight: Secondary Energy|Liquids|Oil
+    category: Economy
+- Price|Secondary Energy|Solids|Biomass:
+    description: biomass price at the secondary level, i.e. for large scale consumers
+      (e.g. biomass power plant). Prices should include the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Secondary Energy|Solids|Biomass
+    category: Economy
+- Price|Secondary Energy|Solids|Coal:
+    description: coal price at the secondary level, i.e. for large scale consumers
+      (e.g. coal power plant). Prices should include the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Secondary Energy|Solids|Coal
+    category: Economy
+- Value Added|Agriculture:
+    description: value added by agriculture
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Value Added|Industry:
+    description: value added by industry
+    unit: billion US$2010/yr
+    core: true
+    category: Economy
+- Value Added|Industry|Energy:
+    description: value added by industry related to the energy sector
+    unit: billion US$2010/yr
+    category: Economy
+- Value Added|Industry|Energy Intensive:
+    description: value added by industry related to the energy-intensive industries
+    unit: billion US$2010/yr
+    category: Economy
+- Value Added|Industry|Manufacturing:
+    description: value added by industry related to maunfacturing
+    unit: billion US$2010/yr
+    category: Economy
+- Value Added|Industry|Share of energy costs:
+    description: share of energy costs to the total economic valuye added by Industry
+    unit: '%'
+    weight: Value Added|Industry|Energy
+    category: Economy
+- Value Added|Residential and Commercial|Commercial:
+    description: value added by commercial activity
+    unit: billion US$2010/yr
+    core: true
+    category: Economy

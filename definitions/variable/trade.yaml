@@ -1,0 +1,81 @@
+- Export:
+    description: total exports measured in monetary quantities.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Agriculture:
+    description: export of agricultural commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Energy:
+    description: export of energy commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Industry:
+    description: export of industrial (non-energy) commodities measured in monetary
+      units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Industry|Energy:
+    description: export of energy commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Industry|Energy Intensive:
+    description: export of energy intensive commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Industry|Manufacturing:
+    description: export of manufacturing goods measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Export|Other:
+    description: export of other commodities measured in monetary units (please provide
+      a definition of the sources in this category in the 'comments' tab).
+    unit: billion US$2010/yr
+    category: Trade
+- Import:
+    description: total imports measured in monetary quantities.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Agriculture:
+    description: import of agricultural commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Energy:
+    description: import of energy commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Industry:
+    description: import of industrial (non-energy) commodities measured in monetary
+      units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Industry|Energy:
+    description: Import of energy commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Industry|Energy Intensive:
+    description: Import of energy intensive commodities measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Industry|Manufacturing:
+    description: Import of manufacturing goods measured in monetary units.
+    unit: billion US$2010/yr
+    category: Trade
+- Import|Other:
+    description: import of other commodities measured in monetary units (please provide
+      a definition of the sources in this category in the 'comments' tab).
+    unit: billion US$2010/yr
+    category: Trade
+- Trade:
+    description: net exports of all goods, at the global level these should add up
+      to the trade losses only
+    unit: billion US$2010/yr
+    category: Trade
+- Trade|Emissions Allowances|Value:
+    description:
+    unit: billion US$2010/yr
+    category: Trade
+- Trade|Emissions Allowances|Volume:
+    description:
+    unit: Mt CO2-equiv/yr
+    category: Trade

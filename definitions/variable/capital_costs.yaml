@@ -1,0 +1,227 @@
+- Capital Cost|Electricity|Biomass|w/ CCS:
+    description: capital cost of a new biomass power plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Biomass|w/ CCS
+    category: Capital costs
+- Capital Cost|Electricity|Biomass|w/o CCS:
+    description: capital cost of a new biomass power plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Biomass|w/o CCS
+    category: Capital costs
+- Capital Cost|Electricity|Coal|w/ CCS:
+    description: capital cost of a new coal power plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Coal|w/ CCS
+    category: Capital costs
+- Capital Cost|Electricity|Coal|w/o CCS:
+    description: capital cost of a new coal power plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Coal|w/o CCS
+    category: Capital costs
+- Capital Cost|Electricity|Gas|w/ CCS:
+    description: capital cost of a new gas power plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Gas|w/ CCS
+    category: Capital costs
+- Capital Cost|Electricity|Gas|w/o CCS:
+    description: capital cost of a new gas power plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Gas|w/o CCS
+    category: Capital costs
+- Capital Cost|Electricity|Geothermal:
+    description: capital cost of a new geothermal power plant.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Geothermal
+    category: Capital costs
+- Capital Cost|Electricity|Hydro:
+    description: capital cost of a new hydropower plant.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Hydro
+    category: Capital costs
+- Capital Cost|Electricity|Nuclear:
+    description: capital cost of a new nuclear power plants.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Nuclear
+    category: Capital costs
+- Capital Cost|Electricity|Solar|CSP:
+    description: capital cost of a new concentrated solar power plant.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Solar|CSP
+    category: Capital costs
+- Capital Cost|Electricity|Solar|PV:
+    description: capital cost of a new solar PV units.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Solar|PV
+    category: Capital costs
+- Capital Cost|Electricity|Wind|Offshore:
+    description: capital cost of a new offshore wind power plants.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Wind|Offshore
+    category: Capital costs
+- Capital Cost|Electricity|Wind|Onshore:
+    description: capital cost of a new onshore wind power plants.
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Wind|Onshore
+    category: Capital costs
+- Capital Cost|Gases|Biomass|w/ CCS:
+    description: capital cost of a new biomass to gas plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Gases|Biomass|w/ CCS
+    category: Capital costs
+- Capital Cost|Gases|Biomass|w/o CCS:
+    description: capital cost of a new biomass to gas plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Gases|Biomass|w/o CCS
+    category: Capital costs
+- Capital Cost|Gases|Coal|w/ CCS:
+    description: capital cost of a new coal to gas plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Gases|Coal|w/ CCS
+    category: Capital costs
+- Capital Cost|Gases|Coal|w/o CCS:
+    description: capital cost of a new coal to gas plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Gases|Coal|w/o CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Biomass|w/ CCS:
+    description: capital cost of a new biomass to hydrogen plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Biomass|w/ CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Biomass|w/o CCS:
+    description: capital cost of a new biomass to hydrogen plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Biomass|w/o CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Coal|w/ CCS:
+    description: capital cost of a new coal to hydrogen plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Coal|w/ CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Coal|w/o CCS:
+    description: capital cost of a new coal to hydrogen plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Coal|w/o CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Electricity:
+    description: capital cost of a new hydrogen-by-electrolysis plant.
+    unit: US$2010/kW
+    weight: Capacity|Electricity
+    category: Capital costs
+- Capital Cost|Hydrogen|Gas|w/ CCS:
+    description: capital cost of a new gas to hydrogen plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Gas|w/ CCS
+    category: Capital costs
+- Capital Cost|Hydrogen|Gas|w/o CCS:
+    description: capital cost of a new gas to hydrogen plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Hydrogen|Gas|w/o CCS
+    category: Capital costs
+- Capital Cost|Liquids|Biomass|w/ CCS:
+    description: capital cost of a new biomass to liquids plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Biomass|w/ CCS
+    category: Capital costs
+- Capital Cost|Liquids|Biomass|w/o CCS:
+    description: capital cost of a new biomass to liquids plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Biomass|w/o CCS
+    category: Capital costs
+- Capital Cost|Liquids|Coal|w/ CCS:
+    description: capital cost of a new coal to liquids plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Coal|w/ CCS
+    category: Capital costs
+- Capital Cost|Liquids|Coal|w/o CCS:
+    description: capital cost of a new coal to liquids plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Coal|w/o CCS
+    category: Capital costs
+- Capital Cost|Liquids|Gas|w/ CCS:
+    description: capital cost of a new gas to liquids plant with CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Gas|w/ CCS
+    category: Capital costs
+- Capital Cost|Liquids|Gas|w/o CCS:
+    description: capital cost of a new gas to liquids plant w/o CCS.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Gas|w/o CCS
+    category: Capital costs
+- Capital Cost|Liquids|Oil:
+    description: capital cost of a new oil refining plant.
+    unit: US$2010/kW
+    weight: Capacity|Liquids|Oil
+    category: Capital costs
+- Capital Cost |Electricity|Solar|PV|Rooftop PV:
+    description: Capital cost of electricity generation capacity of rooftop solar PV
+    unit: US$2010/kW
+    weight: Capacity |Electricity|Solar|PV|Rooftop PV
+    category: Capital costs
+- Capital Cost|Electricity|Solar|PV|Utility-scale PV:
+    description: Capital cost of electricity generation capacity of ground-based solar PV
+    unit: US$2010/kW
+    weight: Capacity|Electricity|Solar|PV|Utility-scale PV
+    category: Capital costs
+- Capital Cost|Electricity|Storage|Battery Capacity:
+    description: Capital cost of capacity of battery storage
+    unit: US$2010/kWh
+    weight: Capacity|Electricity|Storage|Battery Capacity
+    category: Capital costs
+- Capital Cost|Electricity|Storage|Battery Capacity|Home Battery:
+    description: Capital cost of capacity of home battery storage
+    unit: US$2010/kWh
+    weight: Capacity|Electricity|Storage|Battery Capacity|Home Battery
+    category: Capital costs
+- Capital Cost|Electricity|Storage|Battery Capacity|Utility-scale Battery:
+    description: Capital cost of utility-scale battery storage
+    unit: US$2010/kWh
+    weight: Capacity|Electricity|Storage|Battery Capacity|Utility-scale Battery
+    category: Capital costs
+- Capital Cost|Electricity|Storage|Hydrogen Storage Capacity:
+    description: Capital cost of capacity of hydrogen storage
+    unit: US$2010/kWh
+    weight: Capacity|Electricity|Storage|Hydrogen Storage Capacity
+    category: Capital costs
+- Capital Cost|Electricity|Storage|Pumped Hydro Storage:
+    description: Capital cost of installed capacity of Pumped Hydro Storage
+    unit: US$2010/kWh
+    weight: Capacity|Electricity|Storage|Pumped Hydro Storage
+    category: Capital costs
+- Capital Cost|Storage|Thermal Energy Storage:
+    description: Capital cost of thermal energy storage capacity
+    unit: US$2010/kWh
+    weight: Capacity|Storage|Thermal Energy Storage
+    category: Capital costs
+- Capital Cost|Storage|Thermal Energy Storage|Household storage:
+    description: Capital cost of household thermal energy storage capacity
+    unit: US$2010/kWh
+    weight: Capacity|Storage|Thermal Energy Storage|Household storage
+    category: Capital costs
+- Capital Cost|Storage|Thermal Energy Storage|District heating storage:
+    description: Capital cost of thermal energy capacity
+    unit: US$2010/kWh
+    weight: Capacity|Storage|Thermal Energy Storage|District heating storage
+    category: Capital costs
+- Capital Cost|Heating|Heat pumps:
+    description: Capital cost of electrical capacity of heat pumps
+    unit: US$2010/kW
+    weight: Capacity|Heating|Heat pumps
+    category: Capital costs
+- Capital Cost|Heating|Electric boilers:
+    description: Capital cost of installed electrical capacity of electric boilers
+    unit: US$2010/kW
+    weight: Capacity|Heating|Electric boilers
+    category: Capital costs
+- Capital Cost|Gas|Synthetic:
+    description: Capital cost of installed electrical capacity of electricity to synthetic
+      gas (consuming Hydrogen and CO2, via e.g Sabatier reaction)
+    unit: US$2010/kW
+    weight: Capacity|Gas|Synthetic
+    category: Capital costs
+- Capital Cost|Oil|Synthetic:
+    description: Capital cost of installed electrical capacity of electricity to synthetic
+      oil (consuming Hydrogen and CO2, via e.g Fischer-Tropsch process)
+    unit: US$2010/kW
+    weight: Capacity|Oil|Synthetic
+    category: Capital costs

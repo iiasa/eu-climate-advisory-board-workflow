@@ -1,0 +1,3769 @@
+- Capacity Additions|Electricity|Biomass:
+    description: 'Capacity additions of all biomass power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Biomass|w/ CCS:
+    description: 'Capacity additions of biomass power plants with CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Biomass|w/o CCS:
+    description: 'Capacity additions of biomass power plants without CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Coal:
+    description: 'Capacity additions of all coal power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Coal|w/ CCS:
+    description: 'Capacity additions of coal power plants with CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Coal|w/o CCS:
+    description: 'Capacity additions of coal power plants without CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Gas:
+    description: 'Capacity additions of all gas power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Gas|w/ CCS:
+    description: 'Capacity additions of gas power plants with CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Gas|w/o CCS:
+    description: 'Capacity additions of gas power plants without CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Geothermal:
+    description: 'Capacity additions of geothermal power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Hydro:
+    description: 'Capacity additions of hydropower plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Nuclear:
+    description: 'Capacity additions of nuclear power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Oil:
+    description: 'Capacity additions of all oil power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Oil|w/ CCS:
+    description: 'Capacity additions of oil power plants with CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Oil|w/o CCS:
+    description: 'Capacity additions of oil power plants without CCS (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Solar:
+    description: 'Capacity additions of solar power plants (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Solar|CSP:
+    description: 'Capacity additions of concentrated solar power plants (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Solar|PV:
+    description: 'Capacity additions of solar PV (yearly average additions between
+      previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage Capacity:
+    description: 'Capacity additions of electricity storage capacity (yearly average
+      additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Transmissions Grid:
+    description: 'Capacity additions of electricity storage (yearly average additions
+      between previos and current model time step) '
+    unit: GWkm/yr
+    category: Energy
+- Capacity Additions|Electricity|Wind:
+    description: 'Capacity additions of wind power plants (onshore and offshore) (yearly
+      average additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Wind|Offshore:
+    description: 'Capacity additions of wind power plants (ooffshore) (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Wind|Onshore:
+    description: 'Capacity additions of wind power plants (onshore) (yearly average
+      additions between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity|Electricity:
+    description: total installed electricity generation capacity
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Biomass:
+    description: total installed electricity generation capacity of biomass power
+      plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Biomass|w/ CCS:
+    description: 'Total installed (available) capacity of biomass power plants with
+      CCS, including plants held in an operating reserve. The installed (available)
+      capacity of CCS biomass power plants by plant type for which capital costs are
+      reported should be reported by adding variables Capacity|Electricity|Biomass|w/
+      CCS|1, ..., Capacity|Electricity|Biomass|w/ CCS|N (matching the assignment of
+      plant types to technologies in the reporting of capital costs as documented
+      in the comments sheet). '
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Biomass|w/o CCS:
+    description: 'Total installed (available) capacity of biomass power plants without
+      CCS, including plants held in an operating reserve. The installed (available)
+      capacity of biomass power plants by plant type for which capital costs are reported
+      should be reported by adding variables Capacity|Electricity|Biomass|w/o CCS|1,
+      ..., Capacity|Electricity|Biomass|w/o CCS|N (matching the assignment of plant
+      types to technologies in the reporting of capital costs as documented in the
+      comments sheet). '
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Coal:
+    description: total installed electricity generation capacity of coal power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Coal|w/ CCS:
+    description: Total installed (available) capacity of coal power plants with CCS,
+      including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Coal|w/o CCS:
+    description: Total installed (available) capacity of coal power plants without
+      CCS, including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Gas:
+    description: total installed electricity generation capacity of gas power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Gas|w/ CCS:
+    description: Total installed (available) capacity of gas power plants with CCS,
+      including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Gas|w/o CCS:
+    description: Total installed (available) capacity of gas power plants without
+      CCS, including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Geothermal:
+    description: total installed electricity generation capacity of geothermal power
+      plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Hydro:
+    description: total installed electricity generation capacity of hydro power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Nuclear:
+    description: total installed electricity generation capacity of nuclear power
+      plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Ocean:
+    description: total installed electricity generation capacity of ocean power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Oil:
+    description: total installed electricity generation capacity of oil power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Oil|w/ CCS:
+    description: Total installed (available) capacity of oil power plants with CCS,
+      including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Oil|w/o CCS:
+    description: Total installed (available) capacity of oil power plants without
+      CCS, including plants held in an operating reserve.
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Other:
+    description: total installed electricity generation capacity of other power plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Peak Demand:
+    description: peak (maximum) electricity load
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Solar:
+    description: total installed electricity generation capacity of solar power installations
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Solar|CSP:
+    description: total installed electricity generation capacity of CSP plants
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Solar|PV:
+    description: total installed electricity generation capacity of PV installations
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Storage:
+    description: Total installed (available) capacity of operating electricity storage
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Storage Capacity:
+    description: Total installed capacity of operating electricity storage
+    unit: GWh
+    category: Energy
+- Capacity|Electricity|Transmissions Grid:
+    description: Total installed capacity of operating transmission grid
+    unit: GWkm
+    category: Energy
+- Capacity|Electricity|Wind:
+    description: total installed electricity generation capacity of wind power installations
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Wind|Offshore:
+    description: total installed electricity generation capacity of offshore wind
+      power installations
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Wind|Onshore:
+    description: total installed electricity generation capacity of onshore wind power
+      installations
+    unit: GW
+    category: Energy
+- Capacity|Gases|Biomass:
+    description: Total installed (available) capacity of biomass to gas plants.
+    unit: GW
+    category: Energy
+- Capacity|Gases|Biomass|w/ CCS:
+    description: Total installed (available) capacity of biomass to gas plants with
+      CCS.
+    unit: GW
+    category: Energy
+- Capacity|Gases|Biomass|w/o CCS:
+    description: Total installed (available) capacity of biomass to gas plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Capacity|Gases|Coal:
+    description: Total installed (available) capacity of coal to gas plants.
+    unit: GW
+    category: Energy
+- Capacity|Gases|Coal|w/ CCS:
+    description: Total installed (available) capacity of coal to gas plants with CCS
+    unit: GW
+    category: Energy
+- Capacity|Gases|Coal|w/o CCS:
+    description: Total installed (available) capacity of coal to gas plants without CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Biomass:
+    description: Total installed (available) capacity of biomass to hydrogen plants.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Biomass|w/ CCS:
+    description: Total installed (available) capacity of biomass to hydrogen plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Biomass|w/o CCS:
+    description: Total installed (available) capacity of biomass to hydrogen plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Coal:
+    description: Total installed (available) capacity of coal to hydrogen plants.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Coal|w/ CCS:
+    description: Total installed (available) capacity of coal to hydrogen plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Coal|w/o CCS:
+    description: Total installed (available) capacity of coal to hydrogen plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Electricity:
+    description: Total installed (available) capacity of hydrogen-by-electrolysis
+      plants.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Gas:
+    description: Total installed (available) capacity of gas to hydrogen plants.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Gas|w/ CCS:
+    description: Total installed (available) capacity of gas to hydrogen plants with
+      CCS.
+    unit: GW
+    category: Energy
+- Capacity|Hydrogen|Gas|w/o CCS:
+    description: Total installed (available) capacity of gas to hydrogen plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Biomass:
+    description: Total installed (available) capacity of biomass to liquids plants.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Biomass|w/ CCS:
+    description: Total installed (available) capacity of biomass to liquids plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Biomass|w/o CCS:
+    description: Total installed (available) capacity of biomass to liquids plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Coal:
+    description: Total installed (available) capacity of coal to liquids plants.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Coal|w/ CCS:
+    description: Total installed (available) capacity of coal to liquids plants with CCS
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Coal|w/o CCS:
+    description: Total installed (available) capacity of coal to liquids plants without
+      CCS
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Gas:
+    description: Total installed (available) capacity of gas to liquids plants.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Gas|w/ CCS:
+    description: Total installed (available) capacity of gas to liquids plants with CCS.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Gas|w/o CCS:
+    description: Total installed (available) capacity of gas to liquids plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Capacity|Liquids|Oil:
+    description: Total installed (available) capacity of oil refining plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Biomass:
+    description: cumulative installed capacity (since 2005) of biomass power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Biomass|w/ CCS:
+    description: cumulative installed capacity (since 2005) of biomass power plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Biomass|w/o CCS:
+    description: cumulative installed capacity (since 2005) of biomass power plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Coal:
+    description: cumulative installed capacity (since 2005) of coal power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Coal|w/ CCS:
+    description: cumulative installed capacity (since 2005) of coal power plants with
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Coal|w/o CCS:
+    description: cumulative installed capacity (since 2005) of coal power plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Gas:
+    description: cumulative installed capacity (since 2005) of gas power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Gas|w/ CCS:
+    description: cumulative installed capacity (since 2005) of gas power plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Gas|w/o CCS:
+    description: cumulative installed capacity (since 2005) of gas power plants with
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Geothermal:
+    description: cumulative installed capacity (since 2005) of geothermal power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Hydro:
+    description: cumulative installed capacity (since 2005) of hydro power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Nuclear:
+    description: cumulative installed capacity (since 2005) of nuclear power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Ocean:
+    description: cumulative installed capacity (since 2005) of ocean power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Oil:
+    description: cumulative installed capacity (since 2005) of oil power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Oil|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of oil power plants with
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Oil|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of oil power plants without
+      CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Other:
+    description: cumulative installed capacity (since 2005) of other power plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Solar:
+    description: cumulative installed capacity (since 2005) of solar power installations
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Solar|CSP:
+    description: cumulative installed capacity (since 2005) of CSP plants
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Solar|PV:
+    description: cumulative installed capacity (since 2005) of PV installations
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Wind:
+    description: cumulative installed capacity (since 2005) of wind power installations
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Wind|Offshore:
+    description: cumulative installed capacity (since 2005) of offshore wind power
+      installations
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Electricity|Wind|Onshore:
+    description: cumulative installed capacity (since 2005) of onshore wind power
+      installations
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Biomass:
+    description: Cumulative installed capacity (since 2005) of biomass to gas plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Biomass|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to gas plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Biomass|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to gas plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Coal:
+    description: Cumulative installed capacity (since 2005) of coal to gas plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Coal|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of coal to gas plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Gases|Coal|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of coal to gas plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Biomass:
+    description: Cumulative installed capacity (since 2005) of biomass to hydrogen
+      plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Biomass|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to hydrogen
+      plants with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Biomass|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to hydrogen
+      plants without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Coal:
+    description: Cumulative installed capacity (since 2005) of coal to hydrogen plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Coal|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of coal to hydrogen plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Coal|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of coal to hydrogen plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Electricity:
+    description: Cumulative installed capacity (since 2005) of hydrogen-by-electrolysis
+      plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Gas:
+    description: Cumulative installed capacity (since 2005) of gas to hydrogen plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Gas|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of gas to hydrogen plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Hydrogen|Gas|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of gas to hydrogen plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Biomass:
+    description: Cumulative installed capacity (since 2005) of biomass to liquids
+      plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Biomass|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to liquids
+      plants with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Biomass|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of biomass to liquids
+      plants without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Coal:
+    description: Cumulative installed capacity (since 2005) of coal to liquids plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Coal|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of coal to liquids plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Coal|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of coal to liquids plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Gas:
+    description: Cumulative installed capacity (since 2005) of gas to liquids plants.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Gas|w/ CCS:
+    description: Cumulative installed capacity (since 2005) of gas to liquids plants
+      with CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Gas|w/o CCS:
+    description: Cumulative installed capacity (since 2005) of gas to liquids plants
+      without CCS.
+    unit: GW
+    category: Energy
+- Cumulative Capacity|Liquids|Oil:
+    description: Cumulative installed capacity (since 2005) of oil refining plants.
+    unit: GW
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Construction:
+    description: Annual construction of commercial education buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Construction cost:
+    description: Construction cost of commercial education buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Construction rate:
+    description: Annual construction rate of commercial education buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Education|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Floor space:
+    description: Energy service demand for conditioned floor space in commercial education
+      buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Renovation cost:
+    description: Ronstruction cost of commercial education buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Education|Renovation rate:
+    description: Annual renovation rate of commercial education buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Education|Floor space
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Floor Space:
+    description: energy service demand for conditioned floor space in commercial buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Construction:
+    description: Annual construction of commercial health buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Construction cost:
+    description: Construction cost of commercial health buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Construction rate:
+    description: Annual construction rate of commercial health buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Health|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Floor space:
+    description: Energy service demand for conditioned floor space in commercial health
+      buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Renovation cost:
+    description: Ronstruction cost of commercial health buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Health|Renovation rate:
+    description: Annual renovation rate of commercial health buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Health|Floor space
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Construction:
+    description: Annual construction of commercial hotels buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Construction cost:
+    description: Construction cost of commercial hotels buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Construction rate:
+    description: Annual construction rate of commercial hotels buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Hotels|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Floor space:
+    description: Energy service demand for conditioned floor space in commercial hotels
+      buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Renovation cost:
+    description: Construction cost of commercial hotels buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Hotels|Renovation rate:
+    description: Annual renovation rate of commercial hotels buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Hotels|Floor space
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction:
+    description: Annual construction of commercial industrial & trade buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction cost:
+    description: Construction cost of commercial industrial & trade buildings including
+      material and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction rate:
+    description: Annual construction rate of commercial industrial & trade buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Floor space:
+    description: Energy service demand for conditioned floor space in commercial industrial
+      & trade buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Renovation cost:
+    description: Ronstruction cost of commercial industrial & trade buildings including
+      material and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Industrial & trade|Renovation rate:
+    description: Annual renovation rate of commercial industrial & trade buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Industrial & trade|Floor
+      space
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Construction:
+    description: Annual construction of commercial offices buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Construction cost:
+    description: Construction cost of commercial offices buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Construction rate:
+    description: Annual construction rate of commercial offices buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Offices|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Floor space:
+    description: Energy service demand for conditioned floor space in commercial offices
+      buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Renovation cost:
+    description: Construction cost of commercial offices buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Offices|Renovation rate:
+    description: Annual renovation rate of commercial offices buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Offices|Floor space
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Construction:
+    description: Annual construction of commercial restaurant buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Construction cost:
+    description: Construction cost of commercial restaurant buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Construction rate:
+    description: Annual construction rate of commercial restaurant buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Restaurant|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Floor space:
+    description: Energy service demand for conditioned floor space in commercial restaurant
+      buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Renovation cost:
+    description: Construction cost of commercial restaurant buildings including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Restaurant|Renovation rate:
+    description: Annual renovation rate of commercial restaurant buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Restaurant|Floor
+      space
+    category: Energy
+- Energy Service|Residential and Commercial|Floor Space:
+    description: annual demand for floor space (and associated energy servide demand
+      for heating and lighting) in residential and commerical Residential and Commercial
+    unit: bn m2/yr
+    core: true
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Construction:
+    description: Construction cost of commercial buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Construction cost:
+    description: Construction cost of commercial buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Construction rate:
+    description: Annual construction rate of  commercial buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Renovation cost:
+    description: Renovation cost of commercial buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Commercial|Renovation rate:
+    description: Annual renovation rate of  commercial buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Commercial|Floor Space
+    category: Energy
+- Energy Service|Residential and Commercial|Construction:
+    description: Annual construction of buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Construction cost:
+    description: Construction cost of buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Construction rate:
+    description: Annual construction rate of  buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Renovation cost:
+    description: Renovation cost of buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Renovation rate:
+    description: Annual renovation rate of  buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Floor Space
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Construction:
+    description: Construction cost of residential buildings
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Construction cost:
+    description: Construction cost of residential buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Construction rate:
+    description: Annual construction rate of  residential buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Renovation cost:
+    description: Renovation cost of residential buildings
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Renovation rate:
+    description: Annual renovation rate of  residential buildings
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Floor Space
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Floor Space:
+    description: energy service demand for conditioned floor space in residential
+      Residential and Commercial
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Construction:
+    description: Annual construction of residential multi-family housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Construction cost:
+    description: Construction cost of residential multi-family housing including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Construction rate:
+    description: Annual construction rate of residential multi-family housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Multi-family|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Floor space:
+    description: Energy service demand for conditioned floor space in residential
+      multi-family housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Renovation cost:
+    description: Renovation cost of residential multi-family housing including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Multi-family|Renovation rate:
+    description: Annual renovation rate of residential multi-family housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Multi-family|Floor
+      space
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Construction:
+    description: Annual construction of residential single family housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Construction cost:
+    description: Construction cost of residential single family housing including
+      material and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Construction rate:
+    description: Annual construction rate of residential single family housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Single family|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Floor space:
+    description: Energy service demand for conditioned floor space in residential
+      single family housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Renovation cost:
+    description: Renovation cost of residential single family housing including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Single family|Renovation rate:
+    description: Annual renovation rate of residential single family housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Single family|Floor
+      space
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Construction:
+    description: Annual construction of residential slum housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Construction cost:
+    description: Construction cost of residential slum housing including material
+      and labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Construction rate:
+    description: Annual construction rate of residential slum housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Slum|Construction
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Floor space:
+    description: Energy service demand for conditioned floor space in residential
+      slum housing
+    unit: bn m2/yr
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Renovation cost:
+    description: Renovation cost of residential slum housing including material and
+      labour costs
+    unit: US$2010/m2
+    category: Energy
+- Energy Service|Residential and Commercial|Residential|Slum|Renovation rate:
+    description: Annual renovation rate of residential slum housing
+    unit: '%/yr'
+    weight: Energy Service|Residential and Commercial|Residential|Slum|Floor space
+    category: Energy
+- Energy Service|Transportation|Aviation:
+    description: Annual demand for energy services in billion vehicle-kms related
+      to both passenger and freight transportation by Aviation
+    unit: bn vkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight:
+    description: annual demand for energy services related to freight transportation
+    unit: bn tkm/yr
+    core: true
+    category: Energy
+- Energy Service|Transportation|Freight|Aviation:
+    description: annual demand for energy services related to freight transportation
+      in aviation
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight|International Shipping:
+    description: annual demand for energy services related to freight transportation
+      in international shipping
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight|Navigation:
+    description: annual demand for energy services related to freight transportation
+      in navigation
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight|Other:
+    description: annual demand for energy services related to freight transportation
+      (other)
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight|Railways:
+    description: annual demand for energy services related to freight transportation
+      in railways
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Freight|Road:
+    description: annual demand for energy services related to freight transportation
+      on roads
+    unit: bn tkm/yr
+    category: Energy
+- Energy Service|Transportation|Navigation:
+    description: Annual demand for energy services in billion vehicle-kms related
+      to both passenger and freight transportation by Navigation
+    unit: bn vkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger:
+    description: annual demand for energy services related to passenger transportation
+    unit: bn pkm/yr
+    core: true
+    category: Energy
+- Energy Service|Transportation|Passenger|Aviation:
+    description: annual demand for energy services related to passenger transportation
+      in aviation
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Bicycling and Walking:
+    description: energy service demand for passenger transport on bicycles and by
+      foot
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Navigation:
+    description: annual demand for energy services related to passenger transportation
+      in navigation
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Other:
+    description: annual demand for energy services related to passenger transportation
+      (other)
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Railways:
+    description: annual demand for energy services related to passenger transportation
+      in railways
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Road:
+    description: annual demand for energy services related to passenger transportation
+      on roads
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Road|2W and 3W:
+    description: energy service demand for passenger transport on roads (two- and
+      three-wheel vehicles)
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Road|Bus:
+    description: energy service demand for passenger transport on roads (buses)
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Passenger|Road|LDV:
+    description: 'energy service demand for passenger transport on roads (light-duty
+      vehicles: passenger cars and light trucks/SUVs/vans)'
+    unit: bn pkm/yr
+    category: Energy
+- Energy Service|Transportation|Rail:
+    description: Annual demand for energy services in billion vehicle-kms related
+      to both passenger and freight transportation by Rail
+    unit: bn vkm/yr
+    category: Energy
+- Energy Service|Transportation|Road:
+    description: Annual demand for energy services in billion vehicle-kms related
+      to both passenger and freight transportation by Road
+    unit: bn vkm/yr
+    category: Energy
+- Final Energy:
+    description: total final energy consumption by all end-use sectors and all fuels,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, total
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Electricity:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of electricity
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Gases:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of gases
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Gases|Bioenergy:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of gases|bioenergy
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Gases|Fossil:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of gases|fossil
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Gases|Hydrogen synfuel:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of gases|hydrogen synfuel
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Heat:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of heat
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Hydrogen:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Liquids:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of liquids
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Liquids|Bioenergy:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of liquids|bioenergy
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Liquids|Fossil:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of liquids|fossil
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Liquids|Hydrogen synfuel:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of liquids|hydrogen synfuel
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Other:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of other
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Solids:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of solids
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Solids|Bioenergy:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of solids|bioenergy
+    unit: EJ/yr
+    category: Energy
+- Final Energy (excl. feedstocks)|Industry|Solids|Fossil:
+    description: Final Energy consumption by the industrial sector, excluding feedstocks
+      use, of solids|fossil
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Electricity:
+    description: final energy consumption of electricity (including on-site solar
+      PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Gases:
+    description: final energy consumption of gases (natural gas, biogas, coal-gas),
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Geothermal:
+    description: final energy consumption of geothermal energy (e.g., from decentralized
+      or small-scale geothermal heating systems) EXCLUDING geothermal heat pumps
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Heat:
+    description: final energy consumption of heat (e.g., district heat, process heat,
+      warm water), excluding transmission/distribution losses, excluding direct geothermal
+      and solar heating
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Hydrogen:
+    description: final energy consumption of hydrogen, excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry:
+    description: final energy consumed by the industrial sector, including feedstocks,
+      including agriculture and fishing
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Cement|Electricity:
+    description: final energy consumption by the industrial cement sector of electricity,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Gases:
+    description: final energy consumption by the industrial cement sector of gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Gases|Bioenergy:
+    description: final energy consumption by the industrial cement sector of gases|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Gases|Fossil:
+    description: final energy consumption by the industrial cement sector of gases|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial cement sector of gases|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Heat:
+    description: final energy consumption by the industrial cement sector of heat,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Hydrogen:
+    description: final energy consumption by the industrial cement sector of hydrogen,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Liquids:
+    description: final energy consumption by the industrial cement sector of liquids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Liquids|Bioenergy:
+    description: final energy consumption by the industrial cement sector of liquids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Liquids|Fossil:
+    description: final energy consumption by the industrial cement sector of liquids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial cement sector of liquids|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Other:
+    description: final energy consumption by the industrial cement sector of other,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Solids:
+    description: final energy consumption by the industrial cement sector of solids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Solids|Bioenergy:
+    description: final energy consumption by the industrial cement sector of solids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Cement|Solids|Fossil:
+    description: final energy consumption by the industrial cement sector of solids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Electricity:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Gases:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Gases|Bioenergy:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Gases|Fossil:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Heat:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Hydrogen:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Liquids:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Liquids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Liquids|Fossil:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Other:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Solids:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Solids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Ammonia|Solids|Fossil:
+    description: final energy consumption by the industrial chemicals|ammonia sector
+      of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Electricity:
+    description: final energy consumption by the industrial chemicals sector of electricity,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Gases:
+    description: final energy consumption by the industrial chemicals sector of gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Gases|Bioenergy:
+    description: final energy consumption by the industrial chemicals sector of gases|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Gases|Fossil:
+    description: final energy consumption by the industrial chemicals sector of gases|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals sector of gases|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Heat:
+    description: final energy consumption by the industrial chemicals sector of heat,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Electricity:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Gases:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Gases|Bioenergy:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Gases|Fossil:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Heat:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Hydrogen:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Liquids:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Liquids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Liquids|Fossil:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Other:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Solids:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Solids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|High value chemicals|Solids|Fossil:
+    description: final energy consumption by the industrial chemicals|high value chemicals
+      sector of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Hydrogen:
+    description: final energy consumption by the industrial chemicals sector of hydrogen,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Liquids:
+    description: final energy consumption by the industrial chemicals sector of liquids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Liquids|Bioenergy:
+    description: final energy consumption by the industrial chemicals sector of liquids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Liquids|Fossil:
+    description: final energy consumption by the industrial chemicals sector of liquids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals sector of liquids|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Electricity:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Gases:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Gases|Bioenergy:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Gases|Fossil:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Heat:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Hydrogen:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Liquids:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Liquids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Liquids|Fossil:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Other:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Solids:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Solids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Methanol|Solids|Fossil:
+    description: final energy consumption by the industrial chemicals|methanol sector
+      of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other:
+    description: final energy consumption by the industrial chemicals sector of other,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Electricity:
+    description: final energy consumption by the industrial chemicals|other sector
+      of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Gases:
+    description: final energy consumption by the industrial chemicals|other sector
+      of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Gases|Bioenergy:
+    description: final energy consumption by the industrial chemicals|other sector
+      of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Gases|Fossil:
+    description: final energy consumption by the industrial chemicals|other sector
+      of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|other sector
+      of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Heat:
+    description: final energy consumption by the industrial chemicals|other sector
+      of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Hydrogen:
+    description: final energy consumption by the industrial chemicals|other sector
+      of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Liquids:
+    description: final energy consumption by the industrial chemicals|other sector
+      of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Liquids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|other sector
+      of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Liquids|Fossil:
+    description: final energy consumption by the industrial chemicals|other sector
+      of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial chemicals|other sector
+      of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Other:
+    description: final energy consumption by the industrial chemicals|other sector
+      of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Solids:
+    description: final energy consumption by the industrial chemicals|other sector
+      of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Solids|Bioenergy:
+    description: final energy consumption by the industrial chemicals|other sector
+      of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Other|Solids|Fossil:
+    description: final energy consumption by the industrial chemicals|other sector
+      of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Solids:
+    description: final energy consumption by the industrial chemicals sector of solids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Solids|Bioenergy:
+    description: final energy consumption by the industrial chemicals sector of solids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Chemicals|Solids|Fossil:
+    description: final energy consumption by the industrial chemicals sector of solids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Electricity:
+    description: final energy consumption by the industrial sector of electricity
+      (including on-site solar PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Electricity|Share:
+    description: Share of electrified FE in industry
+    unit: '%'
+    weight: Final Energy|Industry
+    category: Energy
+- Final Energy|Industry|Gases:
+    description: final energy consumption by the industrial sector of gases (natural
+      gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Gases|:
+    description: Final energy consumption by the industrial sector of natural and
+      synthetic gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Gases|Bioenergy:
+    description: Final energy consumption by the industrial sector of bioenergy gases
+      (biogas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Gases|Fossil:
+    description: Final energy consumption by the industrial sector of fossil-derived
+      natural and synthetic gases (natural gas, coal gas), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Gases|Hydrogen synfuel:
+    description: Final energy consumption by the industrial sector of hydrogen-derived
+      syngases (e-fuels), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Heat:
+    description: final energy consumption by the industrial sector of heat (e.g.,
+      district heat, process heat, solar heating and warm water), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Hydrogen:
+    description: final energy consumption by the industrial sector of hydrogen
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Liquids:
+    description: final energy consumption by the industrial sector of refined liquids
+      (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Liquids|:
+    description: Final energy consumption by the industrial sector of natural and
+      synthetic liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Liquids|Bioenergy:
+    description: Final energy consumption by the industrial sector of bioenergy liquids
+      (biodiesel, ethanol), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Liquids|Fossil:
+    description: Final energy consumption by the industrial sector of synthetic fossil-derived
+      liquids (coal to liquids), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Liquids|Hydrogen synfuel:
+    description: Final energy consumption by the industrial sector of hydrogen-derived
+      liquid synfuels (e-fuels), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Liquids|Oil:
+    description: Final energy consumption by the industrial sector of traditional
+      liquid petroleum oils (e.g. gasoline, diesel), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Electricity:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Gases:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Gases|Bioenergy:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Gases|Fossil:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Heat:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Hydrogen:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Liquids:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Liquids|Bioenergy:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Liquids|Fossil:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Other:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Solids:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Solids|Bioenergy:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Non-ferrous metals|Solids|Fossil:
+    description: final energy consumption by the industrial non-ferrous metals sector
+      of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other:
+    description: final energy consumption by the industrial sector of other sources
+      that do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Other|Electricity:
+    description: final energy consumption by the industrial other sector of electricity,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Gases:
+    description: final energy consumption by the industrial other sector of gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Gases|Bioenergy:
+    description: final energy consumption by the industrial other sector of gases|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Gases|Fossil:
+    description: final energy consumption by the industrial other sector of gases|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial other sector of gases|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Heat:
+    description: final energy consumption by the industrial other sector of heat,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Hydrogen:
+    description: final energy consumption by the industrial other sector of hydrogen,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Liquids:
+    description: final energy consumption by the industrial other sector of liquids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Liquids|Bioenergy:
+    description: final energy consumption by the industrial other sector of liquids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Liquids|Fossil:
+    description: final energy consumption by the industrial other sector of liquids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial other sector of liquids|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Other:
+    description: final energy consumption by the industrial other sector of other,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Solids:
+    description: final energy consumption by the industrial other sector of solids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Solids|Bioenergy:
+    description: final energy consumption by the industrial other sector of solids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Other|Solids|Fossil:
+    description: final energy consumption by the industrial other sector of solids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Electricity:
+    description: final energy consumption by the industrial plastics sector of electricity,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Gases:
+    description: final energy consumption by the industrial plastics sector of gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Gases|Bioenergy:
+    description: final energy consumption by the industrial plastics sector of gases|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Gases|Fossil:
+    description: final energy consumption by the industrial plastics sector of gases|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial plastics sector of gases|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Heat:
+    description: final energy consumption by the industrial plastics sector of heat,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Hydrogen:
+    description: final energy consumption by the industrial plastics sector of hydrogen,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Liquids:
+    description: final energy consumption by the industrial plastics sector of liquids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Liquids|Bioenergy:
+    description: final energy consumption by the industrial plastics sector of liquids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Liquids|Fossil:
+    description: final energy consumption by the industrial plastics sector of liquids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial plastics sector of liquids|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Other:
+    description: final energy consumption by the industrial plastics sector of other,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Solids:
+    description: final energy consumption by the industrial plastics sector of solids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Solids|Bioenergy:
+    description: final energy consumption by the industrial plastics sector of solids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Plastics|Solids|Fossil:
+    description: final energy consumption by the industrial plastics sector of solids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Electricity:
+    description: final energy consumption by the industrial pulp and paper sector
+      of electricity, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Gases:
+    description: final energy consumption by the industrial pulp and paper sector
+      of gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Gases|Bioenergy:
+    description: final energy consumption by the industrial pulp and paper sector
+      of gases|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Gases|Fossil:
+    description: final energy consumption by the industrial pulp and paper sector
+      of gases|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial pulp and paper sector
+      of gases|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Heat:
+    description: final energy consumption by the industrial pulp and paper sector
+      of heat, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Hydrogen:
+    description: final energy consumption by the industrial pulp and paper sector
+      of hydrogen, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Liquids:
+    description: final energy consumption by the industrial pulp and paper sector
+      of liquids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Liquids|Bioenergy:
+    description: final energy consumption by the industrial pulp and paper sector
+      of liquids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Liquids|Fossil:
+    description: final energy consumption by the industrial pulp and paper sector
+      of liquids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial pulp and paper sector
+      of liquids|hydrogen synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Other:
+    description: final energy consumption by the industrial pulp and paper sector
+      of other, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Solids:
+    description: final energy consumption by the industrial pulp and paper sector
+      of solids, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Solids|Bioenergy:
+    description: final energy consumption by the industrial pulp and paper sector
+      of solids|bioenergy, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Pulp and Paper|Solids|Fossil:
+    description: final energy consumption by the industrial pulp and paper sector
+      of solids|fossil, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Solids:
+    description: final energy solid fuel consumption by the industrial sector (including
+      coal and solid biomass)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Industry|Solids|Biomass:
+    description: final energy consumption by the industry sector of solid biomass
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Solids|Coal:
+    description: final energy consumption by the industry sector of coal
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Electricity:
+    description: final energy consumption by the industrial steel sector of electricity,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Gases:
+    description: final energy consumption by the industrial steel sector of gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Gases|Bioenergy:
+    description: final energy consumption by the industrial steel sector of gases|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Gases|Fossil:
+    description: final energy consumption by the industrial steel sector of gases|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Gases|Hydrogen synfuel:
+    description: final energy consumption by the industrial steel sector of gases|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Heat:
+    description: final energy consumption by the industrial steel sector of heat,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Hydrogen:
+    description: final energy consumption by the industrial steel sector of hydrogen,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Liquids:
+    description: final energy consumption by the industrial steel sector of liquids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Liquids|Bioenergy:
+    description: final energy consumption by the industrial steel sector of liquids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Liquids|Fossil:
+    description: final energy consumption by the industrial steel sector of liquids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Liquids|Hydrogen synfuel:
+    description: final energy consumption by the industrial steel sector of liquids|hydrogen
+      synfuel, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Other:
+    description: final energy consumption by the industrial steel sector of other,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Solids:
+    description: final energy consumption by the industrial steel sector of solids,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Solids|Bioenergy:
+    description: final energy consumption by the industrial steel sector of solids|bioenergy,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Industry|Steel|Solids|Fossil:
+    description: final energy consumption by the industrial steel sector of solids|fossil,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Liquids:
+    description: final energy consumption of refined liquids (conventional & unconventional
+      oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Non-Energy Use:
+    description: final energy consumption by the non-combustion processes
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Non-Energy Use|Biomass:
+    description: final energy consumption of biomass by the non-combustion processes
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Non-Energy Use|Coal:
+    description: final energy consumption of coal by the non-combustion processes
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Non-Energy Use|Gas:
+    description: final energy consumption of gas by the non-combustion processes
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Non-Energy Use|Oil:
+    description: final energy consumption of oil by the non-combustion processes
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other:
+    description: final energy consumption of other sources that do not fit to any
+      other category (please provide a definition of the sources in this category
+      in the 'comments' tab)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Other Sector:
+    description: total final energy consumption by other sectors
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Other Sector|Electricity:
+    description: final energy consumption by other sectors of electricity (including
+      on-site solar PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Gases:
+    description: final energy consumption by other sectors of gases (natural gas,
+      biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Heat:
+    description: final energy consumption by other sectors of heat (e.g., district
+      heat, process heat, solar heating and warm water), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Hydrogen:
+    description: final energy consumption by other sectors of hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Liquids:
+    description: final energy consumption by other sectors of refined liquids (conventional
+      & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Other:
+    description: final energy consumption by other sectors of other sources that do
+      not fit to any other category (please provide a definition of the sources in
+      this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Solids:
+    description: final energy solid fuel consumption by other sectors (including coal
+      and solid biomass)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Solids|Biomass:
+    description: final energy consumption by other sectors of solid biomass (modern
+      and traditional), excluding final energy consumption of bioliquids which are
+      reported in the liquids category
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Solids|Biomass|Traditional:
+    description: final energy consumed by other sectors than industry, transportation,
+      residential and commercial coming from biomass (traditional)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Other Sector|Solids|Coal:
+    description: final energy coal consumption by other sectors
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial:
+    description: final energy consumed in the residential & commercial sector
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Appliances:
+    description: Final energy consumption by the residential and commercial sector
+      for appliances
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial:
+    description: final energy consumed in the commercial sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Appliances:
+    description: Final energy consumption by the commercial sector for appliances
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Cooling:
+    description: Final energy consumption by the commercial sector for cooling
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Electricity:
+    description: final energy consumption by the commercial sector of electricity
+      (including on-site solar PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Gases:
+    description: final energy consumption by the commercial sector of gases (natural
+      gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heat:
+    description: final energy consumption by the commercial sector of heat (e.g.,
+      district heat, process heat, solar heating and warm water), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating:
+    description: Final energy consumption by the commercial sector for heating
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating|Cooking:
+    description: Final energy consumption by the commercial sector for heating|cooking
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating|Space:
+    description: Final energy consumption by the commercial sector for heating|space
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating|Water:
+    description: Final energy consumption by the commercial sector for heating|water
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Hydrogen:
+    description: final energy consumption by the commercial sector of hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Lighting:
+    description: Final energy consumption by the commercial sector for lighting
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Liquids:
+    description: final energy consumption by the commercial sector of refined liquids
+      (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Ofice equipment:
+    description: Final energy consumption by the commercial sector for ofice equipment
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Other:
+    description: final energy consumption by the commercial sector of other sources
+      that do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Solids:
+    description: final energy solid fuel consumption by the commercial sector (including
+      coal and solid biomass)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Solids|Biomass:
+    description: final energy solid biomass consumption by the commercial sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Solids|Biomass|Traditional:
+    description: final energy traditional biomass consumption by the commercial sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Solids|Coal:
+    description: final energy coal consumption by the commercial sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Cooling:
+    description: Final energy consumption by the residential and commercial sector
+      for cooling
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Electricity:
+    description: final energy consumption by the residential & commercial sector of
+      electricity (including on-site solar PV), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Gases:
+    description: final energy consumption by the residential & commercial sector of
+      gases (natural gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Heat:
+    description: final energy consumption by the residential & commercial sector of
+      heat (e.g., district heat, process heat, solar heating and warm water), excluding
+      transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Heating:
+    description: Final energy consumption by the residential and commercial sector
+      for heating
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Heating|Cooking:
+    description: Final energy consumption by the residential and commercial sector
+      for heating|cooking
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Heating|Space:
+    description: Final energy consumption by the residential and commercial sector
+      for heating|space
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Heating|Water:
+    description: Final energy consumption by the residential and commercial sector
+      for heating|water
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Hydrogen:
+    description: final energy consumption by the residential & commercial sector of
+      hydrogen
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Lighting:
+    description: Final energy consumption by the residential and commercial sector
+      for lighting
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Liquids:
+    description: final energy consumption by the residential & commercial sector of
+      refined liquids (conventional & unconventional oil, biofuels, coal-to-liquids,
+      gas-to-liquids)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Ofice equipment:
+    description: Final energy consumption by the residential and commercial sector
+      for ofice equipment
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Other:
+    description: final energy consumption by the residential & commercial sector of
+      other sources that do not fit to any other category (please provide a definition
+      of the sources in this category in the 'comments' tab)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Residential:
+    description: final energy consumed in the residential sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Appliances:
+    description: Final energy consumption by the residential sector for appliances
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Cooling:
+    description: Final energy consumption by the residential sector for cooling
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Electricity:
+    description: final energy consumption by the residential sector of electricity
+      (including on-site solar PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Gases:
+    description: final energy consumption by the residential sector of gases (natural
+      gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heat:
+    description: final energy consumption by the residential sector of heat (e.g.,
+      district heat, process heat, solar heating and warm water), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating:
+    description: Final energy consumption by the residential sector for heating
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating|Cooking:
+    description: Final energy consumption by the residential sector for heating|cooking
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating|Space:
+    description: Final energy consumption by the residential sector for heating|space
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating|Water:
+    description: Final energy consumption by the residential sector for heating|water
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Hydrogen:
+    description: final energy consumption by the residential sector of hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Lighting:
+    description: Final energy consumption by the residential sector for lighting
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Liquids:
+    description: final energy consumption by the residential sector of refined liquids
+      (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Ofice equipment:
+    description: Final energy consumption by the residential sector for ofice equipment
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Other:
+    description: final energy consumption by the residential sector of other sources
+      that do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Solids:
+    description: final energy solid fuel consumption by the residential sector (including
+      coal and solid biomass)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Solids|Biomass:
+    description: final energy solid biomass consumption by the residential sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Solids|Biomass|Traditional:
+    description: final energy traditional biomass consumption by the residential sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Solids|Coal:
+    description: final energy coal consumption by the residential sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Solids:
+    description: final energy solid fuel consumption by the residential & commercial
+      sector (including coal and solid biomass)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Residential and Commercial|Solids|Biomass:
+    description: final energy consumption by the residential & commercial sector of
+      solid biomass (modern and traditional)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Solids|Biomass|Traditional:
+    description: final energy consumed in the residential & commercial sector coming
+      from biomass (traditional)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Solids|Coal:
+    description: final energy coal consumption by the residential & commercial sector
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Solar:
+    description: final energy consumption of solar energy (e.g., from roof-top solar
+      hot water collector systems)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Solids:
+    description: final energy solid fuel consumption (including coal and solid biomass)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Solids|Biomass:
+    description: final energy consumption of solid biomass (modern and traditional),
+      excluding final energy consumption of bioliquids which are reported in the liquids
+      category
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Solids|Biomass|Traditional:
+    description: final energy consumption of traditional biomass
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Solids|Coal:
+    description: final energy coal consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation:
+    description: final energy consumed in the transportation sector, including bunker
+      fuels, excluding pipelines
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Aviation:
+    description: Final energy consumed in the transport sector by aviation mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Aviation|Freight:
+    description: Final energy consumed in the transport sector by freight aviation
+      mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Aviation|Passenger:
+    description: Final energy consumed in the transport sector by passenger aviation
+      mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Electricity:
+    description: final energy consumption by the transportation sector of electricity
+      (including on-site solar PV), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Freight:
+    description: final energy consumed for freight transportation
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Freight|Electricity:
+    description: final energy consumption by the freight transportation sector of
+      electricity (including on-site solar PV), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Gases:
+    description: final energy consumption by the freight transportation sector of
+      gases (natural gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Gases|Bioenergy:
+    description: Final bioenergy-based gas energy consumed in the transportation sector
+      by freight transport
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Gases|Fossil:
+    description: Final fossil-based gas energy consumed in the transportation sector
+      by freight transport
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Hydrogen:
+    description: final energy consumption by the freight transportation sector of
+      hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Liquids:
+    description: final energy consumption by the freight transportation sector of
+      refined liquids (conventional & unconventional oil, biofuels, coal-to-liquids,
+      gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Liquids|Bioenergy:
+    description: Final biofuels based (liquid or gas) energy consumed in the transport
+      sector by freight vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Liquids|Fossil synfuel:
+    description: Final energy, in the form of fossil synfuel (e.g. CTL, GTL, Methanol,
+      and DME), consumed in the transport sector by freight vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Liquids|Oil:
+    description: final energy consumption by the freight transportation sector of
+      liquid oil products (from conventional & unconventional oil)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Freight|Other:
+    description: final energy consumption by the freight transportation sector of
+      other sources that do not fit to any other category (please provide a definition
+      of the sources in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Gases:
+    description: final energy consumption by the transportation sector of gases (natural
+      gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Gases|Bioenergy:
+    description: Final bioenergy-based gas energy consumed in the transportation sector.
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Gases|Fossil:
+    description: Final fossil-based gas energy consumed in the transportation sector.
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Hydrogen:
+    description: final energy consumption by the transportation sector of hydrogen
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Liquids:
+    description: final energy consumption by the transportation sector of refined
+      liquids (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Liquids|Bioenergy:
+    description: Final biofuels based (liquid or gas) energy consumed in the transport
+      sector by passenger and freight vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Liquids|Coal:
+    description: final energy consumption by the transportation sector of coal based
+      liquids (coal-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Liquids|Fossil synfuel:
+    description: Final energy, in the form of fossil synfuel (e.g. CTL, GTL, Methanol,
+      and DME), consumed in the transport sector by passenger and freight vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Liquids|Hydrogen synfuel:
+    description: Final energy, in the form of hydrogen synfuel,
+      consumed in the transport sector by passenger and freight vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Liquids|Natural Gas:
+    description: final energy consumption by the transportation sector of natrual
+      gas based liquids (gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Liquids|Oil:
+    description: final energy consumption by the transportation sector of liquid oil
+      products (from conventional & unconventional oil)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Final Energy|Transportation|Maritime:
+    description: Final energy consumed in the transport sector by maritime mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Other:
+    description: final energy consumption by the transportation sector of other sources
+      that do not fit to any other category (please provide a definition of the sources
+      in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger:
+    description: final energy consumed for passenger transportation
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Electricity:
+    description: final energy consumption by the passenger transportation sector of
+      electricity (including on-site solar PV), excluding transmission/distribution
+      losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Gases:
+    description: final energy consumption by the passenger transportation sector of
+      gases (natural gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Gases|Bioenergy:
+    description: Final bioenergy-based gas energy consumed in the transportation sector
+      by passenger transport
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Gases|Fossil:
+    description: Final fossil-based gas energy consumed in the transportation sector
+      by passenger transport
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Hydrogen:
+    description: final energy consumption by the passenger transportation sector of
+      hydrogen
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Liquids:
+    description: final energy consumption by the passenger transportation sector of
+      refined liquids (conventional & unconventional oil, biofuels, coal-to-liquids,
+      gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Liquids|Bioenergy:
+    description: Final biofuels based (liquid or gas) energy consumed in the transport
+      sector by passenger vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Liquids|Fossil synfuel:
+    description: Final energy, in the form of fossil synfuel (e.g. CTL, GTL, Methanol,
+      and DME), consumed in the transport sector by passenger vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Liquids|Oil:
+    description: final energy consumption by the passenger transportation sector of
+      liquid oil products (from conventional & unconventional oil)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Passenger|Other:
+    description: final energy consumption by the passenger transportation sector of
+      other sources that do not fit to any other category (please provide a definition
+      of the sources in this category in the 'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Rail:
+    description: Final energy consumed in the transport sector by rail mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Rail|Freight:
+    description: Final energy consumed in the transport sector by freight rail mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Rail|Passenger:
+    description: Final energy consumed in the transport sector by passenger rail mode
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Freight:
+    description: 'Final energy consumed in the transport sector by road transport
+      freight vehicles '
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Freight|Electric:
+    description: Final energy consumed in the transport sector by road transport freight  electric
+      vehicles (e.g. PHEV, BEV)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Freight|FC:
+    description: Final energy consumed in the transport sector by road transport freight  fuel
+      cell vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Freight|ICE:
+    description: Final energy consumed in the transport sector by road transport freight
+      vehicles , driven by an internal combustion engine (including HEVs)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Passenger:
+    description: 'Final energy consumed in the transport sector by road transport
+      passenger vehicles '
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Passenger|2W&3W:
+    description: Final energy consumed in the transport sector by road passenger transport
+      by 2W and 3W vehicles
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Passenger|Bus:
+    description: Final energy consumed in the transport sector by road passenger transport
+      on roads (buses)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Transportation|Road|Passenger|LDV:
+    description: 'Final energy consumed in the transport sector by road passenger
+      transport  (light-duty vehicles: passenger cars and light trucks/SUVs/vans)'
+    unit: EJ/yr
+    category: Energy
+- Price|Final Energy|Transportation|Electricity:
+    description: Electricity price at the final level in the transportation sector.
+      Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Electricity
+    category: Energy
+- Price|Final Energy|Transportation|Gases:
+    description: Gases price at the final level in the transportation sector. Prices
+      should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Gases
+    category: Energy
+- Price|Final Energy|Transportation|Gases|Bioenergy:
+    description: Gases|Bioenergy price at the final level in the transportation sector.
+      Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Gases|Bioenergy
+    category: Energy
+- Price|Final Energy|Transportation|Gases|Fossil:
+    description: Gases|Fossil price at the final level in the transportation sector.
+      Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Gases|Fossil
+    category: Energy
+- Price|Final Energy|Transportation|Hydrogen:
+    description: Hydrogen price at the final level in the transportation sector. Prices
+      should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Hydrogen
+    category: Energy
+- Price|Final Energy|Transportation|Liquids:
+    description: Liquids price at the final level in the transportation sector. Prices
+      should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Liquids
+    category: Energy
+- Price|Final Energy|Transportation|Liquids|Bioenergy:
+    description: Liquids|Bioenergy price at the final level in the transportation
+      sector. Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Liquids|Bioenergy
+    category: Energy
+- Price|Final Energy|Transportation|Liquids|Oil:
+    description: Liquids|Fossil price at the final level in the transportation sector.
+      Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Liquids|Oil
+    category: Energy
+- Price|Final Energy|Transportation|Liquids|Hydrogen synfuel:
+    description: Liquids|Hydrogen synfuel price at the final level in the transportation
+      sector. Prices should include taxes and the effect of carbon prices.
+    unit: US$2010/GJ
+    weight: Final Energy|Transportation|Liquids|Hydrogen synfuel
+    category: Energy
+- Primary Energy:
+    description: total primary energy consumption (direct equivalent)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass:
+    description: primary energy consumption of purpose-grown bioenergy crops, crop
+      and forestry residue bioenergy, municipal solid waste bioenergy, traditional
+      biomass
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|1st Generation:
+    description: biomass primary energy from 1st generation biofuel crops (e.g., sugar
+      cane, rapeseed oil, maize, sugar beet)
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Electricity:
+    description: primary energy input to electricity generation of purpose-grown bioenergy
+      crops, crop and forestry residue bioenergy, municipal solid waste bioenergy,
+      traditional biomass
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Electricity|w/ CCS:
+    description: purpose-grown bioenergy crops, crop and forestry residue bioenergy,
+      municipal solid waste bioenergy, traditional biomass primary energy input to
+      electricity generation used in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Electricity|w/o CCS:
+    description: purpose-grown bioenergy crops, crop and forestry residue bioenergy,
+      municipal solid waste bioenergy, traditional biomass primary energy input to
+      electricity generation without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Energy Crops:
+    description: biomass primary energy from purpose-grown bioenergy crops
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Gases:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Hydrogen:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Liquids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Modern:
+    description: modern biomass primary energy consumption, including purpose-grown
+      bioenergy crops, crop and forestry residue bioenergy and municipal solid waste
+      bioenergy
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Modern|w/ CCS:
+    description: purpose-grown bioenergy crops, crop and forestry residue bioenergy,
+      municipal solid waste bioenergy, traditional biomass primary energy consumption
+      used in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Modern|w/o CCS:
+    description: purpose-grown bioenergy crops, crop and forestry residue bioenergy,
+      municipal solid waste bioenergy, traditional biomass primary energy consumption
+      without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Biomass|Residues:
+    description: biomass primary energy from residues
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Solids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Biomass|Traditional:
+    description: traditional biomass primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal:
+    description: coal primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal|Electricity:
+    description: coal primary energy input to electricity generation
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal|Electricity|w/ CCS:
+    description: coal primary energy input to electricity generation used in combination
+      with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal|Electricity|w/o CCS:
+    description: coal primary energy input to electricity generation without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal|Gases:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Coal|Hydrogen:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Coal|Liquids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Coal|Solids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Coal|w/ CCS:
+    description: coal primary energy consumption used in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Coal|w/o CCS:
+    description: coal primary energy consumption without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Fossil:
+    description: coal, gas, conventional and unconventional oil primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Fossil|w/ CCS:
+    description: coal, gas, conventional and unconventional oil primary energy consumption
+      used in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Fossil|w/o CCS:
+    description: coal, gas, conventional and unconventional oil primary energy consumption
+      without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas:
+    description: gas primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas|Electricity:
+    description: gas primary energy input to electricity generation
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas|Electricity|w/ CCS:
+    description: gas primary energy input to electricity generation used in combination
+      with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas|Electricity|w/o CCS:
+    description: gas primary energy input to electricity generation without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas|Gases:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Gas|Hydrogen:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Gas|Liquids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Gas|Solids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Gas|w/ CCS:
+    description: gas primary energy consumption used in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Gas|w/o CCS:
+    description: gas primary energy consumption without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Geothermal:
+    description: total geothermal primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Hydro:
+    description: total hydro primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables:
+    description: non-biomass renewable primary energy consumption (direct equivalent,
+      includes hydro electricity, wind electricity, geothermal electricity and heat,
+      solar electricity and heat and hydrogen, ocean energy)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables|Geothermal:
+    description: total geothermal primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables|Hydro:
+    description: total hydro primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables|Ocean:
+    description: total ocean primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables|Solar:
+    description: total solar primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Non-Biomass Renewables|Wind:
+    description: total wind primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Nuclear:
+    description: nuclear primary energy consumption (direct equivalent, includes electricity,
+      heat and hydrogen production from nuclear energy)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Ocean:
+    description: total ocean primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Oil:
+    description: conventional & unconventional oil primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Oil|Electricity:
+    description: conventional & unconventional oil primary energy input to electricity
+      generation
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Electricity|w/ CCS:
+    description: conventional & unconventional oil primary energy input to electricity
+      generation used in combination with CCS
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Electricity|w/o CCS:
+    description: conventional & unconventional oil primary energy input to electricity
+      generation without CCS
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Gases:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Hydrogen:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Liquids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|Solids:
+    description: primary energy input to the fuel conversion sector
+    unit: EJ/yr
+    category: Energy
+- Primary Energy|Oil|w/ CCS:
+    description: conventional & unconventional oil primary energy consumption used
+      in combination with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Oil|w/o CCS:
+    description: conventional & unconventional oil primary energy consumption without
+      CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Other:
+    description: total other primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Secondary Energy Trade:
+    description: trade in secondary energy carriers that cannot be unambiguoulsy mapped
+      to one of the existing primary energy categories (e.g. electricity, hydrogen,
+      fossil synfuels, negative means net exports)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Solar:
+    description: total solar primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Primary Energy|Wind:
+    description: total wind primary energy consumption
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Reservoir Capacity|Electricity|Storage:
+    description: reservoir size of electricity storage technologies (e.g. pumped hydro,
+      compressed air storage, flow batteries)
+    unit: GWh
+    category: Energy
+- Secondary Energy:
+    description: total secondary energy - the sum of all secondary energy carrier
+      production (for consistency checks)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity:
+    description: total net electricity production
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Biomass:
+    description: net electricity production from municipal solid waste, purpose-grown
+      biomass, crop residues, forest industry waste, biogas
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Biomass|w/ CCS:
+    description: net electricity production from municipal solid waste, purpose-grown
+      biomass, crop residues, forest industry waste with a CO2 capture component
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Biomass|w/o CCS:
+    description: net electricity production from municipal solid waste, purpose-grown
+      biomass, crop residues, forest industry waste with freely vented CO2 emissions
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Coal:
+    description: net electricity production from coal
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Coal|w/ CCS:
+    description: net electricity production from coal with a CO2 capture component
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Coal|w/o CCS:
+    description: net electricity production from coal with freely vented CO2 emissions
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Curtailment:
+    description: curtailment of electricity production due to oversupply from variable
+      renewable sources (typically from wind and solar)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Fossil:
+    description: net electricity production from coal, gas, conventional and unconventional
+      oil
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Fossil|w/ CCS:
+    description: net electricity production from coal, gas, conventional and unconventional
+      oil used in combination with CCS
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Fossil|w/o CCS:
+    description: net electricity production from coal, gas, conventional and unconventional
+      oil without CCS
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Gas:
+    description: net electricity production from natural gas
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Gas|w/ CCS:
+    description: net electricity production from natural gas with a CO2 capture component
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Gas|w/o CCS:
+    description: net electricity production from natural gas with freely vented CO2
+      emissions
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Geothermal:
+    description: net electricity production from all sources of geothermal energy
+      (e.g., hydrothermal, enhanced geothermal systems)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Hydro:
+    description: net hydroelectric production
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Non-Biomass Renewables:
+    description: net electricity production from hydro, wind, solar, geothermal, ocean,
+      and other renewable sources (excluding bioenergy). This is a summary category
+      for all the non-biomass renewables.
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Nuclear:
+    description: net electricity production from nuclear energy
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Ocean:
+    description: net electricity production from ocean energy
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Oil:
+    description: net electricity production from refined liquid oil products
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Oil|w/ CCS:
+    description: net electricity production from refined liquids with a CO2 capture
+      component
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Oil|w/o CCS:
+    description: net electricity production from refined liquids with freely vented
+      CO2 emissions
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Other:
+    description: net electricity production from sources that do not fit to any other
+      category (please provide a definition of the sources in this category in the
+      'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Solar:
+    description: net electricity production from all sources of solar energy (e.g.,
+      PV and concentrating solar power)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Solar|CSP:
+    description: net electricity production from concentrating solar power (CSP)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Solar|PV:
+    description: net electricity production from solar photovoltaics (PV)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Storage Losses:
+    description: losses from electricity storage
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Transmission Losses:
+    description: electricity losses from long-range high-voltage transmission
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Wind:
+    description: net electricity production from wind energy (on- and offshore)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Electricity|Wind|Offshore:
+    description: net electricity production from offshore wind energy
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Wind|Onshore:
+    description: net electricity production from onshore wind energy
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Gases:
+    description: total production of gaseous fuels, including natural gas
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Gases|Biomass:
+    description: total production of biogas
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Gases|Coal:
+    description: total production of coal gas from coal gasification
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Gases|Natural Gas:
+    description: total production of natural gas
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Gases|Other:
+    description: total production of gases from sources that do not fit any other
+      category
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat:
+    description: total centralized heat generation
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Heat|Biomass:
+    description: centralized heat generation from biomass
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Coal:
+    description: centralized heat generation from coal
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Gas:
+    description: centralized heat generation from gases
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Geothermal:
+    description: centralized heat generation from geothermal energy EXCLUDING geothermal
+      heat pumps
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Nuclear:
+    description: centralized heat generation from nuclear energy
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Oil:
+    description: 'centralized heat generation from oil products '
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Other:
+    description: centralized heat generation from sources that do not fit any other
+      category (please provide a definition of the sources in this category in the
+      'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Heat|Solar:
+    description: centralized heat generation from solar energy
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen:
+    description: total hydrogen production
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Hydrogen|Biomass:
+    description: hydrogen production from biomass
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Biomass|w/ CCS:
+    description: hydrogen production from biomass with a CO2 capture component
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Biomass|w/o CCS:
+    description: hydrogen production from biomass with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Coal:
+    description: hydrogen production from coal
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Coal|w/ CCS:
+    description: hydrogen production from coal with a CO2 capture component
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Coal|w/o CCS:
+    description: hydrogen production from coal with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Electricity:
+    description: hydrogen production from electricity via electrolysis
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Fossil:
+    description: hydrogen production from fossil fuels
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Fossil|w/ CCS:
+    description: hydrogen production from fossil fuels with a CO2 capture component
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Fossil|w/o CCS:
+    description: hydrogen production from fossil fuels with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Gas:
+    description: hydrogen production from gas
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Gas|w/ CCS:
+    description: hydrogen production from natural gas with a CO2 capture component
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Gas|w/o CCS:
+    description: hydrogen production from natural gas with freely vented CO2 emissions
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Nuclear:
+    description: total hydrogen production from nuclear energy (e.g. thermochemical
+      water splitting with nucelar heat)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Oil:
+    description: 'hydrogen production from oil '
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Other:
+    description: hydrogen production from other sources that do not fit to any other
+      category (please provide a definition of the sources in this category in the
+      'comments' tab)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Hydrogen|Solar:
+    description: total hydrogen production from solar energy (e.g. thermalchemical
+      water splitting with solar heat)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids:
+    description: total production of refined liquid fuels from all energy sources
+      (incl. oil products, synthetic fossil fuels from gas and coal, biofuels)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Biomass:
+    description: total liquid biofuels production
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Biomass|1st Generation:
+    description: 'liquid biofuels production from 1st generation technologies, relying
+      on e.g. corn, sugar, oil '
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Biomass|Energy Crops:
+    description: liquid biofuels production from energy crops
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Biomass|Other:
+    description: biofuel production from biomass that does not fit to any other category
+      (please provide a definition of the sources in this category in the 'comments'
+      tab)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Biomass|Residues:
+    description: liquid biofuels production from residues (forest and agriculture)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Biomass|w/ CCS:
+    description: total liquid biofuels production with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Biomass|w/o CCS:
+    description: total liquid biofuels production without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Coal:
+    description: total production of fossil liquid synfuels from coal-to-liquids (CTL)
+      technologies
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Coal|w/ CCS:
+    description: total production of fossil liquid synfuels from coal-to-liquids (CTL)
+      technologies with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Coal|w/o CCS:
+    description: total production of fossil liquid synfuels from coal-to-liquids (CTL)
+      technologies without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Fossil:
+    description: total production of fossil liquid synfuels
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Fossil|w/ CCS:
+    description: total production of fossil liquid synfuels from facilities with CCS
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Fossil|w/o CCS:
+    description: total production of fossil liquid synfuels from facilities without
+      CCS
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Liquids|Gas:
+    description: total production of fossil liquid synfuels from gas-to-liquids (GTL)
+      technologies
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Gas|w/ CCS:
+    description: total production of fossil liquid synfuels from gas-to-liquids (GTL)
+      technologies with CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Gas|w/o CCS:
+    description: total production of fossil liquid synfuels from gas-to-liquids (GTL)
+      technologies without CCS
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Oil:
+    description: total production of liquid fuels from petroleum, including both conventional
+      and unconventional sources
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Liquids|Other:
+    description: total production of liquid synfuels from non-fossil and non-biomass
+      sources, e.g. renewable power to liquids technologies
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Other Carrier:
+    description: generation of other secondary energy carriers that do not fit any
+      other category (please provide a definition of other energy carrier in this
+      category in the 'comments' tab)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Solids:
+    description: solid secondary energy carriers (e.g., briquettes, coke, wood chips,
+      wood pellets)
+    unit: EJ/yr
+    core: true
+    category: Energy
+- Secondary Energy|Solids|Biomass:
+    description: 'solid secondary energy carriers produced from biomass (e.g., commercial
+      charcoal, wood chips, wood pellets). Tradional bioenergy use is excluded.  '
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Solids|Coal:
+    description: solid secondary energy carriers produced from coal (e.g., briquettes,
+      coke)
+    unit: EJ/yr
+    category: Energy
+- Trade|Primary Energy|Biomass|Volume:
+    description: net exports of solid, unprocessed biomass, at the global level these
+      should add up to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Primary Energy|Coal|Volume:
+    description: net exports of coal, at the global level these should add up to the
+      trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Primary Energy|Gas|Volume:
+    description: net exports of natural gas, at the global level these should add
+      up to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Primary Energy|Oil|Volume:
+    description: net exports of crude oil, at the global level these should add up
+      to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Electricity|Volume:
+    description: net exports of electricity, at the global level these should add
+      up to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Hydrogen|Volume:
+    description: net exports of hydrogen, at the global level these should add up
+      to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Liquids|Biomass|Volume:
+    description: net exports of liquid biofuels, at the global level these should
+      add up to the trade losses only (for those models that are able to split solid
+      and liquid bioenergy)
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Liquids|Coal|Volume:
+    description: net exports of fossil liquid synfuels from coal-to-liquids (CTL)
+      technologies, at the global level these should add up to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Liquids|Gas|Volume:
+    description: net exports of fossil liquid synfuels from gas-to-liquids (GTL) technologies,
+      at the global level these should add up to the trade losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Secondary Energy|Liquids|Oil|Volume:
+    description: net exports of liquid fuels from petroleum including both conventional
+      and unconventional sources, at the global level these should add up to the trade
+      losses only
+    unit: EJ/yr
+    category: Energy
+- Trade|Uranium|Mass:
+    description: net exports of Uranium, at the global level these should add up to
+      the trade losses only
+    unit: kt U/yr
+    category: Energy
+- Secondary Energy|Electricity|Solar|PV|Rooftop PV:
+    description: net electricity production from solar ground-mounted solar photovoltaics
+      (PV)
+    unit: EJ/yr
+    category: Energy
+- Secondary Energy|Electricity|Solar|PV|Utility-scale PV:
+    description: net electricity production from solar rooftop solar photovoltaics
+      (PV)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating|Heat pumps:
+    description: Final energy consumption by the commercial sector for heating supplied
+      by heat pumps
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Heating|Electric boilers:
+    description: Final energy consumption by the commercial sector for heating supplied
+      by electric boilers
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating|Heat pumps:
+    description: Final energy consumption by the commercial sector for heating supplied
+      by heat pumps
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Heating|Electric boilers:
+    description: Final energy consumption by the commercial sector for heating supplied
+      by electric boilers
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Gas|Synthetic:
+    description: Final energy production of synthetic gas (consuming Hydrogen and
+      CO2, via e.g Sabatier reaction)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Oil|Synthetic:
+    description: Final energy production of synthetic oil (consuming Hydrogen and
+      CO2, via e.g Fischer-Tropsch process)
+    unit: EJ/yr
+    category: Energy
+- Capacity|Heating|Heat pumps:
+    description: Total installed electrical capacity of heat pumps
+    unit: GW
+    category: Energy
+- Capacity|Heating|Electric boilers:
+    description: Total installed electrical capacity of electric boilers
+    unit: GW
+    category: Energy
+- Capacity|Gas|Synthetic:
+    description: Total installed electrical capacity of electricity to synthetic gas
+      (consuming Hydrogen and CO2, via e.g Sabatier reaction)
+    unit: GW
+    category: Energy
+- Capacity|Oil|Synthetic:
+    description: Total installed electrical capacity of electricity to synthetic oil
+      (consuming Hydrogen and CO2, via e.g Fischer-Tropsch process)
+    unit: GW
+    category: Energy
+- Capacity |Electricity|Solar|PV|Rooftop PV:
+    description: Total installed electricity generation capacity of  rooftop solar
+      PV
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Solar|PV|Utility-scale PV:
+    description: Total installed electricity generation capacity of  ground-mounted
+      solar PV
+    unit: GW
+    category: Energy
+- Capacity|Electricity|Storage|Battery Capacity:
+    description: Total installed capacity of battery storage
+    unit: GWh
+    category: Energy
+- Capacity|Electricity|Storage|Battery Capacity|Home Battery:
+    description: Total installed capacity of home battery storage
+    unit: GWh
+    category: Energy
+- Capacity|Electricity|Storage|Battery Capacity|Utility-scale Battery:
+    description: Total installed capacity of utility-scale battery storage
+    unit: GWh
+    category: Energy
+- Capacity|Electricity|Storage|Hydrogen Storage Capacity:
+    description: Total installed capacity of hydrogen storage
+    unit: GWh
+    category: Energy
+- Capacity|Electricity|Storage|Pumped Hydro Storage:
+    description: Total installed capacity of Pumped Hydro Storage
+    unit: GWh
+    category: Energy
+- Capacity|Storage|Thermal Energy Storage:
+    description: Total thermal energy storage capacity
+    unit: GWh
+    category: Energy
+- Capacity|Storage|Thermal Energy Storage|Household storage:
+    description: Total thermal energy storage capacity in households
+    unit: GWh
+    category: Energy
+- Capacity|Storage|Thermal Energy Storage|District heating storage:
+    description: Total thermal energy storage capacity in district heating systems
+    unit: GWh
+    category: Energy
+- Capacity Additions|Electricity|Solar|PV|Rooftop PV:
+    description: 'Capacity additions of rooftop solar PV (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Solar|PV|Utility-scale PV:
+    description: 'Capacity additions of ground mounted solar PV (yearly average additions
+      between previos and current model time step) '
+    unit: GW/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Battery Capacity:
+    description: 'Capacity additions of battery storage energy capacity (yearly average
+      additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Battery Capacity|Home Battery:
+    description: 'Capacity additions of home battery storage energy capacity (yearly
+      average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Battery Capacity|Utility-scale Battery:
+    description: 'Capacity additions of utility-scale battery storage energy capacity
+      (yearly average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Hydrogen Storage Capacity:
+    description: 'Capacity additions of hydrogen storage energy capacity (yearly average
+      additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Hydrogen Storage Capacity|underground:
+    description: 'Capacity additions of underground hydrogen storage energy capacity
+      (yearly average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Hydrogen Storage Capacity|overground:
+    description: 'Capacity additions of overground hydrogen storage energy capacity
+      (yearly average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Electricity|Storage|Pumped Hydro Storage:
+    description: 'Capacity additions of pumped hydro storage energy capacity (yearly
+      average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Storage|Thermal Energy Storage:
+    description: 'Capacity additions of thermal energy storage capacity (yearly average
+      additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Storage|Thermal Energy Storage|Household storage:
+    description: 'Capacity additions of thermal energy storage capacity in households
+      (yearly average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy
+- Capacity Additions|Storage|Thermal Energy Storage|District heating storage:
+    description: 'Capacity additions of thermal energy capacity in district heating
+      systems (yearly average additions between previos and current model time step) '
+    unit: GWh/yr
+    category: Energy

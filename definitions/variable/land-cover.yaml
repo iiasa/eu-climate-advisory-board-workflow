@@ -1,0 +1,106 @@
+- Land Cover:
+    description: total land cover
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Built-up Area:
+    description: total built-up land associated with human settlement
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Cropland:
+    description: total arable land, i.e. land in non-forest bioenergy crop, food,
+      and feed/fodder crops, as well as other arable land (cultivated area)
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Cropland|Cereals:
+    description: land dedicated to cereal crops including wheat, rice and coarse grains
+      (maize, corn, millet, sorghum, barley, oats, rye)
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Double-cropped:
+    description: area of land that is double-cropped (twice in a year)
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Energy Crops:
+    description: land dedicated to both 1st & 2nd generation energy crops
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Cropland|Energy Crops|1st generation:
+    description: land dedicated to 1st generation energy crops
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Energy Crops|2nd generation:
+    description: land dedicated to 2nd generation energy crops (e.g., switchgrass,
+      miscanthus, fast-growing wood species)
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Energy Crops|Irrigated:
+    description: irrigated land dedicated to energy crops (e.g., switchgrass, miscanthus,
+      fast-growing wood species)
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Irrigated:
+    description: irrigated arable land, i.e. land in non-forest bioenergy crop, food,
+      and feed/fodder crops, as well as other arable land (cultivated area)
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Rainfed:
+    description: area of land that is rain-fed
+    unit: million ha
+    category: Land cover
+- Land Cover|Forest:
+    description: managed and unmanaged forest area
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Forest|Afforestation and Reforestation:
+    description: area with afforestation and reforestation
+    unit: million ha
+    category: Land cover
+- Land Cover|Forest|Forestry|Harvested Area:
+    description: Forest area harvested
+    unit: million ha
+    category: Land cover
+- Land Cover|Forest|Managed:
+    description: managed forests producing commercial wood supply for timber or energy
+      (woody energy crops reported under 'energy crops')
+    unit: million ha
+    category: Land cover
+- Land Cover|Forest|Natural Forest:
+    description: undisturbed natural forests, modified natural forests
+    unit: million ha
+    category: Land cover
+- Land Cover|Forest|Secondary:
+    description: regrown (unmanaged) secondary forests, e.g. from abandoned agricultural
+      land
+    unit: million ha
+    category: Land cover
+- Land Cover|Other Arable Land:
+    description: other arable land that is unmanaged (e.g., grassland, savannah, shrubland),
+      excluding unmanaged forests that are arable
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Other Land:
+    description: other land cover that does not fit into any other category (e.g.,
+      rock, ice, desert, water, please provide a definition of the sources in this
+      category in the 'comments' tab)
+    unit: million ha
+    category: Land cover
+- Land Cover|Pasture:
+    description: pasture land. All categories of pasture land - not only high quality
+      rangeland. Based on FAO definition of "permanent meadows and pastures"
+    unit: million ha
+    core: true
+    category: Land cover
+- Land Cover|Cropland|Oilcrops:
+    description: area of land that is dedicated to oilcrops
+    unit: million ha
+    category: Land cover
+- Land Cover|Cropland|Sugarcrops:
+    description: area of land that is dedicated to sugarcrops
+    unit: million ha
+    category: Land cover
