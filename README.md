@@ -12,29 +12,40 @@ in its advice relating to the EU Climate Law.
 
 Visit https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission for more information.
 
+## Data submission
+
+The scenario data has to be submitted as an xlsx file following the **IAMC data format**
+via the **EU Climate Advisory Board Scenario Explorer** hosted by IIASA at
+https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission.
+
 ### Model registration
 
-If you want to register a model, please read the
-[instruction](https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/model-registration.html)
-on the nomenclature documentation.
+Please read the instructions on model registration at the Scenario Explorer About-page
+([link](https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission/#/about)).
 
-### Workflow
+### Variable and region definitions
 
-The module `workflow.py` has a function `main(df: pyam.IamDataFrame) -> pyam.IamDataFrame:`.
+The columns **region** and **variable** have to follow the codelists given in the folder 
+[definitions](definitions).
 
-Per default, this function takes an **IamDataFrame** and returns it without
-modifications. [Read the docs](https://pyam-iamc.readthedocs.io) for more information
-about the **pyam** package for scenario analysis and data visualization.
+## Workflow
 
-**Important**: Do not change the name of the module `workflow.py` or the function `main`
-as they are called like this by the Job Execution Service. Details can be found
-[here](https://wiki.ece.iiasa.ac.at/wiki/index.php/Scenario_Explorer/Setup#Job_Execution_Service).
+The module `workflow.py` in this repository has a function `main(df: pyam.IamDataFrame) -> pyam.IamDataFrame:`.
+It is used to validate any data submission to the Scenario Explorer against the project-specific codelists
+and perform region-aggregation (optional).
 
-### Project nomenclature
+## Dependencies
 
-The folder `definitions` can contain the project nomenclature, i.e., list of allowed
-variables and regions, for use in the validation workflow. See the **nomenclature**
-package for more information ([link](https://github.com/iamconsortium/nomenclature)).
+This repository uses the Python package **nomenclature** for scenario validation and region processing.
+The nomenclature package provides a structured way to define code-lists for validation and mappings
+for automated region-processing to support model comparison projects.
+[Read the nomenclature docs](https://nomenclature-iamc.readthedocs.io) for more information...
 
-The folder `mappings` can contain model mappings that are used to register models and
-define how results should be processed upon upload to a Scenario Explorer.
+<img src="https://github.com/IAMconsortium/pyam/raw/main/doc/logos/pyam-logo.png" width="133" height="100" align="right" alt="pyam logo" />
+
+The nomenclature package depends on the Python package **pyam**.
+The pyam package was developed to facilitate working with timeseries
+data conforming to the IAMC structure. Features include scenario processing, plotting,
+algebraic computations to derive indicators, validation of values, aggregation and downscaling of data,
+and import/export with various file formats (`xlsx`, `csv`, frictionless-datapackage).
+[Read the pyam docs](https://pyam-iamc.readthedocs.io) for more information...
