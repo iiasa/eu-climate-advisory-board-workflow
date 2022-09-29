@@ -1,0 +1,40 @@
+model: Roadmap v1.9
+native_regions:
+  - Africa: Roadmap v1.9|Africa
+  - Australia: Roadmap v1.9|Australia
+  - Brazil: Roadmap v1.9|Brazil
+  - Canada: Roadmap v1.9|Canada
+  - China: Roadmap v1.9|China
+  - EU-28: Roadmap v1.9|EU-28
+  - India: Roadmap v1.9|India
+  - Japan: Roadmap v1.9|Japan
+  - Mexico: Roadmap v1.9|Mexico
+  - Middle East: Roadmap v1.9|Middle East
+  - Other Asia Pacific: Roadmap v1.9|Other Asia Pacific
+  - Other Europe: Roadmap v1.9|Other Europe
+  - Other Latin America: Roadmap v1.9|Other Latin America
+  - Russia: Roadmap v1.9|Russia
+  - South Korea: Roadmap v1.9|South Korea
+  - United States: Roadmap v1.9|United States
+common_regions:
+  - Asia (R5):
+    - China
+    - India
+    - Other Asia Pacific
+    - South Korea
+  - Latin America (R5):
+    - Brazil
+    - Mexico
+    - Other Latin America
+  - Middle East & Africa (R5):
+    - Africa
+    - Middle East
+  - OECD & EU (R5):
+    - Australia
+    - Canada
+    - EU-28
+    - Japan
+    - United States
+  - Reforming Economies (R5):
+    - Russia
+    - Other Europe
