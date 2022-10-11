@@ -5,7 +5,8 @@ native_regions:
   - Brazil: Roadmap v1.9|Brazil
   - Canada: Roadmap v1.9|Canada
   - China: Roadmap v1.9|China
-  - EU-28: Roadmap v1.9|EU-28
+  - European Union: Roadmap v1.9|European Union
+  - United Kingdom: Roadmap v1.9|United Kingdom
   - India: Roadmap v1.9|India
   - Japan: Roadmap v1.9|Japan
   - Mexico: Roadmap v1.9|Mexico
@@ -21,20 +22,23 @@ common_regions:
     - China
     - India
     - Other Asia Pacific
-    - South Korea
   - Latin America (R5):
     - Brazil
-    - Mexico
     - Other Latin America
   - Middle East & Africa (R5):
     - Africa
     - Middle East
   - OECD & EU (R5):
+    - European Union
+    - United Kingdom
     - Australia
     - Canada
-    - EU-28
     - Japan
     - United States
+    - Mexico
+    - South Korea
   - Reforming Economies (R5):
     - Russia
     - Other Europe
+  - EU27:
+    - European Union
