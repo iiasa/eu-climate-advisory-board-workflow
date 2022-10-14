@@ -1,0 +1,72 @@
+model: TIAM-Grantham v3.2
+native_regions:
+- AFR: TIAM-Grantham v3.2|Africa
+- AUS: TIAM-Grantham v3.2|Australia and New Zealand
+- CAN: TIAM-Grantham v3.2|Canada
+- CHI: TIAM-Grantham v3.2|China
+- CSA: TIAM-Grantham v3.2|Central and South America
+- EEU: TIAM-Grantham v3.2|Eastern Europe
+- FSU: TIAM-Grantham v3.2|Former Soviet Union
+- GBL: TIAM-Grantham v3.2|Global (mostly used for bunker fuels)
+- IND: TIAM-Grantham v3.2|India
+- JPN: TIAM-Grantham v3.2|Japan
+- MEA: TIAM-Grantham v3.2|Middle East
+- MEX: TIAM-Grantham v3.2|Mexico
+- ODA: TIAM-Grantham v3.2|Other Developing Asia
+- SKO: TIAM-Grantham v3.2|South Korea
+- USA: TIAM-Grantham v3.2|United States of America
+- WEU: TIAM-Grantham v3.2|Western Europe
+- World
+common_regions:
+- Europe:
+  - WEU
+  - EEU
+- Africa (R10):
+  - AFR
+- China+ (R10):
+  - CHI
+- Europe (R10):
+  - WEU
+  - EEU
+- India+ (R10):
+  - IND
+- Latin America (R10):
+  - CSA
+  - MEX
+- Middle East (R10):
+  - MEA
+- North America (R10):
+  - CAN
+  - USA
+- Pacific OECD (R10):
+  - AUS
+  - JPN
+- Reforming Economies (R10):
+  - FSU
+- Rest of Asia (R10):
+  - ODA
+  - SKO
+- Other (R10):
+  - GBL
+- Asia (R5):
+  - CHI
+  - IND
+  - ODA
+- Latin America (R5):
+  - CSA
+  - MEX
+- Middle East & Africa (R5):
+  - AFR
+  - MEA
+- OECD & EU (R5):
+  - AUS
+  - CAN
+  - JPN
+  - SKO
+  - USA
+  - WEU
+  - EEU
+- Reforming Economies (R5):
+  - FSU
+- Other (R5):
+  - GBL
