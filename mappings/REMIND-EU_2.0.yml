@@ -27,6 +27,32 @@ native_regions:
   - NEN: REMIND 2.0|Non-EU Northern Europe
   - NES: REMIND 2.0|Non-EU Southern Europe
 common_regions:
+  - World:
+    - CAZ
+    - CHA
+    - IND
+    - JPN
+    - OAS
+    - LAM
+    - MEA
+    - REF
+    - SSA
+    - USA
+    # 12-region version of REMIND
+    - EUR
+    - NEU
+    # 21-region version of REMIND
+    - DEU
+    - FRA
+    - UKI
+    - ECE
+    - ECS
+    - ENC
+    - ESC
+    - ESW
+    - EWN
+    - NEN
+    - NES
   - Europe:
     # 12-region version of REMIND
     - EUR
