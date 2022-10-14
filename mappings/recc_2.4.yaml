@@ -1,0 +1,31 @@
+model: RECC 2.4
+native_regions:
+    - UK: RECC 2.4|UK
+    - France: RECC 2.4|France
+    - Germany: RECC 2.4|Germany
+    - Italy: RECC 2.4|Italy
+    - Poland: RECC 2.4|Poland
+    - Spain: RECC 2.4|Spain
+    - R32EU12-M: RECC 2.4|Other Eastern Europe
+    - Oth_R32EU15: RECC 2.4|Other Western Europe
+    - Oth_R32EU12-H: RECC 2.4|Other Central Europe
+common_regions:
+  - EU27:
+    - France
+    - Germany
+    - Italy
+    - Poland
+    - Spain
+    - R32EU12-M
+    - Oth_R32EU15
+    - Oth_R32EU12-H
+  - Europe:
+    - UK
+    - France
+    - Germany
+    - Italy
+    - Poland
+    - Spain
+    - R32EU12-M
+    - Oth_R32EU15
+    - Oth_R32EU12-H
