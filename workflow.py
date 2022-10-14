@@ -3,8 +3,10 @@ import os
 import re
 import sys
 import tempfile
+from pathlib import Path
 
 import pyam
+from nomenclature import DataStructureDefinition, RegionProcessor, process
 
 logging.basicConfig(format="%(asctime)s - %(message)s", level=logging.INFO)
 logFormatter = logging.Formatter("%(asctime)s [%(levelname)-5.5s] %(message)s")
@@ -14,10 +16,22 @@ consoleHandler = logging.StreamHandler(sys.stdout)
 consoleHandler.setFormatter(logFormatter)
 log.addHandler(consoleHandler)
 
+here = Path(__file__).absolute().parent
+
 
 def main(df: pyam.IamDataFrame) -> pyam.IamDataFrame:
     """Project/instance-specific workflow for scenario processing"""
 
+    # Cast to an IamDataFrame if necessary
+    if not isinstance(df, pyam.IamDataFrame):
+        df = pyam.IamDataFrame(df)
+
+    # Run the validation and region-processing
+    definition = DataStructureDefinition(here / "definitions")
+    processor = RegionProcessor.from_directory(path=here / "mappings")
+    df = process(df, definition, processor=processor)
+
+    # Run MAGICC processing
     magicc_results = climate_assessment(df)
 
     # if magicc runs without any problems, add to the results
