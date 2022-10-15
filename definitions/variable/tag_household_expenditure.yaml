@@ -1,0 +1,15 @@
+- Household Expenditure:
+    - Energy:
+        description: energy
+    - Food:
+        description: food
+    - Industry:
+        description: industrial products
+    - Services:
+        description: services
+    - Services|Health:
+        description: health services
+    - Services|Telecommunications:
+        description: telecommunications incl. internet
+    - Services|Water & Sanitation:
+        description: water & sanitation services

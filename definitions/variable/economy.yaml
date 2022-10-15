@@ -61,12 +61,8 @@
     description: Total household expenditure
     unit: billion US$2010/yr
     category: Economy
-- Expenditure|household|Services|Telecommunications:
-    description: expenditure of households for telecommunications incl. internet
-    unit: billion US$2010/yr
-    category: Economy
-- Expenditure|household|Services|Water & sanitation:
-    description: expenditure of households for Water & Sanitation services
+- Expenditure|household|{Household Expenditure}:
+    description: Total household expenditure for {Household Expenditure}
     unit: billion US$2010/yr
     category: Economy
 - GDP|MER:
