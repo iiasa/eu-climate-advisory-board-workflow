@@ -33,10 +33,6 @@
       classification)
     unit: million
     category: SDG
-- Employment|Industry|Energy:
-    description: number of employed inhabitants (payrolls) in the energy industry
-    unit: million
-    category: SDG
 - Employment|Service:
     description: number of employed inhabitants (payrolls) in the service sector (based
       on ILO classification)
