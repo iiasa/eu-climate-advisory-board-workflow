@@ -61,12 +61,8 @@
     description: Total household expenditure
     unit: billion US$2010/yr
     category: Economy
-- Expenditure|household|Services|Telecommunications:
-    description: expenditure of households for telecommunications incl. internet
-    unit: billion US$2010/yr
-    category: Economy
-- Expenditure|household|Services|Water & sanitation:
-    description: expenditure of households for Water & Sanitation services
+- Expenditure|household|{Household Expenditure}:
+    description: Total household expenditure for {Household Expenditure}
     unit: billion US$2010/yr
     category: Economy
 - GDP|MER:
@@ -172,11 +168,17 @@
     weight: Agricultural Production|Non-Energy|Crops
     category: Economy
 - Price|Carbon:
-    description: price of carbon (for regional aggregrates the weighted price of carbon
-      by subregion should be used)
+    description: price of carbon
+    note: for regional aggregrates, the weighted price by subregion should be used
     unit: US$2010/t CO2
     weight: Emissions|CO2
     core: true
+    category: Economy
+- Price|Carbon|{ETS}:
+    description: price of carbon for sectors {ETS}
+    note: for regional aggregrates, the weighted price by subregion should be used
+    unit: US$2010/t CO2
+    weight: Emissions|CO2
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Electricity:
     description: electricity price at the final level in the residential sector. Prices

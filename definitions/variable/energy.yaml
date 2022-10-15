@@ -2213,6 +2213,16 @@
       gas, biogas, coal-gas), excluding transmission/distribution losses
     unit: EJ/yr
     category: Energy
+- Final Energy|Residential and Commercial|Commercial|Gases|Bioenergy:
+    description: final energy consumption by the commercial sector of bio-gases,
+        excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Gases|Fossils:
+    description: final energy consumption by the commercial sector of fossil gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
 - Final Energy|Residential and Commercial|Commercial|Heat:
     description: final energy consumption by the commercial sector of heat (e.g.,
       district heat, process heat, solar heating and warm water), excluding transmission/distribution
@@ -2246,6 +2256,14 @@
 - Final Energy|Residential and Commercial|Commercial|Liquids:
     description: final energy consumption by the commercial sector of refined liquids
       (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Liquids|Bioenergy:
+    description: final energy consumption by the commercial sector of bio-based refined liquids
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Commercial|Liquids|Fossils:
+    description: final energy consumption by the commercial sector of fossil refined liquids
     unit: EJ/yr
     category: Energy
 - Final Energy|Residential and Commercial|Commercial|Ofice equipment:
@@ -2293,6 +2311,16 @@
     unit: EJ/yr
     core: true
     category: Energy
+- Final Energy|Residential and Commercial|Gases|Bioenergy:
+    description: final energy consumption by the residential & commercial sector
+      of bio-gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Gases|Fossils:
+    description: final energy consumption by the residential & commercial sector of
+      fossil gases, excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
 - Final Energy|Residential and Commercial|Heat:
     description: final energy consumption by the residential & commercial sector of
       heat (e.g., district heat, process heat, solar heating and warm water), excluding
@@ -2338,6 +2366,16 @@
     unit: EJ/yr
     core: true
     category: Energy
+- Final Energy|Residential and Commercial|Liquids|Bioenergy:
+    description: final energy consumption by the residential & commercial sector of
+      bio-based refined liquids
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Liquids|Fossils:
+    description: final energy consumption by the residential & commercial sector of
+      fossil refined liquids
+    unit: EJ/yr
+    category: Energy
 - Final Energy|Residential and Commercial|Ofice equipment:
     description: Final energy consumption by the residential and commercial sector
       for ofice equipment
@@ -2370,6 +2408,16 @@
 - Final Energy|Residential and Commercial|Residential|Gases:
     description: final energy consumption by the residential sector of gases (natural
       gas, biogas, coal-gas), excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Gases|Bioenergy:
+    description: final energy consumption by the residential sector of bio-gases,
+      excluding transmission/distribution losses
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Gases|Fossils:
+    description: final energy consumption by the residential sector of fossil gases,
+      excluding transmission/distribution losses
     unit: EJ/yr
     category: Energy
 - Final Energy|Residential and Commercial|Residential|Heat:
@@ -2405,6 +2453,15 @@
 - Final Energy|Residential and Commercial|Residential|Liquids:
     description: final energy consumption by the residential sector of refined liquids
       (conventional & unconventional oil, biofuels, coal-to-liquids, gas-to-liquids)
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Liquids|Bioenergy:
+    description: final energy consumption by the residential sector of bio-based refined
+      liquids
+    unit: EJ/yr
+    category: Energy
+- Final Energy|Residential and Commercial|Residential|Liquids|Fossils:
+    description: final energy consumption by the residential sector of fossil refined liquids
     unit: EJ/yr
     category: Energy
 - Final Energy|Residential and Commercial|Residential|Ofice equipment:
