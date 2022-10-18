@@ -94,7 +94,7 @@ common_regions:
     - ES
     - SE
     - UK
-- Europe:
+  - Europe:
     - AT
     - BE
     - BG
