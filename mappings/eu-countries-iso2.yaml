@@ -27,7 +27,7 @@ native_regions:
  - LU: Luxembourg
  - MT: Malta
  - NL: The Netherlands
- - NO: Norway
+ - "NO": Norway
  - PL: Poland
  - PT: Portugal
  - RO: Romania
@@ -125,4 +125,4 @@ common_regions:
     - UK
     - CH
     - IS
-    - NO
+    - "NO"
