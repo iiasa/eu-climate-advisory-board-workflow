@@ -11,8 +11,11 @@
   - GCAM-PR 5.3|Central Asia
   - GCAM-PR 5.3|China
   - GCAM-PR 5.3|Colombia
-  - GCAM-PR 5.3|EU-12
-  - GCAM-PR 5.3|EU-15
+  - GCAM-PR 5.3|Eastern EU:
+      countries: BG,CY,CZ,EE,HU,LT,LV,MT,PL,RO,SI,SK
+      notes: does not include Croatia
+  - GCAM-PR 5.3|Western EU & UK:
+      countries: AT,BE,DE,DK,GR,ES,FI,FR,IE,IT,LU,NL,PT,SE,UK
   - GCAM-PR 5.3|Europe_Eastern
   - GCAM-PR 5.3|Europe_Non_EU
   - GCAM-PR 5.3|European Free Trade Association

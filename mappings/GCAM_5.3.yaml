@@ -12,8 +12,8 @@ native_regions:
 - Central Asia: GCAM-PR 5.3|Central Asia
 - China: GCAM-PR 5.3|China
 - Colombia: GCAM-PR 5.3|Colombia
-- EU-12: GCAM-PR 5.3|EU-12
-- EU-15: GCAM-PR 5.3|EU-15
+- EU-12: GCAM-PR 5.3|Western EU & UK
+- EU-15: GCAM-PR 5.3|Eastern EU
 - Europe_Eastern: GCAM-PR 5.3|Europe_Eastern
 - Europe_Non_EU: GCAM-PR 5.3|Europe_Non_EU
 - European Free Trade Association: GCAM-PR 5.3|European Free Trade Association
@@ -34,9 +34,14 @@ native_regions:
 - USA: GCAM-PR 5.3|USA
 - World
 common_regions:
-- EU27:
+- EU27 & UK:
   - EU-12
   - EU-15
+- Europe:
+  - EU-12
+  - EU-15
+  - Europe_Non_EU
+  - European Free Trade Association
 - Africa (R10):
   - Africa_Eastern
   - Africa_Northern
