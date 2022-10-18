@@ -1,0 +1,40 @@
+model: ICES-XPS 1.0
+native_regions:
+  - Germany: ICES-XPS 1.0|Germany
+  - Benelux: ICES-XPS 1.0|Benelux
+  - Greece: ICES-XPS 1.0|Greece
+  - Finland: ICES-XPS 1.0|Finland
+  - Czech_Rep: ICES-XPS 1.0|Czech Republic
+  - Italy: ICES-XPS 1.0|Italy
+  - France: ICES-XPS 1.0|France
+  - RoEU: ICES-XPS 1.0|Rest of EU
+  - UK: ICES-XPS 1.0|United Kingdom
+  - Spain: ICES-XPS 1.0|Spain
+  - Poland: ICES-XPS 1.0|Poland
+  - Sweden: ICES-XPS 1.0|Sweden
+common_regions:
+- EU27:
+  - Germany
+  - Benelux
+  - Greece
+  - Finland
+  - Czech_Rep
+  - Italy
+  - France
+  - RoEU
+  - Spain
+  - Poland
+  - Sweden
+- EU27 & UK:
+  - Germany
+  - Benelux
+  - Greece
+  - Finland
+  - Czech_Rep
+  - Italy
+  - France
+  - RoEU
+  - Spain
+  - Poland
+  - Sweden
+  - UK
