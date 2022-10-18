@@ -27,8 +27,8 @@ native_regions:
   - EWN: REMIND 2.1|EU North-West Europe
   - NEN: REMIND 2.1|Non-EU Northern Europe
   - NES: REMIND 2.1|Non-EU Southern Europe
-# exogenously aggregated regions
-  - EU27: REMIND 2.1|EU 27
+# exogenously aggregated regions that should appear with the same name as uploaded in the IIASA database
+  - EU27
 common_regions:
   - World:
     - CAZ
