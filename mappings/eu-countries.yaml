@@ -1,3 +1,5 @@
+# this mapping file is intended for models that use have a country-resolution of Europe
+# and use full country names
 model:
   - PyPSA-Eur-Sec 0.0.2
   - PyPSA-Eur-Sec 0.5.0
@@ -62,3 +64,32 @@ common_regions:
     - Spain
     - Sweden
     - The Netherlands
+  - EU27 & UK:
+    - Austria
+    - Belgium
+    - Bulgaria
+    - Croatia
+    - Cyprus
+    - Czech Republic
+    - Denmark
+    - Estonia
+    - Finland
+    - France
+    - Germany
+    - Greece
+    - Hungary
+    - Ireland
+    - Italy
+    - Latvia
+    - Lithuania
+    - Luxembourg
+    - Malta
+    - Poland
+    - Portugal
+    - Romania
+    - Slovakia
+    - Slovenia
+    - Spain
+    - Sweden
+    - The Netherlands
+    - United Kingdom

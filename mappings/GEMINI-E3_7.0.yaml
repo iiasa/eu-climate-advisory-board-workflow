@@ -1,0 +1,3 @@
+model: GEMINI-E3 7.0
+native_regions:
+  - EUR: EU27 & UK

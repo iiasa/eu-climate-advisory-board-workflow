@@ -1,0 +1,93 @@
+# this mapping file is intended for models that use have a country-resolution of Europe
+# and use ISO3 codes for country names
+model:
+ - ALADIN 1.0
+native_regions:
+ - AUT: Austria
+ - BEL: Belgium
+ - BGR: Bulgaria
+ - CHE: Switzerland
+ - CYP: Cyprus
+ - CZE: Czech Republic
+ - DEU: Germany
+ - DNK: Denmark
+ - ESP: Spain
+ - EST: Estonia
+ - FIN: Finland
+ - FRA: France
+ - GBR: United Kingdom
+ - GRC: Greece
+ - HRV: Croatia
+ - HUN: Hungary
+ - IRL: Ireland
+ - ITA: Italy
+ - LTU: Lithuania
+ - LUX: Luxembourg
+ - LVA: Latvia
+ - MLT: Malta
+ - NLD: The Netherlands
+ - NOR: Norway
+ - POL: Poland
+ - PRT: Portugal
+ - ROU: Romania
+ - SVK: Slovakia
+ - SVN: Slovenia
+ - SWE: Sweden
+common_regions:
+ - EU27:
+   - AUT
+   - BEL
+   - BGR
+   - CYP
+   - CZE
+   - DEU
+   - DNK
+   - ESP
+   - EST
+   - FIN
+   - FRA
+   - GRC
+   - HRV
+   - HUN
+   - IRL
+   - ITA
+   - LTU
+   - LUX
+   - LVA
+   - MLT
+   - NLD
+   - POL
+   - PRT
+   - ROU
+   - SVK
+   - SVN
+   - SWE
+ - EU27 & UK:
+   - AUT
+   - BEL
+   - BGR
+   - CYP
+   - CZE
+   - DEU
+   - DNK
+   - ESP
+   - EST
+   - FIN
+   - FRA
+   - GRC
+   - HRV
+   - HUN
+   - IRL
+   - ITA
+   - LTU
+   - LUX
+   - LVA
+   - MLT
+   - NLD
+   - POL
+   - PRT
+   - ROU
+   - SVK
+   - SVN
+   - SWE
+   - GBR
