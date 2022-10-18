@@ -27,7 +27,7 @@ native_regions:
   - NEN: REMIND 2.0|Non-EU Northern Europe
   - NES: REMIND 2.0|Non-EU Southern Europe
 # exogenously aggregated regions
-  - EU27: REMIND 2.0|EU 27
+  - EU27
 common_regions:
   - World:
     - CAZ
