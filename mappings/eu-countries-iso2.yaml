@@ -9,6 +9,7 @@ native_regions:
  - BE: Belgium
  - BG: Bulgaria
  - HR: Croatia
+ - CH: Switzerland
  - CY: Cyprus
  - CZ: Czech Republic
  - DK: Denmark
@@ -19,12 +20,14 @@ native_regions:
  - GR: Greece
  - HU: Hungary
  - IE: Ireland
+ - IS: Iceland
  - IT: Italy
  - LV: Latvia
  - LT: Lithuania
  - LU: Luxembourg
  - MT: Malta
  - NL: The Netherlands
+ - NO: Norway
  - PL: Poland
  - PT: Portugal
  - RO: Romania
@@ -91,3 +94,35 @@ common_regions:
     - ES
     - SE
     - UK
+- Europe:
+    - AT
+    - BE
+    - BG
+    - HR
+    - CY
+    - CZ
+    - DK
+    - EE
+    - FI
+    - FR
+    - DE
+    - GR
+    - HU
+    - IE
+    - IT
+    - LV
+    - LT
+    - LU
+    - MT
+    - NL
+    - PL
+    - PT
+    - RO
+    - SK
+    - SI
+    - ES
+    - SE
+    - UK
+    - CH
+    - IS
+    - NO
