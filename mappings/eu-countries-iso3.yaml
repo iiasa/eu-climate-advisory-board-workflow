@@ -1,4 +1,4 @@
-# this mapping file is intended for models that use have a country-resolution of Europe
+# this mapping file is intended for models that have a country-resolution of Europe
 # and use ISO3 codes for country names
 model:
  - ALADIN 1.0

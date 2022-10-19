@@ -1,7 +1,7 @@
-# this mapping file is intended for models that use have a country-resolution of Europe
+# this mapping file is intended for models that have a country-resolution of Europe
 # and use the alternative ISO2 codes for country names used by the European Commission
 model:
- - FORECAST v1.0
+ - E4SMA-EU-TIMES 1.0
 native_regions:
  - AT: Austria
  - BE: Belgium
