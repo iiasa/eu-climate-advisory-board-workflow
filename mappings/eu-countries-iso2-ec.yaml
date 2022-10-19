@@ -1,8 +1,7 @@
 # this mapping file is intended for models that use have a country-resolution of Europe
-# and use ISO2 codes for country names
+# and use the alternative ISO2 codes for country names used by the European Commission
 model:
- - E4SMA-EU-TIMES 1.0
- - NEMESIS 5.1
+ - FORECAST v1.0
 native_regions:
  - AT: Austria
  - BE: Belgium
@@ -16,7 +15,7 @@ native_regions:
  - FI: Finland
  - FR: France
  - DE: Germany
- - GR: Greece
+ - EL: Greece  # alternative ISO2 code used by the European Commission
  - HU: Hungary
  - IE: Ireland
  - IS: Iceland
@@ -34,7 +33,7 @@ native_regions:
  - SI: Slovenia
  - ES: Spain
  - SE: Sweden
- - GB: United Kingdom
+ - UK: United Kingdom  # alternative ISO2 code used by the European Commission
 common_regions:
   - EU27:
     - AT
@@ -48,7 +47,7 @@ common_regions:
     - FI
     - FR
     - DE
-    - GR
+    - EL  # alternative ISO2 code used by the European Commission
     - HU
     - IE
     - IT
@@ -76,7 +75,7 @@ common_regions:
     - FI
     - FR
     - DE
-    - GR
+    - EL  # alternative ISO2 code used by the European Commission
     - HU
     - IE
     - IT
@@ -92,7 +91,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - GB
+    - UK  # alternative ISO2 code used by the European Commission
   - Europe:
     - AT
     - BE
@@ -105,7 +104,7 @@ common_regions:
     - FI
     - FR
     - DE
-    - GR
+    - EL  # alternative ISO2 code used by the European Commission
     - HU
     - IE
     - IT
@@ -121,7 +120,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - GB
+    - UK  # alternative ISO2 code used by the European Commission
     - CH
     - IS
     - "NO"
