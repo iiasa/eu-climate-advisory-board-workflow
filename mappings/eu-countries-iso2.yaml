@@ -34,7 +34,7 @@ native_regions:
  - SI: Slovenia
  - ES: Spain
  - SE: Sweden
- - UK: United Kingdom
+ - GB: United Kingdom
 common_regions:
   - EU27:
     - AT
@@ -92,7 +92,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - UK
+    - GB
   - Europe:
     - AT
     - BE
@@ -121,7 +121,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - UK
+    - GB
     - CH
     - IS
     - "NO"
