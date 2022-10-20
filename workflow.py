@@ -47,7 +47,7 @@ def climate_assessment(df):
     # df.run_climate_model('MAGICC7')  # this is not yet implemented in pyam
     try:
         log.info("Importing import_timeseries.climate.run_magicc")
-        import import_timeseries.climate.run_magicc as magicc
+        import climate.run_magicc as magicc
 
         # create magicc input file - global emissions
         reg = re.compile(r"^Emissions[\|][^\|]*")
