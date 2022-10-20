@@ -1,7 +1,9 @@
 - ETS:
     - EU-ETS:
         description: covered by the European Union Emissions Trading System (EU ETS)
+        weight: EU-ETS
     - Non-EU-ETS:
         description: covered by the European Effort Sharing Regulation directive (ESR)
         note: This category includes sectors not covered by the EU ETS,
           including emissions from land use, land use change, and forestry.
+        weight: Non-EU-ETS

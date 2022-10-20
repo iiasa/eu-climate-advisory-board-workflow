@@ -1,7 +1,8 @@
-# this mapping file is intended for models that use have a country-resolution of Europe
-# and use ISO2 codes for country names
+# this mapping file is intended for models that have a country-resolution of Europe
+# and use "dirty" ISO2 codes for country names: UK instead of GB
 model:
- - no model
+ - FORECAST v1.0
+ - NEMESIS 5.1
 native_regions:
  - AT: Austria
  - BE: Belgium
@@ -33,7 +34,7 @@ native_regions:
  - SI: Slovenia
  - ES: Spain
  - SE: Sweden
- - GB: United Kingdom
+ - UK: United Kingdom  # alternative ISO2 code used by the European Commission
 common_regions:
   - EU27:
     - AT
@@ -91,7 +92,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - GB
+    - UK  # alternative ISO2 code used by the European Commission
   - Europe:
     - AT
     - BE
@@ -120,7 +121,7 @@ common_regions:
     - SI
     - ES
     - SE
-    - GB
+    - UK  # alternative ISO2 code used by the European Commission
     - CH
     - IS
     - "NO"
