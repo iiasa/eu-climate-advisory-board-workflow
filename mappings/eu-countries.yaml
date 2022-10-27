@@ -35,6 +35,8 @@ native_regions:
   - Switzerland
   - United Kingdom
   - Norway
+  - Bosnia-Herzegovina 
+  - Serbia
 common_regions:
   - EU27:
     - Austria
