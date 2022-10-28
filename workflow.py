@@ -53,7 +53,7 @@ def climate_assessment(df):
         reg = re.compile(r"^Emissions[\|][^\|]*")
         emiss_vars = [x for x in df["variable"].unique() if reg.match(x)]
         emiss_df = df.filter(region="World", variable=emiss_vars)
-        for scenario in emiss_df.scenarios():
+        for scenario in emiss_df.scenario:
             magicc_df = emiss_df.filter(scenario=scenario)
             tmpdir = tempfile.mkdtemp(prefix="magicc_", dir=os.getcwd())
             emiss_file = os.path.join(tmpdir, "magicc_input.xlsx")
