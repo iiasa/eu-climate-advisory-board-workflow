@@ -1,0 +1,126 @@
+model: IMAGE 3.2
+native_regions:
+  - WEU: IMAGE 3.2|Western Europe # this includes Andorra, Austria, Belgium, Denmark, Faeroe Islands, Finland, France, Germany, Gibraltar, Greece, Iceland,, Ireland, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Netherlands, Norway, Portugal, San Marino, Spain, Sweden, Switzerland, United Kingdom, Vatican City State
+  - CEU: IMAGE 3.2|Central Europe # this includes Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Macedonia, FYR, Poland, Romania, Serbia and Montenegro, Slovak Republic, Slovenia
+  - BRA: IMAGE 3.2|Brazil
+  - CAN: IMAGE 3.2|Canada
+  - CHN: IMAGE 3.2|China
+  - EAF: IMAGE 3.2|Eastern Africa
+  - INDA: IMAGE 3.2|India
+  - INDO: IMAGE 3.2|Indonesia
+  - JAP: IMAGE 3.2|Japan
+  - KOR: IMAGE 3.2|Korea
+  - ME: IMAGE 3.2|Middle East
+  - MEX: IMAGE 3.2|Mexico
+  - NAF: IMAGE 3.2|Northern Africa
+  - OCE: IMAGE 3.2|Oceania
+  - RCAM: IMAGE 3.2|Other Central America
+  - RSAF: IMAGE 3.2|Other Southern Africa
+  - RSAM: IMAGE 3.2|Other Southern America
+  - RSAS: IMAGE 3.2|Other Southern Asia
+  - RUS: IMAGE 3.2|Russia
+  - SAF: IMAGE 3.2|South Africa
+  - SEAS: IMAGE 3.2|South-East Asia
+  - STAN: IMAGE 3.2|Kazakhstan region
+  - TUR: IMAGE 3.2|Turkey
+  - UKR: IMAGE 3.2|Ukraine region
+  - USA: IMAGE 3.2|USA
+  - WAF: IMAGE 3.2|Western Africa
+common_regions:
+  - World:
+    - WEU
+    - CEU
+    - BRA
+    - CAN
+    - CHN
+    - EAF
+    - INDA
+    - INDO
+    - JAP
+    - KOR
+    - ME
+    - MEX
+    - NAF
+    - OCE
+    - RCAM
+    - RSAF
+    - RSAM
+    - RSAS
+    - RUS
+    - SAF
+    - SEAS
+    - STAN
+    - TUR
+    - UKR
+    - USA
+    - WAF
+  - OECD & EU (R5):
+    - CAN
+    - CEU
+    - JAP
+    - OCE
+    - TUR
+    - USA
+    - WEU
+  - Reforming Economies (R5):
+    - RUS
+    - STAN
+    - UKR
+  - Asia (R5):
+    - CHN
+    - INDIA
+    - INDO
+    - KOR
+    - RSAS
+    - SEAS
+  - Middle East & Africa (R5):
+    - EAF
+    - ME
+    - NAF
+    - RSAF
+    - SAF
+    - WAF
+  - Latin America (R5):
+    - BRA
+    - MEX
+    - RCAM
+    - RSAM
+  - Africa (R10):
+    - EAF
+    - NAF
+    - RSAF
+    - SAF
+    - WAF
+  - China+ (R10):
+    - CHN
+  - Europe (R10):
+    - CEU
+    - TUR
+    - WEU
+  - India+ (R10):
+    - INDIA
+    - RSAS
+  - Latin America (R10):
+    - MEX
+    - RCAM
+    - RSAM
+    - BRA
+  - Middle East (R10):
+    - ME
+  - North America (R10):
+    - CAN
+    - USA
+  - Pacific OECD (R10):
+    - JAP
+    - OCE
+  - Reforming Economies (R10):
+    - RUS
+    - STAN
+    - UKR
+  - Rest of Asia (R10):
+    - INDO
+    - KOR
+    - SEAS
+  - Europe (excl. Turkey): # An imperfect but reasonably accurate description
+    - WEU
+    - CEU
