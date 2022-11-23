@@ -1,0 +1,11 @@
+- Carbon Capture Type:
+    - Biomass:
+        definition: bioenergy use
+    - Fossil:
+        definition: fossil fuel use
+    - Industrial Processes:
+        definition: industrial processes (e.g., cement production), but not from burning of fossil fuels
+    - Direct Air Capture:
+        definition: direct air capture
+    - Other:
+        definition: other processes and methods
