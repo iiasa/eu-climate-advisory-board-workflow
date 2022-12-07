@@ -64,25 +64,65 @@
 
 - R10:
   - Africa (R10):
+      description: Sub-Saharan Africa.
       ar6: R10AFRICA
+      countries: Angola, Benin, Botswana, British Indian Ocean Territory, Burkina Faso,
+        Burundi, Cameroon, Cape Verde, Central African Republic, Chad, Comoros,
+        Cote d'Ivoire, Congo, Djibouti, Equatorial Guinea, Eritrea, Ethiopia, Gabon,
+        Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Madagascar,
+        Malawi, Mali, Mauritania, Mauritius, Mozambique, Namibia, Niger, Nigeria,
+        Reunion, Rwanda, Sao Tome and Principe, Senegal, Seychelles, Sierra Leone,
+        Somalia, South Africa, Saint Helena, Swaziland, Tanzania, Togo, Uganda, Zaire,
+        Zambia, Zimbabwe
   - China+ (R10):
+      description: Centrally-planned Asia, primarily China.
       ar6: R10CHINA+
+      countries: China (incl. Hong Kong), Cambodia, Korea (DPR), Laos (PDR), Mongolia,
+        Vietnam
   - Europe (R10):
+      description: Europe (including Turkey).
       ar6: R10EUROPE
+      countries: Austria, Belgium, Croatia, Denmark, France, Finland, Spain, Sweden,
+        Germany, Greece,  Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway,
+        Portugal, Switzerland, Turkey, United Kingdom
   - India+ (R10):
+      description: South Asia, primarily India.
       ar6: R10INDIA+
+      countries: India, Afghanistan, Bangladesh, Bhutan, Maldives, Nepal, Pakistan,
+        Sri Lanka
   - Latin America (R10):
+      description: Latin America and the Caribbean.
       ar6: R10LATIN_AM
+      countries: Argentina, Bahamas, Barbados, Belize, Bolivia, Brazil, Chile, Colombia,
+        Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, Guadeloupe,
+        Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique, Mexico,
+        Netherlands Antilles, Nicaragua, Panama, Paraguay, Peru, Puerto Rico, Suriname,
+        Trinidad and Tobago, Uruguay, Venezuela
   - Middle East (R10):
+      description: Middle East.
       ar6: R10MIDDLE_EAST
+      countries: Iraq, Iran, Israel, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia,
+        United Arab Emirates
   - North America (R10):
+      description: United States and Canada.
       ar6: R10NORTH_AM
+      countries: Canada, Guam, United States of America
   - Pacific OECD (R10):
+      description: Pacific OECD.
       ar6: R10PAC_OECD
+      countries: Australia, Japan, New Caledonia, New Zealand, Samoa, Solomon Islands,
+        Vanuatu
   - Reforming Economies (R10):
+      description: Former Soviet Union.
       ar6: R10REF_ECON
+      countries: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan,
+        Republic of Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine,
+        Uzbekistan
   - Rest of Asia (R10):
+      description: Other countries of Asia not included in China+ or India+.
       ar6: R10REST_ASIA
+      countries: Afghanistan, Bangladesh, Bhutan, Fiji, Maldives, Nepal, Pakistan,
+        Sri Lanka, Cambodia, Korea (DPR), Laos (PDR), Mongolia, Vietnam
   - Other (R10):
       description: Rest of the World, to be used only if a match with the R10 regions
         can otherwise not be achieved.
