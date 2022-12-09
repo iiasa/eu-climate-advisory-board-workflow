@@ -6,7 +6,7 @@ native_regions:
   - CAN: IMAGE 3.2|Canada
   - CHN: IMAGE 3.2|China
   - EAF: IMAGE 3.2|Eastern Africa
-  - INDA: IMAGE 3.2|India
+  - INDIA: IMAGE 3.2|India
   - INDO: IMAGE 3.2|Indonesia
   - JAP: IMAGE 3.2|Japan
   - KOR: IMAGE 3.2|Korea
@@ -34,7 +34,7 @@ common_regions:
     - CAN
     - CHN
     - EAF
-    - INDA
+    - INDIA
     - INDO
     - JAP
     - KOR
