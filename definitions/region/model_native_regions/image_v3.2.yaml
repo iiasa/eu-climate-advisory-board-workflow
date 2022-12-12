@@ -1,0 +1,28 @@
+# The model documentation and regional aggregation for IMAGE (TIMER) version 3.2 can be found at https://models.pbl.nl/image/index.php/Region_classification_map
+- IMAGE 3.2:
+  - IMAGE 3.2|Western Europe  # this includes Andorra, Austria, Belgium, Denmark, Faeroe Islands, Finland, France, Germany, Gibraltar, Greece, Iceland,, Ireland, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Netherlands, Norway, Portugal, San Marino, Spain, Sweden, Switzerland, United Kingdom, Vatican City State
+  - IMAGE 3.2|Central Europe  # this includes Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Macedonia, FYR, Poland, Romania, Serbia and Montenegro, Slovak Republic, Slovenia
+  - IMAGE 3.2|Brazil
+  - IMAGE 3.2|Canada
+  - IMAGE 3.2|China
+  - IMAGE 3.2|Eastern Africa
+  - IMAGE 3.2|India
+  - IMAGE 3.2|Indonesia
+  - IMAGE 3.2|Japan
+  - IMAGE 3.2|Korea
+  - IMAGE 3.2|Middle East
+  - IMAGE 3.2|Mexico
+  - IMAGE 3.2|Northern Africa
+  - IMAGE 3.2|Oceania
+  - IMAGE 3.2|Other Central America
+  - IMAGE 3.2|Other Southern Africa
+  - IMAGE 3.2|Other Southern America
+  - IMAGE 3.2|Other Southern Asia
+  - IMAGE 3.2|Russia
+  - IMAGE 3.2|South Africa
+  - IMAGE 3.2|South-East Asia
+  - IMAGE 3.2|Kazakhstan region
+  - IMAGE 3.2|Turkey
+  - IMAGE 3.2|Ukraine region
+  - IMAGE 3.2|USA
+  - IMAGE 3.2|Western Africa
