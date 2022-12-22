@@ -202,79 +202,79 @@
     category: Industry
 - Material Consumption|Domestic:
     description: Domestic material consumption
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Cement:
     description: Mass of Cement recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Chemicals:
     description: Mass of Chemicals recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Chemicals|Ammonia:
     description: Mass of Chemicals|Ammonia recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Chemicals|High value chemicals:
     description: Mass of Chemicals|High value chemicals recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Chemicals|Methanol:
     description: Mass of Chemicals|Methanol recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Chemicals|Other:
     description: Mass of Chemicals|Other recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Non-ferrous metals:
     description: Mass of Non-ferrous metals recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Other:
     description: Mass of Other recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Plastics:
     description: Mass of Plastics recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Pulp and Paper:
     description: Mass of Pulp and Paper recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Material recycling|Steel:
     description: Mass of Steel recycled per year
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Cement:
     description: production of cement
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Chemicals:
     description: production of chemicals (e.g. sulfuric acid)
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Chemicals|Ammonia:
     description: production of ammonia
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Chemicals|Other:
     description: production of other chemicals not in the Chemicals categories
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Non-ferrous metals:
     description: production of non-ferrous metals (e.g., aluminum)
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Pulp and Paper:
     description: production of pulp and paper
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Steel:
     description: production of steel
-    unit: Mt/year
+    unit: Mt/yr
     category: Industry
 - Production|Plastics:
     description: production of plactics
