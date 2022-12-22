@@ -1,36 +1,36 @@
-- GCAM-PR 5.3:
-  - GCAM-PR 5.3|Africa_Eastern
-  - GCAM-PR 5.3|Africa_Northern
-  - GCAM-PR 5.3|Africa_Southern
-  - GCAM-PR 5.3|Africa_Western
-  - GCAM-PR 5.3|Argentina
-  - GCAM-PR 5.3|Australia_NZ
-  - GCAM-PR 5.3|Brazil
-  - GCAM-PR 5.3|Canada
-  - GCAM-PR 5.3|Central America and Caribbean
-  - GCAM-PR 5.3|Central Asia
-  - GCAM-PR 5.3|China
-  - GCAM-PR 5.3|Colombia
-  - GCAM-PR 5.3|Eastern EU:
+- GCAM 5.3:
+  - GCAM 5.3|Africa_Eastern
+  - GCAM 5.3|Africa_Northern
+  - GCAM 5.3|Africa_Southern
+  - GCAM 5.3|Africa_Western
+  - GCAM 5.3|Argentina
+  - GCAM 5.3|Australia and New Zealand
+  - GCAM 5.3|Brazil
+  - GCAM 5.3|Canada
+  - GCAM 5.3|Central America and Caribbean
+  - GCAM 5.3|Central Asia
+  - GCAM 5.3|China
+  - GCAM 5.3|Colombia
+  - GCAM 5.3|Eastern EU:
       countries: BG,CY,CZ,EE,HU,LT,LV,MT,PL,RO,SI,SK
       notes: does not include Croatia
-  - GCAM-PR 5.3|Western EU & UK:
+  - GCAM 5.3|Western EU & UK:
       countries: AT,BE,DE,DK,GR,ES,FI,FR,IE,IT,LU,NL,PT,SE,UK
-  - GCAM-PR 5.3|Europe_Eastern
-  - GCAM-PR 5.3|Europe_Non_EU
-  - GCAM-PR 5.3|European Free Trade Association
-  - GCAM-PR 5.3|India
-  - GCAM-PR 5.3|Indonesia
-  - GCAM-PR 5.3|Japan
-  - GCAM-PR 5.3|Mexico
-  - GCAM-PR 5.3|Middle East
-  - GCAM-PR 5.3|Pakistan
-  - GCAM-PR 5.3|Russia
-  - GCAM-PR 5.3|South Africa
-  - GCAM-PR 5.3|South America_Northern
-  - GCAM-PR 5.3|South America_Southern
-  - GCAM-PR 5.3|South Asia
-  - GCAM-PR 5.3|South Korea
-  - GCAM-PR 5.3|Southeast Asia
-  - GCAM-PR 5.3|Taiwan
-  - GCAM-PR 5.3|USA
+  - GCAM 5.3|Europe_Eastern
+  - GCAM 5.3|Europe_Non_EU
+  - GCAM 5.3|European Free Trade Association
+  - GCAM 5.3|India
+  - GCAM 5.3|Indonesia
+  - GCAM 5.3|Japan
+  - GCAM 5.3|Mexico
+  - GCAM 5.3|Middle East
+  - GCAM 5.3|Pakistan
+  - GCAM 5.3|Russia
+  - GCAM 5.3|South Africa
+  - GCAM 5.3|South America_Northern
+  - GCAM 5.3|South America_Southern
+  - GCAM 5.3|South Asia
+  - GCAM 5.3|South Korea
+  - GCAM 5.3|Southeast Asia
+  - GCAM 5.3|Taiwan
+  - GCAM 5.3|USA

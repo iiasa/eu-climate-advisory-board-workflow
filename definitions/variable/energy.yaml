@@ -592,7 +592,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Education|Construction:
     description: Annual construction of commercial education buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Education|Construction cost:
     description: Construction cost of commercial education buildings including material
@@ -607,7 +607,7 @@
 - Energy Service|Residential and Commercial|Commercial|Education|Floor space:
     description: Energy service demand for conditioned floor space in commercial education
       buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Education|Renovation cost:
     description: Ronstruction cost of commercial education buildings including material
@@ -621,11 +621,11 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Floor Space:
     description: energy service demand for conditioned floor space in commercial buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Health|Construction:
     description: Annual construction of commercial health buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Health|Construction cost:
     description: Construction cost of commercial health buildings including material
@@ -640,7 +640,7 @@
 - Energy Service|Residential and Commercial|Commercial|Health|Floor space:
     description: Energy service demand for conditioned floor space in commercial health
       buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Health|Renovation cost:
     description: Ronstruction cost of commercial health buildings including material
@@ -654,7 +654,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Hotels|Construction:
     description: Annual construction of commercial hotels buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Hotels|Construction cost:
     description: Construction cost of commercial hotels buildings including material
@@ -669,7 +669,7 @@
 - Energy Service|Residential and Commercial|Commercial|Hotels|Floor space:
     description: Energy service demand for conditioned floor space in commercial hotels
       buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Hotels|Renovation cost:
     description: Construction cost of commercial hotels buildings including material
@@ -683,7 +683,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction:
     description: Annual construction of commercial industrial & trade buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Industrial & trade|Construction cost:
     description: Construction cost of commercial industrial & trade buildings including
@@ -698,7 +698,7 @@
 - Energy Service|Residential and Commercial|Commercial|Industrial & trade|Floor space:
     description: Energy service demand for conditioned floor space in commercial industrial
       & trade buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Industrial & trade|Renovation cost:
     description: Ronstruction cost of commercial industrial & trade buildings including
@@ -713,7 +713,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Offices|Construction:
     description: Annual construction of commercial offices buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Offices|Construction cost:
     description: Construction cost of commercial offices buildings including material
@@ -728,7 +728,7 @@
 - Energy Service|Residential and Commercial|Commercial|Offices|Floor space:
     description: Energy service demand for conditioned floor space in commercial offices
       buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Offices|Renovation cost:
     description: Construction cost of commercial offices buildings including material
@@ -742,7 +742,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Restaurant|Construction:
     description: Annual construction of commercial restaurant buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Restaurant|Construction cost:
     description: Construction cost of commercial restaurant buildings including material
@@ -757,7 +757,7 @@
 - Energy Service|Residential and Commercial|Commercial|Restaurant|Floor space:
     description: Energy service demand for conditioned floor space in commercial restaurant
       buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Restaurant|Renovation cost:
     description: Construction cost of commercial restaurant buildings including material
@@ -773,12 +773,12 @@
 - Energy Service|Residential and Commercial|Floor Space:
     description: annual demand for floor space (and associated energy servide demand
       for heating and lighting) in residential and commerical Residential and Commercial
-    unit: bn m2/yr
+    unit: billion m2/yr
     core: true
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Construction:
     description: Construction cost of commercial buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Commercial|Construction cost:
     description: Construction cost of commercial buildings
@@ -800,7 +800,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Construction:
     description: Annual construction of buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Construction cost:
     description: Construction cost of buildings
@@ -822,7 +822,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Construction:
     description: Construction cost of residential buildings
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Construction cost:
     description: Construction cost of residential buildings
@@ -845,11 +845,11 @@
 - Energy Service|Residential and Commercial|Residential|Floor Space:
     description: energy service demand for conditioned floor space in residential
       Residential and Commercial
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Multi-family|Construction:
     description: Annual construction of residential multi-family housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Multi-family|Construction cost:
     description: Construction cost of residential multi-family housing including material
@@ -864,7 +864,7 @@
 - Energy Service|Residential and Commercial|Residential|Multi-family|Floor space:
     description: Energy service demand for conditioned floor space in residential
       multi-family housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Multi-family|Renovation cost:
     description: Renovation cost of residential multi-family housing including material
@@ -879,7 +879,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Single family|Construction:
     description: Annual construction of residential single family housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Single family|Construction cost:
     description: Construction cost of residential single family housing including
@@ -894,7 +894,7 @@
 - Energy Service|Residential and Commercial|Residential|Single family|Floor space:
     description: Energy service demand for conditioned floor space in residential
       single family housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Single family|Renovation cost:
     description: Renovation cost of residential single family housing including material
@@ -909,7 +909,7 @@
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Slum|Construction:
     description: Annual construction of residential slum housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Slum|Construction cost:
     description: Construction cost of residential slum housing including material
@@ -924,7 +924,7 @@
 - Energy Service|Residential and Commercial|Residential|Slum|Floor space:
     description: Energy service demand for conditioned floor space in residential
       slum housing
-    unit: bn m2/yr
+    unit: billion m2/yr
     category: Energy
 - Energy Service|Residential and Commercial|Residential|Slum|Renovation cost:
     description: Renovation cost of residential slum housing including material and
@@ -939,106 +939,106 @@
 - Energy Service|Transportation|Aviation:
     description: Annual demand for energy services in billion vehicle-kms related
       to both passenger and freight transportation by Aviation
-    unit: bn vkm/yr
+    unit: billion vkm/yr
     category: Energy
 - Energy Service|Transportation|Freight:
     description: annual demand for energy services related to freight transportation
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     core: true
     category: Energy
 - Energy Service|Transportation|Freight|Aviation:
     description: annual demand for energy services related to freight transportation
       in aviation
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Freight|International Shipping:
     description: annual demand for energy services related to freight transportation
       in international shipping
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Freight|Navigation:
     description: annual demand for energy services related to freight transportation
       in navigation
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Freight|Other:
     description: annual demand for energy services related to freight transportation
       (other)
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Freight|Railways:
     description: annual demand for energy services related to freight transportation
       in railways
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Freight|Road:
     description: annual demand for energy services related to freight transportation
       on roads
-    unit: bn tkm/yr
+    unit: billion tkm/yr
     category: Energy
 - Energy Service|Transportation|Navigation:
     description: Annual demand for energy services in billion vehicle-kms related
       to both passenger and freight transportation by Navigation
-    unit: bn vkm/yr
+    unit: billion vkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger:
     description: annual demand for energy services related to passenger transportation
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     core: true
     category: Energy
 - Energy Service|Transportation|Passenger|Aviation:
     description: annual demand for energy services related to passenger transportation
       in aviation
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Bicycling and Walking:
     description: energy service demand for passenger transport on bicycles and by
       foot
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Navigation:
     description: annual demand for energy services related to passenger transportation
       in navigation
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Other:
     description: annual demand for energy services related to passenger transportation
       (other)
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Railways:
     description: annual demand for energy services related to passenger transportation
       in railways
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Road:
     description: annual demand for energy services related to passenger transportation
       on roads
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Road|2W and 3W:
     description: energy service demand for passenger transport on roads (two- and
       three-wheel vehicles)
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Road|Bus:
     description: energy service demand for passenger transport on roads (buses)
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Passenger|Road|LDV:
     description: 'energy service demand for passenger transport on roads (light-duty
       vehicles: passenger cars and light trucks/SUVs/vans)'
-    unit: bn pkm/yr
+    unit: billion pkm/yr
     category: Energy
 - Energy Service|Transportation|Rail:
     description: Annual demand for energy services in billion vehicle-kms related
       to both passenger and freight transportation by Rail
-    unit: bn vkm/yr
+    unit: billion vkm/yr
     category: Energy
 - Energy Service|Transportation|Road:
     description: Annual demand for energy services in billion vehicle-kms related
       to both passenger and freight transportation by Road
-    unit: bn vkm/yr
+    unit: billion vkm/yr
     category: Energy
 - Final Energy:
     description: total final energy consumption by all end-use sectors and all fuels,
