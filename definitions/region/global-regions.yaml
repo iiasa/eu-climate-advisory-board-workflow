@@ -62,18 +62,24 @@
       ar6: R5ROWO
       ssp:
 
+# The R10 definitions were introduced by the LIMITS project
+# funded by the EU's Seventh Framework Programme FP7/2007-2013
+# (grant agreement no. 282846)
 - R10:
   - Africa (R10):
-      description: Sub-Saharan Africa.
+      description: Africa.
       ar6: R10AFRICA
-      countries: Angola, Benin, Botswana, British Indian Ocean Territory, Burkina Faso,
-        Burundi, Cameroon, Cape Verde, Central African Republic, Chad, Comoros,
-        Cote d'Ivoire, Congo, Djibouti, Equatorial Guinea, Eritrea, Ethiopia, Gabon,
-        Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Madagascar,
-        Malawi, Mali, Mauritania, Mauritius, Mozambique, Namibia, Niger, Nigeria,
-        Reunion, Rwanda, Sao Tome and Principe, Senegal, Seychelles, Sierra Leone,
-        Somalia, South Africa, Saint Helena, Swaziland, Tanzania, Togo, Uganda, Zaire,
-        Zambia, Zimbabwe
+      countries: Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
+        Cape Verde, Central African Republic, Chad, Comoros, Congo, Côte d`Ivoire,
+        Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Eritrea,
+        Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
+        Libyan Arab Jamahiriya, Madagascar, Malawi, Mali, Mauritania, Mauritius,
+        Mayotte, Morocco, Mozambique, Namibia, Niger, Nigeria,
+        Occupied Palestinian Territory, Rwanda, Réunion, Senegal, Sierra Leone, Somalia,
+        South Africa, South Sudan, Sudan, Swaziland, Togo, Tunisia, Uganda,
+        United Republic of Tanzania, Western Sahara, Zambia, Zimbabwe
+      note: Depending on the spatial resolution, some models report Northern Africa
+        as part of the Middle East region.
   - China+ (R10):
       description: Centrally-planned Asia, primarily China.
       ar6: R10CHINA+
@@ -101,8 +107,10 @@
   - Middle East (R10):
       description: Middle East.
       ar6: R10MIDDLE_EAST
-      countries: Iraq, Iran, Israel, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia,
-        United Arab Emirates
+      countries: Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar,
+        Saudi Arabia, Syrian Arab Republic, United Arab Emirates, Yemen
+      note: Depending on the spatial resolution, some models report Northern Africa
+        as part of the Middle East region.
   - North America (R10):
       description: United States and Canada.
       ar6: R10NORTH_AM
