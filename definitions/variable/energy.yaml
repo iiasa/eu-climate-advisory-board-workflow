@@ -2801,55 +2801,55 @@
 - Price|Final Energy|Transportation|Electricity:
     description: Electricity price at the final level in the transportation sector.
       Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Electricity
     category: Energy
 - Price|Final Energy|Transportation|Gases:
     description: Gases price at the final level in the transportation sector. Prices
       should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Gases
     category: Energy
 - Price|Final Energy|Transportation|Gases|Bioenergy:
     description: Gases|Bioenergy price at the final level in the transportation sector.
       Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Gases|Bioenergy
     category: Energy
 - Price|Final Energy|Transportation|Gases|Fossil:
     description: Gases|Fossil price at the final level in the transportation sector.
       Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Gases|Fossil
     category: Energy
 - Price|Final Energy|Transportation|Hydrogen:
     description: Hydrogen price at the final level in the transportation sector. Prices
       should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Hydrogen
     category: Energy
 - Price|Final Energy|Transportation|Liquids:
     description: Liquids price at the final level in the transportation sector. Prices
       should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Liquids
     category: Energy
 - Price|Final Energy|Transportation|Liquids|Bioenergy:
     description: Liquids|Bioenergy price at the final level in the transportation
       sector. Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Liquids|Bioenergy
     category: Energy
 - Price|Final Energy|Transportation|Liquids|Oil:
     description: Liquids|Fossil price at the final level in the transportation sector.
       Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Liquids|Oil
     category: Energy
 - Price|Final Energy|Transportation|Liquids|Hydrogen synfuel:
     description: Liquids|Hydrogen synfuel price at the final level in the transportation
       sector. Prices should include taxes and the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Transportation|Liquids|Hydrogen synfuel
     category: Energy
 - Primary Energy:

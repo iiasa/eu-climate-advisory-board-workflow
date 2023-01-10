@@ -238,3 +238,78 @@
       and biomass based sources
     unit: Mt CO2/yr
     category: CCS
+
+- Carbon Capture:
+    definition: total carbon dioxide emissions captured, i.e. captured CO2 stream
+      from bioenergy use, fossil fuel use, industrial processes, and direct air capture
+    unit: Mt CO2/yr
+    note: amounts should be reported as positive numbers
+    category: CCS
+    project: navigate
+- Carbon Capture|{Carbon Capture Type}:
+    definition: total carbon dioxide emissions captured from {Carbon Capture Type}
+    unit: Mt CO2/yr
+    note: amounts should be reported as positive numbers
+    category: CCS
+    project: navigate
+- Carbon Capture|Storage:
+    definition: total carbon dioxide emissions captured and stored in geological deposits
+      (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers) and the deep ocean
+    unit: Mt CO2/yr
+    note: amounts should be reported as positive numbers
+    category: CCS
+    project: navigate
+- Carbon Capture|Storage|{Carbon Capture Type}:
+    definition: total carbon dioxide emissions captured from {Carbon Capture Type} and stored in geological deposits
+      (e.g. in depleted oil and gas fields, unmined coal seams, saline aquifers) and the deep ocean
+    unit: Mt CO2/yr
+    note: stored amounts should be reported as positive numbers
+    category: CCS
+    project: navigate
+- Carbon Capture|Usage:
+    definition: total carbon dioxide captured and used
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Capture|Usage|Materials|Long-lived:
+    definition: total carbon dioxide captured and used in long-lived materials (e.g. carbon fibers)
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Capture|Usage|Materials|Short-lived:
+    definition: total carbon dioxide captured and used in short-lived materials (e.g. plastics)
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Capture|Usage|Liquids:
+    definition: total carbon dioxide captured and used in synthetic liquids (e.g. feedstock in industry or synthetic fuels)
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Capture|Usage|Gases:
+    definition: total carbon dioxide captured and used in synthetic gases (e.g. as
+      feedstock in industry or for synthetic fuels)
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Removal:
+    definition: total carbon dioxide sequestered
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Removal|Geological Storage:
+    definition: total non-fossil carbon dioxide sequestered through geological storage, i.e. BECCS + DACCS
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Removal|Enhanced Weathering:
+    definition: total carbon dioxide sequestered through enhanced weathering
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate
+- Carbon Removal|Land Use:
+    definition: total carbon dioxide sequestered through land-based sinks (e.g., afforestation, soil carbon enhancement,
+      biochar)
+    unit: Mt CO2/yr
+    category: CCS
+    project: navigate

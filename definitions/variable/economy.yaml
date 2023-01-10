@@ -8,7 +8,7 @@
     category: Economy
 - Consumption:
     description: total consumption of all goods, by all consumers in a region
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Discount Rate|Economy:
@@ -67,12 +67,12 @@
     category: Economy
 - GDP|MER:
     description: GDP at market exchange rate
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - GDP|PPP:
     description: GDP at purchasing power parity
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - GINI:
@@ -88,24 +88,24 @@
     category: Economy
 - Policy Cost|Additional Total Energy System Cost:
     description: additional energy system cost associated with the policy
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|Area under MAC Curve:
     description: total costs of the policy, i.e. the area under the Marginal Abatement
       Cost (MAC) curve
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|Consumption Loss:
     description: consumption loss in a policy scenario compared to the corresponding
       baseline (losses should be reported as negative numbers)
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|Equivalent Variation:
     description: equivalent variation associated with the given policy
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|GDP Loss:
@@ -113,24 +113,24 @@
       compared to the corresponding baseline (losses should be reported as negative
       numbers). Transfers included if present; if no transfer, report same value as
       "w/o transfers"
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|GDP Loss|w/o transfers:
     description: GDP loss (without international transfers) in a policy scenario
       compared to the corresponding baseline (losses should be reported as negative
       numbers).
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     category: Economy
 - Policy Cost|Other:
     description: any other indicator of policy cost (e.g., compensated variation).
       (please indicate what type of policy cost is measured on the 'comments' tab)
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     core: true
     category: Economy
 - Policy Cost|Welfare Change:
     description: Policy cost for welfare change
-    unit: billion US$2010/yr
+    unit: [billion US$2010/yr, billion EUR_2020/yr]
     category: Economy
 - Price|Agriculture|Corn|Index:
     description: price index of corn
@@ -170,50 +170,50 @@
 - Price|Carbon:
     description: price of carbon
     note: for regional aggregrates, the weighted price by subregion should be used
-    unit: US$2010/t CO2
+    unit: [US$2010/t CO2, EUR_2020/t CO2]
     weight: Emissions|CO2
     core: true
     category: Economy
 - Price|Carbon|{ETS}:
     description: price of carbon for sectors {ETS}
     note: for regional aggregrates, the weighted price by subregion should be used
-    unit: US$2010/t CO2
+    unit: [US$2010/t CO2, EUR_2020/t CO2]
     weight: Emissions|CO2|{ETS}
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Electricity:
     description: electricity price at the final level in the residential sector. Prices
       should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Final Energy|Residential and Commercial|Residential|Electricity
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Gases|Natural Gas:
     description: natural gas price at the final level in the residential sector. Prices
       should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     skip-region-aggregation: true
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Liquids|Biomass:
     description: biofuel price at the final level in the residential sector. Prices
       should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     skip-region-aggregation: true
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Liquids|Oil:
     description: light fuel oil price at the final level in the residential sector.
       Prices should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     skip-region-aggregation: true
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Solids|Biomass:
     description: biomass price at the final level in the residential sector. Prices
       should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     skip-region-aggregation: true
     category: Economy
 - Price|Final Energy|Residential and Commercial|Residential|Solids|Coal:
     description: coal price at the final level in the residential sector. Prices should
       include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     skip-region-aggregation: true
     category: Economy
 - Price|Industry|Cement:
@@ -273,73 +273,73 @@
     category: Economy
 - Price|Primary Energy|Biomass:
     description: biomass producer price
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Primary Energy|Biomass
     category: Economy
 - Price|Primary Energy|Coal:
     description: coal price at the primary level (i.e. the spot price at the global
       or regional market)
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Primary Energy|Coal
     category: Economy
 - Price|Primary Energy|Gas:
     description: natural gas price at the primary level (i.e. the spot price at the
       global or regional market)
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Primary Energy|Gas
     category: Economy
 - Price|Primary Energy|Oil:
     description: crude oil price at the primary level (i.e. the spot price at the
       global or regional market)
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Primary Energy|Oil
     category: Economy
 - Price|Secondary Energy|Electricity:
     description: electricity price at the secondary level, i.e. for large scale consumers
       (e.g. aluminum production).  Prices should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Electricity
     category: Economy
 - Price|Secondary Energy|Gases|Natural Gas:
     description: natural gas price at the secondary level, i.e. for large scale consumers
       (e.g. gas power plant). Prices should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Gases|Natural Gas
     category: Economy
 - Price|Secondary Energy|Hydrogen:
     description: hydrogen price at the secondary level. Prices should include the
       effect of carbon prices
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Hydrogen
     category: Economy
 - Price|Secondary Energy|Liquids:
     description: liquid fuel price at the secondary level, i.e. petrol, diesel, or
       weighted average
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Liquids
     category: Economy
 - Price|Secondary Energy|Liquids|Biomass:
     description: biofuel price at the secondary level, i.e. for biofuel consumers
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Liquids|Biomass
     category: Economy
 - Price|Secondary Energy|Liquids|Oil:
     description: light fuel oil price at the secondary level, i.e. for large scale
       consumers (e.g. oil power plant). Prices should include the effect of carbon
       prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Liquids|Oil
     category: Economy
 - Price|Secondary Energy|Solids|Biomass:
     description: biomass price at the secondary level, i.e. for large scale consumers
       (e.g. biomass power plant). Prices should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Solids|Biomass
     category: Economy
 - Price|Secondary Energy|Solids|Coal:
     description: coal price at the secondary level, i.e. for large scale consumers
       (e.g. coal power plant). Prices should include the effect of carbon prices.
-    unit: US$2010/GJ
+    unit: [US$2010/GJ, EUR_2020/GJ]
     weight: Secondary Energy|Solids|Coal
     category: Economy
 - Value Added|Agriculture:
