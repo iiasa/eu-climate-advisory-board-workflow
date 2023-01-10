@@ -3,7 +3,7 @@
 
 # The R5 definitions are taken from the call for submissions
 # to the AR6 WG3 scenario ensemble
-# https://data.ene.iiasa.ac.at/ar6-scenario-submission/#/about
+# https://data.ece.iiasa.ac.at/ar6-scenario-submission/#/about
 - R5:
   - OECD & EU (R5):
       description: OECD 90 and EU member states and candidates
@@ -61,6 +61,79 @@
         can otherwise not be achieved.
       ar6: R5ROWO
       ssp:
+
+# The R9 definitions were introduced by the NAVIGATE project
+# funded by the EU's Horizon 2020 research and innovation programme
+# (grant agreement no. 821124)
+- R9:
+  - European Union (R9):
+      description: European Union.
+      navigate: R9EU
+      countries: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark,
+        Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia,
+        Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia,
+        Slovenia, Spain, Sweden
+      note: Depending on the spatial resolution, reporting by some models may differ
+        from the current list of EU27 members (2023).
+  - USA (R9):
+      description: United States of America.
+      navigate: R9USA
+      countries: United States of America
+      note: Depending on the spatial resolution, some models report Canada
+        as part of the USA region.
+  - Other OECD (R9):
+      description: Other OECD countries.
+      navigate: R9OTHEROECD
+      countries: Albania, Australia, Bosnia and Herzegovina, Canada, Guam, Iceland,
+        Japan, Montenegro, New Zealand, North Macedonia, Norway, Puerto Rico, Serbia,
+        United Kingdom, Switzerland, Turkey
+  - China (R9):
+      description: China.
+      navigate: R9CHINA
+      countries: China (incl. Hong Kong and Macao, excl. Taiwan)
+  - India (R9):
+      description: India.
+      navigate: R9INDIA
+      countries: India
+  - Other Asia (R9):
+      description: The region includes Asian countries with the exception of China,
+        India, the Middle East, Japan and Former Soviet Union states.
+      navigate: R9OTHERASIA
+      countries: Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, Fiji,
+        French Polynesia, Indonesia, Lao People's Democratic Republic, Malaysia,
+        Maldives, Micronesia, Mongolia, Myanmar, Nepal, New Caledonia, Pakistan,
+        Papua New Guinea, Philippines, Republic of Korea, Samoa, Singapore, Solomon
+        Islands, Sri Lanka, Taiwan, Thailand, Timor-Leste, Vanuatu, Vietnam
+  - Reforming Economies (R9):
+      description: Countries from the Reforming Ecomonies of the Former Soviet Union.
+      navigate: R9REF
+      countries: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
+        Russia, Tajikistan, Turkmenistan, Ukraine, Uzbekistan
+  - Middle East & Africa (R9):
+      description: Countries of the Middle East and Africa.
+      navigate: R9MAF
+      countries: Algeria, Angola, Bahrain, Benin, Botswana, Burkina Faso, Burundi,
+        Cameroon, Cape Verde, Central African Republic, Chad, Comoros, Congo, Côte
+        d`Ivoire, Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea,
+        Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Iran, Iraq,
+        Israel, Jordan, Kenya, Kuwait, Lebanon, Lesotho, Liberia, Libyan Arab Jamahiriya,
+        Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco, Mozambique,
+        Namibia, Niger, Nigeria, Occupied Palestinian Territory, Oman, Qatar, Rwanda,
+        Réunion, Saudi Arabia, Senegal, Sierra Leone, Somalia, South Africa, South
+        Sudan, Sudan, Swaziland, Syrian Arab Republic, Togo, Tunisia, Uganda, United
+        Arab Emirates, United Republic of Tanzania, Western Sahara, Yemen, Zambia,
+        Zimbabwe
+  - Latin America (R9):
+      description: Latin and South American countries.
+      navigate: R9LAM
+      countries: Argentina, Aruba, Bahamas, Barbados, Belize, Bolivia, Brazil, Chile,
+        Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, French
+        Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica,
+        Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru, Suriname, Trinidad
+        and Tobago, United States Virgin Islands, Uruguay, Venezuela
+  - Other (R9):
+      description: Rest of the World, used only if a match can otherwise not be achieved.
+      navigate: R9OWO
 
 # The R10 definitions were introduced by the LIMITS project
 # funded by the EU's Seventh Framework Programme FP7/2007-2013
