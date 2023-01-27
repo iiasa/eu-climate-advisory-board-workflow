@@ -1,54 +1,71 @@
 
 reference_variables:
-  CEDS1:
-    ref_year: 2015
-    compare_year: 2015
+  # CEDS:
+    # ref_year: 2015
+    # compare_year: 2015
+    # model: Reference
+    # scenario: CEDS
+    # key_historical: True
+    # key_future: False
+    # variables_threshold:
+      # Emissions|CO2: 0.4
+      # Emissions|CO2|Energy and Industrial Processes: 0.2
+      # Emissions|CH4: 0.4
+      
+  # EDGAR AR6:
+    # ref_year: 2018
+    # compare_year: 2018
+    # model: Reference
+    # scenario: EDGAR AR6
+    # key_historical: True
+    # key_future: False
+    # variables_threshold:
+      # Emissions|CO2: 0.4
+      # Emissions|CO2|Energy and Industrial Processes: 0.2
+      # Emissions|CH4: 0.4
+      # Emissions|N2O: 0.4
+      
+  # IEA2015:
+    # ref_year: 2015
+    # compare_year: 2015
+    # model: Reference
+    # scenario: IEA 2019
+    # key_historical: True
+    # key_future: False
+    # variables_threshold:
+      # Primary Energy: 0.2
+      # Secondary Energy|Electricity|Solar-Wind: 0.4
+      # Secondary Energy|Electricity|Nuclear: 0.3
+
+  IEA2018 Primary Energy:
+    ref_year: 2018
+    compare_year: 2018
     model: Reference
-    scenario: CEDS
-    key_historical: True
-    key_future: False
-    variables_threshold:
-      Emissions|CO2: 0.4
-      Emissions|CO2|Energy and Industrial Processes: 0.2
-      Emissions|CH4: 0.4
-  IEA1:
-    ref_year: 2015
-    compare_year: 2015
-    model: Reference
-    scenario: IEA Energy Statistics*
+    scenario: IEA 2019
     key_historical: True
     key_future: False
     variables_threshold:
       Primary Energy: 0.2
-      Secondary Energy|Electricity|Solar-Wind share: 1
-      Secondary Energy|Electricity|Solar-Wind: 0.4
-      Secondary Energy|Electricity|Nuclear: 0.3
-
-  EDGAR:
+      
+  IEA2018 Electricity|Nuclear:
     ref_year: 2018
-    compare_year: 2020
+    compare_year: 2018
     model: Reference
-    scenario: EDGAR
-    key_historical: True
-    key_future: False
-    variables_threshold:
-      Emissions|CO2: 0.4
-      Emissions|CO2|Energy and Industrial Processes: 0.2
-      Emissions|CH4: 0.4
-      #Primary Energy: 0.2
-      #Secondary Energy|Electricity|Solar-Wind share: 1
-      #Secondary Energy|Electricity|Solar-Wind: 0.4      
-
-  N2O:
-    ref_year: 2010
-    compare_year: 2010
-    model: Reference
-    scenario: RCP
+    scenario: IEA 2019
     key_historical: False
     key_future: False
     variables_threshold:
-      Emissions|N2O: 0.4
-
+      Secondary Energy|Electricity|Nuclear: 0.3
+      
+  Solar-Wind2020:
+    ref_year: 2020
+    compare_year: 2020
+    model: Reference
+    scenario: Solar-Wind-composite
+    key_historical: True
+    key_future: False
+    variables_threshold:
+      Secondary Energy|Electricity|Solar-Wind: 0.5
 
 aggregation_variables:
   CO2:
@@ -64,47 +81,93 @@ aggregation_variables:
 
 
 bounds_variables:
-  Increased renewables 2020-2030:
-    variable: Primary Energy|Renewables share|Next decade change
-    lo: -0.2
-    up: null
-    year: 2020
-    key_historical: False
+
+  CEDS_EDGAR Emissions|CO2 2019:
+    variable: Emissions|CO2
+    lo: 44251
+    up: 44251.1
+    year: 2019
+    key_historical: True
     key_future: False
-  Increased Solar-Wind 2020-2030:
-    variable: Primary Energy|Solar-Wind share|Next decade change
-    lo: -0.2
-    up: null
-    year: 2020
-    key_historical: False
+    bound_threshold: 0.4
+    
+  EDGAR Emissions|CO2|EIP 2019:
+    variable: Emissions|CO2|Energy and Industrial Processes
+    lo: 37646
+    up: 37646.1
+    year: 2019
+    key_historical: True
+    key_future: False
+    bound_threshold: 0.2
+
+  CEDS_EDGAR Emissions|CH4 2019:
+    variable: Emissions|CH4
+    lo: 379.24
+    up: 379.241
+    year: 2019
+    key_historical: True
+    key_future: False
+    bound_threshold: 0.2
+
+  Methane in 2040:
+    variable: Emissions|CH4
+    lo: 100
+    up: 1000
+    year: 2040
+    key_historical: True
     key_future: True
-  Increased secondary energy Solar-Wind '20-'30:
-    variable: Secondary Energy|Electricity|Solar-Wind share|Next decade change
-    lo: -0.2
-    up: null
+    bound_threshold: 1    
+    
+  Emissions|CO2|Energy and Industrial Processes '10-'20:
+    variable: Emissions|CO2|Energy and Industrial Processes|2010-2020 change
+    lo: 0
+    up: 0.5
+    year: 2010
+    key_historical: True
+    key_future: False
+    bound_threshold: 1
+
+  CCS from Energy 2020:
+    variable: Carbon Sequestration|CCS|Biomass and Fossil
+    lo: 0
+    up: 250
     year: 2020
-    key_historical: False
-    key_future: True
+    key_historical: True
+    key_future: False
+    bound_threshold: 1 
+  # Secondary Energy Solar-Wind increase '20-'30:
+    # variable: Secondary Energy|Electricity|Solar-Wind|2020-2030 change
+    # lo: -0.2
+    # up: null
+    # year: 2020
+    # key_historical: False
+    # key_future: True
+    # bound_threshold: 1
   No net negative before 2030:
     variable: Emissions|CO2
     lo: 0
-    up: null
+    up: 80000
     year: 2010-2030
-    key_historical: False
+    key_historical: True
     key_future: True
-  CCS from Energy 2020:
-    variable: Carbon Sequestration|CCS|Biomass and Fossil
-    lo: null
-    up: 500
-    year: 2020
-    key_historical: False
-    key_future: False
+    bound_threshold: 1
+
   CCS from Energy 2030:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
-    lo: null
-    up: 1000
+    lo: 0
+    up: 2000
     year: 2030
     key_historical: False
-    key_future: False
+    key_future: True
+    bound_threshold: 1
+    
+  Electricity from Nuclear in 2030:
+    variable: Secondary Energy|Electricity|Nuclear
+    lo: 0
+    up: 20
+    year: 2030
+    key_historical: False
+    key_future: True
+    bound_threshold: 1
   
 

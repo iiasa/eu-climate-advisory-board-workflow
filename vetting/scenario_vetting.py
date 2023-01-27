@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Aug 11 17:47:01 2020
-
-@author: byers, kvanderwijst
+Vetting script for Climate Advisory Borad
 """
+import os
+os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+
 #%% Import packages and data
-import itertools as it
+# import itertools as it
 import time
 start = time.time()
 print(start)
@@ -13,63 +14,57 @@ import numpy as np
 import pyam
 import pandas as pd
 import yaml
-import os
-
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
 
-os.chdir('C:\Github\ipcc_ar6_scenario_assessment\scripts\snapshot_export_postprocessing')
-from x000_snapshot_config import *
 
+# =============================================================================
+#%% Configuration
+# =============================================================================
 
-# vettver = 'v7' #'infillerDB_vetting' #
+#%% Settings for the specific run
 
-# snapshotdir = 'C:\\Users\wijstvdk\OneDrive - Planbureau voor de Leefomgeving\\Documenten\\Databases\\' # directory where your data is stored
-wd = os.path.join(snapshotdir,'vetting',vettver)
-
-if not os.path.exists(wd):
-    os.makedirs(wd)
-
-small = False
 log = True
 modelbymodel = True
 single_model = False
 ver = 'normal'
-ver = 'ips'
-# ver = 'teams'
-# ver = 'infiller'
+# ver = 'ips'
+
+flag_fail = 'Fail'
+flag_pass = 'Pass'
+
+
+config_vetting = f'config_vetting_{ver}.yaml'
+instance = 'eu_climate_submission'
+
+input_data_ref = f'input_data\\extra-ref-ar6-201518-data.xlsx'
+input_data_ceds = f'input_data\\CEDS_ref_data.xlsx'
+output_folder = 'output_data\\'
 
 #%% Load data
-if not os.path.exists(wd+'\\teams'):
-    os.makedirs(wd+'\\teams')
-
-config_file = wd+'\\config_vetting_'+ver+'.yaml'
-
-if ver == 'infiller':
-    #fn = snapshotdir+world_filename+('_smallwithref' if small else '')+'.xlsx'
-    # fn = 'P:\\ene.general\\ar6snap\\ar6-2021_10_11\\output\\snapshot_world.csv'
-    fn = snapshotdir+world_filename+('_smallwithref' if small else '')+'.xlsx'
-else:
-    fn = snapshotdir+world_filename+('_smallwithref' if small else '')+'.xlsx'
-dfin = pyam.IamDataFrame(data=fn)
+if modelbymodel==True:
+    if not os.path.exists(f'{output_folder}teams'):
+        os.makedirs(f'{output_folder}teams')
 
 
 
+#%% Settings for the project / dataset
+# Specify what data to read in
 
-print('loaded')
-print(time.time()-start)
+years = np.arange(2000, 2101, dtype=int)
 
-# Filter dataframe to reduce size
+# models = 'MESSAGE*'
+# scenarios = '*'
 
-years = np.arange(2000, 2101)
+
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
-            'Emissions|CO2|Energy', 
+            # 'Emissions|CO2|Energy', 
             'Emissions|CO2|Industrial Processes',
-            'Emissions|CO2|AFOLU',
-            'Emissions|CO2|Other',
-            'Emissions|CO2|Waste',
+            # 'Emissions|CO2|AFOLU',
+            # 'Emissions|CO2|Other',
+            # 'Emissions|CO2|Waste',
             'Emissions|CH4',
             'Emissions|N2O',
             'Primary Energy',
@@ -77,30 +72,42 @@ varlist = ['Emissions|CO2',
             'Primary Energy|Nuclear',
             'Primary Energy|Solar',
             'Primary Energy|Wind',            
-            'Secondary Energy',
-            'Secondary Energy|Electricity*',
-            'Final Energy',
-            'GDP|MER',
-            'Population',
+            # 'Secondary Energy',
+            'Secondary Energy|Electricity',
+            'Secondary Energy|Electricity|Nuclear',
+            'Secondary Energy|Electricity|Solar',
+            'Secondary Energy|Electricity|Wind',
+            # 'Final Energy',
+            # 'GDP|MER',
+            # 'Population',
             'Carbon Sequestration|CCS*']
 
-#%% Restart from here if necessary
-df = dfin.filter(variable=varlist, year=years)
+region = ['World']
 
-manual_scenario_remove(df, remdic)
-# Drop IIASAPOP as only reports population
-df.filter(model='IIASAPOP 2.0', keep=False, inplace=True)
+#%% load pyam data
 
+dfin = pyam.read_iiasa(instance, 
+                        # model=models, 
+                        # scenario=scenarios, 
+                       variable=varlist, 
+                       year=years,
+                       region=region)
+
+
+print('loaded')
+print(time.time()-start)
+
+
+#%%=============================================================================
+# #%% Restart from here if necessary
+# =============================================================================
+
+# Drop unwanted scenarios
+# manual_scenario_remove(df, remdic)
 
 # Inteprolate data
-df = df.timeseries().reindex(columns=[x for x in years if x not in df.data.columns])
-df = df.interpolate(method='values', axis=1)
-df= df.reset_index()
+df = dfin.interpolate(range(years[0], years[-1], 1))
 
-df = pyam.IamDataFrame(df)
-
-
-#%
 meta_docs = {}
 historical_columns = []
 future_columns = []
@@ -108,8 +115,6 @@ value_columns = {}
 
 
 print_log = print if log else lambda x: None
-flag_pass = 'Pass'
-flag_fail = 'Fail'
 
 
 ###################################
@@ -120,7 +125,7 @@ flag_fail = 'Fail'
 ###################################
 # os.chdir('c://github/ipcc_ar6_scenario_assessment/scripts/vetting/')
 # read from local folder
-with open(config_file, 'r', encoding='utf8') as config_yaml:
+with open(config_vetting, 'r', encoding='utf8') as config_yaml:
     config = yaml.safe_load(config_yaml)
 
 reference_variables = config['reference_variables']
@@ -130,7 +135,7 @@ aggregation_variables = config['aggregation_variables']
 bounds_variables = config['bounds_variables']
 
 if single_model:
-    df = df.filter(model=['REMIND*', 'Reference'])
+    df = df.filter(model=['REMIND*', 'Reference'])  # Choose one arbitrary model, and the Reference data
 
 #%% Define functions used to perform checks
 
@@ -171,7 +176,7 @@ def util_filter_check_exists(meta_name, variable, year=None):
         missing_indices = var_doesnt_exist[['model', 'scenario']]
         df.set_meta('missing', meta_name, missing_indices)
 
-def util_filter_set_failed(meta_name, failed_df, label=flag_fail):
+def util_filter_set_failed(meta_name, failed_df, label='Fail'):
     if failed_df is None:
         print_log(f'All scenarios passed validation {meta_name}')
     else:
@@ -229,7 +234,7 @@ def util_filter_save_value_column(name, variable_or_values, year=None, method=No
 #  - Filter check aggregate: check if components of variable sum up to main component
 #  - Filter validate: check if variable is within bounds
 
-def filter_with_reference(ref_df, thresholds, year, meta_name, key_historical=True, key_future=False):
+def filter_with_reference(ref_df, thresholds, year, meta_name, key_historical=True, key_future=False, flag_fail='Fail', flag_pass='Pass'):
     meta_name_agg = f'{meta_name} summary'
     trs = '' if ver=='teams' else f': {thresholds}'
     util_filter_init(meta_name_agg, f'Checks that scenario is within reasonable range'+trs,
@@ -348,10 +353,10 @@ def to_series(pyam_df):
 # =============================================================================
 # Add additional reference data
 # =============================================================================
-dfref = pyam.IamDataFrame(snapshotdir+'vetting\\extra-ref-ar6-201518-data.xlsx')
-dfceds =  pyam.IamDataFrame(snapshotdir+'vetting\\CEDS_ref_data.xlsx')
-df = df.append(dfref)
-df = df.append(dfceds)
+dfref = pyam.IamDataFrame(input_data_ref)
+dfceds =  pyam.IamDataFrame(input_data_ceds)
+df.append(dfref, inplace=True)
+df.append(dfceds, inplace=True)
 
 
 
@@ -435,7 +440,9 @@ calc_increase_percentage('Primary Energy|Solar-Wind share', 2020, 2030)
 # Solar-Wind share increase
 calc_increase_percentage('Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
 
-#%% Perform actual checks
+#%%=============================================================================
+# #%% Perform actual checks
+# =============================================================================
 
 ###################################
 #
@@ -500,8 +507,6 @@ else:
     print('Skipping aggregations')
 
 
-
-
 # =============================================================================
 # Add data: % increases
 # =============================================================================
@@ -523,8 +528,7 @@ df.append(
 )
 
     
-#%%
-# =============================================================================
+#%%  =============================================================================
 # Add data: Upper-Lower CEDS&EDGAR bounds (not used due to method)
 # DO NOT DELETE, CAN BE USED TO CALCULATE THE REFERENCE VALUES WHICH ARE READ IN THE YAML FILE
 # =============================================================================
@@ -561,7 +565,7 @@ df.append(
 #     df.append(data, inplace=True)
 
 # ab = df.filter(model='Reference',scenario='CEDS_EDGAR')
-# ab.to_csv(wd+'\\ceds_edgar_extrapdata.csv')
+# ab.to_csv(f'{output_folder}ceds_edgar_extrapdata.csv')
 
 #%% Second, for the reference checking
 for agg_name, agg_info in reference_variables.items():
@@ -609,19 +613,20 @@ df.meta.loc[
 
 
 #% Overall - choose that only HISTORICAL == PASS
-col = 'vetting_{}_{}'.format(ver, vettver)
+col = f'vetting_{ver}'
 # df.meta.loc[(df.meta[meta_name_historical]=='Pass') & (df.meta[meta_name_future]=='Pass'), col] = 'PASS'
 # df.meta.loc[(df.meta[meta_name_historical]=='Fail') | (df.meta[meta_name_future]=='Fail'), col] = 'FAIL'
-df.meta.loc[(df.meta[meta_name_historical]=='Pass') , col] = 'PASS'
-df.meta.loc[(df.meta[meta_name_historical]=='Fail') , col] = 'FAIL'
+df.meta.loc[(df.meta[meta_name_historical]==flag_pass) , col] = 'PASS'
+df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
 
 
-#%
+#%%
 ###################################
 #
 # Save to Excel and format output file
 #
 ###################################
+
 
 def strip_version(model):
     split = model.split(' ')
@@ -637,10 +642,10 @@ else:
 
 for model in models:
         modelstr = model.replace('/','-')
-        xs = '\\' if model=='all' else '\\teams\\'
-        wbstr = wd+xs+'vetting_flags_'+modelstr+'_'+ver+vettver+'.xlsx' 
-        writer = pd.ExcelWriter(wbstr)
-        dfo = df.meta.reset_index().drop('exclude', axis=1)
+        xs = '' if model=='all' else 'teams\\'
+        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx' 
+        writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
+        dfo = df.meta.reset_index().drop(['exclude','Source'], axis=1)
         if model != 'all':
             dfo = dfo.loc[dfo['model stripped'].isin([model, 'Reference'])]
 
@@ -767,11 +772,8 @@ for model in models:
         writer.sheets['summary_pivot'].set_column(0, 0, 60, None)
         writer.sheets['summary_pivot'].set_column(1, 6, 20, None)
 
-
-
-        writer.save()
-
-
+        # writer.save()
+        writer.close()
 
 
 
@@ -878,22 +880,20 @@ fig.update_layout(
 )
 
 ##%% Save to html
-
-fig.update_layout(width=None).write_html(wd+'\\vetting_histograms_'+ver+'.html', include_plotlyjs='cdn')
-# %%
+fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_'+ver+'.html', include_plotlyjs='cdn')
 print(time.time()-start)
 
-df.to_excel(wd+'\\df_out.xlsx', index=False)
+df.to_excel(f'{output_folder}df_out.xlsx')
 
 #%% Save emissions for climate assessment if infillerdb
 
 if ver == 'infiller':
-    fname = f'{world_filename}_Emissions_for_climate_assessment_InfillerDB_input'
+    fname = f'{output_folder}Emissions_for_climate_assessment_InfillerDB_input'
     
     dfca = dfin.filter(variable='Emissions*')
     dfca.filter(model=['Reference','MAGICC6'], keep=False, inplace=True)
     dfca.filter(year=range(2005,2101), inplace=True)
-    dfca.load_meta(wd+'\\vetting_flags_all_infillerv6.xlsx', sheet_name='vetting_flags')
+    dfca.load_meta(f'{output_folder}vetting_flags_all_infillerv6.xlsx', sheet_name='vetting_flags')
     # dfca.meta = dfca.meta[['exclude','vetting_infiller_v6']]
     dfca.filter(vetting_infiller_v6='PASS', keep=True, inplace=True)
     dfca = dfca.timeseries()
@@ -903,5 +903,5 @@ if ver == 'infiller':
     colorder = list(range(2005,2101))
     dfca = dfca[colorder]
     # dfca = pyam.IamDataFrame(dfca)
-    dfca.to_excel(snapshotdir+fname+'.xlsx', merge_cells=False)
+    dfca.to_excel(fname+'.xlsx', merge_cells=False)
 
