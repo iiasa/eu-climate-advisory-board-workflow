@@ -3,7 +3,7 @@
 Vetting script for Climate Advisory Borad
 """
 import os
-os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+os.chdir('C:\\users//byers//Github\\eu-climate-advisory-board-workflow\\vetting')
 
 #%% Import packages and data
 # import itertools as it
@@ -52,7 +52,7 @@ if modelbymodel==True:
 #%% Settings for the project / dataset
 # Specify what data to read in
 
-years = np.arange(2000, 2101, dtype=int)
+years = np.arange(2000, 2101, dtype=int).tolist()
 
 # models = 'MESSAGE*'
 # scenarios = '*'
@@ -60,7 +60,7 @@ years = np.arange(2000, 2101, dtype=int)
 
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
-            # 'Emissions|CO2|Energy', 
+            # 'Emissions|CO2|Energy',
             'Emissions|CO2|Industrial Processes',
             # 'Emissions|CO2|AFOLU',
             # 'Emissions|CO2|Other',
@@ -69,9 +69,12 @@ varlist = ['Emissions|CO2',
             'Emissions|N2O',
             'Primary Energy',
             'Primary Energy|Fossil',
+            'Primary Energy|Gas',
+            'Primary Energy|Oil',
+            'Primary Energy|Coal',
             'Primary Energy|Nuclear',
             'Primary Energy|Solar',
-            'Primary Energy|Wind',            
+            'Primary Energy|Wind',
             # 'Secondary Energy',
             'Secondary Energy|Electricity',
             'Secondary Energy|Electricity|Nuclear',
@@ -82,16 +85,17 @@ varlist = ['Emissions|CO2',
             # 'Population',
             'Carbon Sequestration|CCS*']
 
-region = ['World']
+region = 'World'
 
 #%% load pyam data
 
-dfin = pyam.read_iiasa(instance, 
-                        # model=models, 
-                        # scenario=scenarios, 
-                       variable=varlist, 
+dfin = pyam.read_iiasa(instance,
+                        # model=models,
+                        # scenario=scenarios,
+                       # variable=varlist,
                        year=years,
                        region=region)
+
 
 
 print('loaded')
@@ -181,8 +185,8 @@ def util_filter_set_failed(meta_name, failed_df, label='Fail'):
         print_log(f'All scenarios passed validation {meta_name}')
     else:
         print_log('{} scenarios did not pass validation of {}'.format(len(failed_df), meta_name))
-        
-        # depending on pyam version, if failed_df is a series (new pyam >=0.7), 
+
+        # depending on pyam version, if failed_df is a series (new pyam >=0.7),
         if type(failed_df)==pd.Series:
             failed_indices = (
                 failed_df
@@ -199,8 +203,8 @@ def util_filter_set_failed(meta_name, failed_df, label='Fail'):
                 [['model', 'scenario']]
                 .drop_duplicates()
             )
-        
-        
+
+
         df.set_meta(label, meta_name, failed_indices)
         df.set_meta(True, 'exclude', failed_indices)
 
@@ -278,8 +282,8 @@ def filter_with_reference(ref_df, thresholds, year, meta_name, key_historical=Tr
     df.meta.loc[
         df.meta[curr_meta_columns].isin([flag_pass, 'missing']).all(axis=1),
         meta_name_agg] = flag_pass
-    
-    
+
+
 
     df.reset_exclude()
 
@@ -299,14 +303,14 @@ def filter_check_aggregate(variable, threshold, meta_name, key_historical=True, 
     util_filter_set_failed(meta_name_agg, failed)
     df.reset_exclude()
 
-def filter_validate(variable, year, lo, up, meta_name, key_historical=True, key_future=False, 
+def filter_validate(variable, year, lo, up, meta_name, key_historical=True, key_future=False,
                     bound_threshold=1):
 
     if bound_threshold != 1:
         lo = lo * (1-bound_threshold)
         up = up * (1+bound_threshold)
-    
-    
+
+
     if type(year) == str:
         # Interpret string as range:
         year = range(*[int(x) for x in year.split('-')])
@@ -329,7 +333,7 @@ def filter_validate(variable, year, lo, up, meta_name, key_historical=True, key_
     failed = df.filter(year=year).validate({variable: {'lo': lo, 'up': up}})
 
     util_filter_set_failed(meta_name, failed)
-    
+
     df.reset_exclude()
 
 #%% Create additional variables
@@ -484,7 +488,7 @@ for model, scenarios in mapping.items():
                       variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
             .aggregate(variable='Emissions|CO2')
                   )
-        
+
         df.append(
             neweip,
         variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
@@ -527,7 +531,7 @@ df.append(
     inplace=True
 )
 
-    
+
 #%%  =============================================================================
 # Add data: Upper-Lower CEDS&EDGAR bounds (not used due to method)
 # DO NOT DELETE, CAN BE USED TO CALCULATE THE REFERENCE VALUES WHICH ARE READ IN THE YAML FILE
@@ -643,20 +647,20 @@ else:
 for model in models:
         modelstr = model.replace('/','-')
         xs = '' if model=='all' else 'teams\\'
-        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx' 
+        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx'
         writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
         dfo = df.meta.reset_index().drop(['exclude','Source'], axis=1)
         if model != 'all':
             dfo = dfo.loc[dfo['model stripped'].isin([model, 'Reference'])]
 
         dfo[['model', 'scenario']+[col, meta_name_historical, meta_name_future]+historical_columns+future_columns].to_excel(writer, sheet_name='vetting_flags', index=False, header=True)
-        
+
         # if ver == 'teams':
             # dfo = dfo.select_dtypes(object)
-            
+
         cols = dfo.columns.tolist()
-        cols = cols[:2] + cols[-1:] +cols[-4:-2] + cols[2:-4]             
-        
+        cols = cols[:2] + cols[-1:] +cols[-4:-2] + cols[2:-4]
+
         dfo.to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
         md = pd.DataFrame(index=meta_docs.keys(), data=meta_docs.values(), columns=['Description'])
         md.to_excel(writer, sheet_name='description')
@@ -666,8 +670,8 @@ for model in models:
             worksheet.set_column(0, 0, 13, None)
             worksheet.set_column(1, 1, 25, None)
             worksheet.set_column(2, len(dfo.columns)-1, 20, None)
-            
-            
+
+
         # =============================================================================
         #         # Add summary pivot table
         # =============================================================================
@@ -678,10 +682,10 @@ for model in models:
         dfop.loc[dfop[col]=='PASS', col] = 'Pass'
         dfop.loc[dfop[col]=='FAIL', col] = 'Fail'
         dfop.rename(index={col: 'OVERALL'}, inplace=True)
-        
+
         # dfp = pd.DataFrame(index=cols, columns=['Pass','Fail','outside_range','missing'])
         # colorder=['Pass','Fail','outside_range','missing']
-        
+
         dfop_simple = dfop[cols].apply(pd.Series.value_counts).sort_index()
         dfop_simple = dfop_simple.T#[colorder]
         dfop_simple.rename(index={col: 'OVERALL'}, inplace=True)
@@ -692,8 +696,8 @@ for model in models:
             dfop_simple.loc[future_columns,'Key_future'] = 'Yes'
         else:
             dfop_simple.drop('OVERALL', inplace=True)
-        
-        
+
+
         cols = dfop_simple.columns.tolist()
         try:
             cols.insert(0, cols.pop(cols.index('Fail')))
@@ -702,7 +706,7 @@ for model in models:
         except(ValueError):
             pass
 
-        
+
         # Add Pass+missing column if missing values
         if 'missing' in dfop_simple.columns:
             Pnkp_name = 'Pass+nonKeyHist_missing'
@@ -711,7 +715,7 @@ for model in models:
             for row in dfop_simple.itertuples():
                 if (row.Index in historical_columns) and np.isnan(row.missing)==False:
                     dfop_simple.loc[row.Index, Pnkp_name] = row.Pass + row.missing
-                    
+
             cols = dfop_simple.columns.tolist()
             cols.insert(2, cols.pop(cols.index(Pnkp_name)))
 
@@ -742,9 +746,9 @@ for model in models:
         })
         header_format = header_format_creator(True)
         subheader_format = header_format_creator(False)
-        
 
-        
+
+
         for col_num, value in enumerate(dfo.columns.values):
             curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
             worksheet.write(0, col_num, value, curr_format)
@@ -767,7 +771,7 @@ for model in models:
 
 
         writer.sheets['description'].set_column(0, 1, 35, None)
-        
+
         # Fromat summary pivot page
         writer.sheets['summary_pivot'].set_column(0, 0, 60, None)
         writer.sheets['summary_pivot'].set_column(1, 6, 20, None)
@@ -799,7 +803,7 @@ in_legend = []
 threshold_plot = 0.5
 
 for i, (column, info) in enumerate(plot_columns.items()):
-    
+
 
     xmin, xmax = None, None
     if info['ref_lo'] is not None and info['ref_up'] is not None:
@@ -845,7 +849,7 @@ for i, (column, info) in enumerate(plot_columns.items()):
 
     # fig.update_xaxes(
     #     row=i+1, range=[xlo, xup])
-        
+
     # Give xaxis its title and change tickformat if necessary
     fig.update_xaxes(
         row=i+1,
@@ -889,7 +893,7 @@ df.to_excel(f'{output_folder}df_out.xlsx')
 
 if ver == 'infiller':
     fname = f'{output_folder}Emissions_for_climate_assessment_InfillerDB_input'
-    
+
     dfca = dfin.filter(variable='Emissions*')
     dfca.filter(model=['Reference','MAGICC6'], keep=False, inplace=True)
     dfca.filter(year=range(2005,2101), inplace=True)
