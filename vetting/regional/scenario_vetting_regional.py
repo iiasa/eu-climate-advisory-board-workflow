@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Vetting script for Climate Advisory Borad
+Vetting script for Climate Advisory Borad - regional version
 """
 import os
-os.chdir('C:\\users//byers//Github\\eu-climate-advisory-board-workflow\\vetting')
+os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 
 #%% Import packages and data
 # import itertools as it
@@ -18,14 +18,27 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
 
+meta_docs = {}
+historical_columns = []
+future_columns = []
+value_columns = {}
+
+
+print_log = print if log else lambda x: None
+
+
+from vetting_functions import *
 
 # =============================================================================
 #%% Configuration
 # =============================================================================
 
 #%% Settings for the specific run
-
+region_level = 'regional'
+user = 'byers'
 log = True
+print_log = print if log else lambda x: None
+
 modelbymodel = True
 single_model = False
 ver = 'normal'
@@ -35,12 +48,19 @@ flag_fail = 'Fail'
 flag_pass = 'Pass'
 
 
-config_vetting = f'config_vetting_{ver}.yaml'
+config_vetting = f'{region_level}\\config_vetting_{ver}_regional.yaml'
 instance = 'eu_climate_submission'
 
-input_data_ref = f'input_data\\extra-ref-ar6-201518-data.xlsx'
-input_data_ceds = f'input_data\\CEDS_ref_data.xlsx'
-output_folder = 'output_data\\'
+input_data_ref = f'{region_level}\\input_data\\extra-ref-ar6-201518-data.xlsx'
+input_data_ref = f'{region_level}\\input_data\\input_reference_all.csv'
+
+"C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_edgarCO2CH4.csv",
+"C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_ieaPE_SE.csv"
+
+
+input_data_ceds = f'{region_level}\\input_data\\CEDS_ref_data.xlsx'
+input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
+output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
 
 #%% Load data
 if modelbymodel==True:
@@ -52,9 +72,10 @@ if modelbymodel==True:
 #%% Settings for the project / dataset
 # Specify what data to read in
 
-years = np.arange(2000, 2101, dtype=int).tolist()
+years = np.arange(2010, 2041, dtype=int).tolist()
+year_aggregate = 2020
 
-# models = 'MESSAGE*'
+model = 'MESSAGEix-GLOBIOM 1.1'
 # scenarios = '*'
 
 
@@ -85,41 +106,79 @@ varlist = ['Emissions|CO2',
             # 'Population',
             'Carbon Sequestration|CCS*']
 
-region = 'World'
+# region = ['World']
 
-#%% load pyam data
+
+
+#%% Load reference ISO data
+
+ref_iso_data = pyam.IamDataFrame(input_data_ref)
+
+
+#% Aggregate reference data for the model regions
+reg_mapping_all = pd.read_csv(input_data_mapping)
+reg_mapping = reg_mapping_all[['ISO', model]]
+reg_mapping.rename(columns={model: 'region'}, inplace=True)
+reg_mapping.region.fillna('none', inplace=True)
+
+reg_mapping = reg_mapping.loc[reg_mapping.region.str.contains('_marker')]
+iso_reg_dict = reg_mapping.groupby('region')['ISO'].apply(list).to_dict()
+unique_natives = iso_reg_dict.keys()
+
+# Aggregate ISOs to native regions
+for native in unique_natives:
+    for variable in ref_iso_data.variable:
+        ref_iso_data.aggregate_region(variable, region=native, subregions=iso_reg_dict[native], append=True)
+
+
+
+#% Strip marker from region
+# regions = {x :x.split('_')[0] for x in unique_natives}
+# ref_data.rename({'region':regions}, inplace=True)
+
+
+#%% load pyam data for model
+
+regions = [f'{model}|'+x.split('_')[0] for x in unique_natives]
+
 
 dfin = pyam.read_iiasa(instance,
-                        # model=models,
+                        model=model,
                         # scenario=scenarios,
-                       # variable=varlist,
+                        variable=varlist,
                        year=years,
-                       region=region)
+                        region=regions,
+                       )
 
 
+# Inteprolate data
+df = dfin.interpolate(range(years[0], years[-1], 1))
 
 print('loaded')
 print(time.time()-start)
 
 
+
+
 #%%=============================================================================
-# #%% Restart from here if necessary
-# =============================================================================
 
-# Drop unwanted scenarios
-# manual_scenario_remove(df, remdic)
+# Join model with reference data
+agg_region_name = f'{model}|Europe_agg'
+# Aggregate natives
+for variable in ref_iso_data.variable:
+    ref_iso_data.aggregate_region(variable, region=agg_region_name, subregions=unique_natives, append=True)
+ref_data = ref_iso_data.filter(region=agg_region_name)
 
-# Inteprolate data
-df = dfin.interpolate(range(years[0], years[-1], 1))
+unique_natives = df.region
+for variable in df.variable:
+    df.aggregate_region(variable, region=agg_region_name, subregions=unique_natives, append=True)
+    
+df = df.filter(region=agg_region_name)
+df = df.append(ref_data)
 
-meta_docs = {}
-historical_columns = []
-future_columns = []
-value_columns = {}
 
 
-print_log = print if log else lambda x: None
-
+#%%
 
 ###################################
 #
@@ -139,202 +198,9 @@ aggregation_variables = config['aggregation_variables']
 bounds_variables = config['bounds_variables']
 
 if single_model:
-    df = df.filter(model=['REMIND*', 'Reference'])  # Choose one arbitrary model, and the Reference data
-
-#%% Define functions used to perform checks
-
-###################################
-#
-# Define functions used to perform
-# checks
-#
-###################################
-
-def create_reference_df(ref_model, ref_scenario, check_variables, ref_year):
-    return (
-        df
-        .filter(model=ref_model, scenario=ref_scenario, variable=check_variables, year=ref_year)
-        .timeseries()
-        [ref_year]
-    )
+    df = df.filter(model=['MESSAGE*', 'Reference'])  # Choose one arbitrary model, and the Reference data
 
 
-## Some utilities for the filter functions:
-#  - Initialise the meta column
-#  - Perform check if a variable exists
-#  - Set corresponding scenarios to `fail` given an output of *.validate() or *.check_aggregate
-
-def util_filter_init(meta_name, meta_doc, key_historical, key_future):
-    """Creates the meta column"""
-    meta_docs[meta_name] = meta_doc
-    df.set_meta(flag_pass, name=meta_name)
-    df.reset_exclude()
-    if key_historical==True:
-        historical_columns.append(meta_name)
-    if key_future==True:
-        future_columns.append(meta_name)
-
-def util_filter_check_exists(meta_name, variable, year=None):
-    var_doesnt_exist = pyam.require_variable(df, variable=variable, year=year, exclude_on_fail=True)
-    if var_doesnt_exist is not None:
-        missing_indices = var_doesnt_exist[['model', 'scenario']]
-        df.set_meta('missing', meta_name, missing_indices)
-
-def util_filter_set_failed(meta_name, failed_df, label='Fail'):
-    if failed_df is None:
-        print_log(f'All scenarios passed validation {meta_name}')
-    else:
-        print_log('{} scenarios did not pass validation of {}'.format(len(failed_df), meta_name))
-
-        # depending on pyam version, if failed_df is a series (new pyam >=0.7),
-        if type(failed_df)==pd.Series:
-            failed_indices = (
-                failed_df
-                # .drop('variable',)
-                .reset_index()
-                [['model', 'scenario']]
-                .drop_duplicates()
-            )
-        else: #or a DF (older pyam <0.7)
-            failed_indices = (
-                failed_df
-                .drop('variable', axis=1)
-                .reset_index()
-                [['model', 'scenario']]
-                .drop_duplicates()
-            )
-
-
-        df.set_meta(label, meta_name, failed_indices)
-        df.set_meta(True, 'exclude', failed_indices)
-
-def util_get_unit(variable):
-    variables = df.as_pandas()[['variable','unit']].drop_duplicates()
-    unit = variables[variables['variable'] == variable]['unit']
-    try:
-        return unit.iloc[0]
-    except:
-        return 'Unit not found'
-
-def util_filter_save_value_column(name, variable_or_values, year=None, method=None, ref_value=None, ref_lo=None, ref_up=None, plot=True, **kwargs):
-    if type(variable_or_values) == str:
-        unit = util_get_unit(variable_or_values)
-        column_name = f'{name} (model value in {year}) [{unit}]'
-        df.set_meta_from_data(name=column_name, variable=variable_or_values, year=year, method=method, **kwargs)
-    else:
-        unit = util_get_unit(variable_or_values.reset_index()['variable'].unique()[0])
-        column_name = f'{name}' # (value)
-        df.set_meta(variable_or_values, name=name, **kwargs)
-    value_columns[column_name] = {
-        'unit': unit,
-        'ref_value': ref_value,
-        'ref_lo': ref_lo,
-        'ref_up': ref_up,
-        'plot': plot
-    }
-
-## The filter functions:
-#  - Filter with reference: compare to a reference value
-#  - Filter check aggregate: check if components of variable sum up to main component
-#  - Filter validate: check if variable is within bounds
-
-def filter_with_reference(ref_df, thresholds, year, meta_name, key_historical=True, key_future=False, flag_fail='Fail', flag_pass='Pass'):
-    meta_name_agg = f'{meta_name} summary'
-    trs = '' if ver=='teams' else f': {thresholds}'
-    util_filter_init(meta_name_agg, f'Checks that scenario is within reasonable range'+trs,
-                     key_historical, key_future)
-
-    curr_meta_columns = []
-    # Loop over each variable and value
-    for idx, val in ref_df.iteritems():
-        _, _, curr_region, curr_variable, curr_unit, *_ = idx
-
-        valstr = np.round(val, 2)
-        curr_meta_column = f'({meta_name} {year}: {curr_variable} = {valstr})'
-        curr_meta_columns.append(curr_meta_column)
-        df.set_meta(flag_pass, curr_meta_column)
-
-        # Step 1: Identify scenarios where this variable/year is missing
-        util_filter_check_exists(curr_meta_column, curr_variable, year)
-
-        # Step 2: Identify scenarios where the value is out of range
-        lo = val * (1-thresholds[curr_variable])
-        up = val * (1+thresholds[curr_variable])
-        util_filter_save_value_column(
-            curr_meta_column, curr_variable, year=year,
-            ref_value=val, ref_lo=lo, ref_up=up
-        )
-        outside_range = df.filter(
-            year=year, region=curr_region
-        ).validate(
-            criteria={ curr_variable: {
-                'lo': lo,
-                'up': up
-            }},
-            exclude_on_fail=True
-        )
-
-        util_filter_set_failed(curr_meta_column, outside_range, label='outside_range')
-
-    # df.set_meta(flag_fail, name=meta_name_agg, index=df.filter(exclude=True))
-    # df.set_meta(flag_pass, name=meta_name_agg, index=df.filter(exclude=False))
-    df.set_meta(flag_fail, name=meta_name_agg)
-    df.meta.loc[
-        df.meta[curr_meta_columns].isin([flag_pass, 'missing']).all(axis=1),
-        meta_name_agg] = flag_pass
-
-
-
-    df.reset_exclude()
-
-
-def filter_check_aggregate(variable, threshold, meta_name, key_historical=True, key_future=False):
-    meta_name_agg = f'{meta_name}_aggregate'
-    trs = 'approximately the' if ver=='teams' else ' within {:.0%} of'.format(threshold)
-    meta_doc = 'Checks that the components of {} sum up to {} aggregate'.format(
-        variable, trs)
-    util_filter_init(meta_name_agg, meta_doc, key_historical, key_future)
-
-    failed = df.check_aggregate(variable=variable, rtol=threshold)
-    if failed is not None:
-        max_rel_difference = ((failed['variable'] - failed['components']) / failed['variable']).max(level=[0,1,2,3])
-        util_filter_save_value_column(meta_name_agg, max_rel_difference, plot=False)
-
-    util_filter_set_failed(meta_name_agg, failed)
-    df.reset_exclude()
-
-def filter_validate(variable, year, lo, up, meta_name, key_historical=True, key_future=False,
-                    bound_threshold=1):
-
-    if bound_threshold != 1:
-        lo = lo * (1-bound_threshold)
-        up = up * (1+bound_threshold)
-
-
-    if type(year) == str:
-        # Interpret string as range:
-        year = range(*[int(x) for x in year.split('-')])
-
-    meta_name = f'{meta_name} validate'
-    trs = 'in {}'.format(year) if ver=='teams' else 'are within {} and {} in {}'.format(
-        variable, lo, up, 'any year' if year is None else year
-    )
-    meta_doc = f'Checks that the values of {trs} '
-    util_filter_init(meta_name, meta_doc, key_historical, key_future)
-    util_filter_check_exists(meta_name, variable)
-
-    if type(year) == range:
-        if lo is not None:
-            util_filter_save_value_column(f'{variable} min', variable, year=year, method=np.min, ref_lo=lo)
-        if up is not None:
-            util_filter_save_value_column(f'{variable} max', variable, year=year, method=np.max, ref_up=up)
-    else:
-        util_filter_save_value_column(variable, variable, year=year, ref_lo=lo, ref_up=up)
-    failed = df.filter(year=year).validate({variable: {'lo': lo, 'up': up}})
-
-    util_filter_set_failed(meta_name, failed)
-
-    df.reset_exclude()
 
 #%% Create additional variables
 
@@ -344,52 +210,44 @@ def filter_validate(variable, year, lo, up, meta_name, key_historical=True, key_
 #
 ###################################
 
-def to_series(pyam_df):
-    cols = pyam.utils.YEAR_IDX
-    return (
-        pyam_df
-        .data[cols+['value']]
-        .set_index(cols)
-        .value
-    )
-
 
 # =============================================================================
 # Add additional reference data
 # =============================================================================
-dfref = pyam.IamDataFrame(input_data_ref)
-dfceds =  pyam.IamDataFrame(input_data_ceds)
-df.append(dfref, inplace=True)
-df.append(dfceds, inplace=True)
+# dfceds =  pyam.IamDataFrame(input_data_ceds)
+# regions = [x for x in ref_iso_data.region if 'Europ' in x]
+# df.append(ref_data.filter(), inplace=True)
+# df.append(dfceds, inplace=True)
 
 
 
 # =============================================================================
-# Primary energy
+# Primary energy - Renewables share, Solar-Wind    UNUSED
 # =============================================================================
 # Renewable share (Primary Energy - (Fossil + Nuclear)) / Primary Energy
-primary_energy = to_series(df.filter(variable='Primary Energy'))
-non_renewable = to_series(
-    df
-    .filter(variable=['Primary Energy|Fossil', 'Primary Energy|Nuclear'])
-    .aggregate(variable='Primary Energy')
-)
-df.append(
-    (primary_energy - non_renewable) / primary_energy,
-    variable='Primary Energy|Renewables share', unit='-',
-    inplace=True
-)
-solar_wind = to_series(
-    df
-    .filter(variable=['Primary Energy|Solar', 'Primary Energy|Wind'])
-    .aggregate(variable='Primary Energy')
-)
+# primary_energy = to_series(df.filter(variable='Primary Energy'))
+# non_renewable = to_series(
+#     df
+#     .filter(variable=['Primary Energy|Fossil', 'Primary Energy|Nuclear'])
+#     .aggregate(variable='Primary Energy')
+# )
+# df.append(
+#     (primary_energy - non_renewable) / primary_energy,
+#     variable='Primary Energy|Renewables share', unit='-',
+#     inplace=True
+# )
 
-df.append(
-    solar_wind / primary_energy,
-    variable='Primary Energy|Solar-Wind share', unit='-',
-    inplace=True
-)
+# solar_wind = to_series(
+#     df
+#     .filter(variable=['Primary Energy|Solar', 'Primary Energy|Wind'])
+#     .aggregate(variable='Primary Energy')
+# )
+
+# df.append(
+#     solar_wind / primary_energy,
+#     variable='Primary Energy|Solar-Wind share', unit='-',
+#     inplace=True
+# )
 
 # =============================================================================
 ## Secondary energy, electricity
@@ -415,34 +273,14 @@ df.append(
 # % increases
 # =============================================================================
 
-def change_year(series, year):
-    # When calculating changes over time, the year index should match
-    # to be able to subtract two series of different years
-    new_series = series.reset_index()
-    new_series['year'] = year
-    return new_series.set_index(pyam.utils.YEAR_IDX)['value']
+# PE Renewable share increase
+# calc_increase_percentage(df, 'Primary Energy|Renewables share', 2020, 2030)
 
-def calc_increase_percentage(variable, year1, year2, suffix='|{}-{} change'):
-    variable_year1 = to_series(df.filter(variable=variable, year=year1))
-    variable_year2 = to_series(df.filter(variable=variable, year=year2))
-    change_year1_year2 = (
-        change_year(variable_year2, year1) - variable_year1
-    ) / variable_year1
-    df.append(
-        change_year1_year2,
-        variable=variable+suffix.format(year1, year2), unit='% change',
-        inplace=True
-    )
+# PE Solar-Wind share increase
+# calc_increase_percentage(df, 'Primary Energy|Solar-Wind share', 2020, 2030)
 
-
-# Renewable share increase
-calc_increase_percentage('Primary Energy|Renewables share', 2020, 2030)
-
-# Solar-Wind share increase
-calc_increase_percentage('Primary Energy|Solar-Wind share', 2020, 2030)
-
-# Solar-Wind share increase
-calc_increase_percentage('Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
+# SE Solar-Wind share increase
+calc_increase_percentage(df, 'Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
 
 #%%=============================================================================
 # #%% Perform actual checks
@@ -460,16 +298,16 @@ calc_increase_percentage('Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
 # Emissions & CCS
 # =============================================================================
 # First, aggregate EIP for CEDS and add it
-eip = to_series(
-    df
-    .filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], scenario='CEDS')
-    .aggregate(variable='Emissions|CO2')
-)
-df.append(
-    eip,
-    variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
-    inplace=True
-)
+# eip = to_series(
+#     df
+#     .filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], scenario='CEDS')
+#     .aggregate(variable='Emissions|CO2')
+# )
+# df.append(
+#     eip,
+#     variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
+#     inplace=True
+# )
 
 # check presence of EIP in other scenarios
 missing = df.require_variable(variable='Emissions|CO2|Energy and Industrial Processes')
@@ -481,44 +319,51 @@ for model in missing.model.unique():
     mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
 
 # Aggregate and add to the df
-for model, scenarios in mapping.items():
-    try:
-        neweip = to_series(
-            df.filter(model=model, scenario=scenarios,
-                      variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
-            .aggregate(variable='Emissions|CO2')
-                  )
-
-        df.append(
-            neweip,
-        variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
-        inplace=True
-        )
-    except(AttributeError):
-        print('No components:{},{}'.format(model, scenarios))
-        pass
+if len(mapping)>0:
+    for model, scenarios in mapping.items():
+        try:
+            neweip = to_series(
+                df.filter(model=model, scenario=scenarios,
+                          variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
+                .aggregate(variable='Emissions|CO2|Energy and Industrial Processes')
+                      )
+    
+            df.append(
+                neweip,
+            variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
+            inplace=True
+            )
+        except(AttributeError):
+            print('No components:{},{}'.format(model, scenarios))
+            pass
 #%
 # Drop the separate components
 df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], keep=False, inplace=True)
 
-# # First, the aggregation tests ################################
+#%% First, the aggregation tests ################################
 if aggregation_variables is not None:
     for agg_name, agg_info in aggregation_variables.items():
-        filter_check_aggregate(agg_info['variable'], agg_info['threshold'], agg_name,
-           agg_info['key_historical'], agg_info['key_future'],
+        filter_check_aggregate(df.filter(year=year_aggregate), 
+                               variable=agg_info['variable'], 
+                               threshold=agg_info['threshold'], 
+                               meta_name=agg_name,
+                               meta_docs=meta_docs,
+                               key_historical=agg_info['key_historical'], 
+                               key_future=agg_info['key_future'], 
+                               ver=ver, 
        )
 else:
     print('Skipping aggregations')
 
-
+#%%
 # =============================================================================
 # Add data: % increases
 # =============================================================================
 
 # Emissions|CO2 increase
-calc_increase_percentage('Emissions|CO2', 2010, 2020)
+calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
 # calc_increase_percentage('Emissions|CO2', 2015, 2020)
-calc_increase_percentage('Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
+calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
 
 # Calculate CCS from energy (not industrial):
 df.append(
@@ -573,19 +418,19 @@ df.append(
 
 #%% Second, for the reference checking
 for agg_name, agg_info in reference_variables.items():
-    df_ref = create_reference_df(
+    df_ref = create_reference_df(df,
         agg_info['model'], agg_info['scenario'], agg_info['variables_threshold'].keys(), agg_info['ref_year']
     )
-    filter_with_reference(
-        df_ref, agg_info['variables_threshold'], agg_info['compare_year'], agg_name,
-        agg_info['key_historical'], agg_info['key_future'],
+    filter_with_reference(df, 
+        df_ref, agg_info['variables_threshold'], agg_info['compare_year'], agg_name, meta_docs,
+        agg_info['key_historical'], agg_info['key_future'], ver=ver
     )
 
 
 # Third, the bounds tests
 for name, info in bounds_variables.items():
-    filter_validate(info['variable'], info['year'], info['lo'], info['up'], name,
-        info['key_historical'], info['key_future'], info['bound_threshold'],
+    filter_validate(df, info['variable'], info['year'], info['lo'], info['up'], name,
+        info['key_historical'], info['key_future'], info['bound_threshold'], ver=ver
    )
 
 
@@ -632,11 +477,6 @@ df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
 ###################################
 
 
-def strip_version(model):
-    split = model.split(' ')
-    if len(split) > 1:
-        return ' '.join(split[:-1])
-    return model
 df.meta['model stripped'] = df.meta.reset_index()['model'].apply(strip_version).values
 
 if modelbymodel==True:

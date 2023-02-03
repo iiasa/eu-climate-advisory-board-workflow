@@ -3,7 +3,7 @@ import pandas as pd
 import pyam
 
 user = 'byers'
-wd = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\input_data\\'
+wd = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\input_data\\'
 
 edgar_year = 2019
 iea_year = 2019
@@ -42,7 +42,7 @@ dfe4 = pyam.IamDataFrame(dfe4)
 
 dfmerge = dfe.append(dfe4)
 
-dfmerge.to_csv(f'{wd}pre_processing//input_reference_edgarCO2CH4.csv')
+dfmerge.to_csv(f'{wd}input_reference_edgarCO2CH4.csv')
 
 #%% Import and subset the IEA data
 
@@ -50,6 +50,8 @@ dfi = pyam.IamDataFrame(f'{wd}pre_processing\\Copy of IEAdb_extract_into_IAMC_fo
                         sheet_name='data1')
 
 dfi.filter(year=iea_year, inplace=True)
-dfi.rename({'model': {'History','Reference'}}, inplace=True)
+dfi.rename({'model': {'History':'Reference'}}, inplace=True)
 
-dfi.to_csv(f'{wd}pre_processing//input_reference_ieaCO2CH4.csv')
+dfi.to_csv(f'{wd}input_reference_ieaPE_SE.csv')
+
+dfi.append(dfmerge).to_csv((f'{wd}input_reference_all.csv'))
