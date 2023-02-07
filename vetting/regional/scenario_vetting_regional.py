@@ -24,6 +24,10 @@ future_columns = []
 value_columns = {}
 
 
+log = True
+modelbymodel = True
+single_model = False
+
 print_log = print if log else lambda x: None
 
 
@@ -36,12 +40,9 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'regional'
 user = 'byers'
-log = True
-print_log = print if log else lambda x: None
 
-modelbymodel = True
-single_model = False
 ver = 'normal'
+
 # ver = 'ips'
 
 flag_fail = 'Fail'
@@ -51,14 +52,14 @@ flag_pass = 'Pass'
 config_vetting = f'{region_level}\\config_vetting_{ver}_regional.yaml'
 instance = 'eu_climate_submission'
 
-input_data_ref = f'{region_level}\\input_data\\extra-ref-ar6-201518-data.xlsx'
+# input_data_ref = f'{region_level}\\input_data\\extra-ref-ar6-201518-data.xlsx'
 input_data_ref = f'{region_level}\\input_data\\input_reference_all.csv'
 
 "C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_edgarCO2CH4.csv",
 "C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_ieaPE_SE.csv"
 
 
-input_data_ceds = f'{region_level}\\input_data\\CEDS_ref_data.xlsx'
+# input_data_ceds = f'{region_level}\\input_data\\CEDS_ref_data.xlsx'
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
 
@@ -82,20 +83,20 @@ model = 'MESSAGEix-GLOBIOM 1.1'
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
             # 'Emissions|CO2|Energy',
-            'Emissions|CO2|Industrial Processes',
+            # 'Emissions|CO2|Industrial Processes',
             # 'Emissions|CO2|AFOLU',
             # 'Emissions|CO2|Other',
             # 'Emissions|CO2|Waste',
             'Emissions|CH4',
-            'Emissions|N2O',
+            # 'Emissions|N2O',
             'Primary Energy',
-            'Primary Energy|Fossil',
-            'Primary Energy|Gas',
-            'Primary Energy|Oil',
-            'Primary Energy|Coal',
+            # 'Primary Energy|Fossil',
+            # 'Primary Energy|Gas',
+            # 'Primary Energy|Oil',
+            # 'Primary Energy|Coal',
             'Primary Energy|Nuclear',
-            'Primary Energy|Solar',
-            'Primary Energy|Wind',
+            # 'Primary Energy|Solar',
+            # 'Primary Energy|Wind',
             # 'Secondary Energy',
             'Secondary Energy|Electricity',
             'Secondary Energy|Electricity|Nuclear',
@@ -105,8 +106,6 @@ varlist = ['Emissions|CO2',
             # 'GDP|MER',
             # 'Population',
             'Carbon Sequestration|CCS*']
-
-# region = ['World']
 
 
 
@@ -150,6 +149,11 @@ dfin = pyam.read_iiasa(instance,
                         region=regions,
                        )
 
+
+
+# =============================================================================
+# RESTART from here (without re-loading data from server)
+# =============================================================================
 
 # Inteprolate data
 df = dfin.interpolate(range(years[0], years[-1], 1))
@@ -209,16 +213,6 @@ if single_model:
 # Create additional variables
 #
 ###################################
-
-
-# =============================================================================
-# Add additional reference data
-# =============================================================================
-# dfceds =  pyam.IamDataFrame(input_data_ceds)
-# regions = [x for x in ref_iso_data.region if 'Europ' in x]
-# df.append(ref_data.filter(), inplace=True)
-# df.append(dfceds, inplace=True)
-
 
 
 # =============================================================================
@@ -377,44 +371,7 @@ df.append(
 )
 
 
-#%%  =============================================================================
-# Add data: Upper-Lower CEDS&EDGAR bounds (not used due to method)
-# DO NOT DELETE, CAN BE USED TO CALCULATE THE REFERENCE VALUES WHICH ARE READ IN THE YAML FILE
-# =============================================================================
-# #Exclude wrongly extrapolated data and set empty values
-# df = df.filter(model='Reference', scenario='CEDS', year=np.arange(2021,2101), keep=False)
 
-
-# varis = ['Emissions|CO2', 'Emissions|CO2|Energy and Industrial Processes',
-#           'Emissions|CH4']
-# unit = 'Mt CO2/yr'
-
-
-# for var in varis:
-#     print(var)
-#     ceds = df.filter(scenario='CEDS', variable=var, year=np.arange(2009,2021))
-#     ceds.data.loc[ceds.data.year>2015, 'value'] = np.nan
-
-#     ceds.data = ceds.data.interpolate(method ='spline', order=1, limit_direction = "both")
-#     df = df.filter(model='Reference', scenario='CEDS', variable=var,
-#                     year=np.arange(2016,2021), keep=False)
-#     df.append(ceds.filter(year=np.arange(2016,2021)), inplace=True)
-
-# yrs = [2015, 2018]
-
-# for yr, var in it.product(yrs, varis):
-#     dff = df.filter(model='Reference', scenario=['CEDS','EDGAR AR6'], year=yr, variable=var)
-#     upper = np.max(dff.data['value'])
-#     lower = np.min(dff.data['value'])
-#     data = [['Reference','CEDS_EDGAR', 'World', var+'|Upper', unit, yr, upper],
-#             ['Reference','CEDS_EDGAR', 'World', var+'|Lower', unit, yr, lower]]
-
-#     data = pd.DataFrame(data=data, columns=pyam.IAMC_IDX+['year','value'])
-#     data = pyam.IamDataFrame(data)
-#     df.append(data, inplace=True)
-
-# ab = df.filter(model='Reference',scenario='CEDS_EDGAR')
-# ab.to_csv(f'{output_folder}ceds_edgar_extrapdata.csv')
 
 #%% Second, for the reference checking
 for agg_name, agg_info in reference_variables.items():

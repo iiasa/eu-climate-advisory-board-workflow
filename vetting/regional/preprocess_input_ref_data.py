@@ -6,7 +6,7 @@ user = 'byers'
 wd = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\input_data\\'
 
 edgar_year = 2019
-iea_year = 2019
+iea_year = 2020
 #%% Import and subset the EDGAR CO2 data
 df = pd.read_excel(f'{wd}pre_processing\\ipcc_ar6_data_edgar6_CO2.xlsx',
                     sheet_name='data', usecols=['ISO','year','value'])
