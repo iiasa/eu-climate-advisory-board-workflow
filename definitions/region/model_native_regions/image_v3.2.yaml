@@ -1,28 +1,60 @@
-# The model documentation and regional aggregation for IMAGE (TIMER) version 3.2 can be found at https://models.pbl.nl/image/index.php/Region_classification_map
 - IMAGE 3.2:
-  - IMAGE 3.2|Western Europe  # this includes Andorra, Austria, Belgium, Denmark, Faeroe Islands, Finland, France, Germany, Gibraltar, Greece, Iceland,, Ireland, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Netherlands, Norway, Portugal, San Marino, Spain, Sweden, Switzerland, United Kingdom, Vatican City State
-  - IMAGE 3.2|Central Europe  # this includes Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Macedonia, FYR, Poland, Romania, Serbia and Montenegro, Slovak Republic, Slovenia
-  - IMAGE 3.2|Brazil
-  - IMAGE 3.2|Canada
-  - IMAGE 3.2|China
-  - IMAGE 3.2|Eastern Africa
-  - IMAGE 3.2|India
-  - IMAGE 3.2|Indonesia
-  - IMAGE 3.2|Japan
-  - IMAGE 3.2|Korea
-  - IMAGE 3.2|Middle East
-  - IMAGE 3.2|Mexico
-  - IMAGE 3.2|Northern Africa
-  - IMAGE 3.2|Oceania
-  - IMAGE 3.2|Other Central America
-  - IMAGE 3.2|Other Southern Africa
-  - IMAGE 3.2|Other Southern America
-  - IMAGE 3.2|Other Southern Asia
-  - IMAGE 3.2|Russia
-  - IMAGE 3.2|South Africa
-  - IMAGE 3.2|South-East Asia
-  - IMAGE 3.2|Kazakhstan region
-  - IMAGE 3.2|Turkey
-  - IMAGE 3.2|Ukraine region
-  - IMAGE 3.2|USA
-  - IMAGE 3.2|Western Africa
+  - IMAGE 3.2|Western Europe:
+      countries: ALA, AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB,
+        GRC, IRL, ISL, ITA, JEY, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE
+  - IMAGE 3.2|Central Europe:
+      countries: ALB, BGR, BIH, CYP, CZE, EST, HRV, HUN, LTU, LVA, MKD, POL, ROU,
+        SRB, SVK, SVN
+  - IMAGE 3.2|Brazil:
+      countries: BRA
+  - IMAGE 3.2|Canada:
+      countries: CAN
+  - IMAGE 3.2|China:
+      countries: CHN, HKG, MAC, MNG, TWN
+  - IMAGE 3.2|Eastern Africa:
+      countries: BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
+        SYC, UGA
+  - IMAGE 3.2|India:
+      countries: IND
+  - IMAGE 3.2|Indonesia:
+      countries: IDN, PNG
+  - IMAGE 3.2|Japan:
+      countries: JPN
+  - IMAGE 3.2|Korea:
+      countries: KOR, PRK
+  - IMAGE 3.2|Middle East:
+      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM
+  - IMAGE 3.2|Mexico:
+      countries: MEX
+  - IMAGE 3.2|Northern Africa:
+      countries: DZA, EGY, ESH, LBY, MAR, TUN
+  - IMAGE 3.2|Oceania:
+      countries: ASM, AUS, COK, FJI, FSM, KIR, MHL, NCL, NFK, NIU, NRU, NZL, PCN,
+        PLW, PYF, SLB, TKL, TON, TUV, VUT, WLF, WSM
+  - IMAGE 3.2|Other Central America:
+      countries: ABW, AIA, ANT, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM, GLP,
+        GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, PRI, SLV, TCA, TTO,
+        VCT, VGB, VIR
+  - IMAGE 3.2|Other Southern Africa:
+      countries: AGO, BWA, GRL, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE
+  - IMAGE 3.2|Other Southern America:
+      countries: ARG, BOL, CHL, COL, ECU, FLK, GUF, GUY, PER, PRY, SUR, URY, VEN
+  - IMAGE 3.2|Other Southern Asia:
+      countries: AFG, BGD, BTN, LKA, MDV, NPL, PAK
+  - IMAGE 3.2|Russia:
+      countries: ARM, AZE, GEO, RUS
+  - IMAGE 3.2|South Africa:
+      countries: ZAF
+  - IMAGE 3.2|South-East Asia:
+      countries: BRN, KHM, LAO, MMR, MYS, PHL, SGP, THA, TLS, VNM
+  - IMAGE 3.2|Kazakhstan region:
+      countries: KAZ, KGZ, TJK, TKM, UZB
+  - IMAGE 3.2|Turkey:
+      countries: TUR
+  - IMAGE 3.2|Ukraine region:
+      countries: BLR, MDA, UKR
+  - IMAGE 3.2|USA:
+      countries: SPM, USA
+  - IMAGE 3.2|Western Africa:
+      countries: BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
+        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SHN, SLE, STP, TCD, TGO

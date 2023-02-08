@@ -1,14 +1,26 @@
 - ICES-XPS 1.0:
-  - ICES-XPS 1.0|Germany
-  - ICES-XPS 1.0|Benelux
-  - ICES-XPS 1.0|Greece
-  - ICES-XPS 1.0|Finland
-  - ICES-XPS 1.0|Czech Republic
-  - ICES-XPS 1.0|Italy
-  - ICES-XPS 1.0|France
+  - ICES-XPS 1.0|Germany:
+      countries: DEU
+  - ICES-XPS 1.0|Benelux:
+      countries: BEL, LUX, NLD
+  - ICES-XPS 1.0|Greece:
+      countries: GRC
+  - ICES-XPS 1.0|Finland:
+      countries: ALA, FIN
+  - ICES-XPS 1.0|Czech Republic:
+      countries: CZE
+  - ICES-XPS 1.0|Italy:
+      countries: ITA
+  - ICES-XPS 1.0|France:
+      countries: FRA, GLP, MTQ, REU
   - ICES-XPS 1.0|Rest of EU:
-      countries: AT,BG,CY,DK,EE,HR,HU,IE,LT,LV,MT,PT,RO,SI,SK
-  - ICES-XPS 1.0|United Kingdom
-  - ICES-XPS 1.0|Spain
-  - ICES-XPS 1.0|Poland
-  - ICES-XPS 1.0|Sweden
+      countries: AUT, BGR, CYP, DNK, EST, HRV, HUN, IRL, LTU, LVA, MLT, PRT, ROU,
+        SVK, SVN
+  - ICES-XPS 1.0|United Kingdom:
+      countries: GBR
+  - ICES-XPS 1.0|Spain:
+      countries: ESP
+  - ICES-XPS 1.0|Poland:
+      countries: POL
+  - ICES-XPS 1.0|Sweden:
+      countries: SWE

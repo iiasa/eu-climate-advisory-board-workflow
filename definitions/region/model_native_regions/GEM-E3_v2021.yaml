@@ -1,20 +1,52 @@
 - GEM-E3 v2021:
-  - GEM-E3 v2021|Argentina
-  - GEM-E3 v2021|Brazil
-  - GEM-E3 v2021|Canada
-  - GEM-E3 v2021|China
-  - GEM-E3 v2021|EU28
-  - GEM-E3 v2021|Indonesia
-  - GEM-E3 v2021|India
-  - GEM-E3 v2021|Japan
-  - GEM-E3 v2021|South Korea
-  - GEM-E3 v2021|Mexico
-  - GEM-E3 v2021|Australia and New Zealand
-  - GEM-E3 v2021|Rest of fossil fuel producers
-  - GEM-E3 v2021|Rest of Europe
-  - GEM-E3 v2021|Rest of the world
-  - GEM-E3 v2021|Russian Federation
-  - GEM-E3 v2021|South Africa
-  - GEM-E3 v2021|Saudi Arabia
-  - GEM-E3 v2021|Turkey
-  - GEM-E3 v2021|USA
+  - GEM-E3 v2021|Argentina:
+      countries: ARG
+  - GEM-E3 v2021|Brazil:
+      countries: BRA
+  - GEM-E3 v2021|Canada:
+      countries: CAN
+  - GEM-E3 v2021|China:
+      countries: CHN
+  - GEM-E3 v2021|EU28:
+      countries: AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FIN, FRA, DEU, GRC, HUN,
+        IRL, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE, GBR
+  - GEM-E3 v2021|Indonesia:
+      countries: IDN
+  - GEM-E3 v2021|India:
+      countries: IND
+  - GEM-E3 v2021|Japan:
+      countries: JPN
+  - GEM-E3 v2021|South Korea:
+      countries: KOR
+  - GEM-E3 v2021|Mexico:
+      countries: MEX
+  - GEM-E3 v2021|Australia and New Zealand:
+      countries: AUS, NZL
+  - GEM-E3 v2021|Rest of fossil fuel producers:
+      countries: DZA, AZE, IRN, IRQ, JOR, KWT, LBN, LBY, NGA, QAT, SYR, ARE, VEN,
+        ESH, YEM
+  - GEM-E3 v2021|Rest of Europe:
+      countries: BLR, BIH, ISL, LIE, MKD, MDA, MCO, MNE, NOR, SRB, CHE, UKR
+  - GEM-E3 v2021|Rest of the world:
+      countries: AFG, ALB, ASM, AND, AGO, AIA, ATA, ATG, ARM, ABW, BHS, BHR, BGD,
+        BRB, BLZ, BEN, BMU, BTN, BOL, BWA, BVT, IOT, BRN, BFA, BDI, KHM, CMR, CPV,
+        CYM, CAF, TCD, CHL, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, CUB, DJI,
+        DMA, DOM, TLS, ECU, EGY, SLV, GNQ, ERI, ETH, FLK, FRO, FJI, GUF, PYF, ATF,
+        GAB, GMB, GEO, GHA, GIB, GRL, GRD, GLP, GUM, GTM, GIN, GNB, GUY, HTI, HMD,
+        VAT, HND, HKG, ISR, JAM, KAZ, KEN, KIR, PRK, KGZ, LAO, LSO, LBR, MAC, MDG,
+        MWI, MYS, MDV, MLI, MHL, MTQ, MRT, MUS, MYT, FSM, MNG, MSR, MAR, MOZ, MMR,
+        NAM, NRU, NPL, ANT, NCL, NIC, NER, NIU, NFK, MNP, OMN, PAK, PLW, PAN, PNG,
+        PRY, PER, PHL, PCN, PRI, REU, RWA, SHN, KNA, LCA, SPM, VCT, WSM, SMR, STP,
+        SEN, SYC, SLE, SGP, SLB, SOM, SGS, LKA, SDN, SUR, SJM, SWZ, TWN, TJK, TZA,
+        THA, TGO, TKL, TON, TTO, TUN, TKM, TCA, TUV, UGA, UMI, URY, UZB, VUT, VNM,
+        VGB, VIR, WLF, ZMB, ZWE
+  - GEM-E3 v2021|Russian Federation:
+      countries: RUS
+  - GEM-E3 v2021|South Africa:
+      countries: ZAF
+  - GEM-E3 v2021|Saudi Arabia:
+      countries: SAU
+  - GEM-E3 v2021|Turkey:
+      countries: TUR
+  - GEM-E3 v2021|USA:
+      countries: USA
