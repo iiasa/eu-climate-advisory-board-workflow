@@ -9,13 +9,8 @@ Created on Fri Feb  3 11:42:59 2023
 # process mapping files
 import ixmp
 import pandas as pd
-import nomenclature
-from nomenclature import DataStructureDefinition, process
-import os
-import pyam
 import yaml
 import glob
-folder_reg_excel = f''
 
 
 wd = 'C:\\Users\\byers\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
@@ -32,43 +27,19 @@ sl = mp.scenario_list()
 models = sl.model.unique()
 
 
-#%% process excel registration files
-isolist = ['BRA','CHN','....]
-df = pd.DataFrame(index=isolist)
-files = glob.glob('?.xlsx')
-for f in files:
-    
-     
-    
-    
-    dfin = pd.read_excel(f, sheet_name='...')[['ISO','native']]
-    dfin.set_index('ISO', inplace=True)
-    df.join(dfin, on='index')
+#%% Loop through yamls and add ISO-3
 
-
-
-#%% Load nomenclature codespace
-os.chdir('C:\\github\\eu-climate-advisory-board-workflow\\')
-# dsd = DataStructureDefinition("definitions")
-
-# r = dsd.region
-
-yamls = glob.glob(folder_native_regions+'*.yaml')
+yamls = glob.glob(folder_native_regions+'REM*.y*ml')
 for y in yamls:
     fn = y.split('\\')[-1]
     # model = fn.split('.yaml')[0]
-
-    # listofcodes = list(dsd.region.values())
     
     with open(y, "r") as stream:
         yin = yaml.safe_load(stream)
         
         idx = 0
         notes = None
-
         model = list(yin[0].keys())[0]
-    
-    
     
         try:
             # Open corresponding excel file
@@ -94,8 +65,12 @@ for y in yamls:
                     modelnative = item
                     native = modelnative.split('|')[1]
         
-        
-                isos = reg_dic[native]
+                try:
+                    isos = reg_dic[native]
+                    isos = [iso.strip() for iso in isos]
+                    isos.sort()
+                except(KeyError):
+                    isos = []
                 # print(yin[0][model][idx])
                 new = {modelnative: {'countries': ', '.join(isos)}}
                 if notes is not None:
