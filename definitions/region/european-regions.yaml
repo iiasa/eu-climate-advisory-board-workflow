@@ -16,9 +16,9 @@
 
   - EU27 & UK:
       definition: EU27 + UK
-      notes: Formerly known as EU28.
       countries: AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV,
         HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE
+      notes: Formerly known as EU28.
   - EFTA:
       definition: IS + LI + NO + CH
       countries: CHE, ISL, LIE, NOR
@@ -26,6 +26,9 @@
       source: https://en.wikipedia.org/wiki/European_Free_Trade_Association
   - EU27 & EFTA:
       definition: EU27 + EFTA
+      countries: AUT, BEL, BGR, CHE, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC,
+        HRV, HUN, IRL, ISL, ITA, LIE, LTU, LUX, LVA, MLT, NLD, NOR, POL, PRT, ROU, SVK,
+        SVN, SWE
       notes: This region is the jurisdiction of the EU ETS as of 2021 (post-Brexit).
       source: https://ec.europa.eu/clima/eu-action/eu-emissions-trading-system-eu-ets_en 
   - Balkans:
