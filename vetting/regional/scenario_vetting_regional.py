@@ -109,6 +109,40 @@ varlist = ['Emissions|CO2',
 
 
 
+#%% Functions
+
+def model_iso_reg_dict(yaml_nm='native_iso_EU27'):
+    # generate iso_reg_dict based on either yaml filename or based on native_iso for europe
+
+    if yamlnm[0] == 'native_iso_EU27':
+        # Change to import list from nomenclature
+        iso_reg_dict = {'EU27': iso_eu27}
+    else:
+        reg_yaml = f'{input_yaml_dir}{yamlnm[0]}.yaml'
+    
+        # Load model region-iso mapping yaml file for model
+        with open(reg_yaml, "r") as stream:
+            reg_mapping = yaml.safe_load(stream)
+        
+        # Clean up yaml and into dicts
+        reg_mapping = reg_mapping[0]
+        yaml_model = list(reg_mapping.keys())[0]
+        reg_mapping = reg_mapping[yaml_model]
+        reg_mapping = [x for x in reg_mapping if 'Eu' in list(x.keys())[0]]
+        reg_mapping = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping }
+        iso_reg_dict = {k.split('|')[1]:v for k,v in reg_mapping.items()}
+        
+        # Split up the ISO values (remove commas etc)
+        for k, v in iso_reg_dict.items():
+            v = v[0].split(',')
+            v = [x.strip() for x in v]
+            iso_reg_dict[k] = v
+        
+    unique_natives = list(iso_reg_dict.keys())
+    return iso_reg_dict, unique_natives
+
+
+
 # =============================================================================
 #%% Prepare the region-iso mapping dictionaries and aggregate Reference data
 # =============================================================================
@@ -146,30 +180,15 @@ if drop_na_yamls:
 # # MAJOR LOOP STARTS HERE    
 # =============================================================================
 # =============================================================================
+
+iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRE', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
+iso_eu27.sort()
+
 for model, yamlnm in model_yaml_map.iterrows():
     print(f'################## STARTING {model} #############################')
 
-    reg_yaml = f'{input_yaml_dir}{yamlnm[0]}.yaml'
-    
-    # Load model region-iso mapping yaml file for model
-    with open(reg_yaml, "r") as stream:
-        reg_mapping = yaml.safe_load(stream)
-    
-    # Clean up yaml and into dicts
-    reg_mapping = reg_mapping[0]
-    yaml_model = list(reg_mapping.keys())[0]
-    reg_mapping = reg_mapping[yaml_model]
-    reg_mapping = [x for x in reg_mapping if 'Eu' in list(x.keys())[0]]
-    reg_mapping = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping }
-    iso_reg_dict = {k.split('|')[1]:v for k,v in reg_mapping.items()}
-    
-    # Split up the ISO values (remove commas etc)
-    for k, v in iso_reg_dict.items():
-        v = v[0].split(',')
-        v = [x.strip() for x in v]
-        iso_reg_dict[k] = v
-        
-    unique_natives = iso_reg_dict.keys()
+    # Load and generate region - iso dictionary for specific model
+    iso_reg_dict, unique_natives = model_iso_reg_dict(yaml_nm=yamlnm)
     
     
     ###############
@@ -197,9 +216,12 @@ for model, yamlnm in model_yaml_map.iterrows():
                             model=model,
                             # scenario=scenarios,
                             variable=varlist,
-                           year=years,
+                            year=years,
                             region=regions,
                            )
+    
+    
+    
     
     if len(dfin.region)==0:
         print(f'WARNING - NO NATIVE REGIONS FOR {model}')
@@ -210,12 +232,18 @@ for model, yamlnm in model_yaml_map.iterrows():
         # =============================================================================
         
         # Inteprolate data
-        df = dfin.interpolate(range(years[0], years[-1], 1))
-        
+        dfin_ymin =  np.min(dfin.year) if np.min(dfin.year) > years[0] else years[0]
+        dfin_ymax =  np.max(dfin.year) if np.max(dfin.year) < years[-1] else years[-1]
+
+        try:
+            df = dfin.interpolate(range(dfin_ymin, dfin_ymax+1, 1))
+        except(ValueError):
+            dft = dfin.timeseries().fillna(0)
+            dfin = pyam.IamDataFrame(dft)
+            df = dfin.interpolate(range(dfin_ymin, dfin_ymax+1, 1))
+
         print('loaded')
         print(time.time()-start)
-        
-        
         
         
         #%%=============================================================================
@@ -224,7 +252,7 @@ for model, yamlnm in model_yaml_map.iterrows():
         agg_region_name = f'{model}|Europe_agg'
         # Aggregate natives
         for variable in ref_iso_data.variable:
-            ref_iso_data.aggregate_region(variable, region=agg_region_name, subregions=unique_natives, append=True)
+            ref_iso_data.aggregate_region(variable, region=agg_region_name,     subregions=unique_natives, append=True)
         ref_data = ref_iso_data.filter(region=agg_region_name)
         
         unique_natives = df.region
@@ -240,7 +268,7 @@ for model, yamlnm in model_yaml_map.iterrows():
         
         ###################################
         #
-        # Set variables and thresholds for
+        # Load config and Set variables and thresholds for
         # each check
         #
         ###################################
@@ -248,11 +276,8 @@ for model, yamlnm in model_yaml_map.iterrows():
         # read from local folder
         with open(config_vetting, 'r', encoding='utf8') as config_yaml:
             config = yaml.safe_load(config_yaml)
-        
         reference_variables = config['reference_variables']
-        
         aggregation_variables = config['aggregation_variables']
-        
         bounds_variables = config['bounds_variables']
         
         if single_model:
@@ -479,14 +504,15 @@ for model, yamlnm in model_yaml_map.iterrows():
         
         
         
-        
-        #
         #%% Save to Excel and format output file
         ####################################
         ###################################
         
         
-        df.meta['model stripped'] = df.meta.reset_index()['model'].apply(strip_version).values
+        # df.meta['model stripped'] = df.meta.reset_index()['model'].apply(strip_version).values
+        df.meta['model stripped'] = df.meta.reset_index()['model'].values#.apply(strip_version).values
+
+        
         
         if modelbymodel==True:
             models = ['all'] + list(df.meta['model stripped'].unique())
@@ -498,11 +524,14 @@ for model, yamlnm in model_yaml_map.iterrows():
                 xs = '' if modelo=='all' else 'teams\\'
                 wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx'
                 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
+                # Strip out exclude / source columns if present
                 for x in ['exclude','Source']:
                     try:
                         dfo = df.meta.reset_index().drop(x, axis=1)
                     except(KeyError):
                         pass
+                    
+                    
                 if modelo != 'all':
                     dfo = dfo.loc[dfo['model stripped'].isin([modelo, 'Reference'])]
         

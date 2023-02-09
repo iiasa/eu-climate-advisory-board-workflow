@@ -29,7 +29,7 @@ models = sl.model.unique()
 
 #%% Loop through yamls and add ISO-3
 
-yamls = glob.glob(folder_native_regions+'REM*.y*ml')
+yamls = glob.glob(folder_native_regions+'POL*.y*ml')
 for y in yamls:
     fn = y.split('\\')[-1]
     # model = fn.split('.yaml')[0]
@@ -89,7 +89,8 @@ for y in yamls:
         
     
     
-    
+#%% Snippet from daniel re OpenEntrance iso3
+import openentrancefrom pathlib import Pathregions = openentrance.RegionCodeList.from_directory(name="region", path=Path("definitions/region/"))current_countries = [regions[openentrance.iso_mapping[c]].iso3 for c in current_list]
     
     
     
