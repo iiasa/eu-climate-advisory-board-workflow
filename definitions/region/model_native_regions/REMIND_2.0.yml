@@ -62,4 +62,5 @@
       countries: ALB, AND, BIH, VAT, MKD, MCO, MNE, SMR, SRB, TUR
 # exogenously aggregated regions
   - REMIND 2.0|EU 27:
-      countries: ALA, AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FRO, FIN, FRA, DEU, GRC, HUN, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE
+      countries: ALA, AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FRO, FIN, FRA, DEU, GRC,
+        HUN, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE
