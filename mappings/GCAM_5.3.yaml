@@ -1,37 +1,39 @@
-model: GCAM-PR 5.3
+model:
+- GCAM 5.3
+- GCAM-PR 5.3
 native_regions:
-- Africa_Eastern: GCAM-PR 5.3|Africa_Eastern
-- Africa_Northern: GCAM-PR 5.3|Africa_Northern
-- Africa_Southern: GCAM-PR 5.3|Africa_Southern
-- Africa_Western: GCAM-PR 5.3|Africa_Western
-- Argentina: GCAM-PR 5.3|Argentina
-- Australia_NZ: GCAM-PR 5.3|Australia_NZ
-- Brazil: GCAM-PR 5.3|Brazil
-- Canada: GCAM-PR 5.3|Canada
-- Central America and Caribbean: GCAM-PR 5.3|Central America and Caribbean
-- Central Asia: GCAM-PR 5.3|Central Asia
-- China: GCAM-PR 5.3|China
-- Colombia: GCAM-PR 5.3|Colombia
-- EU-12: GCAM-PR 5.3|Eastern EU
-- EU-15: GCAM-PR 5.3|Western EU & UK
-- Europe_Eastern: GCAM-PR 5.3|Europe_Eastern
-- Europe_Non_EU: GCAM-PR 5.3|Europe_Non_EU
-- European Free Trade Association: GCAM-PR 5.3|European Free Trade Association
-- India: GCAM-PR 5.3|India
-- Indonesia: GCAM-PR 5.3|Indonesia
-- Japan: GCAM-PR 5.3|Japan
-- Mexico: GCAM-PR 5.3|Mexico
-- Middle East: GCAM-PR 5.3|Middle East
-- Pakistan: GCAM-PR 5.3|Pakistan
-- Russia: GCAM-PR 5.3|Russia
-- South Africa: GCAM-PR 5.3|South Africa
-- South America_Northern: GCAM-PR 5.3|South America_Northern
-- South America_Southern: GCAM-PR 5.3|South America_Southern
-- South Asia: GCAM-PR 5.3|South Asia
-- South Korea: GCAM-PR 5.3|South Korea
-- Southeast Asia: GCAM-PR 5.3|Southeast Asia
-- Taiwan: GCAM-PR 5.3|Taiwan
-- USA: GCAM-PR 5.3|USA
+- Africa_Eastern: GCAM 5.3|Africa_Eastern
+- Africa_Northern: GCAM 5.3|Africa_Northern
+- Africa_Southern: GCAM 5.3|Africa_Southern
+- Africa_Western: GCAM 5.3|Africa_Western
+- Argentina: GCAM 5.3|Argentina
+- Australia_NZ: GCAM 5.3|Australia and New Zealand
+- Brazil: GCAM 5.3|Brazil
+- Canada: GCAM 5.3|Canada
+- Central America and Caribbean: GCAM 5.3|Central America and Caribbean
+- Central Asia: GCAM 5.3|Central Asia
+- China: GCAM 5.3|China
+- Colombia: GCAM 5.3|Colombia
+- EU-12: GCAM 5.3|Eastern EU
+- EU-15: GCAM 5.3|Western EU & UK
+- Europe_Eastern: GCAM 5.3|Europe_Eastern
+- Europe_Non_EU: GCAM 5.3|Europe_Non_EU
+- European Free Trade Association: GCAM 5.3|European Free Trade Association
+- India: GCAM 5.3|India
+- Indonesia: GCAM 5.3|Indonesia
+- Japan: GCAM 5.3|Japan
+- Mexico: GCAM 5.3|Mexico
+- Middle East: GCAM 5.3|Middle East
+- Pakistan: GCAM 5.3|Pakistan
+- Russia: GCAM 5.3|Russia
+- South Africa: GCAM 5.3|South Africa
+- South America_Northern: GCAM 5.3|South America_Northern
+- South America_Southern: GCAM 5.3|South America_Southern
+- South Asia: GCAM 5.3|South Asia
+- South Korea: GCAM 5.3|South Korea
+- Southeast Asia: GCAM 5.3|Southeast Asia
+- Taiwan: GCAM 5.3|Taiwan
+- USA: GCAM 5.3|USA
 - World
 common_regions:
 - EU27 & UK:

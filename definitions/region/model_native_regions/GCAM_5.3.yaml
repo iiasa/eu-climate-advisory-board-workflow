@@ -1,36 +1,73 @@
 - GCAM 5.3:
-  - GCAM 5.3|Africa_Eastern
-  - GCAM 5.3|Africa_Northern
-  - GCAM 5.3|Africa_Southern
-  - GCAM 5.3|Africa_Western
-  - GCAM 5.3|Argentina
-  - GCAM 5.3|Australia and New Zealand
-  - GCAM 5.3|Brazil
-  - GCAM 5.3|Canada
-  - GCAM 5.3|Central America and Caribbean
-  - GCAM 5.3|Central Asia
-  - GCAM 5.3|China
-  - GCAM 5.3|Colombia
+  - GCAM 5.3|Africa_Eastern:
+      countries: BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
+        UGA
+  - GCAM 5.3|Africa_Northern:
+      countries: DZA, EGY, ESH, LBY, MAR, TUN
+  - GCAM 5.3|Africa_Southern:
+      countries: AGO, BWA, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE
+  - GCAM 5.3|Africa_Western:
+      countries: BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
+        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SLE, STP, TCD, TGO
+  - GCAM 5.3|Argentina:
+      countries: ARG
+  - GCAM 5.3|Australia and New Zealand:
+      countries: AUS, NZL
+  - GCAM 5.3|Brazil:
+      countries: BRA
+  - GCAM 5.3|Canada:
+      countries: CAN
+  - GCAM 5.3|Central America and Caribbean:
+      countries: ABW, AIA, ANT, ATG, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM,
+        GLP, GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, SLV, TTO, VCT
+  - GCAM 5.3|Central Asia:
+      countries: ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB
+  - GCAM 5.3|China:
+      countries: CHN, HKG, MAC
+  - GCAM 5.3|Colombia:
+      countries: COL
   - GCAM 5.3|Eastern EU:
-      countries: BG,CY,CZ,EE,HU,LT,LV,MT,PL,RO,SI,SK
+      countries: BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVK, SVN
       notes: does not include Croatia
   - GCAM 5.3|Western EU & UK:
-      countries: AT,BE,DE,DK,GR,ES,FI,FR,IE,IT,LU,NL,PT,SE,UK
-  - GCAM 5.3|Europe_Eastern
-  - GCAM 5.3|Europe_Non_EU
-  - GCAM 5.3|European Free Trade Association
-  - GCAM 5.3|India
-  - GCAM 5.3|Indonesia
-  - GCAM 5.3|Japan
-  - GCAM 5.3|Mexico
-  - GCAM 5.3|Middle East
-  - GCAM 5.3|Pakistan
-  - GCAM 5.3|Russia
-  - GCAM 5.3|South Africa
-  - GCAM 5.3|South America_Northern
-  - GCAM 5.3|South America_Southern
-  - GCAM 5.3|South Asia
-  - GCAM 5.3|South Korea
-  - GCAM 5.3|Southeast Asia
-  - GCAM 5.3|Taiwan
-  - GCAM 5.3|USA
+      countries: AND, AUT, BEL, DEU, DNK, ESP, FIN, FLK, FRA, FRO, GBR, GIB, GRC,
+        GRL, IRL, ITA, LUX, MCO, NLD, PRT, SHN, SMR, SPM, SWE, TCA, VAT, VGB, WLF
+  - GCAM 5.3|Europe_Eastern:
+      countries: BLR, MDA, UKR
+  - GCAM 5.3|Europe_Non_EU:
+      countries: ALB, BIH, HRV, MKD, MNE, SRB, TUR
+  - GCAM 5.3|European Free Trade Association:
+      countries: CHE, ISL, LIE, NOR, SJM
+  - GCAM 5.3|India:
+      countries: IND
+  - GCAM 5.3|Indonesia:
+      countries: IDN
+  - GCAM 5.3|Japan:
+      countries: JPN
+  - GCAM 5.3|Mexico:
+      countries: MEX
+  - GCAM 5.3|Middle East:
+      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        YEM
+  - GCAM 5.3|Pakistan:
+      countries: PAK
+  - GCAM 5.3|Russia:
+      countries: RUS
+  - GCAM 5.3|South Africa:
+      countries: ZAF
+  - GCAM 5.3|South America_Northern:
+      countries: GUF, GUY, SUR, VEN
+  - GCAM 5.3|South America_Southern:
+      countries: BOL, CHL, ECU, PER, PRY, URY
+  - GCAM 5.3|South Asia:
+      countries: AFG, ASM, BGD, BTN, LAO, LKA, MDV, NPL
+  - GCAM 5.3|South Korea:
+      countries: KOR
+  - GCAM 5.3|Southeast Asia:
+      countries: BRN, CCK, COK, CXR, FJI, FSM, GUM, KHM, KIR, MHL, MMR, MNP, MYS,
+        MYT, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, SYC, THA,
+        TKL, TLS, TON, TUV, VNM, VUT, WSM
+  - GCAM 5.3|Taiwan:
+      countries: TWN
+  - GCAM 5.3|USA:
+      countries: PRI, USA, VIR
