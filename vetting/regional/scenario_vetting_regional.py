@@ -10,6 +10,7 @@ os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 import time
 start = time.time()
 print(start)
+import glob
 import numpy as np
 import pyam
 import pandas as pd
@@ -29,7 +30,8 @@ modelbymodel = True    # Output single files for each model into Teams folder
 single_model = False   # Testing mode- not used
 drop_na_yamls = True   #Process only models for which there is a yaml
 print_log = print if log else lambda x: None
-
+check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
+recreate_yamp_region_map = False  # read in excel, and save to yaml
 
 from vetting_functions import *
 
@@ -50,7 +52,7 @@ flag_pass = 'Pass'
 
 
 config_vetting = f'{region_level}\\config_vetting_{ver}_regional.yaml'
-instance = 'eu_climate_submission'
+instance = 'eu-climate-submission'
 
 # input_data_ref = f'{region_level}\\input_data\\extra-ref-ar6-201518-data.xlsx'
 input_data_ref = f'{region_level}\\input_data\\input_reference_all.csv'
@@ -111,14 +113,16 @@ varlist = ['Emissions|CO2',
 
 #%% Functions
 
-def model_iso_reg_dict(yaml_nm='native_iso_EU27'):
+def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
     # generate iso_reg_dict based on either yaml filename or based on native_iso for europe
 
     if yamlnm[0] == 'native_iso_EU27':
         # Change to import list from nomenclature
         iso_reg_dict = {'EU27': iso_eu27}
+        print('Using default EU27')
     else:
-        reg_yaml = f'{input_yaml_dir}{yamlnm[0]}.yaml'
+        reg_yaml = glob.glob(f'{input_yaml_dir}{yamlnm[0]}.y*ml')[0]
+        print(reg_yaml)
     
         # Load model region-iso mapping yaml file for model
         with open(reg_yaml, "r") as stream:
@@ -128,9 +132,12 @@ def model_iso_reg_dict(yaml_nm='native_iso_EU27'):
         reg_mapping = reg_mapping[0]
         yaml_model = list(reg_mapping.keys())[0]
         reg_mapping = reg_mapping[yaml_model]
-        reg_mapping = [x for x in reg_mapping if 'Eu' in list(x.keys())[0]]
-        reg_mapping = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping }
-        iso_reg_dict = {k.split('|')[1]:v for k,v in reg_mapping.items()}
+        reg_mapping_eu = [x for x in reg_mapping if ('Eu' in list(x.keys())[0]) or ('EU' in list(x.keys())[0])]
+        # reg_mapping_eu.append([x for x in reg_mapping if 'EU' in list(x.keys())[0]])
+        
+        
+        reg_mapping_eu = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping_eu }
+        iso_reg_dict = {k.split('|')[1]:v for k,v in reg_mapping_eu.items()}
         
         # Split up the ISO values (remove commas etc)
         for k, v in iso_reg_dict.items():
@@ -143,36 +150,60 @@ def model_iso_reg_dict(yaml_nm='native_iso_EU27'):
 
 
 
-# =============================================================================
+# ================================================================
 #%% Prepare the region-iso mapping dictionaries and aggregate Reference data
 # =============================================================================
-
-
-
-
 #% Prepare the region-iso mapping dictionaries
 
-######### (old way using Fabio's excel table)
-# reg_mapping_all = pd.read_csv(input_data_mapping)
-# reg_mapping = reg_mapping_all[['ISO', model]]
-# reg_mapping.rename(columns={model: 'region'}, inplace=True)
-# reg_mapping.region.fillna('none', inplace=True)
+    
+# =============================================================================
+# Optional - only done once at beginning
+# =============================================================================
+# Read in excel, convert to dict, write out to yaml (to make mapping yaml first time)
+if recreate_yamp_region_map:
+    model_yaml_map = pd.read_excel('regional\\input_data\\model_yaml_region_map.xlsx')
+    model_yaml_map.set_index('model', inplace=True,)
+    model_yaml_map.sort_index(inplace=True)
+    model_yaml_map.dropna(axis=1, how='all', inplace=True)
+    model_yaml_map.yaml.fillna('None', inplace=True)
+    
+    with open('regional\\input_data\\model_yaml_region_map.yaml', 'w') as file:
+          documents = yaml.dump(model_yaml_map.to_dict(orient='index') , file)
 
-# reg_mapping = reg_mapping.loc[reg_mapping.region.str.contains('_marker')]
-# iso_reg_dict = reg_mapping.groupby('region')['ISO'].apply(list).to_dict()
-# unique_natives = iso_reg_dict.keys()
+
+# Load the yaml file that specifies:
+#    - which yaml file to read from definitions for the native-iso mapping
+#    - which common or native or iso regions to use for regional vetting
 
 
-######## New way - with yaml region file
-# Get list of yaml filenames
-model_yaml_map = pd.read_excel('regional\\input_data\\model_yaml_map.xlsx')
-# model_yaml_map.yaml.fillna('none', inplace=True)
+# Load yaml file
+with open('regional\\input_data\\model_yaml_region_map.yaml', 'r') as file:
+     model_yaml_map = yaml.safe_load(file)    
+model_yaml_map = pd.DataFrame(model_yaml_map).T  
 
-# Process only models with a yaml (or not)
+# Process only models with a yaml native-iso mapping (or not)
 if drop_na_yamls:
-    model_yaml_map.dropna(subset='yaml', inplace=True)
-    model_yaml_map.dropna(subset='include', inplace=True)
-    model_yaml_map.set_index('model', inplace=True)
+    # model_yaml_map.dropna(subset='yaml', inplace=True)
+    model_yaml_map = model_yaml_map[model_yaml_map.include != False]
+    
+    model_yaml_map.dropna(subset=['vetted_regions', 'vetted_type'], how='any', inplace=True)
+    
+
+# =============================================================================
+# Optional - Query model regions available (to update yaml / excels above)
+# =============================================================================
+# Only do this if checking the regions available for each model and updating the model_yaml_region_map
+if check_model_regions_in_db:
+    regions_available = {}
+    for model in model_yaml_map.iloc.iterrows():
+        print(model)
+        dfin = pyam.read_iiasa(instance,
+                                model=model[0],
+                                # scenario=scenarios,
+                                variable=varlist,
+                                year=years)
+        
+        regions_available[model[0]] = dfin.region
     
     
 #%%=============================================================================
@@ -184,11 +215,29 @@ if drop_na_yamls:
 iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRE', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
 iso_eu27.sort()
 
-for model, yamlnm in model_yaml_map.iterrows():
+allowed_common_regions = ['EU27','EU27 & UK','EU27 (excl. Malta & Cyprus)']
+
+
+iso_reg_dict_all = {}
+
+for model, attr in model_yaml_map.iterrows():#.iloc[:22]
     print(f'################## STARTING {model} #############################')
 
     # Load and generate region - iso dictionary for specific model
-    iso_reg_dict, unique_natives = model_iso_reg_dict(yaml_nm=yamlnm)
+    iso_reg_dict, unique_natives = func_model_iso_reg_dict(yaml_nm=attr.yaml)
+    iso_reg_dict_all[model] = iso_reg_dict
+    
+    
+    
+    # Use cases
+    if (attr.vetted_type == 'common') & (attr.vetted_regions in allowed_common_regions):
+        
+    elif (attr.vetted_type == 'native') & (attr.vetted_regions in allowed_common_regions)
+    
+    
+    
+    
+    
     
     
     ###############
@@ -213,7 +262,7 @@ for model, yamlnm in model_yaml_map.iterrows():
     
     
     dfin = pyam.read_iiasa(instance,
-                            model=model,
+                            model=model[0],
                             # scenario=scenarios,
                             variable=varlist,
                             year=years,
@@ -254,6 +303,9 @@ for model, yamlnm in model_yaml_map.iterrows():
         for variable in ref_iso_data.variable:
             ref_iso_data.aggregate_region(variable, region=agg_region_name,     subregions=unique_natives, append=True)
         ref_data = ref_iso_data.filter(region=agg_region_name)
+        if len(ref_data)==0:
+            print('ERROR - no region reference data for {model}')
+            break
         
         unique_natives = df.region
         for variable in df.variable:
@@ -384,34 +436,35 @@ for model, yamlnm in model_yaml_map.iterrows():
         
         # check presence of EIP in other scenarios
         missing = df.require_variable(variable='Emissions|CO2|Energy and Industrial Processes')
-        missing = missing.loc[missing.model!='Reference',:]
+        if missing is not None:
+            missing = missing.loc[missing.model!='Reference',:]
         
-        # if missing, aggregate energy and ip
-        mapping = {}
-        for model in missing.model.unique():
-            mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
-        
-        # Aggregate and add to the df
-        if len(mapping)>0:
-            for model, scenarios in mapping.items():
-                try:
-                    neweip = to_series(
-                        df.filter(model=model, scenario=scenarios,
-                                  variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
-                        .aggregate(variable='Emissions|CO2|Energy and Industrial Processes')
-                              )
+            # if missing, aggregate energy and ip
+            mapping = {}
+            for model in missing.model.unique():
+                mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
             
-                    df.append(
-                        neweip,
-                    variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
-                    inplace=True
-                    )
-                except(AttributeError):
-                    print('No components:{},{}'.format(model, scenarios))
-                    pass
-        #%
-        # Drop the separate components
-        df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], keep=False, inplace=True)
+            # Aggregate and add to the df
+            if len(mapping)>0:
+                for model, scenarios in mapping.items():
+                    try:
+                        neweip = to_series(
+                            df.filter(model=model, scenario=scenarios,
+                                      variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
+                            .aggregate(variable='Emissions|CO2|Energy and Industrial Processes')
+                                  )
+                
+                        df.append(
+                            neweip,
+                        variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
+                        inplace=True
+                        )
+                    except(AttributeError):
+                        print('No components:{},{}'.format(model, scenarios))
+                        pass
+            #%
+            # Drop the separate components
+            df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], keep=False, inplace=True)
         
         #%% First, the aggregation tests ################################
         if aggregation_variables is not None:
@@ -504,6 +557,12 @@ for model, yamlnm in model_yaml_map.iterrows():
         
         
         
+# Save df.meta in big file        
+        
+        
+        
+        
+        
         #%% Save to Excel and format output file
         ####################################
         ###################################
@@ -525,11 +584,10 @@ for model, yamlnm in model_yaml_map.iterrows():
                 wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx'
                 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
                 # Strip out exclude / source columns if present
-                for x in ['exclude','Source']:
-                    try:
-                        dfo = df.meta.reset_index().drop(x, axis=1)
-                    except(KeyError):
-                        pass
+                dfo = df.meta.reset_index()
+                covcols = [x  for x in dfo.columns if 'coverage' in x]
+                for x in ['exclude','Source','version']+covcols:
+                        dfo.drop(x, axis=1, errors='ignore', inplace=True)
                     
                     
                 if modelo != 'all':
@@ -568,7 +626,7 @@ for model, yamlnm in model_yaml_map.iterrows():
                 # dfp = pd.DataFrame(index=cols, columns=['Pass','Fail','outside_range','missing'])
                 # colorder=['Pass','Fail','outside_range','missing']
         
-                dfop_simple = dfop[cols].apply(pd.Series.value_counts).sort_index()
+                dfop_simple = dfop[cols].apply(pd.Series.value_counts).fillna(0).sort_index()
                 dfop_simple = dfop_simple.T#[colorder]
                 dfop_simple.rename(index={col: 'OVERALL'}, inplace=True)
         
@@ -772,3 +830,14 @@ for model, yamlnm in model_yaml_map.iterrows():
         df.to_excel(f'{output_folder}df_out.xlsx')
     
         
+#%% Write out full dictionary of regions used
+for mk, mv in iso_reg_dict_all.items():
+    for k, v in mv.items():
+        v = ', '.join(v)
+        iso_reg_dict_all[mk][k] = v
+#%
+with open(f'{output_folder}\\model_reg_iso_output.yaml', 'w') as file:
+     documents = yaml.dump(iso_reg_dict_all , file)
+ 
+
+

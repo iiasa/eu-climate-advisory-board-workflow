@@ -90,7 +90,7 @@ for y in yamls:
     
     
 #%% Snippet from daniel re OpenEntrance iso3
-import openentrancefrom pathlib import Pathregions = openentrance.RegionCodeList.from_directory(name="region", path=Path("definitions/region/"))current_countries = [regions[openentrance.iso_mapping[c]].iso3 for c in current_list]
+# import openentrancefrom pathlib import Pathregions = openentrance.RegionCodeList.from_directory(name="region", path=Path("definitions/region/"))current_countries = [regions[openentrance.iso_mapping[c]].iso3 for c in current_list]
     
     
     
