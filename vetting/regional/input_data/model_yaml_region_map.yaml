@@ -204,9 +204,11 @@ MESSAGEix-GLOBIOM 1.1:
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
-  natives: MESSAGEix-GLOBIOM 1.0|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern Europe
+  natives: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1-M-R12|Eastern
+    Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1-M-R12|Eastern
+    Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1-M-R12:
@@ -214,7 +216,8 @@ MESSAGEix-GLOBIOM 1.1-M-R12:
   R10_Europe: .nan
   eu_isos: true
   include: true
-  natives: MESSAGEix-GLOBIOM 1.0|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern Europe
+  natives: MESSAGEix-GLOBIOM 1.1-M-R12|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern
+    Europe
   notes: .nan
   vetted_regions: EU27
   vetted_type: common
@@ -224,9 +227,9 @@ MESSAGEix-GLOBIOM 1.2:
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
-  natives: MESSAGEix-GLOBIOM 1.0|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern Europe
+  natives: MESSAGEix-GLOBIOM 1.2|Western Europe, MESSAGEix-GLOBIOM 1.2|Eastern Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.2|Western Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1-R12
 MUSE 1.0:
@@ -487,11 +490,11 @@ WITCH-GLOBIOM 3.1:
   yaml: WITCH_5.0
 WITCH-GLOBIOM 4.4:
   EU_common: .nan
-  R10_Europe: Europe (R10)
+  R10_Europe: .nan
   eu_isos: false
-  include: true
+  include: false
   natives: .nan
-  notes: only R10
-  vetted_regions: Europe (R10)
-  vetted_type: common
+  notes: only R5
+  vetted_regions: .nan
+  vetted_type: None
   yaml: WITCH_5.0

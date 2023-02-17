@@ -81,16 +81,25 @@ bounds_variables:
     lo: -0.3
     up: 0
     year: 2010
+    key_historical: False
+    key_future: False
+    bound_threshold: 1
+    
+  Emissions|CO2|Energy '10-'20:
+    variable: Emissions|CO2|Energy|2010-2020 change
+    lo: -0.3
+    up: 0
+    year: 2010
     key_historical: True
     key_future: False
     bound_threshold: 1
 
   CCS from Energy 2020:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
-    lo: 0
+    lo: -10
     up: 10
     year: 2020
-    key_historical: True
+    key_historical: False
     key_future: False
     bound_threshold: 1 
   Secondary Energy Solar-Wind increase '20-'30:
@@ -107,10 +116,19 @@ bounds_variables:
     lo: 0
     up: 10000
     year: 2010-2030
-    key_historical: True
+    key_historical: False
     key_future: True
     bound_threshold: 1
-
+    
+  No net negative before 2030:
+    variable: Emissions|CO2|Energy
+    lo: 0
+    up: 10000
+    year: 2010-2030
+    key_historical: False
+    key_future: True
+    bound_threshold: 1
+    
   CCS from Energy 2030:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
     lo: 0

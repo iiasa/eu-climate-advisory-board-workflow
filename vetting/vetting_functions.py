@@ -41,7 +41,8 @@ def create_reference_df(df, ref_model, ref_scenario, check_variables, ref_year):
 #  - Perform check if a variable exists
 #  - Set corresponding scenarios to `fail` given an output of *.validate() or *.check_aggregate
 
-def util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical, key_future, flag_pass='Pass'):
+def util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical, 
+                     key_future, historical_columns, future_columns, flag_pass='Pass'):
     """Creates the meta column"""
     meta_docs[meta_name] = meta_doc
     df.set_meta(flag_pass, name=meta_name)
@@ -117,11 +118,11 @@ def util_filter_save_value_column(df, name, variable_or_values, year=None, metho
 #  - Filter check aggregate: check if components of variable sum up to main component
 #  - Filter validate: check if variable is within bounds
 
-def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, key_historical=True, key_future=False, flag_fail='Fail', flag_pass='Pass', ver='normal'):
+def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], flag_fail='Fail', flag_pass='Pass', ver='normal'):
     meta_name_agg = f'{meta_name} summary'
     trs = '' if ver=='teams' else f': {thresholds}'
     util_filter_init(df, meta_name_agg, f'Checks that scenario is within reasonable range'+trs,
-                     meta_docs, key_historical, key_future)
+                     meta_docs, key_historical, key_future, historical_columns, future_columns)
 
     curr_meta_columns = []
     # Loop over each variable and value
@@ -163,15 +164,14 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
         meta_name_agg] = flag_pass
 
 
-
     df.reset_exclude()
 
 
-def filter_check_aggregate(df, variable, threshold, meta_name, meta_docs, key_historical=True, key_future=False, ver='normal'):
+def filter_check_aggregate(df, variable, threshold, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], ver='normal'):
     meta_name_agg = f'{meta_name}_aggregate'
     trs = 'approximately the' if ver=='teams' else ' within {:.0%} of'.format(threshold)
     meta_doc = f'Checks that the components of {variable} sum up to {trs} aggregate'
-    util_filter_init(df, meta_name_agg, meta_doc, meta_docs, key_historical, key_future)
+    util_filter_init(df, meta_name_agg, meta_doc, meta_docs, key_historical, key_future, historical_columns, future_columns)
 
     failed = df.check_aggregate(variable=variable, rtol=threshold)
     if failed is not None:
@@ -182,7 +182,7 @@ def filter_check_aggregate(df, variable, threshold, meta_name, meta_docs, key_hi
     df.reset_exclude()
 
 def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, key_future=False,
-                    bound_threshold=1, ver='normal'):
+                    historical_columns=[], future_columns=[], bound_threshold=1, ver='normal'):
 
     if bound_threshold != 1:
         lo = lo * (1-bound_threshold)
@@ -198,7 +198,7 @@ def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, 
         variable, lo, up, 'any year' if year is None else year
     )
     meta_doc = f'Checks that the values of {trs} '
-    util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical, key_future)
+    util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical, key_future, historical_columns, future_columns)
     util_filter_check_exists(df, meta_name, variable)
 
     if type(year) == range:
@@ -250,7 +250,9 @@ def calc_increase_percentage(df, variable, year1, year2, suffix='|{}-{} change')
     
     
 def strip_version(model):
+    model = model.replace('/','-')
     split = model.split(' ')
+    
     if len(split) > 1:
         return ' '.join(split[:-1])
     return model    

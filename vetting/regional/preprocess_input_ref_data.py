@@ -8,7 +8,7 @@ wd = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\
 edgar_year = 2019
 iea_year = 2020
 #%% Import and subset the EDGAR CO2 data
-df = pd.read_excel(f'{wd}pre_processing\\ipcc_ar6_data_edgar6_CO2.xlsx',
+df = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_CO2.xlsx',
                     sheet_name='data', usecols=['ISO','year','value'])
 dfe = df.loc[df.year==edgar_year]
 dfe = dfe[['ISO','year','value']].groupby(['ISO','year']).sum()
@@ -23,7 +23,7 @@ dfe = pyam.IamDataFrame(dfe)
 #%% Import and subset the EDGAR CH4 data
 
 # dfi = pyam.IamDataFrame(f'{wd}pre_processing\\ipcc_ar6_data_edgar6_CH4.xlsx')
-df = pd.read_excel(f'{wd}pre_processing\\ipcc_ar6_data_edgar6_CH4.xlsx',
+df = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_CH4.xlsx',
                     sheet_name='data', usecols=['ISO', 'fossil_bio', 'year','value'])
 dfe4 = df.loc[df.year==edgar_year]
 # sum fossil and bio CH4 here, no need to separate
@@ -46,8 +46,8 @@ dfmerge.to_csv(f'{wd}input_reference_edgarCO2CH4.csv')
 
 #%% Import and subset the IEA data
 
-dfi = pyam.IamDataFrame(f'{wd}pre_processing\\Copy of IEAdb_extract_into_IAMC_format.xlsx',
-                        sheet_name='data1')
+dfi = pyam.IamDataFrame(f'{wd}pre_processing_data\\IEA_history_IPCCSR15-ISO-2021-EB.xlsx',
+                        sheet_name='all')
 
 dfi.filter(year=iea_year, inplace=True)
 dfi.rename({'model': {'History':'Reference'}}, inplace=True)
