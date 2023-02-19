@@ -27,7 +27,7 @@ drop_na_yamls = True   #Process only models for which there is a yaml
 print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
 recreate_yaml_region_map = True  # read in excel, and save to yaml
-
+write_out_all = True
 from vetting_functions import *
 
 # =============================================================================
@@ -462,7 +462,7 @@ allowed_common_regions = {'EU27': iso_eu27,
 iso_reg_dict_all = {}
 
 ct = 0
-for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
+for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
     print(f'################## STARTING {model} #############################')
 
     # attr.vetted_regions - this is the selected region(s) for the model
@@ -582,7 +582,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     ref_data = ref_iso_data.filter(region=agg_region_name)
     df = df.filter(region=agg_region_name)
 
-    
+   #%% 
     if len(ref_data)==0:
         print('ERROR - no {agg_region_name} reference data for {model}')
         continue
@@ -590,7 +590,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         print('ERROR - no {agg_region_name} data for {model}')
         continue
     
-    
+    #%%
     # Join model with reference data
     df = df.append(ref_data)
     df.set_meta(attr.vetted_type,'vetted_type')
@@ -821,14 +821,15 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         
     print(f'############  Finished {model} ############')
     
-
+#%%
     # Write out to excel
     write_out(df, iso_reg_dict, model=model, include_data=True, include_meta=False)
     ct=ct+1
 print('Finished loop, writing out all')
-fn = write_out(dfall, iso_reg_dict_all, model='all', include_data=True, include_meta=False)
-os.startfile(fn)
-
+if write_out_all:
+    fn = write_out(dfall, iso_reg_dict_all, model='all', include_data=True, include_meta=False)
+    os.startfile(fn)
+    
 
 
     

@@ -207,8 +207,7 @@ MESSAGEix-GLOBIOM 1.1:
   natives: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1-M-R12|Eastern
     Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1-M-R12|Eastern
-    Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1-M-R12:

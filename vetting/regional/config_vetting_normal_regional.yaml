@@ -76,7 +76,7 @@ aggregation_variables:
 
 bounds_variables:
     
-  Emissions|CO2|Energy and Industrial Processes '10-'20:
+  Emissions|CO2|Energy and Industrial Processes factor x change '10-'20:
     variable: Emissions|CO2|Energy and Industrial Processes|2010-2020 change
     lo: -0.3
     up: 0
@@ -84,8 +84,9 @@ bounds_variables:
     key_historical: False
     key_future: False
     bound_threshold: 1
+    description:  Permitted range of factor x change in Emissions CO2 EIP
     
-  Emissions|CO2|Energy '10-'20:
+  Emissions|CO2|Energy factor x change '10-'20:
     variable: Emissions|CO2|Energy|2010-2020 change
     lo: -0.3
     up: 0
@@ -93,28 +94,32 @@ bounds_variables:
     key_historical: True
     key_future: False
     bound_threshold: 1
+    description:  Permitted range of  factor x change in Emissions CO2 Energy
 
   CCS from Energy 2020:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
-    lo: -10
-    up: 10
+    lo: 0
+    up: 20
     year: 2020
-    key_historical: False
+    key_historical: True
     key_future: False
     bound_threshold: 1 
-  Secondary Energy Solar-Wind increase '20-'30:
+    description:  Permitted range of CO2 capture from Energy sector
+
+  Secondary Energy Solar-Wind factor x change '20-'30:
     variable: Secondary Energy|Electricity|Solar-Wind|2020-2030 change
-    lo: -0.2
-    up: 300
+    lo: 0
+    up: 20
     year: 2020
     key_historical: False
     key_future: True
     bound_threshold: 1
-    
+    description:  Permitted range of  factor x change in Wind+Solar electricity
+   
   No net negative before 2030:
     variable: Emissions|CO2|Energy and Industrial Processes
     lo: 0
-    up: 10000
+    up: 1000
     year: 2010-2030
     key_historical: False
     key_future: True
@@ -123,7 +128,7 @@ bounds_variables:
   No net negative before 2030:
     variable: Emissions|CO2|Energy
     lo: 0
-    up: 10000
+    up: 1000
     year: 2010-2030
     key_historical: False
     key_future: True
@@ -132,7 +137,7 @@ bounds_variables:
   CCS from Energy 2030:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
     lo: 0
-    up: 500
+    up: 100
     year: 2030
     key_historical: False
     key_future: True
@@ -141,7 +146,7 @@ bounds_variables:
   Electricity from Nuclear in 2030:
     variable: Secondary Energy|Electricity|Nuclear
     lo: 0
-    up: 5
+    up: 1.5
     year: 2030
     key_historical: False
     key_future: True

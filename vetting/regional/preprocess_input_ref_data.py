@@ -5,12 +5,12 @@ import pyam
 user = 'byers'
 wd = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\input_data\\'
 
-edgar_year = 2019
-iea_year = 2020
+edgar_year = range(2010,2020)
+iea_year = range(2010,2020)
 #%% Import and subset the EDGAR CO2 data
 df = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_CO2.xlsx',
                     sheet_name='data', usecols=['ISO','year','value'])
-dfe = df.loc[df.year==edgar_year]
+dfe = df.loc[df.year.isin(edgar_year)]
 dfe = dfe[['ISO','year','value']].groupby(['ISO','year']).sum()
 
 dfe = dfe.reset_index().rename(columns={'ISO':'region'})
@@ -25,7 +25,7 @@ dfe = pyam.IamDataFrame(dfe)
 # dfi = pyam.IamDataFrame(f'{wd}pre_processing\\ipcc_ar6_data_edgar6_CH4.xlsx')
 df = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_CH4.xlsx',
                     sheet_name='data', usecols=['ISO', 'fossil_bio', 'year','value'])
-dfe4 = df.loc[df.year==edgar_year]
+dfe4 = df.loc[df.year.isin(edgar_year)]
 # sum fossil and bio CH4 here, no need to separate
 dfe4 = dfe4[['ISO', 'fossil_bio', 'year', 'value']].groupby(['ISO','year']).sum()
 

@@ -24,11 +24,11 @@ from vetting_functions import *
 # =============================================================================
 
 #%% Settings for the specific run
-
+scale = 'global'
 user = 'byers'
 log = True
 modelbymodel = True
-single_model = False
+single_model = True
 ver = 'normal'
 # ver = 'ips'
 
@@ -36,33 +36,32 @@ flag_fail = 'Fail'
 flag_pass = 'Pass'
 
 
-config_vetting = f'config_vetting_{ver}.yaml'
-instance = 'eu_climate_submission'
+config_vetting = f'{scale}\\config_vetting_{ver}.yaml'
+instance = 'eu-climate-submission'
 
-input_data_ref = f'input_data\\extra-ref-ar6-201518-data.xlsx'
-input_data_ceds = f'input_data\\CEDS_ref_data.xlsx'
+input_data_ref = f'{scale}\\input_data\\extra-ref-ar6-201518-data.xlsx'
+input_data_ceds = f'{scale}\\input_data\\CEDS_ref_data.xlsx'
 
-output_folder = 'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data\\'
+output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{scale}\\output_data\\'
 
 #%% Load data
-if modelbymodel==True:
-    if not os.path.exists(f'{output_folder}teams'):
-        os.makedirs(f'{output_folder}teams')
+if not os.path.exists(f'{output_folder}teams'):
+    os.makedirs(f'{output_folder}teams')
 
 
 
 #%% Settings for the project / dataset
 # Specify what data to read in
 
-years = np.arange(2000, 2101, dtype=int).tolist()
-
-models = ['MESSAGE*']
+years = np.arange(2000, 2041, dtype=int).tolist()
+year_aggregate = 2020
+# models = ['MESSAGE*']
 # scenarios = '*'
 
 
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
-            # 'Emissions|CO2|Energy',
+            'Emissions|CO2|Energy',
             'Emissions|CO2|Industrial Processes',
             # 'Emissions|CO2|AFOLU',
             # 'Emissions|CO2|Other',
@@ -92,7 +91,7 @@ region = ['World']
 #%% load pyam data
 
 dfin = pyam.read_iiasa(instance,
-                        model=models,
+                        # model=models,
                         # scenario=scenarios,
                         variable=varlist,
                        year=years,
@@ -103,7 +102,6 @@ dfin = pyam.read_iiasa(instance,
 print('loaded')
 print(time.time()-start)
 
-sss
 #%%=============================================================================
 # #%% Restart from here if necessary
 # =============================================================================
@@ -216,14 +214,15 @@ df.append(
 # % increases
 # =============================================================================
 
-# Renewable share increase
-calc_increase_percentage('Primary Energy|Renewables share', 2020, 2030)
+# PE Renewable share increase
+# calc_increase_percentage(df, 'Primary Energy|Renewables share', 2020, 2030)
 
-# Solar-Wind share increase
-calc_increase_percentage('Primary Energy|Solar-Wind share', 2020, 2030)
+# PE Solar-Wind share increase
+# calc_increase_percentage(df, 'Primary Energy|Solar-Wind share', 2020, 2030)
 
-# Solar-Wind share increase
-calc_increase_percentage('Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
+# SE Solar-Wind share increase
+calc_increase_percentage(df, 'Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
+
 
 #%%=============================================================================
 # #%% Perform actual checks
@@ -234,8 +233,6 @@ calc_increase_percentage('Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
 # Checks: Aggregates
 #
 ###################################
-
-# Before adding new data, check the aggregates
 
 # =============================================================================
 # Emissions & CCS
@@ -285,8 +282,16 @@ df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'
 # # First, the aggregation tests ################################
 if aggregation_variables is not None:
     for agg_name, agg_info in aggregation_variables.items():
-        filter_check_aggregate(agg_info['variable'], agg_info['threshold'], agg_name,
-           agg_info['key_historical'], agg_info['key_future'],
+        filter_check_aggregate(df.filter(year=year_aggregate),
+                               agg_info['variable'],
+                               agg_info['threshold'],
+                                   meta_name=agg_name,
+                                   meta_docs=meta_docs,
+                                   key_historical=agg_info['key_historical'], 
+                                   key_future=agg_info['key_future'],
+                                   historical_columns=historical_columns,
+                                   future_columns=historical_columns,
+                                   ver=ver, 
        )
 else:
     print('Skipping aggregations')
@@ -297,23 +302,25 @@ else:
 # =============================================================================
 
 # Emissions|CO2 increase
-calc_increase_percentage('Emissions|CO2', 2010, 2020)
+calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
 # calc_increase_percentage('Emissions|CO2', 2015, 2020)
-calc_increase_percentage('Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
+calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
 
 # Calculate CCS from energy (not industrial):
-df.append(
-    to_series(
-        df
-        .filter(variable=['Carbon Sequestration|CCS|Biomass', 'Carbon Sequestration|CCS|Fossil'])
-        .aggregate(variable='Carbon Sequestration|CCS')
-    ),
-    variable='Carbon Sequestration|CCS|Biomass and Fossil', unit='Mt CO2/yr',
-    inplace=True
-)
+try:
+    df.append(
+        to_series(
+            df
+            .filter(variable=['Carbon Sequestration|CCS|Biomass', 'Carbon Sequestration|CCS|Fossil'])
+            .aggregate(variable='Carbon Sequestration|CCS')
+        ),
+        variable='Carbon Sequestration|CCS|Biomass and Fossil', unit='Mt CO2/yr',
+        inplace=True
+    )
+except(AttributeError):
+    print('Skip CCS aggregation for {model}')
 
-
-#%%  =============================================================================
+#% =============================================================================
 # Add data: Upper-Lower CEDS&EDGAR bounds (not used due to method)
 # DO NOT DELETE, CAN BE USED TO CALCULATE THE REFERENCE VALUES WHICH ARE READ IN THE YAML FILE
 # =============================================================================
@@ -352,22 +359,55 @@ df.append(
 # ab = df.filter(model='Reference',scenario='CEDS_EDGAR')
 # ab.to_csv(f'{output_folder}ceds_edgar_extrapdata.csv')
 
-#%% Second, for the reference checking
+#  #% Do checks against reference data
 for agg_name, agg_info in reference_variables.items():
-    df_ref = create_reference_df(
-        agg_info['model'], agg_info['scenario'], agg_info['variables_threshold'].keys(), agg_info['ref_year']
+    df_ref = create_reference_df(df,
+        agg_info['model'], agg_info['scenario'], agg_info['variables_threshold'].keys(), agg_info['ref_year'],                                                                                      
     )
-    filter_with_reference(
-        df_ref, agg_info['variables_threshold'], agg_info['compare_year'], agg_name,
-        agg_info['key_historical'], agg_info['key_future'],
-    )
+    filter_with_reference(df,
+                          df_ref,
+                          agg_info['variables_threshold'],
+                          agg_info['compare_year'], 
+                          agg_name,
+                          meta_docs,
+                          agg_info['key_historical'],
+                          agg_info['key_future'],
+                          historical_columns, 
+                          future_columns, 
+                          ver=ver
+        )
+    # =============================================================================
+    # Do the bounds checks
+    # =============================================================================
 
-
-# Third, the bounds tests
 for name, info in bounds_variables.items():
-    filter_validate(info['variable'], info['year'], info['lo'], info['up'], name,
-        info['key_historical'], info['key_future'], info['bound_threshold'],
+    filter_validate(df, 
+                    info['variable'], 
+                    info['year'], 
+                    info['lo'], 
+                    info['up'], 
+                    name,
+                    info['key_historical'], 
+                    info['key_future'], 
+                    historical_columns, 
+                    future_columns,     
+                    info['bound_threshold'], 
+                    ver=ver,
    )
+
+
+
+#%%
+
+#     # Write out to excel
+#     write_out(df, iso_reg_dict, model=model, include_data=True, include_meta=False)
+#     ct=ct+1
+# print('Finished loop, writing out all')
+# if write_out_all:
+#     fn = write_out(dfall, iso_reg_dict_all, model='all', include_data=True, include_meta=False)
+#     os.startfile(fn)
+
+
 
 
 #%% Write out excel table
