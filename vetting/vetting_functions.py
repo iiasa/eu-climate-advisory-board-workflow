@@ -96,7 +96,7 @@ def util_get_unit(df, variable):
     except:
         return 'Unit not found'
 
-def util_filter_save_value_column(df, name, variable_or_values, year=None, method=None, ref_value=None, ref_lo=None, ref_up=None, plot=True, **kwargs):
+def util_filter_save_value_column(df, name, variable_or_values, value_columns, year=None, method=None, ref_value=None, ref_lo=None, ref_up=None, plot=True, **kwargs):
     if type(variable_or_values) == str:
         unit = util_get_unit(df, variable_or_values)
         column_name = f'{name} (model value in {year}) [{unit}]'
@@ -118,7 +118,7 @@ def util_filter_save_value_column(df, name, variable_or_values, year=None, metho
 #  - Filter check aggregate: check if components of variable sum up to main component
 #  - Filter validate: check if variable is within bounds
 
-def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], flag_fail='Fail', flag_pass='Pass', ver='normal'):
+def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], value_columns={}, flag_fail='Fail', flag_pass='Pass', flag_pass_missing='Pass_missing', ver='normal'):
     meta_name_agg = f'{meta_name} summary'
     trs = '' if ver=='teams' else f': {thresholds}'
     util_filter_init(df, meta_name_agg, f'Checks that scenario is within reasonable range'+trs,
@@ -130,7 +130,7 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
         _, _, curr_region, curr_variable, curr_unit, *_ = idx
 
         valstr = np.round(val, 2)
-        curr_meta_column = f'({meta_name} {year}: {curr_variable} = {valstr})'
+        curr_meta_column = f'({meta_name} {year}: {curr_variable})'#' = {valstr})'
         curr_meta_columns.append(curr_meta_column)
         df.set_meta(flag_pass, curr_meta_column)
 
@@ -141,7 +141,7 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
         lo = val * (1-thresholds[curr_variable])
         up = val * (1+thresholds[curr_variable])
         util_filter_save_value_column(df, 
-            curr_meta_column, curr_variable, year=year,
+            curr_meta_column, curr_variable, value_columns=value_columns, year=year,
             ref_value=val, ref_lo=lo, ref_up=up
         )
         outside_range = df.filter(
@@ -161,6 +161,10 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
     df.set_meta(flag_fail, name=meta_name_agg)
     df.meta.loc[
         df.meta[curr_meta_columns].isin([flag_pass, 'missing']).all(axis=1),
+        meta_name_agg] = flag_pass_missing
+    
+    df.meta.loc[
+        df.meta[curr_meta_columns].isin([flag_pass,]).all(axis=1),
         meta_name_agg] = flag_pass
 
 
@@ -176,7 +180,7 @@ def filter_check_aggregate(df, variable, threshold, meta_name, meta_docs, key_hi
     failed = df.check_aggregate(variable=variable, rtol=threshold)
     if failed is not None:
         max_rel_difference = ((failed['variable'] - failed['components']) / failed['variable']).max(level=[0,1,2,3])
-        util_filter_save_value_column(df, meta_name_agg, max_rel_difference, plot=False)
+        util_filter_save_value_column(df, meta_name_agg, max_rel_difference, value_columns=value_columns, plot=False)
 
     util_filter_set_failed(df, meta_name_agg, failed)
     df.reset_exclude()
@@ -193,7 +197,7 @@ def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, 
         # Interpret string as range:
         year = range(*[int(x) for x in year.split('-')])
 
-    meta_name = f'{meta_name} validate'
+    meta_name = f'{meta_name}' # delete validate
     trs = 'in {}'.format(year) if ver=='teams' else 'are within {} and {} in {}'.format(
         variable, lo, up, 'any year' if year is None else year
     )
@@ -203,11 +207,11 @@ def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, 
 
     if type(year) == range:
         if lo is not None:
-            util_filter_save_value_column(df, f'{variable} min', variable, year=year, method=np.min, ref_lo=lo)
+            util_filter_save_value_column(df, f'{variable} min', variable, value_columns=value_columns, year=year, method=np.min, ref_lo=lo)
         if up is not None:
-            util_filter_save_value_column(df, f'{variable} max', variable, year=year, method=np.max, ref_up=up)
+            util_filter_save_value_column(df, f'{variable} max', variable, value_columns=value_columns, year=year, method=np.max, ref_up=up)
     else:
-        util_filter_save_value_column(df, variable, variable, year=year, ref_lo=lo, ref_up=up)
+        util_filter_save_value_column(df, variable, variable, value_columns=value_columns, year=year, ref_lo=lo, ref_up=up)
     failed = df.filter(year=year).validate({variable: {'lo': lo, 'up': up}})
 
     util_filter_set_failed(df, meta_name, failed)

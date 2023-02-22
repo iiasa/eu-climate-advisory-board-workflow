@@ -17,47 +17,51 @@ import yaml
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
+
+
+log = True
+modelbymodel = True    # Output single files for each model into Teams folder
+single_model = False   # Testing mode- not used
+include_data = True
+print_log = print if log else lambda x: None
+include_meta = False
+
+
 from vetting_functions import *
 
-# =============================================================================
+
 #%% Configuration
 # =============================================================================
 
 #%% Settings for the specific run
-scale = 'global'
+region_level = 'global'
 user = 'byers'
-log = True
-modelbymodel = True
-single_model = True
-ver = 'normal'
-# ver = 'ips'
+
+# ver = 'normal'
+
+years = np.arange(2000, 2041, dtype=int).tolist()
+year_aggregate = 2020
 
 flag_fail = 'Fail'
 flag_pass = 'Pass'
+flag_pass_missing = 'Pass_missing'
 
 
-config_vetting = f'{scale}\\config_vetting_{ver}.yaml'
+config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
 instance = 'eu-climate-submission'
 
-input_data_ref = f'{scale}\\input_data\\extra-ref-ar6-201518-data.xlsx'
-input_data_ceds = f'{scale}\\input_data\\CEDS_ref_data.xlsx'
+input_data_ref = f'{region_level}\\input_data\\Reference-data.xlsx'
+# input_data_ceds = f'{region_level}\\input_data\\CEDS_ref_data.xlsx'
 
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{scale}\\output_data\\'
+output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
     os.makedirs(f'{output_folder}teams')
 
 
-
 #%% Settings for the project / dataset
 # Specify what data to read in
-
-years = np.arange(2000, 2041, dtype=int).tolist()
-year_aggregate = 2020
-# models = ['MESSAGE*']
-# scenarios = '*'
-
 
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
@@ -139,7 +143,7 @@ aggregation_variables = config['aggregation_variables']
 bounds_variables = config['bounds_variables']
 
 if single_model:
-    df = df.filter(model=['REMIND*', 'Reference'])  # Choose one arbitrary model, and the Reference data
+    df = df.filter(model=['MESSAGE*', 'Reference'])  # Choose one arbitrary model, and the Reference data
 
 
 
@@ -156,9 +160,9 @@ if single_model:
 # Add additional reference data
 # =============================================================================
 dfref = pyam.IamDataFrame(input_data_ref)
-dfceds =  pyam.IamDataFrame(input_data_ceds)
+# dfceds =  pyam.IamDataFrame(input_data_ceds)
 df.append(dfref, inplace=True)
-df.append(dfceds, inplace=True)
+# df.append(dfceds, inplace=True)
 
 
 
@@ -197,7 +201,7 @@ secondary_energy_electricity = to_series(df.filter(variable='Secondary Energy|El
 secondary_wind_solar = to_series(
     df
     .filter(variable=['Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar'])
-    .aggregate(variable='Secondary Energy|Electricity')
+    .aggregate(variable='Secondary Energy|Electricity').filter(model='Reference', keep=False)
 )
 df.append(
     secondary_wind_solar,
@@ -238,16 +242,16 @@ calc_increase_percentage(df, 'Secondary Energy|Electricity|Solar-Wind', 2020, 20
 # Emissions & CCS
 # =============================================================================
 # First, aggregate EIP for CEDS and add it
-eip = to_series(
-    df
-    .filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], scenario='CEDS')
-    .aggregate(variable='Emissions|CO2')
-)
-df.append(
-    eip,
-    variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
-    inplace=True
-)
+# eip = to_series(
+#     df
+#     .filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], scenario='CEDS')
+#     .aggregate(variable='Emissions|CO2')
+# )
+# df.append(
+#     eip,
+#     variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
+#     inplace=True
+# )
 
 # check presence of EIP in other scenarios
 missing = df.require_variable(variable='Emissions|CO2|Energy and Industrial Processes')
@@ -291,7 +295,7 @@ if aggregation_variables is not None:
                                    key_future=agg_info['key_future'],
                                    historical_columns=historical_columns,
                                    future_columns=historical_columns,
-                                   ver=ver, 
+                                   ver=region_level, 
        )
 else:
     print('Skipping aggregations')
@@ -373,8 +377,9 @@ for agg_name, agg_info in reference_variables.items():
                           agg_info['key_historical'],
                           agg_info['key_future'],
                           historical_columns, 
-                          future_columns, 
-                          ver=ver
+                          future_columns,
+                          value_columns=value_columns,
+                          ver=region_level
         )
     # =============================================================================
     # Do the bounds checks
@@ -392,7 +397,7 @@ for name, info in bounds_variables.items():
                     historical_columns, 
                     future_columns,     
                     info['bound_threshold'], 
-                    ver=ver,
+                    ver=region_level,
    )
 
 
@@ -418,30 +423,51 @@ for name, info in bounds_variables.items():
 #
 ###################################
 
+# Historical
 meta_name_historical = 'Key_historical'
 meta_docs[meta_name_historical] = f'Checks that each of {historical_columns} is a {flag_pass}'
 df.set_meta(flag_fail, name=meta_name_historical)
 
 # NOTE that here we set both "Pass" and ":missing" as PASS (e.e.gmore false psoitives)
+
+# First Set rows with all pass or missing to pass_missing (must be this order)
 df.meta.loc[
     (df.meta[historical_columns].isin([flag_pass, 'missing'])).all(axis=1),
     meta_name_historical
+] = flag_pass_missing
+
+# Now set only those with all pass to pass
+df.meta.loc[
+    (df.meta[historical_columns].isin([flag_pass,])).all(axis=1),
+    meta_name_historical
 ] = flag_pass
 
+# Future
 meta_name_future = 'Key_future'
 meta_docs[meta_name_future] = f'Checks that each of {future_columns} is a {flag_pass}'
 df.set_meta(flag_fail, name=meta_name_future)
+
+# First Set rows with all pass or missing to pass_missing (must be this order)
 df.meta.loc[
     (df.meta[future_columns].isin([flag_pass, 'missing'])).all(axis=1),
     meta_name_future
+] = flag_pass_missing
+
+# Now set only those with all pass to pass
+df.meta.loc[
+    (df.meta[future_columns].isin([flag_pass, ])).all(axis=1),
+    meta_name_future
 ] = flag_pass
 
+# Count # of missings in each row
+df.meta['missing_count'] = df.meta.apply(pd.value_counts, axis=1)['missing']
 
 #% Overall - choose that only HISTORICAL == PASS
-col = f'vetting_{ver}'
+col = f'vetting_{region_level}'
 # df.meta.loc[(df.meta[meta_name_historical]=='Pass') & (df.meta[meta_name_future]=='Pass'), col] = 'PASS'
 # df.meta.loc[(df.meta[meta_name_historical]=='Fail') | (df.meta[meta_name_future]=='Fail'), col] = 'FAIL'
 df.meta.loc[(df.meta[meta_name_historical]==flag_pass) , col] = 'PASS'
+df.meta.loc[(df.meta[meta_name_historical]==flag_pass_missing) , col] = flag_pass_missing
 df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
 
 
@@ -452,62 +478,95 @@ df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
 #
 ###################################
 
-
-df.meta['model stripped'] = df.meta.reset_index()['model'].apply(strip_version).values
+df.meta['model_stripped'] = df.meta.reset_index()['model'].apply(strip_version).values
 
 if modelbymodel==True:
-    models = ['all'] + list(df.meta['model stripped'].unique())
+    models = ['all'] + list(df.meta['model_stripped'].unique())
 else:
     models = ['all']
 
 for model in models:
         modelstr = model.replace('/','-')
         xs = '' if model=='all' else 'teams\\'
-        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx'
+        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}.xlsx'
         writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
+        
         dfo = df.meta.reset_index().drop(['exclude','Source'], axis=1)
+        covcols = [x  for x in dfo.columns if 'coverage' in x]
+        for x in ['exclude','source','Source','version','doi','reference']+covcols:
+                dfo.drop(x, axis=1, errors='ignore', inplace=True)
+        
+        
         if model != 'all':
-            dfo = dfo.loc[dfo['model stripped'].isin([model, 'Reference'])]
+            dfo = dfo.loc[dfo['model_stripped'].isin([model, 'Reference'])]
+# =============================================================================
+#     # Write vetting flags sheet
+# =============================================================================
 
-        dfo[['model', 'scenario']+[col, meta_name_historical, meta_name_future]+historical_columns+future_columns].to_excel(writer, sheet_name='vetting_flags', index=False, header=True)
+        cols = ['model', 'model_stripped', 'scenario'] \
+            + [ col, meta_name_historical, meta_name_future, 'missing_count'] \
+            + historical_columns \
+            + future_columns 
 
-        # if ver == 'teams':
-            # dfo = dfo.select_dtypes(object)
+        # dfo[['model', 'scenario']+[col, meta_name_historical, meta_name_future]+historical_columns+future_columns]
+        dfo[cols].to_excel(writer, sheet_name='vetting_flags', index=False, header=True)
+    # =============================================================================
+    #     # Write details sheet
+    # =============================================================================
+        # dddddddd
+        cols1 = dfo.columns.tolist()
+        cols = cols[:8]  + cols1[3:-2]
 
-        cols = dfo.columns.tolist()
-        cols = cols[:2] + cols[-1:] +cols[-4:-2] + cols[2:-4]
-
-        dfo.to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
+        dfo[cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
         md = pd.DataFrame(index=meta_docs.keys(), data=meta_docs.values(), columns=['Description'])
         md.to_excel(writer, sheet_name='description')
 
-        if ver != 'teams':
+        if region_level != 'teams':
             worksheet = writer.sheets['vetting_flags']
             worksheet.set_column(0, 0, 13, None)
             worksheet.set_column(1, 1, 25, None)
             worksheet.set_column(2, len(dfo.columns)-1, 20, None)
 
+    # =============================================================================
+    #       # Model summary / detail pivot tables
+    # =============================================================================
+        if model == 'all':
+            cols = ['model',  col, 'Key_historical','Key_future','IEA Primary Energy summary','IEA Electricity summary','EDGAR AR6 summary'] #'scenario',
+            dfom = dfo.copy(deep=True)[cols]
+            dfom = dfom.loc[dfom.model!='Reference',:]
+            dfom.fillna(flag_pass_missing, inplace=True)
+            
+            ao = dfom.groupby(['model',col]).value_counts()
+            ao.to_excel(writer, sheet_name='model_detail')
+    
+            for c in cols[2:]:
+                dfom.loc[dfom[c]=='Pass', c] = 1
+                dfom.loc[dfom[c]=='Fail', c] = 0
+                dfom.loc[dfom[c]==flag_pass_missing, c] = 0
+    
+            dfom = dfom.groupby(['model',col]).sum() 
+            dfom.groupby(['model',col]).value_counts()
+           
+            dfom.to_excel(writer, sheet_name='model_summary')
 
-        # =============================================================================
-        #         # Add summary pivot table
-        # =============================================================================
+   # =============================================================================
+   #         # Add summary pivot table
+   # =============================================================================
 
         dfop = dfo.select_dtypes(object)
         dfop = dfop.loc[dfop.model!='Reference',:]
-        cols = dfop.columns[2:-2].tolist() + [col]
+        cols = historical_columns + future_columns + dfop.columns[-4:-1].tolist() #+ dfop.columns[3:5].tolist()
         dfop.loc[dfop[col]=='PASS', col] = 'Pass'
         dfop.loc[dfop[col]=='FAIL', col] = 'Fail'
         dfop.rename(index={col: 'OVERALL'}, inplace=True)
 
-        # dfp = pd.DataFrame(index=cols, columns=['Pass','Fail','outside_range','missing'])
-        # colorder=['Pass','Fail','outside_range','missing']
 
-        dfop_simple = dfop[cols].apply(pd.Series.value_counts).sort_index()
+        dfop_simple = dfop[cols].apply(pd.Series.value_counts).fillna(0).sort_index()
         dfop_simple = dfop_simple.T#[colorder]
         dfop_simple.rename(index={col: 'OVERALL'}, inplace=True)
 
 
-        if ver != 'teams':
+        if region_level != 'teams':
             dfop_simple.loc[historical_columns,'Key_historical'] = 'Yes'
             dfop_simple.loc[future_columns,'Key_future'] = 'Yes'
         else:
@@ -523,33 +582,42 @@ for model in models:
             pass
 
 
-        # Add Pass+missing column if missing values
-        if 'missing' in dfop_simple.columns:
-            Pnkp_name = 'Pass+nonKeyHist_missing'
-            dfop_simple[Pnkp_name] = dfop_simple.Pass
-            # dfop_simple.loc[dfop_simple['Key_historical']!='Yes', Pnkp_name]  =  dfop_simple.loc[dfop_simple['Key_historical']!='Yes', 'Pass']+dfop_simple.loc[dfop_simple['Key historical']!='Yes', 'missing']
-            for row in dfop_simple.itertuples():
-                if (row.Index in historical_columns) and np.isnan(row.missing)==False:
-                    dfop_simple.loc[row.Index, Pnkp_name] = row.Pass + row.missing
+        # # Add Pass+missing column if missing values
+        # if 'missing' in dfop_simple.columns:
+        #     Pnkp_name = 'Pass+nonKeyHist_missing'
+        #     dfop_simple[Pnkp_name] = dfop_simple.Pass
+        #     # dfop_simple.loc[dfop_simple['Key_historical']!='Yes', Pnkp_name]  =  dfop_simple.loc[dfop_simple['Key_historical']!='Yes', 'Pass']+dfop_simple.loc[dfop_simple['Key historical']!='Yes', 'missing']
+        #     for row in dfop_simple.itertuples():
+        #         if (row.Index in historical_columns) and np.isnan(row.missing)==False:
+        #             dfop_simple.loc[row.Index, Pnkp_name] = row.Pass + row.missing
 
-            cols = dfop_simple.columns.tolist()
-            cols.insert(2, cols.pop(cols.index(Pnkp_name)))
+        #     cols = dfop_simple.columns.tolist()
+        #     cols.insert(2, cols.pop(cols.index(Pnkp_name)))
 
             # dfop_simple[Pnkp_name]
         dfop_simple = dfop_simple.reindex(columns= cols)
         dfop_simple.to_excel(writer, sheet_name='summary_pivot')
 
+        # Add data
+        if include_data:
+            df.to_excel(writer, sheet_name='data', include_meta=include_meta)
 
 # =============================================================================
 #         ## Format the detail page
 # =============================================================================
 
+        # vetting_flags page
+        worksheet = writer.sheets['vetting_flags']
+        worksheet.set_column(0, 0, 13, None)
+        worksheet.set_column(1, 1, 25, None)
+        worksheet.set_column(2, len(dfo.columns)-1, 20, None)
+        worksheet.freeze_panes(1, 3)
+
         worksheet = writer.sheets['details']
         worksheet.set_column(0, 0, 13, None)
         worksheet.set_column(1, 1, 25, None)
         worksheet.set_column(2, len(dfo.columns)-1, 13, None)
-
-        worksheet.freeze_panes(1, 2)
+        worksheet.freeze_panes(1, 3)
 
         # Write header manually with custom style for text wrap
         workbook = writer.book
@@ -606,7 +674,7 @@ for model in models:
 plot_columns = {key: value for key, value in value_columns.items() if value['plot']}
 
 fig = make_subplots(rows=len(plot_columns), cols=1)
-color_column = 'model stripped'
+color_column = 'model_stripped'
 nbins = 75
 # fac = 0.5
 dfo = df.meta.reset_index().drop('exclude', axis=1).copy()
@@ -700,14 +768,14 @@ fig.update_layout(
 )
 
 ##%% Save to html
-fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_'+ver+'.html', include_plotlyjs='cdn')
+fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_{region_level}.html', include_plotlyjs='cdn')
 print(time.time()-start)
 
 df.to_excel(f'{output_folder}df_out.xlsx')
 
 #%% Save emissions for climate assessment if infillerdb
 
-if ver == 'infiller':
+if region_level == 'infiller':
     fname = f'{output_folder}Emissions_for_climate_assessment_InfillerDB_input'
 
     dfca = dfin.filter(variable='Emissions*')

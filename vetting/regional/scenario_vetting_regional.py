@@ -22,15 +22,16 @@ import plotly.express as px
 
 log = True
 modelbymodel = True    # Output single files for each model into Teams folder
-single_model = False   # Testing mode- not used
+single_model = True   # Testing mode- not used
 drop_na_yamls = True   #Process only models for which there is a yaml
 print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
 recreate_yaml_region_map = True  # read in excel, and save to yaml
 write_out_all = True
+
+
 from vetting_functions import *
 
-# =============================================================================
 #%% Configuration
 # =============================================================================
 
@@ -38,18 +39,18 @@ from vetting_functions import *
 region_level = 'regional'
 user = 'byers'
 
-ver = 'normal'
+# ver = 'normal'
 
-# ver = 'ips'
+years = np.arange(2010, 2041, dtype=int).tolist()
+year_aggregate = 2020
 
 flag_fail = 'Fail'
 flag_pass = 'Pass'
-flag_pass_warning = 'Pass_missing'
+flag_pass_missing = 'Pass_missing'
 
-config_vetting = f'{region_level}\\config_vetting_{ver}_regional.yaml'
+config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
 instance = 'eu-climate-submission'
 
-# input_data_ref = f'{region_level}\\input_data\\extra-ref-ar6-201518-data.xlsx'
 input_data_ref = f'{region_level}\\input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 
@@ -66,13 +67,8 @@ if not os.path.exists(f'{output_folder}teams'):
     os.makedirs(f'{output_folder}teams')
 
 
-
 #%% Settings for the project / dataset
 # Specify what data to read in
-
-years = np.arange(2010, 2041, dtype=int).tolist()
-year_aggregate = 2020
-
 
 varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
@@ -82,15 +78,15 @@ varlist = ['Emissions|CO2',
             # 'Emissions|CO2|Other',
             # 'Emissions|CO2|Waste',
             'Emissions|CH4',
-            # 'Emissions|N2O',
+            'Emissions|N2O',
             'Primary Energy',
             # 'Primary Energy|Fossil',
             'Primary Energy|Gas',
             'Primary Energy|Oil',
             'Primary Energy|Coal',
             'Primary Energy|Nuclear',
-            # 'Primary Energy|Solar',
-            # 'Primary Energy|Wind',
+            'Primary Energy|Solar',
+            'Primary Energy|Wind',
             # 'Secondary Energy',
             'Secondary Energy|Electricity',
             'Secondary Energy|Electricity|Nuclear',
@@ -162,7 +158,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     # in the config file.
     # First set all scenarios to flag_fail "Fail"
     Then identify all scenarios that have
-        1. Pass or missing - and set meta_name_historical column to flag_pass_warning, e.g. Pass_missing
+        1. Pass or missing - and set meta_name_historical column to flag_pass_missing, e.g. Pass_missing
         2. Pass - set to flag_pass e.g. PASS
     # =============================================================================
     '''
@@ -177,7 +173,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     df.meta.loc[
         (df.meta[historical_columns].isin([flag_pass, 'missing'])).all(axis=1),
         meta_name_historical
-    ] = flag_pass_warning
+    ] = flag_pass_missing
 
     # Now set only those with all pass to pass
     df.meta.loc[
@@ -194,7 +190,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     df.meta.loc[
         (df.meta[future_columns].isin([flag_pass, 'missing'])).all(axis=1),
         meta_name_future
-    ] = flag_pass_warning
+    ] = flag_pass_missing
  
     # Now set only those with all pass to pass
     df.meta.loc[
@@ -208,9 +204,9 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
 
     
     #% OVERALL - choose that only HISTORICAL == PASS
-    col = f'vetting_{ver}'
+    col = f'vetting_{region_level}'
     df.meta.loc[(df.meta[meta_name_historical]==flag_pass) , col] = 'PASS'
-    df.meta.loc[(df.meta[meta_name_historical]==flag_pass_warning) , col] = flag_pass_warning
+    df.meta.loc[(df.meta[meta_name_historical]==flag_pass_missing) , col] = flag_pass_missing
     df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
     
     
@@ -223,8 +219,8 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
         
     modelstr = model.replace('/','-')
     xs = '' if model=='all' else 'teams\\'
-    modelstr = '' if model=='all' else modelstr
-    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{ver}.xlsx'
+    modelstr = 'all' if model=='all' else modelstr
+    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}.xlsx'
     writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
     
     # Strip out exclude / source columns if present
@@ -255,8 +251,8 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     
     
     # Don't include details sheet in all, because too many different columns
-    if model!= 'all':
-        dfo[cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
+    # if model!= 'all':
+    dfo[cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
     
     
     md = pd.DataFrame(index=meta_docs.keys(), data=meta_docs.values(), columns=['Description'])
@@ -267,10 +263,10 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     #       # Model summary / detail pivot tables
     # =============================================================================
     if model == 'all':
-        cols = ['model',  col, 'Key_historical','Key_future','IEA Primary Energy summary','IEA Electricity summary','EDGAR Emissions|CO2|EIP summary'] #'scenario',
+        cols = ['model',  col, 'Key_historical','Key_future','IEA Primary Energy summary','IEA Electricity summary','EDGAR AR6 summary'] #'scenario',
         dfom = dfo.copy(deep=True)[cols]
         dfom = dfom.loc[dfom.model!='Reference',:]
-        dfom.fillna(flag_pass_warning, inplace=True)
+        dfom.fillna(flag_pass_missing, inplace=True)
         
         ao = dfom.groupby(['model',col]).value_counts()
         ao.to_excel(writer, sheet_name='model_detail')
@@ -278,13 +274,12 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
         for c in cols[2:]:
             dfom.loc[dfom[c]=='Pass', c] = 1
             dfom.loc[dfom[c]=='Fail', c] = 0
-            dfom.loc[dfom[c]==flag_pass_warning, c] = 0
+            dfom.loc[dfom[c]==flag_pass_missing, c] = 0
 
         dfom = dfom.groupby(['model',col]).sum() 
         dfom.groupby(['model',col]).value_counts()
        
         dfom.to_excel(writer, sheet_name='model_summary')
-
 
     # =============================================================================
     #         # Add summary pivot table
@@ -303,7 +298,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     dfop_simple.rename(index={col: 'OVERALL'}, inplace=True)
 
 
-    if ver != 'teams':
+    if region_level != 'teams':
         dfop_simple.loc[historical_columns,'Key_historical_check'] = 'Yes'
         dfop_simple.loc[future_columns,'Key_future_check'] = 'Yes'
 
@@ -338,44 +333,44 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     worksheet.freeze_panes(1, 3)
     
     # Details page
-    if model!= 'all':
-        worksheet = writer.sheets['details']
-        worksheet.set_column(0, 0, 13, None)
-        worksheet.set_column(1, 1, 25, None)
-        worksheet.set_column(2, len(dfo.columns)-1, 13, None)
-        worksheet.freeze_panes(1, 3)
-    
-        # Write header manually with custom style for text wrap
-        workbook = writer.book
-        header_format_creator = lambda is_bold: workbook.add_format({
-            'bold': is_bold,
-            'text_wrap': True,
-            'align': 'center',
-            'valign': 'top',
-            'border': 1
-        })
-        header_format = header_format_creator(True)
-        subheader_format = header_format_creator(False)
-    
-        for col_num, value in enumerate(dfo.columns.values):
-            curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
-            worksheet.write(0, col_num, value, curr_format)
-    
-        # Add autofilter
-        worksheet.autofilter(0, 0, len(dfo), len(dfo.columns)-1)
-    
-        # Change format of value columns
-        largenum_format = workbook.add_format({'num_format': '0'})
-        percentage_format = workbook.add_format({'num_format': '0%'})
-        percentage_change_format = workbook.add_format({'num_format': '+0%;-0%;0%'})
-        for i, column in enumerate(dfo.columns):
-            unit = value_columns.get(column, {}).get('unit', None)
-            if unit == '%':
-                worksheet.set_column(i, i, None, percentage_format)
-            if unit == '% change':
-                worksheet.set_column(i, i, None, percentage_change_format)
-            if dfo[column].dtype == float and dfo[column].median() > 10:
-                worksheet.set_column(i, i, None, largenum_format)
+    # if model!= 'all':
+    worksheet = writer.sheets['details']
+    worksheet.set_column(0, 0, 13, None)
+    worksheet.set_column(1, 1, 25, None)
+    worksheet.set_column(2, len(dfo.columns)-1, 13, None)
+    worksheet.freeze_panes(1, 3)
+
+    # Write header manually with custom style for text wrap
+    workbook = writer.book
+    header_format_creator = lambda is_bold: workbook.add_format({
+        'bold': is_bold,
+        'text_wrap': True,
+        'align': 'center',
+        'valign': 'top',
+        'border': 1
+    })
+    header_format = header_format_creator(True)
+    subheader_format = header_format_creator(False)
+
+    for col_num, value in enumerate(dfo.columns.values):
+        curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
+        worksheet.write(0, col_num, value, curr_format)
+
+    # Add autofilter
+    worksheet.autofilter(0, 0, len(dfo), len(dfo.columns)-1)
+
+    # Change format of value columns
+    largenum_format = workbook.add_format({'num_format': '0'})
+    percentage_format = workbook.add_format({'num_format': '0%'})
+    percentage_change_format = workbook.add_format({'num_format': '+0%;-0%;0%'})
+    for i, column in enumerate(dfo.columns):
+        unit = value_columns.get(column, {}).get('unit', None)
+        if unit == '%':
+            worksheet.set_column(i, i, None, percentage_format)
+        if unit == '% change':
+            worksheet.set_column(i, i, None, percentage_change_format)
+        if dfo[column].dtype == float and dfo[column].median() > 10:
+            worksheet.set_column(i, i, None, largenum_format)
     
     writer.sheets['description'].set_column(0, 1, 35, None)
 
@@ -449,7 +444,7 @@ if check_model_regions_in_db:
 
 
 # Define manually here for now (implement later to read in from yaml)
-iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRE', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
+iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
 iso_eu27.sort()
 
 iso_eu28 = iso_eu27 + ['GBR']
@@ -462,7 +457,7 @@ allowed_common_regions = {'EU27': iso_eu27,
 iso_reg_dict_all = {}
 
 ct = 0
-for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
+for model, attr in model_yaml_map.iloc[14:16].iterrows(): #.iloc[:4]
     print(f'################## STARTING {model} #############################')
 
     # attr.vetted_regions - this is the selected region(s) for the model
@@ -606,7 +601,8 @@ for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
     aggregation_variables = config['aggregation_variables']
     bounds_variables = config['bounds_variables']
     
-    
+    if single_model:
+        df = df.filter(model=['MESSAGE*', 'Reference'])  # Choose one arbitrary model, and the Reference data
     
     #%% Create additional variables
     
@@ -740,7 +736,7 @@ for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
                                    key_future=agg_info['key_future'],
                                    historical_columns=historical_columns,
                                    future_columns=historical_columns,
-                                   ver=ver, 
+                                   ver=region_level, 
            )
     else:
         print('Skipping aggregations')
@@ -787,7 +783,8 @@ for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
                               agg_info['key_future'], 
                               historical_columns, 
                               future_columns, 
-                              ver=ver
+                              value_columns=value_columns,
+                              ver=region_level
         )
     
     
@@ -806,7 +803,7 @@ for model, attr in model_yaml_map.iloc[15:16].iterrows(): #.iloc[:4]
                         historical_columns, 
                         future_columns,     
                         info['bound_threshold'], 
-                        ver=ver,
+                        ver=region_level,
        )
     
     ###################################
@@ -943,7 +940,7 @@ with open(f'{output_folder}\\model_reg_iso_output.yaml', 'w') as file:
     # )
     
     # ##%% Save to html
-    # fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_'+ver+'.html', include_plotlyjs='cdn')
+    # fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_'+region_level+'.html', include_plotlyjs='cdn')
     # print(time.time()-start)
     # print(f'############################# FINISHED {model} #############################')
     # df.to_excel(f'{output_folder}df_out.xlsx')
