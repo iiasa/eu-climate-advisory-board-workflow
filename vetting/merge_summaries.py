@@ -6,9 +6,11 @@ Created on Wed Feb 22 09:07:51 2023
 """
 
 # SUMMARY -= MERGE GLOBAL AND REGIONAL
-
+import os
 import pandas as pd
 import pyam
+os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+from vetting_functions import *
 
 user = 'byers'
 
@@ -136,21 +138,58 @@ ocols = [col for col in dfs.columns if 'OVERALL' in col]
 if sum(dfs[ocols].isna().sum())>0:
     print('Warning - some rows not classified')
 
+# =============================================================================
+# Wrtite out EXCEL
+# =============================================================================
 
 wbstr = f'{output_folder}vetting_flags_global_regional_combined.xlsx'
 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
 
+
+# Main summary sheet
 cols = [x for x in dfs.columns if x not in ocols]
 colorder = ms+ocols+cols[2:]
-
 dfs = dfs[colorder]
+dfs.to_excel(writer, sheet_name='Vetting_flags', index=False, header=True)
 
-dfs.to_excel(writer, sheet_name='summary', index=False, header=True)
+
+# FORMATTING
+workbook  = writer.book
 
  # vetting_flags page
- worksheet = writer.sheets['summary']
- worksheet.set_column(0, 0, 13, None)
- worksheet.set_column(1, 1, 25, None)
- worksheet.set_column(2, len(dfo.columns)-1, 20, None)
- worksheet.freeze_panes(1, 3)
+worksheet = writer.sheets['Vetting_flags']
+header_format = workbook.add_format(
+    {'bold': True, 
+     'text_wrap': True, 
+     'valign': 'top'})
+    
+worksheet.set_column(0, 0, 15, None)
+worksheet.set_column(1, 1, 25, None)
+worksheet.set_column(2, len(dfs.columns)-1, 20, None)
+worksheet.freeze_panes(1, 3)
+worksheet.autofilter(0, 0, len(dfs), len(dfs.columns)-1)
 
+
+
+# Pivot table sheets
+dfsp = simple_pivot_cat_count(dfs[['OVERALL_Assessment','OVERALL_binary']],
+                                columns='OVERALL_Assessment', 
+                                index='OVERALL_binary', )
+write_simple_pivot(writer, dfsp, sheet_name='Pivot_Assessment')
+
+
+dfsp = simple_pivot_cat_count(dfs[['OVERALL_code','OVERALL_binary']],
+                                columns='OVERALL_code', 
+                                index='OVERALL_binary', )
+write_simple_pivot(writer, dfsp.T, sheet_name='Pivot_code')
+
+# dddd
+dfsp = simple_pivot_cat_count(dfs[['vetted_type','OVERALL_binary']],
+                                columns='vetted_type', 
+                                index='OVERALL_binary', )
+write_simple_pivot(writer, dfsp, sheet_name='Pivot_vetted_type')
+    
+
+writer.close()
+
+os.startfile(wbstr)

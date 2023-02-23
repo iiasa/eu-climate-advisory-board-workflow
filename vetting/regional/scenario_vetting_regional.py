@@ -22,7 +22,7 @@ import plotly.express as px
 
 log = True
 modelbymodel = True    # Output single files for each model into Teams folder
-single_model = True   # Testing mode- not used
+single_model = False   # Testing mode- not used
 drop_na_yamls = True   #Process only models for which there is a yaml
 print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
@@ -331,6 +331,8 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     worksheet.set_column(1, 1, 25, None)
     worksheet.set_column(2, len(dfo.columns)-1, 20, None)
     worksheet.freeze_panes(1, 3)
+    worksheet.autofilter(0, 0, len(dfo), len(dfo.columns)-1)
+
     
     # Details page
     # if model!= 'all':
@@ -457,7 +459,7 @@ allowed_common_regions = {'EU27': iso_eu27,
 iso_reg_dict_all = {}
 
 ct = 0
-for model, attr in model_yaml_map.iloc[14:16].iterrows(): #.iloc[:4]
+for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     print(f'################## STARTING {model} #############################')
 
     # attr.vetted_regions - this is the selected region(s) for the model

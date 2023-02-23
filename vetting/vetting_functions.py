@@ -260,3 +260,44 @@ def strip_version(model):
     if len(split) > 1:
         return ' '.join(split[:-1])
     return model    
+
+
+
+# =============================================================================
+# Merge sheet - pivot tables
+# =============================================================================
+
+def simple_pivot_cat_count(df, columns, index ):
+    
+    dfsp = df.pivot_table(
+        columns=columns,
+        index=index, 
+        aggfunc=len,
+        fill_value=0)
+    dfsp['Sum'] = dfsp.sum(axis=1)
+
+    return dfsp
+
+def write_simple_pivot(writer, dfsp, sheet_name, header_format=None):
+        
+        dfsp.to_excel(
+                writer,
+                sheet_name=sheet_name,
+                index=True, 
+                header=True)
+    
+        workbook  = writer.book
+        worksheet = writer.sheets[sheet_name]
+
+        if header_format is None:
+            header_format = workbook.add_format(
+            {'bold': True, 
+             'text_wrap': True, 
+             'valign': 'top',
+             'align': 'center'})
+        for col_num, value in enumerate(dfsp.columns.values):
+            worksheet.write(0, col_num+1, value, header_format)
+            
+        worksheet.set_column(0, len(dfsp.columns), 15, None)
+
+    
