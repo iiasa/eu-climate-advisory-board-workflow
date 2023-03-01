@@ -1,6 +1,26 @@
 # From IEA dataset
 reference_variables:
 
+  EDGAR AR6:
+    ref_year: 2019
+    compare_year: 2019
+    model: Reference
+    scenario: EDGAR AR6
+    key_historical: True
+    key_future: False
+    missing: Fail_missing
+    variables_threshold:
+      Emissions|CO2|Energy and Industrial Processes: 0.2
+      Emissions|CO2|Energy: 0.2
+      Emissions|CH4: 0.4
+      # Emissions|N2O: 0.4
+    missing_flags:
+      Emissions|CO2|Energy and Industrial Processes: Fail_missing
+      Emissions|CO2|Energy: Fail_missing
+      Emissions|CH4: Pass_missing
+      # Emissions|N2O: Pass   
+
+
   IEA Primary Energy:
     ref_year: 2019
     compare_year: 2019
@@ -11,6 +31,9 @@ reference_variables:
     variables_threshold:
       Primary Energy: 0.2
       Primary Energy|Nuclear: 0.4
+    missing_flags:
+      Primary Energy: Fail_missing
+      Primary Energy|Nuclear: Pass_missing
 
   IEA Electricity:
     ref_year: 2019
@@ -23,26 +46,31 @@ reference_variables:
       Secondary Energy|Electricity: 0.3
       Secondary Energy|Electricity|Nuclear: 0.3
       Secondary Energy|Electricity|Solar-Wind: 0.5
+    missing_flags:
+      Secondary Energy|Electricity: Fail_missing
+      Secondary Energy|Electricity|Nuclear: Pass_missing
+      Secondary Energy|Electricity|Solar-Wind: Pass_missing 
       
-  EDGAR AR6 :
-    ref_year: 2019
-    compare_year: 2019
-    model: Reference
-    scenario: EDGAR AR6
-    key_historical: True
-    key_future: False
-    variables_threshold:
-      # Emissions|CO2: 0.4
-      Emissions|CO2|Energy and Industrial Processes: 0.2
-      Emissions|CH4: 0.4
-      # Emissions|N2O: 0.4   
+  # Solar-Wind2020:
+    # ref_year: 2020
+    # compare_year: 2020
+    # model: Reference
+    # scenario: Solar-Wind-composite
+    # key_historical: True
+    # key_future: False
+    # variables_threshold:
+      # Secondary Energy|Electricity|Solar-Wind: 0.5
+    # missing_flags:
+        # Secondary Energy|Electricity|Solar-Wind: Pass_missing
+
+
 
 aggregation_variables:
-  CO2:
-    variable: Emissions|CO2
-    threshold: 0.2
-    key_historical: False
-    key_future: False
+  # CO2:
+    # variable: Emissions|CO2
+    # threshold: 0.2
+    # key_historical: False
+    # key_future: False
   CCS:
     variable: Carbon Sequestration|CCS
     threshold: 0.2
@@ -65,6 +93,7 @@ bounds_variables:
     year: 2010
     key_historical: False # Because energy used below
     key_future: False
+    missing_flag: Fail_missing
     bound_threshold: 1
     description:  Permitted range of factor x change in Emissions CO2 EIP
     
@@ -75,9 +104,34 @@ bounds_variables:
     year: 2010
     key_historical: True
     key_future: False
+    missing_flag: Fail_missing    
     bound_threshold: 1
     description:  Permitted range of  factor x change in Emissions CO2 Energy
 
+
+
+# Key near-term feasibility checks
+   
+  # No net negative EIP before 2030:
+    # variable: Emissions|CO2|Energy and Industrial Processes
+    # lo: 0
+    # up: 1000
+    # year: 2010-2030
+    # key_historical: False
+    # key_future: True
+    # missing_flag: Pass_missing    
+    # bound_threshold: 1
+    
+  # No net negative Energy before 2030:
+    # variable: Emissions|CO2|Energy
+    # lo: 0
+    # up: 1000
+    # year: 2010-2030
+    # key_historical: False
+    # key_future: True
+    # missing_flag: Pass_missing    
+    # bound_threshold: 1
+    
   CCS from Energy 2020:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
     lo: 0
@@ -85,38 +139,11 @@ bounds_variables:
     year: 2020
     key_historical: True
     key_future: False
+    missing_flag: Pass_missing    
     bound_threshold: 1 
     description:  Permitted range of CO2 capture from Energy sector
 
-# Key near-term feasibility checks
-  Secondary Energy Solar-Wind factor x change '20-'30:
-    variable: Secondary Energy|Electricity|Solar-Wind|2020-2030 change
-    lo: 0
-    up: 20
-    year: 2020
-    key_historical: False
-    key_future: True
-    bound_threshold: 1
-    description:  Permitted range of  factor x change in Wind+Solar electricity
-   
-  No net negative before 2030:
-    variable: Emissions|CO2|Energy and Industrial Processes
-    lo: 0
-    up: 1000
-    year: 2010-2030
-    key_historical: False
-    key_future: True
-    bound_threshold: 1
-    
-  No net negative Energy before 2030:
-    variable: Emissions|CO2|Energy
-    lo: 0
-    up: 1000
-    year: 2010-2030
-    key_historical: False
-    key_future: True
-    bound_threshold: 1
-    
+
   CCS from Energy 2030:
     variable: Carbon Sequestration|CCS|Biomass and Fossil
     lo: 0
@@ -124,15 +151,25 @@ bounds_variables:
     year: 2030
     key_historical: False
     key_future: True
+    missing_flag: Pass_missing    
     bound_threshold: 1
     
   Electricity from Nuclear in 2030:
     variable: Secondary Energy|Electricity|Nuclear
     lo: 0
-    up: 1.5
+    up: 5
     year: 2030
     key_historical: False
     key_future: True
+    missing_flag: Pass_missing    
     bound_threshold: 1
   
-
+  # Secondary Energy Solar-Wind factor x change '20-'30:
+    # variable: Secondary Energy|Electricity|Solar-Wind|2020-2030 change
+    # lo: 0
+    # up: 20
+    # year: 2020
+    # key_historical: False
+    # key_future: True
+    # bound_threshold: 1
+    # description:  Permitted range of  factor x change in Wind+Solar electricity

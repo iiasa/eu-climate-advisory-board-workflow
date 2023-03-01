@@ -47,11 +47,12 @@ year_aggregate = 2020
 flag_fail = 'Fail'
 flag_pass = 'Pass'
 flag_pass_missing = 'Pass_missing'
+flag_fail_missing = 'Fail_missing'
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
 instance = 'eu-climate-submission'
 
-input_data_ref = f'{region_level}\\input_data\\input_reference_all.csv'
+input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 
 "C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_edgarCO2CH4.csv",
@@ -200,8 +201,9 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     
     
     # Count # of missings in each row
-    df.meta['missing_count'] = df.meta.apply(pd.value_counts, axis=1)['missing']
-
+    # df.meta['missing_count'] = df.meta.apply(pd.value_counts, axis=1)['missing']
+    df.meta[flag_pass_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_pass_missing]
+    df.meta[flag_fail_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_fail_missing]
     
     #% OVERALL - choose that only HISTORICAL == PASS
     col = f'vetting_{region_level}'
@@ -235,24 +237,24 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     # =============================================================================
     #     # Write vetting flags sheet
     # =============================================================================
-    cols = ['model', 'model_stripped', 'scenario'] \
-            + [ col,'vetted_type', meta_name_historical, meta_name_future, 'missing_count'] \
+    vetting_cols = ['model', 'model_stripped', 'scenario'] \
+            + [ col,'vetted_type', meta_name_historical, meta_name_future, flag_pass_missing, flag_fail_missing] \
             + historical_columns \
             + future_columns 
             
-    dfo[cols].to_excel(writer, sheet_name='vetting_flags', index=False, header=True)
+    dfo[vetting_cols].to_excel(writer, sheet_name='vetting_flags', index=False, header=True)
 
     # =============================================================================
     #     # Write details sheet
     # =============================================================================
     cols1 = dfo.columns.tolist()
-    cols = cols[:8]  + cols1[3:-5] #bring the key vetted columns to front + 
-    dfo = dfo[cols]
+    detail_cols = vetting_cols[:8]  + cols1[3:-5] #bring the key vetted columns to front + 
+    # dfo = dfo[detail_cols]
     
     
     # Don't include details sheet in all, because too many different columns
     # if model!= 'all':
-    dfo[cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
+    dfo[detail_cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
     
     
     md = pd.DataFrame(index=meta_docs.keys(), data=meta_docs.values(), columns=['Description'])
@@ -354,7 +356,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     header_format = header_format_creator(True)
     subheader_format = header_format_creator(False)
 
-    for col_num, value in enumerate(dfo.columns.values):
+    for col_num, value in enumerate(detail_cols):
         curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
         worksheet.write(0, col_num, value, curr_format)
 
@@ -514,6 +516,8 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     ###############
     # Load reference ISO data (e.g. EDGAR, IEA)
     ref_iso_data = pyam.IamDataFrame(input_data_ref)
+    rs = [x for l in iso_reg_dict.values() for x in l]
+    ref_iso_data.filter(region=rs, inplace=True)
     
     if ct==0:
         dfall = ref_iso_data.filter(model='xxx') # create empty IamDF for saving all data
@@ -647,22 +651,31 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     # =============================================================================
     secondary_energy_electricity = to_series(df.filter(variable='Secondary Energy|Electricity'))
     # Aggregate to new wind-solar variable
-    secondary_wind_solar = to_series(
-        df
-        .filter(variable=['Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar'])
-        .aggregate(variable='Secondary Energy|Electricity')
-    )
+    # secondary_wind_solar = to_series(
+    #     df
+    #     .filter(variable=['Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar'])
+    #     .aggregate(variable='Secondary Energy|Electricity')
+    # )
+    swv = 'Secondary Energy|Electricity|Solar-Wind'
+    secondary_wind_solar = df.add('Secondary Energy|Electricity|Wind',
+                                  'Secondary Energy|Electricity|Solar',
+                                  swv)
+    
     df.append(
-        secondary_wind_solar,
-        variable='Secondary Energy|Electricity|Solar-Wind', unit='EJ/yr',
+        secondary_wind_solar.filter(model='Ref*', keep=False),
         inplace=True
     )
+    
     # Calculate Share of wind-solar of total electricity
-    df.append(
-        secondary_wind_solar / secondary_energy_electricity,
-        variable='Secondary Energy|Electricity|Solar-Wind share', unit='-',
-        inplace=True
-    )
+    swvs = 'Secondary Energy|Electricity|Solar-Wind share'
+    df.divide(swv, 'Secondary Energy|Electricity', swvs,
+              ignore_units='-', append=True)
+    
+    # df.append(
+    #     secondary_wind_solar / secondary_energy_electricity,
+    #     variable='Secondary Energy|Electricity|Solar-Wind share', unit='-',
+    #     inplace=True
+    # )
     
     # =============================================================================
     # % increases
@@ -777,7 +790,8 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         )
         filter_with_reference(df, 
                               df_ref, 
-                              agg_info['variables_threshold'], 
+                              agg_info['variables_threshold'],
+                              agg_info['missing_flags'],
                               agg_info['compare_year'], 
                               agg_name, 
                               meta_docs,
@@ -786,7 +800,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
                               historical_columns, 
                               future_columns, 
                               value_columns=value_columns,
-                              ver=region_level
+                              ver=region_level,
         )
     
     
@@ -796,6 +810,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     for name, info in bounds_variables.items():
         filter_validate(df, 
                         info['variable'], 
+                        info['missing_flag'],
                         info['year'], 
                         info['lo'], 
                         info['up'], 

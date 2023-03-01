@@ -35,12 +35,13 @@ colr = 'vetting_regional'
 
 flag_pass = 'PASS'
 flag_pass_missing = 'Pass_missing'
+flag_fail_missing = 'Fail_missing'
 flag_fail = 'FAIL'
 
 colsg = ms+[colg, 
-       'Key_historical', 'Key_future', 'missing_count',]
+       'Key_historical', 'Key_future', flag_pass_missing, flag_fail_missing]
 colsr = ms+[colr, 
-       'Key_historical', 'Key_future', 'missing_count',]    
+       'Key_historical', 'Key_future', flag_pass_missing, flag_fail_missing]
     
 
 dfs = pd.merge(dfg[colsg], dfr[colsr+['vetted_type',]], 
@@ -84,16 +85,16 @@ dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass), col1] = 'Regional only'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass), col2] = 3
 
 # 4. Fail Global, regional with warnings
-dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col] = 'WARNING'
-dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col1] = 'Regional only'
+dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col] = flag_fail
+dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col1] = 'Global fail, Regional Good'
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col2] = 4
 
-dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col] = 'WARNING'
-dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col1] = 'Regional only'
+dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col] = flag_fail
+dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col1] = 'Global fail, Regional OK'
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col2] = 4
 
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col] = 'WARNING'
-dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col1] = 'Regional only'
+dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col1] = 'Regional only OK'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col2] = 4
 
 # Regional Fail
@@ -183,7 +184,6 @@ dfsp = simple_pivot_cat_count(dfs[['OVERALL_code','OVERALL_binary']],
                                 index='OVERALL_binary', )
 write_simple_pivot(writer, dfsp.T, sheet_name='Pivot_code')
 
-# dddd
 dfsp = simple_pivot_cat_count(dfs[['vetted_type','OVERALL_binary']],
                                 columns='vetted_type', 
                                 index='OVERALL_binary', )

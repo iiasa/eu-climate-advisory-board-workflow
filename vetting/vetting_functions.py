@@ -28,6 +28,7 @@ print_log = print if log else lambda x: None
 ###################################
 
 def create_reference_df(df, ref_model, ref_scenario, check_variables, ref_year):
+    check_variables = list(check_variables)
     return (
         df
         .filter(model=ref_model, scenario=ref_scenario, variable=check_variables, year=ref_year)
@@ -52,11 +53,11 @@ def util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical,
     if key_future==True:
         future_columns.append(meta_name)
 
-def util_filter_check_exists(df, meta_name, variable, year=None):
+def util_filter_check_exists(df, meta_name, variable, year=None, label='missing'):
     var_doesnt_exist = pyam.require_variable(df, variable=variable, year=year, exclude_on_fail=True)
     if var_doesnt_exist is not None:
         missing_indices = var_doesnt_exist[['model', 'scenario']]
-        df.set_meta('missing', meta_name, missing_indices)
+        df.set_meta(label, meta_name, missing_indices)
 
 def util_filter_set_failed(df, meta_name, failed_df, label='Fail'):
     print_log = print if log else lambda x: None
@@ -118,7 +119,10 @@ def util_filter_save_value_column(df, name, variable_or_values, value_columns, y
 #  - Filter check aggregate: check if components of variable sum up to main component
 #  - Filter validate: check if variable is within bounds
 
-def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], value_columns={}, flag_fail='Fail', flag_pass='Pass', flag_pass_missing='Pass_missing', ver='normal'):
+def filter_with_reference(df, ref_df, thresholds, missing_flags, year, meta_name, meta_docs, key_historical=True, key_future=False, historical_columns=[], future_columns=[], value_columns={}, flag_fail='Fail', flag_pass='Pass',  ver='normal'):
+    flag_pass_missing = flag_pass+'_missing'
+    flag_fail_missing = flag_fail+'_missing'
+
     meta_name_agg = f'{meta_name} summary'
     trs = '' if ver=='teams' else f': {thresholds}'
     util_filter_init(df, meta_name_agg, f'Checks that scenario is within reasonable range'+trs,
@@ -135,7 +139,7 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
         df.set_meta(flag_pass, curr_meta_column)
 
         # Step 1: Identify scenarios where this variable/year is missing
-        util_filter_check_exists(df, curr_meta_column, curr_variable, year)
+        util_filter_check_exists(df, curr_meta_column, curr_variable, year, label=missing_flags[curr_variable])
 
         # Step 2: Identify scenarios where the value is out of range
         lo = val * (1-thresholds[curr_variable])
@@ -159,9 +163,15 @@ def filter_with_reference(df, ref_df, thresholds, year, meta_name, meta_docs, ke
     # df.set_meta(flag_fail, name=meta_name_agg, index=df.filter(exclude=True))
     # df.set_meta(flag_pass, name=meta_name_agg, index=df.filter(exclude=False))
     df.set_meta(flag_fail, name=meta_name_agg)
+
     df.meta.loc[
-        df.meta[curr_meta_columns].isin([flag_pass, 'missing']).all(axis=1),
+        df.meta[curr_meta_columns].isin([flag_fail, flag_fail_missing]).all(axis=1),
+        meta_name_agg] = flag_fail_missing
+
+    df.meta.loc[
+        df.meta[curr_meta_columns].isin([flag_pass, flag_pass_missing]).all(axis=1),
         meta_name_agg] = flag_pass_missing
+
     
     df.meta.loc[
         df.meta[curr_meta_columns].isin([flag_pass,]).all(axis=1),
@@ -185,7 +195,7 @@ def filter_check_aggregate(df, variable, threshold, meta_name, meta_docs, key_hi
     util_filter_set_failed(df, meta_name_agg, failed)
     df.reset_exclude()
 
-def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, key_future=False,
+def filter_validate(df, variable, missing_flag, year, lo, up, meta_name, key_historical=True, key_future=False,
                     historical_columns=[], future_columns=[], bound_threshold=1, ver='normal'):
 
     if bound_threshold != 1:
@@ -203,7 +213,8 @@ def filter_validate(df, variable, year, lo, up, meta_name, key_historical=True, 
     )
     meta_doc = f'Checks that the values of {trs} '
     util_filter_init(df, meta_name, meta_doc, meta_docs, key_historical, key_future, historical_columns, future_columns)
-    util_filter_check_exists(df, meta_name, variable)
+    util_filter_check_exists(df, meta_name, variable, label=missing_flag)
+    
 
     if type(year) == range:
         if lo is not None:
