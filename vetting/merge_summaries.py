@@ -14,7 +14,8 @@ from vetting_functions import *
 
 user = 'byers'
 
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\'
+main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
+output_folder = f'{main_folder}vetting\\'
 
 output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data\\'
 output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data\\'
@@ -138,7 +139,16 @@ ocols = [col for col in dfs.columns if 'OVERALL' in col]
 
 if sum(dfs[ocols].isna().sum())>0:
     print('Warning - some rows not classified')
+    
+    
+    
+#%% Add climate metadata
+cmd = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
+c_cols = ['Category', 'Category_name']
+keep_cols = ['model','scenario']+c_cols
 
+dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
+# Add selected climate meta to main summary sheet
 # =============================================================================
 # Wrtite out EXCEL
 # =============================================================================
@@ -149,7 +159,7 @@ writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
 
 # Main summary sheet
 cols = [x for x in dfs.columns if x not in ocols]
-colorder = ms+ocols+cols[2:]
+colorder = ms+ocols+c_cols+cols[2:-2]
 dfs = dfs[colorder]
 dfs.to_excel(writer, sheet_name='Vetting_flags', index=False, header=True)
 
@@ -190,6 +200,13 @@ dfsp = simple_pivot_cat_count(dfs[['vetted_type','OVERALL_binary']],
 write_simple_pivot(writer, dfsp, sheet_name='Pivot_vetted_type')
     
 
+# Write out climate metadata
+cmd.to_excel(writer, sheet_name='meta_climate', index=False)
+
+
+
 writer.close()
 
 os.startfile(wbstr)
+
+#%% Produce 
