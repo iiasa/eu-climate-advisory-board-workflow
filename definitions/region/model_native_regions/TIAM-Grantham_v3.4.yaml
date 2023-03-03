@@ -1,20 +1,42 @@
 - TIAM-Grantham v3.4:
-  - TIAM-Grantham v3.4|Africa
-  - TIAM-Grantham v3.4|Australia and New Zealand
-  - TIAM-Grantham v3.4|Canada
-  - TIAM-Grantham v3.4|China
-  - TIAM-Grantham v3.4|Central and South America
+  - TIAM-Grantham v3.4|Africa:
+      countries: AGO, BDI, BEN, BFA, BRN, BWA, CAF, CIV, CMR, COD, COG, CPV, DJI,
+        DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO, MAR,
+        MDG, MLI, MOZ, MRT, MUS, MWI, NER, NGA, REU, RWA, SDN, SEN, SLE, SOM, STP,
+        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+  - TIAM-Grantham v3.4|Australia and New Zealand:
+      countries: AUS, NZL
+  - TIAM-Grantham v3.4|Canada:
+      countries: CAN
+  - TIAM-Grantham v3.4|China:
+      countries: CHN, HKG, TWN
+  - TIAM-Grantham v3.4|Central and South America:
+      countries: ANT, ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
+        CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MTQ,
+        NIC, PAN, PER, PRI, PRY, SLV, SUR, TTO, URY, VCT, VEN
   - TIAM-Grantham v3.4|Eastern Europe:
-      countries: AL,BG,BA,VZ,HR,HU,MK,ME,PL,RO,RS,SK,SI
+      countries: ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN
   - TIAM-Grantham v3.4|Former Soviet Union:
-      countries: AM,AZ,BY,EE,GE,KZ,KG,LT,LV,MD,RU,TJ,TM,UA,UZ
-  - TIAM-Grantham v3.4|Global (mostly used for bunker fuels)
-  - TIAM-Grantham v3.4|India
-  - TIAM-Grantham v3.4|Japan
-  - TIAM-Grantham v3.4|Middle East
-  - TIAM-Grantham v3.4|Mexico
-  - TIAM-Grantham v3.4|Other Developing Asia
-  - TIAM-Grantham v3.4|South Korea
-  - TIAM-Grantham v3.4|United States of America
+      countries: ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
+        UKR, UZB
+  - TIAM-Grantham v3.4|Global (mostly used for bunker fuels):
+      countries: DUMMY
+  - TIAM-Grantham v3.4|India:
+      countries: IND
+  - TIAM-Grantham v3.4|Japan:
+      countries: JPN
+  - TIAM-Grantham v3.4|Middle East:
+      countries: ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
+        TUR, YEM
+  - TIAM-Grantham v3.4|Mexico:
+      countries: MEX
+  - TIAM-Grantham v3.4|Other Developing Asia:
+      countries: AFG, BGD, BTN, FJI, IDN, KIR, LAO, LKA, MDV, MMR, MYS, NPL, PAK,
+        PHL, PNG, PRK, PYF, SGP, SLB, THA, VNM, VUT, WSM
+  - TIAM-Grantham v3.4|South Korea:
+      countries: KOR
+  - TIAM-Grantham v3.4|United States of America:
+      countries: USA
   - TIAM-Grantham v3.4|Western Europe:
-      countries: AD,AT,BE,CH,DE,DK,ES,FI,FR,UK,GI,GR,GL,IE,IS,IT,LI,LU,MC,MT,NL,NO,PT,SM,SE,VA
+      countries: AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, GBR, GIB, GRC, GRL,
+        IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE, VAT

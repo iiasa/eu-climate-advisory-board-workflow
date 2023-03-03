@@ -1,28 +1,62 @@
 - REMIND 3.0:
-  - REMIND 3.0|Canada, Australia, New Zealand
-  - REMIND 3.0|China and Taiwan
-  - REMIND 3.0|India
-  - REMIND 3.0|Japan
-  - REMIND 3.0|Other Asia
-  - REMIND 3.0|Latin America and the Caribbean
-  - REMIND 3.0|Middle East and North Africa
-  - REMIND 3.0|Russia and Reforming Economies
-  - REMIND 3.0|Sub-Saharan Africa
-  - REMIND 3.0|United States of America
-# 12-region version of REMIND
-  - REMIND 3.0|EU 28
-  - REMIND 3.0|Non-EU28 Europe
-# 21-region version of REMIND
-  - REMIND 3.0|Germany
-  - REMIND 3.0|France
-  - REMIND 3.0|United Kingdom and Ireland
-  - REMIND 3.0|EU Center-East Europe
-  - REMIND 3.0|EU Center-South Europe
-  - REMIND 3.0|EU North-Center Europe
-  - REMIND 3.0|EU South-Center Europe
-  - REMIND 3.0|EU South-West Europe
-  - REMIND 3.0|EU North-West Europe
-  - REMIND 3.0|Non-EU Northern Europe
-  - REMIND 3.0|Non-EU Southern Europe
-# exogenously aggregated regions
-  - REMIND 3.0|EU 27
+  - REMIND 3.0|Canada, Australia, New Zealand:
+      countries: AUS, CAN, HMD, NZL, SPM
+  - REMIND 3.0|China and Taiwan:
+      countries: CHN, HKG, MAC, TWN
+  - REMIND 3.0|India:
+      countries: IND
+  - REMIND 3.0|Japan:
+      countries: JPN
+  - REMIND 3.0|Other Asia:
+      countries: AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, IDN,
+        IOT, KHM, KIR, KOR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK, NIU,
+        NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, TJK, TKL, TLS, TON,
+        TUV, UMI, VNM, VUT, WLF, WSM
+  - REMIND 3.0|Latin America and the Caribbean:
+      countries: ABW, AIA, ANT, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRA, BRB,
+        BVT, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY,
+        HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS,
+        SLV, SUR, TCD, TTO, URY, VCT, VEN, VGB, VIR
+  - REMIND 3.0|Middle East and North Africa:
+      countries: ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
+        OMN, PSE, QAT, SAU, SDN, TCA, TUN, YEM
+  - REMIND 3.0|Russia and Reforming Economies:
+      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB
+  - REMIND 3.0|Sub-Saharan Africa:
+      countries: AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
+        ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI, MOZ, MRT,
+        MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SEN, SHN, SLE, SOM, SSD, STP, SWZ,
+        SYC, SYR, TGO, THA, TZA, UGA, ZAF, ZMB, ZWE
+  - REMIND 3.0|United States of America:
+      countries: USA
+  - REMIND 3.0|EU 28:
+      countries: ALA, AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, FRO,
+        GGY, GIB, GRC, HRV, HUN, IMN, IRL, ITA, JEY, LTU, LUX, LVA, MLT, NLD, POL,
+        PRT, ROU, SVK, SVN, SWE
+  - REMIND 3.0|Non-EU28 Europe:
+      countries: ALB, AND, BIH, CHE, GRL, ISL, LIE, MCO, MKD, MNE, NOR, SJM, SMR,
+        SRB, TUR, VAT
+  - REMIND 3.0|Germany:
+      countries: ''
+  - REMIND 3.0|France:
+      countries: ''
+  - REMIND 3.0|United Kingdom and Ireland:
+      countries: GBR
+  - REMIND 3.0|EU Center-East Europe:
+      countries: ''
+  - REMIND 3.0|EU Center-South Europe:
+      countries: ''
+  - REMIND 3.0|EU North-Center Europe:
+      countries: ''
+  - REMIND 3.0|EU South-Center Europe:
+      countries: ''
+  - REMIND 3.0|EU South-West Europe:
+      countries: ''
+  - REMIND 3.0|EU North-West Europe:
+      countries: ''
+  - REMIND 3.0|Non-EU Northern Europe:
+      countries: ''
+  - REMIND 3.0|Non-EU Southern Europe:
+      countries: ''
+  - REMIND 3.0|EU 27:
+      countries: ''
