@@ -254,7 +254,7 @@ def change_year(series, year):
 def calc_increase_percentage(df, variable, year1, year2, suffix='|{}-{} change'):
     variable_year1 = to_series(df.filter(variable=variable, year=year1))
     variable_year2 = to_series(df.filter(variable=variable, year=year2))
-    change_year1_year2 = (
+    change_year1_year2 = 100*(
         change_year(variable_year2, year1) - variable_year1
     ) / variable_year1
     df.append(
@@ -311,4 +311,34 @@ def write_simple_pivot(writer, dfsp, sheet_name, header_format=None):
             
         worksheet.set_column(0, len(dfsp.columns), 15, None)
 
-    
+
+#%% Summary iconics table
+
+def year_of_net_zero(data, years, threshold):
+    prev_val = 1 #0
+    prev_yr = 1 #np.nan
+
+    for yr, val in zip(years, data):
+        if np.isnan(val):
+            continue
+        
+        if val < threshold:
+            x = (val - prev_val) / (yr - prev_yr) # absolute change per year
+            return prev_yr + int((threshold - prev_val) / x) + 1 # add one because int() rounds down
+        
+        prev_val = val
+        prev_yr = yr
+    return np.inf
+
+
+def get_from_meta_column(df, x, col):
+    val = df.meta.loc[x.name[0:2], col]
+    return val if val < np.inf else max(x.index)
+
+
+def filter_and_convert(df, variable, unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001):
+    return (df
+            .filter(variable=variable)
+            .convert_unit(unitin, unitout, factor)
+            .timeseries()
+           )

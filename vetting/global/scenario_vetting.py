@@ -310,10 +310,17 @@ else:
 # =============================================================================
 
 # Emissions|CO2 increase
-calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
+# calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
 # calc_increase_percentage('Emissions|CO2', 2015, 2020)
-calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
-calc_increase_percentage(df, 'Emissions|CO2|Energy', 2010, 2020)
+# calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
+# calc_increase_percentage(df, 'Emissions|CO2|Energy', 2010, 2020)
+
+for v in ['Emissions|CO2|Energy and Industrial Processes',
+          'Emissions|CO2|Energy']:
+   # if len(df.filter(variable=v, year=2010))!=0:
+       # calc_increase_percentage(df, v, 2010, 2020)
+   # else:
+       calc_increase_percentage(df, v, 2015, 2020)
 
 # Calculate CCS from energy (not industrial):
 try:
@@ -575,11 +582,11 @@ for model in models:
 
         dfop = dfo.select_dtypes(object)
         dfop = dfop.loc[dfop.model!='Reference',:]
-        cols = historical_columns + future_columns + dfop.columns[-4:-1].tolist() #+ dfop.columns[3:5].tolist()
         dfop.loc[dfop[col]=='PASS', col] = 'Pass'
         dfop.loc[dfop[col]=='FAIL', col] = 'Fail'
-        dfop.rename(index={col: 'OVERALL'}, inplace=True)
-
+        dfop.rename(columns={col: 'OVERALL'}, inplace=True)
+        
+        cols = historical_columns + future_columns + dfop.columns[-4:-1].tolist() #+ dfop.columns[3:5].tolist()
 
         dfop_simple = dfop[cols].apply(pd.Series.value_counts).fillna(0).sort_index()
         dfop_simple = dfop_simple.T#[colorder]
@@ -597,12 +604,12 @@ for model in models:
         try:
             cols.insert(0, cols.pop(cols.index('Fail')))
             cols.insert(1, cols.pop(cols.index('Pass')))
-
         except(ValueError):
             pass
 
 
         dfop_simple = dfop_simple.reindex(columns= cols)
+        dfop_simple['sum_check'] = dfop_simple.sum(axis=1)
         dfop_simple.to_excel(writer, sheet_name='summary_pivot')
 
         # Add data

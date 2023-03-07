@@ -3,8 +3,9 @@ AIM/CGE 2.0:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: aim_2.1
@@ -13,8 +14,9 @@ AIM/CGE 2.1:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: EU?
   vetted_regions: .nan
   vetted_type: None
   yaml: aim_2.1
@@ -25,6 +27,7 @@ AIM/CGE 2.2:
   include: true
   natives: AIM/CGE 2.2|EU
   notes: .nan
+  tofix: .nan
   vetted_regions: AIM/CGE 2.2|EU
   vetted_type: native
   yaml: aim_2.2
@@ -35,6 +38,7 @@ ALADIN 1.0:
   include: false
   natives: .nan
   notes: no data?
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: None
@@ -44,7 +48,8 @@ COFFEE 1.1:
   eu_isos: false
   include: true
   natives: COFFEE 1.1|Western Europe, COFFEE 1.1|Eastern Europe
-  notes: .nan
+  notes: Include only Western Europe
+  tofix: .nan
   vetted_regions: COFFEE 1.1|Western Europe
   vetted_type: native
   yaml: coffee_1.1
@@ -55,6 +60,7 @@ E4SMA-EU-TIMES 1.0:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: now passing
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -65,6 +71,7 @@ EnergyVille TIMES BE 1.0.0:
   include: false
   natives: Belgium
   notes: only Belgium
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: None
@@ -75,6 +82,7 @@ FORECAST v1.0:
   include: true
   natives: .nan
   notes: .nan
+  tofix: Failing lots
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -83,8 +91,9 @@ GCAM 4.2:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: GCAM_5.3
@@ -96,6 +105,7 @@ GCAM 5.3+ NGFS:
   natives: GCAM 5.3|Europe_Eastern, GCAM 5.3|Eastern EU, GCAM 5.3|Europe_Non_EU, GCAM
     5.3|European Free Trade Association, GCAM 5.3|Western EU & UK
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: GCAM_5.3
@@ -106,16 +116,18 @@ GCAM-PR 5.3:
   include: true
   natives: GCAM-PR 5.3|Eastern EU, GCAM-PR 5.3|Western EU & UK
   notes: .nan
+  tofix: PR passing
   vetted_regions: EU27 & UK
   vetted_type: common
   yaml: GCAM-PR_5.3
 GEM-E3 v2021:
-  EU_common: EU28, Europe (R10)
+  EU_common: .nan
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
   natives: GEM-E3 v2021|EU28
   notes: .nan
+  tofix: .nan
   vetted_regions: GEM-E3 v2021|EU28
   vetted_type: native
   yaml: GEM-E3_v2021
@@ -126,6 +138,7 @@ GEMINI-E3 7.0:
   include: true
   natives: .nan
   notes: .nan
+  tofix: PR
   vetted_regions: EU27 & UK
   vetted_type: common
   yaml: None
@@ -136,6 +149,7 @@ GENeSYS-MOD 3.1:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27 (excl. Malta & Cyprus)
   vetted_type: common
   yaml: None
@@ -146,6 +160,7 @@ ICES-XPS 1.0:
   include: true
   natives: some EU countries
   notes: .nan
+  tofix: PR
   vetted_regions: EU27
   vetted_type: common
   yaml: ICES_1.0
@@ -156,7 +171,8 @@ IMAGE 3.0:
   include: true
   natives: IMAGE 3.0|Western Europe, IMAGE 3.0|Central Europe
   notes: .nan
-  vetted_regions: IMAGE 3.0|Western Europe
+  tofix: .nan
+  vetted_regions: IMAGE 3.0|Western Europe,IMAGE 3.0|Central Europe
   vetted_type: native
   yaml: image_v3.0
 IMAGE 3.0.1:
@@ -165,7 +181,8 @@ IMAGE 3.0.1:
   eu_isos: false
   include: true
   natives: Europe (R10)
-  notes: .nan
+  notes: only R10
+  tofix: do R10 region countries
   vetted_regions: Europe (R10)
   vetted_type: common
   yaml: image_v3.0
@@ -176,7 +193,8 @@ IMAGE 3.2:
   include: true
   natives: IMAGE 3.2|Western Europe, IMAGE 3.2|Central Europe
   notes: .nan
-  vetted_regions: IMAGE 3.2|Western Europe
+  tofix: .nan
+  vetted_regions: IMAGE 3.2|Western Europe,IMAGE 3.2|Central Europe
   vetted_type: native
   yaml: image_v3.2
 MESSAGE-GLOBIOM 1.0:
@@ -184,8 +202,9 @@ MESSAGE-GLOBIOM 1.0:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: MESSAGEix-GLOBIOM_1.1
@@ -196,7 +215,9 @@ MESSAGEix-GLOBIOM 1.0:
   include: true
   natives: MESSAGEix-GLOBIOM 1.0|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe
+  tofix: .nan
+  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe,MESSAGEix-GLOBIOM 1.0|Eastern
+    Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1:
@@ -204,10 +225,11 @@ MESSAGEix-GLOBIOM 1.1:
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
-  natives: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1-M-R12|Eastern
-    Europe
+  natives: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1|Eastern Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe
+  tofix: .nan
+  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe,MESSAGEix-GLOBIOM 1.1|Eastern
+    Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1-M-R12:
@@ -218,6 +240,7 @@ MESSAGEix-GLOBIOM 1.1-M-R12:
   natives: MESSAGEix-GLOBIOM 1.1-M-R12|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern
     Europe
   notes: .nan
+  tofix: now passing
   vetted_regions: EU27
   vetted_type: common
   yaml: MESSAGEix-GLOBIOM_1.1-R12
@@ -228,18 +251,21 @@ MESSAGEix-GLOBIOM 1.2:
   include: true
   natives: MESSAGEix-GLOBIOM 1.2|Western Europe, MESSAGEix-GLOBIOM 1.2|Eastern Europe
   notes: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.2|Western Europe
+  tofix: now passing
+  vetted_regions: MESSAGEix-GLOBIOM 1.2|Western Europe,MESSAGEix-GLOBIOM 1.2|Eastern
+    Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1-R12
 MUSE 1.0:
-  EU_common: .nan
+  EU_common: EU27 & UK
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
   natives: .nan
-  notes: no data?
-  vetted_regions: .nan
-  vetted_type: None
+  notes: .nan
+  tofix: .nan
+  vetted_regions: EU27 & UK
+  vetted_type: common
   yaml: None
 NEMESIS 5.1:
   EU_common: EU27 & UK, EU27
@@ -248,37 +274,41 @@ NEMESIS 5.1:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: PR
   vetted_regions: EU27
   vetted_type: common
   yaml: None
 OSeMBE v1.0.0:
-  EU_common: .nan
+  EU_common: EU27 & UK, EU27
   R10_Europe: .nan
+  eu_isos: false
+  include: false
+  natives: .nan
+  notes: No emissions data
+  tofix: .nan
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: None
+POLES-JRC:
+  EU_common: EU27 & UK, EU27
+  R10_Europe: Europe (R10)
+  eu_isos: false
+  include: true
+  natives: EU27 & UK, EU27, regions
+  notes: .nan
+  tofix: .nan
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: poles-jrc-engage
+POLES-JRC ENGAGE:
+  EU_common: .nan
+  R10_Europe: Europe (R10)
   eu_isos: false
   include: true
   natives: .nan
   notes: .nan
-  vetted_regions: .nan
-  vetted_type: None
-  yaml: None
-POLES-JRC:
-  EU_common: .nan
-  R10_Europe: .nan
-  eu_isos: false
-  include: false
-  natives: .nan
-  notes: .nan
-  vetted_regions: .nan
-  vetted_type: None
-  yaml: poles-jrc-engage
-POLES-JRC ENGAGE:
-  EU_common: .nan
-  R10_Europe: .nan
-  eu_isos: false
-  include: false
-  natives: .nan
-  notes: .nan
-  vetted_regions: .nan
+  tofix: do R10 region countries
+  vetted_regions: Europe (R10)
   vetted_type: None
   yaml: poles-jrc-engage
 PRIMES 2022:
@@ -288,6 +318,7 @@ PRIMES 2022:
   include: true
   natives: .nan
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -298,7 +329,8 @@ PROMETHEUS 1.2:
   include: true
   natives: PROMETHEUS 1.2|Central Europe, PROMETHEUS 1.2|Western Europe
   notes: .nan
-  vetted_regions: PROMETHEUS 1.2|Western Europe
+  tofix: .nan
+  vetted_regions: PROMETHEUS 1.2|Western Europe,PROMETHEUS 1.2|Central Europe
   vetted_type: native
   yaml: prometheus_1.2
 PyPSA-Eur-Sec 0.0.2:
@@ -308,6 +340,7 @@ PyPSA-Eur-Sec 0.0.2:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -318,6 +351,7 @@ PyPSA-Eur-Sec 0.5.0:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -328,6 +362,7 @@ PyPSA-Eur-Sec 0.6.0:
   include: true
   natives: EU_isos
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: None
@@ -337,7 +372,8 @@ RECC 2.4:
   eu_isos: false
   include: false
   natives: .nan
-  notes: .nan
+  notes: no data?
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: recc_2.4
@@ -351,6 +387,7 @@ REMIND 2.1:
     Europe, REMIND 2.1|EU South-West Europe, REMIND 2.1|Non-EU Northern Europe, REMIND
     2.1|Non-EU Southern Europe
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: REMIND_2.1
@@ -364,6 +401,7 @@ REMIND 3.0:
     Europe, REMIND 2.1|EU South-West Europe, REMIND 2.1|Non-EU Northern Europe, REMIND
     2.1|Non-EU Southern Europe
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: REMIND_3.0
@@ -374,6 +412,7 @@ REMIND-EU 2.0:
   include: true
   natives: lots of europe regions
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27 & UK
   vetted_type: common
   yaml: REMIND_2.0
@@ -382,8 +421,9 @@ REMIND-MAgPIE 1.5:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: REMIND_2.0
@@ -394,6 +434,7 @@ REMIND-MAgPIE 1.7-3.0:
   include: true
   natives: .nan
   notes: only R10
+  tofix: do R10 region countries
   vetted_regions: Europe (R10)
   vetted_type: common
   yaml: REMIND_2.0
@@ -404,8 +445,9 @@ REMIND-MAgPIE 2.1-4.2:
   include: true
   natives: REMIND 2.1|EU 28
   notes: .nan
-  vetted_regions: EU27 & UK
-  vetted_type: common
+  tofix: only a few scenarios have EU27&UK so do all native EU28
+  vetted_regions: REMIND 2.1|EU 28
+  vetted_type: native
   yaml: REMIND_2.1
 REMIND-MAgPIE 2.1-4.3:
   EU_common: EU27 & UK
@@ -414,6 +456,7 @@ REMIND-MAgPIE 2.1-4.3:
   include: true
   natives: REMIND 2.1|EU 28
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27 & UK
   vetted_type: common
   yaml: REMIND_2.1
@@ -424,6 +467,7 @@ REMIND-MAgPIE 3.0-4.4:
   include: true
   natives: REMIND 3.0|EU 28
   notes: .nan
+  tofix: .nan
   vetted_regions: EU27 & UK
   vetted_type: common
   yaml: REMIND_3.0
@@ -433,7 +477,8 @@ Roadmap v1.8:
   eu_isos: false
   include: false
   natives: '-'
-  notes: '-'
+  notes: no data?
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: roadmap_v1.8
@@ -444,7 +489,8 @@ TIAM-ECN 1.1:
   include: true
   natives: TIAM-ECN 1.1|Western Europe, TIAM-ECN 1.1|Eastern Europe
   notes: .nan
-  vetted_regions: TIAM-ECN 1.1|Western Europe
+  tofix: .nan
+  vetted_regions: TIAM-ECN 1.1|Western Europe,TIAM-ECN 1.1|Eastern Europe
   vetted_type: native
   yaml: TIAM-ECN_v1.1
 TIAM-Grantham v3.4:
@@ -454,16 +500,18 @@ TIAM-Grantham v3.4:
   include: true
   natives: TIAM-Grantham v3.4|Eastern Europe, TIAM-Grantham v3.4|Western Europe
   notes: .nan
-  vetted_regions: TIAM-Grantham v3.4|Western Europe
+  tofix: PR
+  vetted_regions: TIAM-Grantham v3.4|Eastern Europe,TIAM-Grantham v3.4|Western Europe
   vetted_type: native
   yaml: TIAM-Grantham_v3.4
 TIMES-Ireland Model v1.0:
   EU_common: '-'
   R10_Europe: .nan
   eu_isos: false
-  include: true
-  natives: '-'
-  notes: '-'
+  include: false
+  natives: Ireland
+  notes: Ireland only
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: None
@@ -474,6 +522,7 @@ WITCH 5.0:
   include: true
   natives: WITCH 5.0|Europe
   notes: .nan
+  tofix: .nan
   vetted_regions: WITCH 5.0|Europe
   vetted_type: native
   yaml: WITCH_5.0
@@ -482,8 +531,9 @@ WITCH-GLOBIOM 3.1:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: WITCH_5.0
@@ -492,8 +542,9 @@ WITCH-GLOBIOM 4.4:
   R10_Europe: .nan
   eu_isos: false
   include: false
-  natives: .nan
+  natives: R5
   notes: only R5
+  tofix: .nan
   vetted_regions: .nan
   vetted_type: None
   yaml: WITCH_5.0

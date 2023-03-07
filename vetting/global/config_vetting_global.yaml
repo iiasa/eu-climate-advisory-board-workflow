@@ -117,27 +117,27 @@ bounds_variables:
     # key_future: False
     # bound_threshold: 0.4
 
-  Emissions|CO2|Energy and Industrial Processes factor x change '10-'20:
-    variable: Emissions|CO2|Energy and Industrial Processes|2010-2020 change
+  Emissions|CO2|Energy and Industrial Processes factor % change '15-'20:
+    variable: Emissions|CO2|Energy and Industrial Processes|2015-2020 change
     lo: 0
-    up: 0.5
-    year: 2010
+    up: 30
+    year: 2015
     key_historical: True
     key_future: False
     missing_flag: Fail_missing
     bound_threshold: 1
-    description:  Permitted range of factor x change in Emissions CO2 EIP
+    description:  Permitted range of % change in Emissions CO2 EIP
 
-  Emissions|CO2|Energy factor x change '10-'20:
-    variable: Emissions|CO2|Energy|2010-2020 change
+  Emissions|CO2|Energy factor % change '15-'20:
+    variable: Emissions|CO2|Energy|2015-2020 change
     lo: 0
-    up: 0.5
-    year: 2010
+    up: 30
+    year: 2015
     key_historical: True
     key_future: False
     missing_flag: Fail_missing    
     bound_threshold: 1
-    description:  Permitted range of  factor x change in Emissions CO2 Energy
+    description:  Permitted range of % change in Emissions CO2 Energy
 
 
 # Key near-term feasibility checks

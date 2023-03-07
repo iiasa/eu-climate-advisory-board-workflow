@@ -23,7 +23,7 @@ import plotly.express as px
 log = True
 modelbymodel = True    # Output single files for each model into Teams folder
 single_model = False   # Testing mode- not used
-drop_na_yamls = True   #Process only models for which there is a yaml
+drop_na_yamls = True   # Process only models with the tag Include=True
 print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
 recreate_yaml_region_map = True  # read in excel, and save to yaml
@@ -41,7 +41,7 @@ user = 'byers'
 
 # ver = 'normal'
 
-years = np.arange(2010, 2041, dtype=int).tolist()
+years = np.arange(2010, 2061, dtype=int).tolist()
 year_aggregate = 2020
 
 flag_fail = 'Fail'
@@ -121,7 +121,7 @@ def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
         reg_mapping = reg_mapping[0]
         yaml_model = list(reg_mapping.keys())[0]
         reg_mapping = reg_mapping[yaml_model]
-        reg_mapping_eu = [x for x in reg_mapping if ('Eu' in list(x.keys())[0]) or ('EU' in list(x.keys())[0])]
+        reg_mapping_eu = reg_mapping #[x for x in reg_mapping if ('Eu' in list(x.keys())[0]) or ('EU' in list(x.keys())[0])]
         # reg_mapping_eu.append([x for x in reg_mapping if 'EU' in list(x.keys())[0]])
         
         
@@ -135,7 +135,7 @@ def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
             iso_reg_dict[k] = v
         
     all_natives = list(iso_reg_dict.keys())
-    return iso_reg_dict, all_natives
+    return iso_reg_dict, all_natives, yaml_model
 
 #% Prepare for excel writeout
     #
@@ -168,11 +168,16 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     meta_docs[meta_name_historical] = f'Checks that each of {historical_columns} is a {flag_pass}'
     df.set_meta(flag_fail, name=meta_name_historical)
     
+    df.meta.loc[
+        (df.meta[historical_columns].isin([flag_fail, flag_fail_missing])).all(axis=1),
+        meta_name_historical
+    ] = flag_fail_missing
+    
     # NOTE that here we set both "Pass" and ":missing" as PASS (e.e.gmore false psoitives)
 
     # First Set rows with all pass or missing to pass_missing (must be this order)
     df.meta.loc[
-        (df.meta[historical_columns].isin([flag_pass, 'missing'])).all(axis=1),
+        (df.meta[historical_columns].isin([flag_pass, flag_pass_missing])).all(axis=1),
         meta_name_historical
     ] = flag_pass_missing
 
@@ -187,9 +192,14 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     meta_docs[meta_name_future] = f'Checks that each of {future_columns} is a {flag_pass}'
     df.set_meta(flag_fail, name=meta_name_future)
     
+    df.meta.loc[
+        (df.meta[future_columns].isin([flag_fail, flag_fail_missing])).all(axis=1),
+        meta_name_future
+    ] = flag_fail_missing
+    
     # First Set rows with all pass or missing to pass_missing (must be this order)
     df.meta.loc[
-        (df.meta[future_columns].isin([flag_pass, 'missing'])).all(axis=1),
+        (df.meta[future_columns].isin([flag_pass, flag_pass_missing])).all(axis=1),
         meta_name_future
     ] = flag_pass_missing
  
@@ -289,11 +299,11 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
 
     dfop = dfo.select_dtypes(object)
     dfop = dfop.loc[dfop.model!='Reference',:]
-    cols = historical_columns + future_columns + dfop.columns[5:7].tolist() + dfop.columns[3:5].tolist() 
     dfop.loc[dfop[col]=='PASS', col] = 'Pass'
     dfop.loc[dfop[col]=='FAIL', col] = 'Fail'
-    dfop.rename(index={col: 'OVERALL'}, inplace=True)
+    dfop.rename(columns={col: 'OVERALL'}, inplace=True)
 
+    cols = dfop.columns[3:-1]#historical_columns + future_columns + dfop.columns[5:7].tolist() + dfop.columns[3:5].tolist() 
 
     dfop_simple = dfop[cols].apply(pd.Series.value_counts).fillna(0).sort_index()
     dfop_simple = dfop_simple.T
@@ -317,7 +327,8 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     dfop_simple.to_excel(writer, sheet_name='summary_pivot')
 
     # Add regions dictionary
-    pd.DataFrame(iso_reg_dict).to_excel(writer, sheet_name='region_mapping')
+    irdout = pd.concat([pd.DataFrame(v, columns=[k]) for k, v in iso_reg_dict.items()], axis=1)
+    pd.DataFrame(irdout).to_excel(writer, sheet_name='region_mapping')
 
     # Add data
     if include_data:
@@ -429,7 +440,7 @@ if drop_na_yamls:
 # Only do this if checking the regions available for each model and updating the model_yaml_region_map
 if check_model_regions_in_db:
     regions_available = {}
-    for model in model_yaml_map.iloc.iterrows():
+    for model in model_yaml_map.iterrows():
         print(model)
         dfin = pyam.read_iiasa(instance,
                                 model=model[0],
@@ -450,17 +461,21 @@ if check_model_regions_in_db:
 # Define manually here for now (implement later to read in from yaml)
 iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
 iso_eu27.sort()
-
 iso_eu28 = iso_eu27 + ['GBR']
 iso_euMC = [x for x in iso_eu27 if x not in ['CYP','MLT','GBR']]
+iso_eurR10 = ['ALB', 'AND', 'AUT', 'BLR', 'BEL', 'BIH', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FRO', 'FIN', 'FRA', 'DEU', 'GIB',
+ 'GRC', 'VAT', 'HUN', 'ISL', 'IRL', 'ITA', 'XKX', 'LVA', 'LIE', 'LTU', 'LUX', 'MLT', 'MDA', 'MCO', 'MNE', 'NLD', 'MKD', 'NOR', 'POL', 'PRT', 'ROU', 'SMR', 'SRB', 'SVK', 'SVN', 'ESP', 'SWE', 'CHE', 'GBR', 'UKR']
+
 allowed_common_regions = {'EU27': iso_eu27,
                           'EU27 & UK': iso_eu28,
                           'EU27 (excl. Malta & Cyprus)': iso_euMC,
+                          'Europe (R10)': iso_eurR10,
                           }
 
 iso_reg_dict_all = {}
 
 ct = 0
+
 for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     print(f'################## STARTING {model} #############################')
 
@@ -483,9 +498,10 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         iso_reg_dict = {attr.vetted_regions: ref_isos}
         sel_natives = list(iso_reg_dict.keys())
         
-        regions = sel_natives
+        # regions = sel_natives
+        regions = attr.vetted_regions.split(',')
         agg_region_name = regions[0]
-        
+
     # Native region       
     elif (attr.vetted_type == 'native'):
         
@@ -494,12 +510,14 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         # model region: '{model}|Europe_agg'
         
         # Load and generate region - iso dictionary for specific model
-        iso_reg_dict, all_natives = func_model_iso_reg_dict(yaml_nm=attr.yaml)
-        
-        sel_natives = [x for x in all_natives if x in attr.vetted_regions.split('|')[1] ]
+        iso_reg_dict, all_natives, yaml_model = func_model_iso_reg_dict(yaml_nm=attr.yaml)
+        regions = attr.vetted_regions.split(',')
+
+        # sel_natives = [x for x in all_natives if x in regions.split('|')[1] ]
+        sel_natives = [x.split('|')[1] for x in regions]
         iso_reg_dict = {key: iso_reg_dict[key] for key in sel_natives}
         
-        regions = [f'{model}|'+x.split('_')[0] for x in sel_natives]
+        # regions = [f'{yaml_model}|'+x.split('_')[0] for x in sel_natives]
         agg_region_name = f'{model}|Europe_agg'
 
     # Error
@@ -511,7 +529,6 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     # Apply to both: add model / regions / isos to big dictionary.
     # This is written to excel/yaml at the end.
     iso_reg_dict_all[model] = iso_reg_dict
-    
     
     ###############
     # Load reference ISO data (e.g. EDGAR, IEA)
@@ -525,6 +542,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     #% Aggregate reference data for the model regions
     for native in sel_natives:
         for variable in ref_iso_data.variable:
+            # print(variable)
             ref_iso_data.aggregate_region(variable, region=native, subregions=iso_reg_dict[native], append=True)
     
     
@@ -575,7 +593,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
             
         # aggregate the model data to the common region
         for variable in df.variable:
-            df.aggregate_region(variable, region=agg_region_name, subregions=attr.vetted_regions, append=True)    
+            df.aggregate_region(variable, region=agg_region_name, subregions=regions, append=True)    
     
     
     
@@ -705,7 +723,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     missing = df.require_variable(variable='Emissions|CO2|Energy and Industrial Processes')
     if missing is not None:
         missing = missing.loc[missing.model!='Reference',:]
-    
+        components = ['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes']
         # if missing, aggregate energy and ip
         mapping = {}
         for model in missing.model.unique():
@@ -716,17 +734,15 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
             for model, scenarios in mapping.items():
                 try:
                     neweip = to_series(
-                        df.filter(model=model, scenario=scenarios,
-                                  variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'],)
-                        .aggregate(variable='Emissions|CO2|Energy and Industrial Processes')
-                              )
+                        df.filter(model=model, scenario=scenarios, variable=components).aggregate(variable='Emissions|CO2|Energy and Industrial Processes', components=components)
+                        )
             
                     df.append(
                         neweip,
                     variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
                     inplace=True
                     )
-                except(AttributeError):
+                except(IndexError):
                     print('No components:{},{}'.format(model, scenarios))
         #%
         # Drop the separate components
@@ -763,8 +779,13 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     # Emissions|CO2 increase
     # calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
     # calc_increase_percentage('Emissions|CO2', 2015, 2020)
-    calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
-    calc_increase_percentage(df, 'Emissions|CO2|Energy', 2010, 2020)
+    for v in ['Emissions|CO2|Energy and Industrial Processes',
+              'Emissions|CO2|Energy']:
+       # if len(df.filter(variable=v, year=2010))!=0:
+           # calc_increase_percentage(df, v, 2010, 2020)
+       # else:
+           calc_increase_percentage(df, v, 2015, 2020)
+
 
     # Calculate CCS from energy (not industrial):
     try:
@@ -827,7 +848,8 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     
     dfall.append(df.filter(model=model), inplace=True)
     try:
-        dfall.append(df.filter(model='Reference'), 
+        if ct==0:
+            dfall.append(df.filter(model='Reference'), 
                      ignore_meta_conflict=True,
                      inplace=True)
     except(ValueError):
