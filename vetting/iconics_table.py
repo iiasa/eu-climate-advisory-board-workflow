@@ -168,3 +168,298 @@ df.set_meta(co2.apply(year_of_net_zero, years=co2.columns, threshold=0, axis=1),
 
 nameNZ0 = 'year of netzero CO2 EIP emissions (threshold=0 Gt CO2/yr)'
 df.set_meta(co2eip.apply(year_of_net_zero, years=co2eip.columns, threshold=0, axis=1), nameNZ0)
+
+# =============================================================================
+#%% Calculation of indicator variables
+# =============================================================================
+ynz_variables = []
+
+# =============================================================================
+# 
+# =============================================================================
+ynz_variables.append('Carbon Sequestration|CCS|Biomass')
+
+
+# Emissions|Non-CO2
+df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|CO2',
+            'tva',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+df.subtract('tva',
+            'Emissions|CO2|LULUCF Indirect',
+            'Emissions|Kyoto Gases',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+
+
+
+# Emissions|Non-CO2
+df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|CO2',
+            'Emissions|Non-CO2',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+# =============================================================================
+# 'Carbon Sequestration|CCS|Biomass',
+ynz_variables.append('Carbon Sequestration|CCS|Biomass')
+
+# =============================================================================
+# 'Emissions|CO2|AFOLU'  
+ynz_variables.append('Emissions|CO2|AFOLU')
+
+
+# =============================================================================
+# Primary energy
+# =============================================================================
+missing = df.require_variable(variable='Primary Energy|Fossil')
+if missing is not None:
+    missing = missing.loc[missing.model!='Reference',:]
+    components = ['Primary Energy|Coal', 'Primary Energy|Gas', 'Primary Energy|Oil']
+    # if missing, aggregate energy and ip
+    mapping = {}
+    for model in missing.model.unique():
+        mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
+    
+    # Aggregate and add to the df
+    if len(mapping)>0:
+        for model, scenarios in mapping.items():
+            try:
+                newpef = to_series(
+                    df.filter(model=model, scenario=scenarios, variable=components).aggregate(variable='Primary Energy|Fossil', components=components)
+                    )
+        
+                df.append(
+                    newpef,
+                variable='Primary Energy|Fossil', unit='EJ/yr',
+                inplace=True
+                )
+            except(IndexError):
+                print('No components:{},{}'.format(model, scenarios))
+
+components = ['Primary Energy|Biomass', 'Primary Energy|Geothermal',
+              'Primary Energy|Hydro', 'Primary Energy|Solar',
+              'Primary Energy|Wind']
+
+name = 'Primary Energy|Renewables (incl.Biomass)'
+df.aggregate(name, components, append=True)
+name = 'Primary Energy|Non-biomass renewables'
+df.aggregate(name, components[1:], append=True)
+
+
+# =============================================================================
+# Primary energy - Renewables share
+
+name = 'Primary Energy|Renewables (incl.Biomass)|Share'
+df.divide('Primary Energy|Renewables (incl.Biomass)', 'Primary Energy',
+          name, ignore_units='-',
+          append=True)
+ynz_variables.append(name)
+
+name = 'Primary Energy|Non-biomass renewables|Share'
+df.divide('Primary Energy|Non-biomass renewables', 'Primary Energy',
+          name, ignore_units='-',
+          append=True)
+ynz_variables.append(name)
+
+# =============================================================================
+# Primary energy - Fossil share
+
+name = 'Primary Energy|Fossil|Share'
+df.divide('Primary Energy|Fossil', 'Primary Energy',
+          name, ignore_units='-',
+          append=True)
+ynz_variables.append(name)
+
+
+# =============================================================================
+# Hydrogen production as share of FE - not possible
+# =============================================================================
+
+
+
+
+# =============================================================================
+# Secondary energy electricity renewables
+# =============================================================================
+
+
+# Secondary energy Renewables
+# Drop non-bio renewables
+df.filter(variable='Secondary Energy|Electricity|Renewables (incl.Biomass)', 
+              keep=False, inplace=True)
+df.filter(variable='Secondary Energy|Electricity|Non-Biomass Renewables', 
+              keep=False, inplace=True)
+
+rencomps = [
+      'Secondary Energy|Electricity|Biomass',
+      'Secondary Energy|Electricity|Geothermal',
+      'Secondary Energy|Electricity|Hydro',
+      'Secondary Energy|Electricity|Solar',
+      'Secondary Energy|Electricity|Wind',]
+
+df.aggregate('Secondary Energy|Electricity|Renewables (incl.Biomass)', 
+                components=rencomps, append=True)
+
+df.aggregate('Secondary Energy|Electricity|Non-Biomass Renewables', 
+                components=rencomps[1:], append=True)
+
+
+
+# % of renewables in electricity
+nv = 'Secondary Energy|Electricity|Renewables (incl.Biomass)|Share'
+# nu = '%'
+df.divide('Secondary Energy|Electricity|Renewables (incl.Biomass)', 
+          'Secondary Energy|Electricity', 
+          nv,
+          ignore_units='-',
+          append=True)
+ynz_variables.append(nv)
+
+# % of non-bio renewables in electricity
+nv = 'Secondary Energy|Electricity|Non-Biomass Renewables|Share'
+# nu = '%'
+df.divide('Secondary Energy|Electricity|Non-Biomass Renewables', 
+          'Secondary Energy|Electricity',
+          nv,
+          ignore_units='-',
+          append=True)
+ynz_variables.append(nv)
+
+
+# =============================================================================
+# Final energy
+# =============================================================================
+
+# =============================================================================
+# #final energy / capita
+
+# nv='Final Energy|Per capita'
+# nu='EJ/yr /person'
+# print(nv)
+# df.divide('Final Energy', 'Population', 
+#           nv,
+#           ignore_units=nu,
+#           append=True)
+# ynz_variables.append(nv)
+
+
+# =============================================================================
+# # #GDP / unit Final Energy
+
+# nv = 'GDP|MER|Final Energy'
+# nu = 'US$2010/MJ'
+# df.divide('GDP|MER', 'Final Energy',
+#           nv,
+#           ignore_units=nu,
+#           append=True)
+# ynz_variables.append(nv)
+
+
+# =============================================================================
+# #% of final energy that is electrified
+
+nv = 'Final Energy|Electrification|Share'
+nu = '%'
+df.divide('Final Energy|Electricity', 'Final Energy', 
+          nv, 
+          ignore_units=nu, 
+          append=True)
+ynz_variables.append(nv)
+
+
+# =============================================================================
+#%% Multiply all share columns by 100% 
+# =============================================================================
+
+pccols = [x for x in list(df.meta.columns) if "Share" in x]
+df.meta[pccols] = df.meta[pccols]*100
+npccols = [x.replace('-','%') for x in pccols]
+rncols = {k:v for k,v in zip(pccols, npccols)}
+df.meta.rename(columns=rncols, inplace=True)
+
+# =============================================================================
+#%% Calculate indicators in year of net-zero 
+# =============================================================================
+
+indis_add = ['Emissions|CO2',
+             'Emissions|Kyoto Gases']
+for x in indis_add:
+    ynz_variables.append(x)
+
+df.interpolate(time=range(2000,2101), inplace=True)
+
+for v in ynz_variables:
+
+    datats = filter_and_convert(df, v)
+    nu = datats.reset_index().unit.unique()[0]
+    name = f'{v} in year of net zero, {nu}'
+    
+    
+    df.set_meta(datats.apply(lambda x: x[get_from_meta_column(df, x,
+                                                              nameNZ0)],
+                                            raw=False, axis=1), name)
+# meta_docs[name] = f'net native model Emissions|CO2 from {baseyear} until the year of netzero CO2 emissions (including the last year, {cumulative_unit})'
+
+
+# =============================================================================
+#%% Write out 
+# =============================================================================
+
+fn = f'{main_folder}iconics\\iconics_NZ_data_and_table.xlsx'
+writer = pd.ExcelWriter(fn, engine='xlsxwriter')
+
+
+df.to_excel(writer, sheet_name='data', include_meta=True)
+
+
+
+# meta page
+worksheet = writer.sheets['meta']
+worksheet.set_column(0, 0, 20, None)
+worksheet.set_column(1, 1, 25, None)
+worksheet.set_column(2, len(df.meta.columns)-1, 15, None)
+worksheet.freeze_panes(1, 2)
+worksheet.autofilter(0, 0, len(df.meta), len(df.meta.columns)+1)
+
+workbook = writer.book
+header_format_creator = lambda is_bold: workbook.add_format({
+    'bold': is_bold,
+    'text_wrap': True,
+    'align': 'center',
+    'valign': 'top',
+    'border': 1
+})
+header_format = header_format_creator(True)
+# subheader_format = header_format_creator(False)
+
+for col_num, value in enumerate(df.meta.columns):
+    # curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
+    worksheet.write(0, col_num+2, value, header_format) 
+
+
+
+
+# data page
+# if model!= 'all':
+worksheet = writer.sheets['data']
+worksheet.set_column(0, 1, 25, None)
+# worksheet.set_column(1, 1, 20, None)
+worksheet.set_column(2, 2, 8, None)
+worksheet.set_column(3, 3, 30, None)
+worksheet.set_column(4, 4, 12, None)
+worksheet.set_column(5, -1, 8, None)
+worksheet.freeze_panes(1, 2)
+worksheet.autofilter(0, 0, len(df.meta), len(df.year))
+
+
+writer.close()
+
+os.startfile(fn)
+
+
+df.meta.to_excel(f'{main_folder}iconics\\iconics_NZ_table.xlsx',
+                 sheet_name='meta')
+
+
