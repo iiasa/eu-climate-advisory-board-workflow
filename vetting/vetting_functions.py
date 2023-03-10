@@ -336,7 +336,7 @@ def get_from_meta_column(df, x, col):
     return val if val < np.inf else max(x.index)
 
 
-def filter_and_convert(df, variable, unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001):
+def filter_and_convert(df, variable, unitin='', unitout='', factor=1):
     return (df
             .filter(variable=variable)
             .convert_unit(unitin, unitout, factor)

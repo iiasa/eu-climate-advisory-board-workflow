@@ -51,10 +51,16 @@ dfin.load_meta(wbstr, sheet_name='Vetting_flags')
 #%% Filter scenarios (RESTART FROM HERE)
 # =============================================================================
 
+
+
 df = dfin.filter(region='EU27')
+years = range(2000,2101,5)
+df.filter(year=years, inplace=True)
+
 
 df.filter(OVERALL_binary='PASS', inplace=True)
-df.filter(Category='C1*', inplace=True)
+df.meta.loc[df.meta['OVERALL_Assessment']=='Regional only', 'Category'] = 'regional'
+df.filter(Category=['C1*','regional'], inplace=True)
 
 meta_docs = {}
 
@@ -181,7 +187,11 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
            'net CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
                                   'unitin': 'Mt CO2/yr',
                                   'unitout': 'Gt CO2/yr',
-                                  'factor': 0.001},           
+                                  'factor': 0.001},   
+           'Non-CO2':{'variable': 'Emissions|Total Non-CO2',
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},            
            'CCS':{'variable': 'Carbon Sequestration|CCS',
                                   'unitin': 'Mt CO2/yr',
                                   'unitout': 'Gt CO2/yr',
@@ -213,12 +223,12 @@ for indi, config in specdic.items():
     # to year of net-zero CO2
     name = f'cumulative {indi} ({baseyear} to year of net zero CO2, {cumulative_unit})'
     df.set_meta(tsdata.apply(lambda x: pyam.cumulative(x, first_year=baseyear, last_year=get_from_meta_column(df, x,                                                                nameNZCO2)), raw=False, axis=1), name)
-    meta_docs[label] = f'Cumulative {indi} from {baseyear} until year of net zero CO2 (including the last year, {cumulative_unit}) ({variable})'
+    meta_docs[name] = f'Cumulative {indi} from {baseyear} until year of net zero CO2 (including the last year, {cumulative_unit}) ({variable})'
     
     # to 2050
     label = f'cumulative {indi} ({baseyear}-{lastyear}, {cumulative_unit})'
     df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), label)
-    meta_docs[label] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
+    meta_docs[name] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
 
 
 
@@ -297,6 +307,7 @@ for last_year in last_years:
     a = df.filter(variable='Emissions|Total Non-CO2').timeseries()
     rd = 100* (1-(a[last_year] / a[base_year]))
     df.set_meta(rd, name, )
+    
 
 
 # =============================================================================
@@ -309,6 +320,7 @@ ynz_variables = []
 # =============================================================================
 indis_add = [
             'Emissions|CO2',
+            'Emissions|Total Non-CO2',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
              'Emissions|Kyoto Gases',
 
@@ -385,6 +397,14 @@ df.divide('Primary Energy|Fossil', 'Primary Energy',
           name, ignore_units='-',
           append=True)
 ynz_variables.append(name)
+
+
+name = 'Primary Energy|Fossil|w/o CCS|Share'
+df.divide('Primary Energy|Fossil|w/o CCS', 'Primary Energy',
+          name, ignore_units='-',
+          append=True)
+ynz_variables.append(name)
+
 
 
 
@@ -477,7 +497,7 @@ ynz_variables.append('Final Energy')
 # #% of final energy that is electrified
 
 nv = 'Final Energy|Electrification|Share'
-nu = '%'
+nu = '-'
 df.divide('Final Energy|Electricity', 'Final Energy', 
           nv, 
           ignore_units=nu, 
@@ -487,10 +507,24 @@ ynz_variables.append(nv)
 
 df.convert_unit('-', '%', factor=100, inplace=True)
 
+
+# =============================================================================
+# Trade / imports
+# =============================================================================
+
+# =============================================================================
+# Fossil fuel imports
+name = 'Trade|Primary Energy|Fossil'
+components = [
+'Trade|Primary Energy|Coal|Volume',
+'Trade|Primary Energy|Gas|Volume',
+'Trade|Primary Energy|Oil|Volume',]
+df.aggregate(name, components=components)
+
+
 # =============================================================================
 #%% Calculate indicators in year of net-zero and 2050
 # =============================================================================
-
 
 
 df.interpolate(time=range(2000,2101), inplace=True)
@@ -538,7 +572,6 @@ df.to_excel(writer, sheet_name='data', include_meta=True)
 worksheet = writer.sheets['meta']
 worksheet.set_column(0, 0, 20, None)
 worksheet.set_column(1, 1, 25, None)
-worksheet.set_column(2, len(df.meta.columns)+1, 15, None)
 worksheet.freeze_panes(1, 2)
 worksheet.autofilter(0, 0, len(df.meta), len(df.meta.columns)+1)
 
@@ -556,6 +589,7 @@ header_format = header_format_creator(True)
 for col_num, value in enumerate(df.meta.columns):
     # curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
     worksheet.write(0, col_num+2, value, header_format) 
+worksheet.set_column(2, len(df.meta.columns)+1, 15, None)
 
 
 
@@ -569,22 +603,51 @@ letters = pd.Series(list(
 end = len(df.meta)+1
 
 # Cumulative columns
-letters_cum = letters[18:49]
+end_col = len(df.meta.columns)+2
+letters_cum = letters[18:54]
 
 refs = [f'{c}2:{c}{end}' for c in letters_cum]
 for ref in refs:
     worksheet.conditional_format(ref, {'type': '3_color_scale',
                                        'min_color':'#6292bf',
                                            'mid_color':'#FFFFFF',
-                                           'max_color':'#FFC7CE'})
+                                           'max_color':'#fc6060'})
     
-letters_indis = letters[49:63]
+letters_indis = letters[54:end_col]
 refs = [f'{c}2:{c}{end}' for c in letters_indis]
 for ref in refs:
     worksheet.conditional_format(ref, {'type': '3_color_scale',
                                        'min_color':'#6292bf',
                                            'mid_color':'#FFFFFF',
                                            'max_color':'#56ba49'})
+
+# Change format of value columns
+integer_format = workbook.add_format({'num_format': '0'})
+largenum_format = workbook.add_format({'num_format': '0'})
+smallnum_format = workbook.add_format({'num_format': '0.0'})
+percentage_format = workbook.add_format({'num_format': '0'})
+# percentage_change_format = workbook.add_format({'num_format': '+0%;-0%;0%'})
+
+start = 18
+endcol = len(df.meta.columns)+1
+value_columns = list(enumerate(df.meta.columns))[start:]
+for i, column in value_columns:#enumerate(value_columns):
+    # col = i+start
+    i=i+2
+    if '%' in column:
+        worksheet.set_column(i, i, None, percentage_format)
+    elif 'threshold' in column:
+        worksheet.set_column(i, i, None, integer_format)
+    elif df.meta[column].dtype == float and abs(df.meta[column].median()) > 10:
+        worksheet.set_column(i, i, None, largenum_format)
+    elif df.meta[column].dtype == float and abs(df.meta[column].median()) <= 10:
+        worksheet.set_column(i, i, None, smallnum_format)
+
+
+
+
+
+
 
 # data page
 # if model!= 'all':
