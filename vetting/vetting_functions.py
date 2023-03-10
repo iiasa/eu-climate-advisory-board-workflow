@@ -342,3 +342,27 @@ def filter_and_convert(df, variable, unitin='', unitout='', factor=1):
             .convert_unit(unitin, unitout, factor)
             .timeseries()
            )
+
+
+def aggregate_missing_only(df, variable, components, append=False):
+    missing = df.require_variable(variable=variable)
+    if missing is not None:
+        # missing = missing.loc[missing.model!='Reference',:]
+        # if missing, aggregate energy and ip
+        mapping = {}
+        for model in missing.model.unique():
+            mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
+        
+        # Aggregate and add to the df
+        if len(mapping)>0:
+            for model, scenarios in mapping.items():
+                try:
+                    newdf =  df.filter(model=model, scenario=scenarios, variable=components).aggregate(variable=variable, components=components, append=False)
+            
+                    df.append(
+                        newdf,
+                    inplace=append
+                    )
+                except(IndexError):
+                    print('No components:{},{}'.format(model, scenarios))
+    return df

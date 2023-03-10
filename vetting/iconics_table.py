@@ -35,15 +35,17 @@ wbstr = f'{output_folder}vetting_flags_global_regional_combined.xlsx'
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\*climate_*.csv')
-
-ct=0
-for f in files:
-    if ct==0:
-        dfin = pyam.IamDataFrame(f)
-    else:
-        dfin = dfin.append(pyam.IamDataFrame(f))
-    ct=ct+1
+files = glob.glob(f'{main_folder}from_FabioS\\*EU_*.csv')
+if len(files) == 1:
+    dfin = pyam.IamDataFrame(files[0])
+else:
+    ct=0
+    for f in files:
+        if ct==0:
+            dfin = pyam.IamDataFrame(f)
+        else:
+            dfin = dfin.append(pyam.IamDataFrame(f))
+        ct=ct+1
         
 dfin.load_meta(wbstr, sheet_name='Vetting_flags')   
 
@@ -51,19 +53,31 @@ dfin.load_meta(wbstr, sheet_name='Vetting_flags')
 #%% Filter scenarios (RESTART FROM HERE)
 # =============================================================================
 
-
-
 df = dfin.filter(region='EU27')
+# Filter years in case of odd zeros
 years = range(2000,2101,5)
 df.filter(year=years, inplace=True)
 
+df.filter(model='GCAM*', scenario='*CurPol*', keep=False, inplace=True)
 
+# vetting & climate
 df.filter(OVERALL_binary='PASS', inplace=True)
 df.meta.loc[df.meta['OVERALL_Assessment']=='Regional only', 'Category'] = 'regional'
 df.filter(Category=['C1*','regional'], inplace=True)
 
-meta_docs = {}
+# EUAB target
+df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
+    'up': 2061,
+    'year': 2030}},
+    exclude_on_fail=True)
+df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
+    'up': 300,
+    'year': 2050}},
+    exclude_on_fail=True)
 
+df.filter(exclude=True, keep=False, inplace=True)
+
+meta_docs = {}
 
 # =============================================================================
 #%% Variable Aggregations 
@@ -109,6 +123,89 @@ df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
             ignore_units='Mt CO2-equiv/yr',
             append=True)
 
+# Trade
+components = [ 'Trade|Primary Energy|Biomass|Volume',
+ 'Trade|Primary Energy|Coal|Volume',
+ 'Trade|Primary Energy|Fossil',
+ 'Trade|Primary Energy|Gas|Volume',
+ 'Trade|Primary Energy|Oil|Volume',
+ 'Trade|Secondary Energy|Hydrogen|Volume',
+ 'Trade|Secondary Energy|Liquids|Biomass|Volume']
+df.aggregate(variable='Trade', components=components)
+
+
+## Fossil fuels
+
+components = ['Primary Energy|Coal', 'Primary Energy|Gas', 'Primary Energy|Oil']
+aggregate_missing_only(df, 'Primary Energy|Fossil', components, append=True)
+
+components = ['Primary Energy|Coal|w/o CCS','Primary Energy|Oil|w/o CCS','Primary Energy|Gas|w/o CCS']
+aggregate_missing_only(df, 'Primary Energy|Fossil|w/o CCS', components, append=True)
+
+
+
+# primary Energy renewables
+components = ['Primary Energy|Biomass', 'Primary Energy|Geothermal',
+              'Primary Energy|Hydro', 'Primary Energy|Solar',
+              'Primary Energy|Wind']
+
+name = 'Primary Energy|Renewables (incl.Biomass)'
+df.aggregate(name, components, append=True)
+name = 'Primary Energy|Non-biomass renewables'
+df.aggregate(name, components[1:], append=True)
+
+
+# Final energy  fossil sectoral
+
+components = ['Final Energy|Industry|Gases|Coal',
+              'Final Energy|Industry|Gases|Natural Gas',
+              'Final Energy|Industry|Liquids|Coal',
+              'Final Energy|Industry|Liquids|Gas',
+              'Final Energy|Industry|Liquids|Oil',
+              'Final Energy|Industry|Solids|Coal',
+              ]
+name = 'Final Energy|Industry|Fossil'
+df.aggregate(name, components=components, append=True)
+
+# Res & Comm
+components = ['Final Energy|Residential and Commercial|Gases|Coal',
+              'Final Energy|Residential and Commercial|Gases|Natural Gas',
+              'Final Energy|Residential and Commercial|Liquids|Coal',
+              'Final Energy|Residential and Commercial|Liquids|Gas',
+              'Final Energy|Residential and Commercial|Liquids|Oil',
+              'Final Energy|Residential and Commercial|Solids|Coal',
+              ]
+name = 'Final Energy|Residential and Commercial|Fossil'
+df.aggregate(name, components=components, append=True)
+
+components = ['Final Energy|Transportation|Gases|Coal',
+              'Final Energy|Transportation|Gases|Natural Gas',
+              'Final Energy|Transportation|Liquids|Coal',
+              'Final Energy|Transportation|Liquids|Gas',
+              'Final Energy|Transportation|Liquids|Oil',
+              ]
+name = 'Final Energy|Transportation|Fossil'
+df.aggregate(name, components=components, append=True)
+
+
+# Trade
+name = 'Trade'
+components = [
+             'Trade|Primary Energy|Biomass|Volume',
+             'Trade|Primary Energy|Coal|Volume',
+             'Trade|Primary Energy|Gas|Volume',
+             'Trade|Primary Energy|Oil|Volume',
+             'Trade|Secondary Energy|Hydrogen|Volume',
+             'Trade|Secondary Energy|Liquids|Biomass|Volume']
+df.aggregate(name, components=components, append=True)
+
+
+name = 'Trade|Primary Energy|Fossil'
+components = [
+            'Trade|Primary Energy|Coal|Volume',
+            'Trade|Primary Energy|Gas|Volume',
+            'Trade|Primary Energy|Oil|Volume',]
+df.aggregate(name, components=components, append=True)
 
 #=============================================================================
 #%% Year of netzero 
@@ -144,34 +241,12 @@ for indi, config in specdic.items():
     tsdata = filter_and_convert(df, config['variable'], unitin=config['unitin'], unitout=config['unitout'], factor=config['factor'])
     df.set_meta(tsdata.apply(year_of_net_zero, years=tsdata.columns, threshold=threshold, axis=1), name)
 
-# nameNZ0eip = 'year of netzero CO2 EIP emissions (threshold=0 Gt CO2/yr)'
-# co2eip = filter_and_convert(df, 'Emissions|CO2|Energy and Industrial Processes', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# df.set_meta(co2eip.apply(year_of_net_zero, years=co2eip.columns, threshold=0, axis=1), nameNZ0eip)
-
-# nameNZ0eip = 'year of netzero CO2 EIP emissions (threshold=0 Gt CO2/yr)'
-# co2eip = filter_and_convert(df, 'Emissions|CO2|Energy and Industrial Processes', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# df.set_meta(co2eip.apply(year_of_net_zero, years=co2eip.columns, threshold=0, axis=1), nameNZ0eip)
 # =============================================================================
 #%% Cumulatuive emissions / sequestrations to 2050 values
 # =============================================================================
 
 df.interpolate(time=range(2000,2101), inplace=True)
 
-# co2 = filter_and_convert(df, 'Emissions|CO2', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# co2eip = filter_and_convert(df, 'Emissions|CO2|Energy and Industrial Processes', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# co2afolu = filter_and_convert(df, 'Emissions|CO2|AFOLU', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# # CS = filter_and_convert(df, 'Carbon Sequestration', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# ccs = filter_and_convert(df, 'Carbon Sequestration|CCS', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# beccs = filter_and_convert(df, 'Carbon Sequestration|CCS|Biomass', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# # ccsFI = filter_and_convert(df, 'Carbon Sequestration|CCS|Biomass', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-
-# # seq_lu = filter_and_convert(df, 'Carbon Sequestration|Land Use', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# # dac =  filter_and_convert(df, 'Carbon Sequestration|Direct Air Capture', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.001)
-# # ew =  filter_and_convert(df, 'Carbon Sequestration|Enhanced Weathering', unitin='Mt CO2/yr', unitout='Gt CO2/yr', factor=0.00)
-
-# ghgfull = filter_and_convert(df, 'Emissions|Kyoto Gases (incl. indirect AFOLU)', unitin='Mt CO2-equiv/yr', unitout='Gt CO2-equiv/yr', factor=0.001)
-
-# ghg = filter_and_convert(df, 'Emissions|Kyoto Gases', unitin='Mt CO2-equiv/yr', unitout='Gt CO2-equiv/yr', factor=0.001)
 
 #%% Cumulative calcs
 
@@ -231,84 +306,17 @@ for indi, config in specdic.items():
     meta_docs[name] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
 
 
-
-
-# # CO2
-# cum_co2_label = 'cumulative net CO2 ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(co2.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_co2_label)
-# meta_docs[cum_co2_label] = 'Cumulative net CO2 emissions from {} until {} (including the last year, {}) (native model Emissions|CO2)'.format(baseyear, lastyear, cumulative_unit)    
-
-# # CO2 EIP
-# cum_co2_label = 'cumulative net CO2 EIP ({}-{}, {}) (Native)'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(co2eip.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_co2_label)
-# meta_docs[cum_co2_label] = 'Cumulative net CO2 EIP emissions from {} until {} (including the last year, {}) (native model Emissions|CO2)'.format(baseyear, lastyear, cumulative_unit)  
-
-
-# # # Carbon Sequestration
-# # cum_CS_label = 'cumulative Carbon Sequestration ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# # df.set_meta(CS.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_CS_label)
-# # meta_docs[cum_CS_label] = 'Cumulative carbon sequestration from {} until {} (including the last year, {})'        .format(baseyear, lastyear, cumulative_unit)
-
-# # CCS
-# cum_ccs_label = 'cumulative CCS ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(ccs.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_ccs_label)
-# meta_docs[cum_ccs_label] = 'Cumulative carbon capture and sequestration from {} until {} (including the last year, {})'        .format(baseyear, lastyear, cumulative_unit)
-# # BECCS
-# cum_beccs_label = 'cumulative BECCS ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(beccs.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_beccs_label)
-# meta_docs[cum_beccs_label] = 'Cumulative carbon capture and sequestration from bioenergy from {} until {} (including the last year, {})'.format(
-#     baseyear, lastyear, cumulative_unit)   
-# # # LU
-# # name = 'cumulative sequestration land-use ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# # df.set_meta(seq_lu.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), name)
-# # meta_docs[name] = 'Cumulative carbon sequestration from land use from {} until {} (including the last year, {})'.format(
-# #     baseyear, lastyear, cumulative_unit)    
-# # # DAC
-# # name = f'cumulative sequestration Direct Air Capture ({baseyear}-{lastyear}, {cumulative_unit})'
-# # df.set_meta(dac.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), name)
-# # meta_docs[name] = 'Cumulative carbon sequestration from Direct Air Capture from {} until {} (including the last year, {})'.format(
-# #     baseyear, lastyear, cumulative_unit)
-# # # EW
-# # name = f'cumulative sequestration Enhanced Weathering ({baseyear}-{lastyear}, {cumulative_unit})'
-# # df.set_meta(ew.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), name)
-# # meta_docs[name] = 'Cumulative carbon sequestration from Enhanced Weathering from {} until {} (including the last year, {})'.format(
-# #     baseyear, lastyear, cumulative_unit)
-
-# cum_ghgfull = 'cumulative Kyoto Gases (incl. indirect AFOLU) ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(cum_ghgfull.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_beccs_label)
-# meta_docs[cum_beccs_label] = 'Cumulative Kyoto Gases (incl. indirect AFOLU) from {} until {} (including the last year, {})'.format(
-#     baseyear, lastyear, cumulative_unit) 
-
-# cum_ghg = 'cumulative Kyoto Gases ({}-{}, {})'.format(baseyear, lastyear, cumulative_unit)
-# df.set_meta(cum_ghgfull.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), cum_beccs_label)
-# meta_docs[cum_beccs_label] = 'Cumulative Kyoto Gases from {} until {} (including the last year, {})'.format(
-#     baseyear, lastyear, cumulative_unit) # 
-
-# =============================================================================
-#%% cumulative CO2/GHGs to net zero CO2 
-# =============================================================================
-
-# name = 'cumulative net CO2 to year of net zero CO2, Gt CO2'
-# df.set_meta(co2.apply(lambda x: pyam.cumulative(x, first_year=baseyear, last_year=get_from_meta_column(df, x,                                                                nameNZ0)), raw=False, axis=1), name)
-
-# name = 'cumulative Kyoto Gases (incl. indirect AFOLU) to year of net zero CO2, Gt CO2-equiv'
-# df.set_meta(ghgfull.apply(lambda x: pyam.cumulative(x, first_year=baseyear, last_year=get_from_meta_column(df, x,                                                                nameNZ0)), raw=False, axis=1), name)
-
-# name = 'cumulative Kyoto Gases (incl. indirect AFOLU) to year of net zero CO2, Gt CO2-equiv'
-# df.set_meta(ghg.apply(lambda x: pyam.cumulative(x, first_year=baseyear, last_year=get_from_meta_column(df, x,                                                                nameNZ0)), raw=False, axis=1), name)
-
 # =============================================================================
 #%% Non-CO2 % reduction 2020-2050
 # =============================================================================
 base_year = 2020
 last_years = [2030, 2050]
 for last_year in last_years:
-    name = f'Non-CO2 emissions reductions {base_year}-{last_year} % '
+    name = f'Non-CO2 emissions reductions {base_year}-{last_year} %'
     a = df.filter(variable='Emissions|Total Non-CO2').timeseries()
     rd = 100* (1-(a[last_year] / a[base_year]))
     df.set_meta(rd, name, )
     
-
 
 # =============================================================================
 #%% Calculation of indicator variables
@@ -321,58 +329,24 @@ ynz_variables = []
 indis_add = [
             'Emissions|CO2',
             'Emissions|Total Non-CO2',
+            'Emissions|CO2|AFOLU',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
              'Emissions|Kyoto Gases',
+             'Carbon Sequestration|CCS',
+             'Carbon Sequestration|CCS|Biomass',
+             'Carbon Sequestration|CCS|Fossil',
+             'Carbon Sequestration|CCS|Industrial Processes',
 
              ]
 for x in indis_add:
     ynz_variables.append(x)
 
-# =============================================================================
-# 'Emissions|CO2|AFOLU'  
-ynz_variables.append('Emissions|CO2|AFOLU')
-
-# =============================================================================
-# 'Carbon Sequestration|CCS|Biomass',
-ynz_variables.append('Carbon Sequestration|CCS|Biomass')
 
 # =============================================================================
 # Primary energy
 # =============================================================================
-missing = df.require_variable(variable='Primary Energy|Fossil')
-if missing is not None:
-    missing = missing.loc[missing.model!='Reference',:]
-    components = ['Primary Energy|Coal', 'Primary Energy|Gas', 'Primary Energy|Oil']
-    # if missing, aggregate energy and ip
-    mapping = {}
-    for model in missing.model.unique():
-        mapping[model] = list(missing.loc[missing.model==model, 'scenario'])
-    
-    # Aggregate and add to the df
-    if len(mapping)>0:
-        for model, scenarios in mapping.items():
-            try:
-                newpef = to_series(
-                    df.filter(model=model, scenario=scenarios, variable=components).aggregate(variable='Primary Energy|Fossil', components=components)
-                    )
-        
-                df.append(
-                    newpef,
-                variable='Primary Energy|Fossil', unit='EJ/yr',
-                inplace=True
-                )
-            except(IndexError):
-                print('No components:{},{}'.format(model, scenarios))
 
-components = ['Primary Energy|Biomass', 'Primary Energy|Geothermal',
-              'Primary Energy|Hydro', 'Primary Energy|Solar',
-              'Primary Energy|Wind']
-
-name = 'Primary Energy|Renewables (incl.Biomass)'
-df.aggregate(name, components, append=True)
-name = 'Primary Energy|Non-biomass renewables'
-df.aggregate(name, components[1:], append=True)
-
+ynz_variables.append('Primary Energy|Biomass')
 
 # =============================================================================
 # Primary energy - Renewables share
@@ -406,12 +380,9 @@ df.divide('Primary Energy|Fossil|w/o CCS', 'Primary Energy',
 ynz_variables.append(name)
 
 
-
-
 # =============================================================================
 # Secondary energy electricity renewables & hydrogen
 # =============================================================================
-
 
 # Secondary energy Renewables
 # Drop non-bio renewables
@@ -432,7 +403,6 @@ df.aggregate('Secondary Energy|Electricity|Renewables (incl.Biomass)',
 
 df.aggregate('Secondary Energy|Electricity|Non-Biomass Renewables', 
                 components=rencomps[1:], append=True)
-
 
 
 # % of renewables in electricity
@@ -456,12 +426,12 @@ df.divide('Secondary Energy|Electricity|Non-Biomass Renewables',
 ynz_variables.append(nv)
 
 # =============================================================================
-# Hydrogen production as share of FE 
-# name = 'Hydrogen production|Final Energy|Share'
-# df.divide('Secondary Energy|Hydrogen', 'Final Energy',
-#           name, ignore_units='-',
-#           append=True)
-# ynz_variables.append(name)
+#Hydrogen production as share of FE 
+name = 'Hydrogen production|Final Energy|Share'
+df.divide('Secondary Energy|Hydrogen', 'Final Energy',
+          name, ignore_units='-',
+          append=True)
+ynz_variables.append(name)
 
 # =============================================================================
 # Final energy
@@ -478,7 +448,6 @@ ynz_variables.append(nv)
 #           ignore_units=nu,
 #           append=True)
 # ynz_variables.append(nv)
-
 
 # =============================================================================
 # # #GDP / unit Final Energy
@@ -505,22 +474,82 @@ df.divide('Final Energy|Electricity', 'Final Energy',
 
 ynz_variables.append(nv)
 
-df.convert_unit('-', '%', factor=100, inplace=True)
+# =============================================================================
+# Sectoral final energy fossil shares
+# =============================================================================
 
+# =============================================================================
+# Industry
+nv = 'Final Energy|Industry|Fossil|Share'
+nu = '-'
+df.divide('Final Energy|Industry|Fossil', 'Final Energy|Industry', 
+          nv, 
+          ignore_units=nu, 
+          append=True)
+
+ynz_variables.append(nv)
+
+# =============================================================================
+# Residential and Commercial
+nv = 'Final Energy|Residential and Commercial|Fossil|Share'
+nu = '-'
+df.divide('Final Energy|Residential and Commercial|Fossil', 'Final Energy|Residential and Commercial', 
+          nv, 
+          ignore_units=nu, 
+          append=True)
+
+ynz_variables.append(nv)
+
+# =============================================================================
+# Transportation
+nv = 'Final Energy|Transportation|Fossil|Share'
+nu = '-'
+df.divide('Final Energy|Transportation|Fossil', 'Final Energy|Transportation', 
+          nv, 
+          ignore_units=nu, 
+          append=True)
+
+ynz_variables.append(nv)
 
 # =============================================================================
 # Trade / imports
 # =============================================================================
-
 # =============================================================================
-# Fossil fuel imports
-name = 'Trade|Primary Energy|Fossil'
-components = [
-'Trade|Primary Energy|Coal|Volume',
-'Trade|Primary Energy|Gas|Volume',
-'Trade|Primary Energy|Oil|Volume',]
-df.aggregate(name, components=components)
+# Fossil fuel import dependency
+nv = 'Primary Energy|Trade|Share'
+df.divide('Trade', 'Primary Energy',
+          nv,
+          ignore_units='-',
+          append=True)
 
+df.multiply(nv, -100, 'PE Import dependency', ignore_units='%', append=True)
+ynz_variables.append('PE Import dependency')
+
+
+
+nv = 'Primary Energy|Fossil|Trade|Share'
+df.divide('Trade|Primary Energy|Fossil', 'Primary Energy',
+          nv,
+          ignore_units='-',
+          append=True)
+df.multiply(nv, -100, 'PE Import dependency|Fossil', ignore_units='%', append=True)
+ynz_variables.append('PE Import dependency|Fossil')
+
+
+nv = 'Trade|Fossil|Share'
+df.divide('Trade|Primary Energy|Fossil', 'Trade',
+          nv,
+          ignore_units='-',
+          append=True)
+ynz_variables.append(nv)
+
+ynz_variables.append('Trade')
+ynz_variables.append('Trade|Fossil|Share')
+ynz_variables.append('Trade|Primary Energy|Fossil')
+
+
+
+df.convert_unit('-', '%', factor=100, inplace=True)
 
 # =============================================================================
 #%% Calculate indicators in year of net-zero and 2050
@@ -538,23 +567,13 @@ for v in ynz_variables:
     df.set_meta(datats.apply(lambda x: x[get_from_meta_column(df, x,
                                                               nameNZCO2)],
                                             raw=False, axis=1), name)    
+    if v=='Emissions|Kyoto Gases (incl. indirect AFOLU)':
+        name = f'{v} in 2030, {nu}'
+        df.set_meta_from_data(name, variable=v, year=2030)
+        
     name = f'{v} in 2050, {nu}'
     df.set_meta_from_data(name, variable=v, year=2050)
     
-
-                                            
-#%%
-# =============================================================================
-# #%% Multiply all share columns by 100% 
-# # =============================================================================
-
-# pccols = [x for x in list(df.meta.columns) if "Share" in x]
-# df.meta[pccols] = df.meta[pccols]*100
-# npccols = [x.replace('-','%') for x in pccols]
-# rncols = {k:v for k,v in zip(pccols, npccols)}
-# df.meta.rename(columns=rncols, inplace=True)
-
-
 
 
 # =============================================================================
@@ -642,8 +661,6 @@ for i, column in value_columns:#enumerate(value_columns):
         worksheet.set_column(i, i, None, largenum_format)
     elif df.meta[column].dtype == float and abs(df.meta[column].median()) <= 10:
         worksheet.set_column(i, i, None, smallnum_format)
-
-
 
 
 
