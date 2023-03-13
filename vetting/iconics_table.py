@@ -109,11 +109,11 @@ df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
             'tva',
             ignore_units='Mt CO2-equiv/yr',
             append=True)
-df.subtract('tva',
-            'Emissions|CO2|LULUCF Indirect',
-            'Emissions|Kyoto Gases',
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
+# df.subtract('tva',
+#             'Emissions|CO2|LULUCF Indirect',
+#             'Emissions|Kyoto Gases',
+#             ignore_units='Mt CO2-equiv/yr',
+#             append=True)
 df.filter(variable='tva', keep=False, inplace=True
           )
 # Emissions|Non-CO2
@@ -227,10 +227,10 @@ specdic = {'CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
-           'GHGs':{'variable': 'Emissions|Kyoto Gases',
-                                  'unitin': 'Mt CO2-equiv/yr',
-                                  'unitout': 'Gt CO2-equiv/yr',
-                                  'factor': 0.001},   
+           # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
+           #                        'unitin': 'Mt CO2-equiv/yr',
+           #                        'unitout': 'Gt CO2-equiv/yr',
+           #                        'factor': 0.001},   
            }
 
 threshold = 0
@@ -279,10 +279,10 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
-           'GHGs':{'variable': 'Emissions|Kyoto Gases',
-                                  'unitin': 'Mt CO2-equiv/yr',
-                                  'unitout': 'Gt CO2-equiv/yr',
-                                  'factor': 0.001},   
+           # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
+           #                        'unitin': 'Mt CO2-equiv/yr',
+           #                        'unitout': 'Gt CO2-equiv/yr',
+           #                        'factor': 0.001},   
            }
            
 
@@ -304,6 +304,16 @@ for indi, config in specdic.items():
     label = f'cumulative {indi} ({baseyear}-{lastyear}, {cumulative_unit})'
     df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), label)
     meta_docs[name] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
+
+#%% GHG % reduction compared to 1990
+ghg1990 = 5640
+base_year_ghg = 1990
+last_years = [2020, 2030, 2040, 2050]
+for last_year in last_years:
+    name = f'GHG emissions reductions {base_year_ghg}-{last_year} %'
+    a = df.filter(variable='Emissions|Kyoto Gases (excl. LULUCF)').timeseries()
+    rd = 100* (1-(a[last_year] / ghg1990))
+    df.set_meta(rd, name, )
 
 
 # =============================================================================
@@ -331,7 +341,7 @@ indis_add = [
             'Emissions|Total Non-CO2',
             'Emissions|CO2|AFOLU',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
-             'Emissions|Kyoto Gases',
+             # 'Emissions|Kyoto Gases',
              'Carbon Sequestration|CCS',
              'Carbon Sequestration|CCS|Biomass',
              'Carbon Sequestration|CCS|Fossil',
