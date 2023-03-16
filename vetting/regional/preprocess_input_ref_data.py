@@ -9,7 +9,7 @@ wdg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\
 wdr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\input_data\\'
 wd =  f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\input_data\\'
 
-edgar_year = range(2000,2020)
+edgar_year = range(1990,2020)
 iea_year = range(2000,2020)
 
 msvu = ['model','scenario','variable','unit']
@@ -51,7 +51,6 @@ dfeip.value.sum()
 dfe = dfco2all.loc[dfco2all.chapter_title.isin(['AFOLU'])==False]
 # Include ONLY relevant IPCC codes
 ipcc_keep_codes = ('1A','1B')
-
 dfe = dfe.loc[dfe.sector_code.str.startswith(ipcc_keep_codes)]
 
 
@@ -86,7 +85,23 @@ dfe4.value.sum()
 
 dfedgarCH4 = pyam.IamDataFrame(dfe4)
 
+#%% F-GASES
 
+# dffg = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_FGAS.xlsx',
+#                     sheet_name='data', usecols=['ISO', 'fossil_bio', 'year','value'])
+
+# dffg.rename(columns={'ISO':'region'}, inplace=True)
+
+
+# # sum fossil and bio CH4 here, no need to separate
+# dfefg = dffg[['region', 'fossil_bio', 'year', 'value']].groupby(['region','year']).sum()
+
+# dfefg = dfefg.reset_index()#.rename(columns={'ISO':'region'})
+# dfefg[['model','scenario','variable','unit']] = ['Reference','EDGAR AR6','Emissions|CH4','Mt CH4/yr']
+# dfefg['value'] = dfefg['value']/1e6 # convert from t to Mt
+# dfefg.value.sum()
+
+# dfedgarFAGSES = pyam.IamDataFrame(dfefg)
 
 #%% merge and write out EDGAR data
 
@@ -103,6 +118,113 @@ for v in dfedgar.variable:
 dfedgar.filter(year=edgar_year, inplace=True)
 
 dfedgar.to_csv(f'{wd}input_reference_edgarCO2CH4.csv')
+
+#%% =============================================================================
+# EEA Inventory data
+# =============================================================================
+
+dfeeain = pd.read_csv(f'{wd}pre_processing_data\\UNFCCC_v25.csv',
+                    usecols=['Country_code', 'Pollutant_name',
+                             'Sector_code',	'Sector_name',
+                             'Parent_sector_code',	'Unit',	'Year',	'emissions'],
+                    encoding='utf-8')
+
+dfeeain.rename(columns={'Country_code':'region',
+                     'Pollutant_name': 'variable',
+                     'Unit': 'unit',
+                     'Year': 'year',
+                     'emissions': 'value'                   
+                     }, inplace=True)
+
+ghg_var = 'Kyoto Gases (AR4)'
+dfeea = dfeeain.replace({'variable': {'All greenhouse gases - (CO2 equivalent)': ghg_var}})
+
+keep_vars = [ghg_var, 'CH4', 'CO2',]#  'HFCs - (CO2 equivalent)', 'N2O', 'NF3 - (CO2 equivalent)',  'PFCs - (CO2 equivalent)', 'SF6 - (CO2 equivalent)', 'Unspecified mix of HFCs and PFCs - (CO2 equivalent)']
+
+
+keep_sectors = ['1 - Energy', '2 - Industrial Processes and Product Use',  '3 - Agriculture',
+                '4 - Land Use, Land-Use Change and Forestry', '5.A - Solid Waste Disposal',
+                '6 - Other Sector',
+                'Total net emissions (UNFCCC)',
+                'Total net emissions with international aviation (EU NDC)',
+                'Total net emissions with international transport (EEA)',]
+dfeea = dfeea.loc[(dfeea.Sector_name.isin(keep_sectors) & (dfeea.variable.isin(keep_vars)) )]
+
+# Fix year data
+dfeea = dfeea.loc[dfeea.year!='1985-1987']
+dfeea['year'] = dfeea.year.astype(int)
+
+
+#% chnage units
+
+dfeea.loc[(dfeea.unit=='Gg') & (dfeea.variable=='CO2'), 'unit'] = 'kt CO2/yr'
+dfeea.loc[(dfeea.unit=='Gg') & (dfeea.variable=='CH4'), 'unit'] = 'kt CH4/yr'
+dfeea.loc[(dfeea.unit=='Gg CO2 equivalent') & (dfeea.variable==ghg_var), 'unit'] = 'kt CO2-equiv/yr'
+
+gases = dfeea.variable.unique()
+#%
+for gas in gases:
+
+    rename_dic = {
+                    '1 - Energy': f'Emissions|{gas}|Energy',
+                    '2 - Industrial Processes and Product Use': f'Emissions|{gas}|Industrial Processes',
+                    '3 - Agriculture': f'Emissions|{gas}|Agriculture',
+                    '4 - Land Use, Land-Use Change and Forestry': f'Emissions|{gas}|LULUCF',
+                    '5.A - Solid Waste Disposal': f'Emissions|{gas}|Waste',
+                    '6 - Other Sector': f'Emissions|{gas}|Other',
+                    'Total net emissions (UNFCCC)': f'Emissions|{gas} (UNFCCC)',
+                    'Total net emissions with international aviation (EU NDC)': f'Emissions|{gas} (EU NDC)',
+                    'Total net emissions with international transport (EEA)': f'Emissions|{gas} (EEA)',
+                    }
+
+    dfeea.loc[dfeea.variable==gas, 'Sector_name'] = dfeea.loc[dfeea.variable==gas, 'Sector_name'].replace(rename_dic)
+
+    # dfeea['Sector_name'] = .dfeea['Sector_name']replace(rename_dic, inplace=True)
+dfeea['variable'] = dfeea['Sector_name']
+
+
+dfeea['model'] = 'Reference'
+dfeea['scenario'] = 'EEA GHG 2021'
+
+
+#%
+dfeeap = dfeea[pyam.IAMC_IDX+['year','value']]
+dfeeap = pyam.IamDataFrame(dfeeap)
+keep_years = range(1990,2023)
+dfeeap.filter(year=keep_years, inplace=True)
+
+#% Regions
+regions = {x:cc.pandas_convert(series=pd.Series(x), to='ISO3', not_found=None)[0] for x in dfeeain.region.unique()} 
+regions['EUA'] = 'EU27 & UK'
+regions['EUC'] = 'EU-KP'
+regions['EUX'] = 'EU27'
+
+dfeeap.rename(mapping={'region': regions}, inplace=True)
+
+
+# Units
+dfeeap.convert_unit('kt CO2/yr', 'Mt CO2/yr',  inplace=True)
+dfeeap.convert_unit('kt CH4/yr', 'Mt CH4/yr',  inplace=True)
+dfeeap.convert_unit('kt CO2-equiv/yr', 'Mt CO2-equiv/yr',  inplace=True)
+
+
+for gas in gases:
+    v = f'Emissions|{gas}|Energy and Industrial Processes'
+    components = [f'Emissions|{gas}|Energy','Emissions|{gas}|Industrial Processes', ]
+    dfeeap.aggregate(v, components=components,
+                     append=True)
+    
+    
+for agg in ['EEA','EU NDC','UNFCCC']:
+    v = f'Emissions|Total Non-CO2 (AR4) ({agg})'
+    a = f'Emissions|{ghg_var} ({agg})'
+    b = f'Emissions|CO2 ({agg})'
+    dfeeap.subtract(a, b, v, append=True, ignore_units='Mt CO2-equiv/yr')
+    
+    
+dfeeap.to_csv(f'{wd}input_reference_EEA.csv')
+
+
 
 
 #%% =============================================================================
@@ -204,6 +326,7 @@ dfiea.to_csv(f'{wd}input_reference_iea.csv')
 dfall = dfedgar.append(dfirena)
 dfall.append(dfemb, inplace=True)
 dfall.append(dfiea, inplace=True)
+dfall.append(dfeeap, inplace=True)
 
 # make Solar-Wind composite
 dfswc = dfall.filter(variable='Secondary Energy|Electricity|Solar-Wind')
