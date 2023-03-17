@@ -49,9 +49,10 @@ dfeip.value.sum()
 
 # Energy
 dfe = dfco2all.loc[dfco2all.chapter_title.isin(['AFOLU'])==False]
-# Include ONLY relevant IPCC codes
+# Include ONLY relevant IPCC codes for Energy
 ipcc_keep_codes = ('1A','1B')
 dfe = dfe.loc[dfe.sector_code.str.startswith(ipcc_keep_codes)]
+
 
 
 dfe = dfe[['region','year','value']].groupby(['region','year']).sum()
@@ -74,7 +75,7 @@ dfch4 = pd.read_excel(f'{wd}pre_processing_data\\ipcc_ar6_data_edgar6_CH4.xlsx',
 
 dfch4.rename(columns={'ISO':'region'}, inplace=True)
 
-
+dfch4 = dfch4.loc[dfch4.fossil_bio=='fossil']
 # sum fossil and bio CH4 here, no need to separate
 dfe4 = dfch4[['region', 'fossil_bio', 'year', 'value']].groupby(['region','year']).sum()
 
@@ -113,7 +114,14 @@ for v in dfedgar.variable:
     dfedgar.aggregate_region(variable=v,
                              region='World',
                              append=True)
-
+    
+# Aggregate to EU27    
+iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
+for v in dfedgar.variable:
+    dfedgar.aggregate_region(variable=v,
+                             region='EU27',
+                             subregions=iso_eu27,
+                             append=True)
 # Filter year
 dfedgar.filter(year=edgar_year, inplace=True)
 
@@ -207,10 +215,9 @@ dfeeap.convert_unit('kt CO2/yr', 'Mt CO2/yr',  inplace=True)
 dfeeap.convert_unit('kt CH4/yr', 'Mt CH4/yr',  inplace=True)
 dfeeap.convert_unit('kt CO2-equiv/yr', 'Mt CO2-equiv/yr',  inplace=True)
 
-
 for gas in gases:
     v = f'Emissions|{gas}|Energy and Industrial Processes'
-    components = [f'Emissions|{gas}|Energy','Emissions|{gas}|Industrial Processes', ]
+    components = [f'Emissions|{gas}|Energy', f'Emissions|{gas}|Industrial Processes', ]
     dfeeap.aggregate(v, components=components,
                      append=True)
     

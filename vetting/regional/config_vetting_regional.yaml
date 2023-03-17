@@ -1,11 +1,30 @@
 # From IEA dataset
 reference_variables:
 
-  EDGAR AR6:
+  # EDGAR AR6:
+    # ref_year: 2019
+    # compare_year: 2019
+    # model: Reference
+    # scenario: EDGAR AR6
+    # key_historical: True
+    # key_future: False
+    # missing: Fail_missing
+    # variables_threshold:
+      # Emissions|CO2|Energy and Industrial Processes: 0.2
+      # Emissions|CO2|Energy: 0.2
+      # Emissions|CH4: 0.4
+      # Emissions|N2O: 0.4
+    # missing_flags:
+      # Emissions|CO2|Energy and Industrial Processes: Fail_missing
+      # Emissions|CO2|Energy: Fail_missing
+      # Emissions|CH4: Pass_missing
+      # Emissions|N2O: Pass   
+      
+  EEA GHG 2021:
     ref_year: 2019
     compare_year: 2019
     model: Reference
-    scenario: EDGAR AR6
+    scenario: EEA GHG 2021
     key_historical: True
     key_future: False
     missing: Fail_missing
@@ -19,7 +38,6 @@ reference_variables:
       Emissions|CO2|Energy: Fail_missing
       Emissions|CH4: Pass_missing
       # Emissions|N2O: Pass   
-
 
   IEA Primary Energy:
     ref_year: 2019

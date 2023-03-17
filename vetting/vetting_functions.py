@@ -231,7 +231,7 @@ def filter_validate(df, variable, missing_flag, year, lo, up, meta_name, key_his
     
     
 def to_series(pyam_df):
-    cols = pyam.utils.YEAR_IDX
+    cols = pyam.YEAR_IDX
     return (
         pyam_df
         .data[cols+['value']]
@@ -249,7 +249,7 @@ def change_year(series, year):
     # to be able to subtract two series of different years
     new_series = series.reset_index()
     new_series['year'] = year
-    return new_series.set_index(pyam.utils.YEAR_IDX)['value']
+    return new_series.set_index(pyam.YEAR_IDX)['value']
 
 def calc_increase_percentage(df, variable, year1, year2, suffix='|{}-{} change'):
     variable_year1 = to_series(df.filter(variable=variable, year=year1))

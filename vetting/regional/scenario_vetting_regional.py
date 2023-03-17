@@ -59,7 +59,6 @@ input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 "C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_ieaPE_SE.csv"
 
 
-# input_data_ceds = f'{region_level}\\input_data\\CEDS_ref_data.xlsx'
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
 
@@ -142,7 +141,7 @@ def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
     # Create summary columns for historical and future
     #
     ###################################
-def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta=False):
+def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, include_meta=False):
     
     '''
     df: pyam.IAMdf to be written out, must have meta
@@ -232,7 +231,7 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     modelstr = model.replace('/','-')
     xs = '' if model=='all' else 'teams\\'
     modelstr = 'all' if model=='all' else modelstr
-    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}.xlsx'
+    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_EEA.xlsx'
     writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
     
     # Strip out exclude / source columns if present
@@ -327,9 +326,11 @@ def write_out(df, iso_reg_dict={}, model='all', include_data=False, include_meta
     dfop_simple.to_excel(writer, sheet_name='summary_pivot')
 
     # Add regions dictionary
-    irdout = pd.concat([pd.DataFrame(v, columns=[k]) for k, v in iso_reg_dict.items()], axis=1)
-    pd.DataFrame(irdout).to_excel(writer, sheet_name='region_mapping')
-
+    try:
+        irdout = pd.concat([pd.DataFrame(v, columns=[k]) for k, v in iso_reg_dict.items()], axis=1)
+        pd.DataFrame(irdout).to_excel(writer, sheet_name='region_mapping')
+    except(ValueError):
+        print('coulds write region mapping')
     # Add data
     if include_data:
         df.to_excel(writer, sheet_name='data', include_meta=include_meta,)
@@ -531,10 +532,13 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     iso_reg_dict_all[model] = iso_reg_dict
     
     ###############
-    # Load reference ISO data (e.g. EDGAR, IEA)
+    # Load reference ISO data (e.g. EDGAR, EEA, IEA, EMBERS)
     ref_iso_data = pyam.IamDataFrame(input_data_ref)
     rs = [x for l in iso_reg_dict.values() for x in l]
     ref_iso_data.filter(region=rs, inplace=True)
+    
+    # Rename EEA Emissions|CH4 variable
+    ref_iso_data.rename({'variable':{'Emissions|CH4 (EEA)': 'Emissions|CH4'}}, inplace=True)
     
     if ct==0:
         dfall = ref_iso_data.filter(model='xxx') # create empty IamDF for saving all data
