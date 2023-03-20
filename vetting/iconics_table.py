@@ -29,13 +29,13 @@ user = 'byers'
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 output_folder = f'{main_folder}vetting\\'
 
-wbstr = f'{output_folder}vetting_flags_global_regional_combined.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\*EU_*.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2015_harmo\\EU_advisory_board_data_for_Ed_2023_03_17_2015_harmo_eu_only.csv')
 if len(files) == 1:
     dfin = pyam.IamDataFrame(files[0])
 else:
@@ -55,7 +55,7 @@ dfin.load_meta(wbstr, sheet_name='Vetting_flags')
 
 df = dfin.filter(region='EU27')
 # Filter years in case of odd zeros
-years = range(2000,2101,5)
+years = range(1990,2101,5)
 df.filter(year=years, inplace=True)
 
 df.filter(model='GCAM*', scenario='*CurPol*', keep=False, inplace=True)
@@ -67,7 +67,7 @@ df.filter(Category=['C1*','regional'], inplace=True)
 
 # EUAB target
 df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
-    'up': 2061,
+    'up': 2085,
     'year': 2030}},
     exclude_on_fail=True)
 df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
@@ -89,14 +89,14 @@ b = df.filter(variable=a).convert_unit('Mt CO2-equiv/yr', 'Mt CO2/yr')
 df.filter(variable=a, keep=False, inplace=True)
 df.append(b, inplace=True)
 
-co2comps =  ['Emissions|CO2|Energy',
-             'Emissions|CO2|Industrial Processes',
-             'Emissions|CO2|LULUCF Direct+Indirect',
-             # 'Emissions|CO2|LULUCF Indirect',
-             ]
+# co2comps =  ['Emissions|CO2|Energy',
+#              'Emissions|CO2|Industrial Processes',
+#              'Emissions|CO2|LULUCF Direct+Indirect',
+#              # 'Emissions|CO2|LULUCF Indirect',
+#              ]
 
-df.aggregate(variable='Emissions|CO2',
-             components=co2comps, append=True)
+# df.aggregate(variable='Emissions|CO2',
+#              components=co2comps, append=True)
 
 # 'Emissions|CO2|Energy and Industrial Processes
 components = [ 'Emissions|CO2|Industrial Processes', 'Emissions|CO2|Energy',]
@@ -215,10 +215,10 @@ specdic = {'CO2': {'variable': 'Emissions|CO2',
                        'unitin': 'Mt CO2/yr',
                        'unitout': 'Gt CO2/yr',
                        'factor': 0.001},
-           'CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
-                                  'unitin': 'Mt CO2/yr',
-                                  'unitout': 'Gt CO2/yr',
-                                  'factor': 0.001},
+           # 'CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
+           #                        'unitin': 'Mt CO2/yr',
+           #                        'unitout': 'Gt CO2/yr',
+           #                        'factor': 0.001},
            'CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
                                   'unitin': 'Mt CO2/yr',
                                   'unitout': 'Gt CO2/yr',
@@ -255,10 +255,10 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                        'unitin': 'Mt CO2/yr',
                        'unitout': 'Gt CO2/yr',
                        'factor': 0.001},
-           'net CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
-                                  'unitin': 'Mt CO2/yr',
-                                  'unitout': 'Gt CO2/yr',
-                                  'factor': 0.001},
+           # 'net CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
+           #                        'unitin': 'Mt CO2/yr',
+           #                        'unitout': 'Gt CO2/yr',
+           #                        'factor': 0.001},
            'net CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
                                   'unitin': 'Mt CO2/yr',
                                   'unitout': 'Gt CO2/yr',
@@ -275,7 +275,7 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2/yr',
                                   'unitout': 'Gt CO2/yr',
                                   'factor': 0.001},
-           'GHGs full':{'variable': 'Emissions|Kyoto Gases (incl. indirect AFOLU)',
+           'GHGs (incl. indirect AFOLU)':{'variable': 'Emissions|Kyoto Gases (incl. indirect AFOLU)',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
@@ -304,6 +304,15 @@ for indi, config in specdic.items():
     label = f'cumulative {indi} ({baseyear}-{lastyear}, {cumulative_unit})'
     df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=baseyear, last_year=lastyear), label)
     meta_docs[name] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
+    
+    # 2030 to 2050
+    if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)']:
+        label = f'cumulative {indi} (2030-{lastyear}, {cumulative_unit})'
+        df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=2030, last_year=lastyear), label)
+        meta_docs[name] = f'Cumulative {indi} from 2030 until {lastyear} (including the last year, {cumulative_unit}) ({variable})'    
+
+    
+
 
 #%% GHG % reduction compared to 1990
 ghg1990 = 5640
@@ -578,6 +587,8 @@ for v in ynz_variables:
                                                               nameNZCO2)],
                                             raw=False, axis=1), name)    
     if v=='Emissions|Kyoto Gases (incl. indirect AFOLU)':
+        name = f'{v} in 2025, {nu}'
+        df.set_meta_from_data(name, variable=v, year=2025)
         name = f'{v} in 2030, {nu}'
         df.set_meta_from_data(name, variable=v, year=2030)
         
@@ -589,7 +600,7 @@ for v in ynz_variables:
 # =============================================================================
 #%% Write out 
 # =============================================================================
-fn = f'{main_folder}iconics\\iconics_NZ_data_and_table.xlsx'
+fn = f'{main_folder}iconics\\iconics_NZ_data_and_table_EEA.xlsx'
 writer = pd.ExcelWriter(fn, engine='xlsxwriter')
 
 
