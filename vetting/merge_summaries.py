@@ -21,7 +21,7 @@ output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUA
 output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data\\'
 
 
-fnr = f'{output_folderr}vetting_flags_all_regional.xlsx'
+fnr = f'{output_folderr}vetting_flags_all_regional_EEA1.xlsx'
 fng = f'{output_folderg}vetting_flags_all_global.xlsx'
 
 
@@ -153,7 +153,7 @@ dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 # Wrtite out EXCEL
 # =============================================================================
 
-wbstr = f'{output_folder}vetting_flags_global_regional_combined.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA.xlsx'
 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
 
 

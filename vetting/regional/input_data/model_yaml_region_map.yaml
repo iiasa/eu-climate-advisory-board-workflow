@@ -216,8 +216,7 @@ MESSAGEix-GLOBIOM 1.0:
   natives: MESSAGEix-GLOBIOM 1.0|Western Europe, MESSAGEix-GLOBIOM 1.0|Eastern Europe
   notes: .nan
   tofix: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe,MESSAGEix-GLOBIOM 1.0|Eastern
-    Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.0|Western Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1:
@@ -228,8 +227,7 @@ MESSAGEix-GLOBIOM 1.1:
   natives: MESSAGEix-GLOBIOM 1.1|Western Europe, MESSAGEix-GLOBIOM 1.1|Eastern Europe
   notes: .nan
   tofix: .nan
-  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe,MESSAGEix-GLOBIOM 1.1|Eastern
-    Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.1|Western Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1
 MESSAGEix-GLOBIOM 1.1-M-R12:
@@ -252,8 +250,7 @@ MESSAGEix-GLOBIOM 1.2:
   natives: MESSAGEix-GLOBIOM 1.2|Western Europe, MESSAGEix-GLOBIOM 1.2|Eastern Europe
   notes: .nan
   tofix: now passing
-  vetted_regions: MESSAGEix-GLOBIOM 1.2|Western Europe,MESSAGEix-GLOBIOM 1.2|Eastern
-    Europe
+  vetted_regions: MESSAGEix-GLOBIOM 1.2|Western Europe
   vetted_type: native
   yaml: MESSAGEix-GLOBIOM_1.1-R12
 MUSE 1.0:

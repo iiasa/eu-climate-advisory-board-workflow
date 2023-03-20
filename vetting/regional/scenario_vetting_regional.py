@@ -231,7 +231,7 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     modelstr = model.replace('/','-')
     xs = '' if model=='all' else 'teams\\'
     modelstr = 'all' if model=='all' else modelstr
-    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_EEA.xlsx'
+    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_EEA1.xlsx'
     writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
     
     # Strip out exclude / source columns if present
@@ -274,7 +274,7 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     #       # Model summary / detail pivot tables
     # =============================================================================
     if model == 'all':
-        cols = ['model',  col, 'Key_historical','Key_future','IEA Primary Energy summary','IEA Electricity summary','EDGAR AR6 summary'] #'scenario',
+        cols = ['model',  col, 'Key_historical','Key_future','IEA Primary Energy summary','IEA Electricity summary','EEA GHG 2021 summary'] #'scenario',
         dfom = dfo.copy(deep=True)[cols]
         dfom = dfom.loc[dfom.model!='Reference',:]
         dfom.fillna(flag_pass_missing, inplace=True)
@@ -393,6 +393,7 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     # Fromat summary pivot page
     writer.sheets['summary_pivot'].set_column(0, 0, 60, None)
     writer.sheets['summary_pivot'].set_column(1, 6, 20, None)
+
 
     writer.close()
     return wbstr
@@ -882,113 +883,6 @@ for mk, mv in iso_reg_dict_all.items():
 with open(f'{output_folder}\\model_reg_iso_output.yaml', 'w') as file:
      documents = yaml.dump(iso_reg_dict_all , file)
      
-    #%% Create histograms
-    #
-    ###################################
-    
-    # plot_columns = {key: value for key, value in value_columns.items() if value['plot']}
-    
-    # fig = make_subplots(rows=len(plot_columns), cols=1)
-    # color_column = 'model stripped'
-    # nbins = 75
-    # # fac = 0.5
-    # dfo = df.meta.reset_index().drop('exclude', axis=1).copy()
-    # try:
-    #     colormap = dict(zip(dfo[color_column].unique(), px.colors.qualitative.D3))
-    # except:
-    #     colormap = None
-    
-    # in_legend = []
-    # threshold_plot = 0.5
-    
-    # for i, (column, info) in enumerate(plot_columns.items()):
-    
-    
-    #     xmin, xmax = None, None
-    #     if info['ref_lo'] is not None and info['ref_up'] is not None:
-    #         dx = info['ref_up'] - info['ref_lo']
-    #         xmin = info['ref_lo'] - threshold_plot * dx
-    #         xmax = info['ref_up'] + threshold_plot * dx
-    #     elif info['ref_up'] is not None:
-    #         xmax = info['ref_up'] * (1+threshold_plot)
-    #     elif info['ref_lo'] is not None and info['unit'] in ['%', '% change']:
-    #         xmax = 25 # Purely for visual purposes
-    
-    #     too_small = dfo[column] <= xmin
-    #     too_large = dfo[column] >= xmax
-    #     num_too_small = sum(too_small)
-    #     num_too_large = sum(too_large)
-    
-    #     if num_too_small > 0:
-    #         dfo.loc[too_small, column] = xmin
-    #         fig.add_annotation(
-    #             x=xmin, y=num_too_small,
-    #             text="≤ x<sub>min</sub>",
-    #             showarrow=True, arrowhead=7, ax=20, ay=-20,
-    #             col=1, row=i+1
-    #         )
-    
-    #     if num_too_large > 0:
-    #         dfo.loc[too_large, column] = xmax
-    #         fig.add_annotation(
-    #             x=xmax, y=num_too_large,
-    #             text="≥ x<sub>max</sub>",
-    #             showarrow=True, arrowhead=7, ax=-20, ay=-20,
-    #             col=1, row=i+1
-    #         )
-    
-    
-    #     # Create a histogram figure, and add all its traces to the main figure
-    #     # Set bingroup to None to avoid sharing the same bins accross subplots
-    #     for trace in px.histogram(dfo, x=column, color=color_column, nbins=nbins, color_discrete_map=colormap).data:
-    #         fig.add_trace(trace.update(
-    #             bingroup=None, showlegend=trace.showlegend & (i==0)
-    #         ), col=1, row=i+1)
-    
-    
-    #     # fig.update_xaxes(
-    #     #     row=i+1, range=[xlo, xup])
-    
-    #     # Give xaxis its title and change tickformat if necessary
-    #     fig.update_xaxes(
-    #         row=i+1,
-    #         title=column, title_standoff=0,
-    #         tickformat='%' if info['unit'] in ['%', '% change'] else None
-    #     )
-    
-    #     # Add reference, lower and upper bounds as lines, if they are defined:
-    #     for name, color, label in zip(
-    #         ['ref_value', 'ref_lo', 'ref_up'],
-    #         ['black', 'mediumseagreen', 'mediumvioletred'],
-    #         ['Reference', 'Lower bound', 'Upper bound']
-    #     ):
-    #         if info[name] is not None:
-    #             domain = fig.layout['yaxis{}'.format(i+1)].domain
-    #             fig.add_shape(
-    #                 type='line',
-    #                 xref='x{}'.format(i+1), yref='paper', # yref: stretch full height of plot, independent of y-range
-    #                 x0=info[name], x1=info[name], y0=domain[0], y1=domain[1],
-    #                 line_color=color
-    #             )
-    #         # Add legend items, not added when using shapes
-    #         if i == 0:
-    #             fig.add_scatter(x=[None, None], y=[None, None], name=label,mode='lines', line_color=color)
-    
-    # fig.update_yaxes(title='# scenarios', title_standoff=0)
-    # fig.update_layout(
-    #     height=200*len(plot_columns), width=900,
-    #     barmode='stack',
-    #     margin={'l': 50, 'r': 20, 't': 40, 'b': 60},
-    #     legend_y=0.5
-    # )
-    
-    # ##%% Save to html
-    # fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_'+region_level+'.html', include_plotlyjs='cdn')
-    # print(time.time()-start)
-    # print(f'############################# FINISHED {model} #############################')
-    # df.to_excel(f'{output_folder}df_out.xlsx')
-    
-        
 
 
 

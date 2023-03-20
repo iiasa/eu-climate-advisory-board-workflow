@@ -254,6 +254,9 @@ for v in dfirena.variable:
     dfirena.aggregate_region(variable=v,
                              region='CHN', subregions=chns, append=True)
     dfirena.filter(variable=v, region=chns, keep=False, inplace=True)
+    
+    dfirena.aggregate_region(variable=v,
+                             region='EU27', subregions=iso_eu27, append=True)
 
 dfirena.rename(mapping={'region': regions}, inplace=True)
 
@@ -261,6 +264,7 @@ dfirena.rename(mapping={'region': regions}, inplace=True)
 dfirena.convert_unit('GWh/yr','EJ/yr', inplace=True)
 dfirena.add('Secondary Energy|Electricity|Solar', 'Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar-Wind', append=True)
 
+dfirena.rename({'region':{'EU 27':'EU27'}}, inplace=True)
 
 dfirena.to_csv(f'{wd}input_reference_irena.csv')
 
@@ -282,6 +286,8 @@ dfemb['value'] = dfemb['value']*0.0036  # Convert from TWh to EJ/yr
 dfemb['unit'] = 'EJ/yr'
 
 dfemb.loc[dfemb.Country=='World', 'region'] = 'World'
+dfemb.loc[dfemb.Country=='EU', 'region'] = 'EU27'
+
 dfemb = dfemb.loc[dfemb.region.isna()==False]
 
 
@@ -296,8 +302,12 @@ dfemb.replace(repdic, inplace=True)
 dfemb[['model','scenario',]] = ['Reference', 'EMBERS GER 2022']
 
 
-
 dfemb = pyam.IamDataFrame(dfemb.drop(columns='Country'))
+
+# for v in dfemb.variable:
+#     dfemb.aggregate_region(variable=v,
+#                              region='EU27', subregions=iso_eu27, append=True)
+
 
 dfemb.to_csv(f'{wd}input_reference_embers.csv')
 
@@ -316,11 +326,17 @@ dfiear.rename({'model': {'History':'Reference'}}, inplace=True)
 
 dfiear.add('Secondary Energy|Electricity|Solar', 'Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar-Wind', append=True)
 
+
+
 #%% IEA World data
 
 dfieaw = pyam.IamDataFrame(f'{wd}pre_processing_data\\IEA - Total energy supply (TES) and Elec Gen by source - World.xlsx', sheet_name='data')
 
 dfiea = dfiear.append(dfieaw)
+
+for v in dfiea.variable:
+    dfiea.aggregate_region(variable=v,
+                             region='EU27', subregions=iso_eu27, append=True)
 
 dfiea.to_csv(f'{wd}input_reference_iea.csv')
 
@@ -332,7 +348,7 @@ dfiea.to_csv(f'{wd}input_reference_iea.csv')
 # Merge together
 dfall = dfedgar.append(dfirena)
 dfall.append(dfemb, inplace=True)
-dfall.append(dfiea, inplace=True)
+dfall.append(dfiea, inplace=True)  # Both regional and world data
 dfall.append(dfeeap, inplace=True)
 
 # make Solar-Wind composite
@@ -341,15 +357,15 @@ dfswcp = dfswc.as_pandas(meta_cols=False)
 
 dfswcp = dfswcp.groupby(['region','year']).mean().reset_index()
 dfswcp[msvu] = ['Reference', 'Solar-Wind-composite', 'Secondary Energy|Electricity|Solar-Wind', 'EJ/yr']
-
 dfswcp = pyam.IamDataFrame(dfswcp)
 
-# dfall.filter(variable='Secondary Energy|Electricity|Solar-Wind',
-#              keep=False,
-#              inplace=True)
+# dfswcp.aggregate_region(variable='Secondary Energy|Electricity|Solar-Wind',
+#                              region='EU27',
+#                              subregions=iso_eu27,
+#                              append=True)
+
 
 dfall.append(dfswcp, inplace=True)
-
 
 # Save out
 
