@@ -35,7 +35,7 @@ wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA1.xlsx'
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2019_harmo\\EU_advisory_board_data_for_Ed_2023_03_20_2019_harmo_eu_only.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2019_harmo_constant_offset_lulucf\\EUab_2023_03_23_constant_lulucf_offset_2019_harmo_eu_only.csv')
 
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
@@ -88,6 +88,11 @@ df.filter(exclude=True, keep=False, inplace=True)
 
 meta_docs = {}
 
+
+#%% check aggregates
+comps = ['Emissions|CO2|Energy and Industrial Processes','Emissions|CO2|LULUCF Direct+Indirect',
+         'Emissions|Total Non-CO2']
+df.convert_unit('Mt CO2/yr','Mt CO2-equiv/yr').check_aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)', components=comps)
 # =============================================================================
 #%% Variable Aggregations 
 # =============================================================================
@@ -228,10 +233,10 @@ specdic = {'CO2': {'variable': 'Emissions|CO2',
            #                        'unitin': 'Mt CO2/yr',
            #                        'unitout': 'Gt CO2/yr',
            #                        'factor': 0.001},
-           'CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
-                                  'unitin': 'Mt CO2/yr',
-                                  'unitout': 'Gt CO2/yr',
-                                  'factor': 0.001},           
+           # 'CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
+           #                        'unitin': 'Mt CO2/yr',
+           #                        'unitout': 'Gt CO2/yr',
+           #                        'factor': 0.001},           
            'GHGs full':{'variable': 'Emissions|Kyoto Gases (incl. indirect AFOLU)',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
@@ -268,10 +273,10 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
            #                        'unitin': 'Mt CO2/yr',
            #                        'unitout': 'Gt CO2/yr',
            #                        'factor': 0.001},
-           'net CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
-                                  'unitin': 'Mt CO2/yr',
-                                  'unitout': 'Gt CO2/yr',
-                                  'factor': 0.001},   
+           # 'net CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
+           #                        'unitin': 'Mt CO2/yr',
+           #                        'unitout': 'Gt CO2/yr',
+           #                        'factor': 0.001},   
            'Non-CO2':{'variable': 'Emissions|Total Non-CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
@@ -357,7 +362,7 @@ ynz_variables = []
 indis_add = [
             'Emissions|CO2',
             'Emissions|Total Non-CO2',
-            'Emissions|CO2|AFOLU',
+            # 'Emissions|CO2|AFOLU',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
              # 'Emissions|Kyoto Gases',
              'Carbon Sequestration|CCS',
@@ -609,7 +614,7 @@ for v in ynz_variables:
 # =============================================================================
 #%% Write out 
 # =============================================================================
-fn = f'{main_folder}iconics\\iconics_NZ_data_and_table_EEA1.xlsx'
+fn = f'{main_folder}iconics\\iconics_NZ_data_and_table_EEA_constant_offset_LULUCF.xlsx'
 writer = pd.ExcelWriter(fn, engine='xlsxwriter')
 
 
@@ -714,6 +719,6 @@ writer.close()
 os.startfile(fn)
 
 
-df.meta.to_excel(f'{main_folder}iconics\\iconics_NZ_table.xlsx',
+df.meta.to_excel(f'{main_folder}iconics\\iconics_NZ_table_constant_offset_LULUCF.xlsx',
                  sheet_name='meta')
 
