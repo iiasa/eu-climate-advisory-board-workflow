@@ -46,11 +46,11 @@ reference_variables:
     variables_threshold:
       Secondary Energy|Electricity: 0.3
       Secondary Energy|Electricity|Nuclear: 0.3
-      Secondary Energy|Electricity|Solar-Wind: 0.5
+      # Secondary Energy|Electricity|Solar-Wind: 0.5
     missing_flags:
       Secondary Energy|Electricity: Fail_missing
       Secondary Energy|Electricity|Nuclear: Pass_missing
-      Secondary Energy|Electricity|Solar-Wind: Pass_missing       
+      # Secondary Energy|Electricity|Solar-Wind: Pass_missing       
       
   Solar-Wind2020:
     ref_year: 2020
@@ -120,7 +120,7 @@ bounds_variables:
   Emissions|CO2|Energy and Industrial Processes factor % change '15-'20:
     variable: Emissions|CO2|Energy and Industrial Processes|2015-2020 change
     lo: 0
-    up: 30
+    up: 20
     year: 2015
     key_historical: True
     key_future: False
@@ -131,7 +131,7 @@ bounds_variables:
   Emissions|CO2|Energy factor % change '15-'20:
     variable: Emissions|CO2|Energy|2015-2020 change
     lo: 0
-    up: 30
+    up: 20
     year: 2015
     key_historical: True
     key_future: False

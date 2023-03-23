@@ -491,9 +491,11 @@ df.meta[flag_fail_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_fail_mi
 col = f'vetting_{region_level}'
 # df.meta.loc[(df.meta[meta_name_historical]=='Pass') & (df.meta[meta_name_future]=='Pass'), col] = 'PASS'
 # df.meta.loc[(df.meta[meta_name_historical]=='Fail') | (df.meta[meta_name_future]=='Fail'), col] = 'FAIL'
+
+
 df.meta.loc[(df.meta[meta_name_historical]==flag_pass) , col] = 'PASS'
 df.meta.loc[(df.meta[meta_name_historical]==flag_pass_missing) , col] = flag_pass_missing
-df.meta.loc[(df.meta[meta_name_historical]==flag_pass_missing) , col] = flag_fail_missing
+df.meta.loc[(df.meta[meta_name_historical]==flag_fail_missing) , col] = flag_fail_missing
 df.meta.loc[(df.meta[meta_name_historical]==flag_fail) , col] = 'FAIL'
 
 

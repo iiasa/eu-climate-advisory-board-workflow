@@ -316,7 +316,6 @@ dfemb.to_csv(f'{wd}input_reference_embers.csv')
 # IEA
 # =============================================================================
 #%% Import and subset the IEA data
-
 # IEA ISO data
 dfiear = pyam.IamDataFrame(f'{wd}pre_processing_data\\IEA_history_IPCCSR15-ISO-2021-EB.xlsx',
                         sheet_name='all')
@@ -327,6 +326,26 @@ dfiear.rename({'model': {'History':'Reference'}}, inplace=True)
 dfiear.add('Secondary Energy|Electricity|Solar', 'Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar-Wind', append=True)
 
 
+# PE_spec = {'Nuclear': 0.3,
+#            'Geothermal': 0.1,
+#            # 'Solar|Thermal': 0.1,
+#            }
+
+# for tech, fac in PE_spec.items():
+
+#     tv = dfiear.multiply(f'Primary Energy|{tech}', 
+#                          fac, f'Primary Energy|{tech}',
+#                          ignore_units='EJ/yr')
+#     dfiear.filter(variable=f'Primary Energy|{tech}', keep=False, inplace=True)
+#     dfiear.append(tv, inplace=True)
+
+
+# # recalculate aggregate
+dfiear.filter(variable=f'Primary Energy', keep=False, inplace=True)
+components = [x for x in dfiear.filter(variable=f'Primary Energy|*').variable if 'Fossil' not in x]
+dfiear.aggregate('Primary Energy', components=components, append=True)
+
+
 
 #%% IEA World data
 
@@ -335,6 +354,7 @@ dfieaw = pyam.IamDataFrame(f'{wd}pre_processing_data\\IEA - Total energy supply 
 dfiea = dfiear.append(dfieaw)
 
 for v in dfiea.variable:
+    print(v)
     dfiea.aggregate_region(variable=v,
                              region='EU27', subregions=iso_eu27, append=True)
 

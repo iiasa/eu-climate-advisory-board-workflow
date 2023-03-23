@@ -31,7 +31,7 @@
       countries: USA
   - REMIND 2.1|EU 28:
       countries: ALA, AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, FRO,
-        GGY, GIB, GRC, HRV, HUN, IMN, IRL, ITA, JEY, LTU, LUX, LVA, MLT, NLD, POL,
+        GGY, GIB, GRC, GBR, HRV, HUN, IMN, IRL, ITA, JEY, LTU, LUX, LVA, MLT, NLD, POL,
         PRT, ROU, SVK, SVN, SWE
   - REMIND 2.1|Non-EU28 Europe:
       countries: ALB, AND, BIH, CHE, GRL, ISL, LIE, MCO, MKD, MNE, NOR, SJM, SMR,

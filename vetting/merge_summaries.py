@@ -94,9 +94,17 @@ dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col] = flag_fai
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col1] = 'Global fail, Regional OK'
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col2] = 4
 
+# 4. NA Global, 
+
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col] = 'WARNING'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col1] = 'Regional only OK'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col2] = 4
+
+
+# Fail_missing_G, Pass_missing_G
+dfs.loc[(dfs[colg]==flag_fail_missing) & (dfs[colr]==flag_pass_missing), col] = flag_fail
+dfs.loc[(dfs[colg]==flag_fail_missing) & (dfs[colr]==flag_pass_missing), col1] = 'Global fail, Regional OK'
+dfs.loc[(dfs[colg]==flag_fail_missing) & (dfs[colr]==flag_pass_missing), col2] = 4
 
 # Regional Fail
 
@@ -139,13 +147,18 @@ ocols = [col for col in dfs.columns if 'OVERALL' in col]
 
 if sum(dfs[ocols].isna().sum())>0:
     print('Warning - some rows not classified')
+    sdfsdfsdf
     
     
+# Drop NGFS ? scenarios    
+# dfs = dfs.loc[dfs.scenario!='NGFS-Below 2°C',]
     
 #%% Add climate metadata
 cmd = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
 c_cols = ['Category', 'Category_name']
 keep_cols = ['model','scenario']+c_cols
+cmd.loc[cmd.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2?C'
+
 
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 # Add selected climate meta to main summary sheet
@@ -153,7 +166,7 @@ dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 # Wrtite out EXCEL
 # =============================================================================
 
-wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA1.xlsx'
 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
 
 

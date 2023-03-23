@@ -29,15 +29,21 @@ user = 'byers'
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 output_folder = f'{main_folder}vetting\\'
 
-wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_EEA1.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2015_harmo\\EU_advisory_board_data_for_Ed_2023_03_17_2015_harmo_eu_only.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2019_harmo\\EU_advisory_board_data_for_Ed_2023_03_20_2019_harmo_eu_only.csv')
+
+dfin = pd.read_csv(files[0])
 if len(files) == 1:
-    dfin = pyam.IamDataFrame(files[0])
+    # dfin = pyam.IamDataFrame(files[0])
+    dfin = pd.read_csv(files[0])
+    dfin = dfin.fillna(0,)
+    dfin = pyam.IamDataFrame(dfin)
+
 else:
     ct=0
     for f in files:
@@ -58,14 +64,17 @@ df = dfin.filter(region='EU27')
 years = range(1990,2101,5)
 df.filter(year=years, inplace=True)
 
-df.filter(model='GCAM*', scenario='*CurPol*', keep=False, inplace=True)
 
 # vetting & climate
 df.filter(OVERALL_binary='PASS', inplace=True)
-df.meta.loc[df.meta['OVERALL_Assessment']=='Regional only', 'Category'] = 'regional'
-df.filter(Category=['C1*','regional'], inplace=True)
+df.meta.loc[df.meta['OVERALL_Assessment']=='Regional only', 'Category'] = 'Regional only'
+df.filter(Category=['C1*','Regional only'], inplace=True)
+# df.filter(Category=['Regional only'], inplace=True)
 
-# EUAB target
+# df.filter(model='GCAM*', scenario='*CurPol*', keep=False, inplace=True)
+
+
+#%% EUAB target
 df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
     'up': 2085,
     'year': 2030}},
@@ -315,12 +324,12 @@ for indi, config in specdic.items():
 
 
 #%% GHG % reduction compared to 1990
-ghg1990 = 5640
+ghg1990 = 4633
 base_year_ghg = 1990
 last_years = [2020, 2030, 2040, 2050]
 for last_year in last_years:
     name = f'GHG emissions reductions {base_year_ghg}-{last_year} %'
-    a = df.filter(variable='Emissions|Kyoto Gases (excl. LULUCF)').timeseries()
+    a = df.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').timeseries()
     rd = 100* (1-(a[last_year] / ghg1990))
     df.set_meta(rd, name, )
 
@@ -600,7 +609,7 @@ for v in ynz_variables:
 # =============================================================================
 #%% Write out 
 # =============================================================================
-fn = f'{main_folder}iconics\\iconics_NZ_data_and_table_EEA.xlsx'
+fn = f'{main_folder}iconics\\iconics_NZ_data_and_table_EEA1.xlsx'
 writer = pd.ExcelWriter(fn, engine='xlsxwriter')
 
 

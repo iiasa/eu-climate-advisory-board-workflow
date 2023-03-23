@@ -55,9 +55,6 @@ instance = 'eu-climate-submission'
 input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 
-"C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_edgarCO2CH4.csv",
-"C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/vetting/regional/input_data/input_reference_ieaPE_SE.csv"
-
 
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
@@ -641,33 +638,6 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     #
     ###################################
     
-    # =============================================================================
-    # Primary energy - Renewables share, Solar-Wind    UNUSED
-    # =============================================================================
-    # Renewable share (Primary Energy - (Fossil + Nuclear)) / Primary Energy
-    # primary_energy = to_series(df.filter(variable='Primary Energy'))
-    # non_renewable = to_series(
-    #     df
-    #     .filter(variable=['Primary Energy|Fossil', 'Primary Energy|Nuclear'])
-    #     .aggregate(variable='Primary Energy')
-    # )
-    # df.append(
-    #     (primary_energy - non_renewable) / primary_energy,
-    #     variable='Primary Energy|Renewables share', unit='-',
-    #     inplace=True
-    # )
-    
-    # solar_wind = to_series(
-    #     df
-    #     .filter(variable=['Primary Energy|Solar', 'Primary Energy|Wind'])
-    #     .aggregate(variable='Primary Energy')
-    # )
-    
-    # df.append(
-    #     solar_wind / primary_energy,
-    #     variable='Primary Energy|Solar-Wind share', unit='-',
-    #     inplace=True
-    # )
     
     # =============================================================================
     ## Secondary energy, electricity
