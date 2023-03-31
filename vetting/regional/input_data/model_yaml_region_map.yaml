@@ -306,7 +306,7 @@ POLES-JRC ENGAGE:
   notes: .nan
   tofix: do R10 region countries
   vetted_regions: Europe (R10)
-  vetted_type: None
+  vetted_type: common
   yaml: poles-jrc-engage
 PRIMES 2022:
   EU_common: EU27 & UK, EU27

@@ -118,7 +118,7 @@ bounds_variables:
   Emissions|CO2|Energy factor % change '15-'20:
     variable: Emissions|CO2|Energy|2015-2020 change
     lo: -30
-    up: 0
+    up: 5
     year: 2015
     key_historical: True
     key_future: False
