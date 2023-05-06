@@ -2,19 +2,20 @@
   - ICES-XPS 1.0|Germany:
       countries: DEU
   - ICES-XPS 1.0|Benelux:
-      countries: BEL, NLD, LUX
+      countries: BEL, LUX, NLD
   - ICES-XPS 1.0|Greece:
       countries: GRC
   - ICES-XPS 1.0|Finland:
-      countries: FIN
+      countries: ALA, FIN
   - ICES-XPS 1.0|Czech Republic:
       countries: CZE
   - ICES-XPS 1.0|Italy:
       countries: ITA
   - ICES-XPS 1.0|France:
-      countries: FRA
+      countries: FRA, GLP, MTQ, REU
   - ICES-XPS 1.0|Rest of EU:
-      countries: AUT, BGR, CYP, DNK, EST, HRV, HUN, IRL, LTU, LVA, MLT, PRT, ROU, SVN, SVK
+      countries: AUT, BGR, CYP, DNK, EST, HRV, HUN, IRL, LTU, LVA, MLT, PRT, ROU,
+        SVK, SVN
   - ICES-XPS 1.0|United Kingdom:
       countries: GBR
   - ICES-XPS 1.0|Spain:

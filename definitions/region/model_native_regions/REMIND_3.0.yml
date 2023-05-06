@@ -17,10 +17,10 @@
         BVT, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY,
         HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS,
         SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA
-  - REMIND 3.0|Middle East and North Africa:
+  - REMIND 3.1|Middle East and North Africa:
       countries: ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
         OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR
-  - REMIND 3.0|Russia and Reforming Economies:
+  - REMIND 3.1|Russia and Reforming Economies:
       countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB, TJK
   - REMIND 3.0|Sub-Saharan Africa:
       countries: AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,

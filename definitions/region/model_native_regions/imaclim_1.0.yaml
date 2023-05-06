@@ -1,13 +1,38 @@
 - IMACLIM 1.0:
-  - IMACLIM 1.0|Africa
-  - IMACLIM 1.0|Brazil
-  - IMACLIM 1.0|Canada
-  - IMACLIM 1.0|China
-  - IMACLIM 1.0|Former Soviet Union minus EU Baltic countries
-  - IMACLIM 1.0|Europe (minus CIS) plus Turkey
-  - IMACLIM 1.0|India
-  - IMACLIM 1.0|Japan, Australia, New Zealand and Korea
-  - IMACLIM 1.0|Middle East
-  - IMACLIM 1.0|Rest of Latin America
-  - IMACLIM 1.0|Rest of Asia
-  - IMACLIM 1.0|USA
+  - IMACLIM 1.0|Africa:
+      countries: DZA, AGO, BEN, BWA, BVT, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG,
+        COD, CIV, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR,
+        LBY, MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, REU, RWA, SHN,
+        STP, SEN, SYC, SLE, SOM, ZAF, SSD, SDN, SWZ, SYR, TZA, TGO, TUN, UGA, ESH,
+        ZMB, ZWE
+  - IMACLIM 1.0|Brazil:
+      countries: BRA
+  - IMACLIM 1.0|Canada:
+      countries: CAN
+  - IMACLIM 1.0|China:
+      countries: CHN
+  - IMACLIM 1.0|Former Soviet Union minus EU Baltic countries:
+      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB
+  - IMACLIM 1.0|Europe (minus CIS) plus Turkey:
+      countries: ALA, ALB, AND, AUT, BEL, BIH, IOT, BGR, HRV, CYP, CZE, DNK, EST,
+        FRO, FIN, FRA, DEU, GIB, GRC, GRL, GGY, VAT, HUN, ISL, IRL, IMN, ITA, JEY,
+        LVA, LIE, LTU, LUX, MKD, MLT, MCO, MNE, NLD, NOR, POL, PRT, ROU, BLM, MAF,
+        SPM, SMR, SRB, SVK, SVN, ESP, SJM, SWE, CHE, TUR, GBR
+  - IMACLIM 1.0|India:
+      countries: IND
+  - IMACLIM 1.0|Japan, Australia, New Zealand and Korea:
+      countries: ATA, AUS, HMD, JPN, KOR, NZL
+  - IMACLIM 1.0|Middle East:
+      countries: BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, ARE, YEM
+  - IMACLIM 1.0|Rest of Latin America:
+      countries: AIA, ATG, ARG, ABW, BHS, BRB, BLZ, BMU, BOL, CYM, CHL, COL, CRI,
+        CUB, DMA, DOM, ECU, SLV, FLK, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ,
+        MEX, MSR, ANT, NIC, PAN, PRY, PER, PCN, PRI, KNA, LCA, VCT, SGS, SUR, TTO,
+        TCA, URY, VEN, VGB, VIR
+  - IMACLIM 1.0|Rest of Asia:
+      countries: AFG, ASM, BGD, BTN, BRN, KHM, CXR, CCK, COK, FJI, PYF, ATF, GUM,
+        HKG, IDN, KIR, PRK, LAO, MAC, MYS, MDV, MHL, FSM, MNG, MMR, NRU, NPL, NCL,
+        NIU, NFK, MNP, PAK, PLW, PNG, PHL, WSM, SGP, SLB, LKA, TWN, THA, TLS, TKL,
+        TON, TUV, VUT, VNM, WLF
+  - IMACLIM 1.0|USA:
+      countries: USA, UMI
