@@ -121,6 +121,6 @@ common_regions:
     - INDO
     - KOR
     - SEAS
-  - Europe (excl. Turkey): # An imperfect but reasonably accurate description
+  - Europe: # An imperfect but reasonably accurate description
     - WEU
     - CEU

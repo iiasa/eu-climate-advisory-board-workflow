@@ -4,6 +4,10 @@ model:
   - PyPSA-Eur-Sec 0.0.2
   - PyPSA-Eur-Sec 0.5.0
   - PyPSA-Eur-Sec 0.6.0
+  - Euro-Calliope 2.0
+  - EnergyPLAN 16.22
+  - DESSTINEE 2.0
+  - HEB 3.0
 native_regions:
   - Austria
   - Belgium
