@@ -38,6 +38,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'regional'
 user = 'byers'
+datestr = '20230506'
 
 # ver = 'normal'
 
@@ -50,14 +51,14 @@ flag_pass_missing = 'Pass_missing'
 flag_fail_missing = 'Fail_missing'
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu-climate-submission'
+instance = 'eu_climate_submission'
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 
 
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
+output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):

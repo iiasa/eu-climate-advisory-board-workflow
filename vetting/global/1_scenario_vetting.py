@@ -36,7 +36,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'global'
 user = 'byers'
-
+datestr = '20230506'
 # ver = 'normal'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
@@ -49,11 +49,11 @@ flag_fail_missing = 'Fail_missing'
 
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu-climate-submission'
+instance = 'eu_climate_submission'
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data\\'
+output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
