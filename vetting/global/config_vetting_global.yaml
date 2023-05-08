@@ -65,8 +65,6 @@ reference_variables:
       Secondary Energy|Electricity|Solar-Wind: Pass_missing
 
     
-      
-  
 
 aggregation_variables:
   # CO2:
@@ -119,7 +117,7 @@ bounds_variables:
 
   Emissions|CO2|Energy and Industrial Processes factor % change '15-'20:
     variable: Emissions|CO2|Energy and Industrial Processes|2015-2020 change
-    lo: 0
+    lo: -5
     up: 20
     year: 2015
     key_historical: True
@@ -130,7 +128,7 @@ bounds_variables:
 
   Emissions|CO2|Energy factor % change '15-'20:
     variable: Emissions|CO2|Energy|2015-2020 change
-    lo: -2.5
+    lo: -5
     up: 20
     year: 2015
     key_historical: True
