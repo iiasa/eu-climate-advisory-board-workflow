@@ -51,14 +51,19 @@ flag_pass_missing = 'Pass_missing'
 flag_fail_missing = 'Fail_missing'
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu_climate_submission'
+instance = 'eu-climate-advisory-board-internal'
+# instance = 'eu_climate_submission'
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
+input_yaml_eu_regions = f'..\\definitions\\region\\european-regions.yaml'
 
 
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
+
+load_late_submissions = True
+late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
@@ -229,7 +234,7 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     modelstr = model.replace('/','-')
     xs = '' if model=='all' else 'teams\\'
     modelstr = 'all' if model=='all' else modelstr
-    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_20230329.xlsx'
+    wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_{datestr}.xlsx'
     writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
     
     # Strip out exclude / source columns if present
@@ -449,7 +454,24 @@ if check_model_regions_in_db:
                                 year=years)
         
         regions_available[model[0]] = dfin.region
+        
+        
+# =============================================================================
+# Load late submissions
+# =============================================================================
+if load_late_submissions:
     
+    dfinlate = pyam.read_iiasa(instance,
+                            model='lalala',
+                            # scenario=scenarios,
+                            variable=varlist,
+                            year=years)
+    
+    # Load late submissions scenarios
+    for f in glob.glob(f'{late_submissions_path}*late-submission*.xlsx'):
+        dft = pyam.IamDataFrame(f)
+        dfinlate.append(dft, inplace=True)
+        
     
 #%%=============================================================================
 # =============================================================================
@@ -457,10 +479,18 @@ if check_model_regions_in_db:
 # =============================================================================
 # =============================================================================
 
+# Load EU definitions
+
+with open(input_yaml_eu_regions , 'r') as file:
+     eu_regions = yaml.safe_load(file)[0]['Europe']
+     
+     iso_eu27 = [x for x in eu_regions if 'EU27' in x.keys()][0]['EU27']['countries']
+     iso_eu27 = iso_eu27.split(', ')
+
 
 # Define manually here for now (implement later to read in from yaml)
-iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
-iso_eu27.sort()
+# iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
+# iso_eu27.sort()
 iso_eu28 = iso_eu27 + ['GBR']
 iso_euMC = [x for x in iso_eu27 if x not in ['CYP','MLT','GBR']]
 iso_eurR10 = ['ALB', 'AND', 'AUT', 'BLR', 'BEL', 'BIH', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FRO', 'FIN', 'FRA', 'DEU', 'GIB',
@@ -479,11 +509,11 @@ ct = 0
 for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     print(f'################## STARTING {model} #############################')
 
+
     # attr.vetted_regions - this is the selected region(s) for the model
     # iso_reg_dict - this is the dict made to map the ISOs to the native/common region used for aggregation
     # agg_region_name - this is the name of the comparison region, for both model (df) and reference (ref_data) dataframes
-    
-    
+        
     # Use cases
     
     # Common region    
@@ -557,6 +587,35 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
                             year=years,
                             region=regions,
                            )
+    
+    
+    # Load late submissions
+    
+    if load_late_submissions:
+        late_to_add = dfinlate.filter(model=model,
+                                      variable=varlist,
+                                      year=years,
+                                      region=regions,
+                                     )
+        if len(late_to_add)>1:
+            
+            # check and add duplicate scenarios
+
+            ol = list(dfin.meta.index)
+            ll = list(late_to_add.meta.index)
+            uni = set(ll) - set(ol)
+            to_add = {}
+            for i in uni:  
+                to_add.setdefault(i[0],[]).append(i[1])
+            
+            for m,s in to_add.items():
+            
+                dfin.append(late_to_add.filter(model=m,
+                                            scenario=s,
+                                            ), inplace=True)
+            
+            
+            
     
     
     

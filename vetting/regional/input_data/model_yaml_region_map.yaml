@@ -75,6 +75,17 @@ EnergyVille TIMES BE 1.0.0:
   vetted_regions: .nan
   vetted_type: None
   yaml: None
+Euro-Calliope 2.0:
+  EU_common: EU27 & UK, EU27
+  R10_Europe: .nan
+  eu_isos: true
+  include: true
+  natives: EU_isos
+  notes: .nan
+  tofix: .nan
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: None
 FORECAST v1.0:
   EU_common: EU27 & UK, EU27
   R10_Europe: .nan
@@ -393,15 +404,23 @@ REMIND 3.0:
   R10_Europe: Europe (R10)
   eu_isos: false
   include: true
-  natives: REMIND 2.1|EU Center-East Europe, REMIND 2.1|EU Center-South Europe,REMIND
-    2.1|EU North-Center Europe, REMIND 2.1|EU North-West Europe, REMIND 2.1|EU South-Center
-    Europe, REMIND 2.1|EU South-West Europe, REMIND 2.1|Non-EU Northern Europe, REMIND
-    2.1|Non-EU Southern Europe
+  natives: .nan
   notes: .nan
   tofix: .nan
   vetted_regions: EU27
   vetted_type: common
   yaml: REMIND_3.0
+REMIND 3.1:
+  EU_common: EU27 & UK, EU27, Europe
+  R10_Europe: Europe (R10)
+  eu_isos: false
+  include: true
+  natives: .nan
+  notes: .nan
+  tofix: .nan
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: REMIND_3.1
 REMIND-EU 2.0:
   EU_common: EU27 & UK
   R10_Europe: Europe (R10)
@@ -490,6 +509,17 @@ TIAM-ECN 1.1:
   vetted_regions: TIAM-ECN 1.1|Western Europe,TIAM-ECN 1.1|Eastern Europe
   vetted_type: native
   yaml: TIAM-ECN_v1.1
+TIAM-ECN 1.2:
+  EU_common: Europe (excl. Turkey)
+  R10_Europe: .nan
+  eu_isos: false
+  include: true
+  natives: TIAM-ECN 1.2|Western Europe, TIAM-ECN 1.2|Eastern Europe
+  notes: .nan
+  tofix: .nan
+  vetted_regions: TIAM-ECN 1.2|Western Europe,TIAM-ECN 1.2|Eastern Europe
+  vetted_type: native
+  yaml: TIAM-ECN_v1.2
 TIAM-Grantham v3.4:
   EU_common: .nan
   R10_Europe: Europe (R10)
@@ -523,6 +553,17 @@ WITCH 5.0:
   vetted_regions: WITCH 5.0|Europe
   vetted_type: native
   yaml: WITCH_5.0
+WITCH 5.1:
+  EU_common: EU27 & UK, EU27
+  R10_Europe: .nan
+  eu_isos: false
+  include: true
+  natives: .nan
+  notes: .nan
+  tofix: .nan
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: witch_v5.1
 WITCH-GLOBIOM 3.1:
   EU_common: .nan
   R10_Europe: .nan

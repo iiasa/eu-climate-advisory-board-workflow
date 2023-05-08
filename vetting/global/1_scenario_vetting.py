@@ -7,6 +7,7 @@ os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 
 #%% Import packages and data
 # import itertools as it
+import glob
 import time
 start = time.time()
 print(start)
@@ -36,7 +37,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'global'
 user = 'byers'
-datestr = '20230506'
+datestr = '20230508'
 # ver = 'normal'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
@@ -49,11 +50,16 @@ flag_fail_missing = 'Fail_missing'
 
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu_climate_submission'
+instance = 'eu-climate-advisory-board-internal'
+# instance = 'eu_climate_submission'
+
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
+
+load_late_submissions = True
+late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
@@ -108,8 +114,35 @@ dfin = pyam.read_iiasa(instance,
 
 
 
-print('loaded')
+print('loaded from DB')
 print(time.time()-start)
+
+if load_late_submissions:
+    
+    # Load late submissions scenarios
+    dfinlate = dfin.filter(model='lalala')
+    for f in glob.glob(f'{late_submissions_path}*late-submission*.xlsx'):
+        dft = pyam.IamDataFrame(f)
+        dfinlate.append(dft.filter(region=region), inplace=True)
+    print('made dfinlate')
+    
+    # check and add duplicate scenarios
+
+    ol = list(dfin.meta.index)
+    ll = list(dfinlate.meta.index)
+    uni = set(ll) - set(ol)
+    to_add = {}
+    for i in uni:  
+        to_add.setdefault(i[0],[]).append(i[1])
+    
+    if len(to_add)>1:
+        for m,s in to_add.items():
+        
+            dfin.append(dfinlate.filter(model=m,
+                                        scenario=s,
+                                        ), inplace=True)
+            
+    
 
 
 
