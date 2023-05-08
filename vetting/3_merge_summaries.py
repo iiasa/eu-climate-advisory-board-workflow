@@ -12,18 +12,19 @@ import pyam
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 from vetting_functions import *
 
+datestr = '20230506'
 user = 'byers'
 
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 output_folder = f'{main_folder}vetting\\'
 
-output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data\\'
-output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data\\'
+output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data_{datestr}\\'
+output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data_{datestr}\\'
 
 
-fnr = f'{output_folderr}vetting_flags_all_regional_20230329.xlsx'
-fng = f'{output_folderg}vetting_flags_all_global.xlsx'
-wbstr = f'{output_folder}vetting_flags_global_regional_combined_20230329.xlsx'
+fnr = f'{output_folderr}vetting_flags_all_regional_{datestr}.xlsx'
+fng = f'{output_folderg}vetting_flags_all_global_{datestr}.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}.xlsx'
 
 
 
@@ -156,10 +157,17 @@ if sum(dfs[ocols].isna().sum())>0:
 # dfs = dfs.loc[dfs.scenario!='NGFS-Below 2°C',]
     
 #%% Add climate metadata
-cmd = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
+# First pass
 c_cols = ['Category', 'Category_name']
 keep_cols = ['model','scenario']+c_cols
-cmd.loc[cmd.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2?C'
+
+cmd1 = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
+cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2?C'
+# Addtitional runs
+cmd2 = pd.read_excel(f'{main_folder}climate_assessment\\AdvisoryBoard_additional_remind_meta.xlsx')
+cmd3 = pd.read_excel(f'{main_folder}climate_assessment\\remind_sensitivity_emissions_meta.xlsx')
+cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx')
+cmd = pd.concat([cmd1, cmd2, cmd3, cmd4])
 
 
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
