@@ -38,7 +38,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'regional'
 user = 'byers'
-datestr = '20230506'
+datestr = '20230508'
 
 # ver = 'normal'
 
@@ -586,6 +586,7 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
                             variable=varlist,
                             year=years,
                             region=regions,
+                            meta=False
                            )
     
     

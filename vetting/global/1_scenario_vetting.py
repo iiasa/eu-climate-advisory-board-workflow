@@ -104,14 +104,13 @@ region = ['World']
 
 
 #% load pyam data
-
+# Connection.query(..., meta=False)
 dfin = pyam.read_iiasa(instance,
                         # model=models,
                         # scenario=scenarios,
                         variable=varlist,
                        year=years,
-                       region=region)
-
+                       region=region, meta=False)
 
 
 print('loaded from DB')
@@ -513,10 +512,10 @@ else:
 for model in models:
         modelstr = model.replace('/','-')
         xs = '' if model=='all' else 'teams\\'
-        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}.xlsx'
+        wbstr = f'{output_folder}{xs}vetting_flags_{modelstr}_{region_level}_{datestr}.xlsx'
         writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
         
-        dfo = df.meta.reset_index().drop(['exclude','Source'], axis=1)
+        dfo = df.meta.reset_index().drop(['exclude'], axis=1) #,'Source' removed
         covcols = [x  for x in dfo.columns if 'coverage' in x]
         for x in ['exclude','source','Source','version','doi','reference']+covcols:
                 dfo.drop(x, axis=1, errors='ignore', inplace=True)

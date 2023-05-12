@@ -12,7 +12,7 @@ import pyam
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 from vetting_functions import *
 
-datestr = '20230506'
+datestr = '20230508'
 user = 'byers'
 
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'

@@ -21,28 +21,38 @@ import string
 import itertools
 import os
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\eu-climate-advisory-board-workflow-vetting')
+#os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\euab_fabio\\vetting')
+
 from vetting_functions import *
 
 
+user = 'sferra'
 user = 'byers'
 
+#main_folder = f'C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\euab_fabio\\'
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 vetting_output_folder = f'{main_folder}vetting\\'
 
-vstr = '20230329'
+
+vstr = '20230508'  
 
 wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.xlsx'
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
+
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}.xlsx'
+
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2019_harmo_incl_poles_remind3p0_NGFSscenarios_and_AIM_CGE\\EUab_2023_03_29_with_POLES_REMIND3p0_IAM_CGE_and_NGFS_scenarios_2019_harmo_EU27.csv')
+# files = glob.glob(f'{main_folder}from_FabioS\\2019_harmo_incl_poles_remind3p0_NGFSscenarios_and_AIM_CGE\\EUab_2023_03_29_with_POLES_REMIND3p0_IAM_CGE_and_NGFS_scenarios_2019_harmo_EU27.csv')
 
-dfin = pd.read_csv(files[0])
+files=glob.glob(f"{main_folder}{file}") # added Fabio (working)
+# pd.read_csv(f"{main_folder}from_FabioS\\EUab_2023_04_03_2019_harmo_['EU27'].csv")
+# dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
     dfin = pd.read_csv(files[0])
@@ -58,11 +68,14 @@ else:
          
             dfin = dfin.append(pyam.IamDataFrame(f))
         ct=ct+1
+
         
         
         
 dfin.rename({'model':{'AIM_CGE 2.2': 'AIM/CGE 2.2'}}, inplace=True)
-        
+# Below added by Fabio 20230516
+dfin.rename({'variable':{'Carbon Capture|Storage|Biomass': 'Carbon Sequestration|CCS|Biomass'}}, inplace=True)
+dfin.rename({'variable':{'Carbon Capture|Storage': 'Carbon Sequestration|CCS'}}, inplace=True)
 
 ngfs_rename =   {'d_delfrag': 'NGFS-Delayed transition',
                  'd_rap': 'NGFS-Divergent Net Zero',
@@ -76,6 +89,7 @@ dfin.rename({'scenario':ngfs_rename}, inplace=True)
 
 dfin.load_meta(wbstr, sheet_name='Vetting_flags')   
 
+# NOTE line below (assert) commented out temporarily by Fabio 20230415 because we do not have climate assessment yet for remind 3.1
 assert len( dfin.filter(OVERALL_binary=['PASS','FAIL'], keep=False).meta)==0
 # =============================================================================
 
@@ -99,7 +113,8 @@ df.filter(Category=['C1*', 'C2','Regional only'], inplace=True)
 
 #%% EUAB target
 df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
-    'up': 2100,
+    # 'up': 2100, # value to be filtered
+    'up': 2085, # value to be filtered
     'year': 2030}},
     exclude_on_fail=True)
 df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
@@ -267,6 +282,14 @@ specdic = {'CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
+           'GHGs* full':{'variable': 'GHG incl. International transport',
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},
+            'GHGs** full':{'variable': 'GHG incl. International transport (intra-eu only)',
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},
            # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
            #                        'unitin': 'Mt CO2-equiv/yr',
            #                        'unitout': 'Gt CO2-equiv/yr',
@@ -319,6 +342,25 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
+            'GHGs* (incl. indirect AFOLU)':{'variable': 'GHG incl. International transport',
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},
+            'GHGs** (incl. indirect AFOLU)':{'variable': 'GHG incl. International transport (intra-eu only)',
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},
+            'CO2 FFI':{'variable': 'Emissions|CO2|Energy and Industrial Processes', # added Fabio 20230405 h 17.22
+                                  'unitin': 'Mt CO2-equiv/yr',
+                                  'unitout': 'Gt CO2-equiv/yr',
+                                  'factor': 0.001},
+            
+            # added by fabio 20230423:
+            'AFOLU (direct+indirect)': {'variable': 'Emissions|CO2|LULUCF Direct+Indirect',
+                       'unitin': 'Mt CO2/yr',
+                       'unitout': 'Gt CO2/yr',
+                       'factor': 0.001},
+
            # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
            #                        'unitin': 'Mt CO2-equiv/yr',
            #                        'unitout': 'Gt CO2-equiv/yr',
@@ -346,13 +388,15 @@ for indi, config in specdic.items():
     meta_docs[name] = f'Cumulative {indi} from {baseyear} until {lastyear} (including the last year, {cumulative_unit}) ({variable})'
 
     # 2020 to 2030
-    if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)']:
+    if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)', 'GHGs* (incl. indirect AFOLU)', 'GHGs** (incl. indirect AFOLU)',
+                'AFOLU (direct+indirect)']:# added by fabio 20230423
         label = f'cumulative {indi} (2020-2030, {cumulative_unit})'
         df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=2020, last_year=2030), label)
         meta_docs[name] = f'Cumulative {indi} from 2030 until {lastyear} (including the last year, {cumulative_unit}) ({variable})'    
     
     # 2030 to 2050
-    if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)']:
+    if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)', 'GHGs* (incl. indirect AFOLU)', 'GHGs** (incl. indirect AFOLU)',
+                'AFOLU (direct+indirect)']:# added by fabio 20230423
         label = f'cumulative {indi} (2030-{lastyear}, {cumulative_unit})'
         df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=2030, last_year=lastyear), label)
         meta_docs[name] = f'Cumulative {indi} from 2030 until {lastyear} (including the last year, {cumulative_unit}) ({variable})'    
@@ -361,7 +405,7 @@ for indi, config in specdic.items():
 
 
 #%% GHG % reduction compared to 1990
-ghg1990 = 4633
+ghg1990 = 4633 # NOTE: without int. transport -> `Emissions|Kyoto Gases (AR4) (UNFCCC)`
 base_year_ghg = 1990
 last_years = [2020, 2025, 2030, 2035, 2040, 2050]
 for last_year in last_years:
@@ -370,13 +414,63 @@ for last_year in last_years:
     rd = 100* (1-(a[last_year] / ghg1990))
     df.set_meta(rd, name, )
 
+#%% GHG* % reduction compared to 1990 (incl int transport) added Fabio
+ghg1990 = 4790.123 # added Fabio -> Total net emissions with int Transport EEA Source: https://www.eea.europa.eu/data-and-maps/data/data-viewers/greenhouse-gases-viewer) 
+base_year_ghg = 1990
+last_years = [2020, 2025, 2030, 2035, 2040, 2050]
+for last_year in last_years:
+    name = f'GHG* emissions reductions {base_year_ghg}-{last_year} %'
+    a = df.filter(variable='GHG incl. International transport').timeseries()
+    rd = 100* (1-(a[last_year] / ghg1990))
+    df.set_meta(rd, name, )
+
+
+
+#%% GHG** % reduction compared to 1990 (incl int transport) added Fabio
+ghg1990 = 4790.123 -99.40 # added Fabio -> 
+# 4790 is Total net emissions with int Transport EEA Source: https://www.eea.europa.eu/data-and-maps/data/data-viewers/greenhouse-gases-viewer)
+# NOTE 99.40 Is extra-eu bunkers (to be subtracted as we want to include only in intra-eu bunkers). 
+# Extra eu shipping (99.40) was calculated based on data From Miles in 1990: 156.66 (Total) -56.27 (intra-eu domestic bunkers )=99.40
+base_year_ghg = 1990
+last_years = [2020, 2025, 2030, 2035, 2040, 2050]
+for last_year in last_years:
+    name = f'GHG** emissions reductions {base_year_ghg}-{last_year} %'
+    a = df.filter(variable='GHG incl. International transport (intra-eu only)').timeseries()
+    rd = 100* (1-(a[last_year] / ghg1990))
+    df.set_meta(rd, name, )
+
+
+
+
+#%% GHG** % reduction compared to 1990 (incl int transport) added Fabio 20230421
+base_year_ghg = 2030
+last_years = [2030, 2035, 2040, 2045,2050]
+for last_year in last_years:
+    name = f'GHG** emissions reductions {base_year_ghg}-{last_year} %'
+    a = df.filter(variable='GHG incl. International transport (intra-eu only)').timeseries()
+    rd = 100* (1-(a[last_year] / a[base_year_ghg]))
+    df.set_meta(rd, name, )
+
+
+
 #%% GHG % reduction compared to2019
-ghg2019 = 3364
+ghg2019 = 3364 # NOTE: without int. transport -> `Emissions|Kyoto Gases (AR4) (UNFCCC)`
 base_year_ghg = 2019
 last_years = [2030, 2035, 2040, 2050]
 for last_year in last_years:
     name = f'GHG emissions reductions {base_year_ghg}-{last_year} %'
     a = df.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').timeseries()
+    rd = 100* (1-(a[last_year] / ghg2019))
+    df.set_meta(rd, name, )
+
+
+#%% GHG* % reduction compared to2019 incl. International transport added Fabio
+ghg2019 = 3634.836 # added Fabio -> Total net emissions with int Transport EEA Source: https://www.eea.europa.eu/data-and-maps/data/data-viewers/greenhouse-gases-viewer) 
+base_year_ghg = 2019
+last_years = [2030, 2035, 2040, 2050]
+for last_year in last_years:
+    name = f'GHG* emissions reductions {base_year_ghg}-{last_year} %' # modified Fabio
+    a = df.filter(variable='GHG incl. International transport').timeseries() # modified Fabio
     rd = 100* (1-(a[last_year] / ghg2019))
     df.set_meta(rd, name, )
 
@@ -405,6 +499,8 @@ indis_add = [
             'Emissions|Total Non-CO2',
             # 'Emissions|CO2|AFOLU',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'GHG incl. International transport', # added Fabio cannot be added as we do not have int. transport data beyond 2050
+             'GHG incl. International transport (intra-eu only)',
              # 'Emissions|Kyoto Gases',
              'Carbon Sequestration|CCS',
              'Carbon Sequestration|CCS|Biomass',
@@ -646,11 +742,51 @@ for v in ynz_variables:
         df.set_meta_from_data(name, variable=v, year=2025)
         name = f'{v} in 2030, {nu}'
         df.set_meta_from_data(name, variable=v, year=2030)
+    elif v=='GHG incl. International transport': # added Fabio
+        name = f'{v} in 2025, {nu}'
+        df.set_meta_from_data(name, variable=v, year=2025)
+        name = f'{v} in 2030, {nu}'
+        df.set_meta_from_data(name, variable=v, year=2030)
         
     name = f'{v} in 2050, {nu}'
     df.set_meta_from_data(name, variable=v, year=2050)
-    
 
+
+# =============================================================================
+#%% Additional filter based on GHG emissions resduction # Fabio added additional filters
+# =============================================================================
+base_year = 1990
+name = f'Pass based on GHG emissions reductions'
+keep_2030 = df.meta["GHG emissions reductions 1990-2030 %"]
+keep_2050 = df.meta['Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr']
+keep_2030 = keep_2030[keep_2030>55 ]
+keep_2050 = keep_2050[keep_2050<300]
+index=keep_2030.index.intersection(keep_2050.index)
+df.set_meta(df.index.isin(index), name, )
+
+
+name = f'Pass based on GHG* emissions reductions'
+keep_2030 = df.meta["GHG* emissions reductions 1990-2030 %"]
+keep_2050 = df.meta['GHG incl. International transport in 2050, Mt CO2-equiv/yr']
+keep_2030 = keep_2030[keep_2030>55 ]
+keep_2050 = keep_2050[keep_2050<300]
+index=keep_2030.index.intersection(keep_2050.index)
+df.set_meta(df.index.isin(index), name, ) 
+
+
+name = f'Pass based on GHG** emissions reductions'
+keep_2030 = df.meta["GHG** emissions reductions 1990-2030 %"]
+keep_2050 = df.meta['GHG incl. International transport (intra-eu only) in 2050, Mt CO2-equiv/yr']
+keep_2030 = keep_2030[keep_2030>55 ]
+keep_2050 = keep_2050[keep_2050<300]
+index=keep_2030.index.intersection(keep_2050.index)
+df.set_meta(df.index.isin(index), name, ) 
+
+name = f'Pass based on positive Non-CO2 emissions'
+keep_2050 = df.meta['Emissions|Total Non-CO2 in 2050, Mt CO2-equiv/yr']
+keep_2050 = keep_2050[keep_2050>0]
+index=keep_2050.index
+df.set_meta(df.index.isin(index), name, ) 
 
 # =============================================================================
 #%% Write out 
