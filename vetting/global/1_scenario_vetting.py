@@ -26,6 +26,8 @@ single_model = False   # Testing mode- not used
 include_data = True
 print_log = print if log else lambda x: None
 include_meta = False
+load_late_submissions = False
+
 
 
 from vetting_functions import *
@@ -37,7 +39,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'global'
 user = 'byers'
-datestr = '20230508'
+datestr = '20230512'
 # ver = 'normal'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
@@ -58,7 +60,6 @@ input_data_ref = f'input_data\\input_reference_all.csv'
 
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 
-load_late_submissions = True
 late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 #%% Load data

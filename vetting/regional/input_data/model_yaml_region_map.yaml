@@ -414,13 +414,24 @@ REMIND 3.1:
   EU_common: EU27 & UK, EU27, Europe
   R10_Europe: Europe (R10)
   eu_isos: false
+  include: false
+  natives: .nan
+  notes: .nan
+  tofix: Replaced by 3.2
+  vetted_regions: EU27
+  vetted_type: common
+  yaml: REMIND_3.1
+REMIND 3.2:
+  EU_common: EU27 & UK, EU27, Europe
+  R10_Europe: Europe (R10)
+  eu_isos: false
   include: true
   natives: .nan
   notes: .nan
   tofix: .nan
   vetted_regions: EU27
   vetted_type: common
-  yaml: REMIND_3.1
+  yaml: REMIND_3.2
 REMIND-EU 2.0:
   EU_common: EU27 & UK
   R10_Europe: Europe (R10)

@@ -28,6 +28,7 @@ print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
 recreate_yaml_region_map = True  # read in excel, and save to yaml
 write_out_all = True
+load_late_submissions = False
 
 
 from vetting_functions import *
@@ -38,7 +39,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'regional'
 user = 'byers'
-datestr = '20230508'
+datestr = '20230512'
 
 # ver = 'normal'
 
@@ -62,7 +63,6 @@ input_yaml_eu_regions = f'..\\definitions\\region\\european-regions.yaml'
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 
-load_late_submissions = True
 late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 #%% Load data

@@ -12,7 +12,7 @@ import pyam
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 from vetting_functions import *
 
-datestr = '20230508'
+datestr = '20230512'
 user = 'byers'
 
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
@@ -162,12 +162,14 @@ c_cols = ['Category', 'Category_name']
 keep_cols = ['model','scenario']+c_cols
 
 cmd1 = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
-cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2?C'
+cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2C'
+cmd1.loc[cmd1.scenario=='NGFS-Delayed transition', 'scenario'] = 'NGFS-Delayed Transition'
+
 # Addtitional runs
-cmd2 = pd.read_excel(f'{main_folder}climate_assessment\\AdvisoryBoard_additional_remind_meta.xlsx')
-cmd3 = pd.read_excel(f'{main_folder}climate_assessment\\remind_sensitivity_emissions_meta.xlsx')
-cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx')
-cmd = pd.concat([cmd1, cmd2, cmd3, cmd4])
+# cmd2 = pd.read_excel(f'{main_folder}climate_assessment\\AdvisoryBoard_additional_remind_meta.xlsx')
+# cmd3 = pd.read_excel(f'{main_folder}climate_assessment\\remind_sensitivity_emissions_meta.xlsx')
+cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
+cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
 
 
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
