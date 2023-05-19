@@ -97,8 +97,7 @@ dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col] = flag_fai
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col1] = 'Global fail, Regional OK'
 dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col2] = 4
 
-# 4. NA Global, 
-
+# 4. NA Global, missing variables in regional
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col] = 'WARNING'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col1] = 'Regional only OK'
 dfs.loc[(dfs[colg].isna()) & (dfs[colr]==flag_pass_missing), col2] = 4
@@ -170,9 +169,16 @@ cmd1.loc[cmd1.scenario=='NGFS-Delayed transition', 'scenario'] = 'NGFS-Delayed T
 # cmd3 = pd.read_excel(f'{main_folder}climate_assessment\\remind_sensitivity_emissions_meta.xlsx')
 cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
 cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
-
+cmd.drop_duplicates(subset=['model','scenario'], inplace=True)
 
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
+
+
+
+#%% Check for duplicates
+
+
+
 # Add selected climate meta to main summary sheet
 # =============================================================================
 # Wrtite out EXCEL
