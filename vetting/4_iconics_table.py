@@ -41,14 +41,14 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.x
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v7.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v8.xlsx'
 
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_05_12\\EUab_2023_05_16_all_models*v2*.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2023_05_22\\EUab_2023_05_22_corrected_indirect_emi_2019_harmo_step5e.csv')
 
 # files=glob.glob(f"{main_folder}{file}") # added Fabio (working)
 # pd.read_csv(f"{main_folder}from_FabioS\\EUab_2023_04_03_2019_harmo_['EU27'].csv")
@@ -819,7 +819,7 @@ for v in ynz_variables:
 #%% Additional filter based on GHG emissions resduction # Fabio added additional filters
 # =============================================================================
 base_year = 1990
-target2030 = 53
+target2030 = 55
 target2050 = 300
 name = f'Pass based on GHG emissions reductions'
 keep_2030 = df.meta["GHG emissions reductions 1990-2030 %"]
