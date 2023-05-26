@@ -41,14 +41,14 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.x
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v10.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
 
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_05_24\\EUab_2023_05_25_corrected_trade_2019_harmo_step5e.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2023_05_24\\EUab_2023_05_26_corrected_sec_energy_2019_harmo_step5e.csv')
 
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
@@ -856,7 +856,7 @@ for year in [2030, 2040, 2050]:
 # =============================================================================
 base_year = 1990
 target2030 = 55
-target2050 = 300
+target2050 = 300 # total GHg with without EU bunkers?
 name = f'Pass based on GHG emissions reductions'
 keep_2030 = df.meta["GHG emissions reductions 1990-2030 %"]
 keep_2050 = df.meta['Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr']
