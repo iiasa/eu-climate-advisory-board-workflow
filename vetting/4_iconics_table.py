@@ -68,7 +68,7 @@ else:
         ct=ct+1
 
 df_remccs  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\REMIND2p1_DIAG_extraVars.xlsx')
-df_remccs.filter(variable='Carbon Sequestration*', inplace=True)
+# df_remccs.filter(variable='Carbon Sequestration*', inplace=True)
 df_remFETF  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\AdvisoryBoard_REMIND3p2_additional_variables.xlsx')
 df_remFETF.filter(variable='Final Energy|Transportation|Liquids|Fossil', inplace=True)
 
@@ -88,7 +88,7 @@ ngfs_rename =   {'d_delfrag': 'NGFS-Delayed transition',
 dfin.rename({'scenario':ngfs_rename}, inplace=True)
 
 dfin.append(df_remccs, inplace=True)
-dfin.append(df_remFETF.filter(), inplace=True)
+dfin.append(df_remFETF, inplace=True)
 
 
 
@@ -102,6 +102,8 @@ dfin.load_meta(wbstr, sheet_name='Vetting_flags')
 # =============================================================================
 
 df = dfin.filter(region='EU27')
+df.interpolate(time=range(2000,2101), inplace=True)
+
 # Filter years in case of odd zeros
 # years = range(1990,2101,5)
 years = list(range(1990,2016,5))+[2019]+list(range(2020,2102,5))
@@ -118,18 +120,19 @@ df.filter(Category=['C1*', 'Regional only'], inplace=True)
 # Drop GCAM Current Policies scenarios
 df.filter(model='GCAM*', scenario='*CurPol*', keep=False, inplace=True)
 
-# Remove (almost) duplicate REMINE 3.2 scenarios
+# Remove (almost) duplicate REMIND 3.2 scenarios
 remkeep = df.filter(model='REMIND 3.2', scenario='*_withICEPhOP*',)
 df.filter(model='REMIND 3.2', keep=False, inplace=True)
 df.append(remkeep, inplace=True)
 
 #%% EUAB target
-df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
+ghgvar = 'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)'
+df.validate(criteria={ghgvar: {
     # 'up': 2100, # value to be filtered
     'up': 2085, # value to be filtered
     'year': 2030}},
     exclude_on_fail=True)
-df.validate(criteria={'Emissions|Kyoto Gases (incl. indirect AFOLU)': {
+df.validate(criteria={ghgvar: {
     'up': 300,
     'year': 2050}},
     exclude_on_fail=True)
@@ -301,7 +304,6 @@ df.append(rem_FETF, inplace=True)
 
 
 # REMIND-MAgPIE 3.0-4.4
-# REMIND-MAgPIE 3.0-4.4
 
 # Trade
 df.filter(variable='Trade', keep=False, inplace=True)
@@ -369,7 +371,7 @@ for indi, config in specdic.items():
 #%% Cumulatuive emissions / sequestrations to 2050 values
 # =============================================================================
 
-df.interpolate(time=range(2000,2101), inplace=True)
+# df.interpolate(time=range(2000,2101), inplace=True)
 
 
 #%% Cumulative calcs
@@ -811,6 +813,42 @@ for v in ynz_variables:
         
     name = f'{v} in 2050, {nu}'
     df.set_meta_from_data(name, variable=v, year=2050)
+    
+#%% Calculate EU share of global emissions, 2040 and 2020-2050.
+
+instance = 'eu-climate-advisory-board-internal'
+
+x = df.meta.reset_index()[['model','scenario']]
+msdic = {k: list(v) for k,v in x.groupby("model")["scenario"]}
+
+
+dfgc = df.filter(model='dsdsd')
+for model, scenarios in msdic.items():
+    dfgc.append(pyam.read_iiasa(instance,
+                            model=model,
+                            scenario=scenarios,
+                            variable='Emissions|CO2',
+                           region='World', meta=False),
+                inplace=True)
+
+dfgc.filter(year=list(range(2020,2051,5)), inplace=True)
+df.append(dfgc, inplace=True, ignore_meta_conflict=True)
+
+
+for year in [2030, 2040, 2050]:
+    dfd = df.filter(variable='Emissions|CO2', region=['EU27','World'], year=year)
+    
+    dfd.divide('EU27', 'World', f'EU-share of World',
+               axis='region', ignore_units='-',
+               append=True)
+    
+    df.append(dfd.filter(region='EU-share of World'), inplace=True)
+
+    df.set_meta_from_data(f'EU27-share of World Emissions|CO2 in {year}', 
+                          variable='Emissions|CO2',
+                          region=f'EU-share of World',
+                          year=year)
+
 
 
 # =============================================================================
