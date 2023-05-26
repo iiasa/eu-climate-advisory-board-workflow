@@ -42,7 +42,8 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.x
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
-
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v6.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v6_v11_data.csv'
 
 
 #%% Load data
@@ -999,3 +1000,7 @@ os.startfile(fn_out)
 df.meta.to_excel(fn_out.replace('data_and_',''),
                  sheet_name='meta')
 
+#%% Make comparison file
+old = pyam.IamDataFrame(fn_out_prev)
+comparison = pyam.compare(old.filter(year=years), df.filter(year=years))
+comparison.to_csv(fn_comparison)
