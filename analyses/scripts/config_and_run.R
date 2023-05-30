@@ -1,5 +1,5 @@
 # ******************************************************************************
-# * Base run script that was used to produce the figures for Byers et al. (2023) 
+# * Base run script that was used to produce the figures for Byers et al. (2023)
 # * "Scenarios processing, vetting and feasibility assessment for the EU Scientific Advisory Board on Climate Change"
 # *
 # * Author: Jarmo S. Kikstra
@@ -23,4 +23,3 @@ set_data_paths()
 
 source(here("scripts", "table_stats.R")) # peak temperature stats
 source(here("scripts", "figure_timeseries_temperature.R")) # temperature development, 3 panels (scenario ranges, climate ranges, combined ranges)
-
