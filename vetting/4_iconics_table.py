@@ -43,7 +43,7 @@ data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
 fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v6.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v6_v11_data.csv'
+fn_comparison = f'{data_output_folder}comparison_v6_v11_data.xlsx'
 
 
 #%% Load data
@@ -1003,4 +1003,4 @@ df.meta.to_excel(fn_out.replace('data_and_',''),
 #%% Make comparison file
 old = pyam.IamDataFrame(fn_out_prev)
 comparison = pyam.compare(old.filter(year=years), df.filter(year=years))
-comparison.to_csv(fn_comparison)
+comparison.to_excel(fn_comparison, merge_cells=False)

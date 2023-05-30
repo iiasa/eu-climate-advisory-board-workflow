@@ -24,7 +24,7 @@ output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUA
 
 fnr = f'{output_folderr}vetting_flags_all_regional_{datestr}.xlsx'
 fng = f'{output_folderg}vetting_flags_all_global_{datestr}.xlsx'
-wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}_v3.xlsx'
 
 
 
@@ -55,10 +55,9 @@ dfs = pd.merge(dfg[colsg], dfr[colsr+['vetted_type',]],
 
 
 
+
+
 #%% Recode the values with Identifiers
-
-
-#%%
 
 col = 'OVERALL_binary'
 col1 = 'OVERALL_Assessment'
@@ -155,6 +154,13 @@ if sum(dfs[ocols].isna().sum())>0:
 # Drop NGFS ? scenarios    
 # dfs = dfs.loc[dfs.scenario!='NGFS-Below 2°C',]
     
+# Drop REMIND 3.2 scenarios
+dfs = dfs.loc[~((dfs.model=='REMIND 3.2') & (dfs.scenario.str.contains('withICEPhOP')==False))]
+
+# Drop Reference
+dfs = dfs.loc[~(dfs.model=='Reference')]
+
+
 #%% Add climate metadata
 # First pass
 c_cols = ['Category', 'Category_name']
@@ -171,9 +177,19 @@ cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emi
 cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
 cmd.drop_duplicates(subset=['model','scenario'], inplace=True)
 
+cmd = cmd.loc[~((cmd.model=='REMIND 3.2') & (cmd.scenario.str.contains('withICEPhOP')==False))]
+
+
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 
+# Copy info for the REMIND 2.1 and PROMETHEUS DIAG-NZero scenarios
+dfscols = dfs.columns
 
+# REMIND
+dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
+
+# PROMETHEUS
+dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
 
 #%% Check for duplicates
 
@@ -229,6 +245,9 @@ dfsp = simple_pivot_cat_count(dfs[['vetted_type','OVERALL_binary']],
                                 index='OVERALL_binary', )
 write_simple_pivot(writer, dfsp, sheet_name='Pivot_vetted_type')
     
+
+
+
 
 # Write out climate metadata
 cmd.to_excel(writer, sheet_name='meta_climate', index=False)
