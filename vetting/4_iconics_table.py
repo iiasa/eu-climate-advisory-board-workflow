@@ -40,7 +40,7 @@ vetting_output_folder = f'{main_folder}vetting\\'
 
 vstr = '20230512'  
 
-wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.xlsx'
+wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v4.xlsx'
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
@@ -872,6 +872,7 @@ df.set_meta(df.index.isin(index), name, )
 # =============================================================================
 #%% Write out 
 # =============================================================================
+
 writer = pd.ExcelWriter(fn_out, engine='xlsxwriter')
 
 
