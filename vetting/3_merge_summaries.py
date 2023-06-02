@@ -24,7 +24,7 @@ output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUA
 
 fnr = f'{output_folderr}vetting_flags_all_regional_{datestr}.xlsx'
 fng = f'{output_folderg}vetting_flags_all_global_{datestr}.xlsx'
-wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}_v3.xlsx'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}_v4.xlsx'
 
 
 
@@ -182,14 +182,22 @@ cmd = cmd.loc[~((cmd.model=='REMIND 3.2') & (cmd.scenario.str.contains('withICEP
 
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 
-# Copy info for the REMIND 2.1 and PROMETHEUS DIAG-NZero scenarios
-dfscols = dfs.columns
+# Copy info for the REMIND 2.1 and PROMETHEUS DIAG-NZero scenarios (not used as removed - no lit reference description)
+# dfscols = dfs.columns
 
-# REMIND
-dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
+# # REMIND
+# dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
 
-# PROMETHEUS
-dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
+# # PROMETHEUS
+# dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
+
+# Drop DIAG-NZero scenarios
+# # REMIND
+dfs = dfs.loc[~(dfs.scenario=='DIAG-NZero')]
+# dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
+
+# # PROMETHEUS
+# dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
 
 #%% Check for duplicates
 

@@ -78,30 +78,33 @@ len(sl_s) #1097 submission (includes 59 REMIND 3.1 scenarios)
 
 # msc = sl_i[['model','scenario']]
 msc = pd.concat([sl_i[['model','scenario']], sl_s[['model','scenario']]])
-msc.drop_duplicates(inplace=True) #len = 1222
+msc.drop_duplicates(inplace=True) #len = 1193
+len(msc)
 
-msc = msc.loc[~(msc.model=='REMIND 3.1')] # 1161 after removal
+# not needed because removed from db
+# msc = msc.loc[~(msc.model=='REMIND 3.1')] # 1132 after removal
 # Now drop extra REMIND 3.2 (without ICEPhOP)
-msc = msc.loc[~((msc.model=='REMIND 3.2') & (msc.scenario.str.contains('withICEPhOP')==False))] # = 1132 (29 dropped)
+# msc = msc.loc[~((msc.model=='REMIND 3.2') & (msc.scenario.str.contains('withICEPhOP')==False))] # = 1132 (29 dropped)
 
-# 8 scenarios not transferred = 1126 = 
+# 8 scenarios not transferred = 1124 = 
 # 6 * NGFS (renamed
-# 2 * DIAG_NZero (REM + PROM) (willbe included so ignore here)
-msc = msc.loc[~(msc.scenario=='DIAG-NZero')] # these two not in but will be
+# 2 * DIAG_NZero (REM + PROM) - no lit reference
+msc = msc.loc[~(msc.scenario=='DIAG-NZero')] # 
 msc = msc.loc[~(msc.scenario=='NGFS-Delayed transition')]
 msc = msc.loc[~(msc.scenario=='NGFS-Below 2°C')]
 
-# 1126 scenarios considered
+# 1124 scenarios considered
 
-# 3 models removed due to lacking info (see above) = 51 scenarios
-msc = msc.loc[~(msc.model.isin([ 'RECC 2.4', 'TIMES-Ireland Model v1.0', 'OSeMBE v1.0.0']))] 
-len(msc)  # 1075 (should be) in internal
-
-
+# 6 models removed due to lacking info (see above) = 62 scenarios
 # + extra 3 also not transferred, lacking info
 # ALADIN x2
 # ENERGYVILLE x2
 # ROADMAP x7
+msc = msc.loc[~(msc.model.isin([ 'RECC 2.4', 'TIMES-Ireland Model v1.0', 'OSeMBE v1.0.0', 'ALADIN 1.0','Roadmap v1.8', 'EnergyVille TIMES BE 1.0.0']))] 
+len(msc)  # 1075 (should be) in internal
+
+
+
 
 mscl = list(zip(msc.model, msc.scenario))
 
