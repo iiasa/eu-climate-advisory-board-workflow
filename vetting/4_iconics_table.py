@@ -20,6 +20,9 @@ import plotly.express as px
 import string
 import itertools
 import os
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 # os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\eu-climate-advisory-board-workflow-vetting')
 #os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\euab_fabio\\vetting')
@@ -41,9 +44,9 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}.x
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v6.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v6_v11_data.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v12.xlsx'
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v11_v12_data.xlsx'
 
 
 #%% Load data
@@ -55,7 +58,6 @@ dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
     dfin = pd.read_csv(files[0])
-    dfin = dfin.fillna(0,)
     dfin = pyam.IamDataFrame(dfin)
 
 else:
@@ -508,7 +510,7 @@ for last_year in last_years:
 
 #%% GHG** % reduction compared to 1990 (incl int transport) added Fabio 20230421
 base_year_ghg = 2030
-last_years = [2030, 2035, 2040, 2045,2050]
+last_years = [2035, 2040, 2045, 2050]
 for last_year in last_years:
     name = f'GHG** emissions reductions {base_year_ghg}-{last_year} %'
     a = df.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)').timeseries()
@@ -671,29 +673,6 @@ ynz_variables.append(name)
 # Final energy
 # =============================================================================
 
-# =============================================================================
-# #final energy / capita
-
-# nv='Final Energy|Per capita'
-# nu='EJ/yr /person'
-# print(nv)
-# df.divide('Final Energy', 'Population', 
-#           nv,
-#           ignore_units=nu,
-#           append=True)
-# ynz_variables.append(nv)
-
-# =============================================================================
-# # #GDP / unit Final Energy
-
-# nv = 'GDP|MER|Final Energy'
-# nu = 'US$2010/MJ'
-# df.divide('GDP|MER', 'Final Energy',
-#           nv,
-#           ignore_units=nu,
-#           append=True)
-# ynz_variables.append(nv)
-
 ynz_variables.append('Final Energy')
 # ynz_variables.append('Secondary Energy|Hydrogen')
 # =============================================================================
@@ -823,7 +802,7 @@ x = df.meta.reset_index()[['model','scenario']]
 msdic = {k: list(v) for k,v in x.groupby("model")["scenario"]}
 
 
-dfgc = df.filter(model='dsdsd')
+dfgc = df.filter(model='abc')
 for model, scenarios in msdic.items():
     dfgc.append(pyam.read_iiasa(instance,
                             model=model,
@@ -991,6 +970,19 @@ worksheet.set_column(5, -1, 8, None)
 worksheet.freeze_panes(1, 2)
 worksheet.autofilter(0, 0, len(df.meta), len(df.year))
 
+#%% Do quantiles sheet
+dfm = df.meta
+dfm = dfm.loc[dfm[f'Pass based on GHG** emissions reductions']==True]
+assert len(dfm)==63
+dfm = dfm.iloc[:, 18:143]
+dfm = dfm.T
+
+dfq = dfm.quantile([0, 0.05, 0.25, 0.5, 0.75, 0.95, 1], axis=1)
+dfq = dfq.T
+dfq['n'] = dfm.T.count().values
+
+dfq.to_excel(writer, sheet_name='quantiles')
+
 
 writer.close()
 
@@ -1001,6 +993,161 @@ df.meta.to_excel(fn_out.replace('data_and_',''),
                  sheet_name='meta')
 
 #%% Make comparison file
+yrs = range(2020,2101)
 old = pyam.IamDataFrame(fn_out_prev)
-comparison = pyam.compare(old.filter(year=years), df.filter(year=years))
+comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
 comparison.to_excel(fn_comparison, merge_cells=False)
+os.startfile(fn_comparison)
+
+
+#%% iconics boxplots
+
+dfb = df.meta
+dfb = dfb.loc[dfb[f'Pass based on GHG** emissions reductions']==True]
+assert len(dfb)==63
+
+
+
+
+
+#%%
+def plot_box_meta(dfb, varis, yticks=None, xlabel='', fname=None, palette=None):
+    dfb1 = dfb.copy(deep=True)[varis]
+    dfb1 = dfb1.reset_index().melt(id_vars=['model','scenario'], value_vars=dfb1.columns)
+    sns.set_theme(style="ticks")
+    figheight = len(varis)*0.5
+    fig, ax = plt.subplots(figsize=(10, figheight))
+    sns.boxplot(x='value', y='variable', data=dfb1, ax=ax,
+                whis=[0,100], width=0.6, palette=palette)
+    sns.stripplot(x='value', y='variable', data=dfb1, ax=ax,
+                  size=4, color=".3", linewidth=0)
+    
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel('')
+
+    # Fix yticklabels
+    if type(yticks)==list:
+        ax.set_yticklabels(yticks)
+    
+    ax.grid(True)
+    
+    plt.tight_layout()
+    if type(fname)==str:
+        fig.savefig(fname, dpi=300)#, bbox_inches=True)
+
+palette = 'GnBu'
+#%% Cumulative emissions
+
+fname = f'{main_folder}report\\figures\\boxplot_cumEmissions.png'
+varis = ['cumulative net CO2 (2020-2030, Gt CO2)',
+        'cumulative net CO2 (2030-2050, Gt CO2)',
+        'cumulative net CO2 (2020-2050, Gt CO2)',
+        'cumulative Non-CO2 (2020-2050, Gt CO2-equiv)',
+        'cumulative CCS (2020-2050, Gt CO2)',
+        'cumulative BECCS (2020-2050, Gt CO2)',
+        'cumulative GHGs** (incl. indirect AFOLU) (2020-2030, Gt CO2-equiv)',
+        'cumulative GHGs** (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)',
+        'cumulative GHGs** (incl. indirect AFOLU) (2020-2050, Gt CO2-equiv)',
+        # 'cumulative CO2 FFI (2020-2050, Gt CO2-equiv)',
+        'cumulative AFOLU (direct+indirect) (2020-2050, Gt CO2)']
+yticks = [v.strip('cumulative ') for v in varis]
+yticks = [v.strip('net ') for v in yticks]
+yticks = [v.replace(', Gt CO2)', ')') for v in yticks]
+yticks = [v.replace(', Gt CO2-equiv)', ')') for v in yticks]
+
+
+plot_box_meta(dfb, varis, yticks, xlabel='cumulative CO2 or GHGs, GtCO2e/yr',
+              fname=fname, palette=palette)
+
+#%% Emissions reductions
+
+fname = f'{main_folder}report\\figures\\boxplot_Emissions_reductions.png'
+varis = [
+        'GHG** emissions reductions 1990-2020 %',
+        'GHG** emissions reductions 1990-2030 %',
+        'GHG** emissions reductions 1990-2040 %',
+        'GHG** emissions reductions 1990-2050 %',
+        'Non-CO2 emissions reductions 2020-2030 %',
+        'Non-CO2 emissions reductions 2020-2050 %',
+        ]
+yticks = [v.strip('cumulative ') for v in varis]
+yticks = [v.strip('net ') for v in yticks]
+
+
+plot_box_meta(dfb, varis, yticks, xlabel='% reduction',
+              fname=fname, palette=palette)
+
+
+#%% Emissions YNZ
+fname = f'{main_folder}report\\figures\\boxplot_emissions_YNZ.png'
+varis = [
+        'Emissions|Kyoto Gases (incl. indirect AFOLU) in year of net zero, Mt CO2-equiv/yr',
+        'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only) in year of net zero, Mt CO2-equiv/yr',
+        'Emissions|CO2 in year of net zero, Mt CO2/yr',
+        'Emissions|Total Non-CO2 in year of net zero, Mt CO2-equiv/yr',
+        'Carbon Sequestration|CCS in year of net zero, Mt CO2/yr',
+        'Carbon Sequestration|CCS|Biomass in year of net zero, Mt CO2/yr',
+        'Carbon Sequestration|CCS|Fossil in year of net zero, Mt CO2/yr',
+        'Carbon Sequestration|CCS|Industrial Processes in year of net zero, Mt CO2/yr',
+        ]
+
+yticks = [v.split(' in year')[0] for v in varis]
+yticks = [v.split('|')[1:] for v in yticks]
+yticks = [x[0] if len(x)==1 else x[0]+' '+ x[1] for x in yticks]
+
+plot_box_meta(dfb, varis, yticks, xlabel='Emissions and removals in year of net-zero CO2',
+              fname=fname, palette=palette)
+
+#%% Emissions in 2050
+fname = f'{main_folder}report\\figures\\boxplot_emissions_2050.png'
+
+varis = [
+    'Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr',
+    'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only) in 2050, Mt CO2-equiv/yr',           
+    'Emissions|CO2 in 2050, Mt CO2/yr',
+    'Emissions|Total Non-CO2 in 2050, Mt CO2-equiv/yr',
+    'Carbon Sequestration|CCS in 2050, Mt CO2/yr',
+    'Carbon Sequestration|CCS|Biomass in 2050, Mt CO2/yr',
+    'Carbon Sequestration|CCS|Fossil in 2050, Mt CO2/yr',
+    'Carbon Sequestration|CCS|Industrial Processes in 2050, Mt CO2/yr'
+    ]
+
+yticks = [v.split(' in 2050')[0] for v in varis]
+yticks = [v.split('|')[1:] for v in yticks]
+yticks = [x[0] if len(x)==1 else x[0]+' '+ x[1] for x in yticks]
+
+plot_box_meta(dfb, varis, yticks, xlabel='Emissions and removals in 2050',
+              fname=fname, palette=palette)
+#%%
+# Primary Energy|Biomass in 2050, EJ/yr
+# Final Energy in 2050, EJ/yr
+
+
+#%% Energy shares in 2050
+fname = f'{main_folder}report\\figures\\boxplot_energy_shares_2050.png'
+
+
+varis = [
+    'Primary Energy|Renewables (incl.Biomass)|Share in 2050, %',
+    'Primary Energy|Non-biomass renewables|Share in 2050, %',
+    'Primary Energy|Fossil|Share in 2050, %',
+    'Primary Energy|Fossil|w/o CCS|Share in 2050, %',
+    'Secondary Energy|Electricity|Renewables (incl.Biomass)|Share in 2050, %',
+    'Secondary Energy|Electricity|Non-Biomass Renewables|Share in 2050, %',
+    'Hydrogen production|Final Energy|Share in 2050, %',
+    'Final Energy|Electrification|Share in 2050, %',
+    'Final Energy|Industry|Fossil|Share in 2050, %',
+    'Final Energy|Residential and Commercial|Fossil|Share in 2050, %',
+    'Final Energy|Transportation|Fossil|Share in 2050, %',
+    'PE Import dependency in 2050, %',
+    'PE Import dependency|Fossil in 2050, %',
+    # 'Trade|Fossil|Share in 2050, %'
+]
+yticks = [v.split('|Share in 2050, %')[0] for v in varis]
+# yticks = [v.split('|')[1:] if '|'in v else v for v in yticks]
+# yticks = [[v] if type(v)==str else v for v in yticks]
+yticks = [v.strip(' in 2050, %') for v in yticks]
+# yticks = [x[0] if len(x)==1 else x[0]+' '+ x[1] for x in yticks]
+
+plot_box_meta(dfb, varis, yticks, xlabel='% share in 2050',
+              fname=fname, palette=palette)
