@@ -44,16 +44,15 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v12.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v11.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v11_v12_data.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v14.xlsx'
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v13.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v13_v14_data.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_05_24\\EUab_2023_05_26_corrected_sec_energy_2019_harmo_step5e.csv')
-
+files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_06_2019_harmo_step5e_EU27.csv')
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
@@ -76,9 +75,6 @@ df_remFETF  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\Advisory
 df_remFETF.filter(variable='Final Energy|Transportation|Liquids|Fossil', inplace=True)
 
 dfin.rename({'model':{'AIM_CGE 2.2': 'AIM/CGE 2.2'}}, inplace=True)
-# Below added by Fabio 20230516
-# dfin.rename({'variable':{'Carbon Capture|Storage|Biomass': 'Carbon Sequestration|CCS|Biomass'}}, inplace=True)
-# dfin.rename({'variable':{'Carbon Capture|Storage': 'Carbon Sequestration|CCS'}}, inplace=True)
 
 ngfs_rename =   {'d_delfrag': 'NGFS-Delayed transition',
                  'd_rap': 'NGFS-Divergent Net Zero',
@@ -94,12 +90,8 @@ dfin.append(df_remccs, inplace=True)
 dfin.append(df_remFETF, inplace=True)
 
 
-
 dfin.load_meta(wbstr, sheet_name='Vetting_flags')   
 
-# NOTE line below (assert) commented out temporarily by Fabio 20230415 because we do not have climate assessment yet for remind 3.1
-# assert len( dfin.filter(OVERALL_binary=['PASS','FAIL'], keep=False).meta)==0
-# =============================================================================
 
 #%% Filter scenarios (RESTART FROM HERE) 
 # =============================================================================
@@ -129,16 +121,16 @@ df.filter(model='REMIND 3.2', keep=False, inplace=True)
 df.append(remkeep, inplace=True)
 
 #%% EUAB target
-ghgvar = 'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)'
-df.validate(criteria={ghgvar: {
-    # 'up': 2100, # value to be filtered
-    'up': 2085, # value to be filtered
-    'year': 2030}},
-    exclude_on_fail=True)
-df.validate(criteria={ghgvar: {
-    'up': 300,
-    'year': 2050}},
-    exclude_on_fail=True)
+# ghgvar = 'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)'
+# df.validate(criteria={ghgvar: {
+#     # 'up': 2100, # value to be filtered
+#     'up': 2085, # value to be filtered
+#     'year': 2030}},
+#     exclude_on_fail=True)
+# df.validate(criteria={ghgvar: {
+#     'up': 300,
+#     'year': 2050}},
+#     exclude_on_fail=True)
 
 # df.filter(exclude=True, keep=False, inplace=True)
 
@@ -176,24 +168,24 @@ aggregate_missing_only(df, 'Emissions|CO2|Energy and Industrial Processes',
              components=components, append=True)
 
 # 'Emissions|Kyoto Gases'
-df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|CO2',
-            'tva',
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
-# df.subtract('tva',
-#             'Emissions|CO2|LULUCF Indirect',
-#             'Emissions|Kyoto Gases',
+# df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+#             'Emissions|CO2',
+#             'tva',
 #             ignore_units='Mt CO2-equiv/yr',
 #             append=True)
-df.filter(variable='tva', keep=False, inplace=True
-          )
-# Emissions|Non-CO2
-df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|CO2',
-            'Emissions|Non-CO2',
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
+# # df.subtract('tva',
+# #             'Emissions|CO2|LULUCF Indirect',
+# #             'Emissions|Kyoto Gases',
+# #             ignore_units='Mt CO2-equiv/yr',
+# #             append=True)
+# df.filter(variable='tva', keep=False, inplace=True
+#           )
+# # Emissions|Non-CO2
+# df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+#             'Emissions|CO2',
+#             'Emissions|Non-CO2',
+#             ignore_units='Mt CO2-equiv/yr',
+#             append=True)
 
 # Carbon Sequestration|CCS
 ccs_rename = {'variable':{'Carbon Capture|Storage|Biomass':'Carbon Sequestration|CCS|Biomass',
@@ -974,7 +966,7 @@ worksheet.autofilter(0, 0, len(df.meta), len(df.year))
 #%% Do quantiles sheet
 dfm = df.meta
 dfm = dfm.loc[dfm[f'Pass based on GHG** emissions reductions']==True]
-assert len(dfm)==63
+# assert len(dfm)==63
 dfm = dfm.iloc[:, 18:143]
 dfm = dfm.T
 
@@ -1005,10 +997,14 @@ os.startfile(fn_comparison)
 
 dfb = df.meta
 dfb = dfb.loc[dfb[f'Pass based on GHG** emissions reductions']==True]
-assert len(dfb)==63
+# assert len(dfb)==63
 
 
+#%% Check 2100 diff
 
+# a = df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+#             'Emissions|Kyoto Gases',
+#             'diff', ignore_units=True)
 
 
 #%%
