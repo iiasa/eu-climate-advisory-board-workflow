@@ -39,20 +39,19 @@ vetting_output_folder = f'{main_folder}vetting\\'
 
 
 vstr = '20230512'  
-
 wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v4.xlsx'
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v14.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v15.xlsx'
 fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v13.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v13_v14_data.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v13_v15_data.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_06_2019_harmo_step5e_EU27.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_06_v7_drop_unhamornized_variables_2019_harmo_step5e_EU27.csv')
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
@@ -161,11 +160,11 @@ df.append(b, inplace=True)
 #              components=co2comps, append=True)
 
 # 'Emissions|CO2|Energy and Industrial Processes
-components = [ 'Emissions|CO2|Industrial Processes', 'Emissions|CO2|Energy',]
-# df.aggregate(variable='Emissions|CO2|Energy and Industrial Processes',
+# components = [ 'Emissions|CO2|Industrial Processes', 'Emissions|CO2|Energy',]
+# # df.aggregate(variable='Emissions|CO2|Energy and Industrial Processes',
+# #              components=components, append=True)
+# aggregate_missing_only(df, 'Emissions|CO2|Energy and Industrial Processes',
 #              components=components, append=True)
-aggregate_missing_only(df, 'Emissions|CO2|Energy and Industrial Processes',
-             components=components, append=True)
 
 # 'Emissions|Kyoto Gases'
 # df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
