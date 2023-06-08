@@ -43,15 +43,15 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v7.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v13.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v13_v16v7_data.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v5.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v16v5_v16v8_data.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v7_2019_harmo_step5e_EU27.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v8_2019_harmo_step5e_EU27.csv')
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
@@ -1006,7 +1006,6 @@ df.meta['ghgfilter'] = df.meta[f'Pass based on GHG** emissions reductions']
 dfb = df.meta
 dfb = dfb.loc[dfb[f'Pass based on GHG** emissions reductions']==True]
 # assert len(dfb)==63
-sadasd
 
 #%% Check 2100 diff
 
