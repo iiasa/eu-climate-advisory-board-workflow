@@ -43,15 +43,15 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v15.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v7.xlsx'
 fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v13.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v13_v15_data.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v13_v16v7_data.xlsx'
 
 
 #%% Load data
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
-files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_06_v7_drop_unhamornized_variables_2019_harmo_step5e_EU27.csv')
+files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v7_2019_harmo_step5e_EU27.csv')
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
     # dfin = pyam.IamDataFrame(files[0])
@@ -68,7 +68,7 @@ else:
             dfin = dfin.append(pyam.IamDataFrame(f))
         ct=ct+1
 
-df_remccs  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\REMIND2p1_DIAG_extraVars.xlsx')
+# df_remccs  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\REMIND2p1_DIAG_extraVars.xlsx')
 # df_remccs.filter(variable='Carbon Sequestration*', inplace=True)
 df_remFETF  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\AdvisoryBoard_REMIND3p2_additional_variables.xlsx')
 df_remFETF.filter(variable='Final Energy|Transportation|Liquids|Fossil', inplace=True)
@@ -85,8 +85,15 @@ ngfs_rename =   {'d_delfrag': 'NGFS-Delayed transition',
 
 dfin.rename({'scenario':ngfs_rename}, inplace=True)
 
-dfin.append(df_remccs, inplace=True)
+# dfin.append(df_remccs, inplace=True)
 dfin.append(df_remFETF, inplace=True)
+
+
+# drop-nonzero-rows 
+# aspan = dfin.timeseries()
+# aspan['count'] = aspan.count(axis=1)
+# aspan = aspan.loc[aspan['count']>1]
+# dfin = pyam.IamDataFrame(aspan.iloc[:,:-1])
 
 
 dfin.load_meta(wbstr, sheet_name='Vetting_flags')   
@@ -483,7 +490,7 @@ for last_year in last_years:
 
 
 
-#%% GHG** % reduction compared to 1990 (incl int transport) added Fabio
+#%% GHG** % reduction compared to 1990 (incl int transport) added Fabio  (intra EU)
 ghg1990 = 4790.123 -99.40 # added Fabio -> 
 # 4790 is Total net emissions with int Transport EEA Source: https://www.eea.europa.eu/data-and-maps/data/data-viewers/greenhouse-gases-viewer)
 # NOTE 99.40 Is extra-eu bunkers (to be subtracted as we want to include only in intra-eu bunkers). 
@@ -984,12 +991,14 @@ os.startfile(fn_out)
 df.meta.to_excel(fn_out.replace('data_and_',''),
                  sheet_name='meta')
 
+df.meta['ghgfilter'] = df.meta[f'Pass based on GHG** emissions reductions']
+
 #%% Make comparison file
-yrs = range(2020,2101)
-old = pyam.IamDataFrame(fn_out_prev)
-comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
-comparison.to_excel(fn_comparison, merge_cells=False)
-os.startfile(fn_comparison)
+# yrs = range(2019,2101)
+# old = pyam.IamDataFrame(fn_out_prev)
+# comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
+# comparison.to_excel(fn_comparison, merge_cells=False)
+# os.startfile(fn_comparison)
 
 
 #%% iconics boxplots
@@ -997,13 +1006,70 @@ os.startfile(fn_comparison)
 dfb = df.meta
 dfb = dfb.loc[dfb[f'Pass based on GHG** emissions reductions']==True]
 # assert len(dfb)==63
-
+sadasd
 
 #%% Check 2100 diff
 
-# a = df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-#             'Emissions|Kyoto Gases',
-#             'diff', ignore_units=True)
+# CO2 check
+dfv = df.filter(region='EU27', unit='Mt CO2*', ghgfilter=True)
+dfv.convert_unit( 'Mt CO2/yr', 'Mt CO2-equiv/yr',inplace=True)
+
+dfv.multiply("Carbon Sequestration|Direct Air Capture", -1, 
+             "Carbon Sequestration|Direct Air Capture-neg", 
+             append=True, ignore_units='Mt CO2-equiv/yr')
+# dfv.multiply("Carbon Sequestration|CCS|Biomass", -1, 
+#              "Carbon Sequestration|CCS|Biomass-neg", 
+#              append=True, ignore_units='Mt CO2-equiv/yr')
+
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg"]
+dfv.aggregate('Emissions|CO2|BU', components=comps, append=True)
+
+dfv.subtract('Emissions|CO2',
+             'Emissions|CO2|BU',
+             name='Emissions|CO2-diff',
+             append=True, ignore_units='Mt CO2-equiv/yr')
+
+dfv.filter(variable='Emissions|CO2-diff').plot()
+dfv.filter(variable='Emissions|CO2-diff').to_excel('c:\\users\\byers\\downloads\\co2diff.xlsx')
+os.startfile('c:\\users\\byers\\downloads\\co2diff.xlsx')
+
+# GHG checks
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg",
+            # 'Carbon Sequestration|CCS|Biomass-neg',
+            'Emissions|Total Non-CO2']
+
+
+dfv.aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', components=comps, append=True)
+dfv.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 
+            name='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+# a = dfv.check_aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)',  components=comps)
+
+dfv.filter(variable=['Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 'Emissions|Kyoto Gases (incl. indirect AFOLU)-diff']).to_excel('c:\\users\\byers\\downloads\\ghg.xlsx')
+os.startfile('c:\\users\\byers\\downloads\\ghg.xlsx')
+
+
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').plot()
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)|BU').plot()
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff').plot()
+
+
+
+a = df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|Kyoto Gases',
+            'diff', ignore_units=True)
+
+
+dfgdfg
+
 
 
 #%%
