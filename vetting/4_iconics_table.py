@@ -43,9 +43,9 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v
 
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v5.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v16v5_v16v8_data.xlsx'
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v17.xlsx'
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v16v5_v17_data.xlsx'
 
 
 #%% Load data
@@ -211,6 +211,63 @@ components = ['Carbon Sequestration|CCS|Industrial Processes',
 aggregate_missing_only(df, 'Carbon Sequestration|CCS', 
                        components=components, 
                        append=True)
+
+
+
+
+# =============================================================================
+# # For REMIND 2.1 / 3,2 scenarios
+# =============================================================================
+df.aggregate('CCUS', components=['Carbon Capture|Usage', 'Carbon Capture|Storage'],
+                 append=True)
+# previously used in checks
+# df.aggregate('CCS Miles (incl DAC)',['Carbon Sequestration|CCS', 'Carbon Sequestration|Direct Air Capture'],  append=True)
+
+
+# others
+dfo = df.filter(model=['REMIND 2.1', 'REMIND 3.2'], keep=False)
+dfo.aggregate('CCUS',['Carbon Sequestration|CCS', 'Carbon Sequestration|Direct Air Capture'],  append=True)
+df.append(dfo.filter(variable='CCUS'), inplace=True)
+
+
+
+# df.set_meta_from_data('Carbon Sequestration|CCS (orig) in 2050', variable='Carbon Sequestration|CCS', year=2050)
+# df.set_meta_from_data('CCS Miles (incl DAC) in 2050', variable='CCS Miles (incl DAC)', year=2050)
+
+
+
+
+# cols = ['cumulative GHGs** (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)',
+#              'GHG** emissions reductions 1990-2040 %',
+#              'Carbon Sequestration|CCS (orig) in 2050',
+#              'CCS Miles (incl DAC) in 2050',
+#              'CCUS in 2050',
+#              'diff_Miles_new',
+#              'CCUS in 2070', ]
+
+# feas_cols = [
+#             'Model','Scenario','feasibility',
+#             'primary_energy_biomass',
+#             'carbon_sequestration_ccs',
+#             'emissions_co2_lulucf_direct+indirect',
+#             'carbon_sequestration_direct_air_capture',
+#             'biomass_f',
+#             'ccs_f',]
+                
+
+# feas_flags = pd.read_csv(f'{data_output_folder}filtering_v16v8_08_06_2023.csv')[feas_cols]
+# feas_flags.rename(columns={'Model':'model', 'Scenario':'scenario'}, inplace=True)
+# feas_flags.set_index(['model','scenario'], inplace=True)
+# dfm = df.meta
+# dfm['diff_Miles_new'] = dfm['CCUS in 2050'] - dfm['CCS Miles (incl DAC) in 2050']
+# dfm = pd.merge(dfm, feas_flags, left_index=True, right_index=True, how='outer')
+
+# tb = dfm.loc[dfm['Pass based on GHG** emissions reductions']==True, cols+feas_cols[2:]]
+# fn = f'{data_output_folder}ccus1.xlsx'
+# tb.to_excel(fn, merge_cells=False)              
+# os.startfile(fn)              
+
+
 
 
 # Trade
@@ -792,6 +849,10 @@ for v in ynz_variables:
     name = f'{v} in 2050, {nu}'
     df.set_meta_from_data(name, variable=v, year=2050)
     
+df.set_meta_from_data('CCUS in 2050, Mt CO2/yr', variable='CCUS', year=2050)
+df.set_meta_from_data('CCUS in 2070, Mt CO2/yr', variable='CCUS', year=2070)    
+name = 'Emissions|CO2|LULUCF Direct+Indirect in 2050, Mt CO2/yr'
+df.set_meta_from_data(name=name, variable='Emissions|CO2|LULUCF Direct+Indirect', year=2050, region='EU27')
 #%% Calculate EU share of global emissions, 2040 and 2020-2050.
 
 instance = 'eu-climate-advisory-board-internal'
@@ -866,6 +927,24 @@ keep_2050 = df.meta['Emissions|Total Non-CO2 in 2050, Mt CO2-equiv/yr']
 keep_2050 = keep_2050[keep_2050>0]
 index=keep_2050.index
 df.set_meta(df.index.isin(index), name, ) 
+
+name = 'CCUS in 2050, Mt CO2/yr'
+name1 = 'CCUS < 425 Mt CO2 in 2050'
+df.meta[name1] = np.where(df.meta['CCUS in 2050, Mt CO2/yr']<425, True, False)
+name1 = 'CCUS < 500 Mt CO2 in 2050'
+df.meta[name1] = np.where(df.meta['CCUS in 2050, Mt CO2/yr']<500, True, False)
+
+name = 'Primary Energy|Biomass in 2050, EJ/yr'
+df.set_meta_from_data(name=name, variable='Primary Energy|Biomass', year=2050, region='EU27')
+name1 = 'Primary Energy|Biomass <9 EJ/yr in 2050'
+df.meta[name1] = np.where(df.meta[name]<9, True, False)
+
+name = 'Emissions|CO2|LULUCF Direct+Indirect in 2050, Mt CO2/yr'
+# df.set_meta_from_data(name=name, variable='Emissions|CO2|LULUCF Direct+Indirect', year=2050, region='EU27')
+name1 = 'Emissions|CO2|LULUCF Direct+Indirect <400 Mt CO2/yr in 2050'
+df.meta[name1] = np.where(df.meta[name]<400, True, False)
+
+
 
 # =============================================================================
 #%% Write out 
@@ -994,11 +1073,11 @@ df.meta.to_excel(fn_out.replace('data_and_',''),
 df.meta['ghgfilter'] = df.meta[f'Pass based on GHG** emissions reductions']
 
 #%% Make comparison file
-# yrs = range(2019,2101)
-# old = pyam.IamDataFrame(fn_out_prev)
-# comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
-# comparison.to_excel(fn_comparison, merge_cells=False)
-# os.startfile(fn_comparison)
+yrs = range(2019,2101)
+old = pyam.IamDataFrame(fn_out_prev)
+comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
+comparison.to_excel(fn_comparison, merge_cells=False)
+os.startfile(fn_comparison)
 
 
 #%% iconics boxplots
@@ -1016,9 +1095,6 @@ dfv.convert_unit( 'Mt CO2/yr', 'Mt CO2-equiv/yr',inplace=True)
 dfv.multiply("Carbon Sequestration|Direct Air Capture", -1, 
              "Carbon Sequestration|Direct Air Capture-neg", 
              append=True, ignore_units='Mt CO2-equiv/yr')
-# dfv.multiply("Carbon Sequestration|CCS|Biomass", -1, 
-#              "Carbon Sequestration|CCS|Biomass-neg", 
-#              append=True, ignore_units='Mt CO2-equiv/yr')
 
 comps = ['Emissions|CO2|Energy and Industrial Processes',
           "Emissions|CO2|LULUCF Direct+Indirect",
@@ -1038,7 +1114,6 @@ os.startfile('c:\\users\\byers\\downloads\\co2diff.xlsx')
 comps = ['Emissions|CO2|Energy and Industrial Processes',
           "Emissions|CO2|LULUCF Direct+Indirect",
             "Carbon Sequestration|Direct Air Capture-neg",
-            # 'Carbon Sequestration|CCS|Biomass-neg',
             'Emissions|Total Non-CO2']
 
 
@@ -1049,27 +1124,62 @@ dfv.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
             ignore_units='Mt CO2-equiv/yr',
             append=True)
 
-# a = dfv.check_aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)',  components=comps)
 
 dfv.filter(variable=['Emissions|Kyoto Gases (incl. indirect AFOLU)',
             'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 'Emissions|Kyoto Gases (incl. indirect AFOLU)-diff']).to_excel('c:\\users\\byers\\downloads\\ghg.xlsx')
 os.startfile('c:\\users\\byers\\downloads\\ghg.xlsx')
-
 
 dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').plot()
 dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)|BU').plot()
 dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff').plot()
 
 
+#%%
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg",
+            # 'Emissions|CO2|Energy|Demand|Bunkers|Intra-EU'
+            'Emissions|Total Non-CO2']
 
-a = df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|Kyoto Gases',
-            'diff', ignore_units=True)
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', keep=False, inplace=True)
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff', keep=False, inplace=True)
+
+dfv.aggregate('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', components=comps, append=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
+            'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', 
+            name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff').plot()
+
+#%%   intra minus no bunkers
+name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-nobunkers'
+dfv.filter(variable=name, keep=False, inplace=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
+            name=name,
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable=name).plot()
+
+#%%   full ghg minus no bunkers
+name='Emissions|Kyoto Gases (AR4) (EEA)-nobunkers'
+dfv.filter(variable=name, keep=False, inplace=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
+            name=name,
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable=name).plot()
 
 
-dfgdfg
 
+#%% Find  CCS weird scenarios
 
+dfv.filter(variable='Carbon Sequestration|CCS|Fossil').plot()
 
 #%%
 def plot_box_meta(dfb, varis, yticks=None, xlabel='', fname=None, palette=None):
