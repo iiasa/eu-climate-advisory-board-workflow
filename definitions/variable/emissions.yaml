@@ -649,6 +649,12 @@
       1A4a, 1A4b) in slum housing
     unit: Mt CO2/yr
     category: Emissions
+- Emissions|CO2|Energy|Demand|Bunkers:
+    description: CO2 emissions from fuel combustion in international bunkers (IPCC category 1A3ai and 1A3di) 
+    unit: Mt CO2/yr
+- Emissions|CO2|Energy|Demand|Bunkers|Intra-EU:
+    description: CO2 emissions from fuel combustion in international bunkers between EU countries 
+    unit: Mt CO2/yr    
 - Emissions|CO2|Energy|Demand|Transportation:
     description: CO2 emissions from fuel combustion in transportation sector (IPCC
       category 1A3), excluding pipeline emissions (IPCC category 1A3ei)
@@ -864,6 +870,9 @@
     unit: Mt CO2/yr
     core: true
     category: Emissions
+- Gross Emissions|CO2:
+    description: Gross CO2 emissions, not accounting for negative emissions e.g. from BECCS or AFOLU
+    unit: Mt CO2/yr
 - Emissions|F-Gases:
     description: total F-gas emissions, including sulfur hexafluoride (SF6), hydrofluorocarbons
       (HFCs), perfluorocarbons (PFCs) (preferably use 100-year GWPs from AR4 for aggregation

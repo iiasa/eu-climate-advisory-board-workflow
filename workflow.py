@@ -28,7 +28,7 @@ def main(df: pyam.IamDataFrame) -> pyam.IamDataFrame:
 
     # Run the validation and region-processing
     definition = DataStructureDefinition(here / "definitions")
-    processor = RegionProcessor.from_directory(path=here / "mappings")
+    processor = RegionProcessor.from_directory(path=here / "mappings", dsd=definition)
     df = process(df, definition, processor=processor)
 
     # Run MAGICC processing
