@@ -10,8 +10,6 @@ Proceedure largely involves the following steps:
 4. Run `4_iconics_table.py` to produce data and metadata indicators.
 
 
- 
-
 ## Pre-processing of Reference data  
 Process the input reference data, using `regional/preprocess_input_ref_data.py`.
 
