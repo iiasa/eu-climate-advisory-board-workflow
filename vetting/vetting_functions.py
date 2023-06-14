@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Feb  2 14:01:43 2023
-
 @author: byers
 """
 
 # vetting_functions.py
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pyam
+import seaborn as sns
 
 #%% Define functions used to perform checks
 log = True
@@ -18,14 +19,12 @@ historical_columns = []
 future_columns = []
 value_columns = {}
 
-
 print_log = print if log else lambda x: None
 ###################################
-#
-# Define functions used to perform
-# checks
-#
-###################################
+
+# =============================================================================
+#%% Define functions used to perform vetting checks
+# =============================================================================
 
 def create_reference_df(df, ref_model, ref_scenario, check_variables, ref_year):
     check_variables = list(check_variables)
@@ -366,3 +365,29 @@ def aggregate_missing_only(df, variable, components, append=False):
                 except(IndexError):
                     print('No components:{},{}'.format(model, scenarios))
     return df
+
+#%% Boxplot function
+
+def plot_box_meta(dfb, varis, yticks=None, xlabel='', fname=None, palette=None):
+    dfb1 = dfb.copy(deep=True)[varis]
+    dfb1 = dfb1.reset_index().melt(id_vars=['model','scenario'], value_vars=dfb1.columns)
+    sns.set_theme(style="ticks")
+    figheight = len(varis)*0.5
+    fig, ax = plt.subplots(figsize=(10, figheight))
+    sns.boxplot(x='value', y='variable', data=dfb1, ax=ax,
+                whis=[0,100], width=0.6, palette=palette)
+    sns.stripplot(x='value', y='variable', data=dfb1, ax=ax,
+                  size=4, color=".3", linewidth=0)
+    
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel('')
+
+    # Fix yticklabels
+    if type(yticks)==list:
+        ax.set_yticklabels(yticks)
+    
+    ax.grid(True)
+    
+    plt.tight_layout()
+    if type(fname)==str:
+        fig.savefig(fname, dpi=300)#, bbox_inches=True)

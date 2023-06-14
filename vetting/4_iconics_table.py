@@ -22,18 +22,12 @@ import itertools
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
-# os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\eu-climate-advisory-board-workflow-vetting')
-#os.chdir('C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\euab_fabio\\vetting')
-
 from vetting_functions import *
 
 
-# user = 'sferra'
 user = 'byers'
 
-#main_folder = f'C:\\Users\\sferra\\OneDrive - IIASA\\Documents\\euab_fabio\\'
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 vetting_output_folder = f'{main_folder}vetting\\'
 
@@ -44,8 +38,6 @@ wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v
 data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v17.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v16v5_v17_data.xlsx'
 
 
 #%% Load data
@@ -54,7 +46,6 @@ vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v8_2019_harmo_step5e_EU27.csv')
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
-    # dfin = pyam.IamDataFrame(files[0])
     dfin = pd.read_csv(files[0])
     dfin = pyam.IamDataFrame(dfin)
 
@@ -68,8 +59,6 @@ else:
             dfin = dfin.append(pyam.IamDataFrame(f))
         ct=ct+1
 
-# df_remccs  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\REMIND2p1_DIAG_extraVars.xlsx')
-# df_remccs.filter(variable='Carbon Sequestration*', inplace=True)
 df_remFETF  = pyam.IamDataFrame(f'{main_folder}from_FabioS\\2023_05_12\\AdvisoryBoard_REMIND3p2_additional_variables.xlsx')
 df_remFETF.filter(variable='Final Energy|Transportation|Liquids|Fossil', inplace=True)
 
@@ -85,16 +74,7 @@ ngfs_rename =   {'d_delfrag': 'NGFS-Delayed transition',
 
 dfin.rename({'scenario':ngfs_rename}, inplace=True)
 
-# dfin.append(df_remccs, inplace=True)
 dfin.append(df_remFETF, inplace=True)
-
-
-# drop-nonzero-rows 
-# aspan = dfin.timeseries()
-# aspan['count'] = aspan.count(axis=1)
-# aspan = aspan.loc[aspan['count']>1]
-# dfin = pyam.IamDataFrame(aspan.iloc[:,:-1])
-
 
 dfin.load_meta(wbstr, sheet_name='Vetting_flags')   
 
@@ -106,7 +86,6 @@ df = dfin.filter(region='EU27')
 df.interpolate(time=range(2000,2101), inplace=True)
 
 # Filter years in case of odd zeros
-# years = range(1990,2101,5)
 years = list(range(1990,2016,5))+[2019]+list(range(2020,2102,5))
 df.filter(year=years, inplace=True)
 
@@ -115,7 +94,6 @@ df.filter(year=years, inplace=True)
 df.filter(OVERALL_binary='PASS', inplace=True)
 df.meta.loc[df.meta['OVERALL_Assessment']=='Regional only', 'Category'] = 'Regional only'
 df.filter(Category=['C1*', 'Regional only'], inplace=True)
-# df.filter(Category=['Regional only'], inplace=True)
 
 
 # Drop GCAM Current Policies scenarios
@@ -126,19 +104,6 @@ remkeep = df.filter(model='REMIND 3.2', scenario='*_withICEPhOP*',)
 df.filter(model='REMIND 3.2', keep=False, inplace=True)
 df.append(remkeep, inplace=True)
 
-#%% EUAB target
-# ghgvar = 'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)'
-# df.validate(criteria={ghgvar: {
-#     # 'up': 2100, # value to be filtered
-#     'up': 2085, # value to be filtered
-#     'year': 2030}},
-#     exclude_on_fail=True)
-# df.validate(criteria={ghgvar: {
-#     'up': 300,
-#     'year': 2050}},
-#     exclude_on_fail=True)
-
-# df.filter(exclude=True, keep=False, inplace=True)
 
 meta_docs = {}
 
@@ -157,43 +122,9 @@ b = df.filter(variable=a).convert_unit('Mt CO2-equiv/yr', 'Mt CO2/yr')
 df.filter(variable=a, keep=False, inplace=True)
 df.append(b, inplace=True)
 
-# co2comps =  ['Emissions|CO2|Energy',
-#              'Emissions|CO2|Industrial Processes',
-#              'Emissions|CO2|LULUCF Direct+Indirect',
-#              # 'Emissions|CO2|LULUCF Indirect',
-#              ]
-
-# df.aggregate(variable='Emissions|CO2',
-#              components=co2comps, append=True)
-
-# 'Emissions|CO2|Energy and Industrial Processes
-# components = [ 'Emissions|CO2|Industrial Processes', 'Emissions|CO2|Energy',]
-# # df.aggregate(variable='Emissions|CO2|Energy and Industrial Processes',
-# #              components=components, append=True)
-# aggregate_missing_only(df, 'Emissions|CO2|Energy and Industrial Processes',
-#              components=components, append=True)
-
-# 'Emissions|Kyoto Gases'
-# df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-#             'Emissions|CO2',
-#             'tva',
-#             ignore_units='Mt CO2-equiv/yr',
-#             append=True)
-# # df.subtract('tva',
-# #             'Emissions|CO2|LULUCF Indirect',
-# #             'Emissions|Kyoto Gases',
-# #             ignore_units='Mt CO2-equiv/yr',
-# #             append=True)
-# df.filter(variable='tva', keep=False, inplace=True
-#           )
-# # Emissions|Non-CO2
-# df.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-#             'Emissions|CO2',
-#             'Emissions|Non-CO2',
-#             ignore_units='Mt CO2-equiv/yr',
-#             append=True)
 
 # Carbon Sequestration|CCS
+# Rename other ECEMF variables, in case missing
 ccs_rename = {'variable':{'Carbon Capture|Storage|Biomass':'Carbon Sequestration|CCS|Biomass',
           'Carbon Capture|Storage|Direct Air Capture': 'Carbon Sequestration|Direct Air Capture',
           'Carbon Capture|Storage|Fossil': 'Carbon Sequestration|CCS|Fossil'}}
@@ -205,6 +136,7 @@ dfwit.rename(ccs_rename, inplace=True)
 df.append(dfwit, inplace=True)
 
 
+# Aggregate CCS in scenarios where missing
 components = ['Carbon Sequestration|CCS|Industrial Processes',
               'Carbon Sequestration|CCS|Fossil',
               'Carbon Sequestration|CCS|Biomass']
@@ -213,71 +145,28 @@ aggregate_missing_only(df, 'Carbon Sequestration|CCS',
                        append=True)
 
 
-
-
 # =============================================================================
 # # For REMIND 2.1 / 3,2 scenarios
 # =============================================================================
+# This is done due to different reporting by these REMIND scenarios
 df.aggregate('CCUS', components=['Carbon Capture|Usage', 'Carbon Capture|Storage'],
                  append=True)
-# previously used in checks
-# df.aggregate('CCS Miles (incl DAC)',['Carbon Sequestration|CCS', 'Carbon Sequestration|Direct Air Capture'],  append=True)
 
-
-# others
+# others - assume CCS is right and add DACCS
 dfo = df.filter(model=['REMIND 2.1', 'REMIND 3.2'], keep=False)
 dfo.aggregate('CCUS',['Carbon Sequestration|CCS', 'Carbon Sequestration|Direct Air Capture'],  append=True)
 df.append(dfo.filter(variable='CCUS'), inplace=True)
 
 
 
-# df.set_meta_from_data('Carbon Sequestration|CCS (orig) in 2050', variable='Carbon Sequestration|CCS', year=2050)
-# df.set_meta_from_data('CCS Miles (incl DAC) in 2050', variable='CCS Miles (incl DAC)', year=2050)
-
-
-
-
-# cols = ['cumulative GHGs** (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)',
-#              'GHG** emissions reductions 1990-2040 %',
-#              'Carbon Sequestration|CCS (orig) in 2050',
-#              'CCS Miles (incl DAC) in 2050',
-#              'CCUS in 2050',
-#              'diff_Miles_new',
-#              'CCUS in 2070', ]
-
-# feas_cols = [
-#             'Model','Scenario','feasibility',
-#             'primary_energy_biomass',
-#             'carbon_sequestration_ccs',
-#             'emissions_co2_lulucf_direct+indirect',
-#             'carbon_sequestration_direct_air_capture',
-#             'biomass_f',
-#             'ccs_f',]
-                
-
-# feas_flags = pd.read_csv(f'{data_output_folder}filtering_v16v8_08_06_2023.csv')[feas_cols]
-# feas_flags.rename(columns={'Model':'model', 'Scenario':'scenario'}, inplace=True)
-# feas_flags.set_index(['model','scenario'], inplace=True)
-# dfm = df.meta
-# dfm['diff_Miles_new'] = dfm['CCUS in 2050'] - dfm['CCS Miles (incl DAC) in 2050']
-# dfm = pd.merge(dfm, feas_flags, left_index=True, right_index=True, how='outer')
-
-# tb = dfm.loc[dfm['Pass based on GHG** emissions reductions']==True, cols+feas_cols[2:]]
-# fn = f'{data_output_folder}ccus1.xlsx'
-# tb.to_excel(fn, merge_cells=False)              
-# os.startfile(fn)              
-
-
-
-
 # Trade
 components = [ 'Trade|Primary Energy|Biomass|Volume',
- 'Trade|Primary Energy|Coal|Volume',
- 'Trade|Primary Energy|Fossil',
- 'Trade|Primary Energy|Gas|Volume',
- 'Trade|Primary Energy|Oil|Volume',
- 'Trade|Secondary Energy|Hydrogen|Volume',
- 'Trade|Secondary Energy|Liquids|Biomass|Volume']
+             'Trade|Primary Energy|Coal|Volume',
+             'Trade|Primary Energy|Fossil',
+             'Trade|Primary Energy|Gas|Volume',
+             'Trade|Primary Energy|Oil|Volume',
+             'Trade|Secondary Energy|Hydrogen|Volume',
+             'Trade|Secondary Energy|Liquids|Biomass|Volume']
 df.aggregate(variable='Trade', components=components)
 
 
@@ -290,8 +179,7 @@ components = ['Primary Energy|Coal|w/o CCS','Primary Energy|Oil|w/o CCS','Primar
 aggregate_missing_only(df, 'Primary Energy|Fossil|w/o CCS', components, append=True)
 
 
-
-# primary Energy renewables
+# Primary Energy renewables
 components = ['Primary Energy|Biomass', 'Primary Energy|Geothermal',
               'Primary Energy|Hydro', 'Primary Energy|Solar',
               'Primary Energy|Wind']
@@ -314,17 +202,6 @@ components = ['Final Energy|Industry|Gases|Coal',
 name = 'Final Energy|Industry|Fossil'
 df.aggregate(name, components=components, append=True)
 
-# varas = ['Final Energy|Industry|Solids', 'Final Energy|Industry|Solids|Biomass',
-#          'Final Energy|Residential and Commercial|Solids',
-#          'Final Energy|Residential and Commercial|Solids|Biomass']
-
-# sub = df.filter(model='REMIND 2.1', variable=varas )
-# sub.subtract('Final Energy|Industry|Solids', 'Final Energy|Industry|Solids|Biomass', 
-#              'Final Energy|Industry|Solids|Fossil', append=True)
-# sub.subtract('Final Energy|Residential and Commercial|Solids', 'Final Energy|Residential and Commercial|Solids|Biomass', 
-#              'Final Energy|Residential and Commercial|Solids|Fossil', append=True)
-# df.append(sub.filter(variable=[ 'Final Energy|Industry|Solids|Fossil',
-#                                'Final Energy|Residential and Commercial|Solids|Fossil']), inplace=True)
 # Res & Comm
 components = ['Final Energy|Residential and Commercial|Gases|Coal',
               'Final Energy|Residential and Commercial|Gases|Natural Gas',
@@ -336,6 +213,7 @@ components = ['Final Energy|Residential and Commercial|Gases|Coal',
 name = 'Final Energy|Residential and Commercial|Fossil'
 df.aggregate(name, components=components, append=True)
 
+# Transportation
 components = ['Final Energy|Transportation|Gases|Coal',
               'Final Energy|Transportation|Gases|Natural Gas',
               'Final Energy|Transportation|Liquids|Coal',
@@ -346,22 +224,12 @@ name = 'Final Energy|Transportation|Fossil'
 df.aggregate(name, components=components, append=True)
 
                  
-# REMIND 3.2 - calculate Final Energy|Transportation|Liquids|Fossil
-# sub = df.filter(model='REMIND 3.2').aggregate('tempvar', components=['Final Energy|Transportation|Liquids|Bioenergy','Final Energy|Transportation|Liquids|Hydrogen synfuel'])
-# df.append(sub, inplace=True)
-
-# rem_FETLF = df.filter(model='REMIND 3.2').subtract('Final Energy|Transportation|Liquids', 'tempvar', 'Final Energy|Transportation|Liquids|Fossil')#, ignore_units='EJ/yr')
-# df.append(rem_FETLF, inplace=True)
-# df.filter(variable='tempvar', keep=False, inplace=True)
-                 
-
 # Aggregate
 components = ['Final Energy|Transportation|Gases|Fossil', 'Final Energy|Transportation|Liquids|Fossil']
 rem_FETF = df.filter(model=['REMIND 3.2', 'REMIND 2.1'], ).aggregate(name, components=components)
 df.append(rem_FETF, inplace=True)
 
 
-# REMIND-MAgPIE 3.0-4.4
 
 # Trade
 df.filter(variable='Trade', keep=False, inplace=True)
@@ -386,19 +254,11 @@ df.aggregate(name, components=components, append=True)
 #=============================================================================
 #%% Year of netzero 
 # =============================================================================
-
+# Calculate year of net zeros
 specdic = {'CO2': {'variable': 'Emissions|CO2',
                        'unitin': 'Mt CO2/yr',
                        'unitout': 'Gt CO2/yr',
                        'factor': 0.001},
-           # 'CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
-           #                        'unitin': 'Mt CO2/yr',
-           #                        'unitout': 'Gt CO2/yr',
-           #                        'factor': 0.001},
-           # 'CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
-           #                        'unitin': 'Mt CO2/yr',
-           #                        'unitout': 'Gt CO2/yr',
-           #                        'factor': 0.001},           
            'GHGs full':{'variable': 'Emissions|Kyoto Gases (incl. indirect AFOLU)',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
@@ -411,10 +271,6 @@ specdic = {'CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
-           # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
-           #                        'unitin': 'Mt CO2-equiv/yr',
-           #                        'unitout': 'Gt CO2-equiv/yr',
-           #                        'factor': 0.001},   
            }
 
 threshold = 0
@@ -439,14 +295,6 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                        'unitin': 'Mt CO2/yr',
                        'unitout': 'Gt CO2/yr',
                        'factor': 0.001},
-           # 'net CO2 EIP':{'variable': 'Emissions|CO2|Energy and Industrial Processes',
-           #                        'unitin': 'Mt CO2/yr',
-           #                        'unitout': 'Gt CO2/yr',
-           #                        'factor': 0.001},
-           # 'net CO2 AFOLU':{'variable': 'Emissions|CO2|AFOLU',
-           #                        'unitin': 'Mt CO2/yr',
-           #                        'unitout': 'Gt CO2/yr',
-           #                        'factor': 0.001},   
            'Non-CO2':{'variable': 'Emissions|Total Non-CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
@@ -475,17 +323,10 @@ specdic = {'net CO2': {'variable': 'Emissions|CO2',
                                   'unitin': 'Mt CO2-equiv/yr',
                                   'unitout': 'Gt CO2-equiv/yr',
                                   'factor': 0.001},
-            
-            # added by fabio 20230423:
             'AFOLU (direct+indirect)': {'variable': 'Emissions|CO2|LULUCF Direct+Indirect',
                        'unitin': 'Mt CO2/yr',
                        'unitout': 'Gt CO2/yr',
                        'factor': 0.001},
-
-           # 'GHGs':{'variable': 'Emissions|Kyoto Gases',
-           #                        'unitin': 'Mt CO2-equiv/yr',
-           #                        'unitout': 'Gt CO2-equiv/yr',
-           #                        'factor': 0.001},   
            }
            
 
@@ -510,14 +351,14 @@ for indi, config in specdic.items():
 
     # 2020 to 2030
     if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)', 'GHGs* (incl. indirect AFOLU)', 'GHGs** (incl. indirect AFOLU)',
-                'AFOLU (direct+indirect)']:# added by fabio 20230423
+                'AFOLU (direct+indirect)']:
         label = f'cumulative {indi} (2020-2030, {cumulative_unit})'
         df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=2020, last_year=2030), label)
         meta_docs[name] = f'Cumulative {indi} from 2030 until {lastyear} (including the last year, {cumulative_unit}) ({variable})'    
     
     # 2030 to 2050
     if indi in ['net CO2', 'GHGs (incl. indirect AFOLU)', 'GHGs* (incl. indirect AFOLU)', 'GHGs** (incl. indirect AFOLU)',
-                'AFOLU (direct+indirect)']:# added by fabio 20230423
+                'AFOLU (direct+indirect)']:
         label = f'cumulative {indi} (2030-{lastyear}, {cumulative_unit})'
         df.set_meta(tsdata.apply(pyam.cumulative, raw=False, axis=1, first_year=2030, last_year=lastyear), label)
         meta_docs[name] = f'Cumulative {indi} from 2030 until {lastyear} (including the last year, {cumulative_unit}) ({variable})'    
@@ -551,7 +392,7 @@ for last_year in last_years:
 ghg1990 = 4790.123 -99.40 # added Fabio -> 
 # 4790 is Total net emissions with int Transport EEA Source: https://www.eea.europa.eu/data-and-maps/data/data-viewers/greenhouse-gases-viewer)
 # NOTE 99.40 Is extra-eu bunkers (to be subtracted as we want to include only in intra-eu bunkers). 
-# Extra eu shipping (99.40) was calculated based on data From Miles in 1990: 156.66 (Total) -56.27 (intra-eu domestic bunkers )=99.40
+# Extra eu shipping (99.40) was calculated based on data from ESABCC in 1990: 156.66 (Total) -56.27 (intra-eu domestic bunkers )=99.40
 base_year_ghg = 1990
 last_years = [2020, 2025, 2030, 2035, 2040, 2050]
 for last_year in last_years:
@@ -563,7 +404,7 @@ for last_year in last_years:
 
 
 
-#%% GHG** % reduction compared to 1990 (incl int transport) added Fabio 20230421
+#%% GHG** % reduction compared to 2030 (incl int transport) added Fabio 20230421
 base_year_ghg = 2030
 last_years = [2035, 2040, 2045, 2050]
 for last_year in last_years:
@@ -590,8 +431,8 @@ ghg2019 = 3634.836 # added Fabio -> Total net emissions with int Transport EEA S
 base_year_ghg = 2019
 last_years = [2030, 2035, 2040, 2050]
 for last_year in last_years:
-    name = f'GHG* emissions reductions {base_year_ghg}-{last_year} %' # modified Fabio
-    a = df.filter(variable='Emissions|Kyoto Gases (AR4) (EEA)').timeseries() # modified Fabio
+    name = f'GHG* emissions reductions {base_year_ghg}-{last_year} %' 
+    a = df.filter(variable='Emissions|Kyoto Gases (AR4) (EEA)').timeseries() 
     rd = 100* (1-(a[last_year] / ghg2019))
     df.set_meta(rd, name, )
 
@@ -618,11 +459,9 @@ ynz_variables = []
 indis_add = [
             'Emissions|CO2',
             'Emissions|Total Non-CO2',
-            # 'Emissions|CO2|AFOLU',
              'Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|Kyoto Gases (AR4) (EEA)', # added Fabio cannot be added as we do not have int. transport data beyond 2050
+            'Emissions|Kyoto Gases (AR4) (EEA)', 
              'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
-             # 'Emissions|Kyoto Gases',
              'Carbon Sequestration|CCS',
              'Carbon Sequestration|CCS|Biomass',
              'Carbon Sequestration|CCS|Fossil',
@@ -729,7 +568,6 @@ ynz_variables.append(name)
 # =============================================================================
 
 ynz_variables.append('Final Energy')
-# ynz_variables.append('Secondary Energy|Hydrogen')
 # =============================================================================
 # #% of final energy that is electrified
 
@@ -894,8 +732,8 @@ for year in [2030, 2040, 2050]:
 #%% Additional filter based on GHG emissions resduction # Fabio added additional filters
 # =============================================================================
 base_year = 1990
-target2030 = 55
-target2050 = 300 # total GHg with without EU bunkers?
+target2030 = 55  # 55% reduction
+target2050 = 300  # 300 Mt in 2050
 name = f'Pass based on GHG emissions reductions'
 keep_2030 = df.meta["GHG emissions reductions 1990-2030 %"]
 keep_2050 = df.meta['Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr']
@@ -940,21 +778,18 @@ name1 = 'Primary Energy|Biomass <9 EJ/yr in 2050'
 df.meta[name1] = np.where(df.meta[name]<9, True, False)
 
 name = 'Emissions|CO2|LULUCF Direct+Indirect in 2050, Mt CO2/yr'
-# df.set_meta_from_data(name=name, variable='Emissions|CO2|LULUCF Direct+Indirect', year=2050, region='EU27')
 name1 = 'Emissions|CO2|LULUCF Direct+Indirect <400 Mt CO2/yr in 2050'
 df.meta[name1] = np.where(df.meta[name]<400, True, False)
 
 
 
 # =============================================================================
-#%% Write out 
+#%% Write out  meta sheet with formatting
 # =============================================================================
 
 writer = pd.ExcelWriter(fn_out, engine='xlsxwriter')
 
-
 df.to_excel(writer, sheet_name='data', include_meta=True)
-
 
 
 # meta page
@@ -1034,8 +869,6 @@ for i, column in value_columns:#enumerate(value_columns):
 
 
 
-
-
 # data page
 # if model!= 'all':
 worksheet = writer.sheets['data']
@@ -1051,7 +884,6 @@ worksheet.autofilter(0, 0, len(df.meta), len(df.year))
 #%% Do quantiles sheet
 dfm = df.meta
 dfm = dfm.loc[dfm[f'Pass based on GHG** emissions reductions']==True]
-# assert len(dfm)==63
 dfm = dfm.iloc[:, 18:143]
 dfm = dfm.T
 
@@ -1061,150 +893,27 @@ dfq['n'] = dfm.T.count().values
 
 dfq.to_excel(writer, sheet_name='quantiles')
 
-
 writer.close()
 
 os.startfile(fn_out)
 
-
 df.meta.to_excel(fn_out.replace('data_and_',''),
                  sheet_name='meta')
 
+
+
+#%% iconics boxplots - only the passing 63 scenarios
 df.meta['ghgfilter'] = df.meta[f'Pass based on GHG** emissions reductions']
-
-#%% Make comparison file
-yrs = range(2019,2101)
-old = pyam.IamDataFrame(fn_out_prev)
-comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
-comparison.to_excel(fn_comparison, merge_cells=False)
-os.startfile(fn_comparison)
-
-
-#%% iconics boxplots
 
 dfb = df.meta
 dfb = dfb.loc[dfb[f'Pass based on GHG** emissions reductions']==True]
-# assert len(dfb)==63
-
-#%% Check 2100 diff
-
-# CO2 check
-dfv = df.filter(region='EU27', unit='Mt CO2*', ghgfilter=True)
-dfv.convert_unit( 'Mt CO2/yr', 'Mt CO2-equiv/yr',inplace=True)
-
-dfv.multiply("Carbon Sequestration|Direct Air Capture", -1, 
-             "Carbon Sequestration|Direct Air Capture-neg", 
-             append=True, ignore_units='Mt CO2-equiv/yr')
-
-comps = ['Emissions|CO2|Energy and Industrial Processes',
-          "Emissions|CO2|LULUCF Direct+Indirect",
-            "Carbon Sequestration|Direct Air Capture-neg"]
-dfv.aggregate('Emissions|CO2|BU', components=comps, append=True)
-
-dfv.subtract('Emissions|CO2',
-             'Emissions|CO2|BU',
-             name='Emissions|CO2-diff',
-             append=True, ignore_units='Mt CO2-equiv/yr')
-
-dfv.filter(variable='Emissions|CO2-diff').plot()
-dfv.filter(variable='Emissions|CO2-diff').to_excel('c:\\users\\byers\\downloads\\co2diff.xlsx')
-os.startfile('c:\\users\\byers\\downloads\\co2diff.xlsx')
-
-# GHG checks
-comps = ['Emissions|CO2|Energy and Industrial Processes',
-          "Emissions|CO2|LULUCF Direct+Indirect",
-            "Carbon Sequestration|Direct Air Capture-neg",
-            'Emissions|Total Non-CO2']
-
-
-dfv.aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', components=comps, append=True)
-dfv.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 
-            name='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff',
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
-
-
-dfv.filter(variable=['Emissions|Kyoto Gases (incl. indirect AFOLU)',
-            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 'Emissions|Kyoto Gases (incl. indirect AFOLU)-diff']).to_excel('c:\\users\\byers\\downloads\\ghg.xlsx')
-os.startfile('c:\\users\\byers\\downloads\\ghg.xlsx')
-
-dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').plot()
-dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)|BU').plot()
-dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff').plot()
-
-
-#%%
-comps = ['Emissions|CO2|Energy and Industrial Processes',
-          "Emissions|CO2|LULUCF Direct+Indirect",
-            "Carbon Sequestration|Direct Air Capture-neg",
-            # 'Emissions|CO2|Energy|Demand|Bunkers|Intra-EU'
-            'Emissions|Total Non-CO2']
-
-dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', keep=False, inplace=True)
-dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff', keep=False, inplace=True)
-
-dfv.aggregate('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', components=comps, append=True)
-dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
-            'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', 
-            name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff',
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
-
-dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff').plot()
-
-#%%   intra minus no bunkers
-name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-nobunkers'
-dfv.filter(variable=name, keep=False, inplace=True)
-dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
-            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
-            name=name,
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
-
-dfv.filter(variable=name).plot()
-
-#%%   full ghg minus no bunkers
-name='Emissions|Kyoto Gases (AR4) (EEA)-nobunkers'
-dfv.filter(variable=name, keep=False, inplace=True)
-dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA)',
-            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
-            name=name,
-            ignore_units='Mt CO2-equiv/yr',
-            append=True)
-
-dfv.filter(variable=name).plot()
 
 
 
-#%% Find  CCS weird scenarios
+# =============================================================================
+#%% Make the boxplots in the report
+# =============================================================================
 
-dfv.filter(variable='Carbon Sequestration|CCS|Fossil').plot()
-
-#%%
-def plot_box_meta(dfb, varis, yticks=None, xlabel='', fname=None, palette=None):
-    dfb1 = dfb.copy(deep=True)[varis]
-    dfb1 = dfb1.reset_index().melt(id_vars=['model','scenario'], value_vars=dfb1.columns)
-    sns.set_theme(style="ticks")
-    figheight = len(varis)*0.5
-    fig, ax = plt.subplots(figsize=(10, figheight))
-    sns.boxplot(x='value', y='variable', data=dfb1, ax=ax,
-                whis=[0,100], width=0.6, palette=palette)
-    sns.stripplot(x='value', y='variable', data=dfb1, ax=ax,
-                  size=4, color=".3", linewidth=0)
-    
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel('')
-
-    # Fix yticklabels
-    if type(yticks)==list:
-        ax.set_yticklabels(yticks)
-    
-    ax.grid(True)
-    
-    plt.tight_layout()
-    if type(fname)==str:
-        fig.savefig(fname, dpi=300)#, bbox_inches=True)
 
 palette = 'GnBu'
 #%% Cumulative emissions
@@ -1219,7 +928,6 @@ varis = ['cumulative net CO2 (2020-2030, Gt CO2)',
         'cumulative GHGs** (incl. indirect AFOLU) (2020-2030, Gt CO2-equiv)',
         'cumulative GHGs** (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)',
         'cumulative GHGs** (incl. indirect AFOLU) (2020-2050, Gt CO2-equiv)',
-        # 'cumulative CO2 FFI (2020-2050, Gt CO2-equiv)',
         'cumulative AFOLU (direct+indirect) (2020-2050, Gt CO2)']
 yticks = [v.strip('cumulative ') for v in varis]
 yticks = [v.strip('net ') for v in yticks]
@@ -1271,7 +979,6 @@ plot_box_meta(dfb, varis, yticks, xlabel='Emissions and removals in year of net-
 
 #%% Emissions in 2050
 fname = f'{main_folder}report\\figures\\boxplot_emissions_2050.png'
-
 varis = [
     'Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr',
     'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only) in 2050, Mt CO2-equiv/yr',           
@@ -1289,15 +996,10 @@ yticks = [x[0] if len(x)==1 else x[0]+' '+ x[1] for x in yticks]
 
 plot_box_meta(dfb, varis, yticks, xlabel='Emissions and removals in 2050',
               fname=fname, palette=palette)
-#%%
-# Primary Energy|Biomass in 2050, EJ/yr
-# Final Energy in 2050, EJ/yr
 
 
 #%% Energy shares in 2050
 fname = f'{main_folder}report\\figures\\boxplot_energy_shares_2050.png'
-
-
 varis = [
     'Primary Energy|Renewables (incl.Biomass)|Share in 2050, %',
     'Primary Energy|Non-biomass renewables|Share in 2050, %',
@@ -1312,13 +1014,9 @@ varis = [
     'Final Energy|Transportation|Fossil|Share in 2050, %',
     'PE Import dependency in 2050, %',
     'PE Import dependency|Fossil in 2050, %',
-    # 'Trade|Fossil|Share in 2050, %'
 ]
 yticks = [v.split('|Share in 2050, %')[0] for v in varis]
-# yticks = [v.split('|')[1:] if '|'in v else v for v in yticks]
-# yticks = [[v] if type(v)==str else v for v in yticks]
 yticks = [v.strip(' in 2050, %') for v in yticks]
-# yticks = [x[0] if len(x)==1 else x[0]+' '+ x[1] for x in yticks]
 
 plot_box_meta(dfb, varis, yticks, xlabel='% share in 2050',
               fname=fname, palette=palette)

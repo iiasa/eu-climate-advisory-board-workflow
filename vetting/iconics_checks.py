@@ -13,7 +13,6 @@ import pandas as pd
 #%%
 
 
-
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 vetting_output_folder = f'{main_folder}vetting\\'
 
@@ -52,22 +51,8 @@ data_output_folder = f'{main_folder}iconics\\{vstr}\\'
 
 
 
-fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16.xlsx'
-fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v13.xlsx'
-fn_comparison = f'{data_output_folder}comparison_v13_v16_data.xlsx'
 
-
-
-yrs = range(2019, 2060)
-old = pyam.IamDataFrame(fn_out_prev)
-df = pyam.IamDataFrame(fn_out)
-comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
-comparison.to_excel(fn_comparison, merge_cells=False)
-os.startfile(fn_comparison)
-
-
-
-#%% CCS recalculate
+#%% CCS recalculate & checks
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
 
 dfr = pyam.IamDataFrame(fn_out, sheet_name='data')
@@ -124,3 +109,117 @@ tb = dfm.loc[dfm['Pass based on GHG** emissions reductions']==True, cols+feas_co
 fn = f'{data_output_folder}ccus1.xlsx'
 tb.to_excel(fn, merge_cells=False)              
 os.startfile(fn)              
+
+
+
+
+
+
+# =============================================================================
+#%% Make comparison file
+# =============================================================================
+fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v17.xlsx'
+fn_out_prev = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v16v8.xlsx'
+fn_comparison = f'{data_output_folder}comparison_v16v5_v17_data.xlsx'
+
+yrs = range(2019,2101)
+old = pyam.IamDataFrame(fn_out_prev)
+comparison = pyam.compare(old.filter(year=yrs), df.filter(year=yrs))
+comparison.to_excel(fn_comparison, merge_cells=False)
+os.startfile(fn_comparison)
+
+
+
+# =============================================================================
+#%% Check aggregation of variables
+# =============================================================================
+
+#%% Check 2100 diff
+
+# (need) to load data first
+
+# CO2 check
+dfv = df.filter(region='EU27', unit='Mt CO2*', ghgfilter=True)
+dfv.convert_unit( 'Mt CO2/yr', 'Mt CO2-equiv/yr',inplace=True)
+
+dfv.multiply("Carbon Sequestration|Direct Air Capture", -1, 
+             "Carbon Sequestration|Direct Air Capture-neg", 
+             append=True, ignore_units='Mt CO2-equiv/yr')
+
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg"]
+dfv.aggregate('Emissions|CO2|BU', components=comps, append=True)
+
+dfv.subtract('Emissions|CO2',
+             'Emissions|CO2|BU',
+             name='Emissions|CO2-diff',
+             append=True, ignore_units='Mt CO2-equiv/yr')
+
+dfv.filter(variable='Emissions|CO2-diff').plot()
+dfv.filter(variable='Emissions|CO2-diff').to_excel('c:\\users\\byers\\downloads\\co2diff.xlsx')
+os.startfile('c:\\users\\byers\\downloads\\co2diff.xlsx')
+
+# GHG checks
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg",
+            'Emissions|Total Non-CO2']
+
+
+dfv.aggregate('Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', components=comps, append=True)
+dfv.subtract('Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 
+            name='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+
+dfv.filter(variable=['Emissions|Kyoto Gases (incl. indirect AFOLU)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)|BU', 'Emissions|Kyoto Gases (incl. indirect AFOLU)-diff']).to_excel('c:\\users\\byers\\downloads\\ghg.xlsx')
+os.startfile('c:\\users\\byers\\downloads\\ghg.xlsx')
+
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)').plot()
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)|BU').plot()
+dfv.filter(variable='Emissions|Kyoto Gases (incl. indirect AFOLU)-diff').plot()
+
+
+#%%
+comps = ['Emissions|CO2|Energy and Industrial Processes',
+          "Emissions|CO2|LULUCF Direct+Indirect",
+            "Carbon Sequestration|Direct Air Capture-neg",
+            'Emissions|Total Non-CO2']
+
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', keep=False, inplace=True)
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff', keep=False, inplace=True)
+
+dfv.aggregate('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', components=comps, append=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
+            'Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)|BU', 
+            name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff',
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-diff').plot()
+
+#%%   intra minus no bunkers
+name='Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)-nobunkers'
+dfv.filter(variable=name, keep=False, inplace=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA - intra-EU only)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
+            name=name,
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable=name).plot()
+
+#%%   full ghg minus no bunkers
+name='Emissions|Kyoto Gases (AR4) (EEA)-nobunkers'
+dfv.filter(variable=name, keep=False, inplace=True)
+dfv.subtract('Emissions|Kyoto Gases (AR4) (EEA)',
+            'Emissions|Kyoto Gases (incl. indirect AFOLU)', 
+            name=name,
+            ignore_units='Mt CO2-equiv/yr',
+            append=True)
+
+dfv.filter(variable=name).plot()

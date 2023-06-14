@@ -118,6 +118,7 @@ dfs.loc[dfs[colr].isna(), col] = flag_fail
 dfs.loc[dfs[colr].isna(), col1] = 'No Regional'
 dfs.loc[dfs[colr].isna(), col2] = 0
 
+# Not necessary - but keep just in case
 # if Regional is PASS, set to PASS, unless Global fail
 # dfs.loc[dfs[colr]==flag_pass, col] = flag_pass
 # dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col] = 'FailG - PassR'
@@ -126,8 +127,6 @@ dfs.loc[dfs[colr].isna(), col2] = 0
 
 # dfs.loc[(dfs[colg]==flag_pass_missing) & (dfs[colr]==flag_pass_missing), col] = flag_missing
 # dfs.loc[(dfs[colg]=='PASS') & (dfs[colr]=='PASS'), col] = flag_
-
-
 
 
 dfs[colg].fillna('NA', inplace=True)
@@ -148,13 +147,10 @@ ocols = [col for col in dfs.columns if 'OVERALL' in col]
 
 if sum(dfs[ocols].isna().sum())>0:
     print('Warning - some rows not classified')
-    sdfsdfsdf
+    sdfsdfsdf # break
     
     
-# Drop NGFS ? scenarios    
-# dfs = dfs.loc[dfs.scenario!='NGFS-Below 2°C',]
-    
-# Drop REMIND 3.2 scenarios
+# Drop REMIND 3.2 scenarios (in case still here)
 dfs = dfs.loc[~((dfs.model=='REMIND 3.2') & (dfs.scenario.str.contains('withICEPhOP')==False))]
 
 # Drop Reference
@@ -170,37 +166,19 @@ cmd1 = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_m
 cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2C'
 cmd1.loc[cmd1.scenario=='NGFS-Delayed transition', 'scenario'] = 'NGFS-Delayed Transition'
 
-# Addtitional runs
-# cmd2 = pd.read_excel(f'{main_folder}climate_assessment\\AdvisoryBoard_additional_remind_meta.xlsx')
-# cmd3 = pd.read_excel(f'{main_folder}climate_assessment\\remind_sensitivity_emissions_meta.xlsx')
 cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
 cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
 cmd.drop_duplicates(subset=['model','scenario'], inplace=True)
 
 cmd = cmd.loc[~((cmd.model=='REMIND 3.2') & (cmd.scenario.str.contains('withICEPhOP')==False))]
 
-
 dfs = dfs.merge(cmd[keep_cols], on=['model','scenario'], how='outer')
 
-# Copy info for the REMIND 2.1 and PROMETHEUS DIAG-NZero scenarios (not used as removed - no lit reference description)
-# dfscols = dfs.columns
-
-# # REMIND
-# dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
-
-# # PROMETHEUS
-# dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
-
-# Drop DIAG-NZero scenarios
+# Drop DIAG-NZero scenarios (removed)
 # # REMIND
 dfs = dfs.loc[~(dfs.scenario=='DIAG-NZero')]
-# dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='REMIND 2.1') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
-
-# # PROMETHEUS
-# dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-NZero'), dfscols[2:-2]] = dfs.loc[(dfs.model=='PROMETHEUS 1.2') & (dfs.scenario=='DIAG-C400-lin'), dfscols[2:-2]].values
 
 #%% Check for duplicates
-
 
 
 # Add selected climate meta to main summary sheet
@@ -255,15 +233,9 @@ write_simple_pivot(writer, dfsp, sheet_name='Pivot_vetted_type')
     
 
 
-
-
 # Write out climate metadata
 cmd.to_excel(writer, sheet_name='meta_climate', index=False)
-
-
 
 writer.close()
 
 os.startfile(wbstr)
-
-#%% Produce 

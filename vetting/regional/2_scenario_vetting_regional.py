@@ -28,7 +28,6 @@ print_log = print if log else lambda x: None
 check_model_regions_in_db = False  # Checks, model by model, for the available regions (based on variable list) (takes time!)
 recreate_yaml_region_map = True  # read in excel, and save to yaml
 write_out_all = True
-load_late_submissions = False
 
 
 from vetting_functions import *
@@ -41,7 +40,6 @@ region_level = 'regional'
 user = 'byers'
 datestr = '20230512'
 
-# ver = 'normal'
 
 years = np.arange(2010, 2061, dtype=int).tolist()
 year_aggregate = 2020
@@ -77,27 +75,19 @@ varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
             'Emissions|CO2|Energy',
             'Emissions|CO2|Industrial Processes',
-            # 'Emissions|CO2|AFOLU',
-            # 'Emissions|CO2|Other',
-            # 'Emissions|CO2|Waste',
             'Emissions|CH4',
             'Emissions|N2O',
             'Primary Energy',
-            # 'Primary Energy|Fossil',
             'Primary Energy|Gas',
             'Primary Energy|Oil',
             'Primary Energy|Coal',
             'Primary Energy|Nuclear',
             'Primary Energy|Solar',
             'Primary Energy|Wind',
-            # 'Secondary Energy',
             'Secondary Energy|Electricity',
             'Secondary Energy|Electricity|Nuclear',
             'Secondary Energy|Electricity|Solar',
             'Secondary Energy|Electricity|Wind',
-            # 'Final Energy',
-            # 'GDP|MER',
-            # 'Population',
             'Carbon Sequestration|CCS*']
 
 
@@ -124,7 +114,6 @@ def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
         yaml_model = list(reg_mapping.keys())[0]
         reg_mapping = reg_mapping[yaml_model]
         reg_mapping_eu = reg_mapping #[x for x in reg_mapping if ('Eu' in list(x.keys())[0]) or ('EU' in list(x.keys())[0])]
-        # reg_mapping_eu.append([x for x in reg_mapping if 'EU' in list(x.keys())[0]])
         
         
         reg_mapping_eu = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping_eu }
@@ -213,7 +202,6 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     
     
     # Count # of missings in each row
-    # df.meta['missing_count'] = df.meta.apply(pd.value_counts, axis=1)['missing']
     df.meta[flag_pass_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_pass_missing]
     df.meta[flag_fail_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_fail_missing]
     
@@ -261,11 +249,9 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
     # =============================================================================
     cols1 = dfo.columns.tolist()
     detail_cols = vetting_cols[:8]  + cols1[3:-5] #bring the key vetted columns to front + 
-    # dfo = dfo[detail_cols]
     
     
     # Don't include details sheet in all, because too many different columns
-    # if model!= 'all':
     dfo[detail_cols].to_excel(writer, sheet_name='details', index=False, startrow=1, header=False)
     
     
@@ -352,7 +338,6 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
 
     
     # Details page
-    # if model!= 'all':
     worksheet = writer.sheets['details']
     worksheet.set_column(0, 0, 13, None)
     worksheet.set_column(1, 1, 25, None)
@@ -487,10 +472,6 @@ with open(input_yaml_eu_regions , 'r') as file:
      iso_eu27 = [x for x in eu_regions if 'EU27' in x.keys()][0]['EU27']['countries']
      iso_eu27 = iso_eu27.split(', ')
 
-
-# Define manually here for now (implement later to read in from yaml)
-# iso_eu27 = ['AUT', 'BEL', 'BGR', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HRV', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE', 'NLD']
-# iso_eu27.sort()
 iso_eu28 = iso_eu27 + ['GBR']
 iso_euMC = [x for x in iso_eu27 if x not in ['CYP','MLT','GBR']]
 iso_eurR10 = ['ALB', 'AND', 'AUT', 'BLR', 'BEL', 'BIH', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FRO', 'FIN', 'FRA', 'DEU', 'GIB',
@@ -528,14 +509,12 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         iso_reg_dict = {attr.vetted_regions: ref_isos}
         sel_natives = list(iso_reg_dict.keys())
         
-        # regions = sel_natives
         regions = attr.vetted_regions.split(',')
         agg_region_name = regions[0]
 
     # Native region       
     elif (attr.vetted_type == 'native'):
         
-
         # ref region: '{model}|Europe_agg'
         # model region: '{model}|Europe_agg'
         
@@ -543,11 +522,9 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
         iso_reg_dict, all_natives, yaml_model = func_model_iso_reg_dict(yaml_nm=attr.yaml)
         regions = attr.vetted_regions.split(',')
 
-        # sel_natives = [x for x in all_natives if x in regions.split('|')[1] ]
         sel_natives = [x.split('|')[1] for x in regions]
         iso_reg_dict = {key: iso_reg_dict[key] for key in sel_natives}
         
-        # regions = [f'{yaml_model}|'+x.split('_')[0] for x in sel_natives]
         agg_region_name = f'{model}|Europe_agg'
 
     # Error
@@ -588,35 +565,6 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
                             region=regions,
                             meta=False
                            )
-    
-    
-    # Load late submissions
-    
-    if load_late_submissions:
-        late_to_add = dfinlate.filter(model=model,
-                                      variable=varlist,
-                                      year=years,
-                                      region=regions,
-                                     )
-        if len(late_to_add)>1:
-            
-            # check and add duplicate scenarios
-
-            ol = list(dfin.meta.index)
-            ll = list(late_to_add.meta.index)
-            uni = set(ll) - set(ol)
-            to_add = {}
-            for i in uni:  
-                to_add.setdefault(i[0],[]).append(i[1])
-            
-            for m,s in to_add.items():
-            
-                dfin.append(late_to_add.filter(model=m,
-                                            scenario=s,
-                                            ), inplace=True)
-            
-            
-            
     
     
     
@@ -705,11 +653,6 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     # =============================================================================
     secondary_energy_electricity = to_series(df.filter(variable='Secondary Energy|Electricity'))
     # Aggregate to new wind-solar variable
-    # secondary_wind_solar = to_series(
-    #     df
-    #     .filter(variable=['Secondary Energy|Electricity|Wind', 'Secondary Energy|Electricity|Solar'])
-    #     .aggregate(variable='Secondary Energy|Electricity')
-    # )
     swv = 'Secondary Energy|Electricity|Solar-Wind'
     secondary_wind_solar = df.add('Secondary Energy|Electricity|Wind',
                                   'Secondary Energy|Electricity|Solar',
@@ -725,21 +668,10 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     df.divide(swv, 'Secondary Energy|Electricity', swvs,
               ignore_units='-', append=True)
     
-    # df.append(
-    #     secondary_wind_solar / secondary_energy_electricity,
-    #     variable='Secondary Energy|Electricity|Solar-Wind share', unit='-',
-    #     inplace=True
-    # )
     
     # =============================================================================
     # % increases
     # =============================================================================
-    
-    # PE Renewable share increase
-    # calc_increase_percentage(df, 'Primary Energy|Renewables share', 2020, 2030)
-    
-    # PE Solar-Wind share increase
-    # calc_increase_percentage(df, 'Primary Energy|Solar-Wind share', 2020, 2030)
     
     # SE Solar-Wind share increase
     calc_increase_percentage(df, 'Secondary Energy|Electricity|Solar-Wind', 2020, 2030)
@@ -782,7 +714,6 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
                     print('No components:{},{}'.format(model, scenarios))
         #%
         # Drop the separate components
-        # df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], keep=False, inplace=True)
     
     #%% First, the aggregation tests ################################
     
@@ -813,13 +744,8 @@ for model, attr in model_yaml_map.iloc[:].iterrows(): #.iloc[:4]
     # =============================================================================
     
     # Emissions|CO2 increase
-    # calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
-    # calc_increase_percentage('Emissions|CO2', 2015, 2020)
     for v in ['Emissions|CO2|Energy and Industrial Processes',
               'Emissions|CO2|Energy']:
-       # if len(df.filter(variable=v, year=2010))!=0:
-           # calc_increase_percentage(df, v, 2010, 2020)
-       # else:
            calc_increase_percentage(df, v, 2015, 2020)
 
 

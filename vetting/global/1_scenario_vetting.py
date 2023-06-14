@@ -26,9 +26,6 @@ single_model = False   # Testing mode- not used
 include_data = True
 print_log = print if log else lambda x: None
 include_meta = False
-load_late_submissions = False
-
-
 
 from vetting_functions import *
 
@@ -40,7 +37,6 @@ from vetting_functions import *
 region_level = 'global'
 user = 'byers'
 datestr = '20230512'
-# ver = 'normal'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
 year_aggregate = 2020
@@ -74,9 +70,6 @@ varlist = ['Emissions|CO2',
             'Emissions|CO2|Energy and Industrial Processes',
             'Emissions|CO2|Energy',
             'Emissions|CO2|Industrial Processes',
-            # 'Emissions|CO2|AFOLU',
-            # 'Emissions|CO2|Other',
-            # 'Emissions|CO2|Waste',
             'Emissions|CH4',
             'Emissions|N2O',
             'Primary Energy',
@@ -87,14 +80,10 @@ varlist = ['Emissions|CO2',
             'Primary Energy|Nuclear',
             'Primary Energy|Solar',
             'Primary Energy|Wind',
-            # 'Secondary Energy',
             'Secondary Energy|Electricity',
             'Secondary Energy|Electricity|Nuclear',
             'Secondary Energy|Electricity|Solar',
             'Secondary Energy|Electricity|Wind',
-            # 'Final Energy',
-            # 'GDP|MER',
-            # 'Population',
             'Carbon Sequestration|CCS*']
 
 region = ['World']
@@ -105,7 +94,6 @@ region = ['World']
 
 
 #% load pyam data
-# Connection.query(..., meta=False)
 dfin = pyam.read_iiasa(instance,
                         # model=models,
                         # scenario=scenarios,
@@ -117,37 +105,6 @@ dfin = pyam.read_iiasa(instance,
 print('loaded from DB')
 print(time.time()-start)
 
-if load_late_submissions:
-    
-    # Load late submissions scenarios
-    dfinlate = dfin.filter(model='lalala')
-    for f in glob.glob(f'{late_submissions_path}*late-submission*.xlsx'):
-        dft = pyam.IamDataFrame(f)
-        dfinlate.append(dft.filter(region=region), inplace=True)
-    print('made dfinlate')
-    
-    # check and add duplicate scenarios
-
-    ol = list(dfin.meta.index)
-    ll = list(dfinlate.meta.index)
-    uni = set(ll) - set(ol)
-    to_add = {}
-    for i in uni:  
-        to_add.setdefault(i[0],[]).append(i[1])
-    
-    if len(to_add)>1:
-        for m,s in to_add.items():
-        
-            dfin.append(dfinlate.filter(model=m,
-                                        scenario=s,
-                                        ), inplace=True)
-            
-    
-
-
-
-# Drop unwanted scenarios
-# manual_scenario_remove(df, remdic)
 
 # Inteprolate data
 df = dfin.interpolate(range(years[0], years[-1], 1))
@@ -160,14 +117,12 @@ value_columns = {}
 
 print_log = print if log else lambda x: None
 
-
 ###################################
 #
 # Set variables and thresholds for
 # each check
 #
 ###################################
-# os.chdir('c://github/ipcc_ar6_scenario_assessment/scripts/vetting/')
 # read from local folder
 with open(config_vetting, 'r', encoding='utf8') as config_yaml:
     config = yaml.safe_load(config_yaml)
@@ -195,9 +150,7 @@ if single_model:
 # Add additional reference data
 # =============================================================================
 dfref = pyam.IamDataFrame(input_data_ref).filter(region=region)
-# dfceds =  pyam.IamDataFrame(input_data_ceds)
 df.append(dfref, inplace=True)
-# df.append(dfceds, inplace=True)
 
 
 # =============================================================================
@@ -241,17 +194,6 @@ calc_increase_percentage(df, 'Secondary Energy|Electricity|Solar-Wind', 2020, 20
 # =============================================================================
 # Emissions & CCS
 # =============================================================================
-# First, aggregate EIP for CEDS and add it
-# eip = to_series(
-#     df
-#     .filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], scenario='CEDS')
-#     .aggregate(variable='Emissions|CO2')
-# )
-# df.append(
-#     eip,
-#     variable='Emissions|CO2|Energy and Industrial Processes', unit='Mt CO2/yr',
-#     inplace=True
-# )
 
 # check presence of EIP in other scenarios
 missing = df.require_variable(variable='Emissions|CO2|Energy and Industrial Processes')
@@ -280,9 +222,6 @@ for model, scenarios in mapping.items():
         print('No components:{},{}'.format(model, scenarios))
         pass
     
-#%
-# Drop the separate components
-# df.filter(variable=['Emissions|CO2|Energy', 'Emissions|CO2|Industrial Processes'], keep=False, inplace=True)
 
 # # First, the aggregation tests ################################
 if aggregation_variables is not None:
@@ -306,17 +245,8 @@ else:
 # Add data: % increases
 # =============================================================================
 
-# Emissions|CO2 increase
-# calc_increase_percentage(df, 'Emissions|CO2', 2010, 2020)
-# calc_increase_percentage('Emissions|CO2', 2015, 2020)
-# calc_increase_percentage(df, 'Emissions|CO2|Energy and Industrial Processes', 2010, 2020)
-# calc_increase_percentage(df, 'Emissions|CO2|Energy', 2010, 2020)
-
 for v in ['Emissions|CO2|Energy and Industrial Processes',
           'Emissions|CO2|Energy']:
-   # if len(df.filter(variable=v, year=2010))!=0:
-       # calc_increase_percentage(df, v, 2010, 2020)
-   # else:
        calc_increase_percentage(df, v, 2015, 2020)
 
 # Calculate CCS from energy (not industrial):
@@ -334,43 +264,6 @@ except(AttributeError):
     print('Skip CCS aggregation for {model}')
 
 #%%=============================================================================
-# Add data: Upper-Lower CEDS&EDGAR bounds (not used due to method)
-# DO NOT DELETE, CAN BE USED TO CALCULATE THE REFERENCE VALUES WHICH ARE READ IN THE YAML FILE
-# =============================================================================
-# #Exclude wrongly extrapolated data and set empty values
-# df = df.filter(model='Reference', scenario='CEDS', year=np.arange(2021,2101), keep=False)
-
-
-# varis = ['Emissions|CO2', 'Emissions|CO2|Energy and Industrial Processes',
-#           'Emissions|CH4']
-# unit = 'Mt CO2/yr'
-
-
-# for var in varis:
-#     print(var)
-#     ceds = df.filter(scenario='CEDS', variable=var, year=np.arange(2009,2021))
-#     ceds.data.loc[ceds.data.year>2015, 'value'] = np.nan
-
-#     ceds.data = ceds.data.interpolate(method ='spline', order=1, limit_direction = "both")
-#     df = df.filter(model='Reference', scenario='CEDS', variable=var,
-#                     year=np.arange(2016,2021), keep=False)
-#     df.append(ceds.filter(year=np.arange(2016,2021)), inplace=True)
-
-# yrs = [2015, 2018]
-
-# for yr, var in it.product(yrs, varis):
-#     dff = df.filter(model='Reference', scenario=['CEDS','EDGAR AR6'], year=yr, variable=var)
-#     upper = np.max(dff.data['value'])
-#     lower = np.min(dff.data['value'])
-#     data = [['Reference','CEDS_EDGAR', 'World', var+'|Upper', unit, yr, upper],
-#             ['Reference','CEDS_EDGAR', 'World', var+'|Lower', unit, yr, lower]]
-
-#     data = pd.DataFrame(data=data, columns=pyam.IAMC_IDX+['year','value'])
-#     data = pyam.IamDataFrame(data)
-#     df.append(data, inplace=True)
-
-# ab = df.filter(model='Reference',scenario='CEDS_EDGAR')
-# ab.to_csv(f'{output_folder}ceds_edgar_extrapdata.csv')
 
 #  #% Do checks against reference data
 for agg_name, agg_info in reference_variables.items():
@@ -410,18 +303,6 @@ for name, info in bounds_variables.items():
                     info['bound_threshold'], 
                     ver=region_level,
    )
-
-
-
-#%%
-
-#     # Write out to excel
-#     write_out(df, iso_reg_dict, model=model, include_data=True, include_meta=False)
-#     ct=ct+1
-# print('Finished loop, writing out all')
-# if write_out_all:
-#     fn = write_out(dfall, iso_reg_dict_all, model='all', include_data=True, include_meta=False)
-#     os.startfile(fn)
 
 
 
@@ -486,8 +367,6 @@ df.meta[flag_fail_missing] = df.meta.apply(pd.value_counts, axis=1)[flag_fail_mi
 
 #% Overall - choose that only HISTORICAL == PASS
 col = f'vetting_{region_level}'
-# df.meta.loc[(df.meta[meta_name_historical]=='Pass') & (df.meta[meta_name_future]=='Pass'), col] = 'PASS'
-# df.meta.loc[(df.meta[meta_name_historical]=='Fail') | (df.meta[meta_name_future]=='Fail'), col] = 'FAIL'
 
 
 df.meta.loc[(df.meta[meta_name_historical]==flag_pass) , col] = 'PASS'
