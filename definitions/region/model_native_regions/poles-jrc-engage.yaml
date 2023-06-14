@@ -1,0 +1,74 @@
+- POLES JRC ENGAGE:
+  - POLES JRC ENGAGE|Africa - Middle East:
+      countries: AGO, ARE, BDI, BEN, BFA, BHR, BWA, CAF, CIV, CMR, COD, COG, CPV,
+        DJI, DZA, EGY, ERI, ESH, ETH, GAB, GHA, GMB, GNB, GNQ, IRN, IRQ, ISR, JOR,
+        KEN, KWT, LBN, LBR, LBY, LSO, MAR, MDG, MDV, MLI, MOZ, MRT, MUS, MWI, NAM,
+        NER, NGA, OMN, PSE, QAT, REU, RWA, SDN, SEN, SLE, SOM, SSD, SWZ, SYC, SYR,
+        TCD, TGO, TON, TUN, TZA, UGA, YEM, ZMB, ZWE
+  - POLES JRC ENGAGE|Africa (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Argentina:
+      countries: ARG
+  - POLES JRC ENGAGE|Asia (excl. Japan):
+      countries: AFG, AZE, BGD, BRN, BTN, CXR, FJI, HKG, KAZ, KGZ, KHM, LAO, LKA,
+        MAC, MMR, MNG, MNP, MYS, NPL, PAK, PHL, PLW, PNG, PRK, PYF, SGP, TJK, TKM
+  - POLES JRC ENGAGE|Australia:
+      countries: AUS
+  - POLES JRC ENGAGE|Brazil:
+      countries: BRA
+  - POLES JRC ENGAGE|Canada:
+      countries: CAN
+  - POLES JRC ENGAGE|China:
+      countries: CHN
+  - POLES JRC ENGAGE|China+ (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|EU28:
+      countries: AUT, BEL, CZE, DNK, ESP, EST, FIN, GGY, GIB, HRV, JEY, LTU, POL,
+        PRT, SVK, SVN, SWE
+  - POLES JRC ENGAGE|Europe (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Former CIS:
+      countries: BGR, GEO, MNE, UKR
+  - POLES JRC ENGAGE|India+ (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|India:
+      countries: IND
+  - POLES JRC ENGAGE|Indonesia:
+      countries: IDN
+  - POLES JRC ENGAGE|Japan:
+      countries: JPN
+  - POLES JRC ENGAGE|Latin America (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Latin America:
+      countries: ABW, ANT, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB,
+        DMA, DOM, ECU, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, NIC, PAN,
+        PER, PRI, PRY, SUR, TTO, URY, VEN
+  - POLES JRC ENGAGE|Mexico:
+      countries: MEX
+  - POLES JRC ENGAGE|Middle East (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|North America (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|OECD90+EU:
+      countries: CHE, DEU, FRA, GBR, GRC, HUN, IMN, IRL, ISL, ITA, LIE, LUX, LVA,
+        MCO, NLD, NOR
+  - POLES JRC ENGAGE|Pacific OECD (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Reforming Economies (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Rest of Asia (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Rest of World (10R Map):
+      countries: ''
+  - POLES JRC ENGAGE|Russian Federation:
+      countries: RUS
+  - POLES JRC ENGAGE|Saudi Arabia:
+      countries: SAU
+  - POLES JRC ENGAGE|South Africa:
+      countries: ZAF
+  - POLES JRC ENGAGE|South Korea:
+      countries: KOR
+  - POLES JRC ENGAGE|Turkey:
+      countries: TUR
+  - POLES JRC ENGAGE|USA:
+      countries: UMI, USA, VIR

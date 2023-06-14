@@ -1,19 +1,49 @@
 - COFFEE 1.1:
-  - COFFEE 1.1|Africa (excluding South Africa)
-  - COFFEE 1.1|Australia & New Zealand
-  - COFFEE 1.1|Brazil
-  - COFFEE 1.1|Canada
-  - COFFEE 1.1|Caspian Sea
-  - COFFEE 1.1|Central America
-  - COFFEE 1.1|China
-  - COFFEE 1.1|Eastern Europe
-  - COFFEE 1.1|India
-  - COFFEE 1.1|Japan
-  - COFFEE 1.1|Middle East
-  - COFFEE 1.1|Rest of Asia and Oceania
-  - COFFEE 1.1|Russia
-  - COFFEE 1.1|South Africa
-  - COFFEE 1.1|South America
-  - COFFEE 1.1|South Korea
-  - COFFEE 1.1|United States
-  - COFFEE 1.1|Western Europe
+  - COFFEE 1.1|Africa (excluding South Africa):
+      countries: AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
+        DZA, EGY, ERI, ESH, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO,
+        MAR, MDG, MLI, MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN,
+        SLE, SOM, SSD, STP, SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZMB, ZWE
+  - COFFEE 1.1|Australia & New Zealand:
+      countries: AUS, NZL
+  - COFFEE 1.1|Brazil:
+      countries: BRA
+  - COFFEE 1.1|Canada:
+      countries: CAN, SHN, SPM
+  - COFFEE 1.1|Caspian Sea:
+      countries: AFG, ARM, AZE, GEO, KAZ, KGZ, PAK, TJK, TKM, UZB
+  - COFFEE 1.1|Central America:
+      countries: ABW, AIA, ANT, ATG, BHS, BLM, BLZ, BMU, BRB, CRI, CUB, CYM, DMA,
+        DOM, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ,
+        NIC, PAN, SLV, SUR, TCA, TTO, VCT
+  - COFFEE 1.1|China:
+      countries: CHN, HKG, MAC
+  - COFFEE 1.1|Eastern Europe:
+      countries: ALB, BIH, BLR, HRV, MDA, MKD, MNE, SRB, UKR
+  - COFFEE 1.1|India:
+      countries: IND
+  - COFFEE 1.1|Japan:
+      countries: JPN
+  - COFFEE 1.1|Middle East:
+      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        YEM
+  - COFFEE 1.1|Rest of Asia and Oceania:
+      countries: ATA, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD, IDN,
+        IOT, KHM, KIR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK, NIU, NPL,
+        NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS, TON, TUV, TWN,
+        VNM, VUT, WLF, WSM
+  - COFFEE 1.1|Russia:
+      countries: RUS
+  - COFFEE 1.1|South Africa:
+      countries: ZAF
+  - COFFEE 1.1|South America:
+      countries: ARG, BOL, CHL, COL, ECU, FLK, PER, PRY, SGS, URY, VEN
+  - COFFEE 1.1|South Korea:
+      countries: KOR
+  - COFFEE 1.1|United States:
+      countries: ASM, PRI, UMI, USA, VGB, VIR
+  - COFFEE 1.1|Western Europe:
+      countries: ALA, AND, AUT, BEL, BGR, BVT, CHE, CYP, CZE, DEU, DNK, ESP, EST,
+        FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, HUN, IMN, IRL, ISL, ITA, JEY, LIE,
+        LTU, LUX, LVA, MCO, MLT, NLD, NOR, POL, PRT, ROU, SJM, SMR, SVK, SVN, SWE,
+        TUR, VAT

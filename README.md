@@ -8,9 +8,12 @@ Copyright 2022 IIASA
 
 This repository has the definitions for the **EU Climate Advisory Board Scenario Explorer**
 used for submission of emissions scenarios to support the European Scientific Advisory Board on Climate Change
-in its advice relating to the EU Climate Law.
+in its advice relating to the EU Climate Law. It also contains scripts relating to the vetting, 
+processing and analysis of scenarios to assist the identification of scenarios compliant 
+with EU Climate Law and identification of Iconic Pathways.
 
 Visit https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission for more information.
+
 
 ## Data submission
 
@@ -27,6 +30,35 @@ Please read the instructions on model registration at the Scenario Explorer Abou
 
 The columns **region** and **variable** have to follow the codelists given in the folder 
 [definitions](definitions).
+
+## Analysis  
+### Vetting and analysis (vetting folder)  
+Vetting of baseline and near-term plausibility checks requires the preparation 
+of Reference datasets against which to check the scenario submissions. Checks were 
+done against a selection of Emissions and Energy variables for 2019. More information
+including the order in which to run scripts is provided in the `README_vetting.md` file 
+within that folder. 
+
+For further documentation, see:  
+
+Byers, E., Brutschin, E., Sferra, F., Luderer, G., Huppmann, D., Kikstra, J., 
+Pietzcker, R., Rodrigues, R., & Riahi, K.  
+Scenarios processing, vetting and feasibility assessment for the European Scientific 
+Advisory Board on Climate Change.  
+*International Institute for Applied Systems Analysis, Laxenburg,* 2023.  
+[https://pure.iiasa.ac.at/18828](https://pure.iiasa.ac.at/18828)  
+
+### Equity assessment
+The analysis of emissions pathways taking into account equity considerations is 
+published here.  
+**Report:**  
+Pelz, S., Rogelj, J., Riahi, K., 2023. Evaluating equity in European climate 
+change mitigation pathways for the EU Scientific Advisory Board on Climate Change.  
+*International Institute for Applied Systems Analysis, Laxenburg,* 2023.  
+[https://pure.iiasa.ac.at/18830](https://pure.iiasa.ac.at/18830)
+
+**Data and code:**  
+[https://doi.org/10.5281/zenodo.7949883](https://doi.org/10.5281/zenodo.7949883)
 
 ## Workflow
 
