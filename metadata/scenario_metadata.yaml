@@ -1,0 +1,306 @@
+# This file includes relevant metadata for each scenario in the ensemble:
+# source (project), scientific reference, doi
+
+- AIM/CGE 2.0:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+- AIM/CGE 2.1:
+    - CD-LINKS*:
+        source: CD-LINKS (via AR6) (Horizon 2020)
+        reference: McCollum et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0179-z
+- AIM/CGE 2.2:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+- COFFEE 1.1:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- E4SMA-EU-TIMES 1.0:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+- Euro-Calliope 2.0:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- FORECAST v1.0:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+- GCAM 4.2:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+- GCAM 5.3+ NGFS:
+    - NGFS-*:
+        source: NGFS (Phase 3)
+        reference: Richters et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7198430
+- GCAM-PR 5.3:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+    - PR_EU_55NZE_EI:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Van de Ven et al., 2022, ResearchSquare (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2319580/v1
+- GEM-E3 v2021:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- GEMINI-E3 7.0:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+    - PR_EU_55NZE_EI:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Van de Ven et al., 2022, ResearchSquare (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2319580/v1
+- GENeSYS-MOD 3.1:
+    - "*":
+        source: openENTRANCE (Horizon 2020)
+        reference: Auer et al., 2021 (openENTRANCE Deliverable 3.2)
+        doi: https://openentrance.eu/2022/07/06/quantitative-scenarios-for-low-carbon-futures-of-the-european-energy-system-oncountry-region-and-local-level
+- ICES-XPS 1.0:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+- IMAGE 3.0:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+- IMAGE 3.0.1:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+    - CD-LINKS*:
+        source: CD-LINKS (via AR6) (Horizon 2020)
+        reference: McCollum et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0179-z
+- IMAGE 3.2:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+    - SSP*:
+        source: SSP-2021
+        reference: van Vuuren et al., 2021, Earth ArXiv
+        doi: https://doi.org/10.31223/X5CG92
+- MESSAGE-GLOBIOM 1.0:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+- MESSAGEix-GLOBIOM 1.0:
+    - CD-LINKS*:
+        source: CD-LINKS (via AR6) (Horizon 2020)
+        reference: McCollum et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0179-z
+    - GEI*:
+        source: GEI (via AR6)
+        reference: Guo et al., 2022, Nature Energy
+        doi: https://doi.org/10.1038/s41560-022-01136-0
+    - LowEnergyDemand*:
+        source: LED
+        reference: Grubler et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0172-6
+- MESSAGEix-GLOBIOM 1.1:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- MESSAGEix-GLOBIOM 1.1-M-R12:
+    - NGFS-*:
+        source: NGFS (Phase 3)
+        reference: Richters et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7198430
+- MESSAGEix-GLOBIOM 1.2:
+    - COV_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Kikstra et al., 2021, Nature Energy
+        doi: https://doi.org/10.1038/s41560-021-00904-8
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- MUSE 1.0:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+    - PR_EU_55NZE_EI:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Van de Ven et al., 2022, ResearchSquare (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2319580/v1
+- NEMESIS 5.1:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+- POLES-JRC:
+    - GECO-*:
+        source: JRC
+        reference: Keramidas et al., 2023, JRC
+        doi: http://doi.org/10.2760/863694
+- POLES-JRC ENGAGE:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- PRIMES 2022:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- PROMETHEUS 1.2:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- PyPSA-Eur-Sec 0.0.2:
+    - "*":
+        source: RE-INVEST (Innovation Fund Denmark)
+        reference: Victoria et al., 2020, Nature Communications
+        doi: https://www.nature.com/articles/s41467-020-20015-4
+- PyPSA-Eur-Sec 0.5.0:
+    - "*":
+        source: AURORA (Horizon 2020)
+        reference: Victoria et al., 2022, Joule
+        doi: https://doi.org/10.1016/j.joule.2022.04.016
+- PyPSA-Eur-Sec 0.6.0:
+    - "*":
+        source: RE-INVEST (Innovation Fund Denmark)
+        reference: Pedersen et al., 2022, Joule
+        doi: https://doi.org/10.1016/j.joule.2022.06.023
+- REMIND-MAgPIE 1.5:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+- REMIND-MAgPIE 1.7-3.0:
+    - CD-LINKS*:
+        source: CD-LINKS (via AR6) (Horizon 2020)
+        reference: McCollum et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0179-z
+- REMIND 2.1:
+    - "*":
+        source: ARIADNE (German Federal Ministry of Education and Research)
+        reference: Pietzcker et al., 2021, Ariadne-Hintergrund
+        doi: https://doi.org/10.48485/pik.2021.007
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- REMIND 3.0:
+    - "*":
+        source: ARIADNE (German Federal Ministry of Education and Research)
+        reference: Luderer et al., 2021, Ariadne-Report
+        doi: https://doi.org/10.48485/pik.2021.006
+- REMIND 3.2:
+    - "*":
+        source: Analysis conducted for the European Scientific Advisory Board on Climate Change
+        reference: Byers et al., 2023; Rodrigues et al., in preparation
+        doi: https://pure.iiasa.ac.at/18828
+- REMIND-EU 2.0:
+    - "*":
+        source: INNOPATHS (Horizon 2020)
+        reference: Rodrigues et al., 2022, Energy
+        doi: https://doi.org/10.1016/j.energy.2021.121908
+- REMIND-MAgPIE 2.1-4.2:
+    - SusDev*:
+        source: SHAPE (JPI Climate)
+        reference: Soergel et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01098-3
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- REMIND-MAgPIE 2.1-4.3:
+    - DeepElec*:
+        source: ARIADNE (German Federal Ministry of Education and Research)
+        reference: Luderer et al., 2022, Nature Energy
+        doi: https://doi.org/10.1038/s41560-021-00937-z
+- REMIND-MAgPIE 3.0-4.4:
+    - NGFS-*:
+        source: NGFS (Phase 3)
+        reference: Richters et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7198430
+- TIAM-ECN 1.1:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+    - EN_*COV*:
+        source: ENGAGE (Horizon 2020)
+        reference: Bertram et al., 2021, Environmental Research Letters
+        doi: https://doi.org/10.1088/1748-9326/ac09ae
+- TIAM-ECN 1.2:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
+- TIAM-Grantham v3.4:
+    - PR_*:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Boitier et al., 2022, ZENODO
+        doi: https://doi.org/10.5281/zenodo.7590827
+    - PR_EU_55NZE_EI:
+        source: Paris Reinforce (Horizon 2020)
+        reference: Van de Ven et al., 2022, ResearchSquare (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2319580/v1
+- WITCH-GLOBIOM 3.1:
+    - SSP*:
+        source: SSP (via AR6)
+        reference: Rogelj et al., 2018, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-018-0091-3
+- WITCH-GLOBIOM 4.4:
+    - CD-LINKS*:
+        source: CD-LINKS (via AR6) (Horizon 2020)
+        reference: McCollum et al., 2018, Nature Energy
+        doi: https://doi.org/10.1038/s41560-018-0179-z
+- WITCH 5.0:
+    - EN_*:
+        source: ENGAGE (Horizon 2020)
+        reference: Riahi et al., 2021, Nature Climate Change
+        doi: https://doi.org/10.1038/s41558-021-01215-2
+- WITCH 5.1:
+    - DIAG*:
+        source: ECEMF (Horizon 2020)
+        reference: Dekker et al., 2023, Research Square (preprint)
+        doi: https://doi.org/10.21203/rs.3.rs-2638588/v1
