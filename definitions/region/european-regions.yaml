@@ -16,19 +16,19 @@
 
   - EU27 & UK:
       definition: EU27 + UK
-      countries: AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV,
-        HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE
+      iso3_codes: [AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HRV,
+        HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE]
       notes: Formerly known as EU28.
   - EFTA:
       definition: IS + LI + NO + CH
-      countries: CHE, ISL, LIE, NOR
+      iso3_codes: [CHE, ISL, LIE, NOR]
       notes: European Free Trade Association
       source: https://en.wikipedia.org/wiki/European_Free_Trade_Association
   - EU27 & EFTA:
       definition: EU27 + EFTA
-      countries: AUT, BEL, BGR, CHE, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC,
+      iso3_codes: [AUT, BEL, BGR, CHE, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC,
         HRV, HUN, IRL, ISL, ITA, LIE, LTU, LUX, LVA, MLT, NLD, NOR, POL, PRT, ROU, SVK,
-        SVN, SWE
+        SVN, SWE]
       notes: This region is the jurisdiction of the EU ETS as of 2021 (post-Brexit).
       source: https://ec.europa.eu/clima/eu-action/eu-emissions-trading-system-eu-ets_en 
   - Balkans:
@@ -67,12 +67,12 @@
   - EU27:
       definition: AT + BE + BG + HR + CY + CZ + DK + EE + FI + FR + DE + GR + HU +
         IE + IT + LV + LT + LU + MT + PL + PT + RO + SK + SI + ES + SE + NL
-      countries: AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV, HUN,
-        IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE
+      iso3_codes: [AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV, HUN,
+        IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE]
       notes: membership as of February 1, 2020
   - EU27 (excl. Malta & Cyprus):
       definition: EU27 excluding CY + MT
-      countries: AUT, BEL, BGR, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV, HUN,
-        IRL, ITA, LTU, LUX, LVA, NLD, POL, PRT, ROU, SVK, SVN, SWE
+      iso3_codes: [AUT, BEL, BGR, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV, HUN,
+        IRL, ITA, LTU, LUX, LVA, NLD, POL, PRT, ROU, SVK, SVN, SWE]
 
   # add more definitions of `EU*` above this line
