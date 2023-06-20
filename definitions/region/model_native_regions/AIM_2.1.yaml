@@ -1,0 +1,46 @@
+- AIM/CGE 2.1:
+  - AIM/CGE 2.1|Brazil:
+      iso3_codes: BRA
+  - AIM/CGE 2.1|Canada:
+      iso3_codes: CAN
+  - AIM/CGE 2.1|China:
+      iso3_codes: [CHN, HKG]
+  - AIM/CGE 2.1|Former USSR:
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
+  - AIM/CGE 2.1|India:
+      iso3_codes: IND
+  - AIM/CGE 2.1|Japan:
+      iso3_codes: JPN
+  - AIM/CGE 2.1|Turkey:
+      iso3_codes: TUR
+  - AIM/CGE 2.1|USA:
+      iso3_codes: USA
+  - AIM/CGE 2.1|Other Africa:
+      iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
+        ERI, ESH, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI, MOZ,
+        MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN, SHN, SLE, SOM, STP,
+        SWZ, SYC, TCD, TGO, TZA, UGA, ZAF, ZMB, ZWE]
+  - AIM/CGE 2.1|EU:
+      iso3_codes: [AUT, BEL, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GBR, GRC, HUN,
+        IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, SVK, SVN, SWE]
+  - AIM/CGE 2.1|Rest of Europe:
+      iso3_codes: [ALB, AND, BGR, BIH, CHE, FRO, GIB, HRV, ISL, LIE, MCO, MKD, MNE,
+        NOR, ROU, SJM, SMR, SRB, VAT]
+  - AIM/CGE 2.1|Rest of Latin America:
+      iso3_codes: [ABW, AIA, ARG, ATG, BHS, BLZ, BMU, BOL, BRB, BVT, CHL, COL,
+        CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GRL, GTM, GUF, GUY, HND, HTI,
+        JAM, KNA, LCA, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SPM, SUR,
+        TCA, TTO, URY, VCT, VEN, VGB, VIR]
+        # ISO3 codes unknown to the pycountry package: ANT
+  - AIM/CGE 2.1|Middle East:
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM]
+  - AIM/CGE 2.1|North Africa:
+      iso3_codes: [DZA, EGY, LBY, MAR, TUN]
+  - AIM/CGE 2.1|New Zealand and Australia:
+      iso3_codes: [AUS, NZL]
+  - AIM/CGE 2.1|Rest of Asia:
+      iso3_codes: [AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
+        IOT, KIR, LKA, MDV, MHL, MNP, NCL, NFK, NIU, NPL, NRU, PAK, PCN, PLW, PNG,
+        PYF, SLB, TKL, TON, TUV, UMI, VUT, WLF, WSM]
+  - AIM/CGE 2.1|Rest of East and South East Asia:
+      iso3_codes: [IDN, KHM, KOR, LAO, MMR, MNG, MYS, PHL, PRK, SGP, THA, TLS, TWN, VNM]

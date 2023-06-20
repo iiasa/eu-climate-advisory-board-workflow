@@ -12,10 +12,11 @@
   - GCAM 5.3|China
   - GCAM 5.3|Colombia
   - GCAM 5.3|Eastern EU:
-      countries: BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVN, SVK
+      iso3_codes: [BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVN, SVK]
       notes: does not include Croatia
   - GCAM 5.3|Western EU & UK:
-      countries: AUT, BEL, DEU, DNK, GRC, ESP, FIN, FRA, IRL, ITA, LUX, NLD, PRT, SWE, GBR
+      iso3_codes: [AUT, BEL, DEU, DNK, GRC, ESP, FIN, FRA, IRL, ITA, LUX, NLD, PRT, SWE,
+        GBR]
   - GCAM 5.3|Europe_Eastern
   - GCAM 5.3|Europe_Non_EU
   - GCAM 5.3|European Free Trade Association

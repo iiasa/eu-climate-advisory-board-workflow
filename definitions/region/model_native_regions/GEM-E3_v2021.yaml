@@ -1,51 +1,52 @@
 - GEM-E3 v2021:
   - GEM-E3 v2021|Argentina:
-      countries: ARG
+      iso3_codes: ARG
   - GEM-E3 v2021|Brazil:
-      countries: BRA
+      iso3_codes: BRA
   - GEM-E3 v2021|Canada:
-      countries: CAN
+      iso3_codes: CAN
   - GEM-E3 v2021|China:
-      countries: CHN
+      iso3_codes: CHN
   - GEM-E3 v2021|EU28:
-      countries: AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FIN, FRA, DEU, GRC, HUN, IRL,
-        ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE, GBR
+      iso3_codes: [AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FIN, FRA, DEU, GRC, HUN, IRL,
+        ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE, GBR]
   - GEM-E3 v2021|Indonesia:
-      countries: IDN
+      iso3_codes: IDN
   - GEM-E3 v2021|India:
-      countries: IND
+      iso3_codes: IND
   - GEM-E3 v2021|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - GEM-E3 v2021|South Korea:
-      countries: KOR
+      iso3_codes: KOR
   - GEM-E3 v2021|Mexico:
-      countries: MEX
+      iso3_codes: MEX
   - GEM-E3 v2021|Australia and New Zealand:
-      countries: AUS, NZL, ASM, COK, FJI, PYF, GUM, KIR, MHL, FSM, NRU, NCL, NIU, MNP,
-        PLW, PNG, PCN, WSM, SLB, TKL, TON, TUV, UMI, VUT, WLF
+      iso3_codes: [AUS, NZL, ASM, COK, FJI, PYF, GUM, KIR, MHL, FSM, NRU, NCL, NIU, MNP,
+        PLW, PNG, PCN, WSM, SLB, TKL, TON, TUV, UMI, VUT, WLF]
   - GEM-E3 v2021|Rest of fossil fuel producers:
-      countries: DZA, AZE, IRN, IRQ, KWT, LBN, LBY, NGA, QAT, SYR, ARE, VEN, ESH, YEM,
-        PSE
+      iso3_codes: [DZA, AZE, IRN, IRQ, KWT, LBN, LBY, NGA, QAT, SYR, ARE, VEN, ESH, YEM,
+        PSE]
   - GEM-E3 v2021|Rest of Europe:
-      countries: BLR, BIH, ISL, LIE, MKD, MDA, MCO, MNE, NOR, SRB, CHE, UKR, AND, FRO,
-        GIB, GGY, VAT, IMN, JEY, SMR
+      iso3_codes: [BLR, BIH, ISL, LIE, MKD, MDA, MCO, MNE, NOR, SRB, CHE, UKR, AND, FRO,
+        GIB, GGY, VAT, IMN, JEY, SMR]
   - GEM-E3 v2021|Rest of the world:
-      countries: AFG, ALB, AGO, AIA, ATA, ATG, ARM, ABW, BHS, BHR, BGD, BRB, BLZ, BEN,
+      iso3_codes: [AFG, ALB, AGO, AIA, ATA, ATG, ARM, ABW, BHS, BHR, BGD, BRB, BLZ, BEN,
         BMU, BTN, BOL, BWA, BVT, IOT, BRN, BFA, BDI, KHM, CMR, CPV, CYM, CAF, TCD, CHL,
         CXR, CCK, COL, COM, COG, COD, CRI, CIV, CUB, DJI, DMA, DOM, TLS, ECU, EGY, SLV,
         GNQ, ERI, ETH, FLK, GUF, ATF, JOR, GAB, GMB, GEO, GHA, GRL, GRD, GLP, GTM, GIN,
         GNB, GUY, HTI, HMD, HND, HKG, ISR, JAM, KAZ, KEN, PRK, KGZ, LAO, LSO, LBR, MAC,
         MDG, MWI, MYS, MDV, MLI, MTQ, MRT, MUS, MYT, MNG, MSR, MAR, MOZ, MMR, NAM, NPL,
-        ANT, NIC, NER, NFK, OMN, PAK, PAN, PRY, PER, PHL, PRI, REU, RWA, SHN, KNA, LCA,
+        NIC, NER, NFK, OMN, PAK, PAN, PRY, PER, PHL, PRI, REU, RWA, SHN, KNA, LCA,
         SPM, VCT, STP, SEN, SYC, SLE, SGP, SOM, SGS, LKA, SDN, SUR, SJM, SWZ, TWN, TJK,
-        TZA, THA, TGO, TTO, TUN, TKM, TCA, UGA, URY, UZB, VNM, VGB, VIR, ZMB, ZWE
+        TZA, THA, TGO, TTO, TUN, TKM, TCA, UGA, URY, UZB, VNM, VGB, VIR, ZMB, ZWE]
+        # ISO3 codes unknown to the pycountry package: ANT
   - GEM-E3 v2021|Russian Federation:
-      countries: RUS
+      iso3_codes: RUS
   - GEM-E3 v2021|South Africa:
-      countries: ZAF
+      iso3_codes: ZAF
   - GEM-E3 v2021|Saudi Arabia:
-      countries: SAU
+      iso3_codes: SAU
   - GEM-E3 v2021|Turkey:
-      countries: TUR
+      iso3_codes: TUR
   - GEM-E3 v2021|USA:
-      countries: USA
+      iso3_codes: USA
