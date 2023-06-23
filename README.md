@@ -38,7 +38,7 @@ The nomenclature package provides a structured way to define code-lists for vali
 for automated region-processing to support model comparison projects.
 [Read the nomenclature docs](https://nomenclature-iamc.readthedocs.io) for more information...
 
-<img src="https://github.com/IAMconsortium/pyam/raw/main/doc/logos/pyam-logo.png" width="133" height="100" align="right" alt="pyam logo" />
+<img src="https://github.com/IAMconsortium/pyam/raw/main/docs/logos/pyam-logo.png" width="133" height="100" align="right" alt="pyam logo" />
 
 The nomenclature package depends on the Python package **pyam**.
 The pyam package was developed to facilitate working with timeseries
