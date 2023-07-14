@@ -3,7 +3,8 @@
 Vetting script for Climate Advisory Borad - regional version
 """
 import os
-os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# Execute this script from within the "vetting" folder
 
 #%% Import packages and data
 # import itertools as it
@@ -38,7 +39,7 @@ from vetting_functions import *
 #%% Settings for the specific run
 region_level = 'regional'
 user = 'byers'
-datestr = '20230512'
+datestr = '20230712'
 
 
 years = np.arange(2010, 2061, dtype=int).tolist()
@@ -50,18 +51,23 @@ flag_pass_missing = 'Pass_missing'
 flag_fail_missing = 'Fail_missing'
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu-climate-advisory-board-internal'
+instance = 'eu-climate-advisory-board'
 # instance = 'eu_climate_submission'
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
 input_yaml_eu_regions = f'..\\definitions\\region\\european-regions.yaml'
-
+fn_yaml_region_map = f'regional\\input_data\\model_yaml_region_map_{datstr}.yaml'
 
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 
-late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
+# output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
+output_folder = f'outputs\\'
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+    print("created folder : ", output_folder)
+    
+# late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
@@ -319,7 +325,7 @@ def write_out(df, filename, iso_reg_dict={}, model='all', include_data=False, in
         irdout = pd.concat([pd.DataFrame(v, columns=[k]) for k, v in iso_reg_dict.items()], axis=1)
         pd.DataFrame(irdout).to_excel(writer, sheet_name='region_mapping')
     except(ValueError):
-        print('coulds write region mapping')
+        print('Could not write region mapping')
     # Add data
     if include_data:
         df.to_excel(writer, sheet_name='data', include_meta=include_meta,)
@@ -402,7 +408,7 @@ if recreate_yaml_region_map:
     model_yaml_map.dropna(axis=1, how='all', inplace=True)
     model_yaml_map.yaml.fillna('None', inplace=True)
     
-    with open('regional\\input_data\\model_yaml_region_map.yaml', 'w') as file:
+    with open(fn_yaml_region_map, 'w') as file:
           documents = yaml.dump(model_yaml_map.to_dict(orient='index') , file)
 
 
@@ -412,7 +418,7 @@ if recreate_yaml_region_map:
 
 
 # Load yaml file
-with open('regional\\input_data\\model_yaml_region_map.yaml', 'r') as file:
+with open(fn_yaml_region_map, 'r') as file:
      model_yaml_map = yaml.safe_load(file)    
 model_yaml_map = pd.DataFrame(model_yaml_map).T  
 
@@ -444,18 +450,18 @@ if check_model_regions_in_db:
 # =============================================================================
 # Load late submissions
 # =============================================================================
-if load_late_submissions:
+# if load_late_submissions:
     
-    dfinlate = pyam.read_iiasa(instance,
-                            model='lalala',
-                            # scenario=scenarios,
-                            variable=varlist,
-                            year=years)
+#     dfinlate = pyam.read_iiasa(instance,
+#                             model='lalala',
+#                             # scenario=scenarios,
+#                             variable=varlist,
+#                             year=years)
     
-    # Load late submissions scenarios
-    for f in glob.glob(f'{late_submissions_path}*late-submission*.xlsx'):
-        dft = pyam.IamDataFrame(f)
-        dfinlate.append(dft, inplace=True)
+#     # Load late submissions scenarios
+#     for f in glob.glob(f'{late_submissions_path}*late-submission*.xlsx'):
+#         dft = pyam.IamDataFrame(f)
+#         dfinlate.append(dft, inplace=True)
         
     
 #%%=============================================================================

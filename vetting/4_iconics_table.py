@@ -22,20 +22,21 @@ import itertools
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 from vetting_functions import *
 
 
 user = 'byers'
 
 main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
-vetting_output_folder = f'{main_folder}vetting\\'
+output_folder = f'outputs\\'
 
 
-vstr = '20230512'  
-wbstr = f'{vetting_output_folder}vetting_flags_global_regional_combined_{vstr}_v4.xlsx'
+vstr = '20230712'  
 
-data_output_folder = f'{main_folder}iconics\\{vstr}\\'
+wbstr = f'{output_folder}vetting_flags_global_regional_combined_{vstr}_v4.xlsx'
+
+data_output_folder = output_folder #f'{main_folder}iconics\\{vstr}\\'
 
 fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v17.xlsx'
 
@@ -44,6 +45,11 @@ fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{vstr}_v17.xlsx'
 vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
 files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v8_2019_harmo_step5e_EU27.csv')
+
+
+
+
+
 dfin = pd.read_csv(files[0])
 if len(files) == 1:
     dfin = pd.read_csv(files[0])

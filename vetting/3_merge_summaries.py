@@ -9,21 +9,21 @@ Created on Wed Feb 22 09:07:51 2023
 import os
 import pandas as pd
 import pyam
-os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 from vetting_functions import *
 
-datestr = '20230512'
+datestr = '20230712'
 user = 'byers'
 
-main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
-output_folder = f'{main_folder}vetting\\'
+# main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
+output_folder = f'outputs\\'
 
-output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data_{datestr}\\'
-output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data_{datestr}\\'
+# output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data_{datestr}\\'
+# output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data_{datestr}\\'
 
 
-fnr = f'{output_folderr}vetting_flags_all_regional_{datestr}.xlsx'
-fng = f'{output_folderg}vetting_flags_all_global_{datestr}.xlsx'
+fnr = f'{output_folder}vetting_flags_all_regional_{datestr}.xlsx'
+fng = f'{output_folder}vetting_flags_all_global_{datestr}.xlsx'
 wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}_v4.xlsx'
 
 
@@ -162,11 +162,11 @@ dfs = dfs.loc[~(dfs.model=='Reference')]
 c_cols = ['Category', 'Category_name']
 keep_cols = ['model','scenario']+c_cols
 
-cmd1 = pd.read_excel(f'{main_folder}climate_assessment\\EU_CAB_World_Emissions_meta.xlsx')
+cmd1 = pd.read_excel(f'input_data\\EU_CAB_World_Emissions_meta.xlsx')
 cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2C'
 cmd1.loc[cmd1.scenario=='NGFS-Delayed transition', 'scenario'] = 'NGFS-Delayed Transition'
 
-cmd4 = pd.read_excel(f'{main_folder}climate_assessment\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
+cmd4 = pd.read_excel(f'input_data\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
 cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
 cmd.drop_duplicates(subset=['model','scenario'], inplace=True)
 

@@ -3,11 +3,12 @@
 Vetting script for Climate Advisory Borad
 """
 import os
-os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
+# Execute this script from within the "vetting" folder
 
 #%% Import packages and data
 # import itertools as it
-import glob
+# import glob
 import time
 start = time.time()
 print(start)
@@ -15,7 +16,7 @@ import numpy as np
 import pyam
 import pandas as pd
 import yaml
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
 
@@ -35,8 +36,8 @@ from vetting_functions import *
 
 #%% Settings for the specific run
 region_level = 'global'
-user = 'byers'
-datestr = '20230512'
+# user = 'byers'
+datestr = '20230712'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
 year_aggregate = 2020
@@ -46,23 +47,29 @@ flag_pass = 'Pass'
 flag_pass_missing = 'Pass_missing'
 flag_fail_missing = 'Fail_missing'
 
-
+# the configuration file
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-instance = 'eu-climate-advisory-board-internal'
-# instance = 'eu_climate_submission'
+# instance = 'eu-climate-advisory-board-internal'
+instance = 'eu-climate-advisory-board'
 
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 
-output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
+# output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
+output_folder = f'outputs\\'
 
-late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+    print("created folder : ", output_folder)
+    
+# late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
-#%% Load data
+
 if not os.path.exists(f'{output_folder}teams'):
     os.makedirs(f'{output_folder}teams')
+    print("created folder : ", f'{output_folder}teams')
 
-
+#%% Load data
 #%% Settings for the project / dataset
 # Specify what data to read in
 
@@ -105,7 +112,7 @@ dfin = pyam.read_iiasa(instance,
 print('loaded from DB')
 print(time.time()-start)
 
-
+#%%
 # Inteprolate data
 df = dfin.interpolate(range(years[0], years[-1], 1))
 
@@ -667,7 +674,7 @@ fig.update_layout(
 fig.update_layout(width=None).write_html(f'{output_folder}vetting_histograms_{region_level}.html', include_plotlyjs='cdn')
 print(time.time()-start)
 
-df.to_excel(f'{output_folder}df_out.xlsx')
+df.to_excel(f'{output_folder}df_out_{region_level}.xlsx')
 
 #%% Save emissions for climate assessment if infillerdb
 
