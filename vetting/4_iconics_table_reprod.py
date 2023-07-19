@@ -3,8 +3,13 @@
 Created on Tue Mar  7 00:32:48 2023
 
 @author: byers
-"""
+
 # Execute this script from within the "vetting" folder
+
+# The aim of this script is to pull data from the db, and reproduce the 
+calculation of metadata indicators
+
+"""
 
 # Summary table of final scenarios
 
@@ -43,7 +48,7 @@ fn_out = f'{data_output_folder}iconics_NZ_data_and_table_{datestr}_v17.xlsx'
 
 
 #%% Load data
-vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
+    # vetting = pd.read_excel(wbstr, sheet_name='Vetting_flags')
 
 # All commented out (Ed refactor, 15 lines)
     # files = glob.glob(f'{main_folder}from_FabioS\\2023_06_06\\EUab_2023_06_08_v8_2019_harmo_step5e_EU27.csv')
@@ -74,6 +79,10 @@ varlist = ['Diagnostics*',
            'Carbon Capture, Use, and Sequestration', 
            'Carbon Sequestration*',
            'Hydrogen production|Final Energy|Share',
+           'Primary Energy|*Share',
+           'Secondary Energy|Electricity|*Share',
+           'PE Import dependency*',
+           'Primary Energy|Import Dependency*',
            ]
 
 
@@ -87,6 +96,10 @@ dfin = pyam.read_iiasa(instance,
                        region='EU27', meta=True)
 
 
+
+# Keep only the trade data in 'EJ/yr'
+dfin.filter(variable='Trade*', unit='billion US$2010/yr', 
+            keep=False, inplace=True)
 
 
 # All commented out (Ed refactor, 20 lines)
@@ -527,34 +540,34 @@ ynz_variables.append(f'{prefix}Primary Energy|Biomass')
 # =============================================================================
 # Primary energy - Renewables share
     # variable not in Harmonized list
-    # name = 'Primary Energy|Renewables (incl.Biomass)|Share'
+name = 'Primary Energy|Renewables (incl.Biomass)|Share'
     # df.divide(f'{prefix}Primary Energy|Renewables (incl.Biomass)', f'{prefix}Primary Energy',
     #           name, ignore_units='-',
     #           append=True)
-    # ynz_variables.append(name)
+ynz_variables.append(name)
 
 
 # Note biomass and Biomass
 name = 'Primary Energy|Non-Biomass Renewables|Share'
-df.divide(f'{prefix}Primary Energy|Non-Biomass Renewables', f'{prefix}Primary Energy',
-          name, ignore_units='-',
-          append=True)
+    # df.divide(f'{prefix}Primary Energy|Non-Biomass Renewables', f'{prefix}Primary Energy',
+    #           name, ignore_units='-',
+    #           append=True)
 ynz_variables.append(name)
 
 # =============================================================================
 # Primary energy - Fossil share
 
 name = 'Primary Energy|Fossil|Share'
-df.divide(f'{prefix}Primary Energy|Fossil', f'{prefix}Primary Energy',
-          name, ignore_units='-',
-          append=True)
+    # df.divide(f'{prefix}Primary Energy|Fossil', f'{prefix}Primary Energy',
+    #           name, ignore_units='-',
+    #           append=True)
 ynz_variables.append(name)
 
 
 name = 'Primary Energy|Fossil|w/o CCS|Share'
-df.divide(f'{prefix}Primary Energy|Fossil|w/o CCS', f'{prefix}Primary Energy',
-          name, ignore_units='-',
-          append=True)
+    # df.divide(f'{prefix}Primary Energy|Fossil|w/o CCS', f'{prefix}Primary Energy',
+    #           name, ignore_units='-',
+    #           append=True)
 ynz_variables.append(name)
 
 
@@ -586,28 +599,28 @@ df.aggregate(f'{prefix}Secondary Energy|Electricity|Renewables (incl.Biomass)',
 
 # % of renewables in electricity
 nv = f'Secondary Energy|Electricity|Renewables (incl.Biomass)|Share'
-df.divide(f'{prefix}Secondary Energy|Electricity|Renewables (incl.Biomass)', 
-          f'{prefix}Secondary Energy|Electricity', 
-          nv,
-          ignore_units='-',
-          append=True)
+    # df.divide(f'{prefix}Secondary Energy|Electricity|Renewables (incl.Biomass)', 
+    #           f'{prefix}Secondary Energy|Electricity', 
+    #           nv,
+    #           ignore_units='-',
+    #           append=True)
 ynz_variables.append(nv)
 
 # % of non-bio renewables in electricity
 nv = f'Secondary Energy|Electricity|Non-Biomass Renewables|Share'
-df.divide(f'{prefix}Secondary Energy|Electricity|Non-Biomass Renewables', 
-          f'{prefix}Secondary Energy|Electricity',
-          nv,
-          ignore_units='-',
-          append=True)
+    # df.divide(f'{prefix}Secondary Energy|Electricity|Non-Biomass Renewables', 
+    #           f'{prefix}Secondary Energy|Electricity',
+    #           nv,
+    #           ignore_units='-',
+    #           append=True)
 ynz_variables.append(nv)
 
 # =============================================================================
 #Hydrogen production as share of FE *** Need to check
 name = 'Hydrogen production|Final Energy|Share'
-# df.divide(f'{prefix}Secondary Energy|Hydrogen', 'Final Energy',
-#           name, ignore_units='-',
-#           append=True)
+    # df.divide(f'{prefix}Secondary Energy|Hydrogen', 'Final Energy',
+    #           name, ignore_units='-',
+    #           append=True)
 ynz_variables.append(name)
 
 # =============================================================================
@@ -674,35 +687,34 @@ ynz_variables.append(nv)
 # Where derived from Harmonized Primary Energy - probably this should go into diagnostics
 # =============================================================================
 # Fossil fuel import dependency
-    # nv = f'{prefix}Primary Energy|Trade|Share'
+# nv = f'Primary Energy|Trade|Share'
     # df.divide('Trade', f'{prefix}Primary Energy',
     #           nv,
     #           ignore_units='-',
     #           append=True)
     
-    # df.multiply(nv, -100, 'PE Import dependency', ignore_units='%', append=True)
-    # ynz_variables.append('PE Import dependency')
+    # df.multiply(nv, -100, 'Primary Energy|Import Dependency', ignore_units='%', append=True)
+ynz_variables.append('Primary Energy|Import Dependency')
     
     
     
-    # nv = f'{prefix}Primary Energy|Fossil|Trade|Share'
+    # nv = f'Primary Energy|Fossil|Trade|Share'
     # df.divide('Trade|Primary Energy|Fossil', f'{prefix}Primary Energy',
     #           nv,
     #           ignore_units='-',
     #           append=True)
     # df.multiply(nv, -100, 'PE Import dependency|Fossil', ignore_units='%', append=True)
-    # ynz_variables.append('PE Import dependency|Fossil')
+ynz_variables.append('PE Import dependency|Fossil')
     
     
-    # nv = 'Trade|Fossil|Share'  # This variable calculated from variables that aren't harmonized, so not a diagnostic
+nv = 'Trade|Fossil|Share'  # This variable calculated from variables that aren't harmonized, so not a diagnostic
     # df.divide('Trade|Primary Energy|Fossil', 'Trade',
     #           nv,
     #           ignore_units='-',
     #           append=True)
-    # ynz_variables.append(nv)
+ynz_variables.append(nv)
 
 ynz_variables.append('Trade')
-ynz_variables.append('Trade|Fossil|Share')
 ynz_variables.append('Trade|Primary Energy|Fossil')
 
 # dsfdsfs
@@ -1080,10 +1092,23 @@ plot_box_meta(dfb, varis, yticks, xlabel='% share in 2050',
 
 #%% Compare with official
 df_orig = pyam.IamDataFrame('C:/Users/byers/IIASA/ECE.prog - Documents/Projects/EUAB/iconics/20230512/iconics_NZ_data_and_table_20230512_v17.xlsx')
+df_orig = df_orig.filter(variable=varlist, year=years)
+df_new = df.filter(year=years)
 
-df_orig = df_orig.filter(variable=varlist)
-df_new = df.
 
+#%% Compare metas
+dfoc = df_orig.meta.columns
+
+#%% Remove the prefix from the new data
+dfmc = list(df_new.meta.columns)
+nl = []
+for x in dfmc:
+    if x.startswith(prefix):
+        x = x.lstrip(prefix)
+    nl.append(x) 
+
+
+#%%
 dfc = pyam.compare(df_orig, df,
            left_label='orig',
            right_label='reprod')
@@ -1092,12 +1117,7 @@ dfc = dfc.reset_index()
 
 dfc = dfc.loc[dfc.variable!='EU-share of World Emissions|CO2']
 #%%
-dsfsdfsdf
 dfc.to_excel('comparison.xlsx')
 
 
-dfoc = df_orig.meta.columns
-
-
-dfmc = df.meta.columns
 

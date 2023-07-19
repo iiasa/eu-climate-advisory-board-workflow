@@ -4,6 +4,7 @@ Created on Wed Feb 22 09:07:51 2023
 
 @author: byers
 """
+# Execute this script from within the "vetting" folder
 
 # SUMMARY -= MERGE GLOBAL AND REGIONAL
 import os

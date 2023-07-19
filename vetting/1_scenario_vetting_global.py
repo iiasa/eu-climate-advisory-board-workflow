@@ -99,7 +99,6 @@ region = ['World']
 # #%% Restart from here if necessary
 # =============================================================================
 
-
 #% load pyam data
 dfin = pyam.read_iiasa(instance,
                         # model=models,

@@ -1,0 +1,155 @@
+0
+OVERALL_binary
+OVERALL_Assessment
+OVERALL_rank
+OVERALL_code
+Category
+Category_name
+vetting_global
+Key_historical_G
+Key_future_G
+Pass_missing_G
+vetting_regional
+Key_historical_R
+Key_future_R
+Pass_missing_R
+vetted_type
+vetting_global_G
+vetting_regional_R
+exclude
+year of net-zero CO2 emissions (threshold=0 Gt CO2/yr)
+year of net-zero GHGs full emissions (threshold=0 Gt CO2-equiv/yr)
+year of net-zero GHGs* full emissions (threshold=0 Gt CO2-equiv/yr)
+year of net-zero GHGs** full emissions (threshold=0 Gt CO2-equiv/yr)
+"cumulative net CO2 (2020 to year of net zero CO2, Gt CO2)"
+"cumulative net CO2 (2020-2050, Gt CO2)"
+"cumulative net CO2 (2020-2030, Gt CO2)"
+"cumulative net CO2 (2030-2050, Gt CO2)"
+"cumulative Non-CO2 (2020 to year of net zero CO2, Gt CO2-equiv)"
+"cumulative Non-CO2 (2020-2050, Gt CO2-equiv)"
+"cumulative CCS (2020 to year of net zero CO2, Gt CO2)"
+"cumulative CCS (2020-2050, Gt CO2)"
+"cumulative BECCS (2020 to year of net zero CO2, Gt CO2)"
+"cumulative BECCS (2020-2050, Gt CO2)"
+"cumulative GHGs (incl. indirect AFOLU) (2020 to year of net zero CO2, Gt CO2-equiv)"
+"cumulative GHGs (incl. indirect AFOLU) (2020-2050, Gt CO2-equiv)"
+"cumulative GHGs (incl. indirect AFOLU) (2020-2030, Gt CO2-equiv)"
+"cumulative GHGs (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)"
+"cumulative GHGs* (incl. indirect AFOLU) (2020 to year of net zero CO2, Gt CO2-equiv)"
+"cumulative GHGs* (incl. indirect AFOLU) (2020-2050, Gt CO2-equiv)"
+"cumulative GHGs* (incl. indirect AFOLU) (2020-2030, Gt CO2-equiv)"
+"cumulative GHGs* (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)"
+"cumulative GHGs** (incl. indirect AFOLU) (2020 to year of net zero CO2, Gt CO2-equiv)"
+"cumulative GHGs** (incl. indirect AFOLU) (2020-2050, Gt CO2-equiv)"
+"cumulative GHGs** (incl. indirect AFOLU) (2020-2030, Gt CO2-equiv)"
+"cumulative GHGs** (incl. indirect AFOLU) (2030-2050, Gt CO2-equiv)"
+"cumulative CO2 FFI (2020 to year of net zero CO2, Gt CO2-equiv)"
+"cumulative CO2 FFI (2020-2050, Gt CO2-equiv)"
+"cumulative AFOLU (direct+indirect) (2020 to year of net zero CO2, Gt CO2)"
+"cumulative AFOLU (direct+indirect) (2020-2050, Gt CO2)"
+"cumulative AFOLU (direct+indirect) (2020-2030, Gt CO2)"
+"cumulative AFOLU (direct+indirect) (2030-2050, Gt CO2)"
+GHG emissions reductions 1990-2020 %
+GHG emissions reductions 1990-2025 %
+GHG emissions reductions 1990-2030 %
+GHG emissions reductions 1990-2035 %
+GHG emissions reductions 1990-2040 %
+GHG emissions reductions 1990-2050 %
+GHG* emissions reductions 1990-2020 %
+GHG* emissions reductions 1990-2025 %
+GHG* emissions reductions 1990-2030 %
+GHG* emissions reductions 1990-2035 %
+GHG* emissions reductions 1990-2040 %
+GHG* emissions reductions 1990-2050 %
+GHG** emissions reductions 1990-2020 %
+GHG** emissions reductions 1990-2025 %
+GHG** emissions reductions 1990-2030 %
+GHG** emissions reductions 1990-2035 %
+GHG** emissions reductions 1990-2040 %
+GHG** emissions reductions 1990-2050 %
+GHG** emissions reductions 2030-2035 %
+GHG** emissions reductions 2030-2040 %
+GHG** emissions reductions 2030-2045 %
+GHG** emissions reductions 2030-2050 %
+GHG emissions reductions 2019-2030 %
+GHG emissions reductions 2019-2035 %
+GHG emissions reductions 2019-2040 %
+GHG emissions reductions 2019-2050 %
+GHG* emissions reductions 2019-2030 %
+GHG* emissions reductions 2019-2035 %
+GHG* emissions reductions 2019-2040 %
+GHG* emissions reductions 2019-2050 %
+Non-CO2 emissions reductions 2020-2030 %
+Non-CO2 emissions reductions 2020-2050 %
+"Emissions|CO2 in year of net zero, Mt CO2/yr"
+"Emissions|CO2 in 2050, Mt CO2/yr"
+"Emissions|Total Non-CO2 in year of net zero, Mt CO2-equiv/yr"
+"Emissions|Total Non-CO2 in 2050, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (incl. indirect AFOLU) in year of net zero, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (incl. indirect AFOLU) in 2025, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (incl. indirect AFOLU) in 2030, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (incl. indirect AFOLU) in 2050, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA) in year of net zero, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA) in 2025, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA) in 2030, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA) in 2050, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA - intra-EU only) in year of net zero, Mt CO2-equiv/yr"
+"Emissions|Kyoto Gases (AR4) (EEA - intra-EU only) in 2050, Mt CO2-equiv/yr"
+"Carbon Sequestration|CCS in year of net zero, Mt CO2/yr"
+"Carbon Sequestration|CCS in 2050, Mt CO2/yr"
+"Carbon Sequestration|CCS|Biomass in year of net zero, Mt CO2/yr"
+"Carbon Sequestration|CCS|Biomass in 2050, Mt CO2/yr"
+"Carbon Sequestration|CCS|Fossil in year of net zero, Mt CO2/yr"
+"Carbon Sequestration|CCS|Fossil in 2050, Mt CO2/yr"
+"Carbon Sequestration|CCS|Industrial Processes in year of net zero, Mt CO2/yr"
+"Carbon Sequestration|CCS|Industrial Processes in 2050, Mt CO2/yr"
+"Primary Energy|Biomass in year of net zero, EJ/yr"
+"Primary Energy|Biomass in 2050, EJ/yr"
+"Primary Energy|Renewables (incl.Biomass)|Share in year of net zero, %"
+"Primary Energy|Renewables (incl.Biomass)|Share in 2050, %"
+"Primary Energy|Non-biomass renewables|Share in year of net zero, %"
+"Primary Energy|Non-biomass renewables|Share in 2050, %"
+"Primary Energy|Fossil|Share in year of net zero, %"
+"Primary Energy|Fossil|Share in 2050, %"
+"Primary Energy|Fossil|w/o CCS|Share in year of net zero, %"
+"Primary Energy|Fossil|w/o CCS|Share in 2050, %"
+"Secondary Energy|Electricity|Renewables (incl.Biomass)|Share in year of net zero, %"
+"Secondary Energy|Electricity|Renewables (incl.Biomass)|Share in 2050, %"
+"Secondary Energy|Electricity|Non-Biomass Renewables|Share in year of net zero, %"
+"Secondary Energy|Electricity|Non-Biomass Renewables|Share in 2050, %"
+"Hydrogen production|Final Energy|Share in year of net zero, %"
+"Hydrogen production|Final Energy|Share in 2050, %"
+"Final Energy in year of net zero, EJ/yr"
+"Final Energy in 2050, EJ/yr"
+"Final Energy|Electrification|Share in year of net zero, %"
+"Final Energy|Electrification|Share in 2050, %"
+"Final Energy|Industry|Fossil|Share in year of net zero, %"
+"Final Energy|Industry|Fossil|Share in 2050, %"
+"Final Energy|Residential and Commercial|Fossil|Share in year of net zero, %"
+"Final Energy|Residential and Commercial|Fossil|Share in 2050, %"
+"Final Energy|Transportation|Fossil|Share in year of net zero, %"
+"Final Energy|Transportation|Fossil|Share in 2050, %"
+"PE Import dependency in year of net zero, %"
+"PE Import dependency in 2050, %"
+"PE Import dependency|Fossil in year of net zero, %"
+"PE Import dependency|Fossil in 2050, %"
+"Trade|Fossil|Share in year of net zero, %"
+"Trade|Fossil|Share in 2050, %"
+"Trade in year of net zero, EJ/yr"
+"Trade in 2050, EJ/yr"
+"Trade|Primary Energy|Fossil in year of net zero, EJ/yr"
+"Trade|Primary Energy|Fossil in 2050, EJ/yr"
+"CCUS in 2050, Mt CO2/yr"
+"CCUS in 2070, Mt CO2/yr"
+"Emissions|CO2|LULUCF Direct+Indirect in 2050, Mt CO2/yr"
+EU27-share of World Emissions|CO2 in 2030
+EU27-share of World Emissions|CO2 in 2040
+EU27-share of World Emissions|CO2 in 2050
+Pass based on GHG emissions reductions
+Pass based on GHG* emissions reductions
+Pass based on GHG** emissions reductions
+Pass based on positive Non-CO2 emissions
+CCUS < 425 Mt CO2 in 2050
+CCUS < 500 Mt CO2 in 2050
+Primary Energy|Biomass <9 EJ/yr in 2050
+Emissions|CO2|LULUCF Direct+Indirect <400 Mt CO2/yr in 2050
