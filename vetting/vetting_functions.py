@@ -5,11 +5,15 @@ Created on Thu Feb  2 14:01:43 2023
 """
 
 # vetting_functions.py
+import itertools
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 import pandas as pd
 import pyam
 import seaborn as sns
+import string
+
 
 #%% Define functions used to perform checks
 log = True
@@ -391,3 +395,107 @@ def plot_box_meta(dfb, varis, yticks=None, xlabel='', fname=None, palette=None):
     plt.tight_layout()
     if type(fname)==str:
         fig.savefig(fname, dpi=300)#, bbox_inches=True)
+        
+        
+# =============================================================================
+#%% Write and format meta sheet for iconics table
+# =============================================================================
+def write_meta_sheet(df, filename, startfile=False):
+
+    writer = pd.ExcelWriter(filename, engine='xlsxwriter')
+    
+    df.to_excel(writer, sheet_name='data', include_meta=True)
+    
+    
+    # meta page
+    worksheet = writer.sheets['meta']
+    worksheet.set_column(0, 0, 20, None)
+    worksheet.set_column(1, 1, 25, None)
+    worksheet.freeze_panes(1, 2)
+    worksheet.autofilter(0, 0, len(df.meta), len(df.meta.columns)+1)
+    
+    workbook = writer.book
+    header_format_creator = lambda is_bold: workbook.add_format({
+        'bold': is_bold,
+        'text_wrap': True,
+        'align': 'center',
+        'valign': 'top',
+        'border': 1
+    })
+    header_format = header_format_creator(True)
+    # subheader_format = header_format_creator(False)
+    
+    for col_num, value in enumerate(df.meta.columns):
+        # curr_format = subheader_format if value[0] == '(' or value[-1] == ']' else header_format
+        worksheet.write(0, col_num+2, value, header_format) 
+    worksheet.set_column(2, len(df.meta.columns)+1, 15, None)
+    
+    
+    
+    letters = pd.Series(list(
+        itertools.chain(
+            string.ascii_uppercase, 
+            (''.join(pair) for pair in itertools.product(string.ascii_uppercase, repeat=2))
+    )))
+    
+    
+    end = len(df.meta)+1
+    
+    # Cumulative columns
+    end_col = len(df.meta.columns)+2
+    letters_cum = letters[18:54]
+    
+    refs = [f'{c}2:{c}{end}' for c in letters_cum]
+    for ref in refs:
+        worksheet.conditional_format(ref, {'type': '3_color_scale',
+                                           'min_color':'#6292bf',
+                                               'mid_color':'#FFFFFF',
+                                               'max_color':'#fc6060'})
+        
+    letters_indis = letters[54:end_col]
+    refs = [f'{c}2:{c}{end}' for c in letters_indis]
+    for ref in refs:
+        worksheet.conditional_format(ref, {'type': '3_color_scale',
+                                           'min_color':'#6292bf',
+                                               'mid_color':'#FFFFFF',
+                                               'max_color':'#56ba49'})
+    
+    # Change format of value columns
+    integer_format = workbook.add_format({'num_format': '0'})
+    largenum_format = workbook.add_format({'num_format': '0'})
+    smallnum_format = workbook.add_format({'num_format': '0.0'})
+    percentage_format = workbook.add_format({'num_format': '0'})
+    # percentage_change_format = workbook.add_format({'num_format': '+0%;-0%;0%'})
+    
+    start = 18
+    endcol = len(df.meta.columns)+1
+    value_columns = list(enumerate(df.meta.columns))[start:]
+    for i, column in value_columns:#enumerate(value_columns):
+        # col = i+start
+        i=i+2
+        if '%' in column:
+            worksheet.set_column(i, i, None, percentage_format)
+        elif 'threshold' in column:
+            worksheet.set_column(i, i, None, integer_format)
+        elif df.meta[column].dtype == float and abs(df.meta[column].median()) > 10:
+            worksheet.set_column(i, i, None, largenum_format)
+        elif df.meta[column].dtype == float and abs(df.meta[column].median()) <= 10:
+            worksheet.set_column(i, i, None, smallnum_format)
+    
+    
+    
+    # data page
+    # if model!= 'all':
+    worksheet = writer.sheets['data']
+    worksheet.set_column(0, 1, 25, None)
+    # worksheet.set_column(1, 1, 20, None)
+    worksheet.set_column(2, 2, 8, None)
+    worksheet.set_column(3, 3, 30, None)
+    worksheet.set_column(4, 4, 12, None)
+    worksheet.set_column(5, -1, 8, None)
+    worksheet.freeze_panes(1, 2)
+    worksheet.autofilter(0, 0, len(df.meta), len(df.year))
+    
+    writer.close()
+    if startfile:
+        os.startfile(filename)
