@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Vetting script for Climate Advisory Borad - regional version
+Regional Vetting script for Climate Advisory Board
+
+Execute this script from within the "vetting" folder
 """
 import os
 # os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
-# Execute this script from within the "vetting" folder
+
 
 #%% Import packages and data
-# import itertools as it
 import time
 start = time.time()
 print(start)
@@ -38,7 +39,6 @@ from vetting_functions import *
 
 #%% Settings for the specific run
 region_level = 'regional'
-user = 'byers'
 datestr = '20230712'
 
 
@@ -52,7 +52,7 @@ flag_fail_missing = 'Fail_missing'
 
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
 instance = 'eu-climate-advisory-board'
-# instance = 'eu_climate_submission'
+
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 input_yaml_dir = f'..\\definitions\\region\\model_native_regions\\'
@@ -61,14 +61,11 @@ fn_yaml_region_map = f'regional\\input_data\\model_yaml_region_map_{datstr}.yaml
 
 input_data_mapping = f'{region_level}\\input_data\\model_region_mapping.csv'
 
-# output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 output_folder = f'outputs\\'
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
     print("created folder : ", output_folder)
     
-# late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
-
 #%% Load data
 if not os.path.exists(f'{output_folder}teams'):
     os.makedirs(f'{output_folder}teams')
@@ -120,7 +117,6 @@ def func_model_iso_reg_dict(yaml_nm='native_iso_EU27'):
         yaml_model = list(reg_mapping.keys())[0]
         reg_mapping = reg_mapping[yaml_model]
         reg_mapping_eu = reg_mapping #[x for x in reg_mapping if ('Eu' in list(x.keys())[0]) or ('EU' in list(x.keys())[0])]
-        
         
         reg_mapping_eu = {list(k.keys())[0]:list(list(k.values())[0].values()) for k in reg_mapping_eu }
         iso_reg_dict = {k.split('|')[1]:v for k,v in reg_mapping_eu.items()}
@@ -834,8 +830,6 @@ if write_out_all:
     fn = write_out(dfall, iso_reg_dict_all, model='all', include_data=True, include_meta=False)
     os.startfile(fn)
     
-
-
     
 #%% Write out full dictionary of regions used
 for mk, mv in iso_reg_dict_all.items():
@@ -846,6 +840,3 @@ for mk, mv in iso_reg_dict_all.items():
 with open(f'{output_folder}\\model_reg_iso_output.yaml', 'w') as file:
      documents = yaml.dump(iso_reg_dict_all , file)
      
-
-
-

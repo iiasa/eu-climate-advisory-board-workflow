@@ -16,23 +16,15 @@ from vetting_functions import *
 datestr = '20230712'
 user = 'byers'
 
-# main_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\'
 output_folder = f'outputs\\'
-
-# output_folderr = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\regional\\output_data_{datestr}\\'
-# output_folderg = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\global\\output_data_{datestr}\\'
-
 
 fnr = f'{output_folder}vetting_flags_all_regional_{datestr}.xlsx'
 fng = f'{output_folder}vetting_flags_all_global_{datestr}.xlsx'
 wbstr = f'{output_folder}vetting_flags_global_regional_combined_{datestr}_v4.xlsx'
 
-
-
 dfr = pd.read_excel(fnr, sheet_name='vetting_flags')
 dfg = pd.read_excel(fng, sheet_name='vetting_flags')
 
-#%%
 ms = ['model','scenario',]
 
 colg = 'vetting_global'
@@ -53,9 +45,6 @@ dfs = pd.merge(dfg[colsg], dfr[colsr+['vetted_type',]],
                on=ms, 
                how='outer',
                suffixes=('_G','_R'))
-
-
-
 
 
 #%% Recode the values with Identifiers
@@ -125,7 +114,6 @@ dfs.loc[dfs[colr].isna(), col2] = 0
 # dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass), col] = 'FailG - PassR'
 # dfs.loc[(dfs[colg]==flag_fail) & (dfs[colr]==flag_pass_missing), col] = 'FailG - MissingR'
 
-
 # dfs.loc[(dfs[colg]==flag_pass_missing) & (dfs[colr]==flag_pass_missing), col] = flag_missing
 # dfs.loc[(dfs[colg]=='PASS') & (dfs[colr]=='PASS'), col] = flag_
 
@@ -139,7 +127,6 @@ dfs[colr+'_R'] = dfs[colr]+'_R'
 col = 'OVERALL_code'
 
 dfs[col] = dfs[colg+'_G']+'+'+dfs[colr+'_R']
-
 
 
 #%% Check for unclassified rows
@@ -167,8 +154,8 @@ cmd1 = pd.read_excel(f'input_data\\EU_CAB_World_Emissions_meta.xlsx')
 cmd1.loc[cmd1.scenario=='NGFS-Below 2°C', 'scenario'] = 'NGFS-Below 2C'
 cmd1.loc[cmd1.scenario=='NGFS-Delayed transition', 'scenario'] = 'NGFS-Delayed Transition'
 
-cmd4 = pd.read_excel(f'input_data\\remind_late_and_ecmf_emissions_meta.xlsx') # Contains the two above.
-cmd = pd.concat([cmd1,  cmd4]) #cmd2, cmd3,
+cmd4 = pd.read_excel(f'input_data\\EU_CAB_World_Emissions_meta_extra.xlsx') # Contains the two above.
+cmd = pd.concat([cmd1,  cmd4])
 cmd.drop_duplicates(subset=['model','scenario'], inplace=True)
 
 cmd = cmd.loc[~((cmd.model=='REMIND 3.2') & (cmd.scenario.str.contains('withICEPhOP')==False))]
@@ -188,7 +175,6 @@ dfs = dfs.loc[~(dfs.scenario=='DIAG-NZero')]
 # =============================================================================
 
 writer = pd.ExcelWriter(wbstr, engine='xlsxwriter')
-
 
 # Main summary sheet
 cols = [x for x in dfs.columns if x not in ocols]

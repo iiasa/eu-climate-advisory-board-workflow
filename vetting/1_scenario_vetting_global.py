@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Vetting script for Climate Advisory Borad
+Global Vetting script for Climate Advisory Board
+
+Execute this script from within the "vetting" folder
+
 """
 import os
 # os.chdir('C:\\Github\\eu-climate-advisory-board-workflow\\vetting')
 # Execute this script from within the "vetting" folder
 
 #%% Import packages and data
-# import itertools as it
-# import glob
+
 import time
 start = time.time()
 print(start)
@@ -36,7 +38,6 @@ from vetting_functions import *
 
 #%% Settings for the specific run
 region_level = 'global'
-# user = 'byers'
 datestr = '20230712'
 
 years = np.arange(2000, 2041, dtype=int).tolist()
@@ -49,20 +50,16 @@ flag_fail_missing = 'Fail_missing'
 
 # the configuration file
 config_vetting = f'{region_level}\\config_vetting_{region_level}.yaml'
-# instance = 'eu-climate-advisory-board-internal'
 instance = 'eu-climate-advisory-board'
 
 
 input_data_ref = f'input_data\\input_reference_all.csv'
 
-# output_folder = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\{region_level}\\output_data_{datestr}\\'
 output_folder = f'outputs\\'
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
     print("created folder : ", output_folder)
-    
-# late_submissions_path = f'C:\\Users\\{user}\\IIASA\\ECE.prog - Documents\\Projects\\EUAB\\vetting\\late-submissions\\'
 
 
 if not os.path.exists(f'{output_folder}teams'):

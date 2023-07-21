@@ -33,9 +33,6 @@ dfco2all.rename(columns={'ISO':'region'}, inplace=True)
 # dfco2['value'] = dfco2['value']/1e6 # convert from t to Mt
 
 
-# Location of LULCF CO2 data
-# P:/ene.general/ar6snap/edgar/EDGAR_FGD_FINAL/ipcc_ar6_data_edgar6_LULUCF.xlsx
-
 
 # dfedgarCO2 = pyam.IamDataFrame(dfco2)
 
@@ -52,7 +49,6 @@ dfe = dfco2all.loc[dfco2all.chapter_title.isin(['AFOLU'])==False]
 # Include ONLY relevant IPCC codes for Energy
 ipcc_keep_codes = ('1A','1B')
 dfe = dfe.loc[dfe.sector_code.str.startswith(ipcc_keep_codes)]
-
 
 
 dfe = dfe[['region','year','value']].groupby(['region','year']).sum()
@@ -232,8 +228,6 @@ for agg in ['EEA','EU NDC','UNFCCC']:
 dfeeap.to_csv(f'{wd}input_reference_EEA.csv')
 
 
-
-
 #%% =============================================================================
 # IRENA
 # =============================================================================
@@ -390,5 +384,3 @@ dfall.append(dfswcp, inplace=True)
 # Save out
 
 dfall.to_csv((f'{wd}input_reference_all.csv'))
-
-
