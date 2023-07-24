@@ -1,37 +1,84 @@
 - TIAM-ECN 1.1:
-  - TIAM-ECN 1.1|Algeria
-  - TIAM-ECN 1.1|Angola
-  - TIAM-ECN 1.1|Argentina
-  - TIAM-ECN 1.1|Australia & New Zealand
-  - TIAM-ECN 1.1|Brazil
-  - TIAM-ECN 1.1|Canada
-  - TIAM-ECN 1.1|Central Africa
-  - TIAM-ECN 1.1|Chile
-  - TIAM-ECN 1.1|China
-  - TIAM-ECN 1.1|Colombia
-  - TIAM-ECN 1.1|Congo DR
-  - TIAM-ECN 1.1|Eastern Africa
-  - TIAM-ECN 1.1|Eastern Europe
-  - TIAM-ECN 1.1|Egypt
-  - TIAM-ECN 1.1|Ethiopia
-  - TIAM-ECN 1.1|Former Soviet Union
-  - TIAM-ECN 1.1|India
-  - TIAM-ECN 1.1|Japan
-  - TIAM-ECN 1.1|Kenya
-  - TIAM-ECN 1.1|Libya
-  - TIAM-ECN 1.1|Madagascar
-  - TIAM-ECN 1.1|Mexico
-  - TIAM-ECN 1.1|Middle East
-  - TIAM-ECN 1.1|Morocco
-  - TIAM-ECN 1.1|Nigeria
-  - TIAM-ECN 1.1|Other Developing Asia
-  - TIAM-ECN 1.1|Other Latin America
-  - TIAM-ECN 1.1|South Africa
-  - TIAM-ECN 1.1|South Korea
-  - TIAM-ECN 1.1|Southeast Africa
-  - TIAM-ECN 1.1|Southern Africa
-  - TIAM-ECN 1.1|Tunisia
-  - TIAM-ECN 1.1|United States of America
-  - TIAM-ECN 1.1|Venezuela
-  - TIAM-ECN 1.1|Western Africa
-  - TIAM-ECN 1.1|Western Europe
+  - TIAM-ECN 1.1|Algeria:
+      countries: DZA
+  - TIAM-ECN 1.1|Angola:
+      countries: AGO
+  - TIAM-ECN 1.1|Argentina:
+      countries: ARG, FLK
+  - TIAM-ECN 1.1|Australia & New Zealand:
+      countries: AUS, NZL
+  - TIAM-ECN 1.1|Brazil:
+      countries: BRA
+  - TIAM-ECN 1.1|Canada:
+      countries: CAN
+  - TIAM-ECN 1.1|Central Africa:
+      countries: CAF, CMR, COG, GAB, GNQ, TCD
+  - TIAM-ECN 1.1|Chile:
+      countries: CHL
+  - TIAM-ECN 1.1|China:
+      countries: CHN, HKG
+  - TIAM-ECN 1.1|Colombia:
+      countries: COL
+  - TIAM-ECN 1.1|Congo DR:
+      countries: COD
+  - TIAM-ECN 1.1|Eastern Africa:
+      countries: BDI, DJI, ERI, RWA, SDN, SOM, SSD, SYC, UGA
+  - TIAM-ECN 1.1|Eastern Europe:
+      countries: ALB, BGR, BIH, CYP, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK,
+        SVN
+  - TIAM-ECN 1.1|Egypt:
+      countries: EGY
+  - TIAM-ECN 1.1|Ethiopia:
+      countries: ETH
+  - TIAM-ECN 1.1|Former Soviet Union:
+      countries: ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
+        UKR, UZB
+  - TIAM-ECN 1.1|India:
+      countries: IND
+  - TIAM-ECN 1.1|Japan:
+      countries: JPN
+  - TIAM-ECN 1.1|Kenya:
+      countries: KEN
+  - TIAM-ECN 1.1|Libya:
+      countries: LBY
+  - TIAM-ECN 1.1|Madagascar:
+      countries: MDG
+  - TIAM-ECN 1.1|Mexico:
+      countries: MEX
+  - TIAM-ECN 1.1|Middle East:
+      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        TUR, YEM
+  - TIAM-ECN 1.1|Morocco:
+      countries: MAR
+  - TIAM-ECN 1.1|Nigeria:
+      countries: NGA
+  - TIAM-ECN 1.1|Other Developing Asia:
+      countries: AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
+        IDN, IOT, KHM, KIR, LAO, LKA, MAC, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK,
+        NIU, NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS,
+        TON, TUV, TWN, VNM, VUT, WLF, WSM
+  - TIAM-ECN 1.1|Other Latin America:
+      countries: ABW, AIA, ANT, ATA, ATG, BHS, BLZ, BMU, BOL, BRB, BVT, CRI, CUB,
+        CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF,
+        MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, TCA, TTO, URY, VCT, VGB,
+        VIR
+  - TIAM-ECN 1.1|South Africa:
+      countries: ZAF
+  - TIAM-ECN 1.1|South Korea:
+      countries: KOR
+  - TIAM-ECN 1.1|Southeast Africa:
+      countries: MOZ, TZA
+  - TIAM-ECN 1.1|Southern Africa:
+      countries: BWA, COM, LSO, MUS, MWI, MYT, NAM, REU, SWZ, ZMB, ZWE
+  - TIAM-ECN 1.1|Tunisia:
+      countries: TUN
+  - TIAM-ECN 1.1|United States of America:
+      countries: SPM, UMI, USA
+  - TIAM-ECN 1.1|Venezuela:
+      countries: VEN
+  - TIAM-ECN 1.1|Western Africa:
+      countries: BEN, BFA, CIV, CPV, ESH, GHA, GIN, GMB, GNB, LBR, MLI, MRT, NER,
+        SEN, SHN, SLE, STP, TGO
+  - TIAM-ECN 1.1|Western Europe:
+      countries: AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB, GRC,
+        GRL, IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, VAT

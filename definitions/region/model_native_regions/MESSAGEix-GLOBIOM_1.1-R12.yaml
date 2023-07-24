@@ -1,13 +1,35 @@
 - MESSAGEix-GLOBIOM 1.1-R12:
-  - MESSAGEix-GLOBIOM 1.1-R12|China
-  - MESSAGEix-GLOBIOM 1.1-R12|Eastern Europe
-  - MESSAGEix-GLOBIOM 1.1-R12|Former Soviet Union
-  - MESSAGEix-GLOBIOM 1.1-R12|Latin America and the Caribbean
-  - MESSAGEix-GLOBIOM 1.1-R12|Middle East and North Africa
-  - MESSAGEix-GLOBIOM 1.1-R12|North America
-  - MESSAGEix-GLOBIOM 1.1-R12|Other Pacific Asia
-  - MESSAGEix-GLOBIOM 1.1-R12|Pacific OECD
-  - MESSAGEix-GLOBIOM 1.1-R12|Rest Centrally Planned Asia
-  - MESSAGEix-GLOBIOM 1.1-R12|South Asia
-  - MESSAGEix-GLOBIOM 1.1-R12|Sub-Saharan Africa
-  - MESSAGEix-GLOBIOM 1.1-R12|Western Europe
+  - MESSAGEix-GLOBIOM 1.1-R12|China:
+      countries: CHN
+  - MESSAGEix-GLOBIOM 1.1-R12|Eastern Europe:
+      countries: ALB, BIH, BGR, HRV, CZE, EST, HUN, LVA, LTU, MKD, MNE, POL, ROU,
+        SRB, SVK, SVN
+  - MESSAGEix-GLOBIOM 1.1-R12|Former Soviet Union:
+      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB
+  - MESSAGEix-GLOBIOM 1.1-R12|Latin America and the Caribbean:
+      countries: ATG, ARG, BHS, BRB, BLZ, BMU, BOL, BRA, CHL, COL, CRI, CUB, DOM,
+        ECU, SLV, GNQ, FLK, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, ANT, NIC, PAN,
+        PRY, PER, SUR, TTO, URY, VEN
+  - MESSAGEix-GLOBIOM 1.1-R12|Middle East and North Africa:
+      countries: DZA, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR, OMN, QAT,
+        SAU, SYR, TUN, ARE, ESH, YEM
+  - MESSAGEix-GLOBIOM 1.1-R12|North America:
+      countries: CAN, GUM, PRI, USA
+  - MESSAGEix-GLOBIOM 1.1-R12|Other Pacific Asia:
+      countries: BRN, TLS, FJI, PYF, IDN, KOR, MYS, MMR, NCL, PNG, PHL, WSM, SGP,
+        SLB, THA, VUT
+  - MESSAGEix-GLOBIOM 1.1-R12|Pacific OECD:
+      countries: AUS, JPN, NZL
+  - MESSAGEix-GLOBIOM 1.1-R12|Rest Centrally Planned Asia:
+      countries: KHM, HKG, PRK, LAO, MAC, MNG, TWN, VNM
+  - MESSAGEix-GLOBIOM 1.1-R12|South Asia:
+      countries: AFG, BGD, BTN, IND, MDV, NPL, PAK, LKA
+  - MESSAGEix-GLOBIOM 1.1-R12|Sub-Saharan Africa:
+      countries: AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, COD, CIV,
+        DJI, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MRT,
+        MUS, MOZ, NAM, NER, NGA, REU, RWA, SEN, SLE, SOM, ZAF, SDN, SWZ, TZA, TGO,
+        UGA, ZMB, ZWE
+  - MESSAGEix-GLOBIOM 1.1-R12|Western Europe:
+      countries: AND, AUT, BEL, CYP, DNK, FRO, FIN, FRA, ATF, DEU, GIB, GRC, GRL,
+        ISL, IRL, ITA, LIE, LUX, MLT, MCO, NLD, NOR, PRT, SMR, ESP, SWE, CHE, TUR,
+        GBR

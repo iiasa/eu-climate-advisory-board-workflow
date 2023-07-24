@@ -1,18 +1,48 @@
 - WITCH 5.0:
-  - WITCH 5.0|Brazil
-  - WITCH 5.0|Canada
-  - WITCH 5.0|China
-  - WITCH 5.0|Europe
-  - WITCH 5.0|India
-  - WITCH 5.0|Indonesia
-  - WITCH 5.0|Japan and South Korea
-  - WITCH 5.0|Latin america and Caraibes (except Brasil and Mexico)
-  - WITCH 5.0|Mexico
-  - WITCH 5.0|Moyen-Orient and North Africa
-  - WITCH 5.0|Oceania
-  - WITCH 5.0|South Africa
-  - WITCH 5.0|South Asia
-  - WITCH 5.0|South-East Asia
-  - WITCH 5.0|Sub-Saharian African (except South Africa)
-  - WITCH 5.0|Transition Economies (including Russia)
-  - WITCH 5.0|United States of America
+  - WITCH 5.0|Brazil:
+      countries: BRA
+  - WITCH 5.0|Canada:
+      countries: CAN, SPM
+  - WITCH 5.0|China:
+      countries: CHN, HKG, MAC, TWN
+  - WITCH 5.0|Europe:
+      countries: ALA, ALB, AND, AUT, BEL, BGR, BIH, CHE, CYP, CZE, DEU, DNK, ESP,
+        EST, FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, HRV, HUN, IMN, IRL, ISL, ITA,
+        JEY, LIE, LTU, LUX, LVA, MCO, MKD, MLT, MNE, NLD, NOR, POL, PRT, ROU, SJM,
+        SMR, SRB, SVK, SVN, SWE, VAT
+  - WITCH 5.0|India:
+      countries: IND
+  - WITCH 5.0|Indonesia:
+      countries: IDN
+  - WITCH 5.0|Japan and South Korea:
+      countries: JPN, KOR, PRK
+  - WITCH 5.0|Latin america and Caraibes (except Brasil and Mexico):
+      countries: ABW, AIA, ANT, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL,
+        COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY, HND, HTI,
+        JAM, KNA, LCA, MAF, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, TCA,
+        TTO, URY, VCT, VEN, VGB, VIR
+  - WITCH 5.0|Mexico:
+      countries: MEX
+  - WITCH 5.0|Moyen-Orient and North Africa:
+      countries: ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
+        OMN, PSE, QAT, SAU, SYR, TUN, YEM
+  - WITCH 5.0|Oceania:
+      countries: ASM, AUS, COK, CXR, FJI, FSM, GUM, HMD, KIR, MHL, MNP, NCL, NFK,
+        NIU, NRU, NZL, PCN, PLW, PNG, PYF, SLB, TKL, TLS, TON, TUV, UMI, VUT, WLF,
+        WSM
+  - WITCH 5.0|South Africa:
+      countries: ZAF
+  - WITCH 5.0|South Asia:
+      countries: AFG, BGD, BTN, LKA, MDV, NPL, PAK
+  - WITCH 5.0|South-East Asia:
+      countries: BRN, CCK, KHM, LAO, MMR, MYS, PHL, SGP, THA, VNM
+  - WITCH 5.0|Sub-Saharian African (except South Africa):
+      countries: AGO, ATF, BDI, BEN, BFA, BVT, BWA, CAF, CIV, CMR, COD, COG, COM,
+        CPV, DJI, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, IOT, KEN, LBR, LSO, MDG,
+        MLI, MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN, SHN, SLE,
+        SOM, SSD, STP, SWZ, SYC, TCD, TGO, TZA, UGA, ZMB, ZWE
+  - WITCH 5.0|Transition Economies (including Russia):
+      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, MNG, RUS, TJK, TKM, TUR, UKR,
+        UZB
+  - WITCH 5.0|United States of America:
+      countries: USA

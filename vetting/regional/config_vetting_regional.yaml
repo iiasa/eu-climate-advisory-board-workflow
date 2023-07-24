@@ -1,0 +1,193 @@
+# From IEA dataset
+reference_variables:
+
+  # EDGAR AR6:
+    # ref_year: 2019
+    # compare_year: 2019
+    # model: Reference
+    # scenario: EDGAR AR6
+    # key_historical: True
+    # key_future: False
+    # missing: Fail_missing
+    # variables_threshold:
+      # Emissions|CO2|Energy and Industrial Processes: 0.2
+      # Emissions|CO2|Energy: 0.2
+      # Emissions|CH4: 0.4
+      # Emissions|N2O: 0.4
+    # missing_flags:
+      # Emissions|CO2|Energy and Industrial Processes: Fail_missing
+      # Emissions|CO2|Energy: Fail_missing
+      # Emissions|CH4: Pass_missing
+      # Emissions|N2O: Pass   
+      
+  EEA GHG 2021:
+    ref_year: 2019
+    compare_year: 2019
+    model: Reference
+    scenario: EEA GHG 2021
+    key_historical: True
+    key_future: False
+    missing: Fail_missing
+    variables_threshold:
+      Emissions|CO2|Energy and Industrial Processes: 0.2
+      Emissions|CO2|Energy: 0.2
+      Emissions|CH4: 0.5
+      # Emissions|N2O: 0.4
+    missing_flags:
+      Emissions|CO2|Energy and Industrial Processes: Fail_missing
+      Emissions|CO2|Energy: Fail_missing
+      Emissions|CH4: Pass_missing
+      # Emissions|N2O: Pass   
+
+  IEA Primary Energy:
+    ref_year: 2019
+    compare_year: 2019
+    model: Reference
+    scenario: IEA Energy Statistics (r2022)
+    key_historical: True
+    key_future: False
+    variables_threshold:
+      Primary Energy: 0.2
+      Primary Energy|Nuclear: 0.3
+    missing_flags:
+      Primary Energy: Fail_missing
+      Primary Energy|Nuclear: Pass_missing
+
+  IEA Electricity:
+    ref_year: 2019
+    compare_year: 2019
+    model: Reference
+    scenario: IEA Energy Statistics (r2022)
+    key_historical: True
+    key_future: False
+    variables_threshold:
+      Secondary Energy|Electricity: 0.3
+      Secondary Energy|Electricity|Nuclear: 0.3
+      # Secondary Energy|Electricity|Solar-Wind: 0.5
+    missing_flags:
+      Secondary Energy|Electricity: Fail_missing
+      Secondary Energy|Electricity|Nuclear: Pass_missing
+      # Secondary Energy|Electricity|Solar-Wind: Pass_missing 
+      
+  Solar-Wind2020:
+    ref_year: 2020
+    compare_year: 2020
+    model: Reference
+    scenario: Solar-Wind-composite
+    key_historical: True
+    key_future: False
+    variables_threshold:
+      Secondary Energy|Electricity|Solar-Wind: 0.5
+    missing_flags:
+        Secondary Energy|Electricity|Solar-Wind: Pass_missing
+
+
+
+aggregation_variables:
+  # CO2:
+    # variable: Emissions|CO2
+    # threshold: 0.2
+    # key_historical: False
+    # key_future: False
+  CCS:
+    variable: Carbon Sequestration|CCS
+    threshold: 0.2
+    key_historical: False
+    key_future: False
+  Primary Energy:
+    variable: Primary Energy
+    threshold: 0.2
+    key_historical: False
+    key_future: False    
+
+
+bounds_variables:
+
+# Key recent emissions
+  Emissions|CO2|Energy and Industrial Processes % change '15-'20:
+    variable: Emissions|CO2|Energy and Industrial Processes|2015-2020 change
+    lo: -30
+    up: 10
+    year: 2015
+    key_historical: False # Because energy used below
+    key_future: False
+    missing_flag: Fail_missing
+    bound_threshold: 1
+    description:  Permitted range of % change in Emissions CO2 EIP
+    
+  Emissions|CO2|Energy factor % change '15-'20:
+    variable: Emissions|CO2|Energy|2015-2020 change
+    lo: -30
+    up: 5
+    year: 2015
+    key_historical: True
+    key_future: False
+    missing_flag: Fail_missing    
+    bound_threshold: 1
+    description:  Permitted range of % change in Emissions CO2 Energy
+
+
+
+# Key near-term feasibility checks
+   
+  No net negative EIP before 2030:
+    variable: Emissions|CO2|Energy and Industrial Processes
+    lo: 0
+    up: 10000
+    year: 2010-2030
+    key_historical: False
+    key_future: True
+    missing_flag: Pass_missing    
+    bound_threshold: 1
+    
+  No net negative Energy before 2030:
+    variable: Emissions|CO2|Energy
+    lo: 0
+    up: 10000
+    year: 2010-2030
+    key_historical: False
+    key_future: True
+    missing_flag: Pass_missing    
+    bound_threshold: 1
+    
+  CCS from Energy 2020:
+    variable: Carbon Sequestration|CCS|Biomass and Fossil
+    lo: 0
+    up: 20
+    year: 2020
+    key_historical: True
+    key_future: False
+    missing_flag: Pass_missing    
+    bound_threshold: 1 
+    description:  Permitted range of CO2 capture from Energy sector
+
+
+  CCS from Energy 2030:
+    variable: Carbon Sequestration|CCS|Biomass and Fossil
+    lo: 0
+    up: 100
+    year: 2030
+    key_historical: False
+    key_future: True
+    missing_flag: Pass_missing    
+    bound_threshold: 1
+    
+  Electricity from Nuclear in 2030:
+    variable: Secondary Energy|Electricity|Nuclear
+    lo: 0
+    up: 5
+    year: 2030
+    key_historical: False
+    key_future: True
+    missing_flag: Pass_missing    
+    bound_threshold: 1
+  
+  # Secondary Energy Solar-Wind factor x change '20-'30:
+    # variable: Secondary Energy|Electricity|Solar-Wind|2020-2030 change
+    # lo: 0
+    # up: 20
+    # year: 2020
+    # key_historical: False
+    # key_future: True
+    # bound_threshold: 1
+    # description:  Permitted range of  factor x change in Wind+Solar electricity
