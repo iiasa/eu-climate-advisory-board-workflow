@@ -1,27 +1,24 @@
 # EU Climate Advisory Board Scenario Explorer Workflow
 
-Copyright 2022 IIASA
+Copyright 2022-2023 IIASA
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## Overview
 
 This repository has the definitions for the **EU Climate Advisory Board Scenario Explorer**
-used for submission of emissions scenarios to support the European Scientific Advisory Board on Climate Change
+hosting emissions scenarios to support the **European Scientific Advisory Board on Climate Change**
 in its advice relating to the EU Climate Law.
 
-Visit https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission for more information.
+Visit https://data.ece.iiasa.ac.at/eu-climate-advisory-board for more information.
 
 ## Data submission
 
-The scenario data has to be submitted as an xlsx file following the **IAMC data format**
-via the **EU Climate Advisory Board Scenario Explorer** hosted by IIASA at
-https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission.
+The **European Scientific Advisory Board on Climate Change** issued a call for submission
+of scenario data relevant to the assessment of the remaining European greenhouse gas budget. 
 
-### Model registration
-
-Please read the instructions on model registration at the Scenario Explorer About-page
-([link](https://data.ece.iiasa.ac.at/eu-climate-advisory-board-submission/#/about)).
+See https://climate-advisory-board.europa.eu/news/call-for-scenario-data-contributions-closed
+for more information.
 
 ### Variable and region definitions
 
@@ -41,7 +38,7 @@ The nomenclature package provides a structured way to define code-lists for vali
 for automated region-processing to support model comparison projects.
 [Read the nomenclature docs](https://nomenclature-iamc.readthedocs.io) for more information...
 
-<img src="https://github.com/IAMconsortium/pyam/raw/main/doc/logos/pyam-logo.png" width="133" height="100" align="right" alt="pyam logo" />
+<img src="https://github.com/IAMconsortium/pyam/raw/main/docs/logos/pyam-logo.png" width="133" height="100" align="right" alt="pyam logo" />
 
 The nomenclature package depends on the Python package **pyam**.
 The pyam package was developed to facilitate working with timeseries
