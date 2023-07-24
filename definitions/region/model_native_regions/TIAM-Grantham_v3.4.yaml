@@ -11,9 +11,9 @@
   - TIAM-Grantham v3.4|China:
       iso3_codes: [CHN, HKG, TWN]
   - TIAM-Grantham v3.4|Central and South America:
-      iso3_codes: [ANT, ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
-        CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MTQ,
-        NIC, PAN, PER, PRI, PRY, SLV, SUR, TTO, URY, VCT, VEN]
+      iso3_codes: [ARG, ATG, BES, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
+        CUW, CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MTQ,
+        NIC, PAN, PER, PRI, PRY, SLV, SUR, SXM, TTO, URY, VCT, VEN]
   - TIAM-Grantham v3.4|Eastern Europe:
       iso3_codes: [ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN]
   - TIAM-Grantham v3.4|Former Soviet Union:
