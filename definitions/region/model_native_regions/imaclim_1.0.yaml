@@ -3,8 +3,8 @@
       iso3_codes: [DZA, AGO, BEN, BWA, BVT, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG,
         COD, CIV, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR,
         LBY, MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, REU, RWA, SHN,
-        STP, SEN, SYC, SLE, SOM, ZAF]=, SSD, SDN, SWZ, SYR, TZA, TGO, TUN, UGA, ESH,
-        ZMB, ZWE]
+        STP, SEN, SYC, SLE, SOM, SSD, SDN, SWZ, SYR, TZA, TGO, TUN, UGA, ESH,
+        ZAF, ZMB, ZWE]
   - IMACLIM 1.0|Brazil:
       iso3_codes: BRA
   - IMACLIM 1.0|Canada:

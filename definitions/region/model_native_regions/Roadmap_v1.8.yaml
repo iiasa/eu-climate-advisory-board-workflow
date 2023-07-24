@@ -11,7 +11,7 @@
   - Roadmap v1.8|Canada:
       iso3_codes: CAN
   - Roadmap v1.8|China:
-      iso3_codes: [CHN, HKG, MAC
+      iso3_codes: [CHN, HKG, MAC]
   - Roadmap v1.8|European Union:
       iso3_codes: [AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV,
         HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE]
