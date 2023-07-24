@@ -20,7 +20,7 @@
       iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
         UKR, UZB]
   - TIAM-Grantham v3.4|Global (mostly used for bunker fuels):
-      iso3_codes: DUMMY
+      iso3_codes: ''
   - TIAM-Grantham v3.4|India:
       iso3_codes: IND
   - TIAM-Grantham v3.4|Japan:
