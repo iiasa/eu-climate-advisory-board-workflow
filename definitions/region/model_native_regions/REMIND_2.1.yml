@@ -11,17 +11,17 @@
       iso3_codes: [AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, IDN,
         IOT, KHM, KIR, KOR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK, NIU,
         NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, TJK, TKL, TLS, TON,
-        TUV, UMI, VNM, VUT, WLF, WSM
+        TUV, UMI, VNM, VUT, WLF, WSM]
   - REMIND 2.1|Latin America and the Caribbean:
       iso3_codes: [ABW, AIA, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRA, BRB,
         BVT, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY,
         HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS,
-        SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA
-  - REMIND 2.0|Middle East and North Africa:
-      countries: ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
-        OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR
-  - REMIND 2.0|Russia and Reforming Economies:
-      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB, TJK
+        SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA]
+  - REMIND 2.1|Middle East and North Africa:
+      iso3_codes: [ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
+        OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR]
+  - REMIND 2.1|Russia and Reforming Economies:
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB, TJK]
   - REMIND 2.1|Sub-Saharan Africa:
       iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
         ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI, MOZ, MRT,
@@ -39,7 +39,7 @@
         SRB, TUR, VAT]
 # 21-region version of REMIND
   - REMIND 2.1|Germany:
-      countries: DEU
+      iso3_codes: DEU
   - REMIND 2.1|France:
       iso3_codes: FRA
   - REMIND 2.1|United Kingdom and Ireland:

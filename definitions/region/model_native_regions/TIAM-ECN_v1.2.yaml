@@ -1,84 +1,84 @@
 - TIAM-ECN 1.1:
   - TIAM-ECN 1.1|Algeria:
-      countries: DZA
+      iso3_codes: DZA
   - TIAM-ECN 1.1|Angola:
-      countries: AGO
+      iso3_codes: AGO
   - TIAM-ECN 1.1|Argentina:
-      countries: ARG, FLK
+      iso3_codes: [ARG, FLK]
   - TIAM-ECN 1.1|Australia & New Zealand:
-      countries: AUS, NZL
+      iso3_codes: [AUS, NZL]
   - TIAM-ECN 1.1|Brazil:
-      countries: BRA
+      iso3_codes: BRA
   - TIAM-ECN 1.1|Canada:
-      countries: CAN
+      iso3_codes: CAN
   - TIAM-ECN 1.1|Central Africa:
-      countries: CAF, CMR, COG, GAB, GNQ, TCD
+      iso3_codes: [CAF, CMR, COG, GAB, GNQ, TCD]
   - TIAM-ECN 1.1|Chile:
-      countries: CHL
+      iso3_codes: CHL
   - TIAM-ECN 1.1|China:
-      countries: CHN, HKG
+      iso3_codes: [CHN, HKG]
   - TIAM-ECN 1.1|Colombia:
-      countries: COL
+      iso3_codes: COL
   - TIAM-ECN 1.1|Congo DR:
-      countries: COD
+      iso3_codes: COD
   - TIAM-ECN 1.1|Eastern Africa:
-      countries: BDI, DJI, ERI, RWA, SDN, SOM, SSD, SYC, UGA
+      iso3_codes: [BDI, DJI, ERI, RWA, SDN, SOM, SSD, SYC, UGA]
   - TIAM-ECN 1.1|Eastern Europe:
-      countries: ALB, BGR, BIH, CYP, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK,
-        SVN
+      iso3_codes: [ALB, BGR, BIH, CYP, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK,
+        SVN]
   - TIAM-ECN 1.1|Egypt:
-      countries: EGY
+      iso3_codes: EGY
   - TIAM-ECN 1.1|Ethiopia:
-      countries: ETH
+      iso3_codes: ETH
   - TIAM-ECN 1.1|Former Soviet Union:
-      countries: ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
-        UKR, UZB
+      iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
+        UKR, UZB]
   - TIAM-ECN 1.1|India:
-      countries: IND
+      iso3_codes: IND
   - TIAM-ECN 1.1|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - TIAM-ECN 1.1|Kenya:
-      countries: KEN
+      iso3_codes: KEN
   - TIAM-ECN 1.1|Libya:
-      countries: LBY
+      iso3_codes: LBY
   - TIAM-ECN 1.1|Madagascar:
-      countries: MDG
+      iso3_codes: MDG
   - TIAM-ECN 1.1|Mexico:
-      countries: MEX
+      iso3_codes: MEX
   - TIAM-ECN 1.1|Middle East:
-      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
-        TUR, YEM
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        TUR, YEM]
   - TIAM-ECN 1.1|Morocco:
-      countries: MAR
+      iso3_codes: MAR
   - TIAM-ECN 1.1|Nigeria:
-      countries: NGA
+      iso3_codes: NGA
   - TIAM-ECN 1.1|Other Developing Asia:
-      countries: AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
+      iso3_codes: [AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
         IDN, IOT, KHM, KIR, LAO, LKA, MAC, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK,
         NIU, NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS,
-        TON, TUV, TWN, VNM, VUT, WLF, WSM
+        TON, TUV, TWN, VNM, VUT, WLF, WSM]
   - TIAM-ECN 1.1|Other Latin America:
-      countries: ABW, AIA, ANT, ATA, ATG, BHS, BLZ, BMU, BOL, BRB, BVT, CRI, CUB,
+      iso3_codes: [ABW, AIA, ANT, ATA, ATG, BHS, BLZ, BMU, BOL, BRB, BVT, CRI, CUB,
         CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF,
         MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, TCA, TTO, URY, VCT, VGB,
-        VIR
+        VIR]
   - TIAM-ECN 1.1|South Africa:
-      countries: ZAF
+      iso3_codes: ZAF
   - TIAM-ECN 1.1|South Korea:
-      countries: KOR
+      iso3_codes: KOR
   - TIAM-ECN 1.1|Southeast Africa:
-      countries: MOZ, TZA
+      iso3_codes: MOZ, TZA
   - TIAM-ECN 1.1|Southern Africa:
-      countries: BWA, COM, LSO, MUS, MWI, MYT, NAM, REU, SWZ, ZMB, ZWE
+      iso3_codes: [BWA, COM, LSO, MUS, MWI, MYT, NAM, REU, SWZ, ZMB, ZWE]
   - TIAM-ECN 1.1|Tunisia:
-      countries: TUN
+      iso3_codes: TUN
   - TIAM-ECN 1.1|United States of America:
-      countries: SPM, UMI, USA
+      iso3_codes: [SPM, UMI, USA]
   - TIAM-ECN 1.1|Venezuela:
-      countries: VEN
+      iso3_codes: VEN
   - TIAM-ECN 1.1|Western Africa:
-      countries: BEN, BFA, CIV, CPV, ESH, GHA, GIN, GMB, GNB, LBR, MLI, MRT, NER,
-        SEN, SHN, SLE, STP, TGO
+      iso3_codes: [BEN, BFA, CIV, CPV, ESH, GHA, GIN, GMB, GNB, LBR, MLI, MRT, NER,
+        SEN, SHN, SLE, STP, TGO]
   - TIAM-ECN 1.1|Western Europe:
-      countries: AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB, GRC,
-        GRL, IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, VAT
+      iso3_codes: [AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB, GRC,
+        GRL, IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, VAT]

@@ -1,42 +1,42 @@
 - TIAM-Grantham v3.4:
   - TIAM-Grantham v3.4|Africa:
-      countries: AGO, BDI, BEN, BFA, BRN, BWA, CAF, CIV, CMR, COD, COG, CPV, DJI,
+      iso3_codes: [AGO, BDI, BEN, BFA, BRN, BWA, CAF, CIV, CMR, COD, COG, CPV, DJI,
         DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO, MAR,
         MDG, MLI, MOZ, MRT, MUS, MWI, NER, NGA, REU, RWA, SDN, SEN, SLE, SOM, STP,
-        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE]
   - TIAM-Grantham v3.4|Australia and New Zealand:
-      countries: AUS, NZL
+      iso3_codes: [AUS, NZL]
   - TIAM-Grantham v3.4|Canada:
-      countries: CAN
+      iso3_codes: CAN
   - TIAM-Grantham v3.4|China:
-      countries: CHN, HKG, TWN
+      iso3_codes: [CHN, HKG, TWN]
   - TIAM-Grantham v3.4|Central and South America:
-      countries: ANT, ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
+      iso3_codes: [ANT, ARG, ATG, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
         CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MTQ,
-        NIC, PAN, PER, PRI, PRY, SLV, SUR, TTO, URY, VCT, VEN
+        NIC, PAN, PER, PRI, PRY, SLV, SUR, TTO, URY, VCT, VEN]
   - TIAM-Grantham v3.4|Eastern Europe:
-      countries: ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN
+      iso3_codes: [ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN]
   - TIAM-Grantham v3.4|Former Soviet Union:
-      countries: ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
-        UKR, UZB
+      iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
+        UKR, UZB]
   - TIAM-Grantham v3.4|Global (mostly used for bunker fuels):
-      countries: DUMMY
+      iso3_codes: DUMMY
   - TIAM-Grantham v3.4|India:
-      countries: IND
+      iso3_codes: IND
   - TIAM-Grantham v3.4|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - TIAM-Grantham v3.4|Middle East:
-      countries: ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
-        TUR, YEM
+      iso3_codes: [ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
+        TUR, YEM]
   - TIAM-Grantham v3.4|Mexico:
-      countries: MEX
+      iso3_codes: MEX
   - TIAM-Grantham v3.4|Other Developing Asia:
-      countries: AFG, BGD, BTN, FJI, IDN, KIR, LAO, LKA, MDV, MMR, MYS, NPL, PAK,
-        PHL, PNG, PRK, PYF, SGP, SLB, THA, VNM, VUT, WSM
+      iso3_codes: [AFG, BGD, BTN, FJI, IDN, KIR, LAO, LKA, MDV, MMR, MYS, NPL, PAK,
+        PHL, PNG, PRK, PYF, SGP, SLB, THA, VNM, VUT, WSM]
   - TIAM-Grantham v3.4|South Korea:
-      countries: KOR
+      iso3_codes: KOR
   - TIAM-Grantham v3.4|United States of America:
-      countries: USA
+      iso3_codes: USA
   - TIAM-Grantham v3.4|Western Europe:
-      countries: AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, GBR, GIB, GRC, GRL,
-        IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE, VAT
+      iso3_codes: [AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, GBR, GIB, GRC, GRL,
+        IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE, VAT]

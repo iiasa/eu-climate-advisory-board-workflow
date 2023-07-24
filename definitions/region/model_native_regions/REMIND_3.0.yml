@@ -16,12 +16,12 @@
       iso3_codes: [ABW, AIA, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRA, BRB,
         BVT, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY,
         HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS,
-        SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA
-  - REMIND 3.1|Middle East and North Africa:
-      countries: ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
-        OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR
-  - REMIND 3.1|Russia and Reforming Economies:
-      countries: ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB, TJK
+        SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA]
+  - REMIND 3.0|Middle East and North Africa:
+      iso3_codes: [ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
+        OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR]
+  - REMIND 3.0|Russia and Reforming Economies:
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TKM, UKR, UZB, TJK]
   - REMIND 3.0|Sub-Saharan Africa:
       iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
         ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LSO, MDG, MLI, MOZ, MRT,
@@ -62,5 +62,5 @@
       iso3_codes: [ALB, AND, BIH, VAT, MKD, MCO, MNE, SMR, SRB, TUR]
 # exogenously aggregated regions
   - REMIND 3.0|EU 27:
-      countries: ALA, AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FRO, FIN, FRA, DEU, GRC,
-        HUN, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE
+      iso3_codes: [ALA, AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FRO, FIN, FRA, DEU, GRC,
+        HUN, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE]

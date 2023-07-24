@@ -1,60 +1,60 @@
 - IMAGE 3.0:
   - IMAGE 3.0|Western Europe:
-      countries: ALA, AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB,
-        GRC, IRL, ISL, ITA, JEY, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE
+      iso3_codes: [ALA, AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB,
+        GRC, IRL, ISL, ITA, JEY, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE]
   - IMAGE 3.0|Central Europe:
-      countries: ALB, BGR, BIH, CYP, CZE, EST, HRV, HUN, LTU, LVA, MKD, POL, ROU,
-        SRB, SVK, SVN
+      iso3_codes: [ALB, BGR, BIH, CYP, CZE, EST, HRV, HUN, LTU, LVA, MKD, POL, ROU,
+        SRB, SVK, SVN]
   - IMAGE 3.0|Brazil:
-      countries: BRA
+      iso3_codes: BRA
   - IMAGE 3.0|Canada:
-      countries: CAN
+      iso3_codes: CAN
   - IMAGE 3.0|China:
-      countries: CHN, HKG, MAC, MNG, TWN
+      iso3_codes: [CHN, HKG, MAC, MNG, TWN]
   - IMAGE 3.0|Eastern Africa:
-      countries: BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
-        SYC, UGA
+      iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
+        SYC, UGA]
   - IMAGE 3.0|India:
-      countries: IND
+      iso3_codes: IND
   - IMAGE 3.0|Indonesia:
-      countries: IDN, PNG
+      iso3_codes: [IDN, PNG]
   - IMAGE 3.0|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - IMAGE 3.0|Korea:
-      countries: KOR, PRK
+      iso3_codes: [KOR, PRK]
   - IMAGE 3.0|Middle East:
-      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM]
   - IMAGE 3.0|Mexico:
-      countries: MEX
+      iso3_codes: MEX
   - IMAGE 3.0|Northern Africa:
-      countries: DZA, EGY, ESH, LBY, MAR, TUN
+      iso3_codes: [DZA, EGY, ESH, LBY, MAR, TUN]
   - IMAGE 3.0|Oceania:
-      countries: ASM, AUS, COK, FJI, FSM, KIR, MHL, NCL, NFK, NIU, NRU, NZL, PCN,
-        PLW, PYF, SLB, TKL, TON, TUV, VUT, WLF, WSM
+      iso3_codes: [ASM, AUS, COK, FJI, FSM, KIR, MHL, NCL, NFK, NIU, NRU, NZL, PCN,
+        PLW, PYF, SLB, TKL, TON, TUV, VUT, WLF, WSM]
   - IMAGE 3.0|Other Central America:
-      countries: ABW, AIA, ANT, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM, GLP,
+      iso3_codes: [ABW, AIA, ANT, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM, GLP,
         GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, PRI, SLV, TCA, TTO,
-        VCT, VGB, VIR
+        VCT, VGB, VIR]
   - IMAGE 3.0|Other Southern Africa:
-      countries: AGO, BWA, GRL, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE
+      iso3_codes: [AGO, BWA, GRL, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE]
   - IMAGE 3.0|Other Southern America:
-      countries: ARG, BOL, CHL, COL, ECU, FLK, GUF, GUY, PER, PRY, SUR, URY, VEN
+      iso3_codes: [ARG, BOL, CHL, COL, ECU, FLK, GUF, GUY, PER, PRY, SUR, URY, VEN]
   - IMAGE 3.0|Other Southern Asia:
-      countries: AFG, BGD, BTN, LKA, MDV, NPL, PAK
+      iso3_codes: [AFG, BGD, BTN, LKA, MDV, NPL, PAK]
   - IMAGE 3.0|Russia:
-      countries: ARM, AZE, GEO, RUS
+      iso3_codes: [ARM, AZE, GEO, RUS]
   - IMAGE 3.0|South Africa:
-      countries: ZAF
+      iso3_codes: ZAF
   - IMAGE 3.0|South-East Asia:
-      countries: BRN, KHM, LAO, MMR, MYS, PHL, SGP, THA, TLS, VNM
+      iso3_codes: [BRN, KHM, LAO, MMR, MYS, PHL, SGP, THA, TLS, VNM]
   - IMAGE 3.0|Kazakhstan region:
-      countries: KAZ, KGZ, TJK, TKM, UZB
+      iso3_codes: [KAZ, KGZ, TJK, TKM, UZB]
   - IMAGE 3.0|Turkey:
-      countries: TUR
+      iso3_codes: TUR
   - IMAGE 3.0|Ukraine region:
-      countries: BLR, MDA, UKR
+      iso3_codes: [BLR, MDA, UKR]
   - IMAGE 3.0|USA:
-      countries: SPM, USA
+      iso3_codes: [SPM, USA]
   - IMAGE 3.0|Western Africa:
-      countries: BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
-        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SHN, SLE, STP, TCD, TGO
+      iso3_codes: [BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
+        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SHN, SLE, STP, TCD, TGO]

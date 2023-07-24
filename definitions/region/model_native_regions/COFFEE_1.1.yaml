@@ -1,49 +1,49 @@
 - COFFEE 1.1:
   - COFFEE 1.1|Africa (excluding South Africa):
-      countries: AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
+      iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
         DZA, EGY, ERI, ESH, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO,
         MAR, MDG, MLI, MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN,
-        SLE, SOM, SSD, STP, SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZMB, ZWE
+        SLE, SOM, SSD, STP, SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZMB, ZWE]
   - COFFEE 1.1|Australia & New Zealand:
-      countries: AUS, NZL
+      iso3_codes: [AUS, NZL]
   - COFFEE 1.1|Brazil:
-      countries: BRA
+      iso3_codes: BRA
   - COFFEE 1.1|Canada:
-      countries: CAN, SHN, SPM
+      iso3_codes: [CAN, SHN, SPM]
   - COFFEE 1.1|Caspian Sea:
-      countries: AFG, ARM, AZE, GEO, KAZ, KGZ, PAK, TJK, TKM, UZB
+      iso3_codes: [AFG, ARM, AZE, GEO, KAZ, KGZ, PAK, TJK, TKM, UZB]
   - COFFEE 1.1|Central America:
-      countries: ABW, AIA, ANT, ATG, BHS, BLM, BLZ, BMU, BRB, CRI, CUB, CYM, DMA,
+      iso3_codes: [ABW, AIA, ANT, ATG, BHS, BLM, BLZ, BMU, BRB, CRI, CUB, CYM, DMA,
         DOM, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ,
-        NIC, PAN, SLV, SUR, TCA, TTO, VCT
+        NIC, PAN, SLV, SUR, TCA, TTO, VCT]
   - COFFEE 1.1|China:
-      countries: CHN, HKG, MAC
+      iso3_codes: [CHN, HKG, MAC]
   - COFFEE 1.1|Eastern Europe:
-      countries: ALB, BIH, BLR, HRV, MDA, MKD, MNE, SRB, UKR
+      iso3_codes: [ALB, BIH, BLR, HRV, MDA, MKD, MNE, SRB, UKR]
   - COFFEE 1.1|India:
-      countries: IND
+      iso3_codes: IND
   - COFFEE 1.1|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - COFFEE 1.1|Middle East:
-      countries: ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
-        YEM
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        YEM]
   - COFFEE 1.1|Rest of Asia and Oceania:
-      countries: ATA, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD, IDN,
+      iso3_codes: [ATA, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD, IDN,
         IOT, KHM, KIR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK, NIU, NPL,
         NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS, TON, TUV, TWN,
-        VNM, VUT, WLF, WSM
+        VNM, VUT, WLF, WSM]
   - COFFEE 1.1|Russia:
-      countries: RUS
+      iso3_codes: RUS
   - COFFEE 1.1|South Africa:
-      countries: ZAF
+      iso3_codes: ZAF
   - COFFEE 1.1|South America:
-      countries: ARG, BOL, CHL, COL, ECU, FLK, PER, PRY, SGS, URY, VEN
+      iso3_codes: [ARG, BOL, CHL, COL, ECU, FLK, PER, PRY, SGS, URY, VEN]
   - COFFEE 1.1|South Korea:
-      countries: KOR
+      iso3_codes: KOR
   - COFFEE 1.1|United States:
-      countries: ASM, PRI, UMI, USA, VGB, VIR
+      iso3_codes: [ASM, PRI, UMI, USA, VGB, VIR]
   - COFFEE 1.1|Western Europe:
-      countries: ALA, AND, AUT, BEL, BGR, BVT, CHE, CYP, CZE, DEU, DNK, ESP, EST,
+      iso3_codes: [ALA, AND, AUT, BEL, BGR, BVT, CHE, CYP, CZE, DEU, DNK, ESP, EST,
         FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, HUN, IMN, IRL, ISL, ITA, JEY, LIE,
         LTU, LUX, LVA, MCO, MLT, NLD, NOR, POL, PRT, ROU, SJM, SMR, SVK, SVN, SWE,
-        TUR, VAT
+        TUR, VAT]

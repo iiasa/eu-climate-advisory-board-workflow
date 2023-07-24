@@ -1,45 +1,45 @@
 - Roadmap v1.8:
   - Roadmap v1.8|Africa:
-      countries: AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
+      iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
         DZA, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO, MAR, MDG,
         MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SSD, STP,
-        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE
+        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE]
   - Roadmap v1.8|Australia:
-      countries: AUS
+      iso3_codes: AUS
   - Roadmap v1.8|Brazil:
-      countries: BRA
+      iso3_codes: BRA
   - Roadmap v1.8|Canada:
-      countries: CAN
+      iso3_codes: CAN
   - Roadmap v1.8|China:
-      countries: CHN, HKG, MAC
+      iso3_codes: [CHN, HKG, MAC
   - Roadmap v1.8|European Union:
-      countries: AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV,
-        HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE
+      iso3_codes: [AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV,
+        HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE]
   - Roadmap v1.8|United Kingdom:
-      countries: GBR
+      iso3_codes: GBR
   - Roadmap v1.8|India:
-      countries: IND
+      iso3_codes: IND
   - Roadmap v1.8|Japan:
-      countries: JPN
+      iso3_codes: JPN
   - Roadmap v1.8|Mexico:
-      countries: MEX
+      iso3_codes: MEX
   - Roadmap v1.8|Middle East:
-      countries: ARE, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
-        TUR, YEM
+      iso3_codes: [ARE, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
+        TUR, YEM]
   - Roadmap v1.8|Other Asia Pacific:
-      countries: AFG, ASM, BGD, BRN, BTN, FJI, FSM, IDN, KAZ, KGZ, KHM, KIR, LAO,
+      iso3_codes: [AFG, ASM, BGD, BRN, BTN, FJI, FSM, IDN, KAZ, KGZ, KHM, KIR, LAO,
         LKA, MDV, MMR, MNG, MYS, NCL, NPL, NZL, PAK, PHL, PLW, PNG, PRK, PYF, SGP,
-        SLB, THA, TJK, TKM, TLS, TON, UZB, VNM, VUT, WSM
+        SLB, THA, TJK, TKM, TLS, TON, UZB, VNM, VUT, WSM]
   - Roadmap v1.8|Other Europe:
-      countries: ALB, ARM, AZE, BIH, BLR, CHE, GEO, ISL, LIE, MDA, MKD, MNE, NOR,
-        SRB, UKR
+      iso3_codes: [ALB, ARM, AZE, BIH, BLR, CHE, GEO, ISL, LIE, MDA, MKD, MNE, NOR,
+        SRB, UKR]
   - Roadmap v1.8|Other Latin America:
-      countries: ABW, ARG, ATG, BHS, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB, CYM,
+      iso3_codes: [ABW, ARG, ATG, BHS, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB, CYM,
         DMA, DOM, ECU, GRD, GTM, GUY, HND, HTI, JAM, KNA, LCA, NIC, PAN, PER, PRY,
-        SLV, SUR, TTO, URY, VCT, VEN, VGB
+        SLV, SUR, TTO, URY, VCT, VEN, VGB]
   - Roadmap v1.8|Russia:
-      countries: RUS
+      iso3_codes: RUS
   - Roadmap v1.8|South Korea:
-      countries: KOR
+      iso3_codes: KOR
   - Roadmap v1.8|United States:
-      countries: GUM, PRI, USA, VIR
+      iso3_codes: [GUM, PRI, USA, VIR]
