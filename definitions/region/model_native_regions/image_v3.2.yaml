@@ -32,7 +32,7 @@
       iso3_codes: [ASM, AUS, COK, FJI, FSM, KIR, MHL, NCL, NFK, NIU, NRU, NZL, PCN,
         PLW, PYF, SLB, TKL, TON, TUV, VUT, WLF, WSM]
   - IMAGE 3.2|Other Central America:
-      iso3_codes: [ABW, AIA, ANT, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM, GLP,
+      iso3_codes: [ABW, AIA, BES, CUW, SXM, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM, GLP,
         GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, PRI, SLV, TCA, TTO,
         VCT, VGB, VIR]
   - IMAGE 3.2|Other Southern Africa:

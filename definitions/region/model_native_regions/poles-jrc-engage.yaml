@@ -40,7 +40,7 @@
   - POLES JRC ENGAGE|Latin America (10R Map):
       iso3_codes: ''
   - POLES JRC ENGAGE|Latin America:
-      iso3_codes: [ABW, ANT, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB,
+      iso3_codes: [ABW, BES, CUW, SXM, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB,
         DMA, DOM, ECU, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, NIC, PAN,
         PER, PRI, PRY, SUR, TTO, URY, VEN]
   - POLES JRC ENGAGE|Mexico:

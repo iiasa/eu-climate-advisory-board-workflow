@@ -27,7 +27,7 @@
   - IMACLIM 1.0|Rest of Latin America:
       iso3_codes: [AIA, ATG, ARG, ABW, BHS, BRB, BLZ, BMU, BOL, CYM, CHL, COL, CRI,
         CUB, DMA, DOM, ECU, SLV, FLK, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ,
-        MEX, MSR, ANT, NIC, PAN, PRY, PER, PCN, PRI, KNA, LCA, VCT, SGS, SUR, TTO,
+        MEX, MSR, BES, CUW, SXM, NIC, PAN, PRY, PER, PCN, PRI, KNA, LCA, VCT, SGS, SUR, TTO,
         TCA, URY, VEN, VGB, VIR]
   - IMACLIM 1.0|Rest of Asia:
       iso3_codes: [AFG, ASM, BGD, BTN, BRN, KHM, CXR, CCK, COK, FJI, PYF, ATF, GUM,

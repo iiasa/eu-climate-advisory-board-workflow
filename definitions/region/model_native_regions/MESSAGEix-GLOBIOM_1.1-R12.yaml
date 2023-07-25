@@ -8,7 +8,7 @@
       iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
   - MESSAGEix-GLOBIOM 1.1-R12|Latin America and the Caribbean:
       iso3_codes: [ATG, ARG, BHS, BRB, BLZ, BMU, BOL, BRA, CHL, COL, CRI, CUB, DOM,
-        ECU, SLV, GNQ, FLK, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, ANT, NIC, PAN,
+        ECU, SLV, GNQ, FLK, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, BES, CUW, SXM, NIC, PAN,
         PRY, PER, SUR, TTO, URY, VEN]
   - MESSAGEix-GLOBIOM 1.1-R12|Middle East and North Africa:
       iso3_codes: [DZA, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR, OMN, QAT,

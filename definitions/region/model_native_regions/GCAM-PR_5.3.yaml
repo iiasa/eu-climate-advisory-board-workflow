@@ -18,7 +18,7 @@
   - GCAM-PR 5.3|Canada:
       iso3_codes: CAN
   - GCAM-PR 5.3|Central America and Caribbean:
-      iso3_codes: [ABW, AIA, ANT, ATG, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM,
+      iso3_codes: [ABW, AIA, BES, CUW, SXM, ATG, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM,
         GLP, GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, SLV, TTO, VCT]
   - GCAM-PR 5.3|Central Asia:
       iso3_codes: [ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB]

@@ -17,7 +17,7 @@
   - WITCH 5.0|Japan and South Korea:
       iso3_codes: [JPN, KOR, PRK]
   - WITCH 5.0|Latin america and Caraibes (except Brasil and Mexico):
-      iso3_codes: [ABW, AIA, ANT, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL,
+      iso3_codes: [ABW, AIA, BES, CUW, SXM, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL,
         COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY, HND, HTI,
         JAM, KNA, LCA, MAF, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, TCA,
         TTO, URY, VCT, VEN, VGB, VIR]
