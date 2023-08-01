@@ -49,7 +49,6 @@
       iso3_codes: [CHE, DEU, FRA, GBR, GRC, HUN, IMN, IRL, ISL, ITA, LIE, LUX, LVA,
         MCO, NLD, NOR]
   - POLES JRC ENGAGE|Pacific OECD (10R Map)
-      # iso3_codes: ''
   - POLES JRC ENGAGE|Reforming Economies (10R Map)
       # iso3_codes: ''
   - POLES JRC ENGAGE|Rest of Asia (10R Map)
