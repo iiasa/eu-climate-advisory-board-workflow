@@ -31,7 +31,6 @@
         CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GRL, GTM, GUF, GUY, HND, HTI,
         JAM, KNA, LCA, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SPM, SUR,
         TCA, TTO, URY, VCT, VEN, VGB, VIR]
-        # ISO3 codes unknown to the pycountry package: 
   - AIM/CGE 2.1|Middle East:
       iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM]
   - AIM/CGE 2.1|North Africa:
