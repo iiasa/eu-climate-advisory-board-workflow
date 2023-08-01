@@ -20,7 +20,6 @@
   - POLES JRC ENGAGE|China:
       iso3_codes: CHN
   - POLES JRC ENGAGE|China+ (10R Map)
-      # iso3_codes: ''
   - POLES JRC ENGAGE|EU28:
       iso3_codes: [AUT, BEL, CZE, DNK, ESP, EST, FIN, GGY, GIB, HRV, JEY, LTU, POL,
         PRT, SVK, SVN, SWE]
