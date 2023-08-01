@@ -45,7 +45,6 @@
   - POLES JRC ENGAGE|Middle East (10R Map)
       # iso3_codes: ''
   - POLES JRC ENGAGE|North America (10R Map)
-      # iso3_codes: ''
   - POLES JRC ENGAGE|OECD90+EU:
       iso3_codes: [CHE, DEU, FRA, GBR, GRC, HUN, IMN, IRL, ISL, ITA, LIE, LUX, LVA,
         MCO, NLD, NOR]
