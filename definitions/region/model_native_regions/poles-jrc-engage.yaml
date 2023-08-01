@@ -6,7 +6,6 @@
         NER, NGA, OMN, PSE, QAT, REU, RWA, SDN, SEN, SLE, SOM, SSD, SWZ, SYC, SYR,
         TCD, TGO, TON, TUN, TZA, UGA, YEM, ZMB, ZWE]
   - POLES JRC ENGAGE|Africa (10R Map)
-      # iso3_codes: ''
   - POLES JRC ENGAGE|Argentina:
       iso3_codes: ARG
   - POLES JRC ENGAGE|Asia (excl. Japan):
