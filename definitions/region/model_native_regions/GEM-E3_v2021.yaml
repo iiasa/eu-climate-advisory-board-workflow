@@ -39,7 +39,6 @@
         NIC, NER, NFK, OMN, PAK, PAN, PRY, PER, PHL, PRI, REU, RWA, SHN, KNA, LCA,
         SPM, VCT, STP, SEN, SYC, SLE, SGP, SOM, SGS, LKA, SDN, SUR, SJM, SWZ, TWN, TJK,
         TZA, THA, TGO, TTO, TUN, TKM, TCA, UGA, URY, UZB, VNM, VGB, VIR, ZMB, ZWE]
-        # ISO3 codes unknown to the pycountry package: 
   - GEM-E3 v2021|Russian Federation:
       iso3_codes: RUS
   - GEM-E3 v2021|South Africa:
