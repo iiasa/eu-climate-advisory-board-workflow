@@ -1,0 +1,63 @@
+- POLES JRC ENGAGE:
+  - POLES JRC ENGAGE|Africa - Middle East:
+      iso3_codes: [AGO, ARE, BDI, BEN, BFA, BHR, BWA, CAF, CIV, CMR, COD, COG, CPV,
+        DJI, DZA, EGY, ERI, ESH, ETH, GAB, GHA, GMB, GNB, GNQ, IRN, IRQ, ISR, JOR,
+        KEN, KWT, LBN, LBR, LBY, LSO, MAR, MDG, MDV, MLI, MOZ, MRT, MUS, MWI, NAM,
+        NER, NGA, OMN, PSE, QAT, REU, RWA, SDN, SEN, SLE, SOM, SSD, SWZ, SYC, SYR,
+        TCD, TGO, TON, TUN, TZA, UGA, YEM, ZMB, ZWE]
+  - POLES JRC ENGAGE|Africa (10R Map)
+  - POLES JRC ENGAGE|Argentina:
+      iso3_codes: ARG
+  - POLES JRC ENGAGE|Asia (excl. Japan):
+      iso3_codes: [AFG, AZE, BGD, BRN, BTN, CXR, FJI, HKG, KAZ, KGZ, KHM, LAO, LKA,
+        MAC, MMR, MNG, MNP, MYS, NPL, PAK, PHL, PLW, PNG, PRK, PYF, SGP, TJK, TKM]
+  - POLES JRC ENGAGE|Australia:
+      iso3_codes: AUS
+  - POLES JRC ENGAGE|Brazil:
+      iso3_codes: BRA
+  - POLES JRC ENGAGE|Canada:
+      iso3_codes: CAN
+  - POLES JRC ENGAGE|China:
+      iso3_codes: CHN
+  - POLES JRC ENGAGE|China+ (10R Map)
+  - POLES JRC ENGAGE|EU28:
+      iso3_codes: [AUT, BEL, CZE, DNK, ESP, EST, FIN, GGY, GIB, HRV, JEY, LTU, POL,
+        PRT, SVK, SVN, SWE]
+  - POLES JRC ENGAGE|Europe (10R Map)
+  - POLES JRC ENGAGE|Former CIS:
+      iso3_codes: [BGR, GEO, MNE, UKR]
+  - POLES JRC ENGAGE|India+ (10R Map)
+  - POLES JRC ENGAGE|India:
+      iso3_codes: IND
+  - POLES JRC ENGAGE|Indonesia:
+      iso3_codes: IDN
+  - POLES JRC ENGAGE|Japan:
+      iso3_codes: JPN
+  - POLES JRC ENGAGE|Latin America (10R Map)
+  - POLES JRC ENGAGE|Latin America:
+      iso3_codes: [ABW, BES, CUW, SXM, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB,
+        DMA, DOM, ECU, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, NIC, PAN,
+        PER, PRI, PRY, SUR, TTO, URY, VEN]
+  - POLES JRC ENGAGE|Mexico:
+      iso3_codes: MEX
+  - POLES JRC ENGAGE|Middle East (10R Map)
+  - POLES JRC ENGAGE|North America (10R Map)
+  - POLES JRC ENGAGE|OECD90+EU:
+      iso3_codes: [CHE, DEU, FRA, GBR, GRC, HUN, IMN, IRL, ISL, ITA, LIE, LUX, LVA,
+        MCO, NLD, NOR]
+  - POLES JRC ENGAGE|Pacific OECD (10R Map)
+  - POLES JRC ENGAGE|Reforming Economies (10R Map)
+  - POLES JRC ENGAGE|Rest of Asia (10R Map)
+  - POLES JRC ENGAGE|Rest of World (10R Map)
+  - POLES JRC ENGAGE|Russian Federation:
+      iso3_codes: RUS
+  - POLES JRC ENGAGE|Saudi Arabia:
+      iso3_codes: SAU
+  - POLES JRC ENGAGE|South Africa:
+      iso3_codes: ZAF
+  - POLES JRC ENGAGE|South Korea:
+      iso3_codes: KOR
+  - POLES JRC ENGAGE|Turkey:
+      iso3_codes: TUR
+  - POLES JRC ENGAGE|USA:
+      iso3_codes: [UMI, USA, VIR]

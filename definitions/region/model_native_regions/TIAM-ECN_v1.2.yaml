@@ -1,37 +1,84 @@
 - TIAM-ECN 1.2:
-  - TIAM-ECN 1.2|Algeria
-  - TIAM-ECN 1.2|Angola
-  - TIAM-ECN 1.2|Argentina
-  - TIAM-ECN 1.2|Australia & New Zealand
-  - TIAM-ECN 1.2|Brazil
-  - TIAM-ECN 1.2|Canada
-  - TIAM-ECN 1.2|Central Africa
-  - TIAM-ECN 1.2|Chile
-  - TIAM-ECN 1.2|China
-  - TIAM-ECN 1.2|Colombia
-  - TIAM-ECN 1.2|Congo DR
-  - TIAM-ECN 1.2|Eastern Africa
-  - TIAM-ECN 1.2|Eastern Europe
-  - TIAM-ECN 1.2|Egypt
-  - TIAM-ECN 1.2|Ethiopia
-  - TIAM-ECN 1.2|Former Soviet Union
-  - TIAM-ECN 1.2|India
-  - TIAM-ECN 1.2|Japan
-  - TIAM-ECN 1.2|Kenya
-  - TIAM-ECN 1.2|Libya
-  - TIAM-ECN 1.2|Madagascar
-  - TIAM-ECN 1.2|Mexico
-  - TIAM-ECN 1.2|Middle East
-  - TIAM-ECN 1.2|Morocco
-  - TIAM-ECN 1.2|Nigeria
-  - TIAM-ECN 1.2|Other Developing Asia
-  - TIAM-ECN 1.2|Other Latin America
-  - TIAM-ECN 1.2|South Africa
-  - TIAM-ECN 1.2|South Korea
-  - TIAM-ECN 1.2|Southeast Africa
-  - TIAM-ECN 1.2|Southern Africa
-  - TIAM-ECN 1.2|Tunisia
-  - TIAM-ECN 1.2|United States of America
-  - TIAM-ECN 1.2|Venezuela
-  - TIAM-ECN 1.2|Western Africa
-  - TIAM-ECN 1.2|Western Europe
+  - TIAM-ECN 1.2|Algeria:
+      iso3_codes: DZA
+  - TIAM-ECN 1.2|Angola:
+      iso3_codes: AGO
+  - TIAM-ECN 1.2|Argentina:
+      iso3_codes: [ARG, FLK]
+  - TIAM-ECN 1.2|Australia & New Zealand:
+      iso3_codes: [AUS, NZL]
+  - TIAM-ECN 1.2|Brazil:
+      iso3_codes: BRA
+  - TIAM-ECN 1.2|Canada:
+      iso3_codes: CAN
+  - TIAM-ECN 1.2|Central Africa:
+      iso3_codes: [CAF, CMR, COG, GAB, GNQ, TCD]
+  - TIAM-ECN 1.2|Chile:
+      iso3_codes: CHL
+  - TIAM-ECN 1.2|China:
+      iso3_codes: [CHN, HKG]
+  - TIAM-ECN 1.2|Colombia:
+      iso3_codes: COL
+  - TIAM-ECN 1.2|Congo DR:
+      iso3_codes: COD
+  - TIAM-ECN 1.2|Eastern Africa:
+      iso3_codes: [BDI, DJI, ERI, RWA, SDN, SOM, SSD, SYC, UGA]
+  - TIAM-ECN 1.2|Eastern Europe:
+      iso3_codes: [ALB, BGR, BIH, CYP, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK,
+        SVN]
+  - TIAM-ECN 1.2|Egypt:
+      iso3_codes: EGY
+  - TIAM-ECN 1.2|Ethiopia:
+      iso3_codes: ETH
+  - TIAM-ECN 1.2|Former Soviet Union:
+      iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
+        UKR, UZB]
+  - TIAM-ECN 1.2|India:
+      iso3_codes: IND
+  - TIAM-ECN 1.2|Japan:
+      iso3_codes: JPN
+  - TIAM-ECN 1.2|Kenya:
+      iso3_codes: KEN
+  - TIAM-ECN 1.2|Libya:
+      iso3_codes: LBY
+  - TIAM-ECN 1.2|Madagascar:
+      iso3_codes: MDG
+  - TIAM-ECN 1.2|Mexico:
+      iso3_codes: MEX
+  - TIAM-ECN 1.2|Middle East:
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        TUR, YEM]
+  - TIAM-ECN 1.2|Morocco:
+      iso3_codes: MAR
+  - TIAM-ECN 1.2|Nigeria:
+      iso3_codes: NGA
+  - TIAM-ECN 1.2|Other Developing Asia:
+      iso3_codes: [AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
+        IDN, IOT, KHM, KIR, LAO, LKA, MAC, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK,
+        NIU, NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS,
+        TON, TUV, TWN, VNM, VUT, WLF, WSM]
+  - TIAM-ECN 1.2|Other Latin America:
+      iso3_codes: [ABW, AIA, ATA, ATG, BES, BHS, BLZ, BMU, BOL, BRB, BVT, CRI, CUB,
+        CUW, CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, 
+        MAF, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, SXM, TCA, TTO, URY, 
+        VCT, VGB, VIR]
+  - TIAM-ECN 1.2|South Africa:
+      iso3_codes: ZAF
+  - TIAM-ECN 1.2|South Korea:
+      iso3_codes: KOR
+  - TIAM-ECN 1.2|Southeast Africa:
+      iso3_codes: [MOZ, TZA]
+  - TIAM-ECN 1.2|Southern Africa:
+      iso3_codes: [BWA, COM, LSO, MUS, MWI, MYT, NAM, REU, SWZ, ZMB, ZWE]
+  - TIAM-ECN 1.2|Tunisia:
+      iso3_codes: TUN
+  - TIAM-ECN 1.2|United States of America:
+      iso3_codes: [SPM, UMI, USA]
+  - TIAM-ECN 1.2|Venezuela:
+      iso3_codes: VEN
+  - TIAM-ECN 1.2|Western Africa:
+      iso3_codes: [BEN, BFA, CIV, CPV, ESH, GHA, GIN, GMB, GNB, LBR, MLI, MRT, NER,
+        SEN, SHN, SLE, STP, TGO]
+  - TIAM-ECN 1.2|Western Europe:
+      iso3_codes: [AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB, GRC,
+        GRL, IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, VAT]

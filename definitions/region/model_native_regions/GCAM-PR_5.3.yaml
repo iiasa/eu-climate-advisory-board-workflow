@@ -1,37 +1,73 @@
 - GCAM-PR 5.3:
-  - GCAM-PR 5.3|Africa_Eastern
-  - GCAM-PR 5.3|Africa_Northern
-  - GCAM-PR 5.3|Africa_Southern
-  - GCAM-PR 5.3|Africa_Western
-  - GCAM-PR 5.3|Argentina
-  - GCAM-PR 5.3|Australia_NZ
-  - GCAM-PR 5.3|Brazil
-  - GCAM-PR 5.3|Canada
-  - GCAM-PR 5.3|Central America and Caribbean
-  - GCAM-PR 5.3|Central Asia
-  - GCAM-PR 5.3|China
-  - GCAM-PR 5.3|Colombia
+  - GCAM-PR 5.3|Africa_Eastern:
+      iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
+        UGA]
+  - GCAM-PR 5.3|Africa_Northern:
+      iso3_codes: [DZA, EGY, ESH, LBY, MAR, TUN]
+  - GCAM-PR 5.3|Africa_Southern:
+      iso3_codes: [AGO, BWA, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE]
+  - GCAM-PR 5.3|Africa_Western:
+      iso3_codes: [BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
+        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SLE, STP, TCD, TGO]
+  - GCAM-PR 5.3|Argentina:
+      iso3_codes: ARG
+  - GCAM-PR 5.3|Australia_NZ:
+      iso3_codes: [AUS, NZL]
+  - GCAM-PR 5.3|Brazil:
+      iso3_codes: BRA
+  - GCAM-PR 5.3|Canada:
+      iso3_codes: CAN
+  - GCAM-PR 5.3|Central America and Caribbean:
+      iso3_codes: [ABW, AIA, BES, CUW, SXM, ATG, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM,
+        GLP, GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, SLV, TTO, VCT]
+  - GCAM-PR 5.3|Central Asia:
+      iso3_codes: [ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB]
+  - GCAM-PR 5.3|China:
+      iso3_codes: [CHN, HKG, MAC]
+  - GCAM-PR 5.3|Colombia:
+      iso3_codes: COL
   - GCAM-PR 5.3|Eastern EU:
-      iso3_codes: [BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVN, SVK]
+      iso3_codes: [BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVK, SVN]
       notes: does not include Croatia
   - GCAM-PR 5.3|Western EU & UK:
-      iso3_codes: [AUT, BEL, DEU, DNK, GRC, ESP, FIN, FRA, IRL, ITA, LUX, NLD, PRT, SWE,
-          GBR]
-  - GCAM-PR 5.3|Europe_Eastern
-  - GCAM-PR 5.3|Europe_Non_EU
-  - GCAM-PR 5.3|European Free Trade Association
-  - GCAM-PR 5.3|India
-  - GCAM-PR 5.3|Indonesia
-  - GCAM-PR 5.3|Japan
-  - GCAM-PR 5.3|Mexico
-  - GCAM-PR 5.3|Middle East
-  - GCAM-PR 5.3|Pakistan
-  - GCAM-PR 5.3|Russia
-  - GCAM-PR 5.3|South Africa
-  - GCAM-PR 5.3|South America_Northern
-  - GCAM-PR 5.3|South America_Southern
-  - GCAM-PR 5.3|South Asia
-  - GCAM-PR 5.3|South Korea
-  - GCAM-PR 5.3|Southeast Asia
-  - GCAM-PR 5.3|Taiwan
-  - GCAM-PR 5.3|USA
+      iso3_codes: [AND, AUT, BEL, DEU, DNK, ESP, FIN, FLK, FRA, FRO, GBR, GIB, GRC,
+        GRL, IRL, ITA, LUX, MCO, NLD, PRT, SHN, SMR, SPM, SWE, TCA, VAT, VGB, WLF]
+  - GCAM-PR 5.3|Europe_Eastern:
+      iso3_codes: [BLR, MDA, UKR]
+  - GCAM-PR 5.3|Europe_Non_EU:
+      iso3_codes: [ALB, BIH, HRV, MKD, MNE, SRB, TUR]
+  - GCAM-PR 5.3|European Free Trade Association:
+      iso3_codes: [CHE, ISL, LIE, NOR, SJM]
+  - GCAM-PR 5.3|India:
+      iso3_codes: IND
+  - GCAM-PR 5.3|Indonesia:
+      iso3_codes: IDN
+  - GCAM-PR 5.3|Japan:
+      iso3_codes: JPN
+  - GCAM-PR 5.3|Mexico:
+      iso3_codes: MEX
+  - GCAM-PR 5.3|Middle East:
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
+        YEM]
+  - GCAM-PR 5.3|Pakistan:
+      iso3_codes: PAK
+  - GCAM-PR 5.3|Russia:
+      iso3_codes: RUS
+  - GCAM-PR 5.3|South Africa:
+      iso3_codes: ZAF
+  - GCAM-PR 5.3|South America_Northern:
+      iso3_codes: [GUF, GUY, SUR, VEN]
+  - GCAM-PR 5.3|South America_Southern:
+      iso3_codes: [BOL, CHL, ECU, PER, PRY, URY]
+  - GCAM-PR 5.3|South Asia:
+      iso3_codes: [AFG, ASM, BGD, BTN, LAO, LKA, MDV, NPL]
+  - GCAM-PR 5.3|South Korea:
+      iso3_codes: KOR
+  - GCAM-PR 5.3|Southeast Asia:
+      iso3_codes: [BRN, CCK, COK, CXR, FJI, FSM, GUM, KHM, KIR, MHL, MMR, MNP, MYS,
+        MYT, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, SYC, THA,
+        TKL, TLS, TON, TUV, VNM, VUT, WSM]
+  - GCAM-PR 5.3|Taiwan:
+      iso3_codes: TWN
+  - GCAM-PR 5.3|USA:
+      iso3_codes: [PRI, USA, VIR]

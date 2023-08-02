@@ -17,7 +17,7 @@
         BVT, CHL, COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY,
         HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS,
         SLV, SUR, TTO, URY, VCT, VEN, VGB, VIR, BES, CUW, SXM, TCA]
-        # ISO3 codes unknown to the pycountry package: ANT
+        # ISO3 codes unknown to the pycountry package: BES, CUW, SXM
   - REMIND 3.2|Middle East and North Africa:
       iso3_codes: [ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
         OMN, PSE, QAT, SAU, SDN, TUN, YEM, SYR]

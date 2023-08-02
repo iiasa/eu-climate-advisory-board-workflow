@@ -27,11 +27,10 @@
       iso3_codes: [ALB, AND, BGR, BIH, CHE, FRO, GIB, HRV, ISL, LIE, MCO, MKD, MNE,
         NOR, ROU, SJM, SMR, SRB, VAT]
   - AIM/CGE 2.2|Rest of Latin America:
-      iso3_codes: [ABW, AIA, ARG, ATG, BHS, BLZ, BMU, BOL, BRB, BVT, CHL, COL,
+      iso3_codes: [ABW, AIA, ARG, ATG, BES, CUW, SXM, BHS, BLZ, BMU, BOL, BRB, BVT, CHL, COL,
         CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GRL, GTM, GUF, GUY, HND, HTI,
         JAM, KNA, LCA, MEX, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SPM, SUR,
         TCA, TTO, URY, VCT, VEN, VGB, VIR]
-        # ISO3 codes unknown to the pycountry package: ANT
   - AIM/CGE 2.2|Middle East:
       iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, YEM]
   - AIM/CGE 2.2|North Africa:

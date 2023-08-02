@@ -2,20 +2,20 @@
   - ICES-XPS 1.0|Germany:
       iso3_codes: DEU
   - ICES-XPS 1.0|Benelux:
-      iso3_codes: [BEL, NLD, LUX]
+      iso3_codes: [BEL, LUX, NLD]
   - ICES-XPS 1.0|Greece:
       iso3_codes: GRC
   - ICES-XPS 1.0|Finland:
-      iso3_codes: FIN
+      iso3_codes: [ALA, FIN]
   - ICES-XPS 1.0|Czech Republic:
       iso3_codes: CZE
   - ICES-XPS 1.0|Italy:
       iso3_codes: ITA
   - ICES-XPS 1.0|France:
-      iso3_codes: FRA
+      iso3_codes: [FRA, GLP, MTQ, REU]
   - ICES-XPS 1.0|Rest of EU:
-      iso3_codes: [AUT, BGR, CYP, DNK, EST, HRV, HUN, IRL, LTU, LVA, MLT, PRT, ROU, SVN,
-          SVK]
+      iso3_codes: [AUT, BGR, CYP, DNK, EST, HRV, HUN, IRL, LTU, LVA, MLT, PRT, ROU,
+        SVK, SVN]
   - ICES-XPS 1.0|United Kingdom:
       iso3_codes: GBR
   - ICES-XPS 1.0|Spain:

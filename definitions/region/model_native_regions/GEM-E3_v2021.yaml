@@ -30,7 +30,7 @@
       iso3_codes: [BLR, BIH, ISL, LIE, MKD, MDA, MCO, MNE, NOR, SRB, CHE, UKR, AND, FRO,
         GIB, GGY, VAT, IMN, JEY, SMR]
   - GEM-E3 v2021|Rest of the world:
-      iso3_codes: [AFG, ALB, AGO, AIA, ATA, ATG, ARM, ABW, BHS, BHR, BGD, BRB, BLZ, BEN,
+      iso3_codes: [AFG, ALB, AGO, AIA, ATA, ATG, ARM, ABW, BES, CUW, SXM, BHS, BHR, BGD, BRB, BLZ, BEN,
         BMU, BTN, BOL, BWA, BVT, IOT, BRN, BFA, BDI, KHM, CMR, CPV, CYM, CAF, TCD, CHL,
         CXR, CCK, COL, COM, COG, COD, CRI, CIV, CUB, DJI, DMA, DOM, TLS, ECU, EGY, SLV,
         GNQ, ERI, ETH, FLK, GUF, ATF, JOR, GAB, GMB, GEO, GHA, GRL, GRD, GLP, GTM, GIN,
@@ -39,7 +39,6 @@
         NIC, NER, NFK, OMN, PAK, PAN, PRY, PER, PHL, PRI, REU, RWA, SHN, KNA, LCA,
         SPM, VCT, STP, SEN, SYC, SLE, SGP, SOM, SGS, LKA, SDN, SUR, SJM, SWZ, TWN, TJK,
         TZA, THA, TGO, TTO, TUN, TKM, TCA, UGA, URY, UZB, VNM, VGB, VIR, ZMB, ZWE]
-        # ISO3 codes unknown to the pycountry package: ANT
   - GEM-E3 v2021|Russian Federation:
       iso3_codes: RUS
   - GEM-E3 v2021|South Africa:
