@@ -1,41 +1,41 @@
 - TIAM-Grantham v3.4:
   - TIAM-Grantham v3.4|Africa:
-      iso3_codes: [AGO, BDI, BEN, BFA, BRN, BWA, CAF, CIV, CMR, COD, COG, CPV, DJI,
-        DZA, EGY, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO, MAR,
-        MDG, MLI, MOZ, MRT, MUS, MWI, NER, NGA, REU, RWA, SDN, SEN, SLE, SOM, STP,
-        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE]
+      countries: [Angola, Burundi, Benin, Burkina Faso, Brunei Darussalam, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Cabo Verde, Djibouti,
+        Algeria, Egypt, Eritrea, Ethiopia, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, Kenya, Liberia, Libya, Lesotho, Morocco,
+        Madagascar, Mali, Mozambique, Mauritania, Mauritius, Malawi, Niger, Nigeria, Réunion, Rwanda, Sudan, Senegal, Sierra Leone, Somalia, Sao Tome and Principe,
+        Eswatini, Seychelles, Chad, Togo, Tunisia, Tanzania, Uganda, South Africa, Zambia, Zimbabwe]
   - TIAM-Grantham v3.4|Australia and New Zealand:
-      iso3_codes: [AUS, NZL]
+      countries: [Australia, New Zealand]
   - TIAM-Grantham v3.4|Canada:
-      iso3_codes: CAN
+      countries: Canada
   - TIAM-Grantham v3.4|China:
-      iso3_codes: [CHN, HKG, TWN]
+      countries: [China, Hong Kong, Taiwan]
   - TIAM-Grantham v3.4|Central and South America:
-      iso3_codes: [ARG, ATG, BES, BHS, BLZ, BMU, BOL, BRA, BRB, CHL, COL, CRI, CUB,
-        CUW, CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MTQ,
-        NIC, PAN, PER, PRI, PRY, SLV, SUR, SXM, TTO, URY, VCT, VEN]
+      countries: [Argentina, Antigua and Barbuda, Bonaire, Sint Eustatius and Saba, Bahamas, Belize, Bermuda, Bolivia, Brazil, Barbados, Chile, Colombia, Costa Rica, Cuba,
+        Curaçao, Cayman Islands, Dominica, Dominican Republic, Ecuador, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Martinique,
+        Nicaragua, Panama, Peru, Puerto Rico, Paraguay, El Salvador, Suriname, Sint Maarten (Dutch part), Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela]
   - TIAM-Grantham v3.4|Eastern Europe:
-      iso3_codes: [ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN]
+      countries: [Albania, Bulgaria, Bosnia and Herzegovina, Czechia, Croatia, Hungary, North Macedonia, Montenegro, Poland, Romania, Serbia, Slovakia, Slovenia]
   - TIAM-Grantham v3.4|Former Soviet Union:
-      iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
-        UKR, UZB]
+      countries: [Armenia, Azerbaijan, Belarus, Estonia, Georgia, Kazakhstan, Kyrgyzstan, Lithuania, Latvia, Moldova, Russian Federation, Tajikistan, Turkmenistan,
+        Ukraine, Uzbekistan]
   - TIAM-Grantham v3.4|Global (mostly used for bunker fuels)
   - TIAM-Grantham v3.4|India:
-      iso3_codes: IND
+      countries: India
   - TIAM-Grantham v3.4|Japan:
-      iso3_codes: JPN
+      countries: Japan
   - TIAM-Grantham v3.4|Middle East:
-      iso3_codes: [ARE, BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
-        TUR, YEM]
+      countries: [United Arab Emirates, Bahrain, Cyprus, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, Syria,
+        Turkey, Yemen]
   - TIAM-Grantham v3.4|Mexico:
-      iso3_codes: MEX
+      countries: Mexico
   - TIAM-Grantham v3.4|Other Developing Asia:
-      iso3_codes: [AFG, BGD, BTN, FJI, IDN, KIR, LAO, LKA, MDV, MMR, MYS, NPL, PAK,
-        PHL, PNG, PRK, PYF, SGP, SLB, THA, VNM, VUT, WSM]
+      countries: [Afghanistan, Bangladesh, Bhutan, Fiji, Indonesia, Kiribati, Laos, Sri Lanka, Maldives, Myanmar, Malaysia, Nepal, Pakistan,
+        Philippines, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Viet Nam, Vanuatu, Samoa]
   - TIAM-Grantham v3.4|South Korea:
-      iso3_codes: KOR
+      countries: South Korea
   - TIAM-Grantham v3.4|United States of America:
-      iso3_codes: USA
+      countries: United States
   - TIAM-Grantham v3.4|Western Europe:
-      iso3_codes: [AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, GBR, GIB, GRC, GRL,
-        IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SMR, SWE, VAT]
+      countries: [Andorra, Austria, Belgium, Switzerland, Germany, Denmark, Spain, Finland, France, United Kingdom, Gibraltar, Greece, Greenland,
+        Ireland, Iceland, Italy, Liechtenstein, Luxembourg, Monaco, Malta, Netherlands, Norway, Portugal, San Marino, Sweden, Vatican]
