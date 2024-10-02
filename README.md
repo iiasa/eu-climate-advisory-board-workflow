@@ -1,6 +1,6 @@
 # EU Climate Advisory Board Scenario Explorer Workflow
 
-Copyright 2022-2023 IIASA
+Copyright 2023-2024 IIASA
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
