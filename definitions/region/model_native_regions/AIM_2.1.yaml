@@ -1,8 +1,8 @@
 - AIM/CGE 2.1:
   - AIM/CGE 2.1|Brazil:
       countries: [Brazil]
-  - AIM/CGE 2.1|[Canada]:
-      countries: Canada
+  - AIM/CGE 2.1|Canada:
+      countries: [Canada]
   - AIM/CGE 2.1|China:
       countries: [China, Hong Kong]
   - AIM/CGE 2.1|Former USSR:
