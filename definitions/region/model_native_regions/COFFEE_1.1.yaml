@@ -9,7 +9,7 @@
   - COFFEE 1.1|Brazil:
       countries: [Brazil]
   - COFFEE 1.1|Canada:
-      countries: [Canada, Saint Helena, Ascension and Tristan da Cunha, Saint Pierre and Miquelon]
+      countries: [Canada, "Saint Helena, Ascension and Tristan da Cunha", Saint Pierre and Miquelon]
   - COFFEE 1.1|Caspian Sea:
       countries: [Afghanistan, Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Pakistan, Tajikistan, Turkmenistan, Uzbekistan]
   - COFFEE 1.1|Central America:

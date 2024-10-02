@@ -31,7 +31,7 @@
       notes: does not include Croatia
   - GCAM 5.3|Western EU & UK:
       countries: [Andorra, Austria, Belgium, Germany, Denmark, Spain, Finland, Falkland Islands (Malvinas), France, Faroe Islands, United Kingdom, Gibraltar, Greece,
-        Greenland, Ireland, Italy, Luxembourg, Monaco, Netherlands, Portugal, Saint Helena, Ascension and Tristan da Cunha, San Marino, Saint Pierre and Miquelon, Sweden, Turks and Caicos Islands, Vatican, British Virgin Islands, Wallis and Futuna]
+        Greenland, Ireland, Italy, Luxembourg, Monaco, Netherlands, Portugal, "Saint Helena, Ascension and Tristan da Cunha", San Marino, Saint Pierre and Miquelon, Sweden, Turks and Caicos Islands, Vatican, British Virgin Islands, Wallis and Futuna]
   - GCAM 5.3|Europe_Eastern:
       countries: [Belarus, Moldova, Ukraine]
   - GCAM 5.3|Europe_Non_EU:

@@ -78,7 +78,7 @@
       countries: [Venezuela]
   - TIAM-ECN 1.2|Western Africa:
       countries: [Benin, Burkina Faso, Côte d'Ivoire, Cabo Verde, Western Sahara, Ghana, Guinea, Gambia, Guinea-Bissau, Liberia, Mali, Mauritania, Niger,
-        Senegal, Saint Helena, Ascension and Tristan da Cunha, Sierra Leone, Sao Tome and Principe, Togo]
+        Senegal, "Saint Helena, Ascension and Tristan da Cunha", Sierra Leone, Sao Tome and Principe, Togo]
   - TIAM-ECN 1.2|Western Europe:
       countries: [Andorra, Austria, Belgium, Switzerland, Germany, Denmark, Spain, Finland, France, Faroe Islands, United Kingdom, Gibraltar, Greece,
         Greenland, Ireland, Iceland, Italy, Liechtenstein, Luxembourg, Monaco, Malta, Netherlands, Norway, Portugal, Svalbard and Jan Mayen, San Marino, Sweden, Vatican]
