@@ -7,18 +7,18 @@
         Chad, Togo, Tonga, Tunisia, Tanzania, Uganda, Yemen, Zambia, Zimbabwe]
   - POLES JRC ENGAGE|Africa (10R Map)
   - POLES JRC ENGAGE|Argentina:
-      countries: Argentina
+      countries: [Argentina]
   - POLES JRC ENGAGE|Asia (excl. Japan):
       countries: [Afghanistan, Azerbaijan, Bangladesh, Brunei Darussalam, Bhutan, Christmas Island, Fiji, Hong Kong, Kazakhstan, Kyrgyzstan, Cambodia, Laos, Sri Lanka,
         Macao, Myanmar, Mongolia, Northern Mariana Islands, Malaysia, Nepal, Pakistan, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Tajikistan, Turkmenistan]
   - POLES JRC ENGAGE|Australia:
-      countries: Australia
+      countries: [Australia]
   - POLES JRC ENGAGE|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - POLES JRC ENGAGE|Canada:
-      countries: Canada
+      countries: [Canada]
   - POLES JRC ENGAGE|China:
-      countries: China
+      countries: [China]
   - POLES JRC ENGAGE|China+ (10R Map)
   - POLES JRC ENGAGE|EU28:
       countries: [Austria, Belgium, Czechia, Denmark, Spain, Estonia, Finland, Guernsey, Gibraltar, Croatia, Jersey, Lithuania, Poland,
@@ -28,18 +28,18 @@
       countries: [Bulgaria, Georgia, Montenegro, Ukraine]
   - POLES JRC ENGAGE|India+ (10R Map)
   - POLES JRC ENGAGE|India:
-      countries: India
+      countries: [India]
   - POLES JRC ENGAGE|Indonesia:
-      countries: Indonesia
+      countries: [Indonesia]
   - POLES JRC ENGAGE|Japan:
-      countries: Japan
+      countries: [Japan]
   - POLES JRC ENGAGE|Latin America (10R Map)
   - POLES JRC ENGAGE|Latin America:
-      countries: [Aruba, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile, Colombia, Costa Rica, Cuba,
+      countries: [Aruba, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile, Colombia, Costa Rica, Cuba,
         Dominica, Dominican Republic, Ecuador, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Nicaragua, Panama,
         Peru, Puerto Rico, Paraguay, Suriname, Trinidad and Tobago, Uruguay, Venezuela]
   - POLES JRC ENGAGE|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - POLES JRC ENGAGE|Middle East (10R Map)
   - POLES JRC ENGAGE|North America (10R Map)
   - POLES JRC ENGAGE|OECD90+EU:
@@ -50,14 +50,14 @@
   - POLES JRC ENGAGE|Rest of Asia (10R Map)
   - POLES JRC ENGAGE|Rest of World (10R Map)
   - POLES JRC ENGAGE|Russian Federation:
-      countries: Russian Federation
+      countries: [Russian Federation]
   - POLES JRC ENGAGE|Saudi Arabia:
-      countries: Saudi Arabia
+      countries: [Saudi Arabia]
   - POLES JRC ENGAGE|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - POLES JRC ENGAGE|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - POLES JRC ENGAGE|Turkey:
-      countries: Turkey
+      countries: [Turkey]
   - POLES JRC ENGAGE|USA:
       countries: [United States Minor Outlying Islands, United States, United States Virgin Islands]

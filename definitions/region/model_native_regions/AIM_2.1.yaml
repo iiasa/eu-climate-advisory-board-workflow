@@ -1,20 +1,20 @@
 - AIM/CGE 2.1:
   - AIM/CGE 2.1|Brazil:
-      countries: Brazil
-  - AIM/CGE 2.1|Canada:
+      countries: [Brazil]
+  - AIM/CGE 2.1|[Canada]:
       countries: Canada
   - AIM/CGE 2.1|China:
       countries: [China, Hong Kong]
   - AIM/CGE 2.1|Former USSR:
       countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
   - AIM/CGE 2.1|India:
-      countries: India
+      countries: [India]
   - AIM/CGE 2.1|Japan:
-      countries: Japan
+      countries: [Japan]
   - AIM/CGE 2.1|Turkey:
-      countries: Turkey
+      countries: [Turkey]
   - AIM/CGE 2.1|USA:
-      countries: United States
+      countries: [United States]
   - AIM/CGE 2.1|Other Africa:
       countries: [Angola, Burundi, Benin, Burkina Faso, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Comoros, Cabo Verde, Djibouti,
         Eritrea, Western Sahara, Ethiopia, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, Kenya, Liberia, Lesotho, Madagascar, Mali, Mozambique,
@@ -27,7 +27,7 @@
       countries: [Albania, Andorra, Bulgaria, Bosnia and Herzegovina, Switzerland, Faroe Islands, Gibraltar, Croatia, Iceland, Liechtenstein, Monaco, North Macedonia, Montenegro,
         Norway, Romania, Svalbard and Jan Mayen, San Marino, Serbia, Vatican]
   - AIM/CGE 2.1|Rest of Latin America:
-      countries: [Aruba, Anguilla, Argentina, Antigua and Barbuda, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Bahamas, Belize, Bermuda, Bolivia, Barbados, Bouvet Island, Chile, Colombia,
+      countries: [Aruba, Anguilla, Argentina, Antigua and Barbuda, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Bahamas, Belize, Bermuda, Bolivia, Barbados, Bouvet Island, Chile, Colombia,
         Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, Ecuador, Falkland Islands (Malvinas), Guadeloupe, Grenada, Greenland, Guatemala, French Guiana, Guyana, Honduras, Haiti,
         Jamaica, Saint Kitts and Nevis, Saint Lucia, Mexico, Montserrat, Martinique, Nicaragua, Panama, Peru, Puerto Rico, Paraguay, South Georgia and the South Sandwich Islands, El Salvador, Saint Pierre and Miquelon, Suriname,
         Turks and Caicos Islands, Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands, United States Virgin Islands]

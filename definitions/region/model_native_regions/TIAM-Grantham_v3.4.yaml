@@ -7,11 +7,11 @@
   - TIAM-Grantham v3.4|Australia and New Zealand:
       countries: [Australia, New Zealand]
   - TIAM-Grantham v3.4|Canada:
-      countries: Canada
+      countries: [Canada]
   - TIAM-Grantham v3.4|China:
       countries: [China, Hong Kong, Taiwan]
   - TIAM-Grantham v3.4|Central and South America:
-      countries: [Argentina, Antigua and Barbuda, Bonaire, Sint Eustatius and Saba, Bahamas, Belize, Bermuda, Bolivia, Brazil, Barbados, Chile, Colombia, Costa Rica, Cuba,
+      countries: [Argentina, Antigua and Barbuda, "Bonaire, Sint Eustatius and Saba", Bahamas, Belize, Bermuda, Bolivia, Brazil, Barbados, Chile, Colombia, Costa Rica, Cuba,
         Curaçao, Cayman Islands, Dominica, Dominican Republic, Ecuador, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Martinique,
         Nicaragua, Panama, Peru, Puerto Rico, Paraguay, El Salvador, Suriname, Sint Maarten (Dutch part), Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela]
   - TIAM-Grantham v3.4|Eastern Europe:
@@ -21,21 +21,21 @@
         Ukraine, Uzbekistan]
   - TIAM-Grantham v3.4|Global (mostly used for bunker fuels)
   - TIAM-Grantham v3.4|India:
-      countries: India
+      countries: [India]
   - TIAM-Grantham v3.4|Japan:
-      countries: Japan
+      countries: [Japan]
   - TIAM-Grantham v3.4|Middle East:
       countries: [United Arab Emirates, Bahrain, Cyprus, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, Syria,
         Turkey, Yemen]
   - TIAM-Grantham v3.4|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - TIAM-Grantham v3.4|Other Developing Asia:
       countries: [Afghanistan, Bangladesh, Bhutan, Fiji, Indonesia, Kiribati, Laos, Sri Lanka, Maldives, Myanmar, Malaysia, Nepal, Pakistan,
         Philippines, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Viet Nam, Vanuatu, Samoa]
   - TIAM-Grantham v3.4|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - TIAM-Grantham v3.4|United States of America:
-      countries: United States
+      countries: [United States]
   - TIAM-Grantham v3.4|Western Europe:
       countries: [Andorra, Austria, Belgium, Switzerland, Germany, Denmark, Spain, Finland, France, United Kingdom, Gibraltar, Greece, Greenland,
         Ireland, Iceland, Italy, Liechtenstein, Luxembourg, Monaco, Malta, Netherlands, Norway, Portugal, San Marino, Sweden, Vatican]

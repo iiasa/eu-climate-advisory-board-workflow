@@ -1,26 +1,26 @@
 - ICES-XPS 1.0:
   - ICES-XPS 1.0|Germany:
-      countries: Germany
+      countries: [Germany]
   - ICES-XPS 1.0|Benelux:
       countries: [Belgium, Luxembourg, Netherlands]
   - ICES-XPS 1.0|Greece:
-      countries: Greece
+      countries: [Greece]
   - ICES-XPS 1.0|Finland:
       countries: [Åland Islands, Finland]
   - ICES-XPS 1.0|Czech Republic:
-      countries: Czechia
+      countries: [Czechia]
   - ICES-XPS 1.0|Italy:
-      countries: Italy
+      countries: [Italy]
   - ICES-XPS 1.0|France:
       countries: [France, Guadeloupe, Martinique, Réunion]
   - ICES-XPS 1.0|Rest of EU:
       countries: [Austria, Bulgaria, Cyprus, Denmark, Estonia, Croatia, Hungary, Ireland, Lithuania, Latvia, Malta, Portugal, Romania,
         Slovakia, Slovenia]
   - ICES-XPS 1.0|United Kingdom:
-      countries: United Kingdom
+      countries: [United Kingdom]
   - ICES-XPS 1.0|Spain:
-      countries: Spain
+      countries: [Spain]
   - ICES-XPS 1.0|Poland:
-      countries: Poland
+      countries: [Poland]
   - ICES-XPS 1.0|Sweden:
-      countries: Sweden
+      countries: [Sweden]

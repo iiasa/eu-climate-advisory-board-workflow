@@ -1,25 +1,25 @@
 - GEM-E3 v2021:
   - GEM-E3 v2021|Argentina:
-      countries: Argentina
+      countries: [Argentina]
   - GEM-E3 v2021|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - GEM-E3 v2021|Canada:
-      countries: Canada
+      countries: [Canada]
   - GEM-E3 v2021|China:
-      countries: China
+      countries: [China]
   - GEM-E3 v2021|EU28:
       countries: [Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland,
         Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, United Kingdom]
   - GEM-E3 v2021|Indonesia:
-      countries: Indonesia
+      countries: [Indonesia]
   - GEM-E3 v2021|India:
-      countries: India
+      countries: [India]
   - GEM-E3 v2021|Japan:
-      countries: Japan
+      countries: [Japan]
   - GEM-E3 v2021|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - GEM-E3 v2021|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - GEM-E3 v2021|Australia and New Zealand:
       countries: [Australia, New Zealand, American Samoa, Cook Islands, Fiji, French Polynesia, Guam, Kiribati, Marshall Islands, Micronesia, Nauru, New Caledonia, Niue, Northern Mariana Islands,
         Palau, Papua New Guinea, Pitcairn, Samoa, Solomon Islands, Tokelau, Tonga, Tuvalu, United States Minor Outlying Islands, Vanuatu, Wallis and Futuna]
@@ -30,7 +30,7 @@
       countries: [Belarus, Bosnia and Herzegovina, Iceland, Liechtenstein, North Macedonia, Moldova, Monaco, Montenegro, Norway, Serbia, Switzerland, Ukraine, Andorra, Faroe Islands,
         Gibraltar, Guernsey, Vatican, Isle of Man, Jersey, San Marino]
   - GEM-E3 v2021|Rest of the world:
-      countries: [Afghanistan, Albania, Angola, Anguilla, Antarctica, Antigua and Barbuda, Armenia, Aruba, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Bahamas, Bahrain, Bangladesh, Barbados, Belize, Benin,
+      countries: [Afghanistan, Albania, Angola, Anguilla, Antarctica, Antigua and Barbuda, Armenia, Aruba, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Bahamas, Bahrain, Bangladesh, Barbados, Belize, Benin,
         Bermuda, Bhutan, Bolivia, Botswana, Bouvet Island, British Indian Ocean Territory, Brunei Darussalam, Burkina Faso, Burundi, Cambodia, Cameroon, Cabo Verde, Cayman Islands, Central African Republic, Chad, Chile,
         Christmas Island, Cocos (Keeling) Islands, Colombia, Comoros, Congo, Democratic Republic of the Congo, Costa Rica, Côte d'Ivoire, Cuba, Djibouti, Dominica, Dominican Republic, Timor-Leste, Ecuador, Egypt, El Salvador,
         Equatorial Guinea, Eritrea, Ethiopia, Falkland Islands (Malvinas), French Guiana, French Southern Territories, Jordan, Gabon, Gambia, Georgia, Ghana, Greenland, Grenada, Guadeloupe, Guatemala, Guinea,
@@ -40,12 +40,12 @@
         Saint Pierre and Miquelon, Saint Vincent and the Grenadines, Sao Tome and Principe, Senegal, Seychelles, Sierra Leone, Singapore, Somalia, South Georgia and the South Sandwich Islands, Sri Lanka, Sudan, Suriname, Svalbard and Jan Mayen, Eswatini, Taiwan, Tajikistan,
         Tanzania, Thailand, Togo, Trinidad and Tobago, Tunisia, Turkmenistan, Turks and Caicos Islands, Uganda, Uruguay, Uzbekistan, Viet Nam, British Virgin Islands, United States Virgin Islands, Zambia, Zimbabwe]
   - GEM-E3 v2021|Russian Federation:
-      countries: Russian Federation
+      countries: [Russian Federation]
   - GEM-E3 v2021|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - GEM-E3 v2021|Saudi Arabia:
-      countries: Saudi Arabia
+      countries: [Saudi Arabia]
   - GEM-E3 v2021|Turkey:
-      countries: Turkey
+      countries: [Turkey]
   - GEM-E3 v2021|USA:
-      countries: United States
+      countries: [United States]

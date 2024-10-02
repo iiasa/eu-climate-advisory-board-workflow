@@ -1,81 +1,81 @@
 - TIAM-ECN 1.2:
   - TIAM-ECN 1.2|Algeria:
-      countries: Algeria
+      countries: [Algeria]
   - TIAM-ECN 1.2|Angola:
-      countries: Angola
+      countries: [Angola]
   - TIAM-ECN 1.2|Argentina:
       countries: [Argentina, Falkland Islands (Malvinas)]
   - TIAM-ECN 1.2|Australia & New Zealand:
       countries: [Australia, New Zealand]
   - TIAM-ECN 1.2|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - TIAM-ECN 1.2|Canada:
-      countries: Canada
+      countries: [Canada]
   - TIAM-ECN 1.2|Central Africa:
       countries: [Central African Republic, Cameroon, Congo, Gabon, Equatorial Guinea, Chad]
   - TIAM-ECN 1.2|Chile:
-      countries: Chile
+      countries: [Chile]
   - TIAM-ECN 1.2|China:
       countries: [China, Hong Kong]
   - TIAM-ECN 1.2|Colombia:
-      countries: Colombia
+      countries: [Colombia]
   - TIAM-ECN 1.2|Congo DR:
-      countries: Democratic Republic of the Congo
+      countries: [Democratic Republic of the Congo]
   - TIAM-ECN 1.2|Eastern Africa:
       countries: [Burundi, Djibouti, Eritrea, Rwanda, Sudan, Somalia, South Sudan, Seychelles, Uganda]
   - TIAM-ECN 1.2|Eastern Europe:
       countries: [Albania, Bulgaria, Bosnia and Herzegovina, Cyprus, Czechia, Croatia, Hungary, North Macedonia, Montenegro, Poland, Romania, Serbia, Slovakia,
         Slovenia]
   - TIAM-ECN 1.2|Egypt:
-      countries: Egypt
+      countries: [Egypt]
   - TIAM-ECN 1.2|Ethiopia:
-      countries: Ethiopia
+      countries: [Ethiopia]
   - TIAM-ECN 1.2|Former Soviet Union:
       countries: [Armenia, Azerbaijan, Belarus, Estonia, Georgia, Kazakhstan, Kyrgyzstan, Lithuania, Latvia, Moldova, Russian Federation, Tajikistan, Turkmenistan,
         Ukraine, Uzbekistan]
   - TIAM-ECN 1.2|India:
-      countries: India
+      countries: [India]
   - TIAM-ECN 1.2|Japan:
-      countries: Japan
+      countries: [Japan]
   - TIAM-ECN 1.2|Kenya:
-      countries: Kenya
+      countries: [Kenya]
   - TIAM-ECN 1.2|Libya:
-      countries: Libya
+      countries: [Libya]
   - TIAM-ECN 1.2|Madagascar:
-      countries: Madagascar
+      countries: [Madagascar]
   - TIAM-ECN 1.2|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - TIAM-ECN 1.2|Middle East:
       countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
         Turkey, Yemen]
   - TIAM-ECN 1.2|Morocco:
-      countries: Morocco
+      countries: [Morocco]
   - TIAM-ECN 1.2|Nigeria:
-      countries: Nigeria
+      countries: [Nigeria]
   - TIAM-ECN 1.2|Other Developing Asia:
       countries: [Afghanistan, American Samoa, French Southern Territories, Bangladesh, Brunei Darussalam, Bhutan, Cocos (Keeling) Islands, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Heard Island and McDonald Islands,
         Indonesia, British Indian Ocean Territory, Cambodia, Kiribati, Laos, Sri Lanka, Macao, Maldives, Marshall Islands, Myanmar, Mongolia, Northern Mariana Islands, Malaysia, New Caledonia, Norfolk Island,
         Niue, Nepal, Nauru, Pakistan, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Tokelau, Timor-Leste,
         Tonga, Tuvalu, Taiwan, Viet Nam, Vanuatu, Wallis and Futuna, Samoa]
   - TIAM-ECN 1.2|Other Latin America:
-      countries: [Aruba, Anguilla, Antarctica, Antigua and Barbuda, Bonaire, Sint Eustatius and Saba, Bahamas, Belize, Bermuda, Bolivia, Barbados, Bouvet Island, Costa Rica, Cuba,
+      countries: [Aruba, Anguilla, Antarctica, Antigua and Barbuda, "Bonaire, Sint Eustatius and Saba", Bahamas, Belize, Bermuda, Bolivia, Barbados, Bouvet Island, Costa Rica, Cuba,
         Curaçao, Cayman Islands, Dominica, Dominican Republic, Ecuador, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, 
         Saint Martin (French part), Montserrat, Martinique, Nicaragua, Panama, Peru, Puerto Rico, Paraguay, South Georgia and the South Sandwich Islands, El Salvador, Suriname, Sint Maarten (Dutch part), Turks and Caicos Islands, Trinidad and Tobago, Uruguay, 
         Saint Vincent and the Grenadines, British Virgin Islands, United States Virgin Islands]
   - TIAM-ECN 1.2|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - TIAM-ECN 1.2|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - TIAM-ECN 1.2|Southeast Africa:
       countries: [Mozambique, Tanzania]
   - TIAM-ECN 1.2|Southern Africa:
       countries: [Botswana, Comoros, Lesotho, Mauritius, Malawi, Mayotte, Namibia, Réunion, Eswatini, Zambia, Zimbabwe]
   - TIAM-ECN 1.2|Tunisia:
-      countries: Tunisia
+      countries: [Tunisia]
   - TIAM-ECN 1.2|United States of America:
       countries: [Saint Pierre and Miquelon, United States Minor Outlying Islands, United States]
   - TIAM-ECN 1.2|Venezuela:
-      countries: Venezuela
+      countries: [Venezuela]
   - TIAM-ECN 1.2|Western Africa:
       countries: [Benin, Burkina Faso, Côte d'Ivoire, Cabo Verde, Western Sahara, Ghana, Guinea, Gambia, Guinea-Bissau, Liberia, Mali, Mauritania, Niger,
         Senegal, Saint Helena, Ascension and Tristan da Cunha, Sierra Leone, Sao Tome and Principe, Togo]

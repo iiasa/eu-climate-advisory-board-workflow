@@ -10,22 +10,22 @@
       countries: [Benin, Burkina Faso, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Cabo Verde, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau,
         Equatorial Guinea, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, Sao Tome and Principe, Chad, Togo]
   - GCAM 5.3|Argentina:
-      countries: Argentina
+      countries: [Argentina]
   - GCAM 5.3|Australia and New Zealand:
       countries: [Australia, New Zealand]
   - GCAM 5.3|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - GCAM 5.3|Canada:
-      countries: Canada
+      countries: [Canada]
   - GCAM 5.3|Central America and Caribbean:
-      countries: [Aruba, Anguilla, Antigua and Barbuda, Bonaire, Sint Eustatius and Saba, Bahamas, Belize, Bermuda, Barbados, Costa Rica, Cuba, Curaçao, Cayman Islands, Dominica, Dominican Republic,
+      countries: [Aruba, Anguilla, Antigua and Barbuda, "Bonaire, Sint Eustatius and Saba", Bahamas, Belize, Bermuda, Barbados, Costa Rica, Cuba, Curaçao, Cayman Islands, Dominica, Dominican Republic,
         Guadeloupe, Grenada, Guatemala, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Montserrat, Martinique, Nicaragua, Panama, El Salvador, Sint Maarten (Dutch part), Trinidad and Tobago, Saint Vincent and the Grenadines]
   - GCAM 5.3|Central Asia:
       countries: [Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Mongolia, Tajikistan, Turkmenistan, Uzbekistan]
   - GCAM 5.3|China:
       countries: [China, Hong Kong, Macao]
   - GCAM 5.3|Colombia:
-      countries: Colombia
+      countries: [Colombia]
   - GCAM 5.3|Eastern EU:
       countries: [Bulgaria, Cyprus, Czechia, Estonia, Hungary, Lithuania, Latvia, Malta, Poland, Romania, Slovakia, Slovenia]
       notes: does not include Croatia
@@ -39,22 +39,22 @@
   - GCAM 5.3|European Free Trade Association:
       countries: [Switzerland, Iceland, Liechtenstein, Norway, Svalbard and Jan Mayen]
   - GCAM 5.3|India:
-      countries: India
+      countries: [India]
   - GCAM 5.3|Indonesia:
-      countries: Indonesia
+      countries: [Indonesia]
   - GCAM 5.3|Japan:
-      countries: Japan
+      countries: [Japan]
   - GCAM 5.3|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - GCAM 5.3|Middle East:
       countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
         Yemen]
   - GCAM 5.3|Pakistan:
-      countries: Pakistan
+      countries: [Pakistan]
   - GCAM 5.3|Russia:
-      countries: Russian Federation
+      countries: [Russian Federation]
   - GCAM 5.3|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - GCAM 5.3|South America_Northern:
       countries: [French Guiana, Guyana, Suriname, Venezuela]
   - GCAM 5.3|South America_Southern:
@@ -62,12 +62,12 @@
   - GCAM 5.3|South Asia:
       countries: [Afghanistan, American Samoa, Bangladesh, Bhutan, Laos, Sri Lanka, Maldives, Nepal]
   - GCAM 5.3|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - GCAM 5.3|Southeast Asia:
       countries: [Brunei Darussalam, Cocos (Keeling) Islands, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Cambodia, Kiribati, Marshall Islands, Myanmar, Northern Mariana Islands, Malaysia,
         Mayotte, New Caledonia, Norfolk Island, Niue, Nauru, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Seychelles, Thailand,
         Tokelau, Timor-Leste, Tonga, Tuvalu, Viet Nam, Vanuatu, Samoa]
   - GCAM 5.3|Taiwan:
-      countries: Taiwan
+      countries: [Taiwan]
   - GCAM 5.3|USA:
       countries: [Puerto Rico, United States, United States Virgin Islands]

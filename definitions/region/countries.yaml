@@ -1,193 +1,194 @@
-# This file was created using the script `data/write-countries.py`
+# This file was created using the script `data/write-countries.p[ y`
 # DO NOT ALTER THIS FILE MANUALLY!
 
 # List of countries
-- country:
+-[  country:
   - Albania:
       eu_member: false
       iso2: AL
-      countries: Albania
+      countries: [ Albania ]
   - Andorra:
       eu_member: false
       iso2: AD
-      countries: Andorra
+      countries: [ Andorra ]
   - Austria:
       eu_member: true
       iso2: AT
-      countries: Austria
+      countries: [ Austria ]
   - Belarus:
       eu_member: false
       iso2: BY
-      countries: Belarus
+      countries: [ Belarus ]
   - Belgium:
       eu_member: true
       iso2: BE
-      countries: Belgium
+      countries: [ Belgium ]
   - Bosnia and Herzegovina:
       eu_member: false
       iso2: BA
-      countries: Bosnia and Herzegovina
+      countries: [ Bosnia and Herzegovina ]
   - Bulgaria:
       eu_member: true
       iso2: BG
-      countries: Bulgaria
+      countries: [ Bulgaria ]
   - Croatia:
       eu_member: true
       iso2: HR
-      countries: Croatia
+      countries: [ Croatia ]
   - Cyprus:
       eu_member: true
       iso2: CY
-      countries: Cyprus
+      countries: [ Cyprus ]
   - Czech Republic:
       eu_member: true
       iso2: CZ
-      countries: Czechia
+      countries: [ Czechia ]
   - Denmark:
       eu_member: true
       iso2: DK
-      countries: Denmark
+      countries: [ Denmark ]
   - Estonia:
       eu_member: true
       iso2: EE
-      countries: Estonia
+      countries: [ Estonia ]
   - Finland:
       eu_member: true
       iso2: FI
-      countries: Finland
+      countries: [ Finland ]
   - France:
       eu_member: true
       iso2: FR
-      countries: France
+      countries: [ France ]
   - Germany:
       eu_member: true
       iso2: DE
-      countries: Germany
+      countries: [ Germany ]
   - Gibraltar:
       eu_member: false
       iso2: GI
-      countries: Gibraltar
+      countries: [ Gibraltar ]
   - Greece:
       eu_member: true
       iso2: GR
       iso2_alt: EL # the European Commission uses alternative ISO2 codes
-      countries: Greece
+      countries: [ Greece ]
   - Hungary:
       eu_member: true
       iso2: HU
-      countries: Hungary
+      countries: [ Hungary ]
   - Iceland:
       eu_member: false
       iso2: IS
-      countries: Iceland
+      countries: [ Iceland ]
   - Ireland:
       eu_member: true
       iso2: IE
-      countries: Ireland
+      countries: [ Ireland ]
   - Italy:
       eu_member: true
       iso2: IT
-      countries: Italy
+      countries: [ Italy ]
   - Kosovo:
       eu_member: false
       iso2: XK
+      countries: [ Kosovo ]
       # ISO3 codes unknown to the pycountry package: XKX
   - Latvia:
       eu_member: true
       iso2: LV
-      countries: Latvia
+      countries: [ Latvia ]
   - Liechtenstein:
       eu_member: false
       iso2: LI
-      countries: Liechtenstein
+      countries: [ Liechtenstein ]
   - Lithuania:
       eu_member: true
       iso2: LT
-      countries: Lithuania
+      countries: [ Lithuania ]
   - Luxembourg:
       eu_member: true
       iso2: LU
-      countries: Luxembourg
+      countries: [ Luxembourg ]
   - Malta:
       eu_member: true
       iso2: MT
-      countries: Malta
+      countries: [ Malta ]
   - Moldova:
       eu_member: false
       iso2: MD
-      countries: Moldova
+      countries: [ Moldova ]
   - Monaco:
       eu_member: false
       iso2: MC
-      countries: Monaco
+      countries: [ Monaco ]
   - Montenegro:
       eu_member: false
       iso2: ME
-      countries: Montenegro
+      countries: [ Montenegro ]
   - North Macedonia:
       eu_member: false
       iso2: MK
-      countries: North Macedonia
+      countries: [ North Macedonia ]
   - Norway:
       eu_member: false
       iso2: 'NO' # interpreted as 'false' without quotes
-      countries: Norway
+      countries: [ Norway ]
   - Poland:
       eu_member: true
       iso2: PL
-      countries: Poland
+      countries: [ Poland ]
   - Portugal:
       eu_member: true
       iso2: PT
-      countries: Portugal
+      countries: [ Portugal ]
   - Romania:
       eu_member: true
       iso2: RO
-      countries: Romania
+      countries: [ Romania ]
   - Russia:
       eu_member: false
       iso2: RU
-      countries: Russian Federation
+      countries: [ Russian Federation ]
   - Serbia:
       eu_member: false
       iso2: RS
-      countries: Serbia
+      countries: [ Serbia ]
   - Slovakia:
       eu_member: true
       iso2: SK
-      countries: Slovakia
+      countries: [ Slovakia ]
   - Slovenia:
       eu_member: true
       iso2: SI
-      countries: Slovenia
+      countries: [ Slovenia ]
   - Spain:
       eu_member: true
       iso2: ES
-      countries: Spain
+      countries: [ Spain ]
   - Sweden:
       eu_member: true
       iso2: SE
-      countries: Sweden
+      countries: [ Sweden ]
   - Switzerland:
       eu_member: false
       iso2: CH
-      countries: Switzerland
+      countries: [ Switzerland ]
   - The Netherlands:
       eu_member: true
       iso2: NL
-      countries: Netherlands
+      countries: [ Netherlands ]
       synonyms: ['Netherlands']
   - Turkey:
       eu_member: false
       iso2: TR
-      countries: Turkey
+      countries: [ Turkey ]
   - Ukraine:
       eu_member: false
       iso2: UA
-      countries: Ukraine
+      countries: [ Ukraine ]
   - United Kingdom:
       eu_member: false
       iso2: GB
       iso2_alt: UK # the European Commission uses alternative ISO2 codes
-      countries: United Kingdom
+      countries: [ United Kingdom ]
       synonyms: ['Great Britain']

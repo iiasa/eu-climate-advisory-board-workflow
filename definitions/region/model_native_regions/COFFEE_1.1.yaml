@@ -7,13 +7,13 @@
   - COFFEE 1.1|Australia & New Zealand:
       countries: [Australia, New Zealand]
   - COFFEE 1.1|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - COFFEE 1.1|Canada:
       countries: [Canada, Saint Helena, Ascension and Tristan da Cunha, Saint Pierre and Miquelon]
   - COFFEE 1.1|Caspian Sea:
       countries: [Afghanistan, Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Pakistan, Tajikistan, Turkmenistan, Uzbekistan]
   - COFFEE 1.1|Central America:
-      countries: [Aruba, Anguilla, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica,
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica,
         Dominican Republic, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Mexico, Montserrat, Martinique,
         Nicaragua, Panama, El Salvador, Suriname, Turks and Caicos Islands, Trinidad and Tobago, Saint Vincent and the Grenadines]
   - COFFEE 1.1|China:
@@ -21,9 +21,9 @@
   - COFFEE 1.1|Eastern Europe:
       countries: [Albania, Bosnia and Herzegovina, Belarus, Croatia, Moldova, North Macedonia, Montenegro, Serbia, Ukraine]
   - COFFEE 1.1|India:
-      countries: India
+      countries: [India]
   - COFFEE 1.1|Japan:
-      countries: Japan
+      countries: [Japan]
   - COFFEE 1.1|Middle East:
       countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
         Yemen]
@@ -33,13 +33,13 @@
         Nauru, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Tokelau, Timor-Leste, Tonga, Tuvalu, Taiwan,
         Viet Nam, Vanuatu, Wallis and Futuna, Samoa]
   - COFFEE 1.1|Russia:
-      countries: Russian Federation
+      countries: [Russian Federation]
   - COFFEE 1.1|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - COFFEE 1.1|South America:
       countries: [Argentina, Bolivia, Chile, Colombia, Ecuador, Falkland Islands (Malvinas), Peru, Paraguay, South Georgia and the South Sandwich Islands, Uruguay, Venezuela]
   - COFFEE 1.1|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - COFFEE 1.1|United States:
       countries: [American Samoa, Puerto Rico, United States Minor Outlying Islands, United States, British Virgin Islands, United States Virgin Islands]
   - COFFEE 1.1|Western Europe:

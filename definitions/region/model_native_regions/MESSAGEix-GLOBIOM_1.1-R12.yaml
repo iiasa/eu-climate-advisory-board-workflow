@@ -1,6 +1,6 @@
 - MESSAGEix-GLOBIOM 1.1-R12:
   - MESSAGEix-GLOBIOM 1.1-R12|China:
-      countries: China
+      countries: [China]
   - MESSAGEix-GLOBIOM 1.1-R12|Eastern Europe:
       countries: [Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Czechia, Estonia, Hungary, Latvia, Lithuania, North Macedonia, Montenegro, Poland, Romania,
         Serbia, Slovakia, Slovenia]
@@ -8,7 +8,7 @@
       countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
   - MESSAGEix-GLOBIOM 1.1-R12|Latin America and the Caribbean:
       countries: [Antigua and Barbuda, Argentina, Bahamas, Barbados, Belize, Bermuda, Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic,
-        Ecuador, El Salvador, Equatorial Guinea, Falkland Islands (Malvinas), Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique, Mexico, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama,
+        Ecuador, El Salvador, Equatorial Guinea, Falkland Islands (Malvinas), Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique, Mexico, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama,
         Paraguay, Peru, Suriname, Trinidad and Tobago, Uruguay, Venezuela]
   - MESSAGEix-GLOBIOM 1.1-R12|Middle East and North Africa:
       countries: [Algeria, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Qatar,

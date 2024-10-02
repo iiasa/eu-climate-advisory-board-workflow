@@ -1,6 +1,6 @@
 - WITCH 5.0:
   - WITCH 5.0|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - WITCH 5.0|Canada:
       countries: [Canada, Saint Pierre and Miquelon]
   - WITCH 5.0|China:
@@ -11,18 +11,18 @@
         Jersey, Liechtenstein, Lithuania, Luxembourg, Latvia, Monaco, North Macedonia, Malta, Montenegro, Netherlands, Norway, Poland, Portugal, Romania, Svalbard and Jan Mayen,
         San Marino, Serbia, Slovakia, Slovenia, Sweden, Vatican]
   - WITCH 5.0|India:
-      countries: India
+      countries: [India]
   - WITCH 5.0|Indonesia:
-      countries: Indonesia
+      countries: [Indonesia]
   - WITCH 5.0|Japan and South Korea:
       countries: [Japan, South Korea, North Korea]
   - WITCH 5.0|Latin america and Caraibes (except Brasil and Mexico):
-      countries: [Aruba, Anguilla, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Argentina, Antarctica, Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile,
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Argentina, Antarctica, Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile,
         Colombia, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, Ecuador, Falkland Islands (Malvinas), Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti,
         Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Montserrat, Martinique, Nicaragua, Panama, Peru, Puerto Rico, Paraguay, South Georgia and the South Sandwich Islands, El Salvador, Suriname, Turks and Caicos Islands,
         Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands, United States Virgin Islands]
   - WITCH 5.0|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - WITCH 5.0|Moyen-Orient and North Africa:
       countries: [United Arab Emirates, Bahrain, Algeria, Egypt, Western Sahara, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco,
         Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia, Yemen]
@@ -31,7 +31,7 @@
         Niue, Nauru, New Zealand, Pitcairn, Palau, Papua New Guinea, French Polynesia, Solomon Islands, Tokelau, Timor-Leste, Tonga, Tuvalu, United States Minor Outlying Islands, Vanuatu, Wallis and Futuna,
         Samoa]
   - WITCH 5.0|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - WITCH 5.0|South Asia:
       countries: [Afghanistan, Bangladesh, Bhutan, Sri Lanka, Maldives, Nepal, Pakistan]
   - WITCH 5.0|South-East Asia:
@@ -45,4 +45,4 @@
       countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Mongolia, Russian Federation, Tajikistan, Turkmenistan, Turkey, Ukraine,
         Uzbekistan]
   - WITCH 5.0|United States of America:
-      countries: United States
+      countries: [United States]

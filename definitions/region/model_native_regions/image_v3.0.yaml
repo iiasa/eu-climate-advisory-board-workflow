@@ -6,33 +6,33 @@
       countries: [Albania, Bulgaria, Bosnia and Herzegovina, Cyprus, Czechia, Estonia, Croatia, Hungary, Lithuania, Latvia, North Macedonia, Poland, Romania,
         Serbia, Slovakia, Slovenia]
   - IMAGE 3.0|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - IMAGE 3.0|Canada:
-      countries: Canada
+      countries: [Canada]
   - IMAGE 3.0|China:
       countries: [China, Hong Kong, Macao, Mongolia, Taiwan]
   - IMAGE 3.0|Eastern Africa:
       countries: [Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar, Mauritius, Réunion, Rwanda, Sudan, Somalia, South Sudan,
         Seychelles, Uganda]
   - IMAGE 3.0|India:
-      countries: India
+      countries: [India]
   - IMAGE 3.0|Indonesia:
       countries: [Indonesia, Papua New Guinea]
   - IMAGE 3.0|Japan:
-      countries: Japan
+      countries: [Japan]
   - IMAGE 3.0|Korea:
       countries: [South Korea, North Korea]
   - IMAGE 3.0|Middle East:
       countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, Syria, Yemen]
   - IMAGE 3.0|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - IMAGE 3.0|Northern Africa:
       countries: [Algeria, Egypt, Western Sahara, Libya, Morocco, Tunisia]
   - IMAGE 3.0|Oceania:
       countries: [American Samoa, Australia, Cook Islands, Fiji, Micronesia, Kiribati, Marshall Islands, New Caledonia, Norfolk Island, Niue, Nauru, New Zealand, Pitcairn,
         Palau, French Polynesia, Solomon Islands, Tokelau, Tonga, Tuvalu, Vanuatu, Wallis and Futuna, Samoa]
   - IMAGE 3.0|Other Central America:
-      countries: [Aruba, Anguilla, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Bahamas, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, Guadeloupe,
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Bahamas, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, Guadeloupe,
         Grenada, Guatemala, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Montserrat, Martinique, Nicaragua, Panama, Puerto Rico, El Salvador, Turks and Caicos Islands, Trinidad and Tobago,
         Saint Vincent and the Grenadines, British Virgin Islands, United States Virgin Islands]
   - IMAGE 3.0|Other Southern Africa:
@@ -44,13 +44,13 @@
   - IMAGE 3.0|Russia:
       countries: [Armenia, Azerbaijan, Georgia, Russian Federation]
   - IMAGE 3.0|South Africa:
-      countries: South Africa
+      countries: [South Africa]
   - IMAGE 3.0|South-East Asia:
       countries: [Brunei Darussalam, Cambodia, Laos, Myanmar, Malaysia, Philippines, Singapore, Thailand, Timor-Leste, Viet Nam]
   - IMAGE 3.0|Kazakhstan region:
       countries: [Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan]
   - IMAGE 3.0|Turkey:
-      countries: Turkey
+      countries: [Turkey]
   - IMAGE 3.0|Ukraine region:
       countries: [Belarus, Moldova, Ukraine]
   - IMAGE 3.0|USA:

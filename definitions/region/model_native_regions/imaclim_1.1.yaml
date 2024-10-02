@@ -6,11 +6,11 @@
         Sao Tome and Principe, Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan, Eswatini, Syria, Tanzania, Togo, Tunisia, Uganda, Western Sahara,
         Zambia, Zimbabwe]
   - IMACLIM 1.1|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - IMACLIM 1.1|Canada:
-      countries: Canada
+      countries: [Canada]
   - IMACLIM 1.1|China:
-      countries: China
+      countries: [China]
   - IMACLIM 1.1|Former Soviet Union minus EU Baltic countries:
       countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
   - IMACLIM 1.1|Europe (minus CIS) plus Turkey:
@@ -19,7 +19,7 @@
         Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Monaco, Montenegro, Netherlands, Norway, Poland, Portugal, Romania, Saint Barthélemy, Saint Martin (French part),
         Saint Pierre and Miquelon, San Marino, Serbia, Slovakia, Slovenia, Spain, Svalbard and Jan Mayen, Sweden, Switzerland, Turkey, United Kingdom]
   - IMACLIM 1.1|India:
-      countries: India
+      countries: [India]
   - IMACLIM 1.1|Japan, Australia, New Zealand and Korea:
       countries: [Antarctica, Australia, Heard Island and McDonald Islands, Japan, South Korea, New Zealand]
   - IMACLIM 1.1|Middle East:
@@ -27,7 +27,7 @@
   - IMACLIM 1.1|Rest of Latin America:
       countries: [Anguilla, Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize, Bermuda, Bolivia, Cayman Islands, Chile, Colombia, Costa Rica,
         Cuba, Dominica, Dominican Republic, Ecuador, El Salvador, Falkland Islands (Malvinas), French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique,
-        Mexico, Montserrat, Bonaire, Sint Eustatius and Saba, Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama, Paraguay, Peru, Pitcairn, Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, South Georgia and the South Sandwich Islands, Suriname, Trinidad and Tobago,
+        Mexico, Montserrat, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama, Paraguay, Peru, Pitcairn, Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, South Georgia and the South Sandwich Islands, Suriname, Trinidad and Tobago,
         Turks and Caicos Islands, Uruguay, Venezuela, British Virgin Islands, United States Virgin Islands]
   - IMACLIM 1.1|Rest of Asia:
       countries: [Afghanistan, American Samoa, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, Christmas Island, Cocos (Keeling) Islands, Cook Islands, Fiji, French Polynesia, French Southern Territories, Guam,

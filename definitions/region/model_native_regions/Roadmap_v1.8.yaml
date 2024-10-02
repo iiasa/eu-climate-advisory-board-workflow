@@ -5,24 +5,24 @@
         Mali, Mozambique, Mauritania, Mauritius, Malawi, Namibia, Niger, Nigeria, Rwanda, Sudan, Senegal, Sierra Leone, Somalia, South Sudan, Sao Tome and Principe,
         Eswatini, Seychelles, Chad, Togo, Tunisia, Tanzania, Uganda, South Africa, Zambia, Zimbabwe]
   - Roadmap v1.8|Australia:
-      countries: Australia
+      countries: [Australia]
   - Roadmap v1.8|Brazil:
-      countries: Brazil
+      countries: [Brazil]
   - Roadmap v1.8|Canada:
-      countries: Canada
+      countries: [Canada]
   - Roadmap v1.8|China:
       countries: [China, Hong Kong, Macao]
   - Roadmap v1.8|European Union:
       countries: [Austria, Belgium, Bulgaria, Cyprus, Czechia, Germany, Denmark, Spain, Estonia, Finland, France, Greece, Croatia,
         Hungary, Ireland, Italy, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Sweden]
   - Roadmap v1.8|United Kingdom:
-      countries: United Kingdom
+      countries: [United Kingdom]
   - Roadmap v1.8|India:
-      countries: India
+      countries: [India]
   - Roadmap v1.8|Japan:
-      countries: Japan
+      countries: [Japan]
   - Roadmap v1.8|Mexico:
-      countries: Mexico
+      countries: [Mexico]
   - Roadmap v1.8|Middle East:
       countries: [United Arab Emirates, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, Syria,
         Turkey, Yemen]
@@ -38,8 +38,8 @@
         Dominica, Dominican Republic, Ecuador, Grenada, Guatemala, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Nicaragua, Panama, Peru, Paraguay,
         El Salvador, Suriname, Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands]
   - Roadmap v1.8|Russia:
-      countries: Russian Federation
+      countries: [Russian Federation]
   - Roadmap v1.8|South Korea:
-      countries: South Korea
+      countries: [South Korea]
   - Roadmap v1.8|United States:
       countries: [Guam, Puerto Rico, United States, United States Virgin Islands]
