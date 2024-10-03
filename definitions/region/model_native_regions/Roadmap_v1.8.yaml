@@ -1,45 +1,45 @@
 - Roadmap v1.8:
   - Roadmap v1.8|Africa:
-      iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
-        DZA, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO, MAR, MDG,
-        MLI, MOZ, MRT, MUS, MWI, NAM, NER, NGA, RWA, SDN, SEN, SLE, SOM, SSD, STP,
-        SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZAF, ZMB, ZWE]
+      countries: [Angola, Burundi, Benin, Burkina Faso, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Comoros, Cabo Verde, Djibouti,
+        Algeria, Eritrea, Ethiopia, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, Kenya, Liberia, Libya, Lesotho, Morocco, Madagascar,
+        Mali, Mozambique, Mauritania, Mauritius, Malawi, Namibia, Niger, Nigeria, Rwanda, Sudan, Senegal, Sierra Leone, Somalia, South Sudan, Sao Tome and Principe,
+        Eswatini, Seychelles, Chad, Togo, Tunisia, Tanzania, Uganda, South Africa, Zambia, Zimbabwe]
   - Roadmap v1.8|Australia:
-      iso3_codes: AUS
+      countries: [Australia]
   - Roadmap v1.8|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - Roadmap v1.8|Canada:
-      iso3_codes: CAN
+      countries: [Canada]
   - Roadmap v1.8|China:
-      iso3_codes: [CHN, HKG, MAC]
+      countries: [China, Hong Kong, Macao]
   - Roadmap v1.8|European Union:
-      iso3_codes: [AUT, BEL, BGR, CYP, CZE, DEU, DNK, ESP, EST, FIN, FRA, GRC, HRV,
-        HUN, IRL, ITA, LTU, LUX, LVA, MLT, NLD, POL, PRT, ROU, SVK, SVN, SWE]
+      countries: [Austria, Belgium, Bulgaria, Cyprus, Czechia, Germany, Denmark, Spain, Estonia, Finland, France, Greece, Croatia,
+        Hungary, Ireland, Italy, Lithuania, Luxembourg, Latvia, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Sweden]
   - Roadmap v1.8|United Kingdom:
-      iso3_codes: GBR
+      countries: [United Kingdom]
   - Roadmap v1.8|India:
-      iso3_codes: IND
+      countries: [India]
   - Roadmap v1.8|Japan:
-      iso3_codes: JPN
+      countries: [Japan]
   - Roadmap v1.8|Mexico:
-      iso3_codes: MEX
+      countries: [Mexico]
   - Roadmap v1.8|Middle East:
-      iso3_codes: [ARE, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR,
-        TUR, YEM]
+      countries: [United Arab Emirates, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, Syria,
+        Turkey, Yemen]
   - Roadmap v1.8|Other Asia Pacific:
-      iso3_codes: [AFG, ASM, BGD, BRN, BTN, FJI, FSM, IDN, KAZ, KGZ, KHM, KIR, LAO,
-        LKA, MDV, MMR, MNG, MYS, NCL, NPL, NZL, PAK, PHL, PLW, PNG, PRK, PYF, SGP,
-        SLB, THA, TJK, TKM, TLS, TON, UZB, VNM, VUT, WSM]
+      countries: [Afghanistan, American Samoa, Bangladesh, Brunei Darussalam, Bhutan, Fiji, Micronesia, Indonesia, Kazakhstan, Kyrgyzstan, Cambodia, Kiribati, Laos,
+        Sri Lanka, Maldives, Myanmar, Mongolia, Malaysia, New Caledonia, Nepal, New Zealand, Pakistan, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore,
+        Solomon Islands, Thailand, Tajikistan, Turkmenistan, Timor-Leste, Tonga, Uzbekistan, Viet Nam, Vanuatu, Samoa]
   - Roadmap v1.8|Other Europe:
-      iso3_codes: [ALB, ARM, AZE, BIH, BLR, CHE, GEO, ISL, LIE, MDA, MKD, MNE, NOR,
-        SRB, UKR]
+      countries: [Albania, Armenia, Azerbaijan, Bosnia and Herzegovina, Belarus, Switzerland, Georgia, Iceland, Liechtenstein, Moldova, North Macedonia, Montenegro, Norway,
+        Serbia, Ukraine]
   - Roadmap v1.8|Other Latin America:
-      iso3_codes: [ABW, ARG, ATG, BHS, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB, CYM,
-        DMA, DOM, ECU, GRD, GTM, GUY, HND, HTI, JAM, KNA, LCA, NIC, PAN, PER, PRY,
-        SLV, SUR, TTO, URY, VCT, VEN, VGB]
+      countries: [Aruba, Argentina, Antigua and Barbuda, Bahamas, Belize, Bermuda, Bolivia, Barbados, Chile, Colombia, Costa Rica, Cuba, Cayman Islands,
+        Dominica, Dominican Republic, Ecuador, Grenada, Guatemala, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Nicaragua, Panama, Peru, Paraguay,
+        El Salvador, Suriname, Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands]
   - Roadmap v1.8|Russia:
-      iso3_codes: RUS
+      countries: [Russian Federation]
   - Roadmap v1.8|South Korea:
-      iso3_codes: KOR
+      countries: [South Korea]
   - Roadmap v1.8|United States:
-      iso3_codes: [GUM, PRI, USA, VIR]
+      countries: [Guam, Puerto Rico, United States, United States Virgin Islands]

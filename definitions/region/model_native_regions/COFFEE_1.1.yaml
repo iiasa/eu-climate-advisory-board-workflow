@@ -1,49 +1,49 @@
 - COFFEE 1.1:
   - COFFEE 1.1|Africa (excluding South Africa):
-      iso3_codes: [AGO, BDI, BEN, BFA, BWA, CAF, CIV, CMR, COD, COG, COM, CPV, DJI,
-        DZA, EGY, ERI, ESH, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, KEN, LBR, LBY, LSO,
-        MAR, MDG, MLI, MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN,
-        SLE, SOM, SSD, STP, SWZ, SYC, TCD, TGO, TUN, TZA, UGA, ZMB, ZWE]
+      countries: [Angola, Burundi, Benin, Burkina Faso, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Comoros, Cabo Verde, Djibouti,
+        Algeria, Egypt, Eritrea, Western Sahara, Ethiopia, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, Kenya, Liberia, Libya, Lesotho,
+        Morocco, Madagascar, Mali, Mozambique, Mauritania, Mauritius, Malawi, Mayotte, Namibia, Niger, Nigeria, Réunion, Rwanda, Sudan, Senegal,
+        Sierra Leone, Somalia, South Sudan, Sao Tome and Principe, Eswatini, Seychelles, Chad, Togo, Tunisia, Tanzania, Uganda, Zambia, Zimbabwe]
   - COFFEE 1.1|Australia & New Zealand:
-      iso3_codes: [AUS, NZL]
+      countries: [Australia, New Zealand]
   - COFFEE 1.1|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - COFFEE 1.1|Canada:
-      iso3_codes: [CAN, SHN, SPM]
+      countries: [Canada, "Saint Helena, Ascension and Tristan da Cunha", Saint Pierre and Miquelon]
   - COFFEE 1.1|Caspian Sea:
-      iso3_codes: [AFG, ARM, AZE, GEO, KAZ, KGZ, PAK, TJK, TKM, UZB]
+      countries: [Afghanistan, Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Pakistan, Tajikistan, Turkmenistan, Uzbekistan]
   - COFFEE 1.1|Central America:
-      iso3_codes: [ABW, AIA, BES, CUW, SXM, ATG, BHS, BLM, BLZ, BMU, BRB, CRI, CUB, CYM, DMA,
-        DOM, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, MEX, MSR, MTQ,
-        NIC, PAN, SLV, SUR, TCA, TTO, VCT]
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica,
+        Dominican Republic, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Mexico, Montserrat, Martinique,
+        Nicaragua, Panama, El Salvador, Suriname, Turks and Caicos Islands, Trinidad and Tobago, Saint Vincent and the Grenadines]
   - COFFEE 1.1|China:
-      iso3_codes: [CHN, HKG, MAC]
+      countries: [China, Hong Kong, Macao]
   - COFFEE 1.1|Eastern Europe:
-      iso3_codes: [ALB, BIH, BLR, HRV, MDA, MKD, MNE, SRB, UKR]
+      countries: [Albania, Bosnia and Herzegovina, Belarus, Croatia, Moldova, North Macedonia, Montenegro, Serbia, Ukraine]
   - COFFEE 1.1|India:
-      iso3_codes: IND
+      countries: [India]
   - COFFEE 1.1|Japan:
-      iso3_codes: JPN
+      countries: [Japan]
   - COFFEE 1.1|Middle East:
-      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
-        YEM]
+      countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
+        Yemen]
   - COFFEE 1.1|Rest of Asia and Oceania:
-      iso3_codes: [ATA, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD, IDN,
-        IOT, KHM, KIR, LAO, LKA, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK, NIU, NPL,
-        NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS, TON, TUV, TWN,
-        VNM, VUT, WLF, WSM]
+      countries: [Antarctica, French Southern Territories, Bangladesh, Brunei Darussalam, Bhutan, Cocos (Keeling) Islands, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Heard Island and McDonald Islands, Indonesia,
+        British Indian Ocean Territory, Cambodia, Kiribati, Laos, Sri Lanka, Maldives, Marshall Islands, Myanmar, Mongolia, Northern Mariana Islands, Malaysia, New Caledonia, Norfolk Island, Niue, Nepal,
+        Nauru, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Tokelau, Timor-Leste, Tonga, Tuvalu, Taiwan,
+        Viet Nam, Vanuatu, Wallis and Futuna, Samoa]
   - COFFEE 1.1|Russia:
-      iso3_codes: RUS
+      countries: [Russian Federation]
   - COFFEE 1.1|South Africa:
-      iso3_codes: ZAF
+      countries: [South Africa]
   - COFFEE 1.1|South America:
-      iso3_codes: [ARG, BOL, CHL, COL, ECU, FLK, PER, PRY, SGS, URY, VEN]
+      countries: [Argentina, Bolivia, Chile, Colombia, Ecuador, Falkland Islands (Malvinas), Peru, Paraguay, South Georgia and the South Sandwich Islands, Uruguay, Venezuela]
   - COFFEE 1.1|South Korea:
-      iso3_codes: KOR
+      countries: [South Korea]
   - COFFEE 1.1|United States:
-      iso3_codes: [ASM, PRI, UMI, USA, VGB, VIR]
+      countries: [American Samoa, Puerto Rico, United States Minor Outlying Islands, United States, British Virgin Islands, United States Virgin Islands]
   - COFFEE 1.1|Western Europe:
-      iso3_codes: [ALA, AND, AUT, BEL, BGR, BVT, CHE, CYP, CZE, DEU, DNK, ESP, EST,
-        FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, HUN, IMN, IRL, ISL, ITA, JEY, LIE,
-        LTU, LUX, LVA, MCO, MLT, NLD, NOR, POL, PRT, ROU, SJM, SMR, SVK, SVN, SWE,
-        TUR, VAT]
+      countries: [Åland Islands, Andorra, Austria, Belgium, Bulgaria, Bouvet Island, Switzerland, Cyprus, Czechia, Germany, Denmark, Spain, Estonia,
+        Finland, France, Faroe Islands, United Kingdom, Guernsey, Gibraltar, Greece, Greenland, Hungary, Isle of Man, Ireland, Iceland, Italy, Jersey, Liechtenstein,
+        Lithuania, Luxembourg, Latvia, Monaco, Malta, Netherlands, Norway, Poland, Portugal, Romania, Svalbard and Jan Mayen, San Marino, Slovakia, Slovenia, Sweden,
+        Turkey, Vatican]

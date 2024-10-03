@@ -1,63 +1,63 @@
 - POLES JRC ENGAGE:
   - POLES JRC ENGAGE|Africa - Middle East:
-      iso3_codes: [AGO, ARE, BDI, BEN, BFA, BHR, BWA, CAF, CIV, CMR, COD, COG, CPV,
-        DJI, DZA, EGY, ERI, ESH, ETH, GAB, GHA, GMB, GNB, GNQ, IRN, IRQ, ISR, JOR,
-        KEN, KWT, LBN, LBR, LBY, LSO, MAR, MDG, MDV, MLI, MOZ, MRT, MUS, MWI, NAM,
-        NER, NGA, OMN, PSE, QAT, REU, RWA, SDN, SEN, SLE, SOM, SSD, SWZ, SYC, SYR,
-        TCD, TGO, TON, TUN, TZA, UGA, YEM, ZMB, ZWE]
+      countries: [Angola, United Arab Emirates, Burundi, Benin, Burkina Faso, Bahrain, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Cabo Verde,
+        Djibouti, Algeria, Egypt, Eritrea, Western Sahara, Ethiopia, Gabon, Ghana, Gambia, Guinea-Bissau, Equatorial Guinea, Iran, Iraq, Israel, Jordan,
+        Kenya, Kuwait, Lebanon, Liberia, Libya, Lesotho, Morocco, Madagascar, Maldives, Mali, Mozambique, Mauritania, Mauritius, Malawi, Namibia,
+        Niger, Nigeria, Oman, Palestine, Qatar, Réunion, Rwanda, Sudan, Senegal, Sierra Leone, Somalia, South Sudan, Eswatini, Seychelles, Syria,
+        Chad, Togo, Tonga, Tunisia, Tanzania, Uganda, Yemen, Zambia, Zimbabwe]
   - POLES JRC ENGAGE|Africa (10R Map)
   - POLES JRC ENGAGE|Argentina:
-      iso3_codes: ARG
+      countries: [Argentina]
   - POLES JRC ENGAGE|Asia (excl. Japan):
-      iso3_codes: [AFG, AZE, BGD, BRN, BTN, CXR, FJI, HKG, KAZ, KGZ, KHM, LAO, LKA,
-        MAC, MMR, MNG, MNP, MYS, NPL, PAK, PHL, PLW, PNG, PRK, PYF, SGP, TJK, TKM]
+      countries: [Afghanistan, Azerbaijan, Bangladesh, Brunei Darussalam, Bhutan, Christmas Island, Fiji, Hong Kong, Kazakhstan, Kyrgyzstan, Cambodia, Laos, Sri Lanka,
+        Macao, Myanmar, Mongolia, Northern Mariana Islands, Malaysia, Nepal, Pakistan, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Tajikistan, Turkmenistan]
   - POLES JRC ENGAGE|Australia:
-      iso3_codes: AUS
+      countries: [Australia]
   - POLES JRC ENGAGE|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - POLES JRC ENGAGE|Canada:
-      iso3_codes: CAN
+      countries: [Canada]
   - POLES JRC ENGAGE|China:
-      iso3_codes: CHN
+      countries: [China]
   - POLES JRC ENGAGE|China+ (10R Map)
   - POLES JRC ENGAGE|EU28:
-      iso3_codes: [AUT, BEL, CZE, DNK, ESP, EST, FIN, GGY, GIB, HRV, JEY, LTU, POL,
-        PRT, SVK, SVN, SWE]
+      countries: [Austria, Belgium, Czechia, Denmark, Spain, Estonia, Finland, Guernsey, Gibraltar, Croatia, Jersey, Lithuania, Poland,
+        Portugal, Slovakia, Slovenia, Sweden]
   - POLES JRC ENGAGE|Europe (10R Map)
   - POLES JRC ENGAGE|Former CIS:
-      iso3_codes: [BGR, GEO, MNE, UKR]
+      countries: [Bulgaria, Georgia, Montenegro, Ukraine]
   - POLES JRC ENGAGE|India+ (10R Map)
   - POLES JRC ENGAGE|India:
-      iso3_codes: IND
+      countries: [India]
   - POLES JRC ENGAGE|Indonesia:
-      iso3_codes: IDN
+      countries: [Indonesia]
   - POLES JRC ENGAGE|Japan:
-      iso3_codes: JPN
+      countries: [Japan]
   - POLES JRC ENGAGE|Latin America (10R Map)
   - POLES JRC ENGAGE|Latin America:
-      iso3_codes: [ABW, BES, CUW, SXM, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL, COL, CRI, CUB,
-        DMA, DOM, ECU, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF, NIC, PAN,
-        PER, PRI, PRY, SUR, TTO, URY, VEN]
+      countries: [Aruba, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile, Colombia, Costa Rica, Cuba,
+        Dominica, Dominican Republic, Ecuador, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Nicaragua, Panama,
+        Peru, Puerto Rico, Paraguay, Suriname, Trinidad and Tobago, Uruguay, Venezuela]
   - POLES JRC ENGAGE|Mexico:
-      iso3_codes: MEX
+      countries: [Mexico]
   - POLES JRC ENGAGE|Middle East (10R Map)
   - POLES JRC ENGAGE|North America (10R Map)
   - POLES JRC ENGAGE|OECD90+EU:
-      iso3_codes: [CHE, DEU, FRA, GBR, GRC, HUN, IMN, IRL, ISL, ITA, LIE, LUX, LVA,
-        MCO, NLD, NOR]
+      countries: [Switzerland, Germany, France, United Kingdom, Greece, Hungary, Isle of Man, Ireland, Iceland, Italy, Liechtenstein, Luxembourg, Latvia,
+        Monaco, Netherlands, Norway]
   - POLES JRC ENGAGE|Pacific OECD (10R Map)
   - POLES JRC ENGAGE|Reforming Economies (10R Map)
   - POLES JRC ENGAGE|Rest of Asia (10R Map)
   - POLES JRC ENGAGE|Rest of World (10R Map)
   - POLES JRC ENGAGE|Russian Federation:
-      iso3_codes: RUS
+      countries: [Russian Federation]
   - POLES JRC ENGAGE|Saudi Arabia:
-      iso3_codes: SAU
+      countries: [Saudi Arabia]
   - POLES JRC ENGAGE|South Africa:
-      iso3_codes: ZAF
+      countries: [South Africa]
   - POLES JRC ENGAGE|South Korea:
-      iso3_codes: KOR
+      countries: [South Korea]
   - POLES JRC ENGAGE|Turkey:
-      iso3_codes: TUR
+      countries: [Turkey]
   - POLES JRC ENGAGE|USA:
-      iso3_codes: [UMI, USA, VIR]
+      countries: [United States Minor Outlying Islands, United States, United States Virgin Islands]

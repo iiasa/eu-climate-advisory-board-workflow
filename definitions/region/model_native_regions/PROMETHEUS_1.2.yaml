@@ -1,6 +1,6 @@
 - PROMETHEUS 1.2:
   - PROMETHEUS 1.2|Western Europe:
-      iso3_codes: [AUT, BEL, DNK, FRO, FIN, FRA, DEU, GIB, GRC, ISL, IRL, IMN, ITA,
-        LIE, LUX, MCO, NLD, NOR, PRT, SMR, ESP, SWE, CHE, GBR]
+      countries: [Austria, Belgium, Denmark, Faroe Islands, Finland, France, Germany, Gibraltar, Greece, Iceland, Ireland, Isle of Man, Italy,
+        Liechtenstein, Luxembourg, Monaco, Netherlands, Norway, Portugal, San Marino, Spain, Sweden, Switzerland, United Kingdom]
   - PROMETHEUS 1.2|Central Europe:
-      iso3_codes: [BGR, HRV, CYP, CZE, EST, HUN, LVA, LTU, MLT, POL, ROU, SVK, SVN]
+      countries: [Bulgaria, Croatia, Cyprus, Czechia, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Romania, Slovakia, Slovenia]

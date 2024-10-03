@@ -1,33 +1,33 @@
 - MESSAGEix-GLOBIOM 1.1:
   - MESSAGEix-GLOBIOM 1.1|Sub-Saharan Africa:
-      iso3_codes: [AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, COD, CIV,
-        DJI, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, MDG, MWI, MLI, MRT,
-        MUS, MOZ, NAM, NER, NGA, REU, RWA, SEN, SLE, SOM, ZAF, SDN, SWZ, TZA, TGO,
-        UGA, ZMB, ZWE]
+      countries: [Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo, Democratic Republic of the Congo, Côte d'Ivoire,
+        Djibouti, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia, Madagascar, Malawi, Mali, Mauritania,
+        Mauritius, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, Senegal, Sierra Leone, Somalia, South Africa, Sudan, Eswatini, Tanzania, Togo,
+        Uganda, Zambia, Zimbabwe]
   - MESSAGEix-GLOBIOM 1.1|Centrally Planned Asia and China:
-      iso3_codes: [KHM, CHN, HKG, PRK, LAO, MAC, MNG, TWN, VNM]
+      countries: [Cambodia, China, Hong Kong, North Korea, Laos, Macao, Mongolia, Taiwan, Viet Nam]
   - MESSAGEix-GLOBIOM 1.1|Eastern Europe:
-      iso3_codes: [ALB, BIH, BGR, HRV, CZE, EST, HUN, LVA, LTU, MKD, MNE, POL, ROU,
-        SRB, SVK, SVN]
+      countries: [Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Czechia, Estonia, Hungary, Latvia, Lithuania, North Macedonia, Montenegro, Poland, Romania,
+        Serbia, Slovakia, Slovenia]
   - MESSAGEix-GLOBIOM 1.1|Former Soviet Union:
-      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
   - MESSAGEix-GLOBIOM 1.1|Latin America and the Caribbean:
-      iso3_codes: [ATG, ARG, BHS, BRB, BLZ, BMU, BOL, BRA, CHL, COL, CRI, CUB, DOM,
-        ECU, SLV, GNQ, FLK, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, BES, CUW, SXM, NIC, PAN,
-        PRY, PER, SUR, TTO, URY, VEN]
+      countries: [Antigua and Barbuda, Argentina, Bahamas, Barbados, Belize, Bermuda, Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic,
+        Ecuador, El Salvador, Equatorial Guinea, Falkland Islands (Malvinas), Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique, Mexico, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama,
+        Paraguay, Peru, Suriname, Trinidad and Tobago, Uruguay, Venezuela]
   - MESSAGEix-GLOBIOM 1.1|Middle East and North Africa:
-      iso3_codes: [DZA, BHR, EGY, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR, OMN, QAT,
-        SAU, SYR, TUN, ARE, ESH, YEM]
+      countries: [Algeria, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Qatar,
+        Saudi Arabia, Syria, Tunisia, United Arab Emirates, Western Sahara, Yemen]
   - MESSAGEix-GLOBIOM 1.1|North America:
-      iso3_codes: [CAN, GUM, PRI, USA]
+      countries: [Canada, Guam, Puerto Rico, United States]
   - MESSAGEix-GLOBIOM 1.1|Pacific OECD:
-      iso3_codes: [AUS, JPN, NZL]
+      countries: [Australia, Japan, New Zealand]
   - MESSAGEix-GLOBIOM 1.1|Other Pacific Asia:
-      iso3_codes: [BRN, TLS, FJI, PYF, IDN, KOR, MYS, MMR, NCL, PNG, PHL, WSM, SGP,
-        SLB, THA, VUT]
+      countries: [Brunei Darussalam, Timor-Leste, Fiji, French Polynesia, Indonesia, South Korea, Malaysia, Myanmar, New Caledonia, Papua New Guinea, Philippines, Samoa, Singapore,
+        Solomon Islands, Thailand, Vanuatu]
   - MESSAGEix-GLOBIOM 1.1|South Asia:
-      iso3_codes: [AFG, BGD, BTN, IND, MDV, NPL, PAK, LKA]
+      countries: [Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka]
   - MESSAGEix-GLOBIOM 1.1|Western Europe:
-      iso3_codes: [AND, AUT, BEL, CYP, DNK, FRO, FIN, FRA, ATF, DEU, GIB, GRC, GRL,
-        ISL, IRL, ITA, LIE, LUX, MLT, MCO, NLD, NOR, PRT, SMR, ESP, SWE, CHE, TUR,
-        GBR]
+      countries: [Andorra, Austria, Belgium, Cyprus, Denmark, Faroe Islands, Finland, France, French Southern Territories, Germany, Gibraltar, Greece, Greenland,
+        Iceland, Ireland, Italy, Liechtenstein, Luxembourg, Malta, Monaco, Netherlands, Norway, Portugal, San Marino, Spain, Sweden, Switzerland, Turkey,
+        United Kingdom]

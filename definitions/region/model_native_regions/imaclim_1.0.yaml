@@ -1,38 +1,38 @@
 - IMACLIM 1.0:
   - IMACLIM 1.0|Africa:
-      iso3_codes: [DZA, AGO, BEN, BWA, BVT, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG,
-        COD, CIV, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR,
-        LBY, MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, REU, RWA, SHN,
-        STP, SEN, SYC, SLE, SOM, SSD, SDN, SWZ, SYR, TZA, TGO, TUN, UGA, ESH,
-        ZAF, ZMB, ZWE]
+      countries: [Algeria, Angola, Benin, Botswana, Bouvet Island, Burkina Faso, Burundi, Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo,
+        Democratic Republic of the Congo, Côte d'Ivoire, Djibouti, Egypt, Equatorial Guinea, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
+        Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco, Mozambique, Namibia, Niger, Nigeria, Réunion, Rwanda, "Saint Helena, Ascension and Tristan da Cunha",
+        Sao Tome and Principe, Senegal, Seychelles, Sierra Leone, Somalia, South Sudan, Sudan, Eswatini, Syria, Tanzania, Togo, Tunisia, Uganda, Western Sahara,
+        South Africa, Zambia, Zimbabwe]
   - IMACLIM 1.0|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - IMACLIM 1.0|Canada:
-      iso3_codes: CAN
+      countries: [Canada]
   - IMACLIM 1.0|China:
-      iso3_codes: CHN
-  - IMACLIM 1.0|Former Soviet Union minus EU Baltic iso3_codes:
-      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
+      countries: [China]
+  - IMACLIM 1.0|Former Soviet Union minus EU Baltic countries:
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
   - IMACLIM 1.0|Europe (minus CIS) plus Turkey:
-      iso3_codes: [ALA, ALB, AND, AUT, BEL, BIH, IOT, BGR, HRV, CYP, CZE, DNK, EST,
-        FRO, FIN, FRA, DEU, GIB, GRC, GRL, GGY, VAT, HUN, ISL, IRL, IMN, ITA, JEY,
-        LVA, LIE, LTU, LUX, MKD, MLT, MCO, MNE, NLD, NOR, POL, PRT, ROU, BLM, MAF,
-        SPM, SMR, SRB, SVK, SVN, ESP, SJM, SWE, CHE, TUR, GBR]
+      countries: [Åland Islands, Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina, British Indian Ocean Territory, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia,
+        Faroe Islands, Finland, France, Germany, Gibraltar, Greece, Greenland, Guernsey, Vatican, Hungary, Iceland, Ireland, Isle of Man, Italy, Jersey,
+        Latvia, Liechtenstein, Lithuania, Luxembourg, North Macedonia, Malta, Monaco, Montenegro, Netherlands, Norway, Poland, Portugal, Romania, Saint Barthélemy, Saint Martin (French part),
+        Saint Pierre and Miquelon, San Marino, Serbia, Slovakia, Slovenia, Spain, Svalbard and Jan Mayen, Sweden, Switzerland, Turkey, United Kingdom]
   - IMACLIM 1.0|India:
-      iso3_codes: IND
+      countries: [India]
   - IMACLIM 1.0|Japan, Australia, New Zealand and Korea:
-      iso3_codes: [ATA, AUS, HMD, JPN, KOR, NZL]
+      countries: [Antarctica, Australia, Heard Island and McDonald Islands, Japan, South Korea, New Zealand]
   - IMACLIM 1.0|Middle East:
-      iso3_codes: [BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, ARE, YEM]
+      countries: [Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, United Arab Emirates, Yemen]
   - IMACLIM 1.0|Rest of Latin America:
-      iso3_codes: [AIA, ATG, ARG, ABW, BHS, BRB, BLZ, BMU, BOL, CYM, CHL, COL, CRI,
-        CUB, DMA, DOM, ECU, SLV, FLK, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ,
-        MEX, MSR, BES, CUW, SXM, NIC, PAN, PRY, PER, PCN, PRI, KNA, LCA, VCT, SGS, SUR, TTO,
-        TCA, URY, VEN, VGB, VIR]
+      countries: [Anguilla, Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize, Bermuda, Bolivia, Cayman Islands, Chile, Colombia, Costa Rica,
+        Cuba, Dominica, Dominican Republic, Ecuador, El Salvador, Falkland Islands (Malvinas), French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique,
+        Mexico, Montserrat, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Nicaragua, Panama, Paraguay, Peru, Pitcairn, Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, South Georgia and the South Sandwich Islands, Suriname, Trinidad and Tobago,
+        Turks and Caicos Islands, Uruguay, Venezuela, British Virgin Islands, United States Virgin Islands]
   - IMACLIM 1.0|Rest of Asia:
-      iso3_codes: [AFG, ASM, BGD, BTN, BRN, KHM, CXR, CCK, COK, FJI, PYF, ATF, GUM,
-        HKG, IDN, KIR, PRK, LAO, MAC, MYS, MDV, MHL, FSM, MNG, MMR, NRU, NPL, NCL,
-        NIU, NFK, MNP, PAK, PLW, PNG, PHL, WSM, SGP, SLB, LKA, TWN, THA, TLS, TKL,
-        TON, TUV, VUT, VNM, WLF]
+      countries: [Afghanistan, American Samoa, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, Christmas Island, Cocos (Keeling) Islands, Cook Islands, Fiji, French Polynesia, French Southern Territories, Guam,
+        Hong Kong, Indonesia, Kiribati, North Korea, Laos, Macao, Malaysia, Maldives, Marshall Islands, Micronesia, Mongolia, Myanmar, Nauru, Nepal, New Caledonia,
+        Niue, Norfolk Island, Northern Mariana Islands, Pakistan, Palau, Papua New Guinea, Philippines, Samoa, Singapore, Solomon Islands, Sri Lanka, Taiwan, Thailand, Timor-Leste, Tokelau,
+        Tonga, Tuvalu, Vanuatu, Viet Nam, Wallis and Futuna]
   - IMACLIM 1.0|USA:
-      iso3_codes: [USA, UMI]
+      countries: [United States, United States Minor Outlying Islands]

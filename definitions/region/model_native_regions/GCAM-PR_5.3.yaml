@@ -1,73 +1,73 @@
 - GCAM-PR 5.3:
   - GCAM-PR 5.3|Africa_Eastern:
-      iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MUS, REU, RWA, SDN, SOM, SSD,
-        UGA]
+      countries: [Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar, Mauritius, Réunion, Rwanda, Sudan, Somalia, South Sudan,
+        Uganda]
   - GCAM-PR 5.3|Africa_Northern:
-      iso3_codes: [DZA, EGY, ESH, LBY, MAR, TUN]
+      countries: [Algeria, Egypt, Western Sahara, Libya, Morocco, Tunisia]
   - GCAM-PR 5.3|Africa_Southern:
-      iso3_codes: [AGO, BWA, LSO, MOZ, MWI, NAM, SWZ, TZA, ZMB, ZWE]
+      countries: [Angola, Botswana, Lesotho, Mozambique, Malawi, Namibia, Eswatini, Tanzania, Zambia, Zimbabwe]
   - GCAM-PR 5.3|Africa_Western:
-      iso3_codes: [BEN, BFA, CAF, CIV, CMR, COD, COG, CPV, GAB, GHA, GIN, GMB, GNB,
-        GNQ, LBR, MLI, MRT, NER, NGA, SEN, SLE, STP, TCD, TGO]
+      countries: [Benin, Burkina Faso, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Cabo Verde, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau,
+        Equatorial Guinea, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, Sao Tome and Principe, Chad, Togo]
   - GCAM-PR 5.3|Argentina:
-      iso3_codes: ARG
+      countries: [Argentina]
   - GCAM-PR 5.3|Australia_NZ:
-      iso3_codes: [AUS, NZL]
+      countries: [Australia, New Zealand]
   - GCAM-PR 5.3|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - GCAM-PR 5.3|Canada:
-      iso3_codes: CAN
+      countries: [Canada]
   - GCAM-PR 5.3|Central America and Caribbean:
-      iso3_codes: [ABW, AIA, BES, CUW, SXM, ATG, BHS, BLZ, BMU, BRB, CRI, CUB, CYM, DMA, DOM,
-        GLP, GRD, GTM, HND, HTI, JAM, KNA, LCA, MSR, MTQ, NIC, PAN, SLV, TTO, VCT]
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Antigua and Barbuda, Bahamas, Belize, Bermuda, Barbados, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic,
+        Guadeloupe, Grenada, Guatemala, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Montserrat, Martinique, Nicaragua, Panama, El Salvador, Trinidad and Tobago, Saint Vincent and the Grenadines]
   - GCAM-PR 5.3|Central Asia:
-      iso3_codes: [ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB]
+      countries: [Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Mongolia, Tajikistan, Turkmenistan, Uzbekistan]
   - GCAM-PR 5.3|China:
-      iso3_codes: [CHN, HKG, MAC]
+      countries: [China, Hong Kong, Macao]
   - GCAM-PR 5.3|Colombia:
-      iso3_codes: COL
+      countries: [Colombia]
   - GCAM-PR 5.3|Eastern EU:
-      iso3_codes: [BGR, CYP, CZE, EST, HUN, LTU, LVA, MLT, POL, ROU, SVK, SVN]
+      countries: [Bulgaria, Cyprus, Czechia, Estonia, Hungary, Lithuania, Latvia, Malta, Poland, Romania, Slovakia, Slovenia]
       notes: does not include Croatia
   - GCAM-PR 5.3|Western EU & UK:
-      iso3_codes: [AND, AUT, BEL, DEU, DNK, ESP, FIN, FLK, FRA, FRO, GBR, GIB, GRC,
-        GRL, IRL, ITA, LUX, MCO, NLD, PRT, SHN, SMR, SPM, SWE, TCA, VAT, VGB, WLF]
+      countries: [Andorra, Austria, Belgium, Germany, Denmark, Spain, Finland, Falkland Islands (Malvinas), France, Faroe Islands, United Kingdom, Gibraltar, Greece,
+        Greenland, Ireland, Italy, Luxembourg, Monaco, Netherlands, Portugal, "Saint Helena, Ascension and Tristan da Cunha", San Marino, Saint Pierre and Miquelon, Sweden, Turks and Caicos Islands, Vatican, British Virgin Islands, Wallis and Futuna]
   - GCAM-PR 5.3|Europe_Eastern:
-      iso3_codes: [BLR, MDA, UKR]
+      countries: [Belarus, Moldova, Ukraine]
   - GCAM-PR 5.3|Europe_Non_EU:
-      iso3_codes: [ALB, BIH, HRV, MKD, MNE, SRB, TUR]
+      countries: [Albania, Bosnia and Herzegovina, Croatia, North Macedonia, Montenegro, Serbia, Turkey]
   - GCAM-PR 5.3|European Free Trade Association:
-      iso3_codes: [CHE, ISL, LIE, NOR, SJM]
+      countries: [Switzerland, Iceland, Liechtenstein, Norway, Svalbard and Jan Mayen]
   - GCAM-PR 5.3|India:
-      iso3_codes: IND
+      countries: [India]
   - GCAM-PR 5.3|Indonesia:
-      iso3_codes: IDN
+      countries: [Indonesia]
   - GCAM-PR 5.3|Japan:
-      iso3_codes: JPN
+      countries: [Japan]
   - GCAM-PR 5.3|Mexico:
-      iso3_codes: MEX
+      countries: [Mexico]
   - GCAM-PR 5.3|Middle East:
-      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
-        YEM]
+      countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
+        Yemen]
   - GCAM-PR 5.3|Pakistan:
-      iso3_codes: PAK
+      countries: [Pakistan]
   - GCAM-PR 5.3|Russia:
-      iso3_codes: RUS
+      countries: [Russian Federation]
   - GCAM-PR 5.3|South Africa:
-      iso3_codes: ZAF
+      countries: [South Africa]
   - GCAM-PR 5.3|South America_Northern:
-      iso3_codes: [GUF, GUY, SUR, VEN]
+      countries: [French Guiana, Guyana, Suriname, Venezuela]
   - GCAM-PR 5.3|South America_Southern:
-      iso3_codes: [BOL, CHL, ECU, PER, PRY, URY]
+      countries: [Bolivia, Chile, Ecuador, Peru, Paraguay, Uruguay]
   - GCAM-PR 5.3|South Asia:
-      iso3_codes: [AFG, ASM, BGD, BTN, LAO, LKA, MDV, NPL]
+      countries: [Afghanistan, American Samoa, Bangladesh, Bhutan, Laos, Sri Lanka, Maldives, Nepal]
   - GCAM-PR 5.3|South Korea:
-      iso3_codes: KOR
+      countries: [South Korea]
   - GCAM-PR 5.3|Southeast Asia:
-      iso3_codes: [BRN, CCK, COK, CXR, FJI, FSM, GUM, KHM, KIR, MHL, MMR, MNP, MYS,
-        MYT, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, SYC, THA,
-        TKL, TLS, TON, TUV, VNM, VUT, WSM]
+      countries: [Brunei Darussalam, Cocos (Keeling) Islands, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Cambodia, Kiribati, Marshall Islands, Myanmar, Northern Mariana Islands, Malaysia,
+        Mayotte, New Caledonia, Norfolk Island, Niue, Nauru, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Seychelles, Thailand,
+        Tokelau, Timor-Leste, Tonga, Tuvalu, Viet Nam, Vanuatu, Samoa]
   - GCAM-PR 5.3|Taiwan:
-      iso3_codes: TWN
+      countries: [Taiwan]
   - GCAM-PR 5.3|USA:
-      iso3_codes: [PRI, USA, VIR]
+      countries: [Puerto Rico, United States, United States Virgin Islands]

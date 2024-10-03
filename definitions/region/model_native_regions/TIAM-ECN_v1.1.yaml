@@ -1,84 +1,84 @@
 - TIAM-ECN 1.1:
   - TIAM-ECN 1.1|Algeria:
-      iso3_codes: DZA
+      countries: [Algeria]
   - TIAM-ECN 1.1|Angola:
-      iso3_codes: AGO
+      countries: [Angola]
   - TIAM-ECN 1.1|Argentina:
-      iso3_codes: [ARG, FLK]
+      countries: [Argentina, Falkland Islands (Malvinas)]
   - TIAM-ECN 1.1|Australia & New Zealand:
-      iso3_codes: [AUS, NZL]
+      countries: [Australia, New Zealand]
   - TIAM-ECN 1.1|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - TIAM-ECN 1.1|Canada:
-      iso3_codes: CAN
+      countries: [Canada]
   - TIAM-ECN 1.1|Central Africa:
-      iso3_codes: [CAF, CMR, COG, GAB, GNQ, TCD]
+      countries: [Central African Republic, Cameroon, Congo, Gabon, Equatorial Guinea, Chad]
   - TIAM-ECN 1.1|Chile:
-      iso3_codes: CHL
+      countries: [Chile]
   - TIAM-ECN 1.1|China:
-      iso3_codes: [CHN, HKG]
+      countries: [China, Hong Kong]
   - TIAM-ECN 1.1|Colombia:
-      iso3_codes: COL
+      countries: [Colombia]
   - TIAM-ECN 1.1|Congo DR:
-      iso3_codes: COD
+      countries: [Democratic Republic of the Congo]
   - TIAM-ECN 1.1|Eastern Africa:
-      iso3_codes: [BDI, DJI, ERI, RWA, SDN, SOM, SSD, SYC, UGA]
+      countries: [Burundi, Djibouti, Eritrea, Rwanda, Sudan, Somalia, South Sudan, Seychelles, Uganda]
   - TIAM-ECN 1.1|Eastern Europe:
-      iso3_codes: [ALB, BGR, BIH, CYP, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK,
-        SVN]
+      countries: [Albania, Bulgaria, Bosnia and Herzegovina, Cyprus, Czechia, Croatia, Hungary, North Macedonia, Montenegro, Poland, Romania, Serbia, Slovakia,
+        Slovenia]
   - TIAM-ECN 1.1|Egypt:
-      iso3_codes: EGY
+      countries: [Egypt]
   - TIAM-ECN 1.1|Ethiopia:
-      iso3_codes: ETH
+      countries: [Ethiopia]
   - TIAM-ECN 1.1|Former Soviet Union:
-      iso3_codes: [ARM, AZE, BLR, EST, GEO, KAZ, KGZ, LTU, LVA, MDA, RUS, TJK, TKM,
-        UKR, UZB]
+      countries: [Armenia, Azerbaijan, Belarus, Estonia, Georgia, Kazakhstan, Kyrgyzstan, Lithuania, Latvia, Moldova, Russian Federation, Tajikistan, Turkmenistan,
+        Ukraine, Uzbekistan]
   - TIAM-ECN 1.1|India:
-      iso3_codes: IND
+      countries: [India]
   - TIAM-ECN 1.1|Japan:
-      iso3_codes: JPN
+      countries: [Japan]
   - TIAM-ECN 1.1|Kenya:
-      iso3_codes: KEN
+      countries: [Kenya]
   - TIAM-ECN 1.1|Libya:
-      iso3_codes: LBY
+      countries: [Libya]
   - TIAM-ECN 1.1|Madagascar:
-      iso3_codes: MDG
+      countries: [Madagascar]
   - TIAM-ECN 1.1|Mexico:
-      iso3_codes: MEX
+      countries: [Mexico]
   - TIAM-ECN 1.1|Middle East:
-      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR,
-        TUR, YEM]
+      countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria,
+        Turkey, Yemen]
   - TIAM-ECN 1.1|Morocco:
-      iso3_codes: MAR
+      countries: [Morocco]
   - TIAM-ECN 1.1|Nigeria:
-      iso3_codes: NGA
+      countries: [Nigeria]
   - TIAM-ECN 1.1|Other Developing Asia:
-      iso3_codes: [AFG, ASM, ATF, BGD, BRN, BTN, CCK, COK, CXR, FJI, FSM, GUM, HMD,
-        IDN, IOT, KHM, KIR, LAO, LKA, MAC, MDV, MHL, MMR, MNG, MNP, MYS, NCL, NFK,
-        NIU, NPL, NRU, PAK, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, THA, TKL, TLS,
-        TON, TUV, TWN, VNM, VUT, WLF, WSM]
+      countries: [Afghanistan, American Samoa, French Southern Territories, Bangladesh, Brunei Darussalam, Bhutan, Cocos (Keeling) Islands, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Heard Island and McDonald Islands,
+        Indonesia, British Indian Ocean Territory, Cambodia, Kiribati, Laos, Sri Lanka, Macao, Maldives, Marshall Islands, Myanmar, Mongolia, Northern Mariana Islands, Malaysia, New Caledonia, Norfolk Island,
+        Niue, Nepal, Nauru, Pakistan, Pitcairn, Philippines, Palau, Papua New Guinea, North Korea, French Polynesia, Singapore, Solomon Islands, Thailand, Tokelau, Timor-Leste,
+        Tonga, Tuvalu, Taiwan, Viet Nam, Vanuatu, Wallis and Futuna, Samoa]
   - TIAM-ECN 1.1|Other Latin America:
-      iso3_codes: [ABW, AIA, ATA, ATG, BES, BHS, BLZ, BMU, BOL, BRB, BVT, CRI, CUB,
-        CUW, CYM, DMA, DOM, ECU, GLP, GRD, GTM, GUF, GUY, HND, HTI, JAM, KNA, LCA, MAF,
-        MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, SXM, TCA, TTO, URY, 
-        VCT, VGB, VIR]
+      countries: [Aruba, Anguilla, Antarctica, Antigua and Barbuda, "Bonaire, Sint Eustatius and Saba", Bahamas, Belize, Bermuda, Bolivia, Barbados, Bouvet Island, Costa Rica, Cuba,
+        Curaçao, Cayman Islands, Dominica, Dominican Republic, Ecuador, Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti, Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part),
+        Montserrat, Martinique, Nicaragua, Panama, Peru, Puerto Rico, Paraguay, South Georgia and the South Sandwich Islands, El Salvador, Suriname, Sint Maarten (Dutch part), Turks and Caicos Islands, Trinidad and Tobago, Uruguay, 
+        Saint Vincent and the Grenadines, British Virgin Islands, United States Virgin Islands]
   - TIAM-ECN 1.1|South Africa:
-      iso3_codes: ZAF
+      countries: [South Africa]
   - TIAM-ECN 1.1|South Korea:
-      iso3_codes: KOR
+      countries: [South Korea]
   - TIAM-ECN 1.1|Southeast Africa:
-      iso3_codes: [MOZ, TZA]
+      countries: [Mozambique, Tanzania]
   - TIAM-ECN 1.1|Southern Africa:
-      iso3_codes: [BWA, COM, LSO, MUS, MWI, MYT, NAM, REU, SWZ, ZMB, ZWE]
+      countries: [Botswana, Comoros, Lesotho, Mauritius, Malawi, Mayotte, Namibia, Réunion, Eswatini, Zambia, Zimbabwe]
   - TIAM-ECN 1.1|Tunisia:
-      iso3_codes: TUN
+      countries: [Tunisia]
   - TIAM-ECN 1.1|United States of America:
-      iso3_codes: [SPM, UMI, USA]
+      countries: [Saint Pierre and Miquelon, United States Minor Outlying Islands, United States]
   - TIAM-ECN 1.1|Venezuela:
-      iso3_codes: VEN
+      countries: [Venezuela]
   - TIAM-ECN 1.1|Western Africa:
-      iso3_codes: [BEN, BFA, CIV, CPV, ESH, GHA, GIN, GMB, GNB, LBR, MLI, MRT, NER,
-        SEN, SHN, SLE, STP, TGO]
+      countries: [Benin, Burkina Faso, Côte d'Ivoire, Cabo Verde, Western Sahara, Ghana, Guinea, Gambia, Guinea-Bissau, Liberia, Mali, Mauritania, Niger,
+        Senegal, "Saint Helena, Ascension and Tristan da Cunha", Sierra Leone, Sao Tome and Principe, Togo]
   - TIAM-ECN 1.1|Western Europe:
-      iso3_codes: [AND, AUT, BEL, CHE, DEU, DNK, ESP, FIN, FRA, FRO, GBR, GIB, GRC,
-        GRL, IRL, ISL, ITA, LIE, LUX, MCO, MLT, NLD, NOR, PRT, SJM, SMR, SWE, VAT]
+      countries: [Andorra, Austria, Belgium, Switzerland, Germany, Denmark, Spain, Finland, France, Faroe Islands, United Kingdom, Gibraltar, Greece,
+        Greenland, Ireland, Iceland, Italy, Liechtenstein, Luxembourg, Monaco, Malta, Netherlands, Norway, Portugal, Svalbard and Jan Mayen, San Marino, Sweden, Vatican]

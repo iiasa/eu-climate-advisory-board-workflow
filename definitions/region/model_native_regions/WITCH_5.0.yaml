@@ -1,48 +1,48 @@
 - WITCH 5.0:
   - WITCH 5.0|Brazil:
-      iso3_codes: BRA
+      countries: [Brazil]
   - WITCH 5.0|Canada:
-      iso3_codes: [CAN, SPM]
+      countries: [Canada, Saint Pierre and Miquelon]
   - WITCH 5.0|China:
-      iso3_codes: [CHN, HKG, MAC, TWN]
+      countries: [China, Hong Kong, Macao, Taiwan]
   - WITCH 5.0|Europe:
-      iso3_codes: [ALA, ALB, AND, AUT, BEL, BGR, BIH, CHE, CYP, CZE, DEU, DNK, ESP,
-        EST, FIN, FRA, FRO, GBR, GGY, GIB, GRC, GRL, HRV, HUN, IMN, IRL, ISL, ITA,
-        JEY, LIE, LTU, LUX, LVA, MCO, MKD, MLT, MNE, NLD, NOR, POL, PRT, ROU, SJM,
-        SMR, SRB, SVK, SVN, SWE, VAT]
+      countries: [Åland Islands, Albania, Andorra, Austria, Belgium, Bulgaria, Bosnia and Herzegovina, Switzerland, Cyprus, Czechia, Germany, Denmark, Spain,
+        Estonia, Finland, France, Faroe Islands, United Kingdom, Guernsey, Gibraltar, Greece, Greenland, Croatia, Hungary, Isle of Man, Ireland, Iceland, Italy,
+        Jersey, Liechtenstein, Lithuania, Luxembourg, Latvia, Monaco, North Macedonia, Malta, Montenegro, Netherlands, Norway, Poland, Portugal, Romania, Svalbard and Jan Mayen,
+        San Marino, Serbia, Slovakia, Slovenia, Sweden, Vatican]
   - WITCH 5.0|India:
-      iso3_codes: IND
+      countries: [India]
   - WITCH 5.0|Indonesia:
-      iso3_codes: IDN
+      countries: [Indonesia]
   - WITCH 5.0|Japan and South Korea:
-      iso3_codes: [JPN, KOR, PRK]
+      countries: [Japan, South Korea, North Korea]
   - WITCH 5.0|Latin america and Caraibes (except Brasil and Mexico):
-      iso3_codes: [ABW, AIA, BES, CUW, SXM, ARG, ATA, ATG, BHS, BLM, BLZ, BMU, BOL, BRB, CHL,
-        COL, CRI, CUB, CYM, DMA, DOM, ECU, FLK, GLP, GRD, GTM, GUF, GUY, HND, HTI,
-        JAM, KNA, LCA, MAF, MSR, MTQ, NIC, PAN, PER, PRI, PRY, SGS, SLV, SUR, TCA,
-        TTO, URY, VCT, VEN, VGB, VIR]
+      countries: [Aruba, Anguilla, "Bonaire, Sint Eustatius and Saba", Curaçao, Sint Maarten (Dutch part), Argentina, Antarctica, Antigua and Barbuda, Bahamas, Saint Barthélemy, Belize, Bermuda, Bolivia, Barbados, Chile,
+        Colombia, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, Ecuador, Falkland Islands (Malvinas), Guadeloupe, Grenada, Guatemala, French Guiana, Guyana, Honduras, Haiti,
+        Jamaica, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part), Montserrat, Martinique, Nicaragua, Panama, Peru, Puerto Rico, Paraguay, South Georgia and the South Sandwich Islands, El Salvador, Suriname, Turks and Caicos Islands,
+        Trinidad and Tobago, Uruguay, Saint Vincent and the Grenadines, Venezuela, British Virgin Islands, United States Virgin Islands]
   - WITCH 5.0|Mexico:
-      iso3_codes: MEX
+      countries: [Mexico]
   - WITCH 5.0|Moyen-Orient and North Africa:
-      iso3_codes: [ARE, BHR, DZA, EGY, ESH, IRN, IRQ, ISR, JOR, KWT, LBN, LBY, MAR,
-        OMN, PSE, QAT, SAU, SYR, TUN, YEM]
+      countries: [United Arab Emirates, Bahrain, Algeria, Egypt, Western Sahara, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco,
+        Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia, Yemen]
   - WITCH 5.0|Oceania:
-      iso3_codes: [ASM, AUS, COK, CXR, FJI, FSM, GUM, HMD, KIR, MHL, MNP, NCL, NFK,
-        NIU, NRU, NZL, PCN, PLW, PNG, PYF, SLB, TKL, TLS, TON, TUV, UMI, VUT, WLF,
-        WSM]
+      countries: [American Samoa, Australia, Cook Islands, Christmas Island, Fiji, Micronesia, Guam, Heard Island and McDonald Islands, Kiribati, Marshall Islands, Northern Mariana Islands, New Caledonia, Norfolk Island,
+        Niue, Nauru, New Zealand, Pitcairn, Palau, Papua New Guinea, French Polynesia, Solomon Islands, Tokelau, Timor-Leste, Tonga, Tuvalu, United States Minor Outlying Islands, Vanuatu, Wallis and Futuna,
+        Samoa]
   - WITCH 5.0|South Africa:
-      iso3_codes: ZAF
+      countries: [South Africa]
   - WITCH 5.0|South Asia:
-      iso3_codes: [AFG, BGD, BTN, LKA, MDV, NPL, PAK]
+      countries: [Afghanistan, Bangladesh, Bhutan, Sri Lanka, Maldives, Nepal, Pakistan]
   - WITCH 5.0|South-East Asia:
-      iso3_codes: [BRN, CCK, KHM, LAO, MMR, MYS, PHL, SGP, THA, VNM]
+      countries: [Brunei Darussalam, Cocos (Keeling) Islands, Cambodia, Laos, Myanmar, Malaysia, Philippines, Singapore, Thailand, Viet Nam]
   - WITCH 5.0|Sub-Saharian African (except South Africa):
-      iso3_codes: [AGO, ATF, BDI, BEN, BFA, BVT, BWA, CAF, CIV, CMR, COD, COG, COM,
-        CPV, DJI, ERI, ETH, GAB, GHA, GIN, GMB, GNB, GNQ, IOT, KEN, LBR, LSO, MDG,
-        MLI, MOZ, MRT, MUS, MWI, MYT, NAM, NER, NGA, REU, RWA, SDN, SEN, SHN, SLE,
-        SOM, SSD, STP, SWZ, SYC, TCD, TGO, TZA, UGA, ZMB, ZWE]
+      countries: [Angola, French Southern Territories, Burundi, Benin, Burkina Faso, Bouvet Island, Botswana, Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo, Congo, Comoros,
+        Cabo Verde, Djibouti, Eritrea, Ethiopia, Gabon, Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, British Indian Ocean Territory, Kenya, Liberia, Lesotho, Madagascar,
+        Mali, Mozambique, Mauritania, Mauritius, Malawi, Mayotte, Namibia, Niger, Nigeria, Réunion, Rwanda, Sudan, Senegal, "Saint Helena, Ascension and Tristan da Cunha", Sierra Leone,
+        Somalia, South Sudan, Sao Tome and Principe, Eswatini, Seychelles, Chad, Togo, Tanzania, Uganda, Zambia, Zimbabwe]
   - WITCH 5.0|Transition Economies (including Russia):
-      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, MNG, RUS, TJK, TKM, TUR, UKR,
-        UZB]
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Mongolia, Russian Federation, Tajikistan, Turkmenistan, Turkey, Ukraine,
+        Uzbekistan]
   - WITCH 5.0|United States of America:
-      iso3_codes: USA
+      countries: [United States]
